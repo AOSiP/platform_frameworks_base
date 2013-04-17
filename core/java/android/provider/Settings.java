@@ -3748,6 +3748,15 @@ public final class Settings {
           */
         public static final String AOSIP_SETTINGS_SUMMARY= "aosip_settings_summary";
 
+       /**
+        * MediaScanner behavior on boot.
+        * 0 = enabled
+        * 1 = ask (notification)
+        * 2 = disabled
+        * @hide
+        */
+        public static final String MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
+
         /**
          * Whether or not volume button music controls should be enabled to seek media tracks
          * @hide
