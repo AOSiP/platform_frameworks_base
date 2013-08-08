@@ -136,4 +136,7 @@
   <!-- Custom clocks -->
   <java-symbol type="string" name="custom_clock_styles" />
 
+  <!-- From SignalStrength -->
+  <java-symbol type="integer" name="config_LTE_antenna_bar_quantity_metric" />
+  <java-symbol type="integer" name="config_LTE_RSRP_threshold_type" />
 </resources>
