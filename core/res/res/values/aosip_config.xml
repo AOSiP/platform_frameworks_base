@@ -37,4 +37,12 @@
 
     <!-- Seconds after which power button torch times out when proximity sensor is covered -->
     <integer name="config_flashlightProximityTimeout">300</integer>
+
+    <!-- The list of components which should be automatically disabled. -->
+    <string-array name="config_disabledComponents" translatable="false">
+    </string-array>
+
+    <!-- The list of components which should be forced to be enabled. -->
+    <string-array name="config_forceEnabledComponents" translatable="false">
+    </string-array>
 </resources>
