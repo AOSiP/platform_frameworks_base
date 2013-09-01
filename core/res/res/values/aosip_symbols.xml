@@ -35,4 +35,8 @@
   <!-- Max visible notification icons -->
   <java-symbol type="integer" name="config_maxVisibleNotificationIcons" />
   <java-symbol type="integer" name="config_maxVisibleNotificationIconsWhenDark" />
+
+  <!-- Package Manager -->
+  <java-symbol type="array" name="config_disabledComponents" />
+  <java-symbol type="array" name="config_forceEnabledComponents" />
 </resources>
