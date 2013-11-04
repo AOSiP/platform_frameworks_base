@@ -45,4 +45,10 @@
 
     <!-- Single hand mode -->
     <string name="singlehandmode_click_hint_message">Touch outside the screen to exit single hand mode</string>
+
+    <!-- ADB over network -->
+    <string name="adb_net_active_notification_title">ADB over network enabled</string>
+    <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
+    <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
+
 </resources>
