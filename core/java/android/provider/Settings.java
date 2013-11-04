@@ -7334,6 +7334,12 @@ public final class Settings {
         public static final String STATUS_BAR_BIG_BATTERY_ICON = "status_bar_big_battery_icon";
 
         /**
+         * The TCP/IP port to run ADB on, or -1 for USB
+         * @hide
+         */
+        public static final String ADB_PORT = "adb_port";
+
+        /**
          * This are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
