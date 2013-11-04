@@ -8723,6 +8723,12 @@ public final class Settings {
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 4);
 
         /**
+         * The TCP/IP port to run ADB on, or -1 for USB
+         * @hide
+         */
+        public static final String ADB_PORT = "adb_port";
+
+        /**
          * Lockscreen Visualizer
          *
          * @hide
