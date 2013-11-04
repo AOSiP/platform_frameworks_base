@@ -29,4 +29,11 @@
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">Allows an application to control the navigation bar editor.</string>
 
+    <!-- ADB over network notification -->
+    <string name="adb_net_active_notification_title">ADB over network enabled</string>
+    <!-- ADB over USB and network notification -->
+    <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
+    <!-- ADB notification message-->
+    <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
+
 </resources>
