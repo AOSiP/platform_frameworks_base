@@ -119,4 +119,9 @@
     <!-- Defines the length of FP unlock boost -->
     <integer name="fpunlockboost_duration">700</integer>
 
+    <!-- EdgeGesture service -->
+    <java-symbol type="dimen" name="edge_gesture_trigger_distance" />
+    <java-symbol type="dimen" name="edge_gesture_perpendicular_distance" />
+    <java-symbol type="dimen" name="edge_gesture_trigger_thickness" />
+
 </resources>
