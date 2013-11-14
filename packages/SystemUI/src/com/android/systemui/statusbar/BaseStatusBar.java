@@ -47,6 +47,7 @@ import android.database.ContentObserver;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
+import android.hardware.SensorManager;
 import android.net.Uri;
 import android.media.MediaMetadata;
 import android.os.AsyncTask;
