@@ -58,4 +58,9 @@
     <!-- Whether the device needs axis inversion for the fingerprint notification panel gesture when rotated -->
     <bool name="config_needsFingerprintAxisInversion">false</bool>
 
+    <!-- EdgeGesture service -->
+    <java-symbol type="dimen" name="edge_gesture_trigger_distance" />
+    <java-symbol type="dimen" name="edge_gesture_perpendicular_distance" />
+    <java-symbol type="dimen" name="edge_gesture_trigger_thickness" />
+
 </resources>
