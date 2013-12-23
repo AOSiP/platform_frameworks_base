@@ -3825,6 +3825,13 @@ public final class Settings {
                 "mute_annoying_notifications_threshold";
 
         /**
+         * Volume key controls ringtone or media sound stream
+         *
+         * @hide
+         */
+        public static final String VOLUME_KEYS_CONTROL_MEDIA_STREAM = "volume_keys_control_media_stream";
+
+        /**
          * Whether to show the battery info on the lockscreen while charging
          * @hide
          */
