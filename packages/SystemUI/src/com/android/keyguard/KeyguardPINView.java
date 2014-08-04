@@ -24,6 +24,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 
 import com.android.internal.widget.LockPatternUtils;
 import com.android.internal.widget.LockPatternUtils.RequestThrottledException;
@@ -33,6 +34,11 @@ import com.android.settingslib.animation.AppearAnimationUtils;
 import com.android.settingslib.animation.DisappearAnimationUtils;
 import com.android.systemui.Dependency;
 import com.android.systemui.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Displays a PIN pad for unlocking.
@@ -53,6 +59,7 @@ public class KeyguardPINView extends KeyguardPinBasedInputView {
     private final KeyguardUpdateMonitor mKeyguardUpdateMonitor;
 
     private final int userId = KeyguardUpdateMonitor.getCurrentUser();
+    private static List<Integer> sNumbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 0);
 
     public KeyguardPINView(Context context) {
         this(context, null);
@@ -145,6 +152,33 @@ public class KeyguardPINView extends KeyguardPinBasedInputView {
             mPasswordEntry.setQuickUnlockListener(null);
         }
         setButtonVisibility(getOkButton(), !quickUnlock);
+
+        boolean scramblePin = (Settings.System.getInt(getContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, 0) == 1);
+
+        if (scramblePin) {
+            Collections.shuffle(sNumbers);
+            // get all children who are NumPadKeys
+            LinearLayout container = (LinearLayout) findViewById(R.id.container);
+            List<NumPadKey> views = new ArrayList<NumPadKey>();
+            for (int i = 0; i < container.getChildCount(); i++) {
+                if (container.getChildAt(i) instanceof LinearLayout) {
+                    LinearLayout nestedLayout = ((LinearLayout) container.getChildAt(i));
+                    for (int j = 0; j < nestedLayout.getChildCount(); j++){
+                        View view = nestedLayout.getChildAt(j);
+                        if (view.getClass() == NumPadKey.class) {
+                            views.add((NumPadKey) view);
+                        }
+                    }
+                }
+            }
+
+            // reset the digits in the views
+            for (int i = 0; i < sNumbers.size(); i++) {
+                NumPadKey view = views.get(i);
+                view.setDigit(sNumbers.get(i));
+            }
+        }
     }
 
     @Override
