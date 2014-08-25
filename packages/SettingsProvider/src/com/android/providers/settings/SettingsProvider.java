@@ -3457,6 +3457,26 @@ public class SettingsProvider extends ContentProvider {
                 }
 
                 if (currentVersion == 148) {
+                     // Version 149: Set the default value for BATTERY_PLUGGED_SOUND.
+                     if (userId == UserHandle.USER_SYSTEM) {
+                         final SettingsState globalSettings = getGlobalSettingsLocked();
+                         final Setting currentSetting = globalSettings.getSettingLocked(
+                                 Settings.Global.BATTERY_PLUGGED_SOUND);
+                         if (currentSetting.isNull()) {
+                             final String defaultValue = getContext().getResources().getString(
+                                     R.string.def_battery_plugged_sound);
+                             if (defaultValue != null) {
+                                 globalSettings.insertSettingLocked(
+                                         Settings.Global.BATTERY_PLUGGED_SOUND, defaultValue,
+                                         null, true, SettingsState.SYSTEM_PACKAGE_NAME);
+                             }
+                         }
+                     }
+
+                     currentVersion = 149;
+                 }
+
+		if (currentVersion == 149) {
                     // Version 149
                     /* Pixel Launcher checks this Setting to show Adaptive Icons options
                         and anyway we need to enable dev settings for our stuff so we set
@@ -3481,7 +3501,7 @@ public class SettingsProvider extends ContentProvider {
                         }
                     }
 
-                    currentVersion = 149;
+                    currentVersion = 150;
                 }
 
                 // vXXX: Add new settings above this point.
