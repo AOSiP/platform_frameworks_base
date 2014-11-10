@@ -5175,6 +5175,12 @@ public final class Settings {
         private static final Validator HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR =
               new SettingsValidators.InclusiveIntegerRangeValidator(0, 1200000);
 
+       /**
+         * Allow users to pull down the status bar quickly
+         * @hide
+         */
+        public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
+
         /**
          * Adaptive playback's timeout in ms
          * @hide
