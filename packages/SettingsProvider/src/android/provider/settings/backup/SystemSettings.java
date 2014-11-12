@@ -86,5 +86,6 @@ public class SystemSettings {
         Settings.System.NOTIFICATION_LIGHT_PULSE,
         Settings.System.NOTIFICATION_HEADERS,
         Settings.System.LOCKSCREEN_BATTERY_INFO,
+        Settings.System.SCREENSHOT_SOUND,
     };
 }

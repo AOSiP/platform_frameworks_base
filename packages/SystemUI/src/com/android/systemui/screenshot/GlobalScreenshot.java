@@ -1312,7 +1312,10 @@ public class GlobalScreenshot implements ViewTreeObserver.OnComputeInternalInset
         // We want to play the shutter sound when it's either forced or
         // when we use normal ringer mode
         if (playSound) {
-            mCameraSound.play(MediaActionSound.SHUTTER_CLICK);
+            if (Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.SCREENSHOT_SOUND, 0) == 1) {
+                mCameraSound.play(MediaActionSound.SHUTTER_CLICK);
+            }
         }
     }
 
