@@ -25,14 +25,11 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Point;
 import android.graphics.Rect;
-import android.os.PowerManager;
-import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.EventLog;
 import android.util.Pair;
 import android.view.Display;
 import android.view.DisplayCutout;
-import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -72,7 +69,6 @@ public class PhoneStatusBarView extends PanelBar {
         }
     };
     private DarkReceiver mBattery;
-    private GestureDetector mDoubleTapGesture;
     private int mLastOrientation;
     @Nullable
     private View mCutoutSpace;
@@ -87,20 +83,6 @@ public class PhoneStatusBarView extends PanelBar {
         super(context, attrs);
 
         mBarTransitions = new PhoneStatusBarTransitions(this);
-
-        mDoubleTapGesture = new GestureDetector(mContext, new GestureDetector.SimpleOnGestureListener() {
-            @Override
-            public boolean onDoubleTap(MotionEvent e) {
-                PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
-                Log.d(TAG, "Gesture!!");
-                if (pm != null) {
-                    pm.goToSleep(e.getEventTime());
-                } else {
-                    Log.d(TAG, "getSystemService returned null PowerManager");
-                }
-                return true;
-            }
-        });
     }
 
     public BarTransitions getBarTransitions() {
@@ -240,11 +222,6 @@ public class PhoneStatusBarView extends PanelBar {
                         event.getActionMasked(), (int) event.getX(), (int) event.getY(),
                         barConsumedEvent ? 1 : 0);
             }
-        }
-
-        if (Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 0) == 1) {
-            mDoubleTapGesture.onTouchEvent(event);
         }
 
         return barConsumedEvent || super.onTouchEvent(event);
