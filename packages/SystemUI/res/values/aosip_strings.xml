@@ -113,6 +113,9 @@
     <string name="quick_settings_network_adb_enabled_label">Adb over Net</string>
     <string name="quick_settings_network_adb_disabled_label">Adb over Net</string>
 
+    <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_data_connection_hspap">HSPA+</string>
+
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">Screen is being recorded</string>
     <string name="screenrecord_notif_final_ticker">Screen recorded successfully</string>
