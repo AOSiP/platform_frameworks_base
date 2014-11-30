@@ -995,7 +995,11 @@ public class NetworkControllerImpl extends BroadcastReceiver
                             datatype.equals("e") ? TelephonyIcons.E :
                             datatype.equals("g") ? TelephonyIcons.G :
                             datatype.equals("h") ? TelephonyIcons.H :
+<<<<<<< HEAD   (77f580 Merge tag 'android-10.0.0_r5' into ten)
                             datatype.equals("h+") ? TelephonyIcons.H_PLUS :
+=======
+                            datatype.equals("h+") ? TelephonyIcons.HP :
+>>>>>>> CHANGE (b1f2fd Status bar: Add HSPA+ icons)
                             datatype.equals("lte") ? TelephonyIcons.LTE :
                             datatype.equals("lte+") ? TelephonyIcons.LTE_PLUS :
                             datatype.equals("dis") ? TelephonyIcons.DATA_DISABLED :

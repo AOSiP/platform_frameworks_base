@@ -222,7 +222,15 @@ public class MobileSignalController extends SignalController<
         mNetworkToIconLookup.put(TelephonyManager.NETWORK_TYPE_HSDPA, hGroup);
         mNetworkToIconLookup.put(TelephonyManager.NETWORK_TYPE_HSUPA, hGroup);
         mNetworkToIconLookup.put(TelephonyManager.NETWORK_TYPE_HSPA, hGroup);
+<<<<<<< HEAD   (77f580 Merge tag 'android-10.0.0_r5' into ten)
         mNetworkToIconLookup.put(TelephonyManager.NETWORK_TYPE_HSPAP, hPlusGroup);
+=======
+        if (mConfig.hspaDataDistinguishable) {
+            hGroup = TelephonyIcons.HP;
+        }
+        mNetworkToIconLookup.put(TelephonyManager.NETWORK_TYPE_HSPAP, hGroup);
+        mNetworkToIconLookup.put(TelephonyManager.NETWORK_TYPE_DC_HSPAP, hGroup);
+>>>>>>> CHANGE (b1f2fd Status bar: Add HSPA+ icons)
 
         if (mConfig.show4gForLte) {
             mNetworkToIconLookup.put(TelephonyManager.NETWORK_TYPE_LTE, TelephonyIcons.FOUR_G);
