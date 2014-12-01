@@ -5178,6 +5178,13 @@ public final class Settings {
         public static final String SENSOR_BLOCKED_APP = "sensor_blocked_app";
         public static final String SENSOR_BLOCKED_APP_DUMMY = "sensor_blocked_app_dummy";
 
+       /**
+         * Whether to wake the display when plugging or unplugging the charger
+         *
+         * @hide
+         */
+        public static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
+
         /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
