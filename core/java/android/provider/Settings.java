@@ -3819,6 +3819,12 @@ public final class Settings {
         public static final String MUSIC_TILE_TITLE = "music_tile_title";
 
         /**
+         * Whether to enable status and navigation bar color in battery saver mode.
+         * @hide
+         */
+        public static final String BATTERY_SAVER_MODE_COLOR = "battery_save_mode_color";
+
+        /**
          * Whether to display qs tile titles in the qs panel
          * @hide
          */
