@@ -58,6 +58,7 @@ import com.android.systemui.qs.tiles.UiModeNightTile;
 import com.android.systemui.qs.tiles.ScreenshotTile;
 import com.android.systemui.qs.tiles.SoundTile;
 import com.android.systemui.qs.tiles.SyncTile;
+import com.android.systemui.qs.tiles.UsbTetherTile;
 import com.android.systemui.qs.tiles.UserTile;
 import com.android.systemui.qs.tiles.VpnTile;
 import com.android.systemui.qs.tiles.WifiTile;
@@ -109,6 +110,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<ScreenRecordTile> mScreenRecordTileProvider;
     private final Provider<RebootTile> mRebootTileProvider;
     private final Provider<MusicTile> mMusicTileProvider;
+    private final Provider<UsbTetherTile> mUsbTetherTileProvider;
 
     private QSTileHost mHost;
 
@@ -146,7 +148,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<VpnTile> vpnTileProvider,
             Provider<ScreenRecordTile> screenRecordTileProvider,
             Provider<RebootTile> rebootTileProvider,
-            Provider<MusicTile> musicTileProvider) {
+            Provider<MusicTile> musicTileProvider,
+            Provider<UsbTetherTile> usbTetherTileProvider) {
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
         mCellularTileProvider = cellularTileProvider;
@@ -182,6 +185,7 @@ public class QSFactoryImpl implements QSFactory {
         mScreenRecordTileProvider = screenRecordTileProvider;
         mRebootTileProvider = rebootTileProvider;
         mMusicTileProvider = musicTileProvider;
+        mUsbTetherTileProvider = usbTetherTileProvider;
     }
 
     public void setHost(QSTileHost host) {
@@ -272,6 +276,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mRebootTileProvider.get();
             case "music":
                 return mMusicTileProvider.get();
+            case "usb_tether":
+                return mUsbTetherTileProvider.get();
         }
 
         // Intent tiles.
