@@ -24,6 +24,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
+import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Path.Direction;
@@ -47,6 +48,7 @@ public class BatteryMeterDrawableBase extends Drawable {
     // Values for the different battery styles
     public static final int BATTERY_STYLE_PORTRAIT = 0;
     public static final int BATTERY_STYLE_CIRCLE = 1;
+    public static final int BATTERY_STYLE_DOTTED_CIRCLE = 2;
 
     protected final Context mContext;
     protected final Paint mFramePaint;
@@ -99,6 +101,8 @@ public class BatteryMeterDrawableBase extends Drawable {
     private final Path mShapePath = new Path();
     private final Path mClipPath = new Path();
     private final Path mTextPath = new Path();
+
+    private DashPathEffect mPathEffect;
 
     public BatteryMeterDrawableBase(Context context, int frameColor) {
         mContext = context;
@@ -157,6 +161,8 @@ public class BatteryMeterDrawableBase extends Drawable {
 
         mPlusPaint = new Paint(mBoltPaint);
         mPlusPoints = loadPoints(res, R.array.batterymeter_plus_points);
+
+        mPathEffect = new DashPathEffect(new float[]{3,2},0);
 
         mIntrinsicWidth = context.getResources().getDimensionPixelSize(R.dimen.battery_width);
         mIntrinsicHeight = context.getResources().getDimensionPixelSize(R.dimen.battery_height);
@@ -317,6 +323,7 @@ public class BatteryMeterDrawableBase extends Drawable {
                 drawRectangle(c);
                 break;
             case BATTERY_STYLE_CIRCLE:
+            case BATTERY_STYLE_DOTTED_CIRCLE:
                 drawCircle(c);
                 break;
             default:
@@ -511,6 +518,12 @@ public class BatteryMeterDrawableBase extends Drawable {
 
         mBatteryPaint.setStrokeWidth(strokeWidth);
         mBatteryPaint.setStyle(Paint.Style.STROKE);
+
+        if (mMeterStyle == BATTERY_STYLE_DOTTED_CIRCLE) {
+            mBatteryPaint.setPathEffect(mPathEffect);
+        } else {
+            mBatteryPaint.setPathEffect(null);
+        }
 
         mFrame.set(
                 strokeWidth / 2.0f + mPadding.left,
