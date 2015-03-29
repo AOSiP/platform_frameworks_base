@@ -4480,6 +4480,13 @@ public final class Settings {
          */
         public static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
 
+         /**
+          * Screenshod sound enable, This is the noise made when taking a screesnhot
+          * Defaults to 1 - sounds enabled
+          * @hide
+          */
+         public static final String SCREENSHOT_SHUTTER_SOUND = "screenshot_shutter_sound";
+
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
