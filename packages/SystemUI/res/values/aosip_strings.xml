@@ -108,4 +108,11 @@
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%1$s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%1$d</xliff:g> minutes</string>
 
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Heads-up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Heads-up disabled</string>
+    <string name="accessibility_quick_settings_heads_up_on">Heads-up enabled</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Heads-up is now disabled</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Heads-up is now enabled</string>
+
 </resources>
