@@ -7435,5 +7435,7 @@ message MetricsEvent {
 
     // QS Tiles
     OWL_TILE = 421;
+
+    TILE_LOCATION_DETAIL = 2001;
   }
 }
