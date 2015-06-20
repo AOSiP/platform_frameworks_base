@@ -2252,5 +2252,8 @@ message MetricsEvent {
 
     // JDCTeam Settings
     JDC_SETTINGS = 420;
+
+    // Location detail adapter
+    QS_LOCATION_DETAIL = 504;
   }
 }
