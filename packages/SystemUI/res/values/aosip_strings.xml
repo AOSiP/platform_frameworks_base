@@ -216,4 +216,7 @@
 
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Show 4G instead of LTE</string>
+
+    <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Volume panel</string>
 </resources>
