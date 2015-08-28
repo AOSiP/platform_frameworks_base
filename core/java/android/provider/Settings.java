@@ -4191,6 +4191,12 @@ public final class Settings {
         public static final String POWERMENU_REBOOT = "powermenu_reboot";
 
         /**
+         * Toast icon
+         * @hide
+         */
+        public static final String TOAST_ICON = "toast_icon";
+
+        /**
          * Whether to display the advanced reboot option in the power menu
          *
          * @hide
@@ -4940,6 +4946,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_STYLE);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_FORMAT);
             PRIVATE_SETTINGS.add(SHOW_LTE_FOURGEE);
+            PRIVATE_SETTINGS.add(TOAST_ICON);
         }
 
         /**
