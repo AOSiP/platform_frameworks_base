@@ -3395,6 +3395,15 @@ public final class Settings {
                 "notification_light_pulse_default_color";
 
         /**
+         * Whether we automatically generate notification LED colors or just
+         * use the boring default.
+         *
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_COLOR_AUTO =
+                "notification_light_color_auto";
+
+        /**
          * How long to flash the notification LED by default
          * @hide
          */
