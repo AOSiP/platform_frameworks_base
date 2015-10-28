@@ -111,4 +111,7 @@
     <!-- Recents Membar -->
     <string name="recents_free_ram">FREE RAM</string>
 
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Screenshot deleted</string>
+
 </resources>
