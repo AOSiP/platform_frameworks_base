@@ -103,4 +103,7 @@
   <java-symbol type="anim" name="recent_screen_enter" />
   <java-symbol type="anim" name="recent_screen_enter_left" />
   <java-symbol type="anim" name="recent_screen_fade_out" />
+
+  <!-- Vendor warning -->
+  <java-symbol type="string" name="system_error_vendorprint" />
 </resources>
