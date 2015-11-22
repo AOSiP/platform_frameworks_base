@@ -58,6 +58,9 @@
   <java-symbol type="array" name="config_disabledComponents" />
   <java-symbol type="array" name="config_forceEnabledComponents" />
 
+  <!-- Rotation sensor -->
+  <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
+
   <!-- Custom permissions list -->
   <java-symbol type="array" name="config_customPermissionsList" />
 
