@@ -3902,6 +3902,12 @@ public final class Settings {
         public static final String LOCKSCREEN_CHARGING_CURRENT = "lockscreen_charging_current";
  
         /**
+         * Whether to show Brightness Icon On Brightness Slider
+         * @hide
+         */
+        public static final String QS_SHOW_BRIGHTNESS_ICON = "qs_show_brightness_icon";
+
+        /**
          * Change quick settings tiles interpolator
          *
          * @hide
