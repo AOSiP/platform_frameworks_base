@@ -5555,6 +5555,24 @@ public final class Settings {
         private static final Validator NOTIFICATION_HEADERS_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * whether to enable or disable vibration on fingerprint auth success
+         *
+         * @hide
+         */
+        public static final String FINGERPRINT_SUCCESS_VIB = "fingerprint_success_vib";
+        /** @hide */
+        public static final Validator FINGERPRINT_SUCCESS_VIB_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
+         * whether to enable or disable vibration on fingerprint auth error
+         *
+         * @hide
+         */
+        public static final String FINGERPRINT_ERROR_VIB = "fingerprint_error_vib";
+        /** @hide */
+        public static final Validator FINGERPRINT_ERROR_VIB_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -5632,6 +5650,8 @@ public final class Settings {
             CHARGING_ANIMATION,
             DOUBLE_TAP_SLEEP_GESTURE,
             DOZE_TRIGGER_DOUBLETAP,
+            FINGERPRINT_ERROR_VIB,
+            FINGERPRINT_SUCCESS_VIB,
             FORCE_SHOW_NAVBAR,
             HEADS_UP_NOTIFICATION_SNOOZE,
             LOCK_SHOW_STATUS_BAR,
@@ -5808,6 +5828,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
             PRIVATE_SETTINGS.add(DOZE_TRIGGER_DOUBLETAP);
+            PRIVATE_SETTINGS.add(FINGERPRINT_ERROR_VIB);
+            PRIVATE_SETTINGS.add(FINGERPRINT_SUCCESS_VIB);
             PRIVATE_SETTINGS.add(FORCE_SHOW_NAVBAR);
             PRIVATE_SETTINGS.add(LOCK_SHOW_STATUS_BAR);
             PRIVATE_SETTINGS.add(LOCKSCREEN_ALBUM_ART_FILTER);
@@ -5968,6 +5990,8 @@ public final class Settings {
             VALIDATORS.put(DOUBLE_TAP_SLEEP_GESTURE,
                     DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR);
             VALIDATORS.put(DOZE_TRIGGER_DOUBLETAP, DOZE_TRIGGER_DOUBLETAP_VALIDATOR);
+            VALIDATORS.put(FINGERPRINT_ERROR_VIB, FINGERPRINT_ERROR_VIB_VALIDATOR);
+            VALIDATORS.put(FINGERPRINT_SUCCESS_VIB, FINGERPRINT_SUCCESS_VIB_VALIDATOR);
             VALIDATORS.put(FORCE_SHOW_NAVBAR, FORCE_SHOW_NAVBAR_VALIDATOR);
             VALIDATORS.put(HEADS_UP_NOTIFICATION_SNOOZE,HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR);
             VALIDATORS.put(LOCK_SHOW_STATUS_BAR, LOCK_SHOW_STATUS_BAR_VALIDATOR);
