@@ -64,6 +64,16 @@
             android:importantForAccessibility="noHideDescendants"/>
     </LinearLayout>
 
+    <com.android.systemui.statusbar.policy.KeyguardClockLeft
+        android:id="@+id/keyguard_clock"
+        android:textAppearance="@style/TextAppearance.StatusBar.Clock"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:singleLine="true"
+        android:paddingEnd="6dip"
+        android:gravity="center"
+        android:visibility="gone" />
+
     <com.android.systemui.aosip.carrierlabel.CarrierLabel
         android:id="@+id/keyguard_carrier_text"
         android:layout_width="match_parent"

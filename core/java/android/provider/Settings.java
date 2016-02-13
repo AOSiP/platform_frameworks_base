@@ -3838,6 +3838,12 @@ public final class Settings {
         public static final String DISABLE_DASHBOARD_CONDITIONS = "disable_dashboard_conditions";
 
         /**
+         * Whether to show statusbar clock in the keyguard
+         * @hide
+         */
+        public static final String KEYGUARD_SHOW_CLOCK = "keyguard_show_clock";
+
+        /**
          * Disable dashboard suggestions in settings
          * @hide
          */
