@@ -100,4 +100,7 @@
   <!-- Kill app message -->
   <java-symbol type="string" name="app_killed_message" />
 
+  <!-- Hardware key binding -->
+  <java-symbol type="integer" name="config_deviceHardwareKeys" />
+
 </resources>
