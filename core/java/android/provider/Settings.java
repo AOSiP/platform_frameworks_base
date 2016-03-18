@@ -3979,6 +3979,12 @@ public final class Settings {
         */
         public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
 
+        /** Whether to skip music track with volume rocker 
+        /**
+         * @hide
+         */
+        public static final String VOLUME_BUTTON_MUSIC_CONTROL = "volume_button_music_control";
+
         /**
          *  Enable statusbar double tap gesture on to put device to sleep
          * @hide
