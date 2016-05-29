@@ -6702,6 +6702,10 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE))) {
                 updateTickerAnimation();
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.ANIM_TILE_STYLE)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.ANIM_TILE_DURATION)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.ANIM_TILE_INTERPOLATOR))) {
+                setQsPanelOptions();
             }
         }
 
@@ -6713,6 +6717,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setFpToDismissNotifications();
             setForceAmbient();
             updateTickerAnimation();
+            setQsPanelOptions();
         }
     }
 
@@ -6725,6 +6730,12 @@ public class StatusBar extends SystemUI implements DemoMode,
     private void setStatusBarWindowViewOptions() {
         if (mStatusBarWindow != null) {
             mStatusBarWindow.setStatusBarWindowViewOptions();
+        }
+    }
+
+    private void setQsPanelOptions() {
+        if (mQSPanel != null) {
+            mQSPanel.updateSettings();
         }
     }
 
@@ -6766,6 +6777,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             mTicker.updateAnimation(mTickerAnimationMode);
         }
     }
+
 
     protected final ContentObserver mNavbarObserver = new ContentObserver(mHandler) {
         @Override
