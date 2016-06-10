@@ -16,7 +16,10 @@
 
 package com.android.systemui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ArgbEvaluator;
+import android.animation.ValueAnimator;
 import android.annotation.Nullable;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -87,6 +90,7 @@ public class BatteryMeterDrawable extends Drawable implements
     private String mWarningString;
     private final int mCriticalLevel;
     private int mChargeColor;
+    private int mStyle;
     private final Path mBoltPath = new Path();
     private final Path mPlusPath = new Path();
 
@@ -144,6 +148,7 @@ public class BatteryMeterDrawable extends Drawable implements
     private Drawable mFrameDrawable;
     private StopMotionVectorDrawable mLevelDrawable;
     private Drawable mBoltDrawable;
+    private ValueAnimator mAnimator;
 
     private int mTextGravity;
 
@@ -158,6 +163,7 @@ public class BatteryMeterDrawable extends Drawable implements
     public BatteryMeterDrawable(Context context, Handler handler, int frameColor, int style) {
         mContext = context;
         mHandler = handler;
+        mStyle = style;
         final Resources res = context.getResources();
         TypedArray levels = res.obtainTypedArray(R.array.batterymeter_color_levels);
         TypedArray colors = res.obtainTypedArray(R.array.batterymeter_color_values);
@@ -273,6 +279,11 @@ public class BatteryMeterDrawable extends Drawable implements
         mLevel = level;
         mPluggedIn = pluggedIn;
         mCharging = charging;
+
+        if (mStyle == BATTERY_STYLE_SOLID) {
+            animateSolidBattery(level, pluggedIn, charging);
+        }
+
         postInvalidate();
     }
 
@@ -366,6 +377,37 @@ public class BatteryMeterDrawable extends Drawable implements
             }
         }
         return color;
+    }
+
+    public void animateSolidBattery(int level, boolean pluggedIn, boolean charging) {
+        if (charging) {
+            if (mAnimator != null) mAnimator.cancel();
+
+            final int defaultAlpha = mLevelDrawable.getAlpha();
+            mAnimator = ValueAnimator.ofInt(defaultAlpha, 0, defaultAlpha);
+            mAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    mLevelDrawable.setAlpha((int) animation.getAnimatedValue());
+                    invalidateSelf();
+                }
+            });
+            mAnimator.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationCancel(Animator animation) {
+                    mLevelDrawable.setAlpha(defaultAlpha);
+                    mAnimator = null;
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mLevelDrawable.setAlpha(defaultAlpha);
+                    mAnimator = null;
+                }
+            });
+            mAnimator.setDuration(2000);
+            mAnimator.start();
+        }
     }
 
     public void setDarkIntensity(float darkIntensity) {
