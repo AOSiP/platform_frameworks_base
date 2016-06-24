@@ -3935,12 +3935,6 @@ public final class Settings {
          */
         public static final String HIDE_LOCKSCREEN_CLOCK = "hide_lockscreen_clock";
 
-        /**
-         * Hide lockscreen date
-         * @hide
-         */
-        public static final String HIDE_LOCKSCREEN_ALARM = "hide_lockscreen_alarm";
-
 	    /**
          * Disable dashboard conditions in settings
          * @hide
@@ -4112,7 +4106,31 @@ public final class Settings {
          */
         public static final String ANIM_TILE_INTERPOLATOR = "anim_tile_interpolator";
 
-	    /**
+        /**
+         * show lockscreen alarm
+         *  @hide
+         */
+        public static final String SHOW_LOCKSCREEN_ALARM = "show_lockscreen_alarm";
+
+        /**
+         * show lockscreen clock
+         *  @hide
+         */
+        public static final String SHOW_LOCKSCREEN_CLOCK = "show_lockscreen_clock";
+
+        /**
+         * show lockscreen date
+         *  @hide
+         */
+        public static final String SHOW_LOCKSCREEN_DATE = "show_lockscreen_date";
+
+        /**
+         * Change fonts for the system lockscreen clock widget
+         * @hide
+         */
+        public static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
+
+        /**
          * Whether to display data activity arrows for wifi/data connections
          * @hide
          */
