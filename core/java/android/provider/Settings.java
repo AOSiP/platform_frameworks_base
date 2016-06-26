@@ -4162,6 +4162,12 @@ public final class Settings {
         public static final String QS_SETTINGS_EXPANDED_TOGGLE = "qs_settings_expanded_toggle";
 
         /**
+         * Toast icon Switch
+         * @hide
+         */
+        public static final String TOAST_ICON = "toast_icon";
+
+        /**
          * Whether to show or hide the edit icon
          * @hide
          */
