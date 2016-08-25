@@ -6433,5 +6433,11 @@ message MetricsEvent {
 
     // Add new aosp constants above this line.
     // END OF AOSP CONSTANTS
+
+    //OwlsNest
+    OWLSNEST = 420;
+
+    //OwlsNest
+    OWL_TILE = 421;
   }
 }
