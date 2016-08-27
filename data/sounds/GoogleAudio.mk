@@ -16,14 +16,23 @@ LOCAL_PATH := frameworks/base/data/sounds/
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/alarms/Argon.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Argon.ogg \
+    $(LOCAL_PATH)material/alarms/Awaken.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Awaken.ogg \
+    $(LOCAL_PATH)material/alarms/Bounce.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Bounce.ogg \
     $(LOCAL_PATH)material/alarms/Carbon.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Carbon.ogg \
+    $(LOCAL_PATH)material/alarms/Drip.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Drip.ogg \
+    $(LOCAL_PATH)material/alarms/Gallop.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Gallop.ogg \
     $(LOCAL_PATH)material/alarms/Helium.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Helium.ogg \
     $(LOCAL_PATH)material/alarms/Krypton.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Krypton.ogg \
     $(LOCAL_PATH)material/alarms/Neon.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Neon.ogg \
+    $(LOCAL_PATH)material/alarms/Nudge.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Nudge.ogg \
+    $(LOCAL_PATH)material/alarms/Orbit.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Orbit.ogg \
     $(LOCAL_PATH)material/alarms/Osmium.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Osmium.ogg \
     $(LOCAL_PATH)material/alarms/Oxygen.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Oxygen.ogg \
     $(LOCAL_PATH)material/alarms/Platinum.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Platinum.ogg \
+    $(LOCAL_PATH)material/alarms/Rise.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Rise.ogg \
+    $(LOCAL_PATH)material/alarms/Sway.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Sway.ogg \
     $(LOCAL_PATH)material/alarms/Timer.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Timer.ogg \
+    $(LOCAL_PATH)material/alarms/Wag.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Wag.ogg \
     $(LOCAL_PATH)material/effects/audio_end.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui/audio_end.ogg \
     $(LOCAL_PATH)material/effects/audio_initiate.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui/audio_initiate.ogg \
     $(LOCAL_PATH)material/effects/camera_click.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui/camera_click.ogg \
