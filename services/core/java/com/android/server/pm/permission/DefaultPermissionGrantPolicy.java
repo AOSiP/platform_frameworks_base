@@ -744,6 +744,32 @@ public final class DefaultPermissionGrantPolicy {
             grantPermissionsToSystemPackage(systemCaptionsServicePackageName, userId,
                     MICROPHONE_PERMISSIONS);
         }
+
+        // Google App
+        grantSystemFixedPermissionsToSystemPackage("com.google.android.googlequicksearchbox", userId,
+                CALENDAR_PERMISSIONS, CAMERA_PERMISSIONS, CONTACTS_PERMISSIONS, ALWAYS_LOCATION_PERMISSIONS,
+                MICROPHONE_PERMISSIONS, PHONE_PERMISSIONS, SMS_PERMISSIONS, STORAGE_PERMISSIONS);
+
+        // Google Play Services
+        grantSystemFixedPermissionsToSystemPackage("com.google.android.gms", userId, SENSORS_PERMISSIONS,
+                CALENDAR_PERMISSIONS, CAMERA_PERMISSIONS, CONTACTS_PERMISSIONS, ALWAYS_LOCATION_PERMISSIONS,
+                MICROPHONE_PERMISSIONS, PHONE_PERMISSIONS, SMS_PERMISSIONS, STORAGE_PERMISSIONS);
+
+        // Google Contacts Sync
+        grantSystemFixedPermissionsToSystemPackage("com.google.android.syncadapters.contacts", userId,
+                CONTACTS_PERMISSIONS);
+
+        // Google Play Framework
+        grantSystemFixedPermissionsToSystemPackage("com.google.android.gsf", userId, CONTACTS_PERMISSIONS,
+                PHONE_PERMISSIONS);
+
+        // Google Setup Wizard
+        grantSystemFixedPermissionsToSystemPackage("com.google.android.setupwizard", userId, CONTACTS_PERMISSIONS,
+                PHONE_PERMISSIONS, ALWAYS_LOCATION_PERMISSIONS, CAMERA_PERMISSIONS);
+
+        // Google Play Store
+        grantSystemFixedPermissionsToSystemPackage("com.android.vending", userId, CONTACTS_PERMISSIONS,
+                PHONE_PERMISSIONS, ALWAYS_LOCATION_PERMISSIONS, SMS_PERMISSIONS, STORAGE_PERMISSIONS);
     }
 
     private String getDefaultSystemHandlerActivityPackageForCategory(String category, int userId) {
