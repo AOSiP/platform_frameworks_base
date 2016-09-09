@@ -3878,6 +3878,16 @@ public final class Settings {
         public static final String SCREENRECORD_CHORD_TYPE = "screenrecord_chord_type";
 
         /**
+         * Immersive recents options
+         *
+         * 0 = Default AOSP look
+         * 1 = Statusbar only
+         * 2 = Navbar only
+         * 3 = Fullscreen
+         */
+        public static final String IMMERSIVE_RECENTS = "immersive_recents";
+
+        /**
          * Show or hide clock
          * 0 - hide
          * 1 - show (default)
