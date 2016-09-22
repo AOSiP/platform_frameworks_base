@@ -3787,6 +3787,12 @@ public final class Settings {
          */
         public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
 
+        /** 
+         * Double tap sleep status bar
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
+
         /**
          * Whether to display music track title within the music qs tile
          * @hide
