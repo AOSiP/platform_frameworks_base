@@ -75,6 +75,7 @@ import com.android.systemui.qs.tiles.RotationLockTile;
 import com.android.systemui.qs.tiles.ScreenshotTile;
 import com.android.systemui.qs.tiles.SoundTile;
 import com.android.systemui.qs.tiles.SyncTile;
+import com.android.systemui.qs.tiles.PieTile;
 import com.android.systemui.qs.tiles.UsbTetherTile;
 import com.android.systemui.qs.tiles.UserTile;
 import com.android.systemui.qs.tiles.VolumeTile;
@@ -508,6 +509,7 @@ public class QSTileHost implements QSTile.Host, Tunable {
         else if (tileSpec.equals("hwkeys")) return  new HWKeysTile(this);
         else if (tileSpec.equals("weather")) return new WeatherTile(this);
         else if (tileSpec.equals("nfc")) return new NfcTile(this);
+        else if (tileSpec.equals("pie")) return  new PieTile(this);
         // Intent tiles.
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(this,tileSpec);
         else if (tileSpec.startsWith(CustomTile.PREFIX)) return CustomTile.create(this,tileSpec);
