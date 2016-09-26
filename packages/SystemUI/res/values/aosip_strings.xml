@@ -32,6 +32,13 @@
     <!-- USB tethering QS Tile -->
     <string name="quick_settings_usb_tether_label">USB tethering</string>
 
+    <!-- Sync QS Tile -->
+    <string name="quick_settings_sync_label">Sync</string>
+    <string name="accessibility_quick_settings_sync_off">Sync off</string>
+    <string name="accessibility_quick_settings_sync_on">Sync on</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+
     <!-- Power menu advanced restart -->
     <string name="global_action_restart_system">Reboot</string>
     <string name="global_action_restart_advanced">Advanced</string>
