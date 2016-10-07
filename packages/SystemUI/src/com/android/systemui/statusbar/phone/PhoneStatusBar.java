@@ -625,6 +625,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.NAVBAR_BUTTON_COLOR),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.LOCK_QS_DISABLED),
+                    false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -731,6 +734,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
             if (mHeader != null) {
                 mHeader.updateSettings();
+            }
+
+            if (mNotificationPanel != null) {
+                mNotificationPanel.updateSettings();
             }
 
             mSystemNavigationKeysEnabled = Settings.Secure.getIntForUser(mContext.getContentResolver(),
