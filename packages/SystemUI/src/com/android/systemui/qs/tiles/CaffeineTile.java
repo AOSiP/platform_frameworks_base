@@ -124,6 +124,44 @@ public class CaffeineTile extends QSTile<QSTile.BooleanState> {
     }
 
     @Override
+    public void handleLongClick() {
+        // If last user clicks < 5 seconds
+        // we cycle different duration
+        // otherwise toggle on/off
+        if (mWakeLock.isHeld() && (mLastClickTime != -1) &&
+                (SystemClock.elapsedRealtime() - mLastClickTime < 5000)) {
+            // cycle duration
+            mDuration++;
+            if (mDuration >= DURATIONS.length) {
+                // all durations cycled, turn if off
+                mDuration = -1;
+                stopCountDown();
+                if (mWakeLock.isHeld()) {
+                    mWakeLock.release();
+                }
+            } else {
+                // change duration
+                startCountDown(DURATIONS[mDuration]);
+                if (!mWakeLock.isHeld()) {
+                    mWakeLock.acquire();
+                }
+            }
+        } else {
+            // toggle
+            if (mWakeLock.isHeld()) {
+                mWakeLock.release();
+                stopCountDown();
+            } else {
+                mWakeLock.acquire();
+                mDuration = 0;
+                startCountDown(DURATIONS[mDuration]);
+            }
+        }
+        mLastClickTime = SystemClock.elapsedRealtime();
+        refreshState();
+    }
+
+    @Override
     public Intent getLongClickIntent() {
         return new Intent().setComponent(new ComponentName(
             "com.android.settings", "com.android.settings.Settings$DisplaySettingsActivity"));
