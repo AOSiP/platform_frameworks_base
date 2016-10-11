@@ -7298,6 +7298,12 @@ public final class Settings {
          */
         public static final String NOTIFICATION_BADGING = "notification_badging";
 
+         /**
+         * Whether to enable navigation bar
+         * @hide
+         */
+        public static final String NAVIGATION_BAR_ENABLED = "navigation_bar_enabled";
+
         /**
          * Whether to set a lower brightness level when enabling night mode
          * 0: Disabled
