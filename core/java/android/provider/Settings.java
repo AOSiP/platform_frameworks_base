@@ -4154,6 +4154,12 @@ public final class Settings {
         public static final String DATA_ACTIVITY_ARROWS = "data_activity_arrows";
 
         /**
+          * Whether blur effect should be enabled.
+          * @hide
+          */
+        public static final String LOCK_SCREEN_BLUR_ENABLED = "uiBlurEnabled";
+
+        /**
          * Control whether the accelerometer will be used to change lockscreen
          * orientation.  If 0, it will not be used; if 1, it will be used by default.
          * @hide
