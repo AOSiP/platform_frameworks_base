@@ -171,7 +171,7 @@
     <!-- shortcut manager -->
     <uses-permission android:name="android.permission.RESET_SHORTCUT_MANAGER_THROTTLING" />
 
-    <!-- Screen recording -->
+    <!-- Screen recording & Blur surface -->
     <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
 
     <!-- DU permissions -->
