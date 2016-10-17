@@ -91,6 +91,7 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     private int mClockLocation;
     private LinearLayout mCenterClockLayout;
     private NetworkTraffic mNetworkTraffic;
+    private TextView mCarrierLabel;
 
     private int mCustomLogo;
     private ImageView mCLogo;
@@ -159,11 +160,10 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mCenterClock = (Clock) statusBar.findViewById(R.id.center_clock);
         mLeftClock = (Clock) statusBar.findViewById(R.id.left_clock);
         mNetworkTraffic = (NetworkTraffic) statusBar.findViewById(R.id.networkTraffic);
-
         mCLogo = (ImageView) statusBar.findViewById(R.id.custom_center);
         mCLogoLeft = (ImageView) statusBar.findViewById(R.id.custom_left);
         mCLogoRight = (ImageView) statusBar.findViewById(R.id.custom_right);
-
+        mCarrierLabel = (TextView) statusBar.findViewById(R.id.statusbar_carrier_text);
         mDarkModeIconColorSingleTone = context.getColor(R.color.dark_mode_icon_color_single_tone);
         mLightModeIconColorSingleTone = context.getColor(R.color.light_mode_icon_color_single_tone);
         mHandler = new Handler();
@@ -608,6 +608,7 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mCenterClock.setTextColor(getTint(mTintArea, mCenterClock, mIconTint));
         mLeftClock.setTextColor(getTint(mTintArea, mLeftClock, mIconTint));
         mNetworkTraffic.setDarkIntensity(mDarkIntensity);
+        mCarrierLabel.setTextColor(getTint(mTintArea, mCarrierLabel, mIconTint));
         mPhoneStatusBar.setTickerTint(mIconTint);
         mCustomLogo = Settings.System.getIntForUser(mContext.getContentResolver(),
                Settings.System.CUSTOM_LOGO_STYLE, 0,
@@ -673,6 +674,7 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mNotificationIconAreaController.onDensityOrFontScaleChanged(mContext);
         updateClock();
         updateBatteryLevelText();
+        updateCarrier();
         for (int i = 0; i < mStatusIcons.getChildCount(); i++) {
             View child = mStatusIcons.getChildAt(i);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
@@ -687,6 +689,10 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
             child.setLayoutParams(lp);
         }
         scaleBatteryMeterViews(mContext);
+    }
+
+    private void updateCarrier() {
+        FontSizeUtils.updateFontSize(mCarrierLabel, R.dimen.status_bar_carrier_height);
     }
 
     private void updateClock() {
