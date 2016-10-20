@@ -39,4 +39,7 @@
 	<!-- Sets a custom extra padding for the QS icons and statusbar date -->
 	<dimen name="qs_items_padding">0dp</dimen>
 
+  <!-- Custom Carrier Label -->
+  <dimen name="status_bar_carrier_height">11dp</dimen>
+  
 </resources>

@@ -95,6 +95,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private int mShowLogo;
     private int mLogoColor;
 
+    // custom carrier label
+    private View mCustomCarrierLabel;
+    private int mShowCarrierLabel;
+
     private class SettingsObserver extends ContentObserver {
        SettingsObserver(Handler handler) {
            super(handler);
@@ -115,6 +119,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                     false, this, UserHandle.USER_ALL);
          mContentResolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_LOGO_COLOR),
+                    false, this, UserHandle.USER_ALL);
+         mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_SHOW_CARRIER),
                     false, this, UserHandle.USER_ALL);
        }
 
@@ -172,11 +179,12 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mRightClock = mStatusBar.findViewById(R.id.right_clock);
         mDerpQuestLogo = mStatusBar.findViewById(R.id.status_bar_logo);
         mDerpQuestLogoRight = mStatusBar.findViewById(R.id.status_bar_logo_right);
+        mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);
         updateSettings(false);
         updateLogoSettings(false);
         showSystemIconArea(false);
         initEmergencyCryptkeeperText();
-	animateHide(mClockView, false, false);
+        animateHide(mClockView, false, false);
         initOperatorName();
         mSettingsObserver.observe();
         updateSettings(false);
@@ -257,10 +265,12 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         if ((diff1 & DISABLE_NOTIFICATION_ICONS) != 0) {
             if ((state1 & DISABLE_NOTIFICATION_ICONS) != 0) {
                 hideNotificationIconArea(animate);
-                animateHide(mClockView, animate, mClockStyle == 0);
+                hideCarrierName(animate);
+                animateHide(mClockView, animate, false);
             } else {
                 showNotificationIconArea(animate);
                 updateClockStyle(animate);
+                showCarrierName(animate);
             }
         }
     }
@@ -363,6 +373,18 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         }
     }
 
+    public void hideCarrierName(boolean animate) {
+        if (mCustomCarrierLabel != null) {
+            animateHide(mCustomCarrierLabel, animate, true);
+        }
+    }
+
+    public void showCarrierName(boolean animate) {
+        if (mCustomCarrierLabel != null) {
+            setCarrierLabel(animate);
+        }
+    }
+
     /**
      * Hides a view.
      */
@@ -454,20 +476,23 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         }
 
         try {
-        mShowClock = Settings.System.getIntForUser(mContentResolver,
-                Settings.System.STATUS_BAR_CLOCK, 1,
-                UserHandle.USER_CURRENT) == 1;
-        if (!mShowClock) {
-            mClockStyle = 1; // internally switch to centered clock layout because
-                             // left & right will show up again after QS pulldown
-        } else {
-            mClockStyle = Settings.System.getIntForUser(mContentResolver,
-                    Settings.System.STATUSBAR_CLOCK_STYLE, 0, 
-                    UserHandle.USER_CURRENT);
+            mShowClock = Settings.System.getIntForUser(mContentResolver,
+                    Settings.System.STATUS_BAR_CLOCK, 1,
+                    UserHandle.USER_CURRENT) == 1;
+            if (!mShowClock) {
+                mClockStyle = 1; // internally switch to centered clock layout because
+                                // left & right will show up again after QS pulldown
+            } else {
+                mClockStyle = Settings.System.getIntForUser(mContentResolver,
+                        Settings.System.STATUSBAR_CLOCK_STYLE, 0,
+                        UserHandle.USER_CURRENT);
+            }
+            mShowCarrierLabel = Settings.System.getIntForUser(mContentResolver,
+                    Settings.System.STATUS_BAR_SHOW_CARRIER, 0, UserHandle.USER_CURRENT);
+            updateClockStyle(animate);
+            setCarrierLabel(animate);
+        } catch (Exception x) {
         }
-        } catch (Exception e) {
-        }
-	     updateClockStyle(animate);
     }
 
     public void updateLogoSettings(boolean animate) {
@@ -530,14 +555,14 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         }
 
         if (mShowLogo == 1) {
-	    mDerpQuestLogo.setImageDrawable(null);
-	    mDerpQuestLogo.setImageDrawable(logo);
- 	    mDerpQuestLogo.setColorFilter(mLogoColor, PorterDuff.Mode.MULTIPLY);
-	} else if (mShowLogo == 2) {
-	    mDerpQuestLogoRight.setImageDrawable(null);
-	    mDerpQuestLogoRight.setImageDrawable(logo);
-	    mDerpQuestLogoRight.setColorFilter(mLogoColor, PorterDuff.Mode.MULTIPLY);
-	}
+	          mDerpQuestLogo.setImageDrawable(null);
+	          mDerpQuestLogo.setImageDrawable(logo);
+ 	          mDerpQuestLogo.setColorFilter(mLogoColor, PorterDuff.Mode.MULTIPLY);
+	      } else if (mShowLogo == 2) {
+	          mDerpQuestLogoRight.setImageDrawable(null);
+	          mDerpQuestLogoRight.setImageDrawable(logo);
+	          mDerpQuestLogoRight.setColorFilter(mLogoColor, PorterDuff.Mode.MULTIPLY);
+	      }
 
         if (mNotificationIconAreaInner != null) {
             if (mShowLogo == 1) {
@@ -548,6 +573,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                 animateHide(mDerpQuestLogo, animate, false);
             }
         }
+
         if (mSystemIconArea != null) {
             if (mShowLogo == 2) {
                 if (mSystemIconArea.getVisibility() == View.VISIBLE) {
@@ -566,6 +592,14 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             if (((Clock)mClockView).isClockVisible()) {
                 animateShow(mClockView, animate);
             }
+        }
+    }
+
+    private void setCarrierLabel(boolean animate) {
+        if (mShowCarrierLabel == 2 || mShowCarrierLabel == 3) {
+            animateShow(mCustomCarrierLabel, animate);
+        } else {
+            animateHide(mCustomCarrierLabel, animate, false);
         }
     }
 }
