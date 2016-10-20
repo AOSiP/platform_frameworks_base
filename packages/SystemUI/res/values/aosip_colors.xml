@@ -50,4 +50,7 @@
     <color name="quick_settings_theme_tile_user_six">#FFC27B</color>
     <color name="quick_settings_theme_tile_user_seven">#FFCC00</color>
 
+    <!-- Custom Carrier Label -->
+    <color name="status_bar_carrier_color">#FFFFFFFF</color>
+
 </resources>
