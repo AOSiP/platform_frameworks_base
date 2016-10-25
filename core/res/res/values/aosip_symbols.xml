@@ -56,4 +56,10 @@
   <!-- Package Manager -->
   <java-symbol type="array" name="config_disabledComponents" />
   <java-symbol type="array" name="config_forceEnabledComponents" />
+
+  <!-- Pocket Lock -->
+  <java-symbol type="layout" name="pocket_lock_view_layout" />
+  <java-symbol type="id" name="pocket_hint_container" />
+  <java-symbol type="id" name="pocket_hint_image" />
+  <java-symbol type="id" name="pocket_hint_message" />
 </resources>
