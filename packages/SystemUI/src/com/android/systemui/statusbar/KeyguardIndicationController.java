@@ -34,6 +34,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.util.Log;
@@ -95,6 +96,8 @@ public class KeyguardIndicationController {
     private boolean mPowerPluggedInWired;
     private boolean mPowerCharged;
     private int mChargingSpeed;
+    private int mChargingCurrent;
+    private int mChargingVoltage;
     private int mChargingWattage;
     private int mBatteryLevel;
     private String mMessageToShowOnScreenOn;
@@ -413,6 +416,15 @@ public class KeyguardIndicationController {
                 break;
         }
 
+        String chargingCurrent = "";
+        boolean showChargingCurrent = Settings.System.getIntForUser(mContext.getContentResolver(),
+            Settings.System.LOCKSCREEN_CHARGING_CURRENT, 1, UserHandle.USER_CURRENT) == 1;
+
+        if (mChargingCurrent != 0 && showChargingCurrent) {
+            chargingCurrent = "\n" + (mChargingCurrent / 1000) + "mA/h / "
+                    + (mChargingVoltage / 1000 / 1000) + "V";
+        }
+
         String percentage = NumberFormat.getPercentInstance()
                 .format(mBatteryLevel / 100f);
         if (hasChargingTime) {
@@ -422,17 +434,21 @@ public class KeyguardIndicationController {
             String chargingTimeFormatted = Formatter.formatShortElapsedTimeRoundingUpToMinutes(
                     mContext, chargingTimeRemaining);
             try {
-                return mContext.getResources().getString(chargingId, chargingTimeFormatted,
-                        percentage);
+                String chargingText = mContext.getResources().getString(chargingId, chargingTimeFormatted,
+                        percentage, chargingCurrent);
+                return chargingText + chargingCurrent;
             } catch (IllegalFormatConversionException e) {
-                return mContext.getResources().getString(chargingId, chargingTimeFormatted);
+                String chargingText = mContext.getResources().getString(chargingId, chargingTimeFormatted);
+                return chargingText + chargingCurrent;
             }
         } else {
             // Same as above
             try {
-                return mContext.getResources().getString(chargingId, percentage);
+                String chargingText = mContext.getResources().getString(chargingId, percentage);
+                return chargingText + chargingCurrent;
             } catch (IllegalFormatConversionException e) {
-                return mContext.getResources().getString(chargingId);
+                String chargingText = mContext.getResources().getString(chargingId);
+                return chargingText + chargingCurrent;
             }
         }
     }
@@ -501,6 +517,8 @@ public class KeyguardIndicationController {
             mPowerPluggedInWired = status.isPluggedInWired() && isChargingOrFull;
             mPowerPluggedIn = status.isPluggedIn() && isChargingOrFull;
             mPowerCharged = status.isCharged();
+            mChargingCurrent = status.maxChargingCurrent;
+            mChargingVoltage = status.maxChargingVoltage;
             mChargingWattage = status.maxChargingWattage;
             mChargingSpeed = status.getChargingSpeed(mSlowThreshold, mFastThreshold);
             mBatteryLevel = status.level;
