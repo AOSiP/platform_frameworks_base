@@ -109,6 +109,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         mPanelPageIndicator = (PageIndicator) LayoutInflater.from(context).inflate(
                 R.layout.qs_page_indicator, this, false);
         addView(mPanelPageIndicator);
+        updateSettings();
 
         ((PagedTileLayout) mTileLayout).setPageIndicator(mPanelPageIndicator);
         mQsTileRevealController = new QSTileRevealController(mContext, this,
@@ -662,9 +663,16 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         int getOffsetTop(TileRecord tile);
 
         boolean updateResources();
+        void updateSettings();
 
         void setListening(boolean listening);
 
         default void setExpansion(float expansion) {}
+    }
+
+    public void updateSettings() {
+        if (mTileLayout != null) {
+            mTileLayout.updateSettings();
+        }
     }
 }
