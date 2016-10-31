@@ -327,6 +327,10 @@ public class QuickQSPanel extends QSPanel {
                     params.width = tileGap;
                 }
             }
+    }
+
+        @Override
+        public void updateSettings() {
         }
     }
 }
