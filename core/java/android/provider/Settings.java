@@ -3720,6 +3720,12 @@ public final class Settings {
         public static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
 
         /**
+         * Whether to allow screen record chord to take selectable screenshots
+         * @hide
+         */
+        public static final String SCREENRECORD_CHORD_TYPE = "screenrecord_chord_type";
+
+        /**
          * Show or hide clock
          * 0 - hide
          * 1 - show (default)
