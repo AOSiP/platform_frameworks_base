@@ -95,9 +95,25 @@ public class PasswordTextView extends View {
     private Interpolator mFastOutSlowInInterpolator;
     private boolean mShowPassword;
     private UserActivityListener mUserActivityListener;
-
+    private OnTextChangedListener mOnTextChangedListener = null;
+    
     public interface UserActivityListener {
         void onUserActivity();
+    }
+
+    public interface OnTextChangedListener {
+        void onTextChanged();
+    }
+
+
+    public void setOnTextChangedListener(OnTextChangedListener onTextChangedListener) {
+        mOnTextChangedListener = onTextChangedListener;
+    }
+
+    private void textChanged() {
+        if (mOnTextChangedListener != null) {
+            mOnTextChangedListener.onTextChanged();
+        }
     }
 
     public PasswordTextView(Context context) {
@@ -225,6 +241,7 @@ public class PasswordTextView extends View {
                 previousState.swapToDotWhenAppearFinished();
             }
         }
+        textChanged();
         userActivity();
         sendAccessibilityEventTypeViewTextChanged(textbefore, textbefore.length(), 0, 1);
     }
@@ -248,6 +265,7 @@ public class PasswordTextView extends View {
             CharState charState = mTextChars.get(length - 1);
             charState.startRemoveAnimation(0, 0);
         }
+        textChanged();
         userActivity();
         sendAccessibilityEventTypeViewTextChanged(textbefore, textbefore.length() - 1, 1, 0);
     }
@@ -297,6 +315,7 @@ public class PasswordTextView extends View {
         if (!animated) {
             mTextChars.clear();
         }
+        textChanged();
         if (announce) {
             sendAccessibilityEventTypeViewTextChanged(textbefore, 0, textbefore.length(), 0);
         }

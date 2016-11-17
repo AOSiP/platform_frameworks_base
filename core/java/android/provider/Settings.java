@@ -6902,6 +6902,12 @@ public final class Settings {
         public static final String ASSIST_DISCLOSURE_ENABLED = "assist_disclosure_enabled";
 
         /**
+         * Whether to use the custom quick unlock screen control
+         * @hide
+         */
+        public static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
+
+        /**
          * Names of the service components that the current user has explicitly allowed to
          * see all of the user's notifications, separated by ':'.
          *
@@ -7379,7 +7385,8 @@ public final class Settings {
             NFC_PAYMENT_DEFAULT_COMPONENT,
             STATUS_BAR_SHOW_BATTERY_PERCENT,
             STATUS_BAR_BATTERY_STYLE,
-            STATUS_BAR_BATTERY_STYLE_TILE
+            STATUS_BAR_BATTERY_STYLE_TILE,
+            LOCKSCREEN_QUICK_UNLOCK_CONTROL
         };
 
         /**
