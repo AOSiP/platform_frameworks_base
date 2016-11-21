@@ -3742,6 +3742,12 @@ public final class Settings {
          */
         public static final String ACCELEROMETER_ROTATION_ANGLES = "accelerometer_rotation_angles";
 
+         /**
+          * AOSiP Settings activity custom summary text
+          * @hide
+          */
+        public static final String AOSIP_SETTINGS_SUMMARY= "aosip_settings_summary";
+
         /**
          * Whether or not volume button music controls should be enabled to seek media tracks
          * @hide
