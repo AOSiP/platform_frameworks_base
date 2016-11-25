@@ -3823,11 +3823,11 @@ public final class Settings {
          */
         public static final String ANIM_TILE_DURATION = "anim_tile_duration";
 
-          /**
-          * Whether to show the negociated charger current in the lockscreen
-          * @hide
-          */
-         public static final String LOCKSCREEN_CHARGING_CURRENT = "lockscreen_charging_current";
+        /**
+         * Whether to show the negociated charger current in the lockscreen
+         * @hide
+         */
+        public static final String LOCKSCREEN_CHARGING_CURRENT = "lockscreen_charging_current";
  
         /**
          * Change quick settings tiles interpolator
@@ -3882,6 +3882,20 @@ public final class Settings {
          * @hide
          */
         public static final String QS_LAYOUT_COLUMNS = "qs_layout_columns";
+
+        /**
+         * Number of rows used for the Quick Settings (portrait)
+         *
+         * @hide
+         */
+        public static final String QS_ROWS_PORTRAIT = "qs_rows_portrait";
+
+        /**
+         * Number of rows used for the Quick Settings (landscape)
+         *
+         * @hide
+         */
+        public static final String QS_ROWS_LANDSCAPE = "qs_rows_landscape";
 
         /**
          * Whether to allow screen record chord to take selectable screenshots
