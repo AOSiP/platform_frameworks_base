@@ -43,6 +43,7 @@
     <color name="status_bar_clock_color">#FFFFFFFF</color>
     <color name="qs_user_detail_icon_muted">#FFFFFFFF</color> <!-- not so muted after all -->
     <color name="qs_tile_disabled_color">#9E9E9E</color> <!-- 38% black -->
+    <color name="system_primary_color">@*android:color/material_blue_grey_900</color>
 
     <!-- Tint color for the content on the notification overflow card. -->
     <color name="keyguard_overflow_content_color">#ff686868</color>
