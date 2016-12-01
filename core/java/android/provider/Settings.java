@@ -4417,13 +4417,12 @@ public final class Settings {
          */
         public static final String RECENT_PANEL_BG_COLOR = "recent_panel_bg_color";
 
-         /**
+        /**
          * Recent card background color
          *
          * @hide
          */
         public static final String RECENT_CARD_BG_COLOR = "recent_card_bg_color";
-
 
         /**
          * Custom icon pack name to use for Slim Recents
@@ -4448,6 +4447,12 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
+
+        /**
+         * Whether to center or left justify date time group
+         * @hide
+         */
+        public static final String QS_DATE_TIME_CENTER = "qs_date_time_center";
 
         /**
          * Whether to show QS footer warnings
