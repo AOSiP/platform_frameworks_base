@@ -235,4 +235,7 @@
     <string name="show_lte_fourgee_summary">Replaces LTE statusbar indicator with 4G</string>
     <string name="statusbar_tuner_category_title">Hide items from statusbar</string>
 
+    <!-- Data/Wifi activity arrows -->
+    <string name="data_wifi_activity_arrows_title">Network activity</string>
+
 </resources>
