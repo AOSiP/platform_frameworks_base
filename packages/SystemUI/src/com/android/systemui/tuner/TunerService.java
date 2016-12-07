@@ -214,24 +214,6 @@ public class TunerService extends SystemUI {
         return sInstance;
     }
 
-    public static final void showResetRequest(final Context context, final Runnable onDisabled) {
-        SystemUIDialog dialog = new SystemUIDialog(context);
-        dialog.setShowForAllUsers(true);
-        dialog.setMessage(R.string.remove_from_settings_prompt);
-        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, context.getString(R.string.cancel),
-                (OnClickListener) null);
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE,
-                context.getString(R.string.guest_exit_guest_dialog_remove), new OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (onDisabled != null) {
-                    onDisabled.run();
-                }
-            }
-        });
-        dialog.show();
-    }
-
     public static final boolean isTunerEnabled(Context context) {
         return true;
     }
