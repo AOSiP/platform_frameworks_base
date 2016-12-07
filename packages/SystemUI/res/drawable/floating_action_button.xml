@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The JDCTeam
+     Copyright (C) 2014 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,13 +14,11 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-    <!-- Status bar battery colors -->
-    <color name="status_bar_battery_level_text_color">#ffffff</color>
-    <color name="batterymeter_frame_color_darkintensity">@color/dark_mode_icon_color_dual_tone_background</color>
 
-    <!-- Floating action button -->
-    <color name="fab_color">@*android:color/material_deep_teal_500</color>
-    <color name="floating_action_button_icon_color">#ffffff</color>
-
-</resources>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@android:color/white">
+    <shape
+            android:shape="oval"
+            android:tint="@color/fab_color">
+    </shape>
+</ripple>
