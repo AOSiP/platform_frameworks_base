@@ -2871,4 +2871,9 @@
     <!-- Whether to show emergency button in power menu -->
     <bool name="config_showEmergencyButtonInPowerMenu">false</bool>
 
+    <!-- The duration (in milliseconds) for the outgoing sms authorization request to timeout.-->
+    <integer name="config_sms_authorization_timeout_ms">0</integer>
+
+    <!-- Enable sms authorization framework-->
+    <bool name="config_sms_authorization_enabled">false</bool>
 </resources>
