@@ -87,4 +87,8 @@
 
     <!-- Vendor mismatched fingerprint warning -->
     <java-symbol type="string" name="system_error_vendorprint" />
+
+  <!-- Doze mode -->
+  <java-symbol type="bool" name="config_doze_enabled_by_default" />
 </resources>
+
