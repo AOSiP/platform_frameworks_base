@@ -205,4 +205,7 @@
 
   <!-- Whether device supports internal audio recording -->
   <java-symbol type="bool" name="config_hasInternalAudioRecordingSupport" />
+
+   <!-- Home button wake -->
+   <java-symbol type="bool" name="config_show_homeWake" />
 </resources>
