@@ -5214,6 +5214,13 @@ public final class Settings {
                 "notification_guts_kill_app_button";
 
         /**
+         * Home button wake
+         * Whether to wake the screen with the home key, the value is boolean.
+         * @hide
+         */
+        public static final String HOME_BUTTON_WAKE  = "home_button_wake";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *

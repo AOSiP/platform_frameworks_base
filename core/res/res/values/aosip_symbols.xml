@@ -195,4 +195,7 @@
    <java-symbol type="id" name="notification_media_elapsed_time" />
    <java-symbol type="id" name="notification_media_total_time" />
 
+   <!-- Home button wake -->
+   <java-symbol type="bool" name="config_show_homeWake" />
+
 </resources>
