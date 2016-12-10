@@ -161,4 +161,6 @@
 
     <!-- Whether to show a custom view for FOD -->
     <bool name="config_needCustomFODView">false</bool>
+    <!-- Home button wake -->
+    <bool name="config_show_homeWake">false</bool>
 </resources>

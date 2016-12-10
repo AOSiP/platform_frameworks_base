@@ -655,6 +655,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private boolean mHandleVolumeKeysInWM;
 
     boolean mVolumeRockerWake;
+    boolean mHomeWakeScreen;
 
     int mPointerLocationMode = 0; // guarded by mLock
 
@@ -1171,6 +1172,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.BOTTOM_GESTURE_SWIPE_LIMIT), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HOME_BUTTON_WAKE), false, this,
                     UserHandle.USER_ALL);
             updateSettings();
         }
@@ -2881,6 +2885,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             mUseGestureButton = Settings.System.getIntForUser(resolver,
                     Settings.System.USE_BOTTOM_GESTURE_NAVIGATION, 0,
                     UserHandle.USER_CURRENT) != 0;
+
+            // home button wake
+            mHomeWakeScreen = Settings.System.getIntForUser(resolver,
+                    Settings.System.HOME_BUTTON_WAKE, 1,
+                    UserHandle.USER_CURRENT) == 1;
         }
 
         boolean doShowNavbar = Settings.Secure.getIntForUser(resolver,
@@ -6794,6 +6803,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 }
                 break;
             }
+
+            case KeyEvent.KEYCODE_HOME:
+                if (down && !interactive && mHomeWakeScreen) {
+                    isWakeKey = true;
+                }
+                break;
 
             case KeyEvent.KEYCODE_ENDCALL: {
                 result &= ~ACTION_PASS_TO_USER;
