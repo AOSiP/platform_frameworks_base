@@ -118,4 +118,8 @@
   <java-symbol type="style" name="PowerMenuTnAnimation" />
   <java-symbol type="style" name="PowerMenuflyAnimation" />
   <java-symbol type="style" name="PowerMenuCardAnimation" />
+
+  <!-- Dynamic Navbar -->
+  <java-symbol type="color" name="input_method_navigation_guard_dynamic" />
+
 </resources>
