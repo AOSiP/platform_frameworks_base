@@ -663,7 +663,7 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
 
     public boolean isDateTimeGroupCenter() {
         return Settings.System.getInt(mContext.getContentResolver(),
-            Settings.System.QS_DATE_TIME_CENTER, 1) == 1;
+            Settings.System.QS_DATE_TIME_CENTER, 0) == 1;
     }
 
     private void setQsPanelOffset() {
