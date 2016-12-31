@@ -99,6 +99,9 @@ oneway interface IStatusBar
     void setAutoRotate(boolean enabled);
     void screenPinningStateChanged(boolean enabled);
 
+    // SystemUI Restart method for masquerade
+    void restartUI();
+
     /**
      * Notifies the status bar that a camera launch gesture has been detected.
      *
