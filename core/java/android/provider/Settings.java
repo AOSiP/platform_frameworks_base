@@ -4576,6 +4576,12 @@ public final class Settings {
         private static final Validator SWAP_VOLUME_BUTTONS_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
+	/**
+         * Whether to enable the pixel navbar animation
+         * @hide
+         */
+        public static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
+
         /**
          * Toast icon
          * @hide
