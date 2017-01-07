@@ -58,4 +58,7 @@
     <!-- Whether the device needs axis inversion for the fingerprint notification panel gesture when rotated -->
     <bool name="config_needsFingerprintAxisInversion">false</bool>
 
+    <!-- sRGB sysfs path -->
+    <string name="config_srgb_path"></string>
+
 </resources>
