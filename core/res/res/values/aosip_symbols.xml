@@ -122,6 +122,9 @@
   <!-- Dynamic Navbar -->
   <java-symbol type="color" name="input_method_navigation_guard_dynamic" />
 
+  <!-- sRGB mode -->
+  <java-symbol type="string" name="config_srgb_path" />
+
   <!-- cpu boost for AppLaunch -->
   <java-symbol type="bool" name="config_enableCpuBoostForAppLaunch" />
   <java-symbol type="integer" name="launchboost_timeout_param" />
