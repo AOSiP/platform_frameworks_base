@@ -58,6 +58,9 @@
     <!-- Whether the device needs axis inversion for the fingerprint notification panel gesture when rotated -->
     <bool name="config_needsFingerprintAxisInversion">false</bool>
 
+    <!-- sRGB sysfs path -->
+    <string name="config_srgb_path"></string>
+
     <!-- Whether cpu boost is enabled for AppLaunch -->
     <bool name="config_enableCpuBoostForAppLaunch">false</bool>
     <integer name="launchboost_timeout_param">0</integer>
