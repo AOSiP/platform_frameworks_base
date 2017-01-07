@@ -49,4 +49,7 @@
            1. Lenient threshold
     -->
     <integer name="config_LTE_RSRP_threshold_type">0</integer>
+
+    <!-- Whether to show emergency button in power menu -->
+    <bool name="config_showEmergencyButtonInPowerMenu">false</bool>
 </resources>
