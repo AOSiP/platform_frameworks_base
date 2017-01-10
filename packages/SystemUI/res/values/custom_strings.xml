@@ -98,6 +98,9 @@
     <string name="quick_settings_google_assist_label">Assist</string>
     <string name="quick_settings_google_voice_assist_label">Voice assist</string>
 
+    <!-- Application picker Tile -->
+    <string name="quick_settings_app_picker">Application picker</string>
+
      <!-- Volume QS Tile -->
      <string name="accessibility_quick_settings_volume_panel">Volume</string>
      <string name="quick_settings_volume_panel_label">Volume</string>
