@@ -139,6 +139,7 @@ import com.android.keyguard.KeyguardHostView.OnDismissAction;
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardUpdateMonitorCallback;
 import com.android.keyguard.ViewMediatorCallback;
+import com.android.systemui.aosip.StatusBarHeaderMachine;
 import com.android.systemui.AutoReinflateContainer;
 import com.android.systemui.AutoReinflateContainer.InflateListener;
 import com.android.systemui.BatteryLevelTextView;
@@ -388,6 +389,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     // settings
     private QSPanel mQSPanel;
 
+    // qs headers
+    private StatusBarHeaderMachine mStatusBarHeaderMachine;
+
     // top bar
     BaseStatusBarHeader mHeader;
     protected KeyguardStatusBarView mKeyguardStatusBar;
@@ -561,6 +565,12 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_CARRIER),
                     false, this, UserHandle.USER_ALL);
+           resolver.registerContentObserver(Settings.System.getUriFor(
+                  Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW),
+                  false, this, UserHandle.USER_ALL);
+           resolver.registerContentObserver(Settings.System.getUriFor(
+                  Settings.System.STATUS_BAR_CUSTOM_HEADER),
+                  false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -1302,6 +1312,11 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
         // Private API call to make the shadows look better for Recents
         ThreadedRenderer.overrideProperty("ambientRatio", String.valueOf(1.5f));
+        
+        // qs headers
+        mStatusBarHeaderMachine = new StatusBarHeaderMachine(mContext);
+        mStatusBarHeaderMachine.addObserver((QuickStatusBarHeader) mHeader);
+        mStatusBarHeaderMachine.updateEnablement();
 
         return mStatusBarView;
     }
@@ -4316,6 +4331,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         mScrimController.setCurrentUser(newUserId);
         updateMediaMetaData(true, false);
         mOmniSettingsObserver.update();
+        mStatusBarHeaderMachine.updateEnablement();
     }
 
     private void setControllerUsers() {
