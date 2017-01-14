@@ -17,4 +17,8 @@
 
     <dimen name="battery_bar_view_height">6dp</dimen>
 
+    <!-- Burn-in protection -->
+    <dimen name="horizontal_max_swift">3.0dp</dimen>
+    <dimen name="vertical_max_swift">1.0dp</dimen>
+
 </resources>
