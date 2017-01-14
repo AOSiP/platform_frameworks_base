@@ -46,4 +46,8 @@
         <!-- Google's service for Elmyra -->
         <item>com.google.android.systemui.GoogleServices</item>
     </string-array>
+
+    <!-- Burn in protection -->
+    <bool name="config_statusBarBurnInProtection">false</bool>
+    <integer name="config_shift_interval">60</integer>
 </resources>
