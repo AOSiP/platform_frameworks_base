@@ -39,4 +39,7 @@
     <!-- Pie letter spacing -->
     <item name="pie_status_letter_spacing" format="float" type="integer">0.2</item>
     <item name="pie_clock_letter_spacing" format="float" type="integer">0.1</item>
+    <!-- Burn in protection -->
+    <bool name="config_statusBarBurnInProtection">false</bool>
+    <integer name="config_shift_interval">60</integer>
 </resources>

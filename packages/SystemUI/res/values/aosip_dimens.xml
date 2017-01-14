@@ -96,4 +96,8 @@
     <dimen name="pie_status_text_top_margin">13dp</dimen>
     <dimen name="pie_status_text_top_margin_land">9dp</dimen>
 
+    <!-- Burn-in protection -->
+    <dimen name="horizontal_max_swift">3.0dp</dimen>
+    <dimen name="vertical_max_swift">1.0dp</dimen>
+
 </resources>
