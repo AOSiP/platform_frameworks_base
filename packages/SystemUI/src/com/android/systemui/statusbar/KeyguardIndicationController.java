@@ -231,7 +231,7 @@ public class KeyguardIndicationController {
 
         if (showbatteryInfo) {
             if (mChargingCurrent > 0) {
-                batteryInfo = batteryInfo + (mChargingCurrent / 1000) + "mA/h";
+                batteryInfo = batteryInfo + (mChargingCurrent / 1000) + "mAh";
             }
             if (mChargingVoltage > 0) {
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
@@ -239,7 +239,7 @@ public class KeyguardIndicationController {
             }
             if (mTemperature > 0) {
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
-                        mTemperature / 10 + "°c";
+                        mTemperature / 10 + "°C";
             }
             if (batteryInfo != "") {
                 batteryInfo = "\n" + batteryInfo;
