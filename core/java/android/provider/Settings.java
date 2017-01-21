@@ -3747,6 +3747,12 @@ public final class Settings {
         public static final String DISABLE_SUGGESTIONS = "disable_suggestions";
 
         /**
+         * Whether to show dashboard summaries in a single line or not
+         * @hide
+         */
+        public static final String DASHBOARD_SUMMARY_DOUBLE_LINES = "dashboard_summary_double_lines";
+
+        /**
          * Remove tile summaries in settings
          * @hide
          */
@@ -3779,13 +3785,6 @@ public final class Settings {
          * @hide
          */
         public static final String ANIM_TILE_INTERPOLATOR = "anim_tile_interpolator";
-
-        /**
-         * IMPORTANT: If you add a new public settings you also have to add it to
-         * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
-         * it to PRIVATE_SETTINGS below. Also add a validator that can validate
-         * the setting value. See an example above.
-         */
 
         /**
          * Network traffic indicator, goes from least to greatest significant bitwise
@@ -3891,6 +3890,13 @@ public final class Settings {
          * @hide
          */
         public static final String STATUSBAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
+
+        /**
+         * IMPORTANT: If you add a new public settings you also have to add it to
+         * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
+         * it to PRIVATE_SETTINGS below. Also add a validator that can validate
+         * the setting value. See an example above.
+         */
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
