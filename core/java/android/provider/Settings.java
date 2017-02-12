@@ -6883,6 +6883,12 @@ public final class Settings {
         public static final String FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES = "force_authorize_substratum_packages";
 
         /**
+         * Whether to use one tap QS tile action to enable or disable mobile data, wifi, and bluetooth
+         * @hide
+         */
+        public static final String QS_EASY_TOGGLE = "qs_easy_toggle";
+
+        /**
          * Low brightness level for the advanced night mode tile
          * @hide
          */
