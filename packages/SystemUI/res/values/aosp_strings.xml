@@ -45,4 +45,7 @@
 
     <!-- Battery tuner -->
     <string name="battery_tuner_title">Battery tuner</string>
+
+    <!-- Volte icon -->
+    <string name="status_bar_volte">VoLTE</string>
 </resources>
