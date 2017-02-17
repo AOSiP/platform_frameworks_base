@@ -25,6 +25,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.Icon;
+import android.graphics.PorterDuff.Mode;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -91,6 +92,11 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     private LinearLayout mCenterClockLayout;
     private NetworkTraffic mNetworkTraffic;
 
+    private int mCustomLogo;
+    private ImageView mCLogo;
+    private ImageView mCLogoLeft;
+    private ImageView mCLogoRight;
+
     private int mIconSize;
     private int mIconHPadding;
 
@@ -153,6 +159,11 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mCenterClock = (Clock) statusBar.findViewById(R.id.center_clock);
         mLeftClock = (Clock) statusBar.findViewById(R.id.left_clock);
         mNetworkTraffic = (NetworkTraffic) statusBar.findViewById(R.id.networkTraffic);
+
+        mCLogo = (ImageView) statusBar.findViewById(R.id.custom_center);
+        mCLogoLeft = (ImageView) statusBar.findViewById(R.id.custom_left);
+        mCLogoRight = (ImageView) statusBar.findViewById(R.id.custom_right);
+
         mDarkModeIconColorSingleTone = context.getColor(R.color.dark_mode_icon_color_single_tone);
         mLightModeIconColorSingleTone = context.getColor(R.color.light_mode_icon_color_single_tone);
         mHandler = new Handler();
@@ -340,11 +351,25 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     public void hideSystemIconArea(boolean animate) {
         animateHide(mSystemIconArea, animate);
         animateHide(mCenterClockLayout, animate);
+        if (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.SHOW_CUSTOM_LOGO, 0) == 1 &&
+           (Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.CUSTOM_LOGO_POSITION,  0,
+                UserHandle.USER_CURRENT) == 0)) {
+           animateHide(mCLogoLeft, animate);
+        }
     }
 
     public void showSystemIconArea(boolean animate) {
         animateShow(mSystemIconArea, animate);
         animateShow(mCenterClockLayout, animate);
+        if (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.SHOW_CUSTOM_LOGO, 0) == 1 &&
+           (Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.CUSTOM_LOGO_POSITION,  0,
+                UserHandle.USER_CURRENT) == 0)) {
+        animateShow(mCLogoLeft, animate);
+        }
     }
 
     public void hideNotificationIconArea(boolean animate) {
@@ -583,6 +608,18 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mCenterClock.setTextColor(getTint(mTintArea, mCenterClock, mIconTint));
         mLeftClock.setTextColor(getTint(mTintArea, mLeftClock, mIconTint));
         mNetworkTraffic.setDarkIntensity(mDarkIntensity);
+
+        mCustomLogo = Settings.System.getIntForUser(mContext.getContentResolver(),
+               Settings.System.CUSTOM_LOGO_STYLE, 0,
+               UserHandle.USER_CURRENT);
+	    int mCustomlogoColor = Settings.System.getIntForUser(mContext.getContentResolver(),
+		       Settings.System.CUSTOM_LOGO_COLOR, 0xFFFFFFFF, 
+               UserHandle.USER_CURRENT);
+        if (mCustomlogoColor == 0xFFFFFFFF) { 
+         	    mCLogo.setImageTintList(ColorStateList.valueOf(mIconTint));
+         	    mCLogoLeft.setImageTintList(ColorStateList.valueOf(mIconTint));
+         	    mCLogoRight.setImageTintList(ColorStateList.valueOf(mIconTint));
+                }
     }
 
     public void appTransitionPending() {
