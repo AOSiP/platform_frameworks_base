@@ -53,6 +53,8 @@ import com.android.systemui.qs.tiles.DataSaverTile;
 import com.android.systemui.qs.tiles.DndTile;
 import com.android.systemui.qs.tiles.ExpandedDesktopTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
+import com.android.systemui.qs.tiles.GoogleAssistTile;
+import com.android.systemui.qs.tiles.GoogleVoiceAssistTile;
 import com.android.systemui.qs.tiles.HeadsUpTile;
 import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.ImeTile;
@@ -495,6 +497,8 @@ public class QSTileHost implements QSTile.Host, Tunable {
         else if (tileSpec.equals("androidauto")) return new AndroidAutoTile(this);
         else if (tileSpec.equals("pulse")) return new PulseTile(this);
         else if (tileSpec.equals("locale")) return new LocaleTile(this);
+        else if (tileSpec.equals("assist")) return new GoogleAssistTile(this);
+        else if (tileSpec.equals("voiceassist")) return new GoogleVoiceAssistTile(this);
         // Intent tiles.
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(this,tileSpec);
         else if (tileSpec.startsWith(CustomTile.PREFIX)) return CustomTile.create(this,tileSpec);
