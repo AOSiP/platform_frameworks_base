@@ -53,4 +53,9 @@
     <!-- Custom Carrier Label -->
     <color name="status_bar_carrier_color">#FFFFFFFF</color>
 
+    <!-- Screenshot action colors -->
+    <color name="screenshot_flash_color">#b3adadad</color> <!-- light grey with some transparency -->
+    <color name="screenshot_background_color">@android:color/black</color>
+</resources>
+
 </resources>
