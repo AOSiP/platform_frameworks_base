@@ -98,6 +98,10 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     private ImageView mCLogoLeft;
     private ImageView mCLogoRight;
 
+    // Statusbar weather
+    private TextView mWeatherTextView;
+    private ImageView mWeatherImageView;
+
     private int mIconSize;
     private int mIconHPadding;
 
@@ -167,6 +171,10 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mDarkModeIconColorSingleTone = context.getColor(R.color.dark_mode_icon_color_single_tone);
         mLightModeIconColorSingleTone = context.getColor(R.color.light_mode_icon_color_single_tone);
         mHandler = new Handler();
+
+        mWeatherTextView = (TextView) statusBar.findViewById(R.id.weather_temp);
+        mWeatherImageView = (ImageView) statusBar.findViewById(R.id.weather_image);
+
         loadDimens();
 
         mClock.setStatusBarIconController(this);
@@ -610,6 +618,8 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mNetworkTraffic.setDarkIntensity(mDarkIntensity);
         mCarrierLabel.setTextColor(getTint(mTintArea, mCarrierLabel, mIconTint));
         mPhoneStatusBar.setTickerTint(mIconTint);
+        mWeatherTextView.setTextColor(mIconTint);
+        mWeatherImageView.setImageTintList(ColorStateList.valueOf(mIconTint));
         mCustomLogo = Settings.System.getIntForUser(mContext.getContentResolver(),
                Settings.System.CUSTOM_LOGO_STYLE, 0,
                UserHandle.USER_CURRENT);
@@ -620,7 +630,7 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
          	    mCLogo.setImageTintList(ColorStateList.valueOf(mIconTint));
          	    mCLogoLeft.setImageTintList(ColorStateList.valueOf(mIconTint));
          	    mCLogoRight.setImageTintList(ColorStateList.valueOf(mIconTint));
-                }
+         }
     }
 
     public void appTransitionPending() {

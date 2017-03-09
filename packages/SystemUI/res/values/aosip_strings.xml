@@ -257,4 +257,7 @@
          [CHAR LIMIT=4] -->
     <string name="status_bar_notification_info_overflow" translatable="false">\u221E</string>
 
+    <!-- Weather string format in expanded statusbar header -->
+    <string name="status_bar_weather_format"><xliff:g id="temp">%1$s</xliff:g></string>
+
 </resources>
