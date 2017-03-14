@@ -27,4 +27,8 @@
     <color name="status_bar_carrier_color">#FFFFFFFF</color>
     <!-- Navigation button ripple color -->
     <color name="navbutton_ripple_color">#FFFFFFFF</color>
+
+    <!-- OmniJaws detailed view temperature text -->
+    <color name="omni_jaws_detailed_temperature_color">@android:color/white</color>
+
 </resources>
