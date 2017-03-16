@@ -4732,6 +4732,16 @@ public final class Settings {
          */
         public static final String FULL_GESTURE_NAVBAR_DT2S = "full_gesture_navbar_dt2s";
 
+        /**
+         * Disable expanding quick settings on secure lock screens
+         *
+         * @hide
+         */
+        public static final String LOCK_QS_DISABLED = "lockscreen_qs_disabled";
+
+        private static final Validator LOCK_QS_DISABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
        /**
          * Whether to wake the display when plugging or unplugging the charger
          *
@@ -4932,6 +4942,7 @@ public final class Settings {
             STATUSBAR_CLOCK_DATE_FORMAT,
             STATUS_BAR_BRIGHTNESS_CONTROL,
             VOLUME_KEYS_CONTROL_RING_TONE,
+            LOCK_QS_DISABLED,
             USE_OLD_MOBILETYPE,
             STATUSBAR_HIDE_NOTCH,
             NOTIFICATION_SOUND_VIB_SCREEN_ON,
@@ -5078,6 +5089,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_STYLE);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_FORMAT);
             PRIVATE_SETTINGS.add(STATUS_BAR_BRIGHTNESS_CONTROL);
+            PRIVATE_SETTINGS.add(LOCK_QS_DISABLED);
             PRIVATE_SETTINGS.add(SCREENSHOT_DEFAULT_MODE);
             PRIVATE_SETTINGS.add(SWAP_VOLUME_BUTTONS);
             PRIVATE_SETTINGS.add(VOLUME_KEYS_CONTROL_RING_TONE);
@@ -5200,6 +5212,7 @@ public final class Settings {
             VALIDATORS.put(STATUSBAR_CLOCK_DATE_STYLE, STATUSBAR_CLOCK_DATE_STYLE_VALIDATOR);
             VALIDATORS.put(STATUSBAR_CLOCK_DATE_FORMAT, STATUSBAR_CLOCK_DATE_FORMAT_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_BRIGHTNESS_CONTROL, STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR);
+            VALIDATORS.put(LOCK_QS_DISABLED, LOCK_QS_DISABLED_VALIDATOR);
             VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
             VALIDATORS.put(VOLUME_KEYS_CONTROL_RING_TONE,VOLUME_KEYS_CONTROL_RING_TONE_VALIDATOR);
             VALIDATORS.put(STATUSBAR_HIDE_NOTCH, STATUSBAR_HIDE_NOTCH_VALIDATOR);
