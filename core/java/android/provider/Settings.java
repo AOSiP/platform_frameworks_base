@@ -7812,10 +7812,39 @@ public final class Settings {
                 "camera_double_tap_power_gesture_disabled";
 
         /**
-         * Whether to sync the battery tile stile with the statusbar battery icon style
+         * Display style of the status bar battery information
+         * 0: Display the battery an icon in portrait mode
+         * 2: Display the battery as a circle
+         * 4: Hide the battery status information
+         * 5: Display the battery an icon in landscape mode
+         * 6: Display the battery as plain text
+         * 7: Display the battery as solid circle
+         * 8: Display the battery as big circle
+         * default: 0
          * @hide
          */
-        public static final String STATUS_BAR_BATTERY_STYLE_TILE = "status_bar_battery_style_tile";
+        public static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+
+        /**
+         * Display style of the battery tile
+         * 0: Display the battery an icon in portrait mode
+         * 2: Display the battery as a circle
+         * 5: Display the battery an icon in landscape mode
+         * 7: Display the battery as solid circle
+         * 8: Display the battery as big circle
+         * default: 0
+         * @hide
+         */
+        public static final String BATTERY_TILE_STYLE = "battery_tile_style";
+
+       /**
+         * Status bar battery %
+         * 0: Hide the battery percentage
+         * 1: Display the battery percentage inside the icon
+         * 2: Display the battery percentage next to the icon
+         * @hide
+         */
+        public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
         /**
          * Battery icon color while charging
@@ -8043,28 +8072,6 @@ public final class Settings {
          * @hide
          */
         public static final String ONE_HANDED_MODE_UI = "one_handed_mode_ui";
-
-       /**
-         * Status bar battery %
-         * 0: Hide the battery percentage
-         * 1: Display the battery percentage inside the icon
-         * 2: Display the battery percentage next to the icon
-         * @hide
-         */
-        public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-
-        /**
-         * Display style of the status bar battery information
-         * 0: Display the battery an icon in portrait mode
-         * 2: Display the battery as a circle
-         * 4: Hide the battery status information
-         * 5: Display the battery an icon in landscape mode
-         * 6: Display the battery as plain text
-         * default: 0
-         * @hide
-         */
-        public static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-
         
         /**
          * Has this pairable device been paired or upgraded from a previously paired system.
@@ -8183,7 +8190,7 @@ public final class Settings {
             NFC_PAYMENT_DEFAULT_COMPONENT,
             STATUS_BAR_SHOW_BATTERY_PERCENT,
             STATUS_BAR_BATTERY_STYLE,
-            STATUS_BAR_BATTERY_STYLE_TILE,
+            BATTERY_TILE_STYLE,
             LOCKSCREEN_QUICK_UNLOCK_CONTROL
         };
 
