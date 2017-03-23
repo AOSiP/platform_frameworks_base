@@ -31,4 +31,6 @@
     <!-- OmniJaws detailed view temperature text -->
     <color name="omni_jaws_detailed_temperature_color">@android:color/white</color>
 
+    <!-- Recents Memory bar -->
+    <color name="recents_memory_text_color">@android:color/white</color>
 </resources>
