@@ -100,6 +100,7 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     public static final String CAMERA_LAUNCH_SOURCE_AFFORDANCE = "lockscreen_affordance";
     public static final String CAMERA_LAUNCH_SOURCE_WIGGLE = "wiggle_gesture";
     public static final String CAMERA_LAUNCH_SOURCE_POWER_DOUBLE_TAP = "power_double_tap";
+    public static final String CAMERA_LAUNCH_SOURCE_SCREEN_GESTURE = "screen_gesture";
 
     public static final String EXTRA_CAMERA_LAUNCH_SOURCE
             = "com.android.systemui.camera_launch_source";
