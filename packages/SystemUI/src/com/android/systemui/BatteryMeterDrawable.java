@@ -107,6 +107,7 @@ public class BatteryMeterDrawable extends Drawable implements
     private boolean mForceChargeBatteryText;
     private int  mTextChargingSymbol;
     private boolean mListening;
+    private boolean mCharging;
 
     private float mTextX, mTextY; // precalculated position for drawText() to appear centered
 
@@ -776,18 +777,18 @@ public class BatteryMeterDrawable extends Drawable implements
             // has been set to clear.  Clear always clears regardless of alpha level ;)
             final BitmapDrawable bd = (BitmapDrawable) d;
             bd.getPaint().set(!mPluggedIn || (mPluggedIn && mShowPercent == 1 && (!mForceChargeBatteryText
-                                                                    || (mForceChargeBatteryText && mTextChargingSymbol != 0)))
-                                            || (mPluggedIn && mShowPercent == 2 && mTextChargingSymbol != 0)
-                                            || (mPluggedIn && mShowPercent == 0  && (mForceChargeBatteryText && mTextChargingSymbol != 0))
-                                            ? mClearPaint : mTextAndBoltPaint);
+                    || (mForceChargeBatteryText && mTextChargingSymbol != 0 && !mIsBatteryTile)))
+                    || (mPluggedIn && mShowPercent == 2 && mTextChargingSymbol != 0)
+                    || (mPluggedIn && mShowPercent == 0  && (mForceChargeBatteryText && mTextChargingSymbol != 0))
+                    ? mClearPaint : mTextAndBoltPaint);
             if (mIsBatteryTile) {
                 mBoltDrawable.setTint(getBoltColor());
             }
         } else {
             d.setAlpha(!mPluggedIn || (mPluggedIn && mShowPercent == 1 && (!mForceChargeBatteryText
-                                                            || (mForceChargeBatteryText && mTextChargingSymbol != 0)))
-                                    || (mPluggedIn && mShowPercent == 2 && mTextChargingSymbol != 0)
-                                    || (mPluggedIn && mShowPercent == 0  && (mForceChargeBatteryText && mTextChargingSymbol != 0)) ? 0 : 255);
+                    || (mForceChargeBatteryText && mTextChargingSymbol != 0 && !mIsBatteryTile)))
+                    || (mPluggedIn && mShowPercent == 2 && mTextChargingSymbol != 0)
+                    || (mPluggedIn && mShowPercent == 0  && (mForceChargeBatteryText && mTextChargingSymbol != 0)) ? 0 : 255);
         }
     }
 
