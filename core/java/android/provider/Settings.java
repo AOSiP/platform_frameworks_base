@@ -4153,6 +4153,12 @@ public final class Settings {
         public static final String STATUS_BAR_TICKER_FONT_STYLE = "status_bar_ticker_font_style";
 
         /**
+         * Whether to show the heads up for dialer when heads up are disabled
+         * @hide
+         */
+        public static final String ALWAYS_HEADSUP_DIALER = "always_headsup_dialer";
+
+        /**
          * Ticker Text Size
          * @hide
          */
