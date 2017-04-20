@@ -294,6 +294,6 @@
          If < 0, uses the value from HardwarePropertiesManager#getDeviceTemperatures. -->
     <integer name="config_warningTemperature">-1</integer>
 
-    <!-- When true,show the AutoBrightness checkbox -->
-    <bool name="config_show_auto_brightness">false</bool>
+    <bool name="config_show4gForIWlan">false</bool>
+    <bool name="config_showSignalForIWlan">false</bool>
 </resources>
