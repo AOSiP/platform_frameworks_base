@@ -3927,19 +3927,19 @@ public final class Settings {
          * Hide lockscreen date
          * @hide
          */
-        public static final String HIDE_LOCKSCREEN_DATE = "hide_lockscreen_date";
+        public static final String SHOW_LOCKSCREEN_DATE = "hide_lockscreen_date";
 
         /**
          * Hide lockscreen clock
          * @hide
          */
-        public static final String HIDE_LOCKSCREEN_CLOCK = "hide_lockscreen_clock";
+        public static final String SHOW_LOCKSCREEN_CLOCK = "hide_lockscreen_clock";
 
         /**
          * Hide lockscreen date
          * @hide
          */
-        public static final String HIDE_LOCKSCREEN_ALARM = "hide_lockscreen_alarm";
+        public static final String SHOW_LOCKSCREEN_ALARM = "hide_lockscreen_alarm";
 
 	    /**
          * Disable dashboard conditions in settings
