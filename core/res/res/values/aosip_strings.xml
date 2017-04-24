@@ -56,4 +56,7 @@
     <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device</string>
     <!-- Pocket Lock -->
     <string name="pocket_lock_message_long_press">Long press power button to interact</string>
+    <!-- Defines the sysfs attribute path used by pocket bridge
+        to communicate pocket state to the pocket judge kernel driver. -->
+    <string name="config_pocketBridgeSysfsInpocket"></string>
 </resources>
