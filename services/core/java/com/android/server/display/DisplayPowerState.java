@@ -187,7 +187,7 @@ final class DisplayPowerState {
      * @return True if the electron beam was prepared.
      */
     public boolean prepareColorFade(Context context, int mode) {
-        if (mColorFade == null || !mColorFade.prepare(context, mode)) {
+        if (!mColorFade.prepare(context, mode)) {
             mColorFadePrepared = false;
             mColorFadeReady = true;
             return false;
@@ -204,7 +204,7 @@ final class DisplayPowerState {
      */
     public void dismissColorFade() {
         Trace.traceCounter(Trace.TRACE_TAG_POWER, COUNTER_COLOR_FADE, 100);
-        if (mColorFade != null) mColorFade.dismiss();
+        mColorFade.dismiss();
         mColorFadePrepared = false;
         mColorFadeReady = true;
     }
@@ -213,7 +213,7 @@ final class DisplayPowerState {
      * Dismisses the color fade resources.
      */
     public void dismissColorFadeResources() {
-        if (mColorFade != null) mColorFade.dismissResources();
+        mColorFade.dismissResources();
     }
 
     /**
@@ -283,7 +283,7 @@ final class DisplayPowerState {
         pw.println("  mColorFadeDrawPending=" + mColorFadeDrawPending);
 
         mPhotonicModulator.dump(pw);
-        if (mColorFade != null) mColorFade.dump(pw);
+        mColorFade.dump(pw);
     }
 
     private void scheduleScreenUpdate() {
