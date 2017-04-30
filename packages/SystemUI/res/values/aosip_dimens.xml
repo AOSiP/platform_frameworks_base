@@ -44,4 +44,7 @@
     <dimen name="qs_panel_top_offset_normal">80dp</dimen>
     <dimen name="qs_panel_top_offset_header">110dp</dimen>
 
+    <!-- Recents task locking button -->
+    <dimen name="recents_task_view_header_lock_button_padding">44dp</dimen>
+
 </resources>
