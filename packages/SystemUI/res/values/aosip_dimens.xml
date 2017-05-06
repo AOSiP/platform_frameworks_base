@@ -38,7 +38,7 @@
     <dimen name="net_traffic_multi_text_size">8dp</dimen>
 
     <!-- carrier label text height -->
-    <dimen name="status_bar_carrier_height">14dp</dimen>
+    <dimen name="status_bar_carrier_height">14sp</dimen>
 
     <!-- QS headers -->
     <dimen name="qs_panel_top_offset_normal">80dp</dimen>
