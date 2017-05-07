@@ -725,7 +725,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
                     Settings.System.ACCELEROMETER_ROTATION),
                     false, this, UserHandle.USER_ALL);
-
+            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
+                  Settings.System.QS_FOOTER_WARNINGS),
+                  false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -738,6 +740,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             mStatusBarWindowManager.updateKeyguardScreenRotation();
         }
     }
+
     private OmniSettingsObserver mOmniSettingsObserver = new OmniSettingsObserver(mHandler);
     private int mInteractingWindows;
     private boolean mAutohideSuspended;
