@@ -4588,7 +4588,75 @@ public final class Settings {
          * Whether to enable the pixel navbar animation
          * @hide
          */
+<<<<<<< HEAD
         public static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
+=======
+        public static final Set<String> PRIVATE_SETTINGS = new ArraySet<>();
+        static {
+            PRIVATE_SETTINGS.add(WIFI_USE_STATIC_IP);
+            PRIVATE_SETTINGS.add(END_BUTTON_BEHAVIOR);
+            PRIVATE_SETTINGS.add(ADVANCED_SETTINGS);
+            PRIVATE_SETTINGS.add(SCREEN_AUTO_BRIGHTNESS_ADJ);
+            PRIVATE_SETTINGS.add(VIBRATE_INPUT_DEVICES);
+            PRIVATE_SETTINGS.add(VOLUME_MASTER);
+            PRIVATE_SETTINGS.add(MASTER_MONO);
+            PRIVATE_SETTINGS.add(NOTIFICATIONS_USE_RING_VOLUME);
+            PRIVATE_SETTINGS.add(VIBRATE_IN_SILENT);
+            PRIVATE_SETTINGS.add(MEDIA_BUTTON_RECEIVER);
+            PRIVATE_SETTINGS.add(HIDE_ROTATION_LOCK_TOGGLE_FOR_ACCESSIBILITY);
+            PRIVATE_SETTINGS.add(DTMF_TONE_TYPE_WHEN_DIALING);
+            PRIVATE_SETTINGS.add(HEARING_AID);
+            PRIVATE_SETTINGS.add(TTY_MODE);
+            PRIVATE_SETTINGS.add(NOTIFICATION_LIGHT_PULSE);
+            PRIVATE_SETTINGS.add(POINTER_LOCATION);
+            PRIVATE_SETTINGS.add(SHOW_TOUCHES);
+            PRIVATE_SETTINGS.add(WINDOW_ORIENTATION_LISTENER_LOG);
+            PRIVATE_SETTINGS.add(POWER_SOUNDS_ENABLED);
+            PRIVATE_SETTINGS.add(DOCK_SOUNDS_ENABLED);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_SOUNDS_ENABLED);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_DISABLED);
+            PRIVATE_SETTINGS.add(LOW_BATTERY_SOUND);
+            PRIVATE_SETTINGS.add(DESK_DOCK_SOUND);
+            PRIVATE_SETTINGS.add(DESK_UNDOCK_SOUND);
+            PRIVATE_SETTINGS.add(CAR_DOCK_SOUND);
+            PRIVATE_SETTINGS.add(CAR_UNDOCK_SOUND);
+            PRIVATE_SETTINGS.add(LOCK_SOUND);
+            PRIVATE_SETTINGS.add(UNLOCK_SOUND);
+            PRIVATE_SETTINGS.add(SIP_RECEIVE_CALLS);
+            PRIVATE_SETTINGS.add(SIP_CALL_OPTIONS);
+            PRIVATE_SETTINGS.add(SIP_ALWAYS);
+            PRIVATE_SETTINGS.add(SIP_ADDRESS_ONLY);
+            PRIVATE_SETTINGS.add(SIP_ASK_ME_EACH_TIME);
+            PRIVATE_SETTINGS.add(POINTER_SPEED);
+            PRIVATE_SETTINGS.add(LOCK_TO_APP_ENABLED);
+            PRIVATE_SETTINGS.add(EGG_MODE);
+            PRIVATE_SETTINGS.add(SHOW_BATTERY_PERCENT);
+            PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_NAVBAR);
+            PRIVATE_SETTINGS.add(SWAP_VOLUME_BUTTONS);
+            PRIVATE_SETTINGS.add(VOLUME_KEYS_CONTROL_MEDIA_STREAM);
+            PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_LOCKSCREEN);
+            PRIVATE_SETTINGS.add(STATUS_BAR_QUICK_QS_PULLDOWN);
+            PRIVATE_SETTINGS.add(VOLUME_BUTTON_MUSIC_CONTROL);
+            PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
+            PRIVATE_SETTINGS.add(QS_ROWS_PORTRAIT);
+            PRIVATE_SETTINGS.add(QS_ROWS_LANDSCAPE);
+            PRIVATE_SETTINGS.add(QS_COLUMNS_PORTRAIT);
+            PRIVATE_SETTINGS.add(QS_COLUMNS_LANDSCAPE);
+            PRIVATE_SETTINGS.add(BATTERY_LIGHT_ALLOW_ON_DND);
+            PRIVATE_SETTINGS.add(BATTERY_LIGHT_LOW_COLOR);
+            PRIVATE_SETTINGS.add(BATTERY_LIGHT_MEDIUM_COLOR);
+            PRIVATE_SETTINGS.add(BATTERY_LIGHT_FULL_COLOR);
+            PRIVATE_SETTINGS.add(BATTERY_LIGHT_REALLYFULL_COLOR);
+            PRIVATE_SETTINGS.add(BATTERY_LIGHT_LOW_BLINKING);
+            PRIVATE_SETTINGS.add(LESS_BORING_HEADS_UP);
+            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_STATE);
+            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
+            PRIVATE_SETTINGS.add(WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_MEDIA_METADATA);
+            PRIVATE_SETTINGS.add(VOLUME_LINK_NOTIFICATION);
+            PRIVATE_SETTINGS.add(HEADSET_CONNECT_PLAYER);
+        }
+>>>>>>> 330cbfd4485... Launch music player on headset connect: add BT compatibility [1/2]
 
         /**
          * Toast icon
@@ -5134,6 +5202,12 @@ public final class Settings {
 
         /**
          * Whether to launch default music player when headset plugged in
+         * 0 = don't do anything (default)
+         * 1 = launch only on wired connection
+         * 2 = launch only on bt connection but no carkit
+         * 3 = launch only on bt connection
+         * 4 = launch on both connection types but no carkit
+         * 5 = launch on both connection types
          * @hide
          */
         public static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
