@@ -2795,28 +2795,6 @@ public final class Settings {
         public static final int SCREEN_BRIGHTNESS_MODE_AUTOMATIC = 1;
 
         /**
-         * The keyboard brightness to be used while the screen is on.
-         * Valid value range is between 0 and {@link PowerManager#getMaximumKeyboardBrightness()}
-         * @hide
-         */
-        public static final String KEYBOARD_BRIGHTNESS = "keyboard_brightness";
-
-        /**
-         * The button brightness to be used while the screen is on or after a button press,
-         * depending on the value of {@link BUTTON_BACKLIGHT_TIMEOUT}.
-         * Valid value range is between 0 and {@link PowerManager#getMaximumButtonBrightness()}
-         * @hide
-         */
-        public static final String BUTTON_BRIGHTNESS = "button_brightness";
-
-        /**
-         * The time in ms to keep the button backlight on after pressing a button.
-         * A value of 0 will keep the buttons on for as long as the screen is on.
-         * @hide
-         */
-        public static final String BUTTON_BACKLIGHT_TIMEOUT = "button_backlight_timeout";
-
-        /**
          * Control whether the process CPU usage meter should be shown.
          *
          * @deprecated This functionality is no longer available as of
@@ -3610,7 +3588,7 @@ public final class Settings {
         };
 
         /**
-         * Beginning of JDCTeam System Settings Additions
+         * Beginning of AOSiP System Settings Additions
          * @hide
          */
 
@@ -3619,102 +3597,6 @@ public final class Settings {
          * @hide
          */
         public static final String VOLBTN_MUSIC_CONTROLS = "volbtn_music_controls";
-
-        /**
-         * Action to perform when the home key is long-pressed.
-         * (Default can be configured via config_longPressOnHomeBehavior)
-         * 0 - Nothing
-         * 1 - Menu
-         * 2 - App-switch
-         * 3 - Search
-         * 4 - Voice search
-         * 5 - In-app search
-         * 6 - Launch Camera
-         * 7 - Last app
-         * @hide
-         */
-        public static final String KEY_HOME_LONG_PRESS_ACTION = "key_home_long_press_action";
-
-        /**
-         * Action to perform when the home key is double-tapped.
-         * (Default can be configured via config_doubleTapOnHomeBehavior)
-         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
-         * @hide
-         */
-        public static final String KEY_HOME_DOUBLE_TAP_ACTION = "key_home_double_tap_action";
-
-        /**
-         * Action to perform when the menu key is pressed. (Default is 1)
-         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
-         * @hide
-         */
-        public static final String KEY_MENU_ACTION = "key_menu_action";
-
-        /**
-         * Action to perform when the menu key is long-pressed.
-         * (Default is 0 on devices with a search key, 3 on devices without)
-         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
-         * @hide
-         */
-        public static final String KEY_MENU_LONG_PRESS_ACTION = "key_menu_long_press_action";
-
-        /**
-         * Action to perform when the assistant (search) key is pressed. (Default is 3)
-         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
-         * @hide
-         */
-        public static final String KEY_ASSIST_ACTION = "key_assist_action";
-
-        /**
-         * Action to perform when the assistant (search) key is long-pressed. (Default is 4)
-         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
-         * @hide
-         */
-        public static final String KEY_ASSIST_LONG_PRESS_ACTION = "key_assist_long_press_action";
-
-        /**
-         * Action to perform when the app switch key is pressed. (Default is 2)
-         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
-         * @hide
-         */
-        public static final String KEY_APP_SWITCH_ACTION = "key_app_switch_action";
-
-        /**
-         * Action to perform when the app switch key is long-pressed. (Default is 0)
-         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
-         * @hide
-         */
-        public static final String KEY_APP_SWITCH_LONG_PRESS_ACTION = "key_app_switch_long_press_action";
-
-        /**
-         * Whether to wake the screen with the home key, the value is boolean.
-         * @hide
-         */
-        public static final String HOME_WAKE_SCREEN = "home_wake_screen";
-
-        /**
-         * Whether to wake the screen with the back key, the value is boolean.
-         * @hide
-         */
-        public static final String BACK_WAKE_SCREEN = "back_wake_screen";
-
-        /**
-         * Whether to wake the screen with the menu key, the value is boolean.
-         * @hide
-         */
-        public static final String MENU_WAKE_SCREEN = "menu_wake_screen";
-
-        /**
-         * Whether to wake the screen with the assist key, the value is boolean.
-         * @hide
-         */
-        public static final String ASSIST_WAKE_SCREEN = "assist_wake_screen";
-
-        /**
-         * Whether to wake the screen with the app switch key, the value is boolean.
-         * @hide
-         */
-        public static final String APP_SWITCH_WAKE_SCREEN = "app_switch_wake_screen";
 
         /**
          * Boolean value whether to link ringtone and notification volume
@@ -6198,12 +6080,6 @@ public final class Settings {
          * @hide
          */
         public static final String SCREENSAVER_DEFAULT_COMPONENT = "screensaver_default_component";
-
-        /**
-         * Whether to allow killing of the foreground app by long-pressing the Back button
-         * @hide
-         */
-        public static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
 
         /**
          * The default NFC payment component

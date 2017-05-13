@@ -1593,8 +1593,6 @@
   <java-symbol type="integer" name="config_carDockRotation" />
   <java-symbol type="integer" name="config_defaultUiModeType" />
   <java-symbol type="integer" name="config_deskDockRotation" />
-  <java-symbol type="integer" name="config_deviceHardwareKeys" />
-  <java-symbol type="integer" name="config_deviceHardwareWakeKeys" />
   <java-symbol type="integer" name="config_doubleTapOnHomeBehavior" />
   <java-symbol type="integer" name="config_lidKeyboardAccessibility" />
   <java-symbol type="integer" name="config_lidNavigationAccessibility" />
@@ -1805,9 +1803,6 @@
   <java-symbol type="integer" name="config_screenBrightnessDark" />
   <java-symbol type="integer" name="config_screenBrightnessDim" />
   <java-symbol type="integer" name="config_screenBrightnessDoze" />
-  <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
-  <java-symbol type="integer" name="config_keyboardBrightnessSettingDefault" />
-  <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
   <java-symbol type="integer" name="config_shutdownBatteryTemperature" />
   <java-symbol type="integer" name="config_undockedHdmiRotation" />
   <java-symbol type="integer" name="config_virtualKeyQuietTimeMillis" />
@@ -2842,16 +2837,6 @@
   <!-- config softap extention feature -->
   <java-symbol type="bool" name="config_softap_extention" />
 
-  <!-- Developer settings - Kill app back press -->
-  <java-symbol type="string" name="app_killed_message" />
-
-  <!-- Config.xml entries -->
-  <java-symbol type="integer" name="config_backKillTimeout" />
-
-  <!-- Last app switch animations -->
-  <java-symbol type="anim" name="last_app_in" />
-  <java-symbol type="anim" name="last_app_out" />
-
   <!-- Allow devices to use wakelock for flashlight -->
   <java-symbol type="bool" name="config_useWakeLockForFlashlight" />
 
@@ -2860,4 +2845,5 @@
   <java-symbol type="bool" name="use_lock_pattern_drawable" />
   <java-symbol type="drawable" name="lockscreen_notselected" />
   <java-symbol type="drawable" name="lockscreen_selected" />
+
 </resources>
