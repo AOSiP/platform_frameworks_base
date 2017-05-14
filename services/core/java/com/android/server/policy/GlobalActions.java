@@ -99,7 +99,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.android.internal.util.jdcteam.PowerMenuConstants.*;
+import static com.android.internal.util.aosip.PowerMenuConstants.*;
 
 /**
  * Helper to show the global actions dialog.  Each item is an {@link Action} that

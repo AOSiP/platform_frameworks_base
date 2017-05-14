@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.jdcteam;
+package com.android.internal.util.aosip;
 
 /* Master list of all actions for the power menu */
 public class PowerMenuConstants {
