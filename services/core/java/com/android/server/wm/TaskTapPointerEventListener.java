@@ -23,6 +23,7 @@ import android.view.MotionEvent;
 import android.view.WindowManagerPolicy.PointerEventListener;
 
 import com.android.server.wm.WindowManagerService.H;
+import com.android.server.am.ActivityManagerService;
 
 import static android.view.Display.DEFAULT_DISPLAY;
 import static android.view.PointerIcon.TYPE_NOT_SPECIFIED;
@@ -104,6 +105,10 @@ public class TaskTapPointerEventListener implements PointerEventListener {
                 }
             }
             break;
+        }
+        if (ActivityManagerService.mIsPerfLockAcquired) {
+            ActivityManagerService.mPerf.perfLockRelease();
+            ActivityManagerService.mIsPerfLockAcquired = false;
         }
     }
 

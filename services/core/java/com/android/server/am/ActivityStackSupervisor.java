@@ -159,6 +159,7 @@ import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.util.TimeUtils;
 import android.view.Display;
+import android.util.BoostFramework;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.content.ReferrerIntent;
@@ -210,6 +211,10 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
     static final int RESUME_TOP_ACTIVITY_MSG = FIRST_SUPERVISOR_STACK_MSG + 2;
     static final int SLEEP_TIMEOUT_MSG = FIRST_SUPERVISOR_STACK_MSG + 3;
     static final int LAUNCH_TIMEOUT_MSG = FIRST_SUPERVISOR_STACK_MSG + 4;
+
+    public BoostFramework mPerfBoost = null;
+    public BoostFramework mPerfPack = null;
+
     static final int HANDLE_DISPLAY_ADDED = FIRST_SUPERVISOR_STACK_MSG + 5;
     static final int HANDLE_DISPLAY_CHANGED = FIRST_SUPERVISOR_STACK_MSG + 6;
     static final int HANDLE_DISPLAY_REMOVED = FIRST_SUPERVISOR_STACK_MSG + 7;
@@ -2143,6 +2148,16 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
 
     void findTaskToMoveToFrontLocked(TaskRecord task, int flags, ActivityOptions options,
             String reason, boolean forceNonResizeable) {
+
+        ActivityStack focusedStack = getFocusedStack();
+        ActivityRecord top_activity = focusedStack != null ? focusedStack.topActivity() : null;
+
+        //top_activity = task.stack.topRunningActivityLocked();
+        /* App is launching from recent apps and it's a new process */
+        if(top_activity != null && top_activity.state == ActivityState.DESTROYED) {
+            acquireAppLaunchPerfLock(top_activity.packageName);
+        }
+
         if ((flags & ActivityManager.MOVE_TASK_NO_USER_ACTION) == 0) {
             mUserLeaving = true;
         }
@@ -3075,6 +3090,23 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
         return true;
     }
 
+    void acquireAppLaunchPerfLock(String packageName) {
+       /* Acquire perf lock during new app launch */
+       if (mPerfPack == null) {
+           mPerfPack = new BoostFramework();
+       }
+       if (mPerfPack != null) {
+           mPerfPack.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, packageName, -1, BoostFramework.Launch.BOOST_V2);
+       }
+
+       if (mPerfBoost == null) {
+           mPerfBoost = new BoostFramework();
+       }
+       if (mPerfBoost != null) {
+           mPerfBoost.perfHint(BoostFramework.VENDOR_HINT_FIRST_LAUNCH_BOOST, packageName, -1, BoostFramework.Launch.BOOST_V1);
+       }
+    }
+
     ActivityRecord findTaskLocked(ActivityRecord r, int displayId) {
         mTmpFindTaskResult.r = null;
         mTmpFindTaskResult.matchedByRootAffinity = false;
@@ -3097,6 +3129,10 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
                 // matches not on the specified display.
                 if (mTmpFindTaskResult.r != null) {
                     if (!mTmpFindTaskResult.matchedByRootAffinity) {
+                        if(mTmpFindTaskResult.r.state == ActivityState.DESTROYED ) {
+                            /*It's a new app launch */
+                            acquireAppLaunchPerfLock(r.packageName);
+                        }
                         return mTmpFindTaskResult.r;
                     } else if (mTmpFindTaskResult.r.getDisplayId() == displayId) {
                         // Note: since the traversing through the stacks is top down, the floating
@@ -3106,6 +3142,11 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
                     }
                 }
             }
+        }
+
+        /* Acquire perf lock *only* during new app launch */
+        if (mTmpFindTaskResult.r == null || mTmpFindTaskResult.r.state == ActivityState.DESTROYED) {
+            acquireAppLaunchPerfLock(r.packageName);
         }
 
         if (DEBUG_TASKS && affinityMatch == null) Slog.d(TAG_TASKS, "No task found");
