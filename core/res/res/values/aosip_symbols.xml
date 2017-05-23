@@ -106,4 +106,6 @@
 
   <!-- Vendor warning -->
   <java-symbol type="string" name="system_error_vendorprint" />
+
+  <java-symbol type="bool" name="config_needsFingerprintAxisInversion" />
 </resources>
