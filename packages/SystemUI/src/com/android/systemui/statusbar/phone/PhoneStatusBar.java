@@ -473,6 +473,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     private int mBatterySaverWarningColor;
 
+    private boolean mFingerprintQuickPulldown;
+
     // for disabling the status bar
     int mDisabled1 = 0;
     int mDisabled2 = 0;
@@ -581,13 +583,13 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_CARRIER),
                     false, this, UserHandle.USER_ALL);
-           resolver.registerContentObserver(Settings.System.getUriFor(
+            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW),
                     false, this, UserHandle.USER_ALL);
-           resolver.registerContentObserver(Settings.System.getUriFor(
+            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_CUSTOM_HEADER),
                     false, this, UserHandle.USER_ALL);
-           resolver.registerContentObserver(Settings.System.getUriFor(
+            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.BATTERY_SAVER_MODE_COLOR),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
@@ -596,6 +598,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DATA_ACTIVITY_ARROWS),
                     false, this, UserHandle.USER_ALL);	
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN_FP),
+                    false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -699,6 +704,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     UserHandle.USER_CURRENT);
             mShowCarrierLabel = Settings.System.getIntForUser(resolver,
                     Settings.System.STATUS_BAR_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
+            mFingerprintQuickPulldown =  Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN_FP, 0, UserHandle.USER_CURRENT) == 1;
             boolean mShowLteFourGee = Settings.System.getIntForUser(resolver,
                     Settings.System.SHOW_LTE_FOURGEE, 0, UserHandle.USER_CURRENT) == 1;
             boolean mDataWifiActivityArrows = Settings.System.getIntForUser(resolver,
@@ -3234,14 +3241,18 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             MetricsLogger.action(mContext, !isRotated ? MetricsEvent.ACTION_SYSTEM_NAVIGATION_KEY_DOWN
                     : MetricsEvent.ACTION_SYSTEM_NAVIGATION_KEY_DOWN);
             if (mNotificationPanel.isFullyCollapsed()) {
-                mNotificationPanel.expand(true /* animate */);
-                MetricsLogger.count(mContext, NotificationPanelView.COUNTER_PANEL_OPEN, 1);
+                if (mFingerprintQuickPulldown) {
+                    mNotificationPanel.expandWithQs();
+                    MetricsLogger.count(mContext, NotificationPanelView.COUNTER_PANEL_OPEN_QS, 1);
+                } else {
+                    mNotificationPanel.expand(true /* animate */);
+                    MetricsLogger.count(mContext, NotificationPanelView.COUNTER_PANEL_OPEN, 1);
+                }
             } else if (!mNotificationPanel.isInSettings() && !mNotificationPanel.isExpanding()){
                 mNotificationPanel.flingSettings(0 /* velocity */, true /* expand */);
                 MetricsLogger.count(mContext, NotificationPanelView.COUNTER_PANEL_OPEN_QS, 1);
             }
         }
-
     }
 
     boolean panelsEnabled() {
