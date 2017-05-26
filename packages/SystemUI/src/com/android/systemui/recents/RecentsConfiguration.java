@@ -92,7 +92,7 @@ public class RecentsConfiguration {
         public void update() {
             mIsGridEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.RECENTS_USE_GRID, isGridEnabledDefault ? 0 : 1,
-                    UserHandle.USER_CURRENT) == 1;
+                    UserHandle.USER_CURRENT) == 0;
         }
     }
 
