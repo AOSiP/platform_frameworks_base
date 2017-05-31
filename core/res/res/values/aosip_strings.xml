@@ -38,17 +38,13 @@
     <string name="global_action_search">Search</string>
     <string name="global_action_torch">Flashlight</string>
     <string name="global_action_voicesearch">Voice Search</string>
-
     <string name="permlab_preventpower">override power key</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_preventpower">Allows an app to override the power key.</string>
-
     <!-- Single hand mode -->
     <string name="singlehandmode_click_hint_message">Touch outside the screen to exit single hand mode</string>
-
     <!-- ADB over network -->
     <string name="adb_net_active_notification_title">ADB over network enabled</string>
     <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
     <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
-
 </resources>

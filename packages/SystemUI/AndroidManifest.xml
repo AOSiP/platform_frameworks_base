@@ -231,7 +231,7 @@
 
         <!-- started from PhoneWindowManager
              TODO: Should have an android:permission attribute -->
-        <service android:name=".purenexus.screenrecord.TakeScreenrecordService"
+        <service android:name=".aosip.screenrecord.TakeScreenrecordService"
             android:process=":screenrecord"
             android:exported="false" />
 

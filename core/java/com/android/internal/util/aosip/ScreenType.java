@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.cm;
+package com.android.internal.util.aosip;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

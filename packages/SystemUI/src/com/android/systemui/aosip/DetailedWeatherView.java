@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.android.systemui.omni;
+package com.android.systemui.aosip;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -38,7 +38,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.systemui.R;
-import com.android.systemui.omni.OmniJawsClient;
+import com.android.systemui.aosip.OmniJawsClient;
 import com.android.systemui.statusbar.phone.ActivityStarter;
 
 import java.text.SimpleDateFormat;
