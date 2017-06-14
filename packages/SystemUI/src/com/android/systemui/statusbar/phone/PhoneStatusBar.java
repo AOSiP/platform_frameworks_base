@@ -389,6 +389,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     private TextView mCenterClock;
     private int mClockLocation;
 
+    private boolean mShowClock;
+
     // expanded notifications
     protected NotificationPanelView mNotificationPanel; // the sliding/resizing panel within the notification window
     View mExpandedContents;
@@ -601,6 +603,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN_FP),
                     false, this, UserHandle.USER_ALL);
+           resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_CLOCK),
+                    false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -672,6 +677,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
         public void update() {
             ContentResolver resolver = mContext.getContentResolver();
+
             int mode = Settings.System.getIntForUser(mContext.getContentResolver(),
                             Settings.System.SCREEN_BRIGHTNESS_MODE,
                             Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
@@ -706,6 +712,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     Settings.System.STATUS_BAR_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
             mFingerprintQuickPulldown =  Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN_FP, 0, UserHandle.USER_CURRENT) == 1;
+            mShowClock = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_CLOCK, 1, UserHandle.USER_CURRENT) == 1;
             boolean mShowLteFourGee = Settings.System.getIntForUser(resolver,
                     Settings.System.SHOW_LTE_FOURGEE, 0, UserHandle.USER_CURRENT) == 1;
             boolean mDataWifiActivityArrows = Settings.System.getIntForUser(resolver,
@@ -3938,7 +3946,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             mTicking = true;
             mStatusBarContents.setVisibility(View.GONE);
             mStatusBarContents.startAnimation(loadAnim(true, null));
-            if (mClockLocation == 1) {
+            if (mShowClock && mClockLocation == 1) {
                 mCenterClock.setVisibility(View.GONE);
                 mCenterClock.startAnimation(loadAnim(true, null));
             }
@@ -3953,7 +3961,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             mStatusBarContents.startAnimation(loadAnim(false, null));
             mTickerView.setVisibility(View.GONE);
             mTickerView.startAnimation(loadAnim(true, mTickingDoneListener));
-            if (mClockLocation == 1) {
+            if (mShowClock && mClockLocation == 1) {
                 mCenterClock.setVisibility(View.VISIBLE);
                 mCenterClock.startAnimation(loadAnim(false, null));
             }
@@ -3965,7 +3973,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                 mStatusBarContents.setVisibility(View.VISIBLE);
                 mStatusBarContents
                         .startAnimation(loadAnim(false, null));
-                if (mClockLocation == 1) {
+                if (mShowClock && mClockLocation == 1) {
                     mCenterClock.setVisibility(View.VISIBLE);
                     mCenterClock.startAnimation(loadAnim(false, null));
                 }
