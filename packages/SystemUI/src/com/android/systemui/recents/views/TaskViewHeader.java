@@ -282,6 +282,9 @@ public class TaskViewHeader extends FrameLayout
      */
     private void updateLayoutParams(View icon, View title, View secondaryButton,
             View tertiaryButton, View button) {
+    private void updateLayoutParams(View icon, View title, View fourthButton,
+            View thirdButton, View secondButton, View button) {
+
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, mHeaderBarHeight, Gravity.TOP);
         setLayoutParams(lp);
@@ -294,11 +297,28 @@ public class TaskViewHeader extends FrameLayout
                 ? 2 * mHeaderBarHeight
                 : mHeaderBarHeight);
         title.setLayoutParams(lp);
-        if (secondaryButton != null) {
+        //move task button
+        if (fourthButton != null) {
+            lp = new FrameLayout.LayoutParams(mHeaderBarHeight, mHeaderBarHeight, Gravity.END);
+            lp.setMarginEnd(4 * mHeaderBarHeight);
+            fourthButton.setLayoutParams(lp);
+            fourthButton.setPadding(mHeaderButtonPadding, mHeaderButtonPadding,
+                    mHeaderButtonPadding, mHeaderButtonPadding);
+        }
+        //app pinning button
+        if (thirdButton != null) {
+            lp = new FrameLayout.LayoutParams(mHeaderBarHeight, mHeaderBarHeight, Gravity.END);
+            lp.setMarginEnd(2 * mHeaderBarHeight); //2x so it goes to left of lock task button
+            thirdButton.setLayoutParams(lp);
+            thirdButton.setPadding(mHeaderButtonPadding, mHeaderButtonPadding,
+                    mHeaderButtonPadding, mHeaderButtonPadding);
+        }
+        //lock task button
+        if (secondButton != null) {
             lp = new FrameLayout.LayoutParams(mHeaderBarHeight, mHeaderBarHeight, Gravity.END);
             lp.setMarginEnd(mHeaderBarHeight);
-            secondaryButton.setLayoutParams(lp);
-            secondaryButton.setPadding(mHeaderButtonPadding, mHeaderButtonPadding,
+            secondButton.setLayoutParams(lp);
+            secondButton.setPadding(mHeaderButtonPadding, mHeaderButtonPadding,
                     mHeaderButtonPadding, mHeaderButtonPadding);
         }
         if (tertiaryButton != null) {
@@ -308,6 +328,7 @@ public class TaskViewHeader extends FrameLayout
             tertiaryButton.setPadding(mHeaderButtonPadding, mHeaderButtonPadding,
                     mHeaderButtonPadding, mHeaderButtonPadding);
         }
+        //dismiss button
         lp = new FrameLayout.LayoutParams(mHeaderBarHeight, mHeaderBarHeight, Gravity.END);
         button.setLayoutParams(lp);
         button.setPadding(mHeaderButtonPadding, mHeaderButtonPadding, mHeaderButtonPadding,
@@ -344,6 +365,10 @@ public class TaskViewHeader extends FrameLayout
                     mDismissButton);
             if (mAppOverlayView != null) {
                 updateLayoutParams(mAppIconView, mAppTitleView, null, null, mAppInfoView);
+            updateLayoutParams(mIconView, mTitleView, mMoveTaskButton, mPinButton, mLockTaskButton,
+                    mDismissButton);
+            if (mAppOverlayView != null) {
+                updateLayoutParams(mAppIconView, mAppTitleView, null, null, null, mAppInfoView);
             }
         }
     }
@@ -792,6 +817,7 @@ public class TaskViewHeader extends FrameLayout
             mAppInfoView.setOnClickListener(this);
             mAppTitleView = (TextView) mAppOverlayView.findViewById(R.id.app_title);
             updateLayoutParams(mAppIconView, mAppTitleView, null, null, mAppInfoView);
+            updateLayoutParams(mAppIconView, mAppTitleView, null, null, null, mAppInfoView);
         }
 
         // Update the overlay contents for the current app
