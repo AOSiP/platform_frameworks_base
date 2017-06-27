@@ -7825,6 +7825,13 @@ public final class Settings {
         public static final String NIGHT_DISPLAY_CUSTOM_START_TIME = "night_display_custom_start_time";
 
         /**
+         * Whether to pulse the battery icon when charging
+         *
+         * @hide
+         */
+        public static final String STATUS_BAR_PULSE_CHARGING_BATTERY = "status_bar_pulse_charging_battery";
+
+        /**
          * Custom time when Night display is scheduled to deactivate.
          * Represented as milliseconds from midnight (e.g. 21600000 == 6am).
          * @hide
