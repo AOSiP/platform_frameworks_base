@@ -2254,10 +2254,5 @@ message MetricsEvent {
     OWLSNEST = 420;
     OWL_TILE = 421;
 
-    // JDCTeam Settings
-    JDC_SETTINGS = 422;
-
-    // Location detail adapter
-    QS_LOCATION_DETAIL = 504;
   }
 }
