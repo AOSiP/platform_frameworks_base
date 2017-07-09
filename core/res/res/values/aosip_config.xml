@@ -97,7 +97,9 @@
         <item>com.whatsapp.plus</item>
         <item>com.yowhatsapp</item>
         <item>org.telegram.messenger</item>
+        <item>org.telegram.messenger.plus</item>
         <item>org.telegram.plus</item>
+        <item>org.thunderdog.challegram</item>
         <item>com.bsb.hike</item>
         <item>com.gbinsta.android</item>
     </string-array>
@@ -116,4 +118,5 @@
 
     <!-- Aspect ratio of screen -->
     <item name="config_screenAspectRatio" format="float" type="dimen">2.1</item>
+
 </resources>
