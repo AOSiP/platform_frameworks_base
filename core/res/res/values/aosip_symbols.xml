@@ -87,4 +87,8 @@
 
     <!-- Vendor mismatched fingerprint warning -->
     <java-symbol type="string" name="system_error_vendorprint" />
+
+  <!-- Sensor block-per package -->
+  <java-symbol type="array" name="config_blockPackagesSensorDrain" />
+
 </resources>
