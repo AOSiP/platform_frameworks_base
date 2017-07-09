@@ -4051,7 +4051,7 @@ public final class Settings {
          * @hide
          */
         public static final String HIDE_LOCKSCREEN_ALARM = "hide_lockscreen_alarm";
- 
+
         /**
          * Whether to mute annoying notifications
          * @hide
@@ -4091,7 +4091,7 @@ public final class Settings {
         */
         public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
 
-        /** Whether to skip music track with volume rocker 
+        /** Whether to skip music track with volume rocker
         /**
          * @hide
          */
@@ -4485,23 +4485,23 @@ public final class Settings {
         public static final String STATUSBAR_CLOCK_DATE_FORMAT = "statusbar_clock_date_format";
 
         /**
-<<<<<<< HEAD
+
          * Whether to display the 4g or lte network icon in the statusbar
          * @hide
          */
         public static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
-=======
+          /**
          * @hide
          */
         public static final String START_SCREEN_STATE_SERVICE = "start_screen_state_service";
->>>>>>> 36d9e758c9f... Suspend Actions [1/3]
+
 
         /**
          * @hide
          */
-<<<<<<< HEAD
+
         public static final String SCREENRECORD_QUALITY_MODE = "screenrecord_quality_mode";
-=======
+
         public static final String SCREEN_STATE_TWOG = "screen_state_twog";
 
         /**
@@ -4523,7 +4523,7 @@ public final class Settings {
          * @hide
          */
         public static final String SCREEN_STATE_ON_DELAY = "screen_state_on_delay";
->>>>>>> 36d9e758c9f... Suspend Actions [1/3]
+
 
         /**
          * Whether to show the kill app button in notification guts
