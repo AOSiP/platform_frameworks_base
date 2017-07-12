@@ -53,6 +53,7 @@ public class BoostFramework {
     private static Method mPerfHintFunc = null;
     private static Method mReleaseFunc = null;
     private static Method mReleaseHandlerFunc = null;
+    private static Constructor<Class> mConstructor = null;
 
 /** @hide */
     private Object mPerf = null;
@@ -89,13 +90,13 @@ public class BoostFramework {
                     mAcquireFunc = mPerfClass.getMethod("perfLockAcquire", argClasses);
 
                     argClasses = new Class[] {int.class, String.class, int.class, int.class};
-                    mPerfHintFunc =  mPerfClass.getMethod("perfHint", argClasses);
+                    mPerfHintFunc = mPerfClass.getMethod("perfHint", argClasses);
 
                     argClasses = new Class[] {};
-                    mReleaseFunc =  mPerfClass.getMethod("perfLockRelease", argClasses);
+                    mReleaseFunc = mPerfClass.getMethod("perfLockRelease", argClasses);
 
                     argClasses = new Class[] {int.class};
-                    mReleaseHandlerFunc =  mPerfClass.getDeclaredMethod("perfLockReleaseHandler", argClasses);
+                    mReleaseHandlerFunc = mPerfClass.getDeclaredMethod("perfLockReleaseHandler", argClasses);
 
                     mIsLoaded = true;
                 }
@@ -132,6 +133,18 @@ public class BoostFramework {
         int ret = -1;
         try {
             Object retVal = mReleaseFunc.invoke(mPerf);
+            ret = (int)retVal;
+        } catch(Exception e) {
+            Log.e(TAG,"Exception " + e);
+        }
+        return ret;
+    }
+
+/** @hide */
+    public int perfLockReleaseHandler(int handle) {
+        int ret = -1;
+        try {
+            Object retVal = mReleaseHandlerFunc.invoke(mPerf, handle);
             ret = (int)retVal;
         } catch(Exception e) {
             Log.e(TAG,"Exception " + e);
