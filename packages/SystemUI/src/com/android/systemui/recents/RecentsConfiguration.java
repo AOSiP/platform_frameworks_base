@@ -18,14 +18,9 @@ package com.android.systemui.recents;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.database.ContentObserver;
 import android.graphics.Rect;
 
-import android.os.Handler;
 import android.os.SystemProperties;
-import android.os.UserHandle;
-import android.provider.Settings;
-
 import com.android.systemui.R;
 import com.android.systemui.recents.misc.SystemServicesProxy;
 
@@ -63,38 +58,10 @@ public class RecentsConfiguration {
     /** Misc **/
     public boolean fakeShadows;
     public int svelteLevel;
-    private Context mContext;
 
     // Whether this product supports Grid-based Recents. If this is field is set to true, then
     // Recents will layout task views in a grid mode when there's enough space in the screen.
-    private boolean isGridEnabledDefault;
-    private boolean mIsGridEnabled;
-    private Handler mHandler = new Handler();
-    private SettingsObserver mSettingsObserver;
-
-     private class SettingsObserver extends ContentObserver {
-        SettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.RECENTS_USE_GRID),
-                    false, this);
-            update();
-        }
-
-        @Override
-        public void onChange(boolean selfChange) {
-            update();
-        }
-
-        public void update() {
-            mIsGridEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.RECENTS_USE_GRID, isGridEnabledDefault ? 0 : 1,
-                    UserHandle.USER_CURRENT) == 0;
-        }
-    }
+    public boolean isGridEnabled;
 
     public int fabEnterAnimDuration;
     public int fabEnterAnimDelay;
@@ -105,14 +72,10 @@ public class RecentsConfiguration {
         // settings or via multi window
         SystemServicesProxy ssp = Recents.getSystemServices();
         Context appContext = context.getApplicationContext();
-        mContext = appContext;
         Resources res = appContext.getResources();
         fakeShadows = res.getBoolean(R.bool.config_recents_fake_shadows);
         svelteLevel = res.getInteger(R.integer.recents_svelte_level);
-        isGridEnabledDefault = SystemProperties.getBoolean("ro.recents.grid", false);
-
-        mSettingsObserver = new SettingsObserver(mHandler);
-        mSettingsObserver.observe();
+        isGridEnabled = SystemProperties.getBoolean("ro.recents.grid", false);
 
         float screenDensity = context.getResources().getDisplayMetrics().density;
         smallestWidth = ssp.getDeviceSmallestWidth();
@@ -133,9 +96,5 @@ public class RecentsConfiguration {
      */
     public RecentsActivityLaunchState getLaunchState() {
         return mLaunchState;
-    }
-
-    public boolean isGridEnabled() {
-        return mIsGridEnabled;
     }
 }
