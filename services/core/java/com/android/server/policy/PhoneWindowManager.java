@@ -759,9 +759,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private boolean mScreenrecordChordVolumeUpKeyConsumed;
     private boolean mScreenrecordChordType;
 
-    // AOSP grid style recents
-    private boolean mAospRecentsGrid;
-
     /* The number of steps between min and max brightness */
     private static final int BRIGHTNESS_STEPS = 10;
 
@@ -2434,8 +2431,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     Settings.System.VOLUME_WAKE_SCREEN, 0, UserHandle.USER_CURRENT) == 1);
             mScreenrecordChordType = (Settings.System.getIntForUser(resolver,
                     Settings.System.SCREENRECORD_CHORD_TYPE, 0, UserHandle.USER_CURRENT) == 1);
-            mAospRecentsGrid = (Settings.System.getIntForUser(resolver,
-                    Settings.System.RECENTS_USE_GRID, 0, UserHandle.USER_CURRENT) == 1);
             mTorchEnabled = (Settings.System.getIntForUser(resolver,
                     Settings.System.KEYGUARD_TOGGLE_TORCH, 0, UserHandle.USER_CURRENT) == 1);
 
