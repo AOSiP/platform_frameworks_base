@@ -134,6 +134,7 @@
         <item>org.telegram.messenger</item>
         <item>org.telegram.messenger.plus</item>
         <item>com.snapchat.android</item>
+        <item>org.ilwt.lagatgram</item>
     </string-array>
 
 </resources>
