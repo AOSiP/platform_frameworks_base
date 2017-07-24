@@ -280,8 +280,7 @@ public class TaskViewHeader extends FrameLayout
      * we can't get resources based on the current configuration, but instead need to get them
      * based on the device configuration.
      */
-    private void updateLayoutParams(View icon, View title, View secondaryButton,
-            View tertiaryButton, View button) {
+    private void updateLayoutParams(View icon, View title, View secondaryButton, View button) {
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, mHeaderBarHeight, Gravity.TOP);
         setLayoutParams(lp);
@@ -299,13 +298,6 @@ public class TaskViewHeader extends FrameLayout
             lp.setMarginEnd(mHeaderBarHeight);
             secondaryButton.setLayoutParams(lp);
             secondaryButton.setPadding(mHeaderButtonPadding, mHeaderButtonPadding,
-                    mHeaderButtonPadding, mHeaderButtonPadding);
-        }
-        if (tertiaryButton != null) {
-            lp = new FrameLayout.LayoutParams(mHeaderBarHeight, mHeaderBarHeight, Gravity.END);
-            lp.setMarginEnd(2 * mHeaderBarHeight);
-            tertiaryButton.setLayoutParams(lp);
-            tertiaryButton.setPadding(mHeaderButtonPadding, mHeaderButtonPadding,
                     mHeaderButtonPadding, mHeaderButtonPadding);
         }
         lp = new FrameLayout.LayoutParams(mHeaderBarHeight, mHeaderBarHeight, Gravity.END);
@@ -340,10 +332,9 @@ public class TaskViewHeader extends FrameLayout
         if (headerBarHeight != mHeaderBarHeight || headerButtonPadding != mHeaderButtonPadding) {
             mHeaderBarHeight = headerBarHeight;
             mHeaderButtonPadding = headerButtonPadding;
-            updateLayoutParams(mIconView, mTitleView, mLockTaskButton, mMoveTaskButton,
-                    mDismissButton);
+            updateLayoutParams(mIconView, mTitleView, mMoveTaskButton, mDismissButton);
             if (mAppOverlayView != null) {
-                updateLayoutParams(mAppIconView, mAppTitleView, null, null, mAppInfoView);
+                updateLayoutParams(mAppIconView, mAppTitleView, null, mAppInfoView);
             }
         }
     }
@@ -791,7 +782,7 @@ public class TaskViewHeader extends FrameLayout
             mAppInfoView = (ImageView) mAppOverlayView.findViewById(R.id.app_info);
             mAppInfoView.setOnClickListener(this);
             mAppTitleView = (TextView) mAppOverlayView.findViewById(R.id.app_title);
-            updateLayoutParams(mAppIconView, mAppTitleView, null, null, mAppInfoView);
+            updateLayoutParams(mAppIconView, mAppTitleView, null, mAppInfoView);
         }
 
         // Update the overlay contents for the current app
