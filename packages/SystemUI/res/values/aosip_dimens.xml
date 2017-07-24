@@ -48,4 +48,7 @@
     <dimen name="crop_buttons">48dp</dimen>
     <dimen name="crop_buttons_inlet">32dp</dimen>
 
+    <!-- Recents task locking button -->
+    <dimen name="recents_task_view_header_lock_button_padding">44dp</dimen>
+
 </resources>
