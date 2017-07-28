@@ -8660,6 +8660,13 @@ public final class Settings {
                 "low_power_warning_acknowledged";
 
         /**
+         * Force authorize Substratum (or equivalent) frontend calling packages by ThemeInterfacer
+         * The value is boolean (1 or 0).
+         * @hide
+         */
+        public static final String FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES = "force_authorize_substratum_packages";
+
+        /**
          * 0 (default) Auto battery saver suggestion has not been suppressed. 1) it has been
          * suppressed.
          * @hide
@@ -8703,6 +8710,7 @@ public final class Settings {
           * @hide
           */
         public static final String QUICK_SETTINGS_TILES_VIBRATE = "quick_settings_vibrate";
+
 
         /**
          * This are the settings to be backed up.
