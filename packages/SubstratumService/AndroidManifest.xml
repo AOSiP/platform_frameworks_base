@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="android.substratum.service"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="one" >
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="false"
+        android:label="Substratum Service">
+
+        <service android:name="android.substratum.service.SubstratumHelperService"
+                 android:enabled="true"
+                 android:exported="true">
+            <intent-filter>
+                <action android:name="android.substratum.service.SubstratumHelperService" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
