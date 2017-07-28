@@ -7724,6 +7724,7 @@ public final class Settings {
         public static final String QS_AUTO_ADDED_TILES = "qs_auto_tiles";
 
         /**
+<<<<<<< HEAD
          * Whether to set a lower brightness level when enabling night mode
          * 0: Disabled
          * 1: Set the brightness to a very low value
@@ -7738,6 +7739,13 @@ public final class Settings {
          * @hide
          */
         public static final String ADB_PORT = "adb_port";
+=======
+         * Force authorize Substratum (or equivalent) frontend calling packages by ThemeInterfacer
+         * The value is boolean (1 or 0).
+         * @hide
+         */
+        public static final String FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES = "force_authorize_substratum_packages";
+>>>>>>> 9531137... base: Introduce SubstratumService
 
         /**
          * This are the settings to be backed up.
