@@ -768,7 +768,7 @@ public class FileUtils {
             return dir.isDirectory() ? dir : null;
         }
 
-        return dir.mkdir() ? dir : null;
+        return dir.mkdirs() ? dir : null;
     }
 
     /**
