@@ -544,6 +544,9 @@
     <!-- GZOSP additions start -->
     <protected-broadcast android:name="android.settings.SHOW_INPUT_METHOD_PICKER" />
 
+    <protected-broadcast android:name="projekt.substratum.APP_CRASHED" />
+    <protected-broadcast android:name="com.android.systemui.action.RESTART_THEME" />
+
     <!-- ====================================================================== -->
     <!--                          RUNTIME PERMISSIONS                           -->
     <!-- ====================================================================== -->
