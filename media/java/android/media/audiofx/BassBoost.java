@@ -53,12 +53,7 @@ public class BassBoost extends AudioEffect {
      * {@link android.media.audiofx.BassBoost.OnParameterChangeListener}
      */
     public static final int PARAM_STRENGTH = 1;
-    /**
-     * Bass boost center frequency. Paremeter ID for
-     * {@link android.media.audiofx.BassBoost.OnParameterChangeListener}
-     * @hide
-     */
-    public static final int PARAM_CENTER_FREQUENCY = 2;
+
     /**
      * Indicates if strength parameter is supported by the bass boost engine
      */
@@ -145,41 +140,6 @@ public class BassBoost extends AudioEffect {
         short[] value = new short[1];
         checkStatus(getParameter(PARAM_STRENGTH, value));
         return value[0];
-    }
-
-    /**
-     * Sets the center frequency of the bass boost effect.
-     * @param freq The frequency, in Hz. The valid range for the freq is [20,500]
-     * @throws IllegalStateException
-     * @throws IllegalArgumentException
-     * @throws UnsupportedOperationException
-     * @hide
-     */
-    public void setCenterFrequency(short freq)
-    throws IllegalStateException, IllegalArgumentException, UnsupportedOperationException {
-        try {
-            checkStatus(setParameter(PARAM_CENTER_FREQUENCY, freq));
-        } catch(IllegalArgumentException e) {
-            // ignore
-        }
-    }
-
-    /**
-     * Gets the current center frequency of the effect
-     * @return the center frequency of the effect. The valid range is [20,500], in Hertz
-     * @throws IllegalStateException
-     * @throws IllegalArgumentException
-     * @throws UnsupportedOperationException
-     * @hide
-     */
-    public short getCenterFrequency() {
-        try {
-            short[] value = new short[1];
-            checkStatus(getParameter(PARAM_CENTER_FREQUENCY, value));
-            return value[0];
-        } catch(IllegalArgumentException e) {
-            return 55;
-        }
     }
 
     /**
