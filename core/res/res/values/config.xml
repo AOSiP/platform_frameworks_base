@@ -3535,6 +3535,9 @@
     <bool name="config_proximityCheckOnWake">false</bool>
     <integer name="config_proximityCheckTimeout">250</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
+    <!-- Stop listening to the fingerprint reader when NON-WAKEUP proximity sensor is covered & screen is off.
+         config_proximityCheckOnWake must be true. -->
+    <bool name="config_proximityCheckOnFingerprintWake">false</bool>
 
     <!-- Applications which are disabled unless matching a particular sku -->
     <string-array name="config_disableApksUnlessMatchedSku_apk_list" translatable="false" />
