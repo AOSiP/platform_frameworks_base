@@ -3838,6 +3838,13 @@ public final class Settings {
         public static final String AOSIP_SETTINGS_SUMMARY= "aosip_settings_summary";
 
         /**
+         * Indicates whether ANBI (Accidental navigation button interaction) is enabled.
+         *
+         * @hide
+         */
+        public static final String ANBI_ENABLED = "anbi_enabled";
+
+        /**
          * MediaScanner behavior on boot.
          * 0 = enabled
          * 1 = ask (notification)
