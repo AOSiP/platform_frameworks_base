@@ -644,10 +644,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
     // User defined bar visibility, regardless of factory configuration
     boolean mNavbarVisible = false;
-
-    /** Custom system-wide flags deciding what features get enabled. */
-    private int mSystemDesignFlags = 0;
-
     // Pie
     boolean mPieState;
 
@@ -1072,9 +1068,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.PIE_STATE), false, this,
                     UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.Secure.getUriFor(
-                    Settings.Secure.SYSTEM_DESIGN_FLAGS), false, this,
-                    UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.ANBI_ENABLED), false, this,
                     UserHandle.USER_ALL);
@@ -1400,8 +1393,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 mHandler.post(mHiddenNavPanic);
             }
 
-        // Latch power key state to detect screenshot chord.
-        if (interactive && !mPowerKeyTriggered
+            // Latch power key state to detect screenshot chord.
+            if (interactive && !mPowerKeyTriggered
                 && (event.getFlags() & KeyEvent.FLAG_FALLBACK) == 0) {
             mPowerKeyTriggered = true;
             mPowerKeyTime = event.getDownTime();
@@ -2542,10 +2535,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 updateRotation = true;
                 updateOrientationListenerLp();
             }
-
-            final int systemDesignFlags = mSystemDesignFlags;
-            mSystemDesignFlags = Settings.Secure.getIntForUser(resolver,
-                        Settings.Secure.SYSTEM_DESIGN_FLAGS, 0, UserHandle.USER_CURRENT);
 
             mUserRotationAngles = Settings.System.getIntForUser(resolver,
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES, -1,
@@ -5631,8 +5620,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     }
 
     private boolean immersiveModeImplementsPie() {
-        return mPieState && mSystemDesignFlags != 0 &&
-                mSystemDesignFlags != View.SYSTEM_DESIGN_FLAG_IMMERSIVE_STATUS;
+        return mPieState;
     }
 
     private void offsetInputMethodWindowLw(WindowState win) {
@@ -6430,6 +6418,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                                                 isKeyguardShowingAndNotOccluded() :
                                                 mKeyguardDelegate.isShowing()));
 
+        if (mANBIHandler != null && mANBIEnabled && mANBIHandler.isScreenTouched()
+                && !navBarKey && (appSwitchKey || homeKey || menuKey || backKey)) {
+            return 0;
+        }
+
+
         if (DEBUG_INPUT) {
             Log.d(TAG, "interceptKeyTq keycode=" + keyCode
                     + " interactive=" + interactive + " keyguardActive=" + keyguardActive
@@ -6453,11 +6447,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
         }
 
-
-        if (mANBIHandler != null && mANBIEnabled && mANBIHandler.isScreenTouched()
-                && !navBarKey && (appSwitchKey || homeKey || menuKey || backKey)) {
-            return 0;
-        }
 
         // Basic policy based on interactive state.
         int result;
@@ -8046,9 +8035,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         mKeyguardDelegate.onSystemReady();
 
 
-        if (mDeviceHardwareKeys > 0) {
-            mANBIHandler = new ANBIHandler(mContext);
-        }
+        mANBIHandler = new ANBIHandler(mContext);
 
         readCameraLensCoverState();
         updateUiMode();
