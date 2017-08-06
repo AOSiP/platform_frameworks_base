@@ -3033,14 +3033,7 @@ public final class Settings {
             VOLUME_VOICE, VOLUME_SYSTEM, VOLUME_RING, VOLUME_MUSIC,
             VOLUME_ALARM, VOLUME_NOTIFICATION, VOLUME_BLUETOOTH_SCO
         };
-
-        /**
-         * Indicates whether ANBI (Accidental navigation button interaction) is enabled.
-         *
-         * @hide
-         */
-        public static final String ANBI_ENABLED = "anbi_enabled";
-
+     
         /**
          * Appended to various volume related settings to record the previous
          * values before they the settings were affected by a silent/vibrate
@@ -3836,6 +3829,13 @@ public final class Settings {
           * @hide
           */
         public static final String AOSIP_SETTINGS_SUMMARY= "aosip_settings_summary";
+
+        /**
+         * Indicates whether ANBI (Accidental navigation button interaction) is enabled.
+         *
+         * @hide
+         */
+        public static final String ANBI_ENABLED = "anbi_enabled";
 
         /**
          * MediaScanner behavior on boot.
