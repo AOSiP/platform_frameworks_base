@@ -76,18 +76,14 @@ public class StatusBarWindowManager implements RemoteInputController.Callback,
     private BlurLayer mBlurLayer;
     private boolean mShowingMedia;
     private boolean mKeyguardBlurEnabled;
-    private final boolean isBlurSupported;
 
     public StatusBarWindowManager(Context context) {
         mContext = context;
-        ContentResolver resolver = mContext.getContentResolver();
         mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         mActivityManager = ActivityManagerNative.getDefault();
         mKeyguardScreenRotation = shouldEnableKeyguardScreenRotation();
         mScreenBrightnessDoze = mContext.getResources().getInteger(
                 com.android.internal.R.integer.config_screenBrightnessDoze) / 255f;
-        isBlurSupported = mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_uiBlurEnabled);
     }
 
     private boolean shouldEnableKeyguardScreenRotation() {
@@ -136,12 +132,13 @@ public class StatusBarWindowManager implements RemoteInputController.Callback,
         mLpChanged = new WindowManager.LayoutParams();
         mLpChanged.copyFrom(mLp);
 
-        mKeyguardBlurEnabled = isBlurSupported ?
-            Settings.System.getInt(mContext.getContentResolver(),
-            Settings.System.LOCK_SCREEN_BLUR_ENABLED, 1) == 1 : false;
+        final boolean isBlurSupported = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_uiBlurEnabled);
         if (isBlurSupported) {
             final Point xy = getDisplayDimensions(mWindowManager);
             mBlurLayer = new BlurLayer(xy.x, xy.y, STATUS_BAR_LAYER - 2, "KeyGuard");
+            final SettingsObserver observer = new SettingsObserver(new Handler());
+            observer.observe(mContext);
         }
     }
 
@@ -508,19 +505,14 @@ public class StatusBarWindowManager implements RemoteInputController.Callback,
         public void observe(Context context) {
             context.getContentResolver().registerContentObserver(
                     Settings.System.getUriFor(Settings.System.LOCK_SCREEN_BLUR_ENABLED),
-                    false,
-                    this);
-        }
-
-        public void unobserve(Context context) {
-            context.getContentResolver().unregisterContentObserver(this);
+                    false, this);
+            onChange(true);
         }
 
         @Override
         public void onChange(boolean selfChange) {
-            mKeyguardBlurEnabled = isBlurSupported ?
-                    Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.LOCK_SCREEN_BLUR_ENABLED, 1) == 1 : false;
+            mKeyguardBlurEnabled = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.LOCK_SCREEN_BLUR_ENABLED, 0) == 1;
             // update the state
             apply(mCurrentState);
         }
