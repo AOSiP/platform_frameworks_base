@@ -20,6 +20,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/alarms/Bounce.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Bounce.ogg \
     $(LOCAL_PATH)material/alarms/Carbon.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Carbon.ogg \
     $(LOCAL_PATH)material/alarms/Drip.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Drip.ogg \
+    $(LOCAL_PATH)material/alarms/Flow.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Flow.ogg \
     $(LOCAL_PATH)material/alarms/Gallop.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Gallop.ogg \
     $(LOCAL_PATH)material/alarms/Helium.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Helium.ogg \
     $(LOCAL_PATH)material/alarms/Krypton.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Krypton.ogg \
@@ -68,6 +69,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/notifications/Salacia.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Salacia.ogg \
     $(LOCAL_PATH)material/notifications/Tethys.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Tethys.ogg \
     $(LOCAL_PATH)material/notifications/Titan.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Titan.ogg \
+    $(LOCAL_PATH)material/notifications/Birdsong.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Birdsong.ogg \
+    $(LOCAL_PATH)material/notifications/Chime.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Chime.ogg \
+    $(LOCAL_PATH)material/notifications/Clink.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Clink.ogg \
+    $(LOCAL_PATH)material/notifications/Flick.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Flick.ogg \
+    $(LOCAL_PATH)material/notifications/Hey.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Hey.ogg \
+    $(LOCAL_PATH)material/notifications/Note.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Note.ogg \
+    $(LOCAL_PATH)material/notifications/Strum.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Strum.ogg \
+    $(LOCAL_PATH)material/notifications/Trill.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Trill.ogg \
     $(LOCAL_PATH)material/ringtones/Atria.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Atria.ogg \
     $(LOCAL_PATH)material/ringtones/Callisto.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Callisto.ogg \
     $(LOCAL_PATH)material/ringtones/Dione.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Dione.ogg \
@@ -79,5 +88,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/ringtones/Sedna.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Sedna.ogg \
     $(LOCAL_PATH)material/ringtones/Titania.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Titania.ogg \
     $(LOCAL_PATH)material/ringtones/Triton.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Triton.ogg \
-    $(LOCAL_PATH)material/ringtones/Umbriel.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Umbriel.ogg
+    $(LOCAL_PATH)material/ringtones/Umbriel.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Umbriel.ogg \
+    $(LOCAL_PATH)material/ringtones/Beats.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Beats.ogg \
+    $(LOCAL_PATH)material/ringtones/Dance_party.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Dance_party.ogg \
+    $(LOCAL_PATH)material/ringtones/Early_bird.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Early_bird.ogg \
+    $(LOCAL_PATH)material/ringtones/Hey_hey.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Hey_hey.ogg \
+    $(LOCAL_PATH)material/ringtones/Romance.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Romance.ogg \
+    $(LOCAL_PATH)material/ringtones/Rrrring.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Rrrring.ogg \
+    $(LOCAL_PATH)material/ringtones/Shooting_star.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Shooting_star.ogg \
+    $(LOCAL_PATH)material/ringtones/Spaceship.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Spaceship.ogg \
+    $(LOCAL_PATH)material/ringtones/Summer_night.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Summer_night.ogg \
+    $(LOCAL_PATH)material/ringtones/Zen.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/Zen.ogg
 
