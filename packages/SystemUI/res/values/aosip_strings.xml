@@ -17,4 +17,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- AOD QS tile -->
     <string name="quick_settings_aod_label">AOD</string>
+
+    <!-- Power Menu -->
+    <string name="global_action_reboot">Restart</string>
+    <string name="global_action_reboot_more">Restart\u2026</string>
+    <string name="global_action_reboot_sub">System</string>
+    <string name="global_action_reboot_recovery">Recovery</string>
+    <string name="global_action_reboot_bootloader">Bootloader</string>
+    <string name="global_action_settings">Settings</string>
 </resources>
