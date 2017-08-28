@@ -2869,11 +2869,13 @@
     <string-array translatable="false" name="config_globalActionsList">
         <item>power</item>
         <item>restart</item>
+        <item>recovery</item>
         <item>lockdown</item>
         <item>logout</item>
         <item>bugreport</item>
         <item>screenshot</item>
     </string-array>
+        <!--<item>emergency</item>-->
 
     <!-- Number of milliseconds to hold a wake lock to ensure that drawing is fully
          flushed to the display while dozing.  This value needs to be large enough
