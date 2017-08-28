@@ -19,24 +19,12 @@
     <string-array name="config_vendorPlatformSignatures" translatable="false">
     </string-array>
 
-    <string-array translatable="false" name="config_rebootActionsList">
-        <item>restart</item>
-        <item>reboot_recovery</item>
-        <item>reboot_bootloader</item>
-    </string-array>
+    <!-- Global actions -->
+    <string name="reboot_to_bootloader_title">Reboot bootloader</string>
+    <string name="reboot_to_bootloader_message">Rebooting to bootloader\u2026</string>
+    <string name="reboot_to_recovery_title">Reboot recovery</string>
+    <string name="reboot_to_recovery_message">Rebooting to recovery\u2026</string>
+    <string name="reboot_system_title">Restart system</string>
+    <string name="reboot_system_message">Restarting system\u2026</string>
 
-    <!-- Defines all possible global actions -->
-    <string-array translatable="false" name="values_globalActionsList">
-        <item>power</item>
-        <item>airplane</item>
-        <item>bugreport</item>
-        <item>silent</item>
-        <item>users</item>
-        <item>settings</item>
-        <item>lockdown</item>
-        <item>voiceassist</item>
-        <item>assist</item>
-        <item>voiceassist</item>
-        <item>restart</item>
-    </string-array>
 </resources>
