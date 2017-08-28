@@ -39,4 +39,8 @@
 
   <!-- In-display Fingerprint -->
   <java-symbol type="bool" name="config_needCustomFODView" />
+
+  <!-- Power menu -->
+  <java-symbol type="array" name="config_rebootActionsList" />
+
 </resources>
