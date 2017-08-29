@@ -3977,7 +3977,13 @@ public final class Settings {
         * Whether to show media art on lockscreen
         * @hide
         */
-       public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
+        public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
+
+        /**
+         *  Enable statusbar double tap gesture on to put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
