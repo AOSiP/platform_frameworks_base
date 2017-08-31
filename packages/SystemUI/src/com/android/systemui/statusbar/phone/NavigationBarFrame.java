@@ -25,7 +25,7 @@ import android.view.MotionEvent;
 import android.view.GestureDetector;
 import android.widget.FrameLayout;
 
-import com.android.internal.util.abc.AbcUtils;
+import com.android.internal.util.aosip.aosipUtils;
 import com.android.systemui.statusbar.policy.DeadZone;
 
 public class NavigationBarFrame extends FrameLayout {
@@ -45,7 +45,7 @@ public class NavigationBarFrame extends FrameLayout {
                 new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onDoubleTap(MotionEvent e) {
-                AbcUtils.switchScreenOff(context);
+                aosipUtils.switchScreenOff(context);
                 return true;
             }
         });

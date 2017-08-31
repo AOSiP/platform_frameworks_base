@@ -3897,13 +3897,6 @@ public final class Settings {
          * the setting value. See an example above.
          */
 
-        // ABC custom system settings
-        /**
-         * Double tap on navbar to sleep
-         * @hide
-         */
-        public static final String DOUBLE_TAP_SLEEP_NAVBAR = "double_tap_sleep_navbar";
-
         /**
          * Beginning of AOSiP public Settings
          *
@@ -3979,6 +3972,12 @@ public final class Settings {
          * @hide
          */
         public static final String POWERMENU_TORCH = "powermenu_torch";
+
+        /**
+         * Double tap on navbar to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_NAVBAR = "double_tap_sleep_navbar";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
