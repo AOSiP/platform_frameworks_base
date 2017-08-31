@@ -419,7 +419,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                 mItems.add(new PowerAction());
             } else if (GLOBAL_ACTION_KEY_AIRPLANE.equals(actionKey)) {
                 if (Settings.System.getInt(mContext.getContentResolver(),
-                        Settings.System.POWERMENU_AIRPLANE, 0) != 0) {
+                        Settings.System.POWERMENU_AIRPLANE, 0) == 1) {
                     mItems.add(mAirplaneModeOn);
                 }
             } else if (GLOBAL_ACTION_KEY_BUGREPORT.equals(actionKey)) {
@@ -453,8 +453,6 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                         Settings.System.POWERMENU_REBOOT, 1) == 1) {
                     mItems.add(new RestartAction());
                 }
-            } else if (GLOBAL_ACTION_KEY_SCREENSHOT.equals(actionKey)) {
-                mItems.add(new ScreenshotAction());
             } else if (GLOBAL_ACTION_KEY_ADVANCED.equals(actionKey)) {
                 if (Settings.System.getInt(mContext.getContentResolver(),
                         Settings.System.POWERMENU_REBOOT, 1) == 1 && Settings.System.getInt(mContext.getContentResolver(),
@@ -463,8 +461,8 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                 }
             } else if (GLOBAL_ACTION_KEY_SCREENSHOT.equals(actionKey)) {
                 if (Settings.System.getInt(mContext.getContentResolver(),
-                        Settings.System.POWERMENU_SCREENSHOT, 0) != 0) {
-                    mItems.add(getScreenshotAction());
+                        Settings.System.POWERMENU_SCREENSHOT, 0) == 1) {
+                    mItems.add(new ScreenshotAction());
                 }
             } else if (GLOBAL_ACTION_KEY_LOGOUT.equals(actionKey)) {
                 if (mDevicePolicyManager.isLogoutEnabled()
