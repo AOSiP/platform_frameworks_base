@@ -17,12 +17,17 @@
 package com.android.internal.util.aosip;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
+import android.os.PowerManager;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.os.SystemClock;
 import android.view.IWindowManager;
 import android.view.WindowManagerGlobal;
 
