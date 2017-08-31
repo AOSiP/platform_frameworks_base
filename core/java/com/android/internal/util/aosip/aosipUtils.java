@@ -26,6 +26,8 @@ import android.hardware.camera2.CameraManager;
 import android.hardware.input.InputManager;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.RemoteException;
+import android.os.PowerManager;
 import android.os.SystemClock;
 import android.view.InputDevice;
 import android.view.KeyCharacterMap;
@@ -97,5 +99,12 @@ public class aosipUtils {
                         InputManager.INJECT_INPUT_EVENT_MODE_ASYNC);
             }
         }, 20);
+    }
+
+    public static void switchScreenOff(Context ctx) {
+        PowerManager pm = (PowerManager) ctx.getSystemService(Context.POWER_SERVICE);
+        if (pm!= null) {
+            pm.goToSleep(SystemClock.uptimeMillis());
+        }
     }
 }
