@@ -19,4 +19,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="android">
 
+    <protected-broadcast android:name="com.android.systemui.ACTION_DISMISS_KEYGUARD" />
 </manifest>

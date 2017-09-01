@@ -2450,6 +2450,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 Constructor<?> constructor = klass.getConstructor(Context.class);
                 mDeviceKeyHandler = (DeviceKeyHandler) constructor.newInstance(
                         mContext);
+                mDeviceKeyHandler.setWindowManagerPolicy(this);
                 if(DEBUG) Slog.d(TAG, "Device key handler loaded");
             } catch (Exception e) {
                 Slog.w(TAG, "Could not instantiate device key handler "
@@ -6545,9 +6546,32 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         // Specific device key handling
         if (mDeviceKeyHandler != null) {
             try {
-                // The device only should consume known keys.
+                // The device says if we should ignore this event.
+                if (mDeviceKeyHandler.isDisabledKeyEvent(event)) {
+                    result &= ~ACTION_PASS_TO_USER;
+                    return result;
+                }
+                if (!interactive && mDeviceKeyHandler.isWakeEvent(event)) {
+                    if (DEBUG_INPUT) {
+                        Slog.i(TAG, "isWakeEvent from DeviceKeyHandler");
+                    }
+                    wakeUp(event.getEventTime(), mAllowTheaterModeWakeFromKey, "android.policy:KEY");
+                    result &= ~ACTION_PASS_TO_USER;
+                    return result;
+                }
+                final Intent eventLaunchActivity = mDeviceKeyHandler.isActivityLaunchEvent(event);
+                if (!interactive && eventLaunchActivity != null) {
+                    if (DEBUG_INPUT) {
+                        Slog.i(TAG, "isActivityLaunchEvent from DeviceKeyHandler " + eventLaunchActivity);
+                    }
+                    wakeUp(event.getEventTime(), mAllowTheaterModeWakeFromKey, "android.policy:KEY");
+                    aosipUtils.launchKeyguardDismissIntent(mContext, UserHandle.CURRENT, eventLaunchActivity);
+                    result &= ~ACTION_PASS_TO_USER;
+                    return result;
+                }
                 if (mDeviceKeyHandler.handleKeyEvent(event)) {
-                    return 0;
+                    result &= ~ACTION_PASS_TO_USER;
+                    return result;
                 }
             } catch (Exception e) {
                 Slog.w(TAG, "Could not dispatch event to device key handler", e);
