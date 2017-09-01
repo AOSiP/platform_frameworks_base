@@ -261,4 +261,6 @@
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Drag or tap to add tiles</string>
 
+    <string name="screenshot_abort_title">No screenshot taken</string>
+    <string name="screenshot_abort_text">Operation aborted.</string>
 </resources>
