@@ -45,6 +45,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.MathUtils;
 import android.view.LayoutInflater;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
@@ -57,6 +58,7 @@ import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.keyguard.KeyguardClockSwitch;
+import com.android.internal.util.aosip.aosipUtils;
 import com.android.keyguard.KeyguardStatusView;
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.systemui.DejankUtils;
@@ -194,6 +196,8 @@ public class NotificationPanelView extends PanelView implements
     private int mTrackingPointer;
     private VelocityTracker mQsVelocityTracker;
     private boolean mQsTracking;
+
+    private GestureDetector mLockscreenDoubleTapToSleep;
 
     /**
      * If set, the ongoing touch gesture might both trigger the expansion in {@link PanelView} and
@@ -422,6 +426,14 @@ public class NotificationPanelView extends PanelView implements
         });
         mBottomAreaShadeAlphaAnimator.setDuration(160);
         mBottomAreaShadeAlphaAnimator.setInterpolator(Interpolators.ALPHA_OUT);
+        mLockscreenDoubleTapToSleep = new GestureDetector(context,
+                new GestureDetector.SimpleOnGestureListener() {
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                aosipUtils.switchScreenOff(mContext);
+                return true;
+            }
+        });
     }
 
     /**
@@ -1186,6 +1198,10 @@ public class NotificationPanelView extends PanelView implements
         // In such case, simply expand the panel instead of being stuck at the bottom bar.
         if (mLastEventSynthesizedDown && event.getAction() == MotionEvent.ACTION_UP) {
             expand(true /* animate */);
+        }
+        if (!mPulsing && !mDozing
+                && mBarState == StatusBarState.KEYGUARD) {
+            mLockscreenDoubleTapToSleep.onTouchEvent(event);
         }
         initDownStates(event);
         if (!mIsExpanding && !shouldQuickSettingsIntercept(mDownX, mDownY, 0)
