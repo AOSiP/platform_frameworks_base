@@ -24,12 +24,16 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
+import android.os.Handler;
 import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
+import android.os.UserHandle;
 import android.view.IWindowManager;
 import android.view.WindowManagerGlobal;
+
+import com.android.internal.statusbar.IStatusBarService;
 
 public class aosipUtils {
 
@@ -84,5 +88,69 @@ public class aosipUtils {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void switchScreenOff(Context ctx) {
+        PowerManager pm = (PowerManager) ctx.getSystemService(Context.POWER_SERVICE);
+        if (pm!= null) {
+            pm.goToSleep(SystemClock.uptimeMillis());
+        }
+    }
+
+    public static boolean deviceHasFlashlight(Context ctx) {
+        return ctx.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
+    }
+
+    public static void toggleCameraFlash() {
+        FireActions.toggleCameraFlash();
+    }
+
+    private static final class FireActions {
+        private static IStatusBarService mStatusBarService = null;
+        private static IStatusBarService getStatusBarService() {
+            synchronized (FireActions.class) {
+                if (mStatusBarService == null) {
+                    mStatusBarService = IStatusBarService.Stub.asInterface(
+                            ServiceManager.getService("statusbar"));
+                }
+                return mStatusBarService;
+            }
+        }
+
+    public static void toggleCameraFlash() {
+            IStatusBarService service = getStatusBarService();
+            if (service != null) {
+                try {
+                    service.toggleCameraFlash();
+                } catch (RemoteException e) {
+                    // do nothing.
+                }
+            }
+        }
+    }
+
+    /**
+     * @hide
+     */
+    public static final String SYSTEMUI_PACKAGE_NAME = "com.android.systemui";
+
+     /**
+     * @hide
+     */
+    public static final String ACTION_DISMISS_KEYGUARD = SYSTEMUI_PACKAGE_NAME +".ACTION_DISMISS_KEYGUARD";
+
+     /**
+     * @hide
+     */
+    public static final String DISMISS_KEYGUARD_EXTRA_INTENT = "launch";
+
+     /**
+     * @hide
+     */
+    public static void launchKeyguardDismissIntent(Context context, UserHandle user, Intent launchIntent) {
+        Intent keyguardIntent = new Intent(ACTION_DISMISS_KEYGUARD);
+        keyguardIntent.setPackage(SYSTEMUI_PACKAGE_NAME);
+        keyguardIntent.putExtra(DISMISS_KEYGUARD_EXTRA_INTENT, launchIntent);
+        context.sendBroadcastAsUser(keyguardIntent, user);
     }
 }
