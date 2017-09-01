@@ -172,4 +172,7 @@
 
     <string name="summary_empty" translatable="false"></string>
 
+    <string name="screenshot_abort_title">No screenshot taken</string>
+    <string name="screenshot_abort_text">Operation aborted.</string>
+
 </resources>
