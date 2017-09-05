@@ -15,15 +15,7 @@
      limitations under the License.
 -->
 <resources>
-
-    <!-- QS tile height -->
-    <dimen name="qs_tile_height_wo_label">48dp</dimen>
-
     <!-- Floating action button -->
-    <dimen name="floating_action_button_height">54dp</dimen>
-    <dimen name="floating_action_button_width">54dp</dimen>
-    <dimen name="floating_action_button_translation_z">12dp</dimen>
-    <dimen name="floating_action_button_margin_side">32dp</dimen>
-    <dimen name="floating_action_button_margin_bottom">46dp</dimen>
-
+    <color name="fab_color">@*android:color/material_deep_teal_500</color>
+    <color name="floating_action_button_icon_color">@android:color/white</color>
 </resources>
