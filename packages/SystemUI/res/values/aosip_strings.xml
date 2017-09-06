@@ -38,6 +38,10 @@
     <string name="global_action_restart_ui">SystemUI</string>
     <string name="global_action_restart_hot">Hot</string>
 
+    <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Reboot</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+
     <!-- Navbar Tuner -->
     <string name="preview">Preview</string>
     <string name="keycode">Keycode</string>
