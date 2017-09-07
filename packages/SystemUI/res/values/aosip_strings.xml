@@ -26,6 +26,7 @@
 
     <!-- PiP Tile -->
     <string name="quick_settings_pip_label">PiP</string>
+    <string name="quick_settings_pip_tile_app_na">App does not support PiP</string>
 
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">Screenshot</string>
@@ -53,4 +54,10 @@
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
     <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+
+    <!-- SysUI Tuner -->
+    <string name="statusbar_icons_blacklist">Status bar icons</string>
+    <string name="navbar_tuner_activity">Navigation bar buttons</string>
+    <string name="lockscreen_tuner_activity">Lockscreen shortcuts</string>
+    <string name="powernotif_tuner_activity">Power notifications</string>
 </resources>
