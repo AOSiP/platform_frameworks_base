@@ -458,6 +458,8 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
 
     private boolean mExpandedVisible;
 
+    ActivityManager mAm;
+
     private boolean mFpDismissNotifications;
 
     private final int[] mAbsPos = new int[2];
@@ -2206,6 +2208,10 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             if (DEBUG) {
                 Log.d(TAG, "No peeking: disabled panel : " + sbn.getKey());
             }
+            return false;
+        }
+
+        if (mEntryManager.shouldSkipHeadsUp(sbn)) {
             return false;
         }
 
@@ -5693,6 +5699,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                     Settings.Secure.FP_SWIPE_TO_DISMISS_NOTIFICATIONS),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.LESS_BORING_HEADS_UP),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.FORCE_AMBIENT_FOR_MEDIA),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
@@ -5730,6 +5739,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                     Settings.Secure.FP_SWIPE_TO_DISMISS_NOTIFICATIONS))) {
                 setFpToDismissNotifications();
             } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.LESS_BORING_HEADS_UP))) {
+                setUseLessBoringHeadsUp();
+            } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.FORCE_AMBIENT_FOR_MEDIA))) {
                 setForceAmbient();
             } else if (uri.equals(Settings.System.getUriFor(
@@ -5747,6 +5759,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         public void update() {
             updateKeyguardStatusSettings();
             setFpToDismissNotifications();
+            setUseLessBoringHeadsUp();
             setForceAmbient();
             updateTheme(false);
             updateLockscreenFilter();
@@ -5770,6 +5783,13 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         mFpDismissNotifications = Settings.Secure.getIntForUser(mContext.getContentResolver(),
                 Settings.Secure.FP_SWIPE_TO_DISMISS_NOTIFICATIONS, 0,
                 UserHandle.USER_CURRENT) == 1;
+    }
+
+    private void setUseLessBoringHeadsUp() {
+        boolean lessBoringHeadsUp = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.LESS_BORING_HEADS_UP, 0,
+                UserHandle.USER_CURRENT) == 1;
+        mEntryManager.setUseLessBoringHeadsUp(lessBoringHeadsUp);
     }
 
     private void setForceAmbient() {
