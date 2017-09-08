@@ -4051,37 +4051,43 @@ public final class Settings {
         * Whether to show battery light when DND mode is active
         * @hide
         */
-       public static final String BATTERY_LIGHT_ALLOW_ON_DND = "battery_light_allow_on_dnd";
+        public static final String BATTERY_LIGHT_ALLOW_ON_DND = "battery_light_allow_on_dnd";
 
         /**
         * Whether to show blinking light when battery is low
         * @hide
         */
-       public static final String BATTERY_LIGHT_LOW_BLINKING = "battery_light_low_blinking";
+        public static final String BATTERY_LIGHT_LOW_BLINKING = "battery_light_low_blinking";
 
         /**
         * Low battery charging color
         * @hide
         */
-       public static final String BATTERY_LIGHT_LOW_COLOR = "battery_light_low_color";
+        public static final String BATTERY_LIGHT_LOW_COLOR = "battery_light_low_color";
 
         /**
         * Medium battery charging color
         * @hide
         */
-       public static final String BATTERY_LIGHT_MEDIUM_COLOR = "battery_light_medium_color";
+        public static final String BATTERY_LIGHT_MEDIUM_COLOR = "battery_light_medium_color";
 
         /**
         * Full battery charging color
         * @hide
         */
-       public static final String BATTERY_LIGHT_FULL_COLOR = "battery_light_full_color";
+        public static final String BATTERY_LIGHT_FULL_COLOR = "battery_light_full_color";
 
         /**
         * Really full 100 battery charging color
         * @hide
         */
-       public static final String BATTERY_LIGHT_REALLYFULL_COLOR = "battery_light_reallyfull_color";
+        public static final String BATTERY_LIGHT_REALLYFULL_COLOR = "battery_light_reallyfull_color";
+
+        /**
+         * Wheter to show heads up only for dialer and sms apps
+         * @hide
+         */
+        public static final String LESS_BORING_HEADS_UP = "less_boring_heads_up";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -4257,6 +4263,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_FULL_COLOR);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_REALLYFULL_COLOR);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_LOW_BLINKING);
+            PRIVATE_SETTINGS.add(LESS_BORING_HEADS_UP);
         }
 
         /**
