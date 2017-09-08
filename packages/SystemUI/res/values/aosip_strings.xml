@@ -39,6 +39,8 @@
     <!-- Sound search tile -->
     <string name="quick_settings_sound_search">Sound search</string>
 
+    <string name="statusbar_items_title">Statusbar icon</string>
+
     <!-- Screen recorder -->
     <string name="screenrecord_stopdot_label">Show stop dot</string>
 
