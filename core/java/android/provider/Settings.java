@@ -4544,6 +4544,12 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
+         * Wheter to show heads up only for dialer and sms apps
+         * @hide
+         */
+        public static final String LESS_BORING_HEADS_UP = "less_boring_heads_up";
+
+        /**
          * Whether to show VoLTE icon or not
          * @hide
          */
