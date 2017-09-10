@@ -52,6 +52,8 @@ public final class CategoryKey {
     public static final String CATEGORY_NIGHT_DISPLAY =
             "com.android.settings.category.ia.night_display";
 
+    public static final String CATEGORY_NEST = "com.android.settings.category.ia.nest";
+
     public static final Map<String, String> KEY_COMPAT_MAP;
 
     static {
