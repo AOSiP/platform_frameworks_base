@@ -85,10 +85,13 @@ public class AirplaneModeTile extends QSTileImpl<BooleanState> {
 
         if (mKeyguard.isMethodSecure() && mKeyguard.isShowing()) {
             mActivityStarter.postQSRunnableDismissingKeyguard(() -> {
+                mHost.openPanels();
+                setEnabled(!mState.value);
                 setEnabled(!airplaneModeEnabled);
             });
             return;
         }
+        // no secure keyguard
         setEnabled(!airplaneModeEnabled);
     }
 
@@ -159,6 +162,13 @@ public class AirplaneModeTile extends QSTileImpl<BooleanState> {
             if (Intent.ACTION_AIRPLANE_MODE_CHANGED.equals(intent.getAction())) {
                 refreshState();
             }
+        }
+    };
+
+    private final class Callback implements KeyguardStateController.Callback {
+        @Override
+        public void onKeyguardShowingChanged() {
+            refreshState();
         }
     };
 }
