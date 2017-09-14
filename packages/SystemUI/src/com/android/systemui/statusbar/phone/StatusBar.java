@@ -153,6 +153,7 @@ import com.android.keyguard.KeyguardStatusView;
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardUpdateMonitorCallback;
 import com.android.keyguard.ViewMediatorCallback;
+import com.android.settingslib.Utils;
 import com.android.systemui.ActivityStarterDelegate;
 import com.android.systemui.DejankUtils;
 import com.android.systemui.DemoMode;
@@ -438,6 +439,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     // settings
     private QSPanel mQSPanel;
+    private int mBatterySaverWarningColor;
 
     // top bar
     protected KeyguardStatusBarView mKeyguardStatusBar;
@@ -3312,6 +3314,9 @@ public class StatusBar extends SystemUI implements DemoMode,
         if (powerSave && getBarState() == StatusBarState.SHADE) {
             mode = MODE_WARNING;
         }
+        if (mode == MODE_WARNING) {
+            transitions.setWarningColor(mBatterySaverWarningColor);
+        }
         transitions.transitionTo(mode, anim);
     }
 
@@ -5623,6 +5628,10 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_BLACKLIST_VALUES),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.BATTERY_SAVER_MODE_COLOR),
+                    false, this, UserHandle.USER_ALL);
+            update();
         }
 
         @Override
@@ -5659,6 +5668,15 @@ public class StatusBar extends SystemUI implements DemoMode,
                 final String blackString = Settings.System.getString(mContext.getContentResolver(),
                         Settings.System.HEADS_UP_BLACKLIST_VALUES);
                 splitAndAddToArrayList(mBlacklist, blackString, "\\|");
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.BATTERY_SAVER_MODE_COLOR))) {
+                    mBatterySaverWarningColor = Settings.System.getIntForUser(
+                            mContext.getContentResolver(),
+                            Settings.System.BATTERY_SAVER_MODE_COLOR, 0,
+                            UserHandle.USER_CURRENT);
+                    if (mBatterySaverWarningColor != 0) {
+                        mBatterySaverWarningColor = Utils.getColorAttr(mContext, android.R.attr.colorError);
+                    }
             }
         }
 
@@ -7239,6 +7257,14 @@ public class StatusBar extends SystemUI implements DemoMode,
                 tick(notification, false, false, null);
             }
         }
+
+        mBatterySaverWarningColor = Settings.System.getIntForUser(
+                mContext.getContentResolver(),
+                Settings.System.BATTERY_SAVER_MODE_COLOR, 0,
+                UserHandle.USER_CURRENT);
+        if (mBatterySaverWarningColor != 0) {
+            mBatterySaverWarningColor = Utils.getColorAttr(mContext, android.R.attr.colorError);
+         }
 
         setAreThereNotifications();
     }
