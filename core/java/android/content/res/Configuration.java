@@ -1279,6 +1279,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         }
         if (delta.assetsSeq != ASSETS_SEQ_UNDEFINED) {
             changed |= ActivityInfo.CONFIG_ASSETS_PATHS;
+            changed |= ActivityInfo.CONFIG_THEME_FONT;
             assetsSeq = delta.assetsSeq;
         }
         if (delta.seq != 0) {
@@ -1421,6 +1422,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         if ((compareUndefined || delta.assetsSeq != ASSETS_SEQ_UNDEFINED)
                 && assetsSeq != delta.assetsSeq) {
             changed |= ActivityInfo.CONFIG_ASSETS_PATHS;
+            changed |= ActivityInfo.CONFIG_THEME_FONT;
         }
 
         // Make sure that one of the values is not null and that they are not equal.
@@ -1450,7 +1452,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         // CONFIG_ASSETS_PATHS and CONFIG_FONT_SCALE are higher level configuration changes that
         // all resources are subject to change with.
         interestingChanges = interestingChanges | ActivityInfo.CONFIG_ASSETS_PATHS
-                | ActivityInfo.CONFIG_FONT_SCALE;
+                | ActivityInfo.CONFIG_FONT_SCALE | ActivityInfo.CONFIG_THEME_FONT;
         return (configChanges & interestingChanges) != 0;
     }
 
