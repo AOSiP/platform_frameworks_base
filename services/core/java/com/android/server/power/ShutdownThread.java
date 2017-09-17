@@ -353,7 +353,9 @@ public final class ShutdownThread extends Thread {
         pd.setCancelable(false);
         pd.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
 
-        pd.show();
+        if (!themeShutdownAnimationExists()) {
+            pd.show();
+        }
 
         sInstance.mProgressDialog = pd;
         sInstance.mContext = context;
@@ -418,6 +420,10 @@ public final class ShutdownThread extends Thread {
         {
             String reason = (mReboot ? "1" : "0") + (mReason != null ? mReason : "");
             SystemProperties.set(SHUTDOWN_ACTION_PROPERTY, reason);
+        }
+
+        if (themeShutdownAnimationExists()) {
+            startShutdownAnimation();
         }
 
         /*
@@ -690,6 +696,7 @@ public final class ShutdownThread extends Thread {
      */
     public static void rebootOrShutdown(final Context context, boolean reboot, String reason) {
         if (reboot) {
+            stopShutdownAnimation();
             Log.i(TAG, "Rebooting, reason: " + reason);
             PowerManagerService.lowLevelReboot(reason);
             Log.e(TAG, "Reboot failed, will attempt shutdown instead");
@@ -710,6 +717,8 @@ public final class ShutdownThread extends Thread {
             } catch (InterruptedException unused) {
             }
         }
+
+        stopShutdownAnimation();
 
         // Shutdown power
         Log.i(TAG, "Performing low-level shutdown...");
@@ -772,6 +781,26 @@ public final class ShutdownThread extends Thread {
                 FileUtils.stringToFile(RecoverySystem.UNCRYPT_STATUS_FILE, timeoutMessage);
             } catch (IOException e) {
                 Log.e(TAG, "Failed to write timeout message to uncrypt status", e);
+            }
+        }
+    }
+
+    private static boolean themeShutdownAnimationExists() {
+        return new File("/data/system/theme/shutdownanimation.zip").exists();
+    }
+
+    private static void startShutdownAnimation() {
+        SystemProperties.set("service.bootanim.exit", "0");
+        SystemProperties.set("sys.powerctl", "animate");
+        SystemProperties.set("ctl.start", "bootanim");
+    }
+
+    private static void stopShutdownAnimation() {
+        SystemProperties.set("service.bootanim.exit", "1");
+        while (SystemProperties.get("init.svc.bootanim").equals("running")) {
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException unused) {
             }
         }
     }
