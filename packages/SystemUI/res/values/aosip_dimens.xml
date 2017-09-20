@@ -17,4 +17,7 @@
 <resources>
     <!-- screenrecord -->
     <dimen name="screenrecord_dot_size">48dp</dimen>
+
+    <!-- QS tile height -->
+    <dimen name="qs_tile_height_wo_label">48dp</dimen>
 </resources>
