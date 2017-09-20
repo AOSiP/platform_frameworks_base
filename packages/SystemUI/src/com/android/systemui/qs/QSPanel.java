@@ -185,7 +185,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         if (mTileLayout instanceof PagedTileLayout) {
             ((PagedTileLayout) mTileLayout).setPageIndicator((PageIndicator) mPageIndicator);
         }
-        updateSettings();
 
         mBrightnessView.setPadding(mBrightnessView.getPaddingLeft(),
                 mBrightnessView.getPaddingTop(), mBrightnessView.getPaddingRight(),
@@ -221,6 +220,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                 R.layout.qs_paged_tile_layout, this, false);
         mTileLayout.setListening(mListening);
         addView((View) mTileLayout);
+        updateSettings();
     }
 
     public boolean isShowingCustomize() {
@@ -506,6 +506,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         r.callback = callback;
         r.tileView.init(r.tile);
         r.tile.refreshState();
+        r.tileView.setHideExpand(mTileLayout.getNumColumns() > 4);
         mRecords.add(r);
 
         if (mTileLayout != null) {
@@ -691,6 +692,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
         boolean updateResources();
         void updateSettings();
+        int getNumColumns();
 
         void setListening(boolean listening);
     }
@@ -725,6 +727,11 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     public void updateSettings() {
         if (mTileLayout != null) {
             mTileLayout.updateSettings();
+
+            for (TileRecord r : mRecords) {
+                QSTileView v = r.tileView;
+                v.setHideExpand(mTileLayout.getNumColumns() > 4);
+            }
         }
     }
 }
