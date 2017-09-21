@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- QS Colums -->
+    <!-- QS Colums & rows -->
     <string name="qs_menu_item_columns">Portrait columns</string>
     <string name="qs_menu_item_columns_landscape">Landscape columns</string>
     <string name="qs_menu_item_columns_three">3</string>
@@ -30,6 +30,12 @@
     <string name="qs_menu_item_titles">Hide labels</string>
     <string name="qs_menu_item_qs_columns">Quickbar columns</string>
     <string name="qs_menu_item_columns_auto">Automatic</string>
+    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
+    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_rows_one">1</string>
+    <string name="qs_menu_item_rows_two">2</string>
+    <string name="qs_menu_item_rows_three">3</string>
+    <string name="qs_menu_item_rows_four">4</string>
 
     <!-- Navbar Tuner -->
     <string name="preview">Preview</string>
