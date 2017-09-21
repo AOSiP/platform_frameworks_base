@@ -295,6 +295,20 @@ public class QuickQSPanel extends QSPanel {
         }
 
         @Override
+        public void updateSettings() {
+        }
+
+        @Override
+        public int getNumColumns() {
+            return getNumQuickTiles(mContext);
+        }
+
+        @Override
+        public boolean isShowTitles() {
+            return false;
+        }
+
+        @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
             if (mRecords != null && mRecords.size() > 0) {
@@ -326,16 +340,6 @@ public class QuickQSPanel extends QSPanel {
                     LayoutParams params = (LayoutParams) s.getLayoutParams();
                     params.width = tileGap;
                 }
-            }
-    }
-
-        @Override
-        public void updateSettings() {
-        }
-
-        @Override
-        public int getNumColumns() {
-            return getNumQuickTiles(mContext);
-        }
+          }
     }
 }
