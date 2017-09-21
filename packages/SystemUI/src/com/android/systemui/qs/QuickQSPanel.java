@@ -340,6 +340,7 @@ public class QuickQSPanel extends QSPanel {
                     LayoutParams params = (LayoutParams) s.getLayoutParams();
                     params.width = tileGap;
                 }
-          }
+            }
+        }
     }
 }
