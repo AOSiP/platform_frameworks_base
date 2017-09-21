@@ -49,6 +49,11 @@
   <!-- Whether device has a big physical display cutout -->
   <java-symbol type="bool" name="config_bigPhysicalDisplayCutout" />
 
+  <!-- HW keys binding -->
+  <java-symbol type="anim" name="custom_app_in" />
+  <java-symbol type="anim" name="custom_app_out" />
+  <java-symbol type="integer" name="config_deviceHardwareKeys" />
+
   <!-- Button backlight -->
   <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
   <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
