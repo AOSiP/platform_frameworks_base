@@ -34,9 +34,13 @@
   <!-- Emergency button in power menu -->
   <java-symbol type="bool" name="config_showEmergencyButtonInPowerMenu" />
 
-    <!-- Battery LED -->
-    <java-symbol type="bool" name="config_intrusiveBatteryLed" />
-    <java-symbol type="bool" name="config_multiColorBatteryLed" />
-    <java-symbol type="bool" name="config_ledCanPulse" />
+  <!-- Battery LED -->
+  <java-symbol type="bool" name="config_intrusiveBatteryLed" />
+  <java-symbol type="bool" name="config_multiColorBatteryLed" />
+  <java-symbol type="bool" name="config_ledCanPulse" />
+
+  <!-- DUI -->
+  <java-symbol type="anim" name="du_app_in" />
+  <java-symbol type="anim" name="du_app_out" />
 
 </resources>
