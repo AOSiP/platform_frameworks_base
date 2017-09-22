@@ -33,4 +33,8 @@
     <string name="global_action_restart_ui">SystemUI</string>
     <string name="global_action_restart_hot">Hot</string>
     <string name="global_action_screenshot">Screenshot</string>
+
+    <string name="lockscreen_default">Default</string>
+    <string name="lockscreen_hidden">None</string>
+
 </resources>
