@@ -34,4 +34,7 @@
 
     <string name="summary_empty" translatable="false"></string>
 
+    <string name="lockscreen_default">Default</string>
+    <string name="lockscreen_hidden">None</string>
+
 </resources>
