@@ -20,5 +20,7 @@
     <string name="quick_settings_derp_label">DerpQuest</string>
 
     <string name="statusbar_items_title">Statusbar icon</string>
+    <string name="lockscreen_default">Default</string>
+    <string name="lockscreen_hidden">None</string>
 
 </resources>
