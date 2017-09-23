@@ -7005,37 +7005,13 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     protected boolean shouldPeek(Entry entry, StatusBarNotification sbn) {
-        boolean alwaysHeadsUpForDialer = false;
-        boolean alwaysHeadsUpForMessaging = false;
-        if (mLessBoringHeadsUp) {
-            ActivityManager.RunningTaskInfo foregroundApp = null;
-            List<ActivityManager.RunningTaskInfo> tasks = mAm.getRunningTasks(1);
-            if (tasks != null && !tasks.isEmpty()) {
-                foregroundApp = tasks.get(0);
-            }
-            String foregroundAppName = null;
-            if (foregroundApp != null) {
-                foregroundAppName = foregroundApp.baseActivity.getPackageName().toLowerCase();
-            }
-            String notificationPackageName = sbn.getPackageName().toLowerCase();
-            if (foregroundAppName != null) {
-                if (!foregroundAppName.contains("dialer")) {
-                    //heads up if dialer is not the foreground app but the notification comes from it
-                    alwaysHeadsUpForDialer = notificationPackageName.contains("dialer");
-                }
-                if (!foregroundAppName.contains("messaging")) {
-                    //heads up if messaging is not the foreground app but the notification comes from it
-                    alwaysHeadsUpForMessaging = notificationPackageName.contains("messaging");
-                }
-                //else no call or sms, keep alwaysHeadsUpForThis off
-                //and skip the heads up if mLessBoringHeadsUp is true
-            }
-            //skip also if foregroundApp is null and mLessBoringHeadsUp is true
+        boolean isImportantHeadsUp = false;
+        String notificationPackageName = sbn.getPackageName().toLowerCase();
+        isImportantHeadsUp = notificationPackageName.contains("dialer") ||
+                notificationPackageName.contains("messaging");
 
-        }
-
-        if (!mUseHeadsUp || isDeviceInVrMode() || (mLessBoringHeadsUp &&
-                (!alwaysHeadsUpForDialer && !alwaysHeadsUpForMessaging))) {
+        if (!mUseHeadsUp || isDeviceInVrMode() || (!isDozing() && mLessBoringHeadsUp &&
+                !isImportantHeadsUp)) {
             if (DEBUG) Log.d(TAG, "No peeking: no huns or vr mode or less boring headsup enabled");
             return false;
         }
