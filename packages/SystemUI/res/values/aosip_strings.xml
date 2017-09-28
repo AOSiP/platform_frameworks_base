@@ -186,6 +186,11 @@
     <string name="quick_settings_navigation_default">Stock</string>
     <string name="quick_settings_navigation_disabled">Disabled</string>
 
+    <!-- Music tile -->
+    <string name="quick_settings_music_label">Music</string>
+    <string name="quick_settings_music_play">Play</string>
+    <string name="quick_settings_music_pause">Pause</string>
+
     <!-- Theme tile -->
     <string name="systemui_theme_style_title">Style</string>
     <string name="systemui_theme_style_auto">Automatic</string>

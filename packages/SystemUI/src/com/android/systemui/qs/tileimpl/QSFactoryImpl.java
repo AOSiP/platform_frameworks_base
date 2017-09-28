@@ -39,6 +39,7 @@ import com.android.systemui.qs.tiles.HeadsUpTile;
 import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LocationTile;
+import com.android.systemui.qs.tiles.MusicTile;
 import com.android.systemui.qs.tiles.NavigationBarTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
@@ -99,6 +100,7 @@ public class QSFactoryImpl implements QSFactory {
         else if (tileSpec.equals("navigation")) return new NavigationBarTile(mHost);
         else if (tileSpec.equals("theme")) return new ThemeTile(mHost);
         else if (tileSpec.equals("compass")) return new CompassTile(mHost);
+        else if (tileSpec.equals("music")) return new MusicTile(mHost);
         // Intent tiles.
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(mHost, tileSpec);
         else if (tileSpec.startsWith(CustomTile.PREFIX)) return CustomTile.create(mHost, tileSpec);
