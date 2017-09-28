@@ -103,4 +103,8 @@
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Roaming</string>
 
+    <!-- Language toggle tile -->
+    <string name="quick_settings_locale_label">Language</string>
+    <string name="quick_settings_locale_more_locales_toast">Please configure multiple languages to enable toggle functionality</string>
+
 </resources>
