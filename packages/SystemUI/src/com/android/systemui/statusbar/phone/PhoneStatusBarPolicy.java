@@ -349,17 +349,10 @@ public class PhoneStatusBarPolicy implements Callback, Callbacks,
 
         if (DndTile.isVisible(mContext) || DndTile.isCombinedIcon(mContext)) {
             zenVisible = zen != Global.ZEN_MODE_OFF;
-            switch(zen) {
-                case Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS:
-                    zenIconId = R.drawable.stat_sys_dnd_priority;
-                    break;
-                case Global.ZEN_MODE_NO_INTERRUPTIONS:
-                    zenIconId = R.drawable.stat_sys_dnd_total_silence;
-                    break;
-                default:
-                    zenIconId = R.drawable.stat_sys_dnd;
-                    break;
-            }
+            zenIconId = zen == Global.ZEN_MODE_NO_INTERRUPTIONS
+                    ? R.drawable.stat_sys_dnd_total_silence :
+                    (zen == Global.ZEN_MODE_ALARMS ? R.drawable.stat_sys_dnd_alarm :
+                    R.drawable.stat_sys_dnd);
             zenDescription = mContext.getString(R.string.quick_settings_dnd_label);
         } else if (zen == Global.ZEN_MODE_NO_INTERRUPTIONS) {
             zenVisible = true;
