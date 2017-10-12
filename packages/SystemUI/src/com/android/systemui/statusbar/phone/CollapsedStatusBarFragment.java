@@ -76,7 +76,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     // AOSiP Status Logo
     private View mAOSiPLogo;
-    private boolean mShowLogo;
+    private View mAOSiPLogoRight;
+    private int mShowLogo;
     private final Handler mHandler = new Handler();
 
     private class AOSiPSettingsObserver extends ContentObserver {
@@ -161,6 +162,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mSignalClusterView = mStatusBar.findViewById(R.id.signal_cluster);
         Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mSignalClusterView);
         mAOSiPLogo = mStatusBar.findViewById(R.id.status_bar_logo);
+        mAOSiPLogoRight = mStatusBar.findViewById(R.id.status_bar_logo_right);
         updateSettings(false);
         // Default to showing until we know otherwise.
         showSystemIconArea(false);
@@ -265,22 +267,28 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     public void hideSystemIconArea(boolean animate) {
         animateHide(mSystemIconArea, animate, true);
+        if (mShowLogo == 2) {
+            animateHide(mAOSiPLogoRight, animate, false);
+        }
     }
 
     public void showSystemIconArea(boolean animate) {
         animateShow(mSystemIconArea, animate);
+        if (mShowLogo == 2) {
+            animateShow(mAOSiPLogoRight, animate);
+        }
     }
 
     public void hideNotificationIconArea(boolean animate) {
         animateHide(mNotificationIconAreaInner, animate, true);
-        if (mShowLogo) {
-            animateHide(mAOSiPLogo, animate, true);
+        if (mShowLogo == 1) {
+            animateHide(mAOSiPLogo, animate, false);
         }
     }
 
     public void showNotificationIconArea(boolean animate) {
         animateShow(mNotificationIconAreaInner, animate);
-        if (mShowLogo) {
+        if (mShowLogo == 1) {
             animateShow(mAOSiPLogo, animate);
         }
     }
@@ -365,14 +373,23 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     public void updateSettings(boolean animate) {
         mShowLogo = Settings.System.getIntForUser(
                 getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO, 0,
-                UserHandle.USER_CURRENT) == 1;
+                UserHandle.USER_CURRENT);
         if (mNotificationIconAreaInner != null) {
-            if (mShowLogo) {
+            if (mShowLogo == 1) {
                 if (mNotificationIconAreaInner.getVisibility() == View.VISIBLE) {
                     animateShow(mAOSiPLogo, animate);
                 }
-            } else {
+            } else if (mShowLogo != 1) {
                 animateHide(mAOSiPLogo, animate, false);
+            }
+        }
+        if (mSystemIconArea != null) {
+            if (mShowLogo == 2) {
+                if (mSystemIconArea.getVisibility() == View.VISIBLE) {
+                    animateShow(mAOSiPLogoRight, animate);
+                }
+            } else if (mShowLogo != 2) {
+                animateHide(mAOSiPLogoRight, animate, false);
             }
         }
     }
