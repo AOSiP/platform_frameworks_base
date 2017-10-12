@@ -22,6 +22,7 @@ import android.annotation.Nullable;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
@@ -47,6 +48,13 @@ import com.android.systemui.statusbar.policy.EncryptionHelper;
 import com.android.systemui.statusbar.policy.KeyguardMonitor;
 import com.android.systemui.statusbar.policy.NetworkController;
 import com.android.systemui.statusbar.policy.NetworkController.SignalCallback;
+
+import android.widget.ImageView;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuff.Mode;
 
 /**
  * Contains the collapsed status bar and handles hiding/showing based on disable flags
@@ -81,6 +89,12 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private ContentResolver mContentResolver;
     private boolean mShowClock = true;
 
+    private ImageView mDerpQuestLogo;
+    private ImageView mDerpQuestLogoRight;
+    private int mLogoStyle;
+    private int mShowLogo;
+    private int mLogoColor;
+
     private class SettingsObserver extends ContentObserver {
        SettingsObserver(Handler handler) {
            super(handler);
@@ -93,13 +107,28 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
          mContentResolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUSBAR_CLOCK_STYLE),
                     false, this, UserHandle.USER_ALL);
+         mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_LOGO),
+                    false, this, UserHandle.USER_ALL);
+         mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_LOGO_STYLE),
+                    false, this, UserHandle.USER_ALL);
+         mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_LOGO_COLOR),
+                    false, this, UserHandle.USER_ALL);
        }
 
        @Override
-       public void onChange(boolean selfChange) {
-           updateSettings(true);
+       public void onChange(boolean selfChange, Uri uri) {
+            if ((uri.equals(Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO))) ||
+                (uri.equals(Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO_STYLE))) ||
+                (uri.equals(Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO_COLOR)))){
+                 updateLogoSettings(true);
+            }
+            updateSettings(true);
        }
     }
+
     private SettingsObserver mSettingsObserver = new SettingsObserver(mHandler);
 
     private SignalCallback mSignalCallback = new SignalCallback() {
@@ -141,6 +170,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mClockView = mStatusBar.findViewById(R.id.clock);
         mCenterClockLayout = (LinearLayout) mStatusBar.findViewById(R.id.center_clock_layout);
         mRightClock = mStatusBar.findViewById(R.id.right_clock);
+        mDerpQuestLogo = mStatusBar.findViewById(R.id.status_bar_logo);
+        mDerpQuestLogoRight = mStatusBar.findViewById(R.id.status_bar_logo_right);
+        updateSettings(false);
+        updateLogoSettings(false);
         showSystemIconArea(false);
         initEmergencyCryptkeeperText();
 	animateHide(mClockView, false, false);
@@ -284,6 +317,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             animateHide(mRightClock, animate, true);
         }
         animateHide(mSystemIconArea, animate, true);
+        if (mShowLogo == 2) {
+            animateHide(mDerpQuestLogoRight, animate, false);
+        }
     }
 
     public void showSystemIconArea(boolean animate) {
@@ -292,18 +328,27 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             animateShow(mRightClock, animate);
         }
         animateShow(mSystemIconArea, animate);
+        if (mShowLogo == 2) {
+            animateShow(mDerpQuestLogoRight, animate);
+        }
     }
 
     public void hideNotificationIconArea(boolean animate) {
         animateHide(mNotificationIconAreaInner, animate, true);
         animateHide(mCenteredIconArea, animate, true);
         animateHide(mCenterClockLayout, animate, true);
+        if (mShowLogo == 1) {
+            animateHide(mDerpQuestLogo, animate, false);
+        }
     }
 
     public void showNotificationIconArea(boolean animate) {
         animateShow(mNotificationIconAreaInner, animate);
         animateShow(mCenteredIconArea, animate);
         animateShow(mCenterClockLayout, animate);
+        if (mShowLogo == 1) {
+             animateShow(mDerpQuestLogo, animate);
+        }
     }
 
     public void hideOperatorName(boolean animate) {
@@ -402,6 +447,13 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     }
 
     public void updateSettings(boolean animate) {
+        if (mStatusBar == null) return;
+
+        if (getContext() == null) {
+            return;
+        }
+
+        try {
         mShowClock = Settings.System.getIntForUser(mContentResolver,
                 Settings.System.STATUS_BAR_CLOCK, 1,
                 UserHandle.USER_CURRENT) == 1;
@@ -413,7 +465,86 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                     Settings.System.STATUSBAR_CLOCK_STYLE, 0, 
                     UserHandle.USER_CURRENT);
         }
-        updateClockStyle(animate);
+        } catch (Exception e) {
+        }
+	     updateClockStyle(animate);
+    }
+
+    public void updateLogoSettings(boolean animate) {
+        Drawable logo = null;
+
+        if (mStatusBar == null) return;
+
+        if (getContext() == null) {
+            return;
+        }
+
+        mShowLogo = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO, 0,
+                UserHandle.USER_CURRENT);
+        mLogoColor = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO_COLOR, 0xffff8800,
+                UserHandle.USER_CURRENT);
+        mLogoStyle = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO_STYLE, 0,
+                UserHandle.USER_CURRENT);
+
+        switch(mLogoStyle) {
+                // DerpQuest 1
+            case 1:
+                logo = getContext().getDrawable(R.drawable.ic_derpquest_logo);
+                break;
+                // Android
+            case 2:
+                logo = getContext().getResources().getDrawable(R.drawable.ic_android_logo);
+                break;
+                // OWL
+            case 3:
+                logo = getContext().getResources().getDrawable(R.drawable.ic_owl_logo);
+                break;
+                // OWL 1
+            case 4:
+                logo = getContext().getResources().getDrawable(R.drawable.ic_owl1_logo);
+                break;
+                // OWL 2
+            case 5:
+                logo = getContext().getResources().getDrawable(R.drawable.ic_owl2_logo);
+                break;
+                // DerpQuest
+            case 0:
+            default:
+                logo = getContext().getDrawable(R.drawable.status_bar_logo);
+                break;
+        }
+
+        if (mShowLogo == 1) {
+	    mDerpQuestLogo.setImageDrawable(null);
+	    mDerpQuestLogo.setImageDrawable(logo);
+ 	    mDerpQuestLogo.setColorFilter(mLogoColor, PorterDuff.Mode.MULTIPLY);
+	} else if (mShowLogo == 2) {
+	    mDerpQuestLogoRight.setImageDrawable(null);
+	    mDerpQuestLogoRight.setImageDrawable(logo);
+	    mDerpQuestLogoRight.setColorFilter(mLogoColor, PorterDuff.Mode.MULTIPLY);
+	}
+
+        if (mNotificationIconAreaInner != null) {
+            if (mShowLogo == 1) {
+                if (mNotificationIconAreaInner.getVisibility() == View.VISIBLE) {
+                    animateShow(mDerpQuestLogo, animate);
+                }
+            } else if (mShowLogo != 1) {
+                animateHide(mDerpQuestLogo, animate, false);
+            }
+        }
+        if (mSystemIconArea != null) {
+            if (mShowLogo == 2) {
+                if (mSystemIconArea.getVisibility() == View.VISIBLE) {
+                    animateShow(mDerpQuestLogoRight, animate);
+                }
+            } else if (mShowLogo != 2) {
+                   animateHide(mDerpQuestLogoRight, animate, false);
+            }
+        }
     }
 
     private void updateClockStyle(boolean animate) {
