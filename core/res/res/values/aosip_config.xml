@@ -21,6 +21,10 @@
     <!-- Whether to show emergency button in power menu -->
     <bool name="config_showEmergencyButtonInPowerMenu">false</bool>
 
+    <!-- The list of components which should be automatically disabled. -->
+    <string-array name="config_disabledComponents" translatable="false">
+    </string-array>
+
     <!-- Power menu -->
     <string-array translatable="false" name="config_custom_globalActionsList">
         <item>power</item>
