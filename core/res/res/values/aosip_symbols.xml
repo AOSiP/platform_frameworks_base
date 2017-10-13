@@ -1,5 +1,5 @@
 <!--
-     Copyright (C) 2016-2017 AOSiP
+     Copyright (C) 2016-2018 AOSiP
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,4 +15,7 @@
 -->
 <resources>
     <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
+
+    <!-- Package Manager -->
+    <java-symbol type="array" name="config_disabledComponents" />
 </resources>
