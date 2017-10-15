@@ -840,7 +840,7 @@ public class NavigationBarView extends FrameLayout implements PluginListener<Nav
 
     public void setDoubleTapToSleep() {
         boolean isDoubleTapEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.DOUBLE_TAP_SLEEP_NAVBAR, 1, UserHandle.USER_CURRENT) == 1;
+                Settings.System.DOUBLE_TAP_SLEEP_NAVBAR, 0, UserHandle.USER_CURRENT) == 1;
         ((NavigationBarFrame) getRootView()).setDoubleTapToSleep(isDoubleTapEnabled);
     }
 
