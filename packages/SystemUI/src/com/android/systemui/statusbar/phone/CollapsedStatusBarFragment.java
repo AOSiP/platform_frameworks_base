@@ -49,6 +49,7 @@ import com.android.systemui.BatteryMeterView;
 import com.android.systemui.statusbar.phone.StatusBarIconController.DarkIconManager;
 import com.android.systemui.statusbar.phone.StatusIconContainer;
 import com.android.systemui.statusbar.policy.Clock;
+import com.android.systemui.statusbar.phone.TickerView;
 import com.android.systemui.statusbar.policy.EncryptionHelper;
 import com.android.systemui.statusbar.policy.KeyguardMonitor;
 import com.android.systemui.statusbar.policy.NetworkController;
@@ -56,7 +57,6 @@ import com.android.systemui.statusbar.policy.NetworkController.SignalCallback;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 
-import android.widget.ImageView;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -134,6 +134,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     // clock position
     private ClockController mClockController;
     private boolean mIsClockBlacklisted;
+
+    // Notification ticker
+    private int mTickerEnabled;
+    private View mTickerViewFromStub;
 
     private SignalCallback mSignalCallback = new SignalCallback() {
         @Override
@@ -537,7 +541,11 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mShowCarrierLabel = Settings.System.getIntForUser(
                 mContentResolver, Settings.System.STATUS_BAR_SHOW_CARRIER, 1,
                 UserHandle.USER_CURRENT);
+        mTickerEnabled = Settings.System.getIntForUser(
+                mContentResolver, Settings.System.STATUS_BAR_SHOW_TICKER, 0,
+                UserHandle.USER_CURRENT);
         updateStatusBarLogo(animate);
+        initTickerView();
     }
 
     private void updateStatusBarLogo(boolean animate) {
@@ -602,5 +610,20 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             }
         }
         setCarrierLabel(animate);
+    }
+
+    private void initTickerView() {
+        if (mTickerEnabled != 0) {
+            View tickerStub = mStatusBar.findViewById(R.id.ticker_stub);
+            if (mTickerViewFromStub == null && tickerStub != null) {
+                mTickerViewFromStub = ((ViewStub) tickerStub).inflate();
+            }
+            TickerView tickerView = (TickerView) mStatusBar.findViewById(R.id.tickerText);
+            ImageSwitcher tickerIcon = (ImageSwitcher) mStatusBar.findViewById(R.id.tickerIcon);
+            mStatusBarComponent.createTicker(
+                    mTickerEnabled, getContext(), mStatusBar, tickerView, tickerIcon, mTickerViewFromStub);
+        } else {
+            mStatusBarComponent.disableTicker();
+        }
     }
 }
