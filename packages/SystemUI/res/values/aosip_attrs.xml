@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016 The Android Open Source Project
+     Copyright (C) 2015-2018 AOSiP
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,14 +14,12 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<com.android.systemui.qs.PageIndicator
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/page_indicator"
-    android:layout_width="match_parent"
-    android:layout_height="48dp"
-    android:layout_gravity="center"
-    android:layout_marginBottom="@dimen/qs_page_indicator_margin_bottom"
-    android:focusable="true"
-    android:gravity="center"
-    android:importantForAccessibility="yes"
-    android:visibility="gone"/>
+<resources>
+
+    <!-- QS Brightness control padding -->
+    <dimen name="qs_brightness_footer_padding">12dp</dimen>
+    <dimen name="qs_footer_padding_top">0dp</dimen>
+    <dimen name="qs_page_indicator_margin_bottom">12dp</dimen>
+    <dimen name="qs_paged_tile_layout_padding_bottom">4dp</dimen>
+
+</resources>
