@@ -22,6 +22,7 @@ import android.annotation.Nullable;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
@@ -50,6 +51,11 @@ import com.android.systemui.statusbar.policy.EncryptionHelper;
 import com.android.systemui.statusbar.policy.KeyguardMonitor;
 import com.android.systemui.statusbar.policy.NetworkController;
 import com.android.systemui.statusbar.policy.NetworkController.SignalCallback;
+
+import android.widget.ImageView;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 
 /**
  * Contains the collapsed status bar and handles hiding/showing based on disable flags
@@ -83,6 +89,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private ImageView mKronicLogo;
     private boolean mShowLogo;
     private Handler mHandler;
+    private int mLogoStyle;
 
     private class SettingsObserver extends ContentObserver {
         SettingsObserver(Handler handler) {
@@ -93,10 +100,17 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             mContentResolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_LOGO),
                     false, this, UserHandle.USER_ALL);
-        }
+            mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_LOGO_STYLE),
+                    false, this, UserHandle.USER_ALL);
+       }
 
         @Override
-        public void onChange(boolean selfChange) {
+        public void onChange(boolean selfChange, Uri uri) {
+            if ((uri.equals(Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO))) ||
+                (uri.equals(Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO_STYLE)))){
+                 updateStatusBarLogo(true);
+        }
             updateSettings(true);
         }
     }
@@ -446,13 +460,72 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mShowLogo = Settings.System.getIntForUser(
                 mContentResolver, Settings.System.STATUS_BAR_LOGO, 0,
                 UserHandle.USER_CURRENT) == 1;
+        updateStatusBarLogo(animate);
+    }
+
+    private void updateStatusBarLogo(boolean animate) {
+        Drawable logo = null;
+        if (mStatusBar == null) return;
+        if (getContext() == null) {
+            return;
+        }
+
+        mShowLogo = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO, 0,
+                UserHandle.USER_CURRENT) == 1;
+        mLogoStyle = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO_STYLE, 0,
+                UserHandle.USER_CURRENT);
+
+        switch(mLogoStyle) {
+                // Default HOME logo, first time
+            case 0:
+                logo = getContext().getResources().getDrawable(R.drawable.ic_status_bar_kronic_logo);
+                break;
+                // Khloe
+            case 1:
+                logo = getContext().getResources().getDrawable(R.drawable.status_bar_khloe);
+                break;
+                // Kronic
+            case 2:
+                logo = getContext().getResources().getDrawable(R.drawable.status_bar_kronic);
+                break;
+                // Kronic 3.0
+            case 3:
+                logo = getContext().getResources().getDrawable(R.drawable.status_bar_kronic3);
+                break;
+                // OwlsNest
+            case 4:
+                logo = getContext().getResources().getDrawable(R.drawable.status_bar_nest);
+                break;
+                // MDI owl
+            case 5:
+                logo = getContext().getResources().getDrawable(R.drawable.status_bar_owl);
+                break;
+                // Default Kronic HOME logo, once again
+            default:
+                logo = getContext().getResources().getDrawable(R.drawable.ic_status_bar_kronic_logo);
+                break;
+        }
+
+        if (mKronicLogo != null) {
+            if (logo == null) {
+                // Something wrong. Do not show anything
+                mKronicLogo.setImageDrawable(logo);
+                mShowLogo = false;
+                return;
+            }
+
+            mKronicLogo.setImageDrawable(logo);
+        }
+
         if (mNotificationIconAreaInner != null) {
             if (mShowLogo) {
                 if (mNotificationIconAreaInner.getVisibility() == View.VISIBLE) {
                     animateShow(mKronicLogo, animate);
                 }
             } else {
-                animateHiddenState(mKronicLogo, View.GONE, animate);
+                animateHide(mKronicLogo, animate);
             }
         }
     }
