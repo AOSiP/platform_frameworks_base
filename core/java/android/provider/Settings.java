@@ -4616,6 +4616,12 @@ public final class Settings {
         private static final Validator STATUS_BAR_LOGO_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
+       /**
+        * Statusbar logo Style
+        * @hide
+         */
+        public static final String STATUS_BAR_LOGO_STYLE = "status_bar_logo_style";
+
         /**
          * Whether to change the transparency of the qs panel
          * @hide
