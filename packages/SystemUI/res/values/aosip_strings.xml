@@ -39,6 +39,8 @@
     <string name="global_action_restart_recovery">Go to recovery</string>
     <string name="global_action_restart_bootloader">Go to bootloader</string>
     <string name="global_action_screenrecord">Screenrecord</string>
+    <string name="global_action_restart_soft">Soft Reboot</string>
+    <string name="global_action_restart_systemui">Restart SystemUI</string>
 
     <!-- Advance location quick setting tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Location reporting: battery saving mode.</string>
