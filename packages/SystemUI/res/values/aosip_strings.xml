@@ -54,4 +54,9 @@
     <string name="navbar_tuner_activity">Navigation bar buttons</string>
     <string name="lockscreen_tuner_activity">Lockscreen shortcuts</string>
     <string name="powernotif_tuner_activity">Power notifications</string>
+
+    <!-- Recents Panel -->
+    <!-- The text for the button in the notification window-shade that clears
+         all of the currently visible notifications. [CHAR LIMIT=10]-->
+    <string name="clear_recents">Close all recent</string>
 </resources>
