@@ -4114,7 +4114,7 @@ public final class Settings {
          */
         public static final String STATUS_BAR_SHOW_TICKER = "status_bar_show_ticker";
 
-       /**
+        /**
          * Whether to wake the display when plugging or unplugging the charger
          *
          * @hide
@@ -4126,6 +4126,18 @@ public final class Settings {
          * @hide
          */
         public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
+
+        /**
+         * location of the clear all rectents button
+         * @hide
+         */
+        public static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+
+        /**
+         * show clear all recents button
+         *  @hide
+         */
+        public static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
