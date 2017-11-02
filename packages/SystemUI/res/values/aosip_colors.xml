@@ -28,4 +28,8 @@
     <color name="icon_color_split_screen_dark">@color/dark_mode_icon_color_single_tone</color>
     <color name="icon_color_home_dark">@color/dark_mode_icon_color_single_tone</color>
     <color name="icon_color_overview_dark">@color/dark_mode_icon_color_single_tone</color>
+
+    <!-- Floating action button -->
+    <color name="fab_color">?android:attr/colorAccent</color>
+    <color name="floating_action_button_icon_color">@android:color/white</color>
 </resources>
