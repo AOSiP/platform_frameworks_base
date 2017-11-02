@@ -4110,6 +4110,18 @@ public final class Settings {
         public static final String SCREENSHOT_DEFAULT_MODE = "screenshot_default_mode";
 
         /**
+         * location of the clear all rectents button
+         * @hide
+         */
+        public static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+
+        /**
+         * show clear all recents button
+         *  @hide
+         */
+        public static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
