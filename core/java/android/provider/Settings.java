@@ -4128,16 +4128,16 @@ public final class Settings {
         public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
 
         /**
-         * location of the clear all rectents button
+         * show clear all recents button
          * @hide
          */
-        public static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+        public static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
 
         /**
-         * show clear all recents button
-         *  @hide
+         * location of the clear all recents button
+         * @hide
          */
-        public static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
+        public static final String  RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
