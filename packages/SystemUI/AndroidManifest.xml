@@ -268,7 +268,7 @@
 
         <activity android:name=".tuner.TunerActivity"
                   android:icon="@drawable/tuner"
-                  android:theme="@style/TunerSettings"
+                  android:theme="@style/CustomTunerSettings"
                   android:label="@string/system_ui_tuner"
                   android:process=":tuner"
                   android:parentActivityName="com.aosip.owlsnest.OwlsNestSettings"
@@ -277,7 +277,7 @@
 
         <activity android:name=".tuner.StatusBarIconsTunerActivity"
                   android:icon="@drawable/tuner"
-                  android:theme="@style/TunerSettings"
+                  android:theme="@style/CustomTunerSettings"
                   android:label="@string/statusbar_icons_blacklist"
                   android:process=":tuner"
                   android:parentActivityName="com.aosip.owlsnest.statusbar.IconsCategory"
@@ -285,7 +285,7 @@
         </activity>
 
         <activity android:name=".tuner.NavBarTunerActivity"
-                  android:theme="@style/TunerSettings"
+                  android:theme="@style/CustomTunerSettings"
                   android:label="@string/navbar_tuner_activity"
                   android:process=":tuner"
                   android:parentActivityName="com.aosip.owlsnest.navigation.NavigationCategory"
@@ -293,7 +293,7 @@
         </activity>
 
         <activity android:name=".tuner.LockscreenTunerActivity"
-                  android:theme="@style/TunerSettings"
+                  android:theme="@style/CustomTunerSettings"
                   android:label="@string/lockscreen_tuner_activity"
                   android:process=":tuner"
                   android:parentActivityName="com.aosip.owlsnest.lockscreen.OptionsCategory"
@@ -301,7 +301,7 @@
         </activity>
 
         <activity android:name=".tuner.PowerNotificationsTunerActivity"
-                  android:theme="@style/TunerSettings"
+                  android:theme="@style/CustomTunerSettings"
                   android:label="@string/powernotif_tuner_activity"
                   android:process=":tuner"
                   android:parentActivityName="com.aosip.owlsnest.notification.NotificationCategory"
@@ -311,7 +311,7 @@
         <activity-alias android:name=".DemoMode"
                   android:targetActivity=".tuner.TunerActivity"
                   android:icon="@drawable/tuner"
-                  android:theme="@style/TunerSettings"
+                  android:theme="@style/CustomTunerSettings"
                   android:label="@string/demo_mode"
                   android:process=":tuner"
                   android:exported="true">
