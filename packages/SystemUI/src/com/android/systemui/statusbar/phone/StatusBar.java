@@ -882,8 +882,8 @@ public class StatusBar extends SystemUI implements DemoMode,
         createAndAddWindows();
 
         mSettingsObserver.onChange(false); // set up
-        mAbcSettingsObserver.observe();
-        mAbcSettingsObserver.update();
+        mAosipSettingsObserver.observe();
+        mAosipSettingsObserver.update();
         mCommandQueue.disable(switches[0], switches[6], false /* animate */);
         setSystemUiVisibility(switches[1], switches[7], switches[8], 0xffffffff,
                 fullscreenStackBounds, dockedStackBounds);
@@ -5546,9 +5546,9 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     };
 
-    private AbcSettingsObserver mAbcSettingsObserver = new AbcSettingsObserver(mHandler);
-    private class AbcSettingsObserver extends ContentObserver {
-        AbcSettingsObserver(Handler handler) {
+    private AosipSettingsObserver mAosipSettingsObserver = new AosipSettingsObserver(mHandler);
+    private class AosipSettingsObserver extends ContentObserver {
+        AosipSettingsObserver(Handler handler) {
             super(handler);
         }
 
