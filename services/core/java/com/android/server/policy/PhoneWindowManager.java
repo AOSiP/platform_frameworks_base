@@ -4067,8 +4067,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         if (mDeviceKeyHandler != null) {
             try {
                 // The device only should consume known keys.
-                if (mDeviceKeyHandler.handleKeyEvent(event)) {
-                    return -1;
+                event = mDeviceKeyHandler.handleKeyEvent(event);
+                if (event == -1) {
+                    return null;
                 }
             } catch (Exception e) {
                 Slog.w(TAG, "Could not dispatch event to device key handler", e);
@@ -6152,7 +6153,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         if (mDeviceKeyHandler != null) {
             try {
                 // The device only should consume known keys.
-                if (mDeviceKeyHandler.handleKeyEvent(event)) {
+                event = mDeviceKeyHandler.handleKeyEvent(event);
+                if (event == null) {
                     return 0;
                 }
             } catch (Exception e) {
