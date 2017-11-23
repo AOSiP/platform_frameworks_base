@@ -3899,7 +3899,8 @@ public final class Settings {
         private static final Validator SHOW_BATTERY_PERCENT_VALIDATOR = sBooleanValidator;
 
         /**
-         * Beginning of Pure System Settings Additions
+         * Beginning of AOSiP public Settings
+         *
          * @hide
          */
 
@@ -3908,19 +3909,6 @@ public final class Settings {
          * @hide
          */
         public static final String VOLUME_ADJUST_SOUNDS_ENABLED = "volume_adjust_sounds_enabled";
-
-        /**
-         * IMPORTANT: If you add a new public settings you also have to add it to
-         * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
-         * it to PRIVATE_SETTINGS below. Also add a validator that can validate
-         * the setting value. See an example above.
-         */
-
-        /**
-         * Beginning of AOSiP public Settings
-         *
-         * @hide
-         */
 
         /**
          * Whether to display sound panel in the power menu
@@ -4360,7 +4348,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(LOCK_TO_APP_ENABLED);
             PRIVATE_SETTINGS.add(EGG_MODE);
             PRIVATE_SETTINGS.add(SHOW_BATTERY_PERCENT);
-            PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_NAVBAR);
             PRIVATE_SETTINGS.add(SWAP_VOLUME_BUTTONS);
             PRIVATE_SETTINGS.add(VOLUME_KEYS_CONTROL_MEDIA_STREAM);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_LOCKSCREEN);
@@ -7297,12 +7284,6 @@ public final class Settings {
          * @hide
          */
         public static final String NOTIFICATION_BADGING = "notification_badging";
-
-         /**
-         * Whether to enable navigation bar
-         * @hide
-         */
-        public static final String NAVIGATION_BAR_ENABLED = "navigation_bar_enabled";
 
         /**
          * Whether to set a lower brightness level when enabling night mode
