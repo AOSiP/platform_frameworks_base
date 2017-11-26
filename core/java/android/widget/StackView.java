@@ -56,9 +56,9 @@ public class StackView extends AdapterViewAnimator {
     /**
      * Default animation parameters
      */
-    private static final int DEFAULT_ANIMATION_DURATION = 400;
-    private static final int MINIMUM_ANIMATION_DURATION = 50;
-    private static final int STACK_RELAYOUT_DURATION = 100;
+    private static final int DEFAULT_ANIMATION_DURATION = 300;
+    private static final int MINIMUM_ANIMATION_DURATION = 20;
+    private static final int STACK_RELAYOUT_DURATION = 80;
 
     /**
      * Parameters effecting the perspective visuals
@@ -117,7 +117,7 @@ public class StackView extends AdapterViewAnimator {
 
     private static final int MIN_TIME_BETWEEN_INTERACTION_AND_AUTOADVANCE = 5000;
 
-    private static final long MIN_TIME_BETWEEN_SCROLLS = 100;
+    private static final long MIN_TIME_BETWEEN_SCROLLS = 80;
 
     /**
      * These variables are all related to the current state of touch interaction
