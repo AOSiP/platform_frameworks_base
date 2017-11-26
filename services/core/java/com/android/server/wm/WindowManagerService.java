@@ -292,16 +292,16 @@ public class WindowManagerService extends IWindowManager.Stub
     static final int MAX_ANIMATION_DURATION = 10 * 1000;
 
     /** Amount of time (in milliseconds) to delay before declaring a window freeze timeout. */
-    static final int WINDOW_FREEZE_TIMEOUT_DURATION = 2000;
+    static final int WINDOW_FREEZE_TIMEOUT_DURATION = 1650;
 
     /** Amount of time (in milliseconds) to delay before declaring a seamless rotation timeout. */
-    static final int SEAMLESS_ROTATION_TIMEOUT_DURATION = 2000;
+    static final int SEAMLESS_ROTATION_TIMEOUT_DURATION = 1860;
 
     /** Amount of time (in milliseconds) to delay before declaring a window replacement timeout. */
-    static final int WINDOW_REPLACEMENT_TIMEOUT_DURATION = 2000;
+    static final int WINDOW_REPLACEMENT_TIMEOUT_DURATION = 1860;
 
     /** Amount of time to allow a last ANR message to exist before freeing the memory. */
-    static final int LAST_ANR_LIFETIME_DURATION_MSECS = 2 * 60 * 60 * 1000; // Two hours
+    static final int LAST_ANR_LIFETIME_DURATION_MSECS = 3600 * 1000 + 1800 * 1000; // 1 1/2 hours
     /**
      * If true, the window manager will do its own custom freezing and general
      * management of the screen during rotation.

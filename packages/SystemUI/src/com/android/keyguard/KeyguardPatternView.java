@@ -407,7 +407,7 @@ public class KeyguardPatternView extends LinearLayout implements KeyguardSecurit
         enableClipping(false);
         setAlpha(1f);
         setTranslationY(mAppearAnimationUtils.getStartTranslation());
-        AppearAnimationUtils.startTranslationYAnimation(this, 0 /* delay */, 500 /* duration */,
+        AppearAnimationUtils.startTranslationYAnimation(this, 0 /* delay */, 400 /* duration */,
                 0, mAppearAnimationUtils.getInterpolator());
         mAppearAnimationUtils.startAnimation2d(
                 mLockPatternView.getCellStates(),

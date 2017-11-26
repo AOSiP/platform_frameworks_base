@@ -354,8 +354,8 @@ public class StatusBar extends SystemUI implements DemoMode,
             .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
             .build();
 
-    public static final int FADE_KEYGUARD_START_DELAY = 100;
-    public static final int FADE_KEYGUARD_DURATION = 300;
+    public static final int FADE_KEYGUARD_START_DELAY = 20;
+    public static final int FADE_KEYGUARD_DURATION = 240;
     public static final int FADE_KEYGUARD_DURATION_PULSING = 96;
 
     /** If true, the system is in the half-boot-to-decryption-screen state.
@@ -2303,7 +2303,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 }
                 nlo.animate()
                         .alpha(showDot ? 1 : 0)
-                        .setDuration(showDot ? 750 : 250)
+                        .setDuration(showDot ? 700 : 200)
                         .setInterpolator(new AccelerateInterpolator(2.0f))
                         .setListener(showDot ? null : new AnimatorListenerAdapter() {
                             @Override
@@ -2584,7 +2584,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                                 + mBackdropBack.getDrawable());
                     }
                     mBackdropFront.animate()
-                            .setDuration(250)
+                            .setDuration(200)
                             .alpha(0f).withEndAction(mHideBackdropFront);
                 }
             }
@@ -2609,7 +2609,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                     mBackdrop.animate()
                             .alpha(SRC_MIN_ALPHA)
                             .setInterpolator(Interpolators.ACCELERATE_DECELERATE)
-                            .setDuration(300)
+                            .setDuration(240)
                             .setStartDelay(0)
                             .withEndAction(new Runnable() {
                                 @Override
@@ -4546,7 +4546,7 @@ public class StatusBar extends SystemUI implements DemoMode,
      * Plays the animation when an activity that was occluding Keyguard goes away.
      */
     public void animateKeyguardUnoccluding() {
-        mScrimController.animateKeyguardUnoccluding(500);
+        mScrimController.animateKeyguardUnoccluding(440);
         mNotificationPanel.setExpandedFraction(0f);
         animateExpandNotificationsPanel();
     }

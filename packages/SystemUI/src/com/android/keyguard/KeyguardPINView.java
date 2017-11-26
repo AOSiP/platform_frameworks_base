@@ -123,7 +123,7 @@ public class KeyguardPINView extends KeyguardPinBasedInputView {
         enableClipping(false);
         setAlpha(1f);
         setTranslationY(mAppearAnimationUtils.getStartTranslation());
-        AppearAnimationUtils.startTranslationYAnimation(this, 0 /* delay */, 500 /* duration */,
+        AppearAnimationUtils.startTranslationYAnimation(this, 0 /* delay */, 400 /* duration */,
                 0, mAppearAnimationUtils.getInterpolator());
         mAppearAnimationUtils.startAnimation2d(mViews,
                 new Runnable() {
@@ -138,7 +138,7 @@ public class KeyguardPINView extends KeyguardPinBasedInputView {
     public boolean startDisappearAnimation(final Runnable finishRunnable) {
         enableClipping(false);
         setTranslationY(0);
-        AppearAnimationUtils.startTranslationYAnimation(this, 0 /* delay */, 280 /* duration */,
+        AppearAnimationUtils.startTranslationYAnimation(this, 0 /* delay */, 240 /* duration */,
                 mDisappearYTranslation, mDisappearAnimationUtils.getInterpolator());
         DisappearAnimationUtils disappearAnimationUtils = mKeyguardUpdateMonitor
                 .needsSlowUnlockTransition()

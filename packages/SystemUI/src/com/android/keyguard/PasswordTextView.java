@@ -50,16 +50,16 @@ import java.util.Stack;
 public class PasswordTextView extends View {
 
     private static final float DOT_OVERSHOOT_FACTOR = 1.5f;
-    private static final long DOT_APPEAR_DURATION_OVERSHOOT = 320;
-    private static final long APPEAR_DURATION = 160;
-    private static final long DISAPPEAR_DURATION = 160;
-    private static final long RESET_DELAY_PER_ELEMENT = 40;
+    private static final long DOT_APPEAR_DURATION_OVERSHOOT = 240;
+    private static final long APPEAR_DURATION = 120;
+    private static final long DISAPPEAR_DURATION = 120;
+    private static final long RESET_DELAY_PER_ELEMENT = 20;
     private static final long RESET_MAX_DELAY = 200;
 
     /**
      * The overlap between the text disappearing and the dot appearing animation
      */
-    private static final long DOT_APPEAR_TEXT_DISAPPEAR_OVERLAP_DURATION = 130;
+    private static final long DOT_APPEAR_TEXT_DISAPPEAR_OVERLAP_DURATION = 100;
 
     /**
      * The duration the text needs to stay there at least before it can morph into a dot

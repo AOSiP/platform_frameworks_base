@@ -58,9 +58,9 @@ public class StatusBarKeyguardViewManager implements RemoteInputController.Callb
 
     // Delay for showing the navigation bar when the bouncer appears. This should be kept in sync
     // with the appear animations of the PIN/pattern/password views.
-    private static final long NAV_BAR_SHOW_DELAY_BOUNCER = 320;
+    private static final long NAV_BAR_SHOW_DELAY_BOUNCER = 300;
 
-    private static final long WAKE_AND_UNLOCK_SCRIM_FADEOUT_DURATION_MS = 200;
+    private static final long WAKE_AND_UNLOCK_SCRIM_FADEOUT_DURATION_MS = 160;
 
     // Duration of the Keyguard dismissal animation in case the user is currently locked. This is to
     // make everything a bit slower to bridge a gap until the user is unlocked and home screen has
