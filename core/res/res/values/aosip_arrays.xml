@@ -14,8 +14,8 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Rotation sensor -->
-    <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
-
-    <java-symbol type="array" name="config_vendorPlatformSignatures" />
+    <!-- The list of vendor package signatures that should also be considered
+         platform signatures, specifically for use on devices with a vendor partition. -->
+    <string-array name="config_vendorPlatformSignatures" translatable="false">
+    </string-array>
 </resources>
