@@ -14,6 +14,9 @@
    limitations under the License.
 -->
 <resources>
+  <!-- Vendor platform signature -->
+  <java-symbol type="array" name="config_vendorPlatformSignatures" />
+
   <!-- App error dialog -->
   <java-symbol type="id" name="aerr_copy" />
   <java-symbol type="string" name="url_copy_success" />
