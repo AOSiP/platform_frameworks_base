@@ -22,6 +22,7 @@
 
     <!-- Roaming Icon -->
     <string name="status_bar_roaming">Roaming</string>
+    <string name="status_bar_vpn">VPN</string>
 
     <!-- Advanced location QS Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Location reporting: battery saving mode.</string>
