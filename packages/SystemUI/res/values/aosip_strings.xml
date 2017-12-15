@@ -61,6 +61,7 @@
     <string name="lockscreen_tuner_activity">Lock screen shortcuts</string>
     <string name="powernotif_tuner_activity">Power notifications</string>
     <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_roaming">Roaming</string>
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
