@@ -122,6 +122,7 @@
 
   <!-- Input policy constants  -->
   <java-symbol type="integer" name="config_deviceHardwareKeys" />
+  <java-symbol type="integer" name="config_deviceHardwareWakeKeys" />
   <java-symbol type="integer" name="config_doubleTapOnHomeKeyBehavior" />
   <java-symbol type="integer" name="config_doubleTapOnMenuKeyBehavior" />
   <java-symbol type="integer" name="config_doubleTapOnBackKeyBehavior" />
