@@ -38,6 +38,16 @@ import java.util.Locale;
 
 public class aosipUtils {
 
+    public static boolean isAppInstalled(Context context, String appUri) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            pm.getPackageInfo(appUri, PackageManager.GET_ACTIVITIES);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public static boolean isPackageInstalled(Context context, String pkg, boolean ignoreState) {
         if (pkg != null) {
             try {
