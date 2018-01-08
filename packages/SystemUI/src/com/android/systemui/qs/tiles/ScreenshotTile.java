@@ -28,6 +28,7 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.view.View;
 
 import com.android.systemui.R;
@@ -40,7 +41,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 /** Quick settings tile: Screenshot **/
 public class ScreenshotTile extends QSTileImpl<BooleanState> {
 
-    private boolean mRegion = false;
+    private boolean mRegion;
 
     private boolean mListening;
     private final Object mScreenshotLock = new Object();
@@ -48,6 +49,8 @@ public class ScreenshotTile extends QSTileImpl<BooleanState> {
 
     public ScreenshotTile(QSHost host) {
         super(host);
+        mRegion = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.SCREENSHOT_DEFAULT_MODE, 0, UserHandle.USER_CURRENT) == 1;
     }
 
     @Override
@@ -64,6 +67,9 @@ public class ScreenshotTile extends QSTileImpl<BooleanState> {
     @Override
     protected void handleClick() {
         mRegion = !mRegion;
+        Settings.System.putIntForUser(mContext.getContentResolver(),
+                Settings.System.SCREENSHOT_DEFAULT_MODE, mRegion ? 1 : 0,
+                UserHandle.USER_CURRENT);
         refreshState();
     }
 
