@@ -229,4 +229,8 @@
     <string name="battery_saver_qs_tile_fully_charged">Fully Charged</string>
 
     <string name="quick_settings_sound_search">Sound search</string> 
+
+    <!-- Show lte/4g switch -->
+    <string name="show_lte_fourgee_title">4G/LTE network icon</string>
+    <string name="statusbar_tuner_category_title">Hide items from statusbar</string>
 </resources>
