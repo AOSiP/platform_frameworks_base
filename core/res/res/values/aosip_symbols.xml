@@ -29,4 +29,7 @@
 
   <!-- Whether to show a custom view for FOD -->
   <java-symbol type="bool" name="config_needCustomFODView" />
+
+  <!-- Seconds after which power button torch times out when proximity sensor is covered -->
+  <java-symbol type="integer" name="config_flashlightProximityTimeout" />
 </resources>

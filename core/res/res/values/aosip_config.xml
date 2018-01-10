@@ -28,4 +28,7 @@
 
     <!-- Whether to show a custom view for FOD -->
     <bool name="config_needCustomFODView">false</bool>
+
+    <!-- Seconds after which power button torch times out when proximity sensor is covered -->
+    <integer name="config_flashlightProximityTimeout">300</integer>
 </resources>
