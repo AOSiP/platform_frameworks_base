@@ -24,4 +24,6 @@
     <dimen name="status_bar_left_clock_start_padding_max">4dp</dimen>
     <dimen name="status_bar_battery_large_icon_width">20.5dp</dimen>
     <dimen name="status_bar_battery_large_icon_height">20.5dp</dimen>
+
+    <dimen name="screenrecord_hint_size">48dp</dimen>
 </resources>
