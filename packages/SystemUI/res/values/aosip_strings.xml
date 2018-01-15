@@ -258,4 +258,7 @@
     <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">Kill App</string>
 
+    <!-- QS customizer -->
+    <string name="drag_or_tap_to_add_tiles">Drag or tap to add tiles</string>
+
 </resources>
