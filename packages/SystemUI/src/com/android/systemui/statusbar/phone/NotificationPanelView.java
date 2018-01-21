@@ -1294,7 +1294,9 @@ public class NotificationPanelView extends PanelView implements
         if (!mQsExpanded
                 && mDoubleTapToSleepEnabled
                 && event.getY() < mStatusBarHeaderHeight) {
-            mDoubleTapGesture.onTouchEvent(event);
+            if (mDoubleTapGesture.onTouchEvent(event)) {
+                return false;
+            }
         }
 
         // Make sure the next touch won't the blocked after the current ends.
