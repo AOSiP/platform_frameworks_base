@@ -595,7 +595,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
         mSectionsManager.setOnClearSilentNotifsClickListener(v -> {
             // Leave the shade open if there will be other notifs left over to clear
             final boolean closeShade = !hasActiveClearableNotifications(ROWS_HIGH_PRIORITY);
-            clearNotifications(ROWS_GENTLE, closeShade);
+            clearNotifications(ROWS_GENTLE, closeShade, false/*forceToLeft*/);
         });
         mSections = mSectionsManager.createSectionsForBuckets();
 
@@ -1850,9 +1850,9 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
     }
 
     @ShadeViewRefactor(RefactorComponent.STATE_RESOLVER)
-    public void dismissViewAnimated(View child, Runnable endRunnable, int delay, long duration) {
+    public void dismissViewAnimated(View child, Runnable endRunnable, int delay, long duration, boolean forceToLeft) {
         mSwipeHelper.dismissChild(child, 0, endRunnable, delay, true, duration,
-                true /* isDismissAll */);
+                true /* isDismissAll */, forceToLeft);
     }
 
     @ShadeViewRefactor(RefactorComponent.STATE_RESOLVER)
@@ -5649,9 +5649,9 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
 
     @ShadeViewRefactor(RefactorComponent.SHADE_VIEW)
     @VisibleForTesting
-    void clearNotifications(
+    public void clearNotifications(
             @SelectedRows int selection,
-            boolean closeShade) {
+            boolean closeShade, boolean forceToLeft) {
         // animate-swipe all dismissable notifications, then animate the shade closed
         int numChildren = getChildCount();
 
@@ -5706,6 +5706,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
         performDismissAllAnimations(
                 viewsToHide,
                 closeShade,
+                forceToLeft,
                 () -> onDismissAllAnimationsEnd(viewsToRemove, selection));
     }
 
@@ -5730,6 +5731,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
     private void performDismissAllAnimations(
             final ArrayList<View> hideAnimatedList,
             final boolean closeShade,
+            final boolean forceToLeft,
             final Runnable onAnimationComplete) {
 
         final Runnable onSlideAwayAnimationComplete = () -> {
@@ -5766,7 +5768,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
             if (i == 0) {
                 endRunnable = onSlideAwayAnimationComplete;
             }
-            dismissViewAnimated(view, endRunnable, totalDelay, ANIMATION_DURATION_SWIPE);
+            dismissViewAnimated(view, endRunnable, totalDelay, ANIMATION_DURATION_SWIPE, forceToLeft);
             currentDelay = Math.max(50, currentDelay - rowDelayDecrement);
             totalDelay += currentDelay;
         }
@@ -5785,7 +5787,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
                 R.layout.status_bar_notification_footer, this, false);
         footerView.setDismissButtonClickListener(v -> {
             mMetricsLogger.action(MetricsEvent.ACTION_DISMISS_ALL_NOTES);
-            clearNotifications(ROWS_ALL, true /* closeShade */);
+            clearNotifications(ROWS_ALL, true /* closeShade */, false/*forceToLeft*/);
         });
         footerView.setManageButtonClickListener(v -> {
             mNotificationActivityStarter.startHistoryIntent(mFooterView.isHistoryShown());
