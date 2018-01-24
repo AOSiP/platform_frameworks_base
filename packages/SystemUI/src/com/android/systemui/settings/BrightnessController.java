@@ -33,7 +33,6 @@ import android.provider.Settings;
 import android.service.vr.IVrManager;
 import android.service.vr.IVrStateCallbacks;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -304,12 +303,11 @@ public class BrightnessController implements ToggleSlider.Listener {
 
         if (mIcon != null) {
             if (mAutomaticAvailable) {
-                mIcon.setOnTouchListener(new View.OnTouchListener() {
+                mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public boolean onTouch(View v, MotionEvent event) {
+                    public void onClick(View v) {
                         int newMode = mAutomatic ? Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL : Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
                         setMode(newMode);
-                        return false;
                     }
                 });
             }
