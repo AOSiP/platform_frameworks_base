@@ -33,6 +33,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.android.internal.utils.du.UserContentObserver;
@@ -79,8 +80,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private int mShowCarrierLabel;
 
     // AOSiP Status Logo
-    private View mAOSiPLogo;
-    private View mAOSiPLogoRight;
+    private ImageView mAOSiPLogo;
+    private ImageView mAOSiPLogoRight;
     private int mShowLogo;
     private final Handler mHandler = new Handler();
 
@@ -168,8 +169,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mSystemIconArea = mStatusBar.findViewById(R.id.system_icon_area);
         mSignalClusterView = mStatusBar.findViewById(R.id.signal_cluster);
         Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mSignalClusterView);
-        mAOSiPLogo = mStatusBar.findViewById(R.id.status_bar_logo);
-        mAOSiPLogoRight = mStatusBar.findViewById(R.id.status_bar_logo_right);
+        mAOSiPLogo = (ImageView) mStatusBar.findViewById(R.id.status_bar_logo);
+        mAOSiPLogoRight = (ImageView) mStatusBar.findViewById(R.id.status_bar_logo_right);
+        Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mAOSiPLogo);
+        Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mAOSiPLogoRight);
         mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);
         updateSettings(false);
         // Default to showing until we know otherwise.
@@ -203,6 +206,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         super.onDestroyView();
         Dependency.get(DarkIconDispatcher.class).removeDarkReceiver(mSignalClusterView);
         Dependency.get(StatusBarIconController.class).removeIconGroup(mDarkIconManager);
+        Dependency.get(DarkIconDispatcher.class).removeDarkReceiver(mAOSiPLogo);
+        Dependency.get(DarkIconDispatcher.class).removeDarkReceiver(mAOSiPLogoRight);
         if (mNetworkController.hasEmergencyCryptKeeperText()) {
             mNetworkController.removeCallback(mSignalCallback);
         }
