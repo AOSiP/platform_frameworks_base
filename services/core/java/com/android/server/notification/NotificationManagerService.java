@@ -311,6 +311,9 @@ public class NotificationManagerService extends SystemService {
     protected boolean mInCall = false;
     private boolean mNotificationPulseEnabled;
 
+    private int mSoundVibScreenOn;
+    private boolean mIsMediaPlaying;
+
     private Uri mInCallNotificationUri;
     private AudioAttributes mInCallNotificationAudioAttributes;
     private float mInCallNotificationVolume;
@@ -1021,6 +1024,8 @@ public class NotificationManagerService extends SystemService {
                 = Settings.System.getUriFor(Settings.System.NOTIFICATION_LIGHT_PULSE);
         private final Uri NOTIFICATION_RATE_LIMIT_URI
                 = Settings.Global.getUriFor(Settings.Global.MAX_NOTIFICATION_ENQUEUE_RATE);
+        private final Uri NOTIFICATION_SOUND_VIB_SCREEN_ON
+                = Settings.System.getUriFor(Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON);
 
         SettingsObserver(Handler handler) {
             super(handler);
@@ -1033,6 +1038,8 @@ public class NotificationManagerService extends SystemService {
             resolver.registerContentObserver(NOTIFICATION_LIGHT_PULSE_URI,
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(NOTIFICATION_RATE_LIMIT_URI,
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(NOTIFICATION_SOUND_VIB_SCREEN_ON,
                     false, this, UserHandle.USER_ALL);
             update(null);
         }
@@ -1058,6 +1065,13 @@ public class NotificationManagerService extends SystemService {
             if (uri == null || NOTIFICATION_BADGING_URI.equals(uri)) {
                 mRankingHelper.updateBadgingEnabled();
             }
+
+            if (uri == null || NOTIFICATION_SOUND_VIB_SCREEN_ON.equals(uri)) {
+                mSoundVibScreenOn = Settings.System.getIntForUser(resolver,
+                            Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
+            }
+
+            updateNotificationPulse();
         }
     }
 
@@ -3047,6 +3061,11 @@ public class NotificationManagerService extends SystemService {
         public void forcePulseLedLight(int color, int onTime, int offTime) {
             forcePulseLed(color, onTime, offTime);
         }
+
+        @Override
+        public void setMediaPlaying(boolean playing) {
+            mIsMediaPlaying = playing;
+        }
     };
 
     private void applyAdjustment(NotificationRecord r, Adjustment adjustment) {
@@ -4048,7 +4067,10 @@ public class NotificationManagerService extends SystemService {
 
         if (aboveThreshold && isNotificationForCurrentUser(record)) {
 
-            if (mSystemReady && mAudioManager != null) {
+            boolean beNoisy = !mScreenOn
+                    || (mScreenOn && mSoundVibScreenOn == 1)
+                    || (mScreenOn && mSoundVibScreenOn == 2 && !mIsMediaPlaying);
+            if (mSystemReady && mAudioManager != null && beNoisy) {
                 Uri soundUri = record.getSound();
                 hasValidSound = soundUri != null && !Uri.EMPTY.equals(soundUri);
                 long[] vibration = record.getVibration();
