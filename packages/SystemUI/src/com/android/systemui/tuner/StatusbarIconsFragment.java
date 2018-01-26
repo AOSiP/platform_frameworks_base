@@ -18,9 +18,12 @@ package com.android.systemui.tuner;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.preference.PreferenceScreen;
 import android.support.v14.preference.PreferenceFragment;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,10 +38,19 @@ import com.android.systemui.plugins.PluginPrefs;
 public class StatusbarIconsFragment extends TunerFragment {
 
     private static final String TAG = "StatusbarIconsFragment";
+    private static final String NFC_KEY = "nfc";
+
+    private StatusBarSwitch mNfcSwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.statusbar_icon_settings);
+        mNfcSwitch = (StatusBarSwitch) findPreference(NFC_KEY);
+        final boolean isNfcAvailable = pm.hasSystemFeature(PackageManager.FEATURE_NFC);
+
+        if (!isNfcAvailable) {
+            prefScreen.removePreference(mNfcSwitch);
+        }
     }
 
     @Override
