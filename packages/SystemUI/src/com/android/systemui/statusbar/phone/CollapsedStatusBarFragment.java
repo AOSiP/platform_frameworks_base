@@ -83,28 +83,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private ImageView mAOSiPLogo;
     private ImageView mAOSiPLogoRight;
     private int mShowLogo;
-    private final Handler mHandler = new Handler();
-
-    private class AOSiPSettingsObserver extends ContentObserver {
-        AOSiPSettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            getContext().getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_LOGO),
-                    false, this, UserHandle.USER_ALL);
-            getContext().getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_SHOW_CARRIER),
-                    false, this, UserHandle.USER_ALL);
-        }
-
-        @Override
-        public void onChange(boolean selfChange) {
-            updateSettings(true);
-        }
-    }
-    private AOSiPSettingsObserver mAOSiPSettingsObserver = new AOSiPSettingsObserver(mHandler);
 
     private SignalCallback mSignalCallback = new SignalCallback() {
         @Override
@@ -121,7 +99,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mNetworkController = Dependency.get(NetworkController.class);
         mStatusBarComponent = SysUiServiceProvider.getComponent(getContext(), StatusBar.class);
         mTickerObserver = new TickerObserver(new Handler());
-        mAOSiPSettingsObserver.observe();
     }
 
     class TickerObserver extends UserContentObserver {
@@ -138,17 +115,55 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         protected void observe() {
             super.observe();
             getContext().getContentResolver().registerContentObserver(
-                    Settings.System.getUriFor(Settings.System.STATUS_BAR_SHOW_TICKER), false, this,
-                    UserHandle.USER_ALL);
+                    Settings.System.getUriFor(Settings.System.STATUS_BAR_SHOW_TICKER),
+                    false, this, UserHandle.USER_ALL);
+            getContext().getContentResolver().registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO),
+                    false, this, UserHandle.USER_ALL);
+            getContext().getContentResolver().registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.STATUS_BAR_SHOW_CARRIER),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
         protected void update() {
-            mTickerEnabled = Settings.System.getIntForUser(mContentResolver,
-                    Settings.System.STATUS_BAR_SHOW_TICKER, 0,
-                    UserHandle.USER_CURRENT);
-            initTickerView();
+            updateSettings(true);
         }
+    }
+
+    public void updateSettings(boolean animate) {
+        if (getContext() == null) {
+            return;
+        }
+        mTickerEnabled = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_SHOW_TICKER, 0,
+                UserHandle.USER_CURRENT);
+                initTickerView();
+        mShowLogo = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO, 0,
+                UserHandle.USER_CURRENT);
+        mShowCarrierLabel = Settings.System.getIntForUser(
+                getContext().getContentResolver(), Settings.System.STATUS_BAR_SHOW_CARRIER, 1,
+                UserHandle.USER_CURRENT);
+        if (mNotificationIconAreaInner != null) {
+            if (mShowLogo == 1) {
+                if (mNotificationIconAreaInner.getVisibility() == View.VISIBLE) {
+                    animateShow(mAOSiPLogo, animate);
+                }
+            } else if (mShowLogo != 1) {
+                animateHide(mAOSiPLogo, animate, false);
+            }
+        }
+        if (mSystemIconArea != null) {
+            if (mShowLogo == 2) {
+                if (mSystemIconArea.getVisibility() == View.VISIBLE) {
+                    animateShow(mAOSiPLogoRight, animate);
+                }
+            } else if (mShowLogo != 2) {
+                animateHide(mAOSiPLogoRight, animate, false);
+            }
+        }
+        setCarrierLabel(animate);
     }
 
     @Override
@@ -396,34 +411,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             mStatusBarComponent.disableTicker();
             }
         }
-
-    public void updateSettings(boolean animate) {
-        mShowLogo = Settings.System.getIntForUser(
-                getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO, 0,
-                UserHandle.USER_CURRENT);
-        mShowCarrierLabel = Settings.System.getIntForUser(
-                getContext().getContentResolver(), Settings.System.STATUS_BAR_SHOW_CARRIER, 1,
-                UserHandle.USER_CURRENT);
-        if (mNotificationIconAreaInner != null) {
-            if (mShowLogo == 1) {
-                if (mNotificationIconAreaInner.getVisibility() == View.VISIBLE) {
-                    animateShow(mAOSiPLogo, animate);
-                }
-            } else if (mShowLogo != 1) {
-                animateHide(mAOSiPLogo, animate, false);
-            }
-        }
-        if (mSystemIconArea != null) {
-            if (mShowLogo == 2) {
-                if (mSystemIconArea.getVisibility() == View.VISIBLE) {
-                    animateShow(mAOSiPLogoRight, animate);
-                }
-            } else if (mShowLogo != 2) {
-                animateHide(mAOSiPLogoRight, animate, false);
-            }
-        }
-        setCarrierLabel(animate);
-    }
 
     private void setCarrierLabel(boolean animate) {
         if (mShowCarrierLabel == 2 || mShowCarrierLabel == 3) {
