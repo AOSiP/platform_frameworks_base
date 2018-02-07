@@ -688,7 +688,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 mNavigationBar.setMediaPlaying(true);
             }
         } else {
-            if (mAmbientMediaPlaying != 0 && mAmbientIndicationContainer != null) {
+            if (isAmbientContainerAvailable()) {
                 ((AmbientIndicationContainer)mAmbientIndicationContainer).hideIndication();
             }
             mNoMan.setMediaPlaying(false);
@@ -708,7 +708,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 if (mTickerEnabled == 2) {
                     tick(entry.notification, true, true, mMediaMetadata);
                 }
-                if (mAmbientMediaPlaying != 0 && mAmbientIndicationContainer != null) {
+                if (isAmbientContainerAvailable()) {
                     ((AmbientIndicationContainer)mAmbientIndicationContainer).setIndication(mMediaMetadata);
                 }
                 // NotificationInflater calls async MediaNotificationProcessoron to create notification
@@ -1250,7 +1250,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         mAmbientIndicationContainer = mStatusBarWindow.findViewById(
                 R.id.ambient_indication_container);
         if (mAmbientIndicationContainer != null) {
-            ((AmbientIndicationContainer) mAmbientIndicationContainer).initializeView(this);
+            ((AmbientIndicationContainer) mAmbientIndicationContainer).initializeView(this, mHandler);
         }
 
         // set the initial view visibility
@@ -6067,6 +6067,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                         setPulsing(pulsingEntries);
                     }
                     setCleanLayout(mAmbientMediaPlaying == 3 ? reason : -1);
+                    if (isAmbientContainerAvailable()) {
+                        ((AmbientIndicationContainer)mAmbientIndicationContainer).setTickerMarquee(true);
+                    }
                 }
 
                 @Override
@@ -6074,6 +6077,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                     callback.onPulseFinished();
                     setPulsing(null);
                     setCleanLayout(-1);
+                    if (isAmbientContainerAvailable()) {
+                        ((AmbientIndicationContainer)mAmbientIndicationContainer).setTickerMarquee(false);
+                    }
                 }
 
                 private void setPulsing(Collection<HeadsUpManager.HeadsUpEntry> pulsing) {
@@ -6086,7 +6092,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 private void setCleanLayout(int reason) {
                     mNotificationPanel.setCleanLayout(reason);
                     mNotificationShelf.setCleanLayout(reason);
-                    if (mAmbientMediaPlaying != 0 && mAmbientIndicationContainer != null) {
+                    if (isAmbientContainerAvailable()) {
                         ((AmbientIndicationContainer)mAmbientIndicationContainer).setCleanLayout(reason);
                     }
                 }
@@ -6539,27 +6545,31 @@ public class StatusBar extends SystemUI implements DemoMode,
                 Settings.System.LESS_BORING_HEADS_UP, 0, mCurrentUserId) == 1;
     }
 
-    private void setFpToDismissNotifications() {
-        mFpDismissNotifications = Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                Settings.Secure.FP_SWIPE_TO_DISMISS_NOTIFICATIONS, 0,
-                UserHandle.USER_CURRENT) == 1;
-    }
-
-    private void setForceAmbient() {
-        mAmbientMediaPlaying = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.FORCE_AMBIENT_FOR_MEDIA, 0,
-                UserHandle.USER_CURRENT);
-        if (mAmbientMediaPlaying != 0 && mAmbientIndicationContainer != null) {
-            ((AmbientIndicationContainer)mAmbientIndicationContainer).setIndication(mMediaMetadata);
-     }
-  }
-
     private void updateTickerAnimation() {
         mTickerAnimationMode = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE, 1, UserHandle.USER_CURRENT);
         if (mTicker != null) {
             mTicker.updateAnimation(mTickerAnimationMode);
         }
+    }
+
+    private void setForceAmbient() {
+        mAmbientMediaPlaying = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.FORCE_AMBIENT_FOR_MEDIA, 0,
+                UserHandle.USER_CURRENT);
+        if (isAmbientContainerAvailable()) {
+            ((AmbientIndicationContainer)mAmbientIndicationContainer).setIndication(mMediaMetadata);
+     }
+  }
+
+    private boolean isAmbientContainerAvailable() {
+        return mAmbientMediaPlaying != 0 && mAmbientIndicationContainer != null;
+    }
+
+    private void setFpToDismissNotifications() {
+        mFpDismissNotifications = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                Settings.Secure.FP_SWIPE_TO_DISMISS_NOTIFICATIONS, 0,
+                UserHandle.USER_CURRENT) == 1;
     }
 
     protected final ContentObserver mNavbarObserver = new ContentObserver(mHandler) {
