@@ -111,4 +111,8 @@
     <string name="data_disabled_icon_title" translatable="false">Data disabled icon</string>
     <string name="data_disabled_icon_summary">Display a cross sign next to signal bar when data is disabled</string>
 
+    <!-- Caffeine tile -->
+    <string name="caffeine_info_title">What is this?</string>
+    <string name="caffeine_info_message">Caffeine tile is a simple tile that you could switch on to keep your screen on.\n\nPlease note that the tile\'s state will reset itself after turning the screen off.</string>
+
 </resources>
