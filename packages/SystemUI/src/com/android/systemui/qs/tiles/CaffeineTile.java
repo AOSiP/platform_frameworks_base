@@ -16,6 +16,7 @@
 
 package com.android.systemui.qs.tiles;
 
+import android.content.DialogInterface;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -29,10 +30,12 @@ import android.os.SystemClock;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.systemui.Prefs;
+import com.android.systemui.R;
 import com.android.systemui.qs.QSHost;
 import com.android.systemui.plugins.qs.QSTile.BooleanState;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
-import com.android.systemui.R;
+import com.android.systemui.statusbar.phone.SystemUIDialog;
 
 /** Quick settings tile: Caffeine **/
 public class CaffeineTile extends QSTileImpl<BooleanState> {
@@ -90,27 +93,28 @@ public class CaffeineTile extends QSTileImpl<BooleanState> {
 
     @Override
     public void handleClick() {
-        // If last user clicks < 5 seconds
-        // we cycle different duration
-        // otherwise toggle on/off
-        if (mWakeLock.isHeld() && (mLastClickTime != -1) &&
-                (SystemClock.elapsedRealtime() - mLastClickTime < 5000)) {
-            // cycle duration
-            mDuration++;
-            if (mDuration >= DURATIONS.length) {
-                // all durations cycled, turn if off
-                mDuration = -1;
-                stopCountDown();
-                if (mWakeLock.isHeld()) {
-                    mWakeLock.release();
-                }
-            } else {
-                // change duration
-                startCountDown(DURATIONS[mDuration]);
-                if (!mWakeLock.isHeld()) {
-                    mWakeLock.acquire();
-                }
-            }
+        if (Prefs.getBoolean(mContext, Prefs.Key.QS_CAFFEINE_DIALOG_SHOWN, false)) {
+            drinkUp();
+            return;
+        }
+        SystemUIDialog dialog = new SystemUIDialog(mContext);
+        dialog.setTitle(R.string.caffeine_info_title);
+        dialog.setMessage(R.string.caffeine_info_message);
+        dialog.setPositiveButton(com.android.internal.R.string.ok,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        drinkUp();
+                        Prefs.putBoolean(mContext, Prefs.Key.QS_CAFFEINE_DIALOG_SHOWN, true);
+                    }
+                });
+        dialog.setShowForAllUsers(true);
+        dialog.show();
+    }
+
+    public void drinkUp() {
+        if (mWakeLock.isHeld()) {
+            mWakeLock.release();
         } else {
             // toggle
             if (mWakeLock.isHeld()) {
