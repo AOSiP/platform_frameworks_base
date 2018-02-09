@@ -53,6 +53,7 @@ import com.android.systemui.qs.tiles.ScreenrecordTile;
 import com.android.systemui.qs.tiles.UiModeNightTile;
 import com.android.systemui.qs.tiles.SoundTile;
 import com.android.systemui.qs.tiles.ScreenshotTile;
+import com.android.systemui.qs.tiles.SoundSearchTile;
 import com.android.systemui.qs.tiles.UserTile;
 import com.android.systemui.qs.tiles.WifiTile;
 import com.android.systemui.qs.tiles.WorkModeTile;
@@ -95,6 +96,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<LocaleTile> mLocaleTileProvider;
     private final Provider<HeadsUpTile> mHeadsUpTileProvider;
     private final Provider<AODTile> mAODTileProvider;
+    private final Provider<SoundSearchTile> mSoundSearchTileProvider;
 
     private QSTileHost mHost;
 
@@ -126,7 +128,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<ScreenrecordTile> scrTileProvider,
             Provider<LocaleTile> localeTileProvider,
             Provider<HeadsUpTile> headsupTileProvider,
-            Provider<AODTile> aodTileProvider) {
+            Provider<AODTile> aodTileProvider,
+            Provider<SoundSearchTile> soundSearchTileProvider) {
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
         mCellularTileProvider = cellularTileProvider;
@@ -155,6 +158,7 @@ public class QSFactoryImpl implements QSFactory {
         mLocaleTileProvider = localeTileProvider;
         mHeadsUpTileProvider = headsupTileProvider;
         mAODTileProvider = aodTileProvider;
+        mSoundSearchTileProvider = soundSearchTileProvider;
     }
 
     public void setHost(QSTileHost host) {
@@ -230,6 +234,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mAODTileProvider.get();
 	        case "cpuinfo":
                 return new CPUInfoTile(mHost);
+            case "soundsearch":
+                return mSoundSearchTileProvider.get();
         }
 
         // Intent tiles.
