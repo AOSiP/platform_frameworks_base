@@ -115,4 +115,5 @@
          all of the currently visible notifications. [CHAR LIMIT=10]-->
     <string name="clear_recents">Close all recent</string>
 
+    <string name="quick_settings_sound_search">Sound search</string> 
 </resources>
