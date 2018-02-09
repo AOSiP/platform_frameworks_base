@@ -41,6 +41,7 @@ import com.android.systemui.statusbar.policy.KeyguardMonitor;
 public class GlobalActionsImpl implements GlobalActions {
 
     private static final float SHUTDOWN_SCRIM_ALPHA = 0.95f;
+    private static final String HOT_REBOOT_REASON = "hot-reboot";
 
     private final Context mContext;
     private final KeyguardMonitor mKeyguardMonitor;
@@ -101,7 +102,9 @@ public class GlobalActionsImpl implements GlobalActions {
             message.setText(com.android.internal.R.string.reboot_to_bootloader_message);
         } else if (reason != null && PowerManager.REBOOT_RECOVERY.equals(reason)) {
             message.setText(com.android.internal.R.string.reboot_to_recovery_message);
-        } else if (isReboot) {
+        } else if (reason != null && HOT_REBOOT_REASON.equals(reason)) {
+            message.setText(com.android.internal.R.string.hot_reboot_message);
+        } else if(isReboot) {
             message.setText(R.string.reboot_message);
         }
 
