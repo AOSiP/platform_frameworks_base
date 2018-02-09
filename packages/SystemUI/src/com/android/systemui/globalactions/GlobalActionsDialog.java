@@ -90,8 +90,10 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.android.server.LocalServices;
 
 import com.android.internal.colorextraction.drawable.GradientDrawable;
+import com.android.server.statusbar.StatusBarManagerInternal;
 
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -125,6 +127,8 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
     private static final String GLOBAL_ACTION_KEY_RESTART = "restart";
     private static final String GLOBAL_ACTION_KEY_ADVANCED = "advanced";
     private static final String GLOBAL_ACTION_KEY_SCREENSHOT = "screenshot";
+
+    private static final String HOT_REBOOT_REASON = "hot-reboot";
 
     private static final int SHOW_TOGGLES_BUTTON = 1;
     private static final int RESTART_HOT_BUTTON = 2;
@@ -1692,12 +1696,17 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
 
     private static void doHotReboot() {
         try {
+	    final String mReason = HOT_REBOOT_REASON;
+	    final boolean mReboot = false;
+	    final StatusBarManagerInternal service = LocalServices.getService(
+		  StatusBarManagerInternal.class);
             final IActivityManager am =
                   ActivityManagerNative.asInterface(ServiceManager.checkService("activity"));
-            if (am != null) {
-                am.restart();
+            if (am != null && service.showShutdownUi(mReboot, mReason)) {
+                  am.restart();
+                  return;
             }
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             Log.e(TAG, "failure trying to perform hot reboot", e);
         }
     }
