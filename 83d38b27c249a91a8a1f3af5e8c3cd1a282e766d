@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30da10af_d88d9050",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-02-10T11:35:33Z",
+      "side": 1,
+      "message": "Newline plz",
+      "revId": "83d38b27c249a91a8a1f3af5e8c3cd1a282e766d",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ebbff526_f0c75775",
+        "filename": "services/core/java/com/android/server/policy/PhoneWindowManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-02-10T11:35:33Z",
+      "side": 1,
+      "message": "remove the blank line",
+      "revId": "83d38b27c249a91a8a1f3af5e8c3cd1a282e766d",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
