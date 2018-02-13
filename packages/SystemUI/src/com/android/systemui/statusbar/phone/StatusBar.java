@@ -5921,7 +5921,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE),
                     false, this, UserHandle.USER_ALL);
-	   update();
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.STATUS_BAR_BIG_BATTERY_ICON),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5941,7 +5943,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.SHOW_BATTERY_PERCENT))
                     || uri.equals(Settings.Secure.getUriFor(
-                    Settings.Secure.STATUS_BAR_BATTERY_STYLE))) {
+                    Settings.Secure.STATUS_BAR_BATTERY_STYLE))
+                    || uri.equals(Settings.Secure.getUriFor(
+                    Settings.Secure.STATUS_BAR_BIG_BATTERY_ICON))) {
                 setStatusBarOptions();
             }
         }
