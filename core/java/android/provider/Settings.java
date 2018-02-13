@@ -8335,6 +8335,12 @@ public final class Settings {
         public static final String FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES = "force_authorize_substratum_packages";
 
         /**
+         * Display large battery icon.
+         * @hide
+         */
+        public static final String STATUS_BAR_BIG_BATTERY_ICON = "status_bar_big_battery_icon";
+
+        /**
          * This are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
@@ -8447,7 +8453,8 @@ public final class Settings {
             LOCKSCREEN_VISUALIZER_ENABLED,
             FACE_AUTO_UNLOCK,
             STATUS_BAR_BATTERY_STYLE,
-            FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES
+            FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES,
+            STATUS_BAR_BIG_BATTERY_ICON
         };
 
         /** @hide */
