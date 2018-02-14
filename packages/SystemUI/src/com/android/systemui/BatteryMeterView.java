@@ -85,6 +85,8 @@ public class BatteryMeterView extends LinearLayout implements
 
     private boolean mCharging;
 
+    private boolean mCharging;
+
     public BatteryMeterView(Context context) {
         this(context, null, 0);
     }
