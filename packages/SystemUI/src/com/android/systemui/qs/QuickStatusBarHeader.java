@@ -50,6 +50,7 @@ public class QuickStatusBarHeader extends RelativeLayout {
     protected QSTileHost mHost;
 
     private HorizontalScrollView mQuickQsPanelScroller;
+    private BatteryMeterView mBatteryView;
 
     public QuickStatusBarHeader(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -75,13 +76,19 @@ public class QuickStatusBarHeader extends RelativeLayout {
         applyDarkness(R.id.battery, tintArea, intensity, colorForeground);
         applyDarkness(R.id.clock, tintArea, intensity, colorForeground);
 
-        BatteryMeterView battery = findViewById(R.id.battery);
-        battery.setIsQuickSbHeaderOrKeyguard(true);
+        mBatteryView = findViewById(R.id.battery);
+        mBatteryView.setIsQuickSbHeaderOrKeyguard(true);
 
         mActivityStarter = Dependency.get(ActivityStarter.class);
 
         mQuickQsPanelScroller = (HorizontalScrollView) findViewById(R.id.quick_qs_panel_scroll);
         mQuickQsPanelScroller.setHorizontalScrollBarEnabled(false);
+    }
+
+    public void updateBatterySettings() {
+        if (mBatteryView != null) {
+            mBatteryView.updateSettings(true);
+        }
     }
 
     private void applyDarkness(int id, Rect tintArea, float intensity, int color) {
