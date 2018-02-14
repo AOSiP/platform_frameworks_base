@@ -50,6 +50,8 @@ public class QuickStatusBarHeader extends RelativeLayout {
     protected QuickQSPanel mHeaderQsPanel;
     protected QSTileHost mHost;
 
+    private BatteryMeterView mBatteryView;
+
     private HorizontalScrollView mQuickQsPanelScroller;
 
     private Clock mClock;
@@ -79,8 +81,8 @@ public class QuickStatusBarHeader extends RelativeLayout {
         applyDarkness(R.id.battery, tintArea, intensity, colorForeground);
         applyDarkness(R.id.clock, tintArea, intensity, colorForeground);
 
-        BatteryMeterView battery = findViewById(R.id.battery);
-        battery.setForceShowPercent(true);
+        mBatteryView = findViewById(R.id.battery);
+        mBatteryView.setForceShowPercent(true);
 
         mClock = findViewById(R.id.clock);
         ((Clock)mClock).setIsQshb(true);
@@ -99,6 +101,12 @@ public class QuickStatusBarHeader extends RelativeLayout {
         }
         if (mLeftClock != null) {
             ((Clock)mLeftClock).updateSettings();
+        }
+    }
+
+    public void updateBatterySettings() {
+        if (mBatteryView != null) {
+            mBatteryView.updateSettings(true);
         }
     }
 
