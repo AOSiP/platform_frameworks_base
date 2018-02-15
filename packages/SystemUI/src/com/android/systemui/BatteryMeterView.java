@@ -78,6 +78,19 @@ public class BatteryMeterView extends LinearLayout implements
     private float mDarkIntensity;
     private int mUser;
 
+    private final Context mContext;
+    private final int mFrameColor;
+
+    private int mStyle = BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT;
+    private int mShowPercentText;
+    private boolean mCharging;
+
+    private final int mEndPadding;
+
+    private boolean mQsHeaderOrKeyguard;
+
+    private boolean mAttached;
+
     public BatteryMeterView(Context context) {
         this(context, null, 0);
     }
@@ -112,6 +125,7 @@ public class BatteryMeterView extends LinearLayout implements
                 getResources().getDimensionPixelOffset(R.dimen.battery_margin_bottom));
         addView(mBatteryIconView, mlp);
 
+        mEndPadding = res.getDimensionPixelSize(R.dimen.battery_level_padding_start);
         updateShowPercent();
 
         Context dualToneDarkTheme = new ContextThemeWrapper(context,
@@ -229,6 +243,12 @@ public class BatteryMeterView extends LinearLayout implements
                 mBatteryPercentView = null;
             }
         }
+        if (mBatteryPercentView != null) {
+            mBatteryPercentView.setPaddingRelative(0, 0,
+                    mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_TEXT ? 0 : mEndPadding, 0);
+        }
+        mDrawable.showPercentInsideCircle(mShowPercentText == 2);
+        mDrawable.setShowPercent(mShowPercentText == 2);
     }
 
     @Override
