@@ -601,7 +601,7 @@ public class SignalClusterView extends LinearLayout implements NetworkController
 
         boolean anythingVisible = mNoSimsVisible || mWifiVisible || mIsAirplaneMode
                 || anyMobileVisible || mVpnVisible || mEthernetVisible;
-        setPaddingRelative(0, 0, anythingVisible ? mEndPadding : mEndPaddingNothingVisible, 0);
+        setPaddingRelative(0, 0, mNoBattery ? 0 : (anythingVisible ? mEndPadding : mEndPaddingNothingVisible), 0);
     }
 
     /**
