@@ -183,8 +183,8 @@ public class SignalClusterView extends LinearLayout implements NetworkController
 	    boolean blockVpn = blockList.contains(SLOT_VPN);
             boolean blockVolte = blockList.contains(SLOT_VOLTE);
 
-	    if (blockAirplane != mBlockAirplane || blockMobile != mBlockMobile
-                || blockEthernet != mBlockEthernet || blockWifi != mBlockWifi || blockRoaming != $
+        if (blockAirplane != mBlockAirplane || blockMobile != mBlockMobile
+                || blockEthernet != mBlockEthernet || blockWifi != mBlockWifi || blockRoaming != mBlockRoaming || blockVolte != mBlockVolte) {
             mBlockAirplane = blockAirplane;
             mBlockMobile = blockMobile;
             mBlockEthernet = blockEthernet;
@@ -195,12 +195,11 @@ public class SignalClusterView extends LinearLayout implements NetworkController
             mNetworkController.removeCallback(this);
             mNetworkController.addCallback(this);
         }
-            if (blockVpn != mBlockVpn) {
-                mBlockVpn = blockVpn;
-                mVpnVisible = mSecurityController.isVpnEnabled() && !mBlockVpn;
-
-                apply();
-            }
+        if (blockVpn != mBlockVpn) {
+            mBlockVpn = blockVpn;
+            mVpnVisible = mSecurityController.isVpnEnabled() && !mBlockVpn;
+            apply();
+        }
         } else if (STATUS_BAR_BATTERY_STYLE.equals(key)) {
             final int style = newValue == null ?
                 BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT : Integer.parseInt(newValue);
