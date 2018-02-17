@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34b164a4_7b7cd44a",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/SoundSearchTIle.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000006
+      },
+      "writtenOn": "2018-02-17T05:02:51Z",
+      "side": 1,
+      "message": "this will need adjusted for AOSiP",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 32
+      },
+      "revId": "4dc16545295fc9c989be534f552d57ca788f9b2b",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
