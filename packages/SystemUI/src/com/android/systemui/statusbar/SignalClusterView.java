@@ -169,17 +169,15 @@ public class SignalClusterView extends LinearLayout implements NetworkController
 
     @Override
     public void onTuningChanged(String key, String newValue) {
-        if (!StatusBarIconController.ICON_BLACKLIST.equals(key)) {
-            return;
-        }
-        ArraySet<String> blockList = StatusBarIconController.getIconBlacklist(newValue);
-        boolean blockAirplane = blockList.contains(SLOT_AIRPLANE);
-        boolean blockMobile = blockList.contains(SLOT_MOBILE);
-        boolean blockWifi = blockList.contains(SLOT_WIFI);
-        boolean blockEthernet = blockList.contains(SLOT_ETHERNET);
-        boolean blockRoaming = blockList.contains(SLOT_ROAMING);
-        boolean blockVpn = blockList.contains(SLOT_VPN);
-        boolean blockVolte = blockList.contains(SLOT_VOLTE);
+        if (StatusBarIconController.ICON_BLACKLIST.equals(key)) {
+            ArraySet<String> blockList = StatusBarIconController.getIconBlacklist(newValue);
+            boolean blockAirplane = blockList.contains(SLOT_AIRPLANE);
+            boolean blockMobile = blockList.contains(SLOT_MOBILE);
+            boolean blockWifi = blockList.contains(SLOT_WIFI);
+            boolean blockEthernet = blockList.contains(SLOT_ETHERNET);
+            boolean blockRoaming = blockList.contains(SLOT_ROAMING);
+	    boolean blockVpn = blockList.contains(SLOT_VPN);
+            boolean blockVolte = blockList.contains(SLOT_VOLTE);
 
         if (blockAirplane != mBlockAirplane || blockMobile != mBlockMobile
                 || blockEthernet != mBlockEthernet || blockWifi != mBlockWifi || blockRoaming != mBlockRoaming || blockVolte != mBlockVolte) {
@@ -196,6 +194,13 @@ public class SignalClusterView extends LinearLayout implements NetworkController
         if (blockVpn != mBlockVpn) {
             mBlockVpn = blockVpn;
             mVpnVisible = mSecurityController.isVpnEnabled() && !mBlockVpn;
+            apply();
+        }
+        } else if (STATUS_BAR_BATTERY_STYLE.equals(key)) {
+            final int style = newValue == null ?
+                BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT : Integer.parseInt(newValue);
+            mNoBattery = style == BatteryMeterDrawableBase.BATTERY_STYLE_HIDDEN;
+
             apply();
         }
     }
