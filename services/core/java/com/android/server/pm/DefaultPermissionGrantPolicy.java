@@ -740,8 +740,6 @@ final class DefaultPermissionGrantPolicy {
                         STORAGE_PERMISSIONS, true, userId);
             }
 
-            mService.mSettings.onDefaultRuntimePermissionsGrantedLPr(userId);
-
             // Google Account
             PackageParser.Package googleaccountPackage = getSystemPackageLPr(
                     "com.google.android.gsf.login");
