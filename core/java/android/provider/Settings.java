@@ -8082,8 +8082,9 @@ public final class Settings {
          * 0: Display the battery an icon in portrait mode
          * 1: Display the battery as a circle
          * 2: Display the battery as a dotted circle
-         * 3: Display the battery as text
-         * 4: Do not display the battery
+         * 3: Display the battery as a square
+         * 4: Display the battery as text
+         * 5: Do not display the battery
          * default: 0
          * @hide
          */
