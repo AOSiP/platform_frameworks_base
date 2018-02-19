@@ -154,42 +154,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         protected void update() {
             ((Clock)mClock).updateSettings();
             ((Clock)mLeftClock).updateSettings();
-            updateSettings(true);
-        }
-    }
+            mStatusBarComponent.updateQsbhClock();
 
-    public void updateSettings(boolean animate) {
-        if (getContext() == null) {
-            return;
-        }
-        mTickerEnabled = Settings.System.getIntForUser(
-                getContext().getContentResolver(), Settings.System.STATUS_BAR_SHOW_TICKER, 0,
-                UserHandle.USER_CURRENT);
-                initTickerView();
-
-        mShowLogo = Settings.System.getIntForUser(
-                getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO, 0,
-                UserHandle.USER_CURRENT);
-        mShowCarrierLabel = Settings.System.getIntForUser(
-                getContext().getContentResolver(), Settings.System.STATUS_BAR_SHOW_CARRIER, 1,
-                UserHandle.USER_CURRENT);
-        if (mNotificationIconAreaInner != null) {
-            if (mShowLogo == 1) {
-                if (mNotificationIconAreaInner.getVisibility() == View.VISIBLE) {
-                    animateShow(mAOSiPLogo, animate);
-                }
-            } else if (mShowLogo != 1) {
-                animateHide(mAOSiPLogo, animate, false);
-            }
-        }
-        if (mSystemIconArea != null) {
-            if (mShowLogo == 2) {
-                if (mSystemIconArea.getVisibility() == View.VISIBLE) {
-                    animateShow(mAOSiPLogoRight, animate);
-                }
-            } else if (mShowLogo != 2) {
-                animateHide(mAOSiPLogoRight, animate, false);
-            }
         }
         setCarrierLabel(animate);
     }
