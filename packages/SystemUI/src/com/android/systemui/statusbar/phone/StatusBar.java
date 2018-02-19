@@ -204,6 +204,7 @@ import com.android.systemui.plugins.statusbar.NotificationSwipeActionHelper.Snoo
 import com.android.systemui.qs.QSFragment;
 import com.android.systemui.qs.QSPanel;
 import com.android.systemui.qs.QSTileHost;
+import com.android.systemui.qs.QuickStatusBarHeader;
 import com.android.systemui.qs.car.CarQSFragment;
 import com.android.systemui.qs.QuickStatusBarHeader;
 import com.android.systemui.recents.Recents;
@@ -480,6 +481,8 @@ public class StatusBar extends SystemUI implements DemoMode,
     protected KeyguardStatusBarView mKeyguardStatusBar;
     boolean mLeaveOpenOnKeyguardHide;
     KeyguardIndicationController mKeyguardIndicationController;
+
+    private QuickStatusBarHeader mQuickStatusBarHeader;
 
     // Keyguard is going away soon.
     private boolean mKeyguardGoingAway;
@@ -1327,7 +1330,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                     mQSPanel = ((QSFragment) qs).getQsPanel();
                     mQSPanel.setBrightnessMirror(mBrightnessMirrorController);
                     mKeyguardStatusBar.setQSPanel(mQSPanel);
-                    mQuickStatusBarHeader = ((QSFragment) qs).getQuickStatusBarHeader();
+                    mQuickStatusBarHeader = ((QSFragment) qs).getQsHeader();
                 }
             });
         }
@@ -6649,6 +6652,20 @@ public class StatusBar extends SystemUI implements DemoMode,
             setUseLessBoringHeadsUp();
             setFpToDismissNotifications();
             setForceAmbient();
+            setLockscreenMediaMetadata();
+            setQsPanelOptions();
+        }
+    }
+
+    public void updateQsbhClock() {
+        if (mQuickStatusBarHeader != null) {
+            mQuickStatusBarHeader.updateQsbhClock();
+        }
+    }
+
+    private void setQsPanelOptions() {
+        if (mQSPanel != null) {
+            mQSPanel.updateSettings();
         }
     }
 
