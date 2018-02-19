@@ -96,7 +96,8 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
     protected int mClockDateStyle = CLOCK_DATE_STYLE_REGULAR;
     protected int mClockStyle = STYLE_CLOCK_RIGHT;
     protected String mClockDateFormat = null;
-    protected boolean mShowClock;
+    protected int mClockDatePosition;
+    protected boolean mShowClock = true;
     private int mAmPmStyle;
     private final boolean mShowDark;
     private boolean mShowSeconds;
@@ -187,7 +188,8 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
                     if (!newLocale.equals(mLocale)) {
                         mLocale = newLocale;
                     }
-                    updateSettings();
+                    updateClockVisibility();
+                    updateStatus();
                     return;
                 });
             }
