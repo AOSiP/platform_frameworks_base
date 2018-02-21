@@ -8307,11 +8307,12 @@ public final class Settings {
         /**
          * Display style of the status bar battery information
          * 0: Display the battery an icon in portrait mode
-         * 1: Display the battery as a circle
-         * 2: Display the battery as a dotted circle
-         * 3: Display the battery as a square
-         * 4: Display the battery as text
-         * 5: Do not display the battery
+         * 1: Display the battery an icon in landscape mode
+         * 2: Display the battery as a circle
+         * 3: Display the battery as a dotted circle
+         * 4: Display the battery as a square
+         * 5: Display the battery as text
+         * 6: Do not display the battery
          * default: 0
          * @hide
          */
