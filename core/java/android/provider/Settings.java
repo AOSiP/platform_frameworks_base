@@ -11317,6 +11317,11 @@ public final class Settings {
         public static final String SHOW_CPU_OVERLAY = "show_cpu_overlay";
 
         /**
+         * @hide
+         */
+        public static final String USB_DEFAULT_CONFIGURATION = "usb_default_configuration";
+
+        /**
          * Flag to enable use of RefactoredBackupManagerService.
          *
          * @hide
