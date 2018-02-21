@@ -20,6 +20,9 @@
   <!-- Whether device has dash charging support -->
   <java-symbol type="bool" name="config_hasDashCharger" />
 
+  <!-- Whether device has turbo power charging support -->
+  <java-symbol type="bool" name="config_hasTurboPowerCharger" />
+
   <!-- Package Manager -->
   <java-symbol type="array" name="config_disabledComponents" />
   <java-symbol type="array" name="config_forceEnabledComponents" />
@@ -86,8 +89,8 @@
   <java-symbol type="id" name="pocket_hint_image" />
   <java-symbol type="id" name="pocket_hint_message" />
 
-    <!-- Vendor mismatched fingerprint warning -->
-    <java-symbol type="string" name="system_error_vendorprint" />
+  <!-- Vendor mismatched fingerprint warning -->
+  <java-symbol type="string" name="system_error_vendorprint" />
 
   <!-- Doze mode -->
   <java-symbol type="bool" name="config_doze_enabled_by_default" />
