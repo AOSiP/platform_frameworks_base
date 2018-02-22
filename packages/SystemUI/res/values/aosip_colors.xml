@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2006, The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Theme tile -->
+    <color name="quick_settings_theme_tile_default">#4285F4</color>
+    <color name="quick_settings_theme_tile_red">#FF5252</color>
+    <color name="quick_settings_theme_tile_pink">#FF4081</color>
+    <color name="quick_settings_theme_tile_purple">#E040FB</color>
+    <color name="quick_settings_theme_tile_deep_purple">#7C4DFF</color>
+    <color name="quick_settings_theme_tile_indigo">#536DFE</color>
+    <color name="quick_settings_theme_tile_blue">#448AFF</color>
+    <color name="quick_settings_theme_tile_light_blue">#03A9F4</color>
+    <color name="quick_settings_theme_tile_cyan">#00BCD4</color>
+    <color name="quick_settings_theme_tile_teal">#009688</color>
+    <color name="quick_settings_theme_tile_green">#4CAF50</color>
+    <color name="quick_settings_theme_tile_light_green">#8BC34A</color>
+    <color name="quick_settings_theme_tile_lime">#CDDC39</color>
+    <color name="quick_settings_theme_tile_yellow">#FFEB3B</color>
+    <color name="quick_settings_theme_tile_amber">#FFC107</color>
+    <color name="quick_settings_theme_tile_orange">#FF9800</color>
+    <color name="quick_settings_theme_tile_deep_orange">#FF5722</color>
+    <color name="quick_settings_theme_tile_brown">#795548</color>
+    <color name="quick_settings_theme_tile_grey">#9E9E9E</color>
+    <color name="quick_settings_theme_tile_blue_grey">#607D8B</color>
+    <color name="quick_settings_theme_tile_black">#000000</color>
+    <color name="quick_settings_theme_tile_white">#ffffff</color>
+
+</resources>
