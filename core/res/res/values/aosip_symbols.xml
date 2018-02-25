@@ -33,6 +33,9 @@
   <java-symbol type="color" name="power_menu_advanced_system_restart_ui" />
   <java-symbol type="color" name="power_menu_screenshot" />
 
+  <!-- Notification info -->
+  <java-symbol type="color" name="notification_info_button_text" />
+
   <java-symbol type="string" name="reboot_to_recovery_title" />
   <java-symbol type="string" name="reboot_to_recovery_message" />
   <java-symbol type="string" name="reboot_to_bootloader_title" />
