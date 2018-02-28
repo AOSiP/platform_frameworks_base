@@ -759,6 +759,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     // Behavior of Back button while in-call and screen on
     int mIncallBackBehavior;
 
+    // Whether System Navigation Keys are enabled
+    boolean mSystemNavigationKeysEnabled;
+
     Display mDisplay;
 
     private int mDisplayRotation;
@@ -1161,6 +1164,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SCREENSHOT_DEFAULT_MODE), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.Global.getUriFor(
+                    Settings.Secure.SYSTEM_NAVIGATION_KEYS_ENABLED), false, this,
                     UserHandle.USER_ALL);
             updateSettings();
         }
@@ -2642,6 +2648,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     Settings.Secure.INCALL_BACK_BUTTON_BEHAVIOR,
                     Settings.Secure.INCALL_BACK_BUTTON_BEHAVIOR_DEFAULT,
                     UserHandle.USER_CURRENT);
+            mSystemNavigationKeysEnabled = Settings.Secure.getIntForUser(resolver,
+                    Settings.Secure.SYSTEM_NAVIGATION_KEYS_ENABLED,
+                    0, UserHandle.USER_CURRENT) == 1;
 
             // volume rocker wake
             mVolumeRockerWake = Settings.System.getIntForUser(resolver,
@@ -6928,7 +6937,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         if (event.getAction() == KeyEvent.ACTION_UP) {
             if (!mAccessibilityManager.isEnabled()
                     || !mAccessibilityManager.sendFingerprintGesture(event.getKeyCode())) {
-                if (areSystemNavigationKeysEnabled()) {
+                if (mSystemNavigationKeysEnabled) {
                     sendSystemKeyToStatusBarAsync(event.getKeyCode());
                 }
             }
@@ -8453,11 +8462,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private boolean isTheaterModeEnabled() {
         return Settings.Global.getInt(mContext.getContentResolver(),
                 Settings.Global.THEATER_MODE_ON, 0) == 1;
-    }
-
-    private boolean areSystemNavigationKeysEnabled() {
-        return Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                Settings.Secure.SYSTEM_NAVIGATION_KEYS_ENABLED, 0, UserHandle.USER_CURRENT) == 1;
     }
 
     @Override
