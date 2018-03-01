@@ -246,9 +246,16 @@
     <!-- Battery saver tile -->
     <string name="battery_saver_qs_tile_fully_charged">Fully Charged</string>
 
-    <string name="quick_settings_sound_search">Sound search</string> 
+    <string name="quick_settings_sound_search">Sound search</string>
 
     <!-- Show lte/4g switch -->
     <string name="show_lte_fourgee_title">4G/LTE network icon</string>
     <string name="statusbar_tuner_category_title">Hide items from statusbar</string>
+    <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Force stop?</string>
+    <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="kill">Kill App</string>
+
 </resources>
