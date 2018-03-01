@@ -15,6 +15,7 @@
 -->
 <resources>
   <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
+  <java-symbol type="color" name="updater_snackbar_text_color" />
 
   <!-- Whether device has dash charging support -->
   <java-symbol type="bool" name="config_hasDashCharger" />
