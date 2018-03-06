@@ -58,6 +58,7 @@ import java.text.NumberFormat;
 public class BatteryMeterView extends LinearLayout implements
         BatteryStateChangeCallback, Tunable, DarkReceiver, ConfigurationListener {
 
+    private boolean mBatteryCharging;
     private BatteryMeterDrawableBase mDrawable;
     private ImageView mBatteryIconView;
     private final CurrentUserTracker mUserTracker;
@@ -194,6 +195,10 @@ public class BatteryMeterView extends LinearLayout implements
         setContentDescription(
                 getContext().getString(charging ? R.string.accessibility_battery_level_charging
                         : R.string.accessibility_battery_level, level));
+        if (mBatteryCharging != charging) {
+                mBatteryCharging = charging;
+                updateShowPercent();
+        }
     }
 
     @Override
@@ -234,7 +239,7 @@ public class BatteryMeterView extends LinearLayout implements
                                 LayoutParams.WRAP_CONTENT,
                                 LayoutParams.MATCH_PARENT));
             }
-            if (showingInside && !showingText && !hideText) {
+            if (showingInside && !showingText && !hideText && !mBatteryCharging) {
                 mDrawable.setShowPercent(true);
                 removeView(mBatteryPercentView);
                 mBatteryPercentView = null;
