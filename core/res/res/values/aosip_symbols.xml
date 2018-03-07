@@ -99,4 +99,7 @@
   <!-- Sensor block-per package -->
   <java-symbol type="array" name="config_blockPackagesSensorDrain" />
 
+  <!-- Forcefully tint notification icon text -->
+  <java-symbol type="bool" name="config_useDarkBgNotificationIconTextTinting" />
+
 </resources>
