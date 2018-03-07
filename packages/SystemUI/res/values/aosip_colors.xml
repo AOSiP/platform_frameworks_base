@@ -30,6 +30,6 @@
     <color name="icon_color_overview_dark">@color/dark_mode_icon_color_single_tone</color>
 
     <!-- Floating action button -->
-    <color name="fab_color">?android:attr/colorAccent</color>
+    <color name="fab_color">@*android:color/accent_device_default_light</color>
     <color name="floating_action_button_icon_color">@android:color/white</color>
 </resources>
