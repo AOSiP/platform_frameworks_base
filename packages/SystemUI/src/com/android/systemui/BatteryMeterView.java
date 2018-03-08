@@ -78,6 +78,9 @@ public class BatteryMeterView extends LinearLayout implements
     private float mDarkIntensity;
     private int mUser;
 
+    private int mStyle = BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT;
+    private boolean mCharging;
+
     private final Context mContext;
     private final int mFrameColor;
 
@@ -213,7 +216,12 @@ public class BatteryMeterView extends LinearLayout implements
 
     private void updatePercentText() {
         if (mBatteryPercentView != null) {
-            mBatteryPercentView.setText(
+            // Use the high voltage symbol ⚡ (u26A1 unicode) but prevent the system
+            // to load its emoji colored variant with the uFE0E flag
+            String bolt = "\u26A1\uFE0E";
+            CharSequence mChargeIndicator =
+                    mCharging && mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_TEXT ? (bolt + " ") : "";
+            mBatteryPercentView.setText(mChargeIndicator +
                     NumberFormat.getPercentInstance().format(mLevel / 100f));
         }
     }
