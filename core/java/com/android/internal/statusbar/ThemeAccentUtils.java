@@ -50,7 +50,8 @@ public class ThemeAccentUtils {
         "com.android.settings.intelligence.theme.dark", // 2
         "com.android.gboard.theme.dark", // 3
         "com.google.intelligence.sense.theme.dark", // 4
-        "com.android.wellbeing.theme.dark", // 5
+        "com.android.updater.theme.dark", // 5
+        "com.android.wellbeing.theme.dark", // 6
     };
 
     // BlackAF themes
@@ -59,6 +60,7 @@ public class ThemeAccentUtils {
         "com.android.settings.theme.blackaf", // 1
         "com.android.settings.intelligence.theme.blackaf", // 2
         "com.android.gboard.theme.blackaf", // 3
+        "com.android.updater.theme.blackaf", // 4
     };
 
     // Accents
