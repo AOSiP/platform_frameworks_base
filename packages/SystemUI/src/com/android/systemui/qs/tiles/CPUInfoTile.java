@@ -24,6 +24,7 @@ import android.database.ContentObserver;
 import android.os.Handler;
 import android.provider.Settings;
 import android.provider.Settings.Global;
+import android.service.quicksettings.Tile;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ import android.widget.CheckedTextView;
 import android.widget.ListView;
 
 import com.android.systemui.R;
+import com.android.systemui.R.drawable;
 import com.android.systemui.Dependency;
 import com.android.systemui.qs.QSHost;
 import com.android.systemui.plugins.qs.QSTile.BooleanState;
@@ -47,6 +49,8 @@ import java.util.UUID;
 public class CPUInfoTile extends QSTileImpl<BooleanState> {
     private boolean mListening;
     private CPUInfoObserver mObserver;
+
+    private final Icon mIcon = ResourceIcon.get(drawable.ic_qs_cpuinfo);
 
     public CPUInfoTile(QSHost host) {
         super(host);
@@ -100,13 +104,18 @@ public class CPUInfoTile extends QSTileImpl<BooleanState> {
 
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
-	if (CPUInfoEnabled()) {
-           state.icon = ResourceIcon.get(R.drawable.ic_qs_cpuinfo_on);
-           state.label = mContext.getString(R.string.quick_settings_cpuinfo_label);
-	} else {
-           state.icon = ResourceIcon.get(R.drawable.ic_qs_cpuinfo);
-           state.label = mContext.getString(R.string.quick_settings_cpuinfo_label);
-	}
+        if (state.slash == null) {
+            state.slash = new SlashState();
+        }
+        state.icon = mIcon;
+        state.label = mContext.getString(R.string.quick_settings_cpuinfo_label);
+        if (CPUInfoEnabled()) {
+            state.slash.isSlashed = false;
+            state.state = Tile.STATE_ACTIVE;
+        } else {
+            state.slash.isSlashed = true;
+            state.state = Tile.STATE_INACTIVE;
+        }
     }
 
     private boolean CPUInfoEnabled() {
