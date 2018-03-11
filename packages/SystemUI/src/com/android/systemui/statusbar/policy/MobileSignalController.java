@@ -405,9 +405,15 @@ public class MobileSignalController extends SignalController<
 
     private int getVolteResId() {
         int resId = 0;
+<<<<<<< HEAD   (4cdb59 Screen off animations [1/2])
         if ( (mCurrentState.voiceCapable || mCurrentState.videoCapable)
                 &&  mCurrentState.imsRegistered && mVoLTEicon ) {
             resId = R.drawable.ic_volte;
+=======
+
+        if ( mCurrentState.imsResitered ) {
+            resId = R.drawable.volte;
+>>>>>>> CHANGE (f7a1c4 SystemUI: VoLIT)
         }
         return resId;
     }

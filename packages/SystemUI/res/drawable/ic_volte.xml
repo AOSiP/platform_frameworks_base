@@ -1,3 +1,4 @@
+<<<<<<< HEAD   (4cdb59 Screen off animations [1/2])
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="14.5dp"
@@ -25,3 +26,5 @@
 
 
 
+=======
+>>>>>>> CHANGE (f7a1c4 SystemUI: VoLIT)
