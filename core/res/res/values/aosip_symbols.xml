@@ -24,6 +24,10 @@
   <java-symbol type="array" name="config_disabledComponents" />
   <java-symbol type="array" name="config_forceEnabledComponents" />
 
+  <!-- Auto fill -->
+  <java-symbol type="color" name="autofill_save_title_color" />
+  <java-symbol type="color" name="autofill_autofill_save_custom_subtitle_color" />
+
   <!-- Power menu items -->
   <java-symbol type="color" name="power_menu_power_off" />
   <java-symbol type="color" name="power_menu_restart" />
