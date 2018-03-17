@@ -261,4 +261,9 @@
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Drag or tap to add tiles</string>
 
+    <!-- Google Assist QS Tiles -->
+    <string name="quick_settings_google_assist_label">Assistant</string>
+    <string name="quick_settings_google_voice_assist_label">Voice assist</string>
+    <string name="quick_settings_google_now_label">Google feed</string>
+
 </resources>

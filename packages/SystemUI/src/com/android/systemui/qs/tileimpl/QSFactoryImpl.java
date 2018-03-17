@@ -60,6 +60,9 @@ import com.android.systemui.qs.tiles.VolumeTile;
 import com.android.systemui.qs.tiles.WifiTile;
 import com.android.systemui.qs.tiles.WorkModeTile;
 import com.android.systemui.qs.QSTileHost;
+import com.android.systemui.qs.tiles.GoogleAssistTile;
+import com.android.systemui.qs.tiles.GoogleNowTile;
+import com.android.systemui.qs.tiles.GoogleVoiceAssistTile;
 
 public class QSFactoryImpl implements QSFactory {
 
@@ -107,6 +110,9 @@ public class QSFactoryImpl implements QSFactory {
         else if (tileSpec.equals("compass")) return new CompassTile(mHost);
         else if (tileSpec.equals("music")) return new MusicTile(mHost);
         else if (tileSpec.equals("cpuinfo")) return new CPUInfoTile(mHost);
+        else if (tileSpec.equals("assist")) return new GoogleAssistTile(mHost);
+        else if (tileSpec.equals("voiceassist")) return new GoogleVoiceAssistTile(mHost);
+        else if (tileSpec.equals("google")) return new GoogleNowTile(mHost);
         // Intent tiles.
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(mHost, tileSpec);
         else if (tileSpec.startsWith(CustomTile.PREFIX)) return CustomTile.create(mHost, tileSpec);

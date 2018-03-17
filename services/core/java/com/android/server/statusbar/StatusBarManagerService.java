@@ -578,6 +578,16 @@ public class StatusBarManagerService extends IStatusBarService.Stub {
     }
 
     @Override
+    public void startAssist(Bundle args) {
+        if (mBar != null) {
+            try {
+                mBar.startAssist(args);
+            } catch (RemoteException ex) {
+            }
+        }
+    }
+
+    @Override
     public void disable(int what, IBinder token, String pkg) {
         disableForUser(what, token, pkg, mCurrentUserId);
     }
