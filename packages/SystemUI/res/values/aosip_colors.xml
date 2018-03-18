@@ -20,4 +20,16 @@
     <!-- Floating action button -->
     <color name="fab_color">@*android:color/accent_device_default_light</color>
     <color name="floating_action_button_icon_color">@android:color/white</color>
+
+    <!-- Navbar icon Colors -->
+    <color name="icon_color_back">@color/light_mode_icon_color_single_tone</color>
+    <color name="icon_color_ime_switcher">@color/light_mode_icon_color_single_tone</color>
+    <color name="icon_color_split_screen">@color/light_mode_icon_color_single_tone</color>
+    <color name="icon_color_home">@color/light_mode_icon_color_single_tone</color>
+    <color name="icon_color_overview">@color/light_mode_icon_color_single_tone</color>
+    <color name="icon_color_back_dark">@color/dark_mode_icon_color_single_tone</color>
+    <color name="icon_color_ime_switcher_dark">@color/dark_mode_icon_color_single_tone</color>
+    <color name="icon_color_split_screen_dark">@color/dark_mode_icon_color_single_tone</color>
+    <color name="icon_color_home_dark">@color/dark_mode_icon_color_single_tone</color>
+    <color name="icon_color_overview_dark">@color/dark_mode_icon_color_single_tone</color>
 </resources>
