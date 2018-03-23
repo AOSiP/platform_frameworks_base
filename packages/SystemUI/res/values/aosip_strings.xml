@@ -146,9 +146,9 @@
     <string name="qs_menu_item_rows_four">4</string>
 
     <!-- ADB network tile -->
-    <string name="quick_settings_adb_network">ADB network</string>
-    <string name="quick_settings_network_adb_enabled_label">Adb over Net</string>
-    <string name="quick_settings_network_adb_disabled_label">Adb over Net</string>
+    <string name="quick_settings_adb_network">ADB over network</string>
+    <string name="quick_settings_network_adb_enabled_label" translatable="false">@string/quick_settings_adb_network</string>
+    <string name="quick_settings_network_adb_disabled_label" translatable="false">@string/quick_settings_adb_network</string>
 
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">Screen is being recorded</string>
@@ -254,8 +254,8 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Force stop?</string>
     <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
-    <string name="dlg_ok">@android:string/ok</string>
-    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="dlg_ok" translatable="false">@android:string/ok</string>
+    <string name="dlg_cancel" translatable="false">@android:string/cancel</string>
     <string name="kill">Kill App</string>
 
     <!-- QS customizer -->
