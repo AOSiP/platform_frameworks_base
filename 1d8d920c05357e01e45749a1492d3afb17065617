@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4fb07c19_b571cf34",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/GoogleAssistTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 1,
+      "message": "Typo",
+      "revId": "1d8d920c05357e01e45749a1492d3afb17065617",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5ffd42b_68760064",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/GoogleAssistTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 1,
+      "message": "Typo",
+      "revId": "1d8d920c05357e01e45749a1492d3afb17065617",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4cb92a7f_9f498b74",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/GoogleAssistTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 1,
+      "message": "Typo",
+      "revId": "1d8d920c05357e01e45749a1492d3afb17065617",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5695a80f_7b604506",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/GoogleNowTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 1,
+      "message": "This gotta stop...",
+      "revId": "1d8d920c05357e01e45749a1492d3afb17065617",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0df278a2_ccf46fc1",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/GoogleNowTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 1,
+      "message": "Stahp copy pasting typos Max...",
+      "revId": "1d8d920c05357e01e45749a1492d3afb17065617",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "092dfd45_945c84ec",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/GoogleNowTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 1,
+      "message": "...",
+      "revId": "1d8d920c05357e01e45749a1492d3afb17065617",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fc5207c8_4f92ecc7",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/GoogleVoiceAssistTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 1,
+      "message": "😀🔫",
+      "revId": "1d8d920c05357e01e45749a1492d3afb17065617",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab91a2ec_20a6046c",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/GoogleVoiceAssistTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 1,
+      "message": "😭",
+      "revId": "1d8d920c05357e01e45749a1492d3afb17065617",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71a7f8da_d2fba8df",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/GoogleVoiceAssistTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 1,
+      "message": "😷",
+      "revId": "1d8d920c05357e01e45749a1492d3afb17065617",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}

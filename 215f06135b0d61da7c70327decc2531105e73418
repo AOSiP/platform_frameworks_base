@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "42cc78d0_06169397",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/CastTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 0,
+      "message": "Why?",
+      "revId": "215f06135b0d61da7c70327decc2531105e73418",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ebc62b2b_d2931317",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/NfcTile.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-03-23T11:16:09Z",
+      "side": 0,
+      "message": "Bitches why??????",
+      "revId": "215f06135b0d61da7c70327decc2531105e73418",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
