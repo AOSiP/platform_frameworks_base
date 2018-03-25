@@ -18,23 +18,23 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Power menu -->
   <string name="reboot_to_recovery_title">Recovery</string>
-  <string name="reboot_to_recovery_message">Reiniciando en modo recovery</string>
+  <string name="reboot_to_recovery_message">Rebooting to recovery</string>
   <string name="reboot_to_bootloader_title">Bootloader</string>
-  <string name="reboot_to_bootloader_message">Reiniciando en modo bootloader</string>
-  <string name="reboot_title">Reiniciar</string>
-  <string name="reboot_message">Reiniciando!</string>
+  <string name="reboot_to_bootloader_message">Rebooting to bootloader</string>
+  <string name="reboot_title">Neustart</string>
+  <string name="reboot_message">System wird neu gestartet</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">Editor de la barra de navegacion</string>
+  <string name="permlab_toggleNavigationEditor">Navigationseditor kontrollieren</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_toggleNavigationEditor">Permite a una aplicacion conttrolar la barra de navegacion.</string>
+  <string name="permdesc_toggleNavigationEditor">Erlaubt einer Applikation die Kontrolle über den Navigationsleisteneditor.</string>
   <!-- ADB over network notification -->
-  <string name="adb_net_active_notification_title">ADB sobre la red activado</string>
+  <string name="adb_net_active_notification_title">ADB über Netzwerk aktiviert</string>
   <!-- ADB over USB and network notification -->
-  <string name="adb_both_active_notification_title">ADB sobre USB &amp; red activado</string>
+  <string name="adb_both_active_notification_title">ADB über USB &amp; Netzwerk aktiviert</string>
   <!-- ADB notification message-->
-  <string name="adb_active_generic_notification_message">Toca para desactivar la depuracion.</string>
+  <string name="adb_active_generic_notification_message">Antippen, um Debugging zu deaktivieren.</string>
   <!-- Pocket Lock -->
-  <string name="pocket_lock_message_long_press">Manten pulsado el boton de encendido para interactuar</string>
+  <string name="pocket_lock_message_long_press">Power Button gedrückt halten um zu interagieren</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Tu imagen de vendor no concuerda con la del sistema por favor flashea <xliff:g id="string">%s</xliff:g> la imagen para tu dispositivo</string>
+  <string name="system_error_vendorprint">Dein Vendor-Image stimmt nicht mit deinem System überein. Bitte flashe das <xliff:g id="string">%s</xliff:g> Vendor-Image für dein Gerät</string>
 </resources>
