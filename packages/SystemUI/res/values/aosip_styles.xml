@@ -76,4 +76,12 @@
         <item name="widgetLayout">@*android:layout/preference_widget_switch</item>
     </style>
 
+    <!-- VPN footer -->
+    <style name="TextAppearance.QS.VPN">
+        <item name="android:textSize">@dimen/qs_tile_text_size</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
 </resources>
