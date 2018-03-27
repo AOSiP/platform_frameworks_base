@@ -19,6 +19,9 @@
     <color name="fab_color">@*android:color/accent_device_default_light</color>
     <color name="floating_action_button_icon_color">@android:color/white</color>
 
+    <!-- VPN footer -->
+    <color name="quick_settings_footer_background_color">@android:color/transparent</color>
+
     <!-- Theme tile -->
     <color name="quick_settings_theme_tile_default">#4285F4</color>
     <color name="quick_settings_theme_tile_red">#FF5252</color>
