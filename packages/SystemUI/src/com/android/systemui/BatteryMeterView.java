@@ -78,9 +78,6 @@ public class BatteryMeterView extends LinearLayout implements
     private float mDarkIntensity;
     private int mUser;
 
-    private int mStyle = BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT;
-    private boolean mCharging;
-
     private final Context mContext;
     private final int mFrameColor;
 
@@ -215,12 +212,14 @@ public class BatteryMeterView extends LinearLayout implements
     }
 
     private void updatePercentText() {
+        final boolean showingText = Settings.Secure.getIntForUser(
+                getContext().getContentResolver(), STATUS_BAR_BATTERY_STYLE, 0, mUser) == 4;
         if (mBatteryPercentView != null) {
             // Use the high voltage symbol ⚡ (u26A1 unicode) but prevent the system
             // to load its emoji colored variant with the uFE0E flag
             String bolt = "\u26A1\uFE0E";
             CharSequence mChargeIndicator =
-                    mCharging && mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_TEXT ? (bolt + " ") : "";
+                    mBatteryCharging && showingText ? (bolt + " ") : "";
             mBatteryPercentView.setText(mChargeIndicator +
                     NumberFormat.getPercentInstance().format(mLevel / 100f));
         }
@@ -240,7 +239,6 @@ public class BatteryMeterView extends LinearLayout implements
                 mDrawable.setShowPercent(false);
                 mBatteryPercentView = loadPercentView();
                 if (mTextColor != 0) mBatteryPercentView.setTextColor(mTextColor);
-                updatePercentText();
                 addView(mBatteryPercentView,
                         0,
                         new ViewGroup.LayoutParams(
@@ -257,12 +255,14 @@ public class BatteryMeterView extends LinearLayout implements
                 removeView(mBatteryPercentView);
                 mBatteryPercentView = null;
             }
+            updatePercentText();
         } else {
             if (showingOutside || !showingInside) {
                 mDrawable.setShowPercent(false);
                 removeView(mBatteryPercentView);
                 mBatteryPercentView = null;
             }
+            updatePercentText();
         }
         if (mBatteryPercentView != null) {
             mBatteryPercentView.setPaddingRelative(0, 0,
