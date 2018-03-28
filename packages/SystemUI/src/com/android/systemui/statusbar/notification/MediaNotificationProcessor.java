@@ -21,7 +21,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.support.annotation.VisibleForTesting;
@@ -152,16 +151,9 @@ public class MediaNotificationProcessor {
                         : R.color.notification_material_background_color;
                 backgroundColor = mContext.getColor(id);
             }
-            Bitmap colorized;
-            // prevent the artwork to be recolored on reinflation
-            if (!builder.getArtworkColorizedExtras()) {
-                colorized = mColorizer.colorize(drawable, backgroundColor,
-                        mContext.getResources().getConfiguration().getLayoutDirection() ==
-                                LayoutDirection.RTL);
-                builder.setArtworkColorizedExtras(true);
-            } else {
-                colorized = ((BitmapDrawable) drawable).getBitmap();
-            }
+            Bitmap colorized = mColorizer.colorize(drawable, backgroundColor,
+                    mContext.getResources().getConfiguration().getLayoutDirection() ==
+                            LayoutDirection.RTL);
             builder.setLargeIcon(Icon.createWithBitmap(colorized));
         }
     }
