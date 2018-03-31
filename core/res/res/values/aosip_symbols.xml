@@ -92,12 +92,6 @@
   <!-- Ambient music -->
   <java-symbol type="bool" name="config_canForceDozeNotifications" />
 
-  <!-- Pocket Lock -->
-  <java-symbol type="layout" name="pocket_lock_view_layout" />
-  <java-symbol type="id" name="pocket_hint_container" />
-  <java-symbol type="id" name="pocket_hint_image" />
-  <java-symbol type="id" name="pocket_hint_message" />
-
   <!-- Vendor mismatched fingerprint warning -->
   <java-symbol type="string" name="system_error_vendorprint" />
 
@@ -111,4 +105,5 @@
   <java-symbol type="bool" name="config_useDarkBgNotificationIconTextTinting" />
   <java-symbol type="bool" name="config_useDarkBgNotificationTinting_override" />
   <java-symbol type="bool" name="config_notificationTinting_override" />
+
 </resources>

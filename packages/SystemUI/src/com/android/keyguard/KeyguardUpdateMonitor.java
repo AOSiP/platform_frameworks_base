@@ -1295,7 +1295,7 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
                 shouldListenForFingerprintAssistant() || (mKeyguardOccluded && mIsDreaming))
                 && !mSwitchingUser && !isFingerprintDisabled(getCurrentUser())
                 && !mKeyguardGoingAway && proximitySensorAllowsUsingFingerprint();
-}
+    }
 
     private void startListeningForFingerprint() {
         if (mFingerprintRunningState == FINGERPRINT_STATE_CANCELLING) {
