@@ -7426,6 +7426,15 @@ public final class Settings {
         public static final String TTY_MODE_ENABLED = "tty_mode_enabled";
 
         /**
+         * User-selected RTT mode. When on, outgoing and incoming calls will be answered as RTT
+         * calls when supported by the device and carrier. Boolean value.
+         * 0 = OFF
+         * 1 = ON
+         */
+        public static final String RTT_CALLING_MODE = "rtt_calling_mode";
+
+        /**
+        /**
          * Controls whether settings backup is enabled.
          * Type: int ( 0 = disabled, 1 = enabled )
          * @hide
@@ -8470,6 +8479,7 @@ public final class Settings {
             PREFERRED_TTY_MODE,
             ENHANCED_VOICE_PRIVACY_ENABLED,
             TTY_MODE_ENABLED,
+            RTT_CALLING_MODE,
             INCALL_POWER_BUTTON_BEHAVIOR,
             NIGHT_DISPLAY_CUSTOM_START_TIME,
             NIGHT_DISPLAY_CUSTOM_END_TIME,
