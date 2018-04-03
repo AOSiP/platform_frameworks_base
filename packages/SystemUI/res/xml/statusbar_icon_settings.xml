@@ -18,6 +18,11 @@
     xmlns:sysui="http://schemas.android.com/apk/res-auto"
     android:title="@string/statusbar_icons_blacklist">
 
+    <com.android.systemui.tuner.TunerSwitch
+        android:key="qs_brightness_position_bottom"
+        android:title="@string/tuner_brightness_position_bottom"
+        sysui:defValue="false" />
+
     <SwitchPreference
         android:key="show_lte_fourgee"
         android:title="@string/show_lte_fourgee_title"

@@ -121,6 +121,7 @@
     <string name="lockscreen_tuner_activity">Lockscreen shortcuts</string>
     <string name="powernotif_tuner_activity">Power notifications</string>
     <string name="systemui_tuner_navbar_title">Stock settings</string>
+    <string name="tuner_brightness_position_bottom">Brightness slider on bottom</string>
 
     <string name="global_action_restart_system">Reboot</string>
     <string name="global_action_restart_advanced">Advanced</string>
