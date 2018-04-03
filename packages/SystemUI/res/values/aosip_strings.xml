@@ -190,4 +190,6 @@
     <string name="dlg_cancel">@android:string/cancel</string>
     <string name="kill">Kill App</string>
 
+    <string name="tuner_brightness_position_bottom">Brightness slider on bottom</string>
+
 </resources>
