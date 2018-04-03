@@ -44,4 +44,6 @@
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
     <string name="custom_hint">Swipe from icon to launch</string>
 
+    <string name="tuner_brightness_position_bottom">Brightness slider on bottom</string>
+
 </resources>
