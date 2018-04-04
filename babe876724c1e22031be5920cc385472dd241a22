@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3064298c_471452a2",
+        "filename": "packages/SettingsLib/src/com/android/settingslib/ThemeUtils.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T20:11:41Z",
+      "side": 1,
+      "message": "This has to be `canUseBlackAccent` everywhere",
+      "revId": "babe876724c1e22031be5920cc385472dd241a22",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
