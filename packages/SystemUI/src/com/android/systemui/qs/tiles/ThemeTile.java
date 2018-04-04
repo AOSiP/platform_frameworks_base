@@ -110,6 +110,8 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
                 R.string.systemui_theme_style_light, Settings.System.SYSTEM_UI_THEME));
         sStyleItems.add(new ThemeTileItem(2, -1,
                 R.string.systemui_theme_style_dark, Settings.System.SYSTEM_UI_THEME));
+        sStyleItems.add(new ThemeTileItem(3, -1,
+                R.string.systemui_theme_style_blackaf, Settings.System.SYSTEM_UI_THEME));
     }
 
     private enum Mode {
@@ -281,7 +283,8 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
 
     private ThemeTileItem getThemeItemForStyleMode() {
         boolean isDark = isUsingDarkTheme();
-        if (isDark) {
+        boolean isBlackAF = isUsingBlackAFTheme();
+        if (isDark || isBlackAF) {
             return new ThemeTileItem(20, R.color.quick_settings_theme_tile_white,
                     R.string.quick_settings_theme_tile_color_white);
         } else {
@@ -295,6 +298,18 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
         OverlayInfo themeInfo = null;
         try {
             themeInfo = mOverlayManager.getOverlayInfo("com.android.system.theme.dark",
+                    UserHandle.USER_CURRENT);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return themeInfo != null && themeInfo.isEnabled();
+    }
+
+    // Check for the blackaf theme overlay
+    private boolean isUsingBlackAFTheme() {
+        OverlayInfo themeInfo = null;
+        try {
+            themeInfo = mOverlayManager.getOverlayInfo("com.android.system.theme.blackaf",
                     UserHandle.USER_CURRENT);
         } catch (RemoteException e) {
             e.printStackTrace();
