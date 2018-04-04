@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "62aeec79_4f2bf8b4",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/ThemeTile.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T08:59:56Z",
+      "side": 1,
+      "message": "Same comment as 3124",
+      "revId": "04a44b89171635d5fd567d9f68cda6eb64100fb7",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
