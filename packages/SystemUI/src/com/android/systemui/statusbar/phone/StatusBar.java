@@ -423,6 +423,14 @@ public class StatusBar extends SystemUI implements DemoMode,
         FREEFORM_WINDOW_MANAGEMENT = freeformWindowManagement;
     }
 
+    // FruityPebbles
+    public static String ACCENTS_PACKAGE_NAME_PREFIX="com.accents.";
+    public static String ACCENTS[] = { "red", "pink", "purple", "deeppurple", "indigo",
+            "blue", "lightblue", "cyan", "teal", "green", "lightgreen", "lime",
+            "yellow", "amber", "orange", "deeporange", "brown", "blue",
+            "bluegrey", (isUsingDarkTheme() || (isUsingBlackAFTheme())) ?
+            "white" : "black" };
+
     /**
      * The {@link StatusBarState} of the status bar.
      */
@@ -3141,21 +3149,19 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     // Check for the dark system theme
     public boolean isUsingDarkTheme() {
-        OverlayInfo themeInfo = null;
-        try {
-            themeInfo = mOverlayManager.getOverlayInfo("com.android.system.theme.dark",
-                    mCurrentUserId);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-        return themeInfo != null && themeInfo.isEnabled();
+        return isOverlayEnabled("com.android.system.theme.dark");
     }
 
     // Check for the blackaf system theme
     public boolean isUsingBlackAFTheme() {
+        return isOverlayEnabled("com.android.system.theme.blackaf");
+    }
+
+    // Checks if the overlay is enabled
+    public boolean isOverlayEnabled(String packageName) {
         OverlayInfo themeInfo = null;
         try {
-            themeInfo = mOverlayManager.getOverlayInfo("com.android.system.theme.blackaf",
+            themeInfo = mOverlayManager.getOverlayInfo(packageName,
                     mCurrentUserId);
         } catch (RemoteException e) {
             e.printStackTrace();
@@ -5282,153 +5288,18 @@ public class StatusBar extends SystemUI implements DemoMode,
     public void updateAccents() {
         int accentSetting = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.ACCENT_PICKER, 0, mCurrentUserId);
+
         if (accentSetting == 0) {
             unloadAccents();
-        } else if (accentSetting == 1) {
+        } else {
             try {
-                mOverlayManager.setEnabled("com.accents.red",
+                mOverlayManager.setEnabled(ACCENTS_PACKAGE_NAME_PREFIX +
+                        ACCENTS[accentSetting-1],
                         true, mCurrentUserId);
             } catch (RemoteException e) {
                 Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 2) {
-            try {
-                mOverlayManager.setEnabled("com.accents.pink",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 3) {
-            try {
-                mOverlayManager.setEnabled("com.accents.purple",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 4) {
-            try {
-                mOverlayManager.setEnabled("com.accents.deeppurple",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 5) {
-            try {
-                mOverlayManager.setEnabled("com.accents.indigo",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 6) {
-            try {
-                mOverlayManager.setEnabled("com.accents.blue",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 7) {
-            try {
-                mOverlayManager.setEnabled("com.accents.lightblue",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 8) {
-            try {
-                mOverlayManager.setEnabled("com.accents.cyan",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 9) {
-            try {
-                mOverlayManager.setEnabled("com.accents.teal",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 10) {
-            try {
-                mOverlayManager.setEnabled("com.accents.green",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 11) {
-            try {
-                mOverlayManager.setEnabled("com.accents.lightgreen",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 12) {
-            try {
-                mOverlayManager.setEnabled("com.accents.lime",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 13) {
-            try {
-                mOverlayManager.setEnabled("com.accents.yellow",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 14) {
-            try {
-                mOverlayManager.setEnabled("com.accents.amber",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 15) {
-            try {
-                mOverlayManager.setEnabled("com.accents.orange",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 16) {
-            try {
-                mOverlayManager.setEnabled("com.accents.deeporange",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 17) {
-            try {
-                mOverlayManager.setEnabled("com.accents.brown",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 18) {
-            try {
-                mOverlayManager.setEnabled("com.accents.grey",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 19) {
-            try {
-                mOverlayManager.setEnabled("com.accents.bluegrey",
-                        true, mCurrentUserId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
-            }
-        } else if (accentSetting == 20) {
-            try {
-                // If using a dark theme we use the white accent, otherwise use the black accent
-                 if (isUsingDarkTheme() || (isUsingBlackAFTheme())) {
-                    mOverlayManager.setEnabled("com.accents.white",
-                            true, mCurrentUserId);
-                } else {
-                    mOverlayManager.setEnabled("com.accents.black",
-                            true, mCurrentUserId);
-                }
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change theme", e);
+            } catch (IndexOutOfBoundsException e) {
+                Log.w(TAG, "WTF Happened here?", e);
             }
         }
     }
@@ -5437,48 +5308,10 @@ public class StatusBar extends SystemUI implements DemoMode,
     public void unloadAccents() {
         OverlayInfo themeInfo = null;
         try {
-            mOverlayManager.setEnabled("com.accents.red",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.pink",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.purple",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.deeppurple",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.indigo",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.blue",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.lightblue",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.cyan",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.teal",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.green",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.lightgreen",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.lime",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.yellow",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.amber",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.orange",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.deeporange",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.brown",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.grey",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.bluegrey",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.black",
-                    false /*disable*/, mCurrentUserId);
-            mOverlayManager.setEnabled("com.accents.white",
-                    false /*disable*/, mCurrentUserId);
+            for (String overlays : ACCENTS) {
+                mOverlayManager.setEnabled(ACCENTS_PACKAGE_NAME_PREFIX+ACCENTS,
+                        false, mCurrentUserId);
+            }
         } catch (RemoteException e) {
             e.printStackTrace();
         }
