@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ace3cf67_7485f7a8",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3155,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T08:57:16Z",
+      "side": 1,
+      "message": "While we\u0027re here, can we please create a common `isOverlayEnabled(String packageName)` method and change all these `isUsing{Dark,BlackAF}Theme` methods to not have duplicated code?",
+      "revId": "354255ffa351fb27e73b4f036013837e5c827f75",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
