@@ -3141,21 +3141,19 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     // Check for the dark system theme
     public boolean isUsingDarkTheme() {
-        OverlayInfo themeInfo = null;
-        try {
-            themeInfo = mOverlayManager.getOverlayInfo("com.android.system.theme.dark",
-                    mCurrentUserId);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-        return themeInfo != null && themeInfo.isEnabled();
+        return isOverlayEnabled("com.android.system.theme.dark");
     }
 
     // Check for the blackaf system theme
     public boolean isUsingBlackAFTheme() {
+        return isOverlayEnabled("com.android.system.theme.blackaf");
+    }
+
+    // Checks if the overlay is enabled
+    public boolean isOverlayEnabled(String packageName) {
         OverlayInfo themeInfo = null;
         try {
-            themeInfo = mOverlayManager.getOverlayInfo("com.android.system.theme.blackaf",
+            themeInfo = mOverlayManager.getOverlayInfo(packageName,
                     mCurrentUserId);
         } catch (RemoteException e) {
             e.printStackTrace();
