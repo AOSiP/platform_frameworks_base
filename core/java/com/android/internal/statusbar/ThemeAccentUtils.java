@@ -32,6 +32,7 @@ public class ThemeAccentUtils {
         "com.android.system.theme.dark", // 0
         "com.android.settings.theme.dark", // 1
         "com.android.settings.intelligence.theme.dark", // 2
+    };
 
     // BlackAF themes
     private static final String[] BLACKAF_THEMES = {
@@ -113,13 +114,28 @@ public class ThemeAccentUtils {
     }
 
     // Set light / dark theme
-    public static void setLightDarkTheme(IOverlayManager om, int userId, boolean useDarkTheme, boolean useBlackAFTheme) {
-        for (String theme : DARK_THEMES || BLACKAF_THEMES) {
+    public static void setLightDarkTheme(IOverlayManager om, int userId, boolean useDarkTheme) {
+        for (String theme : DARK_THEMES) {
             try {
                 om.setEnabled(theme,
-                        useDarkTheme, useBlackAFTheme, userId);
+                        useDarkTheme, userId);
                 unfuckBlackWhiteAccent(om, userId);
-                if (useDarkTheme || useBlackAF) {
+                if (useDarkTheme) {
+                    unloadStockDarkTheme(om, userId);
+                }
+            } catch (RemoteException e) {
+            }
+        }
+    }
+
+    // Set black theme
+    public static void setLightBlackAFTheme(IOverlayManager om, int userId, boolean useBlackAFTheme) {
+        for (String theme : BLACKAF_THEMES) {
+            try {
+                om.setEnabled(theme,
+                        useBlackAFTheme, userId);
+                unfuckBlackWhiteAccent(om, userId);
+                if (useBlackAFTheme) {
                     unloadStockDarkTheme(om, userId);
                 }
             } catch (RemoteException e) {
@@ -131,7 +147,7 @@ public class ThemeAccentUtils {
     public static void unfuckBlackWhiteAccent(IOverlayManager om, int userId) {
         OverlayInfo themeInfo = null;
         try {
-            if (isUsingDarkTheme || isUsingBlackAFTheme(om, userId)) {
+            if (isUsingDarkTheme (om, userId) && isUsingBlackAFTheme (om, userId)) {
                 themeInfo = om.getOverlayInfo(ACCENTS[20],
                         userId);
                 if (themeInfo != null && themeInfo.isEnabled()) {
