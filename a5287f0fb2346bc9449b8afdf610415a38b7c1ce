@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e552b8c9_e6f5780c",
+        "filename": "packages/SettingsLib/src/com/android/settingslib/ThemeUtils.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T18:47:28Z",
+      "side": 1,
+      "message": "AOSiP copyright here",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a0992ef_bbbf9ff5",
+        "filename": "packages/SettingsLib/src/com/android/settingslib/ThemeUtils.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T18:47:28Z",
+      "side": 1,
+      "message": "Rename to `canUseBlackAccent` and use `!isOverlayEnabled(\"com.android.system.theme.dark\") \u0026\u0026 ! isOverlayEnabled (\"com.android.system.theme.black\")` and remove the method below.",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4835332d_944559db",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T18:47:28Z",
+      "side": 1,
+      "message": "`import com.android.settingslib.ThemeUtils;`",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cca9b698_b22ac72f",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T18:47:28Z",
+      "side": 1,
+      "message": "`ThemeUtils.canUseBlackAccent() ? \"black\" : \"white\"`",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f88a4f3a_e7b38a2c",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3171,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T18:47:28Z",
+      "side": 1,
+      "message": "`!ThemeUtils.canUseBlackAccent()`",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed53b070_62a6557a",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 4053,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T18:47:28Z",
+      "side": 1,
+      "message": "Not sure I understand the utility of this",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
