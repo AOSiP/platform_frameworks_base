@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d0ab7b96_eb909117",
+        "filename": "packages/SettingsLib/src/com/android/settingslib/ThemeUtils.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-04-04T19:15:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e552b8c9_e6f5780c",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0a0992ef_bbbf9ff5",
         "filename": "packages/SettingsLib/src/com/android/settingslib/ThemeUtils.java",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2018-04-04T18:47:28Z",
       "side": 1,
       "message": "Rename to `canUseBlackAccent` and use `!isOverlayEnabled(\"com.android.system.theme.dark\") \u0026\u0026 ! isOverlayEnabled (\"com.android.system.theme.black\")` and remove the method below.",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "65d34218_c99090b4",
+        "filename": "packages/SettingsLib/src/com/android/settingslib/ThemeUtils.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-04-04T19:15:43Z",
+      "side": 1,
+      "message": "\u003e Rename to `canUseBlackAccent` and use `!isOverlayEnabled(\"com.android.system.theme.dark\")\n \u003e \u0026\u0026 ! isOverlayEnabled (\"com.android.system.theme.black\")` and\n \u003e remove the method below.\nAdded that to use in some cases, had to keep the methods for 5192 and 5214 of StatusBar.java",
+      "parentUuid": "0a0992ef_bbbf9ff5",
       "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
       "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "e3603766_64bd451a",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-04-04T19:15:43Z",
+      "side": 1,
+      "message": "\u003e `import com.android.settingslib.ThemeUtils;`\n\n:+1: was trying some stuff, done",
+      "parentUuid": "4835332d_944559db",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cca9b698_b22ac72f",
         "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "bbb76b3f_6e7f4d06",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-04-04T19:15:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cca9b698_b22ac72f",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f88a4f3a_e7b38a2c",
         "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2018-04-04T18:47:28Z",
       "side": 1,
       "message": "`!ThemeUtils.canUseBlackAccent()`",
+      "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "366912ea_f901448a",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3171,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-04-04T19:15:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f88a4f3a_e7b38a2c",
       "revId": "a5287f0fb2346bc9449b8afdf610415a38b7c1ce",
       "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
       "unresolved": false
