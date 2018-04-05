@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22d91ba6_dcc98441",
+        "filename": "core/java/android/os/SystemProperties.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-05T20:54:57Z",
+      "side": 1,
+      "message": "I thought PROP_VALUE_MAX was deprecated, guess not.",
+      "revId": "996fa06e2376271f5924698011957a296e503ccd",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
