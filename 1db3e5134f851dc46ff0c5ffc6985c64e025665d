@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2cff3fc9_eb64b5ee",
+        "filename": "core/java/android/os/SystemProperties.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-05T20:57:58Z",
+      "side": 1,
+      "message": "change `Exception e` to `Exception ignored`",
+      "revId": "1db3e5134f851dc46ff0c5ffc6985c64e025665d",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
