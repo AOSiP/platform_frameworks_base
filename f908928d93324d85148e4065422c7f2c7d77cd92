@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f96e639f_f9cd5748",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 5288,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-05T04:25:45Z",
+      "side": 1,
+      "message": "Wouldn\u0027t this be `ACCENTS_PACKAGE_NAME_PREFIX + overlays`?\n\nActually, rename overlays to accent in the loop and here.",
+      "revId": "f908928d93324d85148e4065422c7f2c7d77cd92",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
