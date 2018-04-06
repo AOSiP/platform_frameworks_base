@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b6a2231e_11c9105c",
+        "filename": "packages/SystemUI/res/xml/statusbar_icon_settings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2018-04-06T13:08:52Z",
+      "side": 1,
+      "message": "umm :/",
+      "revId": "2c009472b8c57464dd33ae3bbcfe0a64dcfe470b",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
