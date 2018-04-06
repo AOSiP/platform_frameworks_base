@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "752d45c7_314ce1dc",
+        "filename": "core/java/android/provider/BlockedNumberContract.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000069
+      },
+      "writtenOn": "2018-04-06T23:34:26Z",
+      "side": 1,
+      "message": "Shouldnt this be\nimport android.util.Log;?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 27
+      },
+      "revId": "02d71f75883590ee81a9d5e8b9f81024f8200f7e",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
