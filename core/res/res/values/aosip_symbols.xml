@@ -56,4 +56,10 @@
 
     <!-- Vendor mismatched fingerprint warning -->
     <java-symbol type="string" name="system_error_vendorprint" />
+
+    <!-- Button Brightness -->
+    <java-symbol type="integer" name="config_buttonBrightnessSettingMinimum" />
+    <java-symbol type="integer" name="config_buttonBrightnessSettingMaximum" />
+    <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
+
 </resources>
