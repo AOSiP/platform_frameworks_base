@@ -611,4 +611,5 @@
     -->
     <dimen name="autofill_save_icon_max_size">300dp</dimen>
 
+    <dimen name="letterbox_height">0px</dimen>
 </resources>

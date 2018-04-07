@@ -5976,6 +5976,21 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
         }
 
+
+        int letterbox = mContext.getResources().getDimensionPixelSize(com.android.internal.R.dimen.letterbox_height);
+        if (letterbox > 0 && win != mStatusBar && (fl & WindowManager.LayoutParams.FLAG_FULLSCREEN) != 0 && Settings.System.getInt(mContext.getContentResolver(), Settings.System.USE_LETTERBOX_WHEN_FULLSCREEN, 1) == 1) {
+            int rotation = mDisplayRotation;
+            if (rotation == Surface.ROTATION_0) {
+                pf.top += letterbox;
+            } else if (rotation == Surface.ROTATION_90) {
+                pf.left += letterbox;
+            } else if (rotation == Surface.ROTATION_180) {
+                pf.bottom -= letterbox;
+            } else if (rotation == Surface.ROTATION_270) {
+                pf.right -= letterbox;
+            }
+        }
+
         if (DEBUG_LAYOUT) Slog.v(TAG, "Compute frame " + attrs.getTitle()
                 + ": sim=#" + Integer.toHexString(sim)
                 + " attach=" + attached + " type=" + attrs.type
