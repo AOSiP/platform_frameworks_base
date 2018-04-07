@@ -21,20 +21,22 @@
   <string name="reboot_to_recovery_message">Rebooting to recovery</string>
   <string name="reboot_to_bootloader_title">Bootloader</string>
   <string name="reboot_to_bootloader_message">Rebooting to bootloader</string>
-  <string name="reboot_title">Reboot</string>
-  <string name="reboot_message">Rebooting system</string>
+  <string name="reboot_title">Käynnistä uudelleen</string>
+  <string name="reboot_message">Käynnistetään uudelleen</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_toggleNavigationEditor">control navigation editor</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Allows an application to control the navigation bar editor.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Spoof package signature</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Allows the app to pretend to be a different app. Malicious applications might be able to use this to access private application data. Grant this permission with caution only!</string>
   <!-- ADB over network notification -->
-  <string name="adb_net_active_notification_title">ADB over network enabled</string>
+  <string name="adb_net_active_notification_title">ADB verkon yli käytössä</string>
   <!-- ADB over USB and network notification -->
-  <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
+  <string name="adb_both_active_notification_title">ADB USB: n kautta &amp; verkko käytössä</string>
   <!-- ADB notification message-->
-  <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
-  <!-- Pocket Lock -->
-  <string name="pocket_lock_message_long_press">Long press power button to interact</string>
+  <string name="adb_active_generic_notification_message">Sulje Usb-vianetsintä koskettamalla.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
-  <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device</string>
+  <string name="system_error_vendorprint">Vendor image ei vastaa järjestelmän tietoja. Ole hyvä ja asenna <xliff:g id="string">%s</xliff:g> vendor image laitteellesi</string>
 </resources>

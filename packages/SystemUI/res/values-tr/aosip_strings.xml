@@ -31,7 +31,7 @@
   <string name="quick_settings_region_screenshot_label">Kısmi ekran görüntüsü</string>
   <string name="status_bar_roaming">Dolaşım</string>
   <string name="status_bar_vpn">VPN</string>
-  <string name="lockscreen_default">Sıfırla</string>
+  <string name="lockscreen_default">Varsayılan</string>
   <string name="lockscreen_hidden">Hiçbiri</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <string name="custom_hint">Başlatmak için simgeyi kaydırın</string>
@@ -90,9 +90,9 @@
   <string name="keyguard_indication_dash_charging_time">Dash Şarj Oluyor (tam dolmasına <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> kaldı)</string>
   <string name="keyguard_plugged_in_dash_charging">Dash Şarj Oluyor</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_turbo_power_time">TurboPower connected (<xliff:g id="charging_time_left">%s</xliff:g> until full)</string>
-  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connected</string>
-  <string name="keyguard_plugged_in_turbo_charging">Turbo Charging</string>
+  <string name="keyguard_indication_turbo_power_time">TurboPower bağlandı (tam dolmasına <xliff:g id="charging_time_left">%s</xliff:g> kaldı)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower bağlandı</string>
+  <string name="keyguard_plugged_in_turbo_charging">Turbo Şarj Oluyor</string>
   <!-- SysUI Tuner -->
   <string name="statusbar_icons_blacklist">Durum çubuğu simgeleri</string>
   <string name="navbar_tuner_activity">Gezinme çubuğu tuşları</string>
@@ -119,7 +119,7 @@
   <string name="qs_menu_item_reset">Sıfırla</string>
   <string name="qs_menu_item_titles">Etiketleri göster</string>
   <!-- QS rows -->
-  <string name="qs_menu_item_rows">Sütunlar</string>
+  <string name="qs_menu_item_rows">Satırlar</string>
   <string name="qs_menu_item_rows_one">1</string>
   <string name="qs_menu_item_rows_two">2</string>
   <string name="qs_menu_item_rows_three">3</string>
@@ -138,7 +138,7 @@
   <string name="screenrecord_notif_pointer_on">İşaretçiyi göster</string>
   <string name="screenrecord_notif_pointer_off">İşaretçiyi gizle</string>
   <!-- Screen record notification error title -->
-  <string name="screenrecord_notif_error">Ekran görüntüsü kaydedilemiyor</string>
+  <string name="screenrecord_notif_error">Ekran kaydedilemiyor</string>
   <string name="notification_channel_screenrecord">Ekran kayıtları</string>
   <string name="screenrecord_hide_hint">İpuçlarını gizle</string>
   <string name="screenrecord_show_hint">İpuçlarını göster</string>
@@ -186,6 +186,7 @@
   <string name="systemui_theme_style_auto">Otomatik</string>
   <string name="systemui_theme_style_light">Aydınlık</string>
   <string name="systemui_theme_style_dark">Karanlık</string>
+  <string name="systemui_theme_style_blackaf">BlackAF</string>
   <string name="quick_settings_theme_tile_title">Vurgu rengi</string>
   <string name="quick_settings_theme_tile_accent_detail_title">Renk seçin</string>
   <string name="quick_settings_theme_tile_style_detail_title">Stil seçin</string>
@@ -228,7 +229,9 @@
   <string name="accessibility_quick_settings_hwkeys_off">Donanım tuşları kapalı</string>
   <string name="quick_settings_hwkeys_label">Donanım tuşları</string>
   <!-- Google Assist QS Tiles -->
-  <string name="quick_settings_google_assist_label">Assistant</string>
-  <string name="quick_settings_google_voice_assist_label">Voice assist</string>
-  <string name="quick_settings_google_now_label">Google feed</string>
+  <string name="quick_settings_google_assist_label">Asistan</string>
+  <string name="quick_settings_google_voice_assist_label">Sesli asistan</string>
+  <string name="quick_settings_google_now_label">Google beslemesi</string>
+  <string name="screenshot_abort_title">Ekran görüntüsü alınamadı</string>
+  <string name="screenshot_abort_text">İşlem iptal edildi.</string>
 </resources>

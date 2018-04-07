@@ -36,79 +36,79 @@
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <string name="custom_hint">Scorri l\'icona per avviare</string>
   <string name="tuner_quick_settings">Impostazioni rapide</string>
-  <string name="tuner_show_brightness_mode">Show brightness mode switch</string>
-  <string name="tuner_show_brightness_new">Show brightness slider</string>
+  <string name="tuner_show_brightness_mode">Mostra la modalità di luminosità</string>
+  <string name="tuner_show_brightness_new">Mostra la barra livello luminosità</string>
   <!-- Advanced location QS Tile -->
-  <string name="accessibility_quick_settings_location_battery_saving">Location reporting: battery saving mode.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Location reporting: sensors only mode.</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">Location reporting: high accuracy mode.</string>
+  <string name="accessibility_quick_settings_location_battery_saving">Geolocalizzazione: modalità risparmio batteria.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Geolocalizzazione: modalità solo dispositivo.</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">Geolocalizzazione: modalità alta precisione.</string>
   <!-- Ambient display QS tile -->
-  <string name="quick_settings_ambient_display_label">Ambient display</string>
-  <string name="accessibility_quick_settings_ambient_display_off">Ambient display off.</string>
-  <string name="accessibility_quick_settings_ambient_display_on">Ambient display on.</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient display turned off.</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient display turned on.</string>
+  <string name="quick_settings_ambient_display_label">Display Ambient</string>
+  <string name="accessibility_quick_settings_ambient_display_off">Display Ambient disattivo.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">Display Ambient attivo.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Display Ambient è stato disattivato.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Display Ambient è stato attivato.</string>
   <!-- Always on Display Tile -->
   <string name="quick_settings_always_on_display_label">Always on display</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_off">Always on display off.</string>
+  <string name="accessibility_quick_settings_always_on_display_off">Always on display disattivo.</string>
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_on">Always on display on.</string>
+  <string name="accessibility_quick_settings_always_on_display_on">Always on display attivo.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_changed_off">Always on display turned off.</string>
+  <string name="accessibility_quick_settings_always_on_display_changed_off">Always on display è stato disattivato.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_changed_on">Always on display turned on.</string>
+  <string name="accessibility_quick_settings_always_on_display_changed_on">Always on display è stato attivato.</string>
   <!-- Caffeine QS Tile -->
-  <string name="quick_settings_caffeine_label">Caffeine</string>
-  <string name="accessibility_quick_settings_caffeine_off">Caffeine off</string>
-  <string name="accessibility_quick_settings_caffeine_on">Caffeine on</string>
+  <string name="quick_settings_caffeine_label">Caffeina</string>
+  <string name="accessibility_quick_settings_caffeine_off">Caffeina disattivata</string>
+  <string name="accessibility_quick_settings_caffeine_on">Caffeina attivata</string>
   <!-- USB tethering QS Tile -->
-  <string name="quick_settings_usb_tether_label">USB tethering</string>
+  <string name="quick_settings_usb_tether_label">Tethering USB</string>
   <!-- Sync QS Tile -->
-  <string name="quick_settings_sync_label">Sync</string>
-  <string name="accessibility_quick_settings_sync_off">Sync off</string>
-  <string name="accessibility_quick_settings_sync_on">Sync on</string>
-  <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-  <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+  <string name="quick_settings_sync_label">Sincronizzazione</string>
+  <string name="accessibility_quick_settings_sync_off">Sincronizzazione non attiva</string>
+  <string name="accessibility_quick_settings_sync_on">Sincronizzazione attiva</string>
+  <string name="accessibility_quick_settings_sync_changed_off">Sincronizzazione disattivata</string>
+  <string name="accessibility_quick_settings_sync_changed_on">Sincronizzazione attivata</string>
   <!-- Sound QS Tile -->
-  <string name="quick_settings_sound_label">Sound</string>
-  <string name="quick_settings_sound_ring">Ring</string>
-  <string name="quick_settings_sound_vibrate">Vibrate</string>
-  <string name="quick_settings_sound_dnd">Do not disturb</string>
+  <string name="quick_settings_sound_label">Suono</string>
+  <string name="quick_settings_sound_ring">Suona</string>
+  <string name="quick_settings_sound_vibrate">Vibra</string>
+  <string name="quick_settings_sound_dnd">Non disturbare</string>
   <!-- Heads Up QS Tile -->
-  <string name="quick_settings_heads_up_label">Heads up</string>
-  <string name="accessibility_quick_settings_heads_up_off">Heads up off.</string>
-  <string name="accessibility_quick_settings_heads_up_on">Heads up on.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_off">Heads up turned off.</string>
-  <string name="accessibility_quick_settings_heads_up_changed_on">Heads up turned on.</string>
+  <string name="quick_settings_heads_up_label">Notifiche a comparsa</string>
+  <string name="accessibility_quick_settings_heads_up_off">Notifiche a comparsa disattivate.</string>
+  <string name="accessibility_quick_settings_heads_up_on">Notifiche a comparsa attive.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_off">Notifiche a comparsa disattivate.</string>
+  <string name="accessibility_quick_settings_heads_up_changed_on">Notifiche a comparsa attivate.</string>
   <!-- Volume QS Tile -->
   <string name="accessibility_quick_settings_volume_panel">Volume</string>
   <string name="quick_settings_volume_panel_label">Volume</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
-  <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+  <string name="keyguard_indication_dash_charging_time">Ricarica rapida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes"> %s</xliff:g> al termine)</string>
+  <string name="keyguard_plugged_in_dash_charging">Ricarica rapida</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_turbo_power_time">TurboPower connected (<xliff:g id="charging_time_left">%s</xliff:g> until full)</string>
-  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connected</string>
-  <string name="keyguard_plugged_in_turbo_charging">Turbo Charging</string>
+  <string name="keyguard_indication_turbo_power_time">TurboPower collegato (<xliff:g id="charging_time_left">%s</xliff:g> fino al completamento)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower collegato</string>
+  <string name="keyguard_plugged_in_turbo_charging">Ricarica Turbo</string>
   <!-- SysUI Tuner -->
-  <string name="statusbar_icons_blacklist">Status bar icons</string>
-  <string name="navbar_tuner_activity">Navigation bar buttons</string>
-  <string name="lockscreen_tuner_activity">Lockscreen shortcuts</string>
-  <string name="powernotif_tuner_activity">Power notifications</string>
-  <string name="systemui_tuner_navbar_title">Stock settings</string>
-  <string name="global_action_restart_system">Reboot</string>
-  <string name="global_action_restart_advanced">Advanced</string>
+  <string name="statusbar_icons_blacklist">Icone della barra di stato</string>
+  <string name="navbar_tuner_activity">Pulsanti della barra di navigazione</string>
+  <string name="lockscreen_tuner_activity">Scorciatoie schermata di blocco</string>
+  <string name="powernotif_tuner_activity">Notifiche del menu di spegnimento</string>
+  <string name="systemui_tuner_navbar_title">Impostazioni predefinite</string>
+  <string name="global_action_restart_system">Riavvia</string>
+  <string name="global_action_restart_advanced">Avanzato</string>
   <string name="global_action_restart_recovery">Recovery</string>
   <string name="global_action_restart_bootloader">Bootloader</string>
   <string name="global_action_restart_ui">SystemUI</string>
-  <string name="global_action_restart_hot">Hot</string>
+  <string name="global_action_restart_hot">Avvio rapido</string>
   <string name="global_action_screenshot">Screenshot</string>
   <!-- QS columns -->
-  <string name="qs_menu_item_columns">Columns</string>
-  <string name="qs_menu_item_columns_landscape">Columns landscape</string>
+  <string name="qs_menu_item_columns">Colonne</string>
+  <string name="qs_menu_item_columns_landscape">Colonne in orizzontale</string>
   <string name="qs_menu_item_columns_three">3</string>
   <string name="qs_menu_item_columns_four">4</string>
   <string name="qs_menu_item_columns_five">5</string>
@@ -116,47 +116,47 @@
   <string name="qs_menu_item_columns_seven">7</string>
   <string name="qs_menu_item_columns_eight">8</string>
   <string name="qs_menu_item_columns_nine">9</string>
-  <string name="qs_menu_item_reset">Reset</string>
-  <string name="qs_menu_item_titles">Show labels</string>
+  <string name="qs_menu_item_reset">Ripristina</string>
+  <string name="qs_menu_item_titles">Mostra etichette</string>
   <!-- QS rows -->
-  <string name="qs_menu_item_rows">Rows</string>
+  <string name="qs_menu_item_rows">Righe</string>
   <string name="qs_menu_item_rows_one">1</string>
   <string name="qs_menu_item_rows_two">2</string>
   <string name="qs_menu_item_rows_three">3</string>
   <string name="qs_menu_item_rows_four">4</string>
   <!-- ADB network tile -->
-  <string name="quick_settings_adb_network">ADB over network</string>
+  <string name="quick_settings_adb_network">ADB attraverso la rete</string>
   <!-- Screenrecord Notification Ticker -->
-  <string name="screenrecord_notif_ticker">Screen is being recorded</string>
-  <string name="screenrecord_notif_final_ticker">Screen recorded successfully</string>
+  <string name="screenrecord_notif_ticker">La registrazione schermo è in corso</string>
+  <string name="screenrecord_notif_final_ticker">Schermo registrato con successo</string>
   <!-- Screenrecord notification title -->
-  <string name="screenrecord_notif_title">Recording screen</string>
+  <string name="screenrecord_notif_title">Registrazione schermo</string>
   <!-- Screenrecord notification action: Stop -->
-  <string name="screenrecord_notif_stop">Stop</string>
-  <string name="screenrecord_notif_completed">Screen recorded successfully</string>
+  <string name="screenrecord_notif_stop">Interrompi</string>
+  <string name="screenrecord_notif_completed">Schermo registrato con successo</string>
   <!-- Screenrecord notification action: show/hide pointer -->
-  <string name="screenrecord_notif_pointer_on">Show pointer</string>
-  <string name="screenrecord_notif_pointer_off">Hide pointer</string>
+  <string name="screenrecord_notif_pointer_on">Mostra puntatore</string>
+  <string name="screenrecord_notif_pointer_off">Nascondi puntatore</string>
   <!-- Screen record notification error title -->
-  <string name="screenrecord_notif_error">Unable to record screen</string>
-  <string name="notification_channel_screenrecord">Screenrecords</string>
-  <string name="screenrecord_hide_hint">Hide hint</string>
-  <string name="screenrecord_show_hint">Show hint</string>
+  <string name="screenrecord_notif_error">Impossibile registrare schermo</string>
+  <string name="notification_channel_screenrecord">Registrazioni schermo</string>
+  <string name="screenrecord_hide_hint">Nascondi suggerimento</string>
+  <string name="screenrecord_show_hint">Mostra suggerimento</string>
   <!-- CPUInfo tile -->
-  <string name="quick_settings_cpuinfo_label">CPU Info</string>
+  <string name="quick_settings_cpuinfo_label">Info CPU</string>
   <!-- Screenshot QS tile -->
-  <string name="quick_settings_screenrecord_label">Screenrecord</string>
-  <string name="quick_settings_screenrecord_lq_label">Screenrecord 480p</string>
-  <string name="quick_settings_screenrecord_mq_label">Screenrecord 720p</string>
-  <string name="quick_settings_screenrecord_hq_label">Screenrecord 720p+</string>
+  <string name="quick_settings_screenrecord_label">Registra schermo</string>
+  <string name="quick_settings_screenrecord_lq_label">Registra schermo a 480p</string>
+  <string name="quick_settings_screenrecord_mq_label">Registra schermo a 720p</string>
+  <string name="quick_settings_screenrecord_hq_label">Registra schermo a 720p+</string>
   <!-- Compass QS Tile -->
-  <string name="quick_settings_compass_label">Compass</string>
+  <string name="quick_settings_compass_label">Bussola</string>
   <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
-  <string name="quick_settings_compass_init">Initializing\u2026</string>
-  <string name="accessibility_quick_settings_compass_off">Compass off.</string>
-  <string name="accessibility_quick_settings_compass_on">Compass on.</string>
-  <string name="accessibility_quick_settings_compass_changed_off">Compass turned off.</string>
-  <string name="accessibility_quick_settings_compass_changed_on">Compass turned on.</string>
+  <string name="quick_settings_compass_init">Inizializzazione\u2026</string>
+  <string name="accessibility_quick_settings_compass_off">Bussola spenta.</string>
+  <string name="accessibility_quick_settings_compass_on">Bussola accesa.</string>
+  <string name="accessibility_quick_settings_compass_changed_off">Bussola disattivata.</string>
+  <string name="accessibility_quick_settings_compass_changed_on">Bussola attivata.</string>
   <string name="quick_settings_compass_N">N</string>
   <string name="quick_settings_compass_NE">NE</string>
   <string name="quick_settings_compass_E">E</string>
@@ -166,69 +166,72 @@
   <string name="quick_settings_compass_W">W</string>
   <string name="quick_settings_compass_NW">NW</string>
   <!-- Expanded desktop QS Tile -->
-  <string name="quick_settings_expanded_desktop_label">Expanded desktop</string>
-  <string name="quick_settings_expanded_desktop">Expanded</string>
-  <string name="quick_settings_expanded_desktop_off">Normal</string>
-  <string name="quick_settings_expanded_navigation_off">Hide navbar</string>
-  <string name="quick_settings_expanded_statusbar_off">Hide statusbar</string>
+  <string name="quick_settings_expanded_desktop_label">Schermo esteso</string>
+  <string name="quick_settings_expanded_desktop">Esteso</string>
+  <string name="quick_settings_expanded_desktop_off">Normale</string>
+  <string name="quick_settings_expanded_navigation_off">Nascondi barra di navigazione</string>
+  <string name="quick_settings_expanded_statusbar_off">Nascondi barra di stato</string>
   <!-- Navigation bar Tile -->
-  <string name="quick_settings_navigation_bar">Navigation bar</string>
+  <string name="quick_settings_navigation_bar">Barra di navigazione</string>
   <string name="quick_settings_smartbar">SmartBar</string>
   <string name="quick_settings_fling">Fling</string>
-  <string name="quick_settings_navigation_default">Stock</string>
-  <string name="quick_settings_navigation_disabled">Disabled</string>
+  <string name="quick_settings_navigation_default">Predefinito</string>
+  <string name="quick_settings_navigation_disabled">Disabilitato</string>
   <!-- Music tile -->
-  <string name="quick_settings_music_label">Music</string>
-  <string name="quick_settings_music_play">Play</string>
-  <string name="quick_settings_music_pause">Pause</string>
+  <string name="quick_settings_music_label">Musica</string>
+  <string name="quick_settings_music_play">Riproduci</string>
+  <string name="quick_settings_music_pause">Pausa</string>
   <!-- Theme tile -->
-  <string name="systemui_theme_style_title">Style</string>
-  <string name="systemui_theme_style_auto">Automatic</string>
-  <string name="systemui_theme_style_light">Light</string>
-  <string name="systemui_theme_style_dark">Dark</string>
-  <string name="quick_settings_theme_tile_title">Accent</string>
-  <string name="quick_settings_theme_tile_accent_detail_title">Select color</string>
-  <string name="quick_settings_theme_tile_style_detail_title">Select style</string>
-  <string name="quick_settings_theme_tile_color_default">Default</string>
-  <string name="quick_settings_theme_tile_color_red">Red</string>
-  <string name="quick_settings_theme_tile_color_pink">Pink</string>
-  <string name="quick_settings_theme_tile_color_purple">Purple</string>
-  <string name="quick_settings_theme_tile_color_deep_purple">Deep purple</string>
-  <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
-  <string name="quick_settings_theme_tile_color_blue">Blue</string>
-  <string name="quick_settings_theme_tile_color_light_blue">Light blue</string>
-  <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
-  <string name="quick_settings_theme_tile_color_teal">Teal</string>
-  <string name="quick_settings_theme_tile_color_green">Green</string>
-  <string name="quick_settings_theme_tile_color_light_green">Light green</string>
+  <string name="systemui_theme_style_title">Stile</string>
+  <string name="systemui_theme_style_auto">Automatico</string>
+  <string name="systemui_theme_style_light">Chiaro</string>
+  <string name="systemui_theme_style_dark">Scuro</string>
+  <string name="systemui_theme_style_blackaf">BlackAF</string>
+  <string name="quick_settings_theme_tile_title">Colore secondario</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Seleziona colore</string>
+  <string name="quick_settings_theme_tile_style_detail_title">Seleziona stile</string>
+  <string name="quick_settings_theme_tile_color_default">Predefinita</string>
+  <string name="quick_settings_theme_tile_color_red">Rosso</string>
+  <string name="quick_settings_theme_tile_color_pink">Rosa</string>
+  <string name="quick_settings_theme_tile_color_purple">Viola</string>
+  <string name="quick_settings_theme_tile_color_deep_purple">Viola scuro</string>
+  <string name="quick_settings_theme_tile_color_indigo">Blu</string>
+  <string name="quick_settings_theme_tile_color_blue">Azzurro</string>
+  <string name="quick_settings_theme_tile_color_light_blue">Azzurro chiaro</string>
+  <string name="quick_settings_theme_tile_color_cyan">Ciano</string>
+  <string name="quick_settings_theme_tile_color_teal">Verde acqua</string>
+  <string name="quick_settings_theme_tile_color_green">Verde</string>
+  <string name="quick_settings_theme_tile_color_light_green">Verde chiaro</string>
   <string name="quick_settings_theme_tile_color_lime">Lime</string>
-  <string name="quick_settings_theme_tile_color_yellow">Yellow</string>
-  <string name="quick_settings_theme_tile_color_amber">Amber</string>
-  <string name="quick_settings_theme_tile_color_orange">Orange</string>
-  <string name="quick_settings_theme_tile_color_deep_orange">Deep orange</string>
-  <string name="quick_settings_theme_tile_color_brown">Brown</string>
-  <string name="quick_settings_theme_tile_color_grey">Grey</string>
-  <string name="quick_settings_theme_tile_color_blue_grey">Blue grey</string>
-  <string name="quick_settings_theme_tile_color_black">Black</string>
-  <string name="quick_settings_theme_tile_color_white">White</string>
+  <string name="quick_settings_theme_tile_color_yellow">Giallo</string>
+  <string name="quick_settings_theme_tile_color_amber">Ambra</string>
+  <string name="quick_settings_theme_tile_color_orange">Arancione</string>
+  <string name="quick_settings_theme_tile_color_deep_orange">Arancione scuro</string>
+  <string name="quick_settings_theme_tile_color_brown">Marrone</string>
+  <string name="quick_settings_theme_tile_color_grey">Grigio</string>
+  <string name="quick_settings_theme_tile_color_blue_grey">Grigio blu</string>
+  <string name="quick_settings_theme_tile_color_black">Nero</string>
+  <string name="quick_settings_theme_tile_color_white">Bianco</string>
   <!-- Battery saver tile -->
-  <string name="battery_saver_qs_tile_fully_charged">Fully Charged</string>
-  <string name="quick_settings_sound_search">Sound search</string>
+  <string name="battery_saver_qs_tile_fully_charged">Ricarica completa</string>
+  <string name="quick_settings_sound_search">Cerca suono</string>
   <!-- Show lte/4g switch -->
-  <string name="show_lte_fourgee_title">4G/LTE network icon</string>
-  <string name="statusbar_tuner_category_title">Hide items from statusbar</string>
+  <string name="show_lte_fourgee_title">Icona di rete 4G/LTE</string>
+  <string name="statusbar_tuner_category_title">Nascondi elementi dalla barra di stato</string>
   <!-- Kill button in notification guts -->
-  <string name="force_stop_dlg_title">Force stop?</string>
-  <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
-  <string name="kill">Kill App</string>
+  <string name="force_stop_dlg_title">Forzare la chiusura?</string>
+  <string name="force_stop_dlg_text">Se forzi l\'interruzione, l\'app potrebbe funzionare in modo anomalo.</string>
+  <string name="kill">Termina app</string>
   <!-- QS customizer -->
-  <string name="drag_or_tap_to_add_tiles">Drag or tap to add tiles</string>
+  <string name="drag_or_tap_to_add_tiles">Trascina o premi per aggiungere tiles</string>
   <!-- HW Keys Tile -->
-  <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-  <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-  <string name="quick_settings_hwkeys_label">HW keys</string>
+  <string name="accessibility_quick_settings_hwkeys_on">Tasti HW attivi</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Tasti HW disattivi</string>
+  <string name="quick_settings_hwkeys_label">Tasti HW</string>
   <!-- Google Assist QS Tiles -->
-  <string name="quick_settings_google_assist_label">Assistant</string>
-  <string name="quick_settings_google_voice_assist_label">Voice assist</string>
-  <string name="quick_settings_google_now_label">Google feed</string>
+  <string name="quick_settings_google_assist_label">Assistente</string>
+  <string name="quick_settings_google_voice_assist_label">Assistente vocale</string>
+  <string name="quick_settings_google_now_label">Feed di Google</string>
+  <string name="screenshot_abort_title">Nessuno screenshot catturato</string>
+  <string name="screenshot_abort_text">Operazione annullata.</string>
 </resources>
