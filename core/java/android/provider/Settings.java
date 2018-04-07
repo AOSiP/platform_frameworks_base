@@ -3949,6 +3949,31 @@ public final class Settings {
         private static final Validator NAVIGATION_BAR_ENABLED_VALIDATOR = sBooleanValidator;
 
         /**
+         * Value for button brightness.
+         * This is an integer value in a range between 0 and 255.
+         *      0 = off
+         *    255 = default
+         *    255 = max
+         * @hide
+         */
+        public static final String BUTTON_BRIGHTNESS = "button_brightness";
+
+        /** @hide */
+        public static final Validator BUTTON_BRIGHTNESS_VALIDATOR =
+            new InclusiveIntegerRangeValidator(0, 255);
+
+        /**
+         * Whether user can enable/disable button brightness.
+         * <p>
+         * Type: int (0 for false, 1 for true)
+         * @hide
+         */
+        public static final String BUTTON_BRIGHTNESS_ENABLED = "button_brightness_enabled";
+
+        /** @hide */
+        private static final Validator BUTTON_BRIGHTNESS_ENABLED_VALIDATOR = sBooleanValidator;
+
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
@@ -4294,6 +4319,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_STYLE);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_FORMAT);
             PRIVATE_SETTINGS.add(NAVIGATION_BAR_ENABLED);
+            PRIVATE_SETTINGS.add(BUTTON_BRIGHTNESS);
+            PRIVATE_SETTINGS.add(BUTTON_BRIGHTNESS_ENABLED);
         }
 
         /**
@@ -4379,6 +4406,8 @@ public final class Settings {
             VALIDATORS.put(STATUSBAR_CLOCK_DATE_DISPLAY, STATUSBAR_CLOCK_DATE_DISPLAY_VALIDATOR);
             VALIDATORS.put(STATUSBAR_CLOCK_DATE_STYLE, STATUSBAR_CLOCK_DATE_STYLE_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_ENABLED, NAVIGATION_BAR_ENABLED_VALIDATOR);
+            VALIDATORS.put(BUTTON_BRIGHTNESS, BUTTON_BRIGHTNESS_VALIDATOR);
+            VALIDATORS.put(BUTTON_BRIGHTNESS_ENABLED, BUTTON_BRIGHTNESS_ENABLED_VALIDATOR);
         }
 
         /**

@@ -38,4 +38,9 @@
   <!-- Full screen aspect ratio -->
   <java-symbol type="bool" name="config_haveHigherAspectRatioScreen" />
   <java-symbol type="dimen" name="config_screenAspectRatio" />
+
+  <!-- Button Brightness -->
+  <java-symbol type="integer" name="config_buttonBrightnessSettingMinimum" />
+  <java-symbol type="integer" name="config_buttonBrightnessSettingMaximum" />
+  <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
 </resources>
