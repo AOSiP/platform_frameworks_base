@@ -4399,6 +4399,7 @@ public final class Settings {
          * 1 = Statusbar only
          * 2 = Navbar only
          * 3 = Fullscreen
+         * @hide
          */
         public static final String IMMERSIVE_RECENTS = "immersive_recents";
 
@@ -4551,6 +4552,7 @@ public final class Settings {
          * Ticker animation
          * 0: Fade animation
          * 1: Scrolling ticker
+         * @hide
          */
         public static final String STATUS_BAR_TICKER_ANIMATION_MODE =
                 "status_bar_ticker_animation_mode";

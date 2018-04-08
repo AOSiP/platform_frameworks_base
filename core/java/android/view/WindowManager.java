@@ -163,7 +163,13 @@ public interface WindowManager extends ViewManager {
      * @hide
      */
     final int SCREEN_RECORD_LOW_QUALITY = 0;
+    /**
+     * @hide
+     */
     final int SCREEN_RECORD_MID_QUALITY = 1;
+    /**
+     * @hide
+     */
     final int SCREEN_RECORD_HIGH_QUALITY = 2;
 
     /**
