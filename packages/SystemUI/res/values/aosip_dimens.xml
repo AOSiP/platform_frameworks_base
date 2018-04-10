@@ -19,7 +19,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <dimen name="status_bar_left_clock_end_padding">5dp</dimen>
-
+    <dimen name="status_bar_left_clock_start_padding_normal">2dp</dimen>
+    <dimen name="status_bar_left_clock_start_padding_more">3dp</dimen>
+    <dimen name="status_bar_left_clock_start_padding_max">4dp</dimen>
     <dimen name="status_bar_battery_large_icon_width">20.5dp</dimen>
     <dimen name="status_bar_battery_large_icon_height">20.5dp</dimen>
 </resources>

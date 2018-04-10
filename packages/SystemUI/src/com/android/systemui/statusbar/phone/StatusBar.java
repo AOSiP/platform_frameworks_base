@@ -5924,24 +5924,17 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.Secure.getUriFor(
                     Settings.Secure.FP_SWIPE_TO_DISMISS_NOTIFICATIONS))) {
                 setFpToDismissNotifications();
-            } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.SHOW_BATTERY_PERCENT))
-                    || uri.equals(Settings.Secure.getUriFor(
-                    Settings.Secure.STATUS_BAR_BATTERY_STYLE))
-                    || uri.equals(Settings.Secure.getUriFor(
-                    Settings.Secure.STATUS_BAR_BIG_BATTERY_ICON))) {
-                setStatusBarOptions();
             }
         }
 
         public void update() {
             setLockscreenDoubleTapToSleep();
             setFpToDismissNotifications();
-            setStatusBarOptions();
         }
     }
 
-    private void setStatusBarOptions() {
+    // Called from CollapsedStatusBarFragment observer
+    public void updateBatterySettings() {
         if (mStatusBarView != null) {
             mStatusBarView.updateSettings();
         }
