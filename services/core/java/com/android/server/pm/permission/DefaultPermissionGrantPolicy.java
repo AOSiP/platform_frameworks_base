@@ -893,6 +893,11 @@ public final class DefaultPermissionGrantPolicy {
         if (mediascannerPackage != null) {
             grantRuntimePermissions(mediascannerPackage, STORAGE_PERMISSIONS, true, userId);
         }
+        // Pixel Wallpaper
+        PackageParser.Package pixelwallsPackage = getDefaultProviderAuthorityPackage("com.google.android.apps.wallpaper", userId);
+        if (pixelwallsPackage != null) {
+            grantRuntimePermissions(pixelwallsPackage, STORAGE_PERMISSIONS, true, userId);
+        }
 
         // Google sound picker
         PackageParser.Package googleSoundPackage = getSystemPackage("com.google.android.soundpicker");
