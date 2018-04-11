@@ -4780,6 +4780,16 @@ public final class Settings {
         public static final String MEDIAPROJECTION_SYSUI_OK = "mediaprojection_sysui_ok";
 
         /**
+         * Whether to change the transparency of the qs panel
+         * @hide
+         */
+        public static final String QS_PANEL_BG_ALPHA = "qs_panel_bg_alpha";
+
+        /** @hide */
+        private static final Validator QS_PANEL_BG_ALPHA_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
          * Whether to display our kronic logo in the statusbar
          * @hide
          */
@@ -5773,6 +5783,7 @@ public final class Settings {
             RING_VIBRATION_INTENSITY,
             HAPTIC_FEEDBACK_INTENSITY,
             DISPLAY_COLOR_MODE,
+            QS_PANEL_BG_ALPHA,
             ALARM_ALERT,
             //Additions
             ADAPTIVE_PLAYBACK_ENABLED,
@@ -6006,6 +6017,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(QS_BLUR_ENABLED);
             PRIVATE_SETTINGS.add(QS_COLUMNS_LANDSCAPE);
             PRIVATE_SETTINGS.add(QS_COLUMNS_PORTRAIT);
+            PRIVATE_SETTINGS.add(QS_PANEL_BG_ALPHA);
             PRIVATE_SETTINGS.add(QS_ROWS_LANDSCAPE);
             PRIVATE_SETTINGS.add(QS_ROWS_PORTRAIT);
             PRIVATE_SETTINGS.add(QS_SHOW_BATTERY_PERCENT);
@@ -6159,6 +6171,7 @@ public final class Settings {
             VALIDATORS.put(QS_BLUR_ENABLED, QS_BLUR_ENABLED_VALIDATOR);
             VALIDATORS.put(QS_COLUMNS_LANDSCAPE, QS_COLUMNS_LANDSCAPE_VALIDATOR);
             VALIDATORS.put(QS_COLUMNS_PORTRAIT, QS_COLUMNS_PORTRAIT_VALIDATOR);
+            VALIDATORS.put(QS_PANEL_BG_ALPHA, QS_PANEL_BG_ALPHA_VALIDATOR);
             VALIDATORS.put(QS_ROWS_LANDSCAPE, QS_ROWS_LANDSCAPE_VALIDATOR);
             VALIDATORS.put(QS_ROWS_PORTRAIT, QS_ROWS_PORTRAIT_VALIDATOR);
             VALIDATORS.put(QS_SHOW_BATTERY_PERCENT, QS_SHOW_BATTERY_PERCENT_VALIDATOR);
