@@ -2513,6 +2513,12 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     @Override
     public void handleSystemKey(int key) {
         if (SPEW) Log.d(TAG, "handleNavigationKey: " + key);
+
+        if (KeyEvent.KEYCODE_MEDIA_PREVIOUS == key || KeyEvent.KEYCODE_MEDIA_NEXT == key) {
+            mMediaManager.onSkipTrackEvent(key, mHandler);
+            return;
+        }
+
         if (!panelsEnabled() || !mKeyguardMonitor.isDeviceInteractive()
                 || mKeyguardMonitor.isShowing() && !mKeyguardMonitor.isOccluded()) {
             return;
@@ -2543,7 +2549,6 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                 clearAllNotifications(KeyEvent.KEYCODE_SYSTEM_NAVIGATION_LEFT == key ? true : false);
             }
         }
-
     }
 
     @Override
