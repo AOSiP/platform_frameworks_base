@@ -61,6 +61,9 @@ public class SoundTile extends QSTileImpl<BooleanState> {
 
     @Override
     public void handleSetListening(boolean listening) {
+        if (mReceiver == null) {
+            return;
+        }
         if (mListening == listening) return;
         mListening = listening;
         if (listening) {
