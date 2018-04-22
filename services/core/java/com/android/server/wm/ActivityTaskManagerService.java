@@ -247,6 +247,7 @@ import com.android.internal.policy.KeyguardDismissCallback;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.FastPrintWriter;
 import com.android.internal.util.Preconditions;
+import com.android.internal.util.aosip.AosipActivityManager;
 import com.android.internal.util.function.pooled.PooledLambda;
 import com.android.server.AttributeCache;
 import com.android.server.DeviceIdleController;
@@ -650,6 +651,9 @@ public class ActivityTaskManagerService extends IActivityTaskManager.Stub {
 
     private int mDeviceOwnerUid = Process.INVALID_UID;
 
+    // AOSiP activity related helper
+    private AosipActivityManager mAosipActivityManager;
+
     private final class FontScaleSettingObserver extends ContentObserver {
         private final Uri mFontScaleUri = Settings.System.getUriFor(FONT_SCALE);
         private final Uri mHideErrorDialogsUri = Settings.Global.getUriFor(HIDE_ERROR_DIALOGS);
@@ -719,6 +723,10 @@ public class ActivityTaskManagerService extends IActivityTaskManager.Stub {
 
     public void installSystemProviders() {
         mFontScaleSettingObserver = new FontScaleSettingObserver();
+
+        // AosipActivityManager depends on settings so we can initialize only
+        // after providers are available.
+        mAosipActivityManager = new AosipActivityManager(mContext);
     }
 
     public void retrieveSettings(ContentResolver resolver) {
@@ -7483,5 +7491,9 @@ public class ActivityTaskManagerService extends IActivityTaskManager.Stub {
                 mCompanionAppUidsMap.put(userId, result);
             }
         }
+    }
+
+    public boolean shouldForceLongScreen(String packageName) {
+        return mAosipActivityManager.shouldForceLongScreen(packageName);
     }
 }
