@@ -186,7 +186,7 @@
   <string name="systemui_theme_style_auto">自动</string>
   <string name="systemui_theme_style_light">亮色</string>
   <string name="systemui_theme_style_dark">暗色</string>
-  <string name="systemui_theme_style_blackaf">BlackAF</string>
+  <string name="systemui_theme_style_blackaf">黑色</string>
   <string name="quick_settings_theme_tile_title">强调色</string>
   <string name="quick_settings_theme_tile_accent_detail_title">选择颜色</string>
   <string name="quick_settings_theme_tile_style_detail_title">选择样式</string>

@@ -186,7 +186,7 @@
   <string name="systemui_theme_style_auto">Automatico</string>
   <string name="systemui_theme_style_light">Chiaro</string>
   <string name="systemui_theme_style_dark">Scuro</string>
-  <string name="systemui_theme_style_blackaf">BlackAF</string>
+  <string name="systemui_theme_style_blackaf">Nerissimo</string>
   <string name="quick_settings_theme_tile_title">Colore secondario</string>
   <string name="quick_settings_theme_tile_accent_detail_title">Seleziona colore</string>
   <string name="quick_settings_theme_tile_style_detail_title">Seleziona stile</string>

@@ -39,4 +39,8 @@
   <string name="adb_active_generic_notification_message">Sulje Usb-vianetsintä koskettamalla.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Vendor image ei vastaa järjestelmän tietoja. Ole hyvä ja asenna <xliff:g id="string">%s</xliff:g> vendor image laitteellesi</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">override power key</string>
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Allows an app to override the power key.</string>
 </resources>

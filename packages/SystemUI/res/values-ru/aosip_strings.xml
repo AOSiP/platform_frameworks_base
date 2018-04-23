@@ -186,7 +186,7 @@
   <string name="systemui_theme_style_auto">Автоматически</string>
   <string name="systemui_theme_style_light">Светлая</string>
   <string name="systemui_theme_style_dark">Темная</string>
-  <string name="systemui_theme_style_blackaf">BlackAF</string>
+  <string name="systemui_theme_style_blackaf">Черная</string>
   <string name="quick_settings_theme_tile_title">Акцент</string>
   <string name="quick_settings_theme_tile_accent_detail_title">Выберите цвет</string>
   <string name="quick_settings_theme_tile_style_detail_title">Выберите стиль</string>

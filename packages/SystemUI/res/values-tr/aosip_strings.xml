@@ -32,7 +32,7 @@
   <string name="status_bar_roaming">Dolaşım</string>
   <string name="status_bar_vpn">VPN</string>
   <string name="lockscreen_default">Varsayılan</string>
-  <string name="lockscreen_hidden">Hiçbiri</string>
+  <string name="lockscreen_hidden">Yok</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <string name="custom_hint">Başlatmak için simgeyi kaydırın</string>
   <string name="tuner_quick_settings">Hızlı ayarlar</string>
@@ -40,7 +40,7 @@
   <string name="tuner_show_brightness_new">Parlaklık kaydırıcısını göster</string>
   <!-- Advanced location QS Tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Konum bildirimi: pil tasarruf modu.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: yalnızca sensörler modu.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: yalnızca sensör modu.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Konum bildirmi: yüksek doğruluk modu.</string>
   <!-- Ambient display QS tile -->
   <string name="quick_settings_ambient_display_label">Ortam ekranı</string>
@@ -74,7 +74,7 @@
   <string name="quick_settings_sound_label">Ses</string>
   <string name="quick_settings_sound_ring">Zil sesi</string>
   <string name="quick_settings_sound_vibrate">Titreşim</string>
-  <string name="quick_settings_sound_dnd">Rahatsız etme</string>
+  <string name="quick_settings_sound_dnd">Rahatsız etmeyin</string>
   <!-- Heads Up QS Tile -->
   <string name="quick_settings_heads_up_label">Bildirim pencereleri</string>
   <string name="accessibility_quick_settings_heads_up_off">Bildirim pencereleri kapalı.</string>
@@ -83,7 +83,7 @@
   <string name="accessibility_quick_settings_heads_up_changed_on">Bildirim pencereleri açıldı.</string>
   <!-- Volume QS Tile -->
   <string name="accessibility_quick_settings_volume_panel">Ses</string>
-  <string name="quick_settings_volume_panel_label">Ses</string>
+  <string name="quick_settings_volume_panel_label">Ses seviyesi</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
@@ -101,9 +101,9 @@
   <string name="systemui_tuner_navbar_title">Varsayılan ayarlar</string>
   <string name="global_action_restart_system">Yeniden başlat</string>
   <string name="global_action_restart_advanced">Gelişmiş</string>
-  <string name="global_action_restart_recovery">Kurtarma modu</string>
+  <string name="global_action_restart_recovery">Kurtarma</string>
   <string name="global_action_restart_bootloader">Ön yükleyici</string>
-  <string name="global_action_restart_ui">Sistem arayüzü</string>
+  <string name="global_action_restart_ui">Arayüz</string>
   <string name="global_action_restart_hot">Hızlı</string>
   <string name="global_action_screenshot">Ekran görüntüsü</string>
   <!-- QS columns -->
@@ -186,9 +186,9 @@
   <string name="systemui_theme_style_auto">Otomatik</string>
   <string name="systemui_theme_style_light">Aydınlık</string>
   <string name="systemui_theme_style_dark">Karanlık</string>
-  <string name="systemui_theme_style_blackaf">BlackAF</string>
+  <string name="systemui_theme_style_blackaf">Siyah</string>
   <string name="quick_settings_theme_tile_title">Vurgu rengi</string>
-  <string name="quick_settings_theme_tile_accent_detail_title">Renk seçin</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Renk seç</string>
   <string name="quick_settings_theme_tile_style_detail_title">Stil seçin</string>
   <string name="quick_settings_theme_tile_color_default">Varsayılan</string>
   <string name="quick_settings_theme_tile_color_red">Kırmızı</string>
@@ -213,7 +213,7 @@
   <string name="quick_settings_theme_tile_color_black">Siyah</string>
   <string name="quick_settings_theme_tile_color_white">Beyaz</string>
   <!-- Battery saver tile -->
-  <string name="battery_saver_qs_tile_fully_charged">Tamamen Şarj Oldu</string>
+  <string name="battery_saver_qs_tile_fully_charged">Tamamen şarj edildi</string>
   <string name="quick_settings_sound_search">Sesli arama</string>
   <!-- Show lte/4g switch -->
   <string name="show_lte_fourgee_title">4G/LTE ağı simgesi</string>
@@ -221,7 +221,7 @@
   <!-- Kill button in notification guts -->
   <string name="force_stop_dlg_title">Zorla durdurulsun mu?</string>
   <string name="force_stop_dlg_text">Bir uygulamayı zorla durdurursanız, bir hata ile karşılaşabilirsiniz.</string>
-  <string name="kill">Uygulamayı Sonlandır</string>
+  <string name="kill">Uygulamayı sonlandır</string>
   <!-- QS customizer -->
   <string name="drag_or_tap_to_add_tiles">Kare eklemek için dokunun</string>
   <!-- HW Keys Tile -->
@@ -231,7 +231,7 @@
   <!-- Google Assist QS Tiles -->
   <string name="quick_settings_google_assist_label">Asistan</string>
   <string name="quick_settings_google_voice_assist_label">Sesli asistan</string>
-  <string name="quick_settings_google_now_label">Google beslemesi</string>
+  <string name="quick_settings_google_now_label">Google now</string>
   <string name="screenshot_abort_title">Ekran görüntüsü alınamadı</string>
   <string name="screenshot_abort_text">İşlem iptal edildi.</string>
 </resources>

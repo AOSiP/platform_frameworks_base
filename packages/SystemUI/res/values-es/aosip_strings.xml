@@ -90,9 +90,9 @@
   <string name="keyguard_indication_dash_charging_time">Carga rápida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> hasta completar)</string>
   <string name="keyguard_plugged_in_dash_charging">Carga Rápida</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_turbo_power_time">TurboPower connected (<xliff:g id="charging_time_left">%s</xliff:g> until full)</string>
-  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connected</string>
-  <string name="keyguard_plugged_in_turbo_charging">Turbo Charging</string>
+  <string name="keyguard_indication_turbo_power_time">TurboPower conectado (<xliff:g id="charging_time_left">%s</xliff:g> hasta cargarse por completo)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower conectado</string>
+  <string name="keyguard_plugged_in_turbo_charging">Carga Turbo</string>
   <!-- SysUI Tuner -->
   <string name="statusbar_icons_blacklist">Iconos de la barra de estado</string>
   <string name="navbar_tuner_activity">Botones de la barra de navegación</string>
@@ -125,7 +125,7 @@
   <string name="qs_menu_item_rows_three">3</string>
   <string name="qs_menu_item_rows_four">4</string>
   <!-- ADB network tile -->
-  <string name="quick_settings_adb_network">ADB over network</string>
+  <string name="quick_settings_adb_network">ADB sobre red</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">La pantalla está siendo grabada</string>
   <string name="screenrecord_notif_final_ticker">Pantalla grabada con éxito</string>
@@ -186,7 +186,7 @@
   <string name="systemui_theme_style_auto">Automático</string>
   <string name="systemui_theme_style_light">Claro</string>
   <string name="systemui_theme_style_dark">Oscuro</string>
-  <string name="systemui_theme_style_blackaf">BlackAF</string>
+  <string name="systemui_theme_style_blackaf">NegroDPM</string>
   <string name="quick_settings_theme_tile_title">Acento</string>
   <string name="quick_settings_theme_tile_accent_detail_title">Seleccionar color</string>
   <string name="quick_settings_theme_tile_style_detail_title">Seleccionar estilo</string>
@@ -225,13 +225,13 @@
   <!-- QS customizer -->
   <string name="drag_or_tap_to_add_tiles">Arrastre o pulse para añadir funciones</string>
   <!-- HW Keys Tile -->
-  <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-  <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-  <string name="quick_settings_hwkeys_label">HW keys</string>
+  <string name="accessibility_quick_settings_hwkeys_on">Teclas iluminadas</string>
+  <string name="accessibility_quick_settings_hwkeys_off">Teclas apagadas</string>
+  <string name="quick_settings_hwkeys_label">Teclas HW</string>
   <!-- Google Assist QS Tiles -->
-  <string name="quick_settings_google_assist_label">Assistant</string>
-  <string name="quick_settings_google_voice_assist_label">Voice assist</string>
+  <string name="quick_settings_google_assist_label">Asistente</string>
+  <string name="quick_settings_google_voice_assist_label">Asistente de voz</string>
   <string name="quick_settings_google_now_label">Google feed</string>
-  <string name="screenshot_abort_title">No screenshot taken</string>
-  <string name="screenshot_abort_text">Operation aborted.</string>
+  <string name="screenshot_abort_title">No se capturó la pantalla</string>
+  <string name="screenshot_abort_text">Operación cancelada.</string>
 </resources>

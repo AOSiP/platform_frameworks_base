@@ -22,21 +22,25 @@
   <string name="reboot_to_bootloader_title">Bootloader</string>
   <string name="reboot_to_bootloader_message">Reiniciando en modo bootloader</string>
   <string name="reboot_title">Reiniciar</string>
-  <string name="reboot_message">Reiniciando!</string>
+  <string name="reboot_message">¡Reiniciando!</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_toggleNavigationEditor">Editor de la barra de navegacion</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_toggleNavigationEditor">Permite a una aplicacion conttrolar la barra de navegacion.</string>
+  <string name="permdesc_toggleNavigationEditor">Permite a una aplicación controlar la barra de navegación.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Spoof package signature</string>
+  <string name="permlab_fakePackageSignature">Falsificar firma del paquete</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Allows the app to pretend to be a different app. Malicious applications might be able to use this to access private application data. Grant this permission with caution only!</string>
+  <string name="permdesc_fakePackageSignature">Permite que la aplicación se haga pasar por una aplicación que no es. Las aplicaciones maliciosas podrían usar este permiso para acceder a datos privados. ¡Concede este permiso con cuidado!</string>
   <!-- ADB over network notification -->
   <string name="adb_net_active_notification_title">ADB sobre la red activado</string>
   <!-- ADB over USB and network notification -->
   <string name="adb_both_active_notification_title">ADB sobre USB &amp; red activado</string>
   <!-- ADB notification message-->
-  <string name="adb_active_generic_notification_message">Toca para desactivar la depuracion.</string>
+  <string name="adb_active_generic_notification_message">Toca para desactivar la depuración.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Tu imagen de vendor no concuerda con la del sistema por favor flashea <xliff:g id="string">%s</xliff:g> la imagen para tu dispositivo</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">Reajustar tecla de encendido</string>
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Permite que una aplicación cambie la función de la tecla de encendido.</string>
 </resources>

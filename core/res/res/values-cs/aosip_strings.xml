@@ -28,9 +28,9 @@
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Umožní aplikaci provádět změny v editoru navigačního panelu.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Spoof package signature</string>
+  <string name="permlab_fakePackageSignature">Napodobit podpis balíčku</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Allows the app to pretend to be a different app. Malicious applications might be able to use this to access private application data. Grant this permission with caution only!</string>
+  <string name="permdesc_fakePackageSignature">Umožňuje aplikaci předstírat, že je jinou aplikací. Škodlivé aplikace by mohly použít tuto možnost k přístupu k datům soukromých aplikací. Udělujte toto oprávnění s opatrností!</string>
   <!-- ADB over network notification -->
   <string name="adb_net_active_notification_title">ABD přes síť povoleno</string>
   <!-- ADB over USB and network notification -->
@@ -39,4 +39,8 @@
   <string name="adb_active_generic_notification_message">Dotykem zakázat ladění.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Váš dodavatel obrazu se neshoduje se systémem. Prosím flashněte obraz pro vaše zařízení <xliff:g id="string">%s </xliff:g></string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">přepsat funkci vypínacího tlačítka</string>
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">Umožní změnit chování tlačítka pro zapínání a vypínání.</string>
 </resources>

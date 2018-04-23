@@ -28,9 +28,9 @@
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">允许应用程序控制导航栏编辑器</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Spoof package signature</string>
+  <string name="permlab_fakePackageSignature">模仿安装包签名</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Allows the app to pretend to be a different app. Malicious applications might be able to use this to access private application data. Grant this permission with caution only!</string>
+  <string name="permdesc_fakePackageSignature">允许程序伪装成其他程序。 请注意，恶意程序可能会利用此权限访问隐私数据。请谨慎授予此权限！</string>
   <!-- ADB over network notification -->
   <string name="adb_net_active_notification_title">网络ADB调试已开启</string>
   <!-- ADB over USB and network notification -->
@@ -39,4 +39,8 @@
   <string name="adb_active_generic_notification_message">点击以禁用调试</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">您的初始设备制造商镜像与系统不匹配。请为您的设备刷入 <xliff:g id="string">%s </xliff:g> 初始设备制造商镜像</string>
+  <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_preventpower">修改电源键功能</string>
+  <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_preventpower">允许应用程序修改电源键功能</string>
 </resources>
