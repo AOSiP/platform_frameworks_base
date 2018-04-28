@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33e7335c_a7ea1199",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2018-04-28T12:38:35Z",
+      "side": 1,
+      "message": "Try https://www.amazon.com/dp/B0777BYCBM?ref_\u003dOct_CARAsinC_3777831_0\nDoes the same but better",
+      "revId": "24950c5bbac6cd754af3f5e441ad4ff93471c0f2",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
