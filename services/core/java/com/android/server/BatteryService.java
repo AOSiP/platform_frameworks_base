@@ -319,6 +319,14 @@ public final class BatteryService extends SystemService {
                     != Settings.Global.ZEN_MODE_OFF;
             mLowBatteryBlinking = Settings.System.getInt(resolver,
                     Settings.System.BATTERY_LIGHT_LOW_BLINKING, 0) == 1;
+
+	// Use overlay to set default color for battery led
+	// Devices having RGB battery led have no issues, but those
+	// devices having white battery led, it turns off when battery
+	// level reaches 90%. So better use white for all battery levels.
+	// This ensures that led will turn on in any case.
+
+        if(mMultiColorLed) {
             mBatteryLowARGB = Settings.System.getInt(resolver,
                     Settings.System.BATTERY_LIGHT_LOW_COLOR, 0xFFFF0000);
             mBatteryMediumARGB = Settings.System.getInt(resolver,
@@ -327,7 +335,16 @@ public final class BatteryService extends SystemService {
                     Settings.System.BATTERY_LIGHT_FULL_COLOR, 0xFF00FF00);
             mBatteryReallyFullARGB = Settings.System.getInt(resolver,
                     Settings.System.BATTERY_LIGHT_REALLYFULL_COLOR, 0xFF00FF00);
-
+	} else {
+            mBatteryLowARGB = Settings.System.getInt(resolver,
+                    Settings.System.BATTERY_LIGHT_LOW_COLOR, 0xFFFFFFFF);
+            mBatteryMediumARGB = Settings.System.getInt(resolver,
+                    Settings.System.BATTERY_LIGHT_MEDIUM_COLOR, 0xFFFFFFFF);
+            mBatteryFullARGB = Settings.System.getInt(resolver,
+                    Settings.System.BATTERY_LIGHT_FULL_COLOR, 0xFFFFFFFF);
+            mBatteryReallyFullARGB = Settings.System.getInt(resolver,
+                    Settings.System.BATTERY_LIGHT_REALLYFULL_COLOR, 0xFFFFFFFF);
+	}
             updateLed();
         }
     }
