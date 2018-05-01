@@ -9481,6 +9481,20 @@ public final class Settings {
         public static final String LOCKSCREEN_SOLID_UNITS_OPACITY = "lockscreen_solid_units_opacity";
 
         /**
+         * List of long-screen apps.
+         * @hide
+         */
+        public static final String LONG_SCREEN_APPS = "long_screen_apps";
+
+        /** @hide */
+        public static final Validator LONG_SCREEN_APPS_VALIDATOR = new Validator() {
+                @Override
+                public boolean validate(String value) {
+                    return true;
+                }
+            };
+
+        /**
          * This are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
