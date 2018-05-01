@@ -4745,6 +4745,20 @@ public final class Settings {
         public static final String STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
 
         /**
+         * List of long-screen apps.
+         * @hide
+         */
+        public static final String LONG_SCREEN_APPS = "long_screen_apps";
+
+        /** @hide */
+        public static final Validator LONG_SCREEN_APPS_VALIDATOR = new Validator() {
+                @Override
+                public boolean validate(String value) {
+                    return true;
+                }
+            };
+
+        /**
          * Whether to disable showing arrows in statusbar network traffic indicators
          * @hide
          */
