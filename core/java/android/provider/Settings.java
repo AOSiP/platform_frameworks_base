@@ -4506,6 +4506,16 @@ public final class Settings {
         /**
          * @hide
          */
+        public static final String FLASH_ON_CALL_WAITING = "flash_on_call_waiting";
+
+        /**
+         * @hide
+         */
+        public static final String FLASH_ON_CALLWAITING_DELAY = "flash_on_call_waiting_delay";
+
+        /**
+         * @hide
+         */
         public static final String DEVICE_FEATURE_SETTINGS = "device_feature_settings";
 
         /** @hide */

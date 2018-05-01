@@ -208,6 +208,13 @@ public class aosipUtils {
         FireActions.toggleCameraFlash();
     }
 
+    public static void toggleCameraFlashOn() {
+        FireActions.toggleCameraFlashOn();
+    }
+     public static void toggleCameraFlashOff() {
+        FireActions.toggleCameraFlashOff();
+    }
+
     public static void sendKeycode(int keycode) {
         long when = SystemClock.uptimeMillis();
         final KeyEvent evDown = new KeyEvent(when, when, KeyEvent.ACTION_DOWN, keycode, 0,
@@ -259,6 +266,28 @@ public class aosipUtils {
             if (service != null) {
                 try {
                     service.toggleCameraFlash();
+                } catch (RemoteException e) {
+                    // do nothing.
+                }
+            }
+        }
+
+        public static void toggleCameraFlashOn(){
+            IStatusBarService service = getStatusBarService();
+            if (service != null) {
+                try {
+                    service.toggleCameraFlashOn();
+                } catch (RemoteException e) {
+                    // do nothing.
+                }
+            }
+        }
+
+        public static void toggleCameraFlashOff(){
+            IStatusBarService service = getStatusBarService();
+            if (service != null) {
+                try {
+                    service.toggleCameraFlashOff();
                 } catch (RemoteException e) {
                     // do nothing.
                 }
