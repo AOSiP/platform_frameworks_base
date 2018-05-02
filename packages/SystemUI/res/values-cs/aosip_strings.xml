@@ -34,7 +34,7 @@
   <string name="lockscreen_default">Výchozí</string>
   <string name="lockscreen_hidden">Nic</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-  <string name="custom_hint">Spustit přejetím prstem od ikony</string>
+  <string name="custom_hint">Spustit přejetím prstu od ikony</string>
   <string name="tuner_quick_settings">Rychlá nastavení</string>
   <string name="tuner_show_brightness_mode">Zobrazit přepínač režimu jasu</string>
   <string name="tuner_show_brightness_new">Zobrazit posuvník jasu</string>
@@ -46,8 +46,8 @@
   <string name="quick_settings_ambient_display_label">Ambientní displej</string>
   <string name="accessibility_quick_settings_ambient_display_off">Ambientní displej vyp.</string>
   <string name="accessibility_quick_settings_ambient_display_on">Ambientní displej zap.</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_off">Ambientní displej byl vypnutý.</string>
-  <string name="accessibility_quick_settings_ambient_display_changed_on">Ambientní displej zapnutý.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_off">Ambientní displej je vypnutý.</string>
+  <string name="accessibility_quick_settings_ambient_display_changed_on">Ambientní displej je zapnutý.</string>
   <!-- Always on Display Tile -->
   <string name="quick_settings_always_on_display_label">\"Always on\" displej</string>
   <!-- Content description of the ambient display tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
@@ -55,9 +55,9 @@
   <!-- Content description of the ambient display tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_quick_settings_always_on_display_on">\"Always on\" displej zap.</string>
   <!-- Announcement made when ambient display changes to off (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_changed_off">\"Always on\" displej byl vypnutý.</string>
+  <string name="accessibility_quick_settings_always_on_display_changed_off">\"Always on\" displej je vypnutý.</string>
   <!-- Announcement made when ambient display changes to on (not shown on the screen). [CHAR LIMIT=NONE] -->
-  <string name="accessibility_quick_settings_always_on_display_changed_on">\"Always on\" displej byl zapnutý.</string>
+  <string name="accessibility_quick_settings_always_on_display_changed_on">\"Always on\" displej je zapnutý.</string>
   <!-- Caffeine QS Tile -->
   <string name="quick_settings_caffeine_label">Caffeine</string>
   <string name="accessibility_quick_settings_caffeine_off">Caffeine vyp.</string>
@@ -234,4 +234,7 @@
   <string name="quick_settings_google_now_label">Google Feed</string>
   <string name="screenshot_abort_title">Nebyl pořízen žádný snímek obrazovky</string>
   <string name="screenshot_abort_text">Operace přerušena.</string>
+  <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Smart pixels</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
 </resources>

@@ -227,11 +227,14 @@
   <!-- HW Keys Tile -->
   <string name="accessibility_quick_settings_hwkeys_on">Teclas iluminadas</string>
   <string name="accessibility_quick_settings_hwkeys_off">Teclas apagadas</string>
-  <string name="quick_settings_hwkeys_label">Teclas HW</string>
+  <string name="quick_settings_hwkeys_label">Teclas de Hardware</string>
   <!-- Google Assist QS Tiles -->
   <string name="quick_settings_google_assist_label">Asistente</string>
   <string name="quick_settings_google_voice_assist_label">Asistente de voz</string>
   <string name="quick_settings_google_now_label">Google feed</string>
-  <string name="screenshot_abort_title">No se capturó la pantalla</string>
+  <string name="screenshot_abort_title">No se pudo tomar la captura de pantalla</string>
   <string name="screenshot_abort_text">Operación cancelada.</string>
+  <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Smart pixels</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
 </resources>

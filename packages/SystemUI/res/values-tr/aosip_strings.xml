@@ -188,7 +188,7 @@
   <string name="systemui_theme_style_dark">Karanlık</string>
   <string name="systemui_theme_style_blackaf">Siyah</string>
   <string name="quick_settings_theme_tile_title">Vurgu rengi</string>
-  <string name="quick_settings_theme_tile_accent_detail_title">Renk seç</string>
+  <string name="quick_settings_theme_tile_accent_detail_title">Renk seçin</string>
   <string name="quick_settings_theme_tile_style_detail_title">Stil seçin</string>
   <string name="quick_settings_theme_tile_color_default">Varsayılan</string>
   <string name="quick_settings_theme_tile_color_red">Kırmızı</string>
@@ -220,7 +220,7 @@
   <string name="statusbar_tuner_category_title">Durum çubuğunda öğeleri gizle</string>
   <!-- Kill button in notification guts -->
   <string name="force_stop_dlg_title">Zorla durdurulsun mu?</string>
-  <string name="force_stop_dlg_text">Bir uygulamayı zorla durdurursanız, bir hata ile karşılaşabilirsiniz.</string>
+  <string name="force_stop_dlg_text">Uygulamayı zorla durdurursanız, hatalı davranabilir.</string>
   <string name="kill">Uygulamayı sonlandır</string>
   <!-- QS customizer -->
   <string name="drag_or_tap_to_add_tiles">Kare eklemek için dokunun</string>
@@ -234,4 +234,7 @@
   <string name="quick_settings_google_now_label">Google now</string>
   <string name="screenshot_abort_title">Ekran görüntüsü alınamadı</string>
   <string name="screenshot_abort_text">İşlem iptal edildi.</string>
+  <!-- Smart pixels QS tile -->
+  <string name="quick_settings_smart_pixels">Smart pixels</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
 </resources>
