@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1d599443_2e4c3e8c",
+        "filename": "services/core/java/com/android/server/display/ElectronBeam.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2018-05-02T07:15:00Z",
+      "side": 1,
+      "message": "`final Exception ignored`",
+      "revId": "12d768f52483ecceac8a98e9bcd0f0a47c5593bb",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
