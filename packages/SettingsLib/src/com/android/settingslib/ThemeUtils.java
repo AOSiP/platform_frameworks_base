@@ -36,7 +36,7 @@ public class ThemeUtils {
     private static String ACCENTS_PACKAGE_NAME_PREFIX = "com.accents.";
     private static String ACCENTS[] = { "red", "pink", "purple", "deeppurple", "indigo",
             "blue", "lightblue", "cyan", "teal", "green", "lightgreen", "lime",
-            "yellow", "amber", "orange", "deeporange", "brown", "blue",
+            "yellow", "amber", "orange", "deeporange", "brown", "grey",
             "bluegrey", canUseBlackAccent() ? "black" : "white" };
     private static String DARK_THEME_PACKAGES[] = { "com.android.system.theme.dark",
             "com.android.settings.theme.dark", "com.android.dui.theme.dark",
