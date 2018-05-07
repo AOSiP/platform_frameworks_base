@@ -48,9 +48,6 @@
     <!-- Custom Carrier Label -->
     <dimen name="status_bar_carrier_height">14dp</dimen>
 
-    <!-- QS tile scroller -->
-    <dimen name="qs_scroller_margin">8dp</dimen>
-
     <!-- Hide QS label -->
     <dimen name="qs_tile_height_wo_label">48dp</dimen>
 
