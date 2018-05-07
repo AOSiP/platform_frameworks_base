@@ -39,7 +39,6 @@ public class ClockLeft extends Clock {
 
     public ClockLeft(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        updateSettings();
     }
 
     public void setClockVisibilityByPolicy(boolean visible) {
