@@ -207,7 +207,6 @@ import com.android.systemui.qs.QSPanel;
 import com.android.systemui.qs.QSTileHost;
 import com.android.systemui.qs.QuickStatusBarHeader;
 import com.android.systemui.qs.car.CarQSFragment;
-import com.android.systemui.qs.QuickStatusBarHeader;
 import com.android.systemui.recents.Recents;
 import com.android.systemui.recents.ScreenPinningRequest;
 import com.android.systemui.recents.events.EventBus;
@@ -478,7 +477,6 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     // settings
     private QSPanel mQSPanel;
-    private QuickStatusBarHeader mQuickStatusBarHeader;
 
     // top bar
     protected KeyguardStatusBarView mKeyguardStatusBar;
@@ -1336,7 +1334,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                     mQSPanel = ((QSFragment) qs).getQsPanel();
                     mQSPanel.setBrightnessMirror(mBrightnessMirrorController);
                     mKeyguardStatusBar.setQSPanel(mQSPanel);
-                    mQuickStatusBarHeader = ((QSFragment) qs).getQuickStatusBarHeader();
                 }
             });
         }
@@ -5391,9 +5388,6 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     public void onClosingFinished() {
         runPostCollapseRunnables();
-        if (mQuickStatusBarHeader != null) {
-            mQuickStatusBarHeader.onClosingFinished();
-        }
         if (!isPanelFullyCollapsed()) {
             // if we set it not to be focusable when collapsing, we have to undo it when we aborted
             // the closing
@@ -6399,9 +6393,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.LESS_BORING_HEADS_UP),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.QS_QUICKBAR_SCROLL_ENABLED),
-                    false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.FP_SWIPE_TO_DISMISS_NOTIFICATIONS),
                     false, this, UserHandle.USER_ALL);
@@ -6450,11 +6441,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.LESS_BORING_HEADS_UP))) {
                 setUseLessBoringHeadsUp();
-            } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.QS_QUICKBAR_SCROLL_ENABLED))) {
-                if (mQuickStatusBarHeader != null) {
-                    mQuickStatusBarHeader.updateSettings();
-                }
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.ACCENT_PICKER))) {
                 // Unload the accents and update the accent only when the user asks.
