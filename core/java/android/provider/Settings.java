@@ -5870,6 +5870,15 @@ public final class Settings {
         private static final Validator QS_BLUR_INTENSITY_VALIDATOR = ANY_INTEGER_VALIDATOR;
 
         /**
+         * Whether to show or hide the running services icon
+         * @hide
+         */
+        public static final String QS_RUNNING_SERVICES_TOGGLE = "qs_running_services_toggle";
+        /** @hide */
+        private static final Validator QS_RUNNING_SERVICES_TOGGLE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -6069,6 +6078,7 @@ public final class Settings {
             QS_BLUR,
             QS_BLUR_ALPHA,
             QS_BLUR_INTENSITY,
+            QS_RUNNING_SERVICES_TOGGLE,
         };
 
         /**
@@ -6522,6 +6532,7 @@ public final class Settings {
             VALIDATORS.put(QS_BLUR, QS_BLUR_VALIDATOR);
             VALIDATORS.put(QS_BLUR_ALPHA, QS_BLUR_ALPHA_VALIDATOR);
             VALIDATORS.put(QS_BLUR_INTENSITY, QS_BLUR_INTENSITY_VALIDATOR);
+            VALIDATORS.put(QS_RUNNING_SERVICES_TOGGLE, QS_RUNNING_SERVICES_TOGGLE_VALIDATOR);
         }
 
         /**
