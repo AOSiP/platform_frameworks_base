@@ -4890,6 +4890,7 @@ public class NotificationManagerService extends SystemService {
 
     private void forceShowLed(int color) {
         if (color != -1) {
+            mNotificationLight.turnOff();
             mNotificationLight.setColor(color);
         } else {
             mNotificationLight.turnOff();
@@ -4898,6 +4899,7 @@ public class NotificationManagerService extends SystemService {
 
     private void forcePulseLed(int color, int onTime, int offTime) {
         if (color != -1) {
+            mNotificationLight.turnOff();
             mNotificationLight.setFlashing(color, Light.LIGHT_FLASH_TIMED, onTime, offTime);
         } else {
             mNotificationLight.turnOff();
