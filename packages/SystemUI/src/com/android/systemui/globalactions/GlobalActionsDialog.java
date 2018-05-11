@@ -28,13 +28,9 @@ import com.android.systemui.HardwareUiLayout;
 import com.android.systemui.Interpolators;
 import com.android.systemui.colorextraction.SysuiColorExtractor;
 import com.android.systemui.plugins.GlobalActions.GlobalActionsManager;
-import com.android.systemui.statusbar.notification.NotificationUtils;
 import com.android.systemui.statusbar.phone.ScrimController;
 import com.android.systemui.volume.VolumeDialogMotion.LogAccelerateInterpolator;
-import com.android.systemui.volume.VolumeDialogMotion.LogDecelerateInterpolator;
 
-import android.animation.ValueAnimator;
-import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
 import android.app.Dialog;
@@ -74,7 +70,6 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.ArraySet;
 import android.util.Log;
-import android.util.MathUtils;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -1473,6 +1468,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
     private static final int MESSAGE_SHOW = 2;
     private static final int MESSAGE_SHOW_ADVANCED_TOGGLES = 3;
     private static final int DIALOG_DISMISS_DELAY = 300; // ms
+    private static final int MESSAGE_SHOW_ADVANCED_TOGGLES_SHOW = 6;
 
     private Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
@@ -1491,9 +1487,14 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
                     handleShow();
                     break;
                 case MESSAGE_SHOW_ADVANCED_TOGGLES:
+                    mDialog.dismiss();
+                    mHandler.sendEmptyMessageDelayed(MESSAGE_SHOW_ADVANCED_TOGGLES_SHOW, DIALOG_DISMISS_DELAY);
+                    break;
+                case MESSAGE_SHOW_ADVANCED_TOGGLES_SHOW:
                     mAdapter.notifyDataSetChanged();
                     addNewItems();
                     mDialog.refreshList();
+                    mDialog.show();
                     break;
             }
         }
@@ -1629,7 +1630,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
             mHardwareLayout.animate()
                     .alpha(1)
                     .translationX(0)
-                    .setDuration(300)
+                    .setDuration(DIALOG_DISMISS_DELAY)
                     .setInterpolator(Interpolators.FAST_OUT_SLOW_IN)
                     .setUpdateListener(animation -> {
                         int alpha = (int) ((Float) animation.getAnimatedValue()
@@ -1649,7 +1650,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener, DialogIn
             mHardwareLayout.animate()
                     .alpha(0)
                     .translationX(getAnimTranslation())
-                    .setDuration(300)
+                    .setDuration(DIALOG_DISMISS_DELAY)
                     .withEndAction(() -> super.dismiss())
                     .setInterpolator(new LogAccelerateInterpolator())
                     .setUpdateListener(animation -> {
