@@ -21,4 +21,8 @@
   <!-- Max visible notification icons -->
   <java-symbol type="integer" name="config_maxVisibleNotificationIcons" />
   <java-symbol type="integer" name="config_maxVisibleNotificationIconsWhenDark" />
+
+  <!-- Full screen aspect ratio -->
+  <java-symbol type="bool" name="config_haveHigherAspectRatioScreen" />
+  <java-symbol type="dimen" name="config_screenAspectRatio" />
 </resources>
