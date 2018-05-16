@@ -479,6 +479,9 @@ public class ResolverActivity extends Activity {
             mIconFactory = IconDrawableFactory.newInstance(ResolverActivity.this, true);
         }
         try {
+            if (mIconFactory == null) {
+                mIconFactory = IconDrawableFactory.newInstance(ResolverActivity.this, true);
+            }
             if (ri.resolvePackageName != null && ri.icon != 0) {
                 dr = getIcon(mPm.getResourcesForApplication(ri.resolvePackageName), ri.icon);
                 if (dr != null) {
