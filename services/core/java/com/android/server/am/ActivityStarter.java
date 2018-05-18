@@ -111,6 +111,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.service.voice.IVoiceInteractionSession;
@@ -290,6 +291,48 @@ class ActivityStarter {
         return mLastStartActivityResult != START_ABORTED ? mLastStartActivityResult : START_SUCCESS;
     }
 
+    private void wrapCameraVersion(Intent intent, String packageName, String callingPackage){
+        try {
+            //HAL3 package list
+            int hal3PackageListCount = Integer.parseInt(SystemProperties.get("camera.hal3.force.total", "0"));
+            if (hal3PackageListCount > 0) { //Force HAL3 if the package name falls in this bucket
+                boolean shouldSetHal3Prop = false;
+                boolean hal3Enabled = SystemProperties.get("persist.camera.HAL3.enabled", "0").equals("1");
+                TextUtils.StringSplitter splitter = new TextUtils.SimpleStringSplitter(',');
+                for (int i = 1; i <= hal3PackageListCount; i++) {
+                    String hal3PackageList = SystemProperties.get("camera.hal3.force." + i, "");
+                    if (hal3PackageList.length() > 0) {
+                        splitter.setString(hal3PackageList);
+                        for (String str : splitter) {
+                            if (str.equals(callingPackage)){
+                                // Google Camera calls Google Photos in preview, otherwise a force close will occur after the user touches the photo/video preview
+                                return;
+                            }
+                            if (str.contains("/")) {
+                                String intentClassName = intent.getComponent().getClassName();
+                                String targetClassName = str.replace("/","");
+                                if (intentClassName.equals(targetClassName)) {
+                                    shouldSetHal3Prop = true;
+                                    break;
+                                }
+                            }else{
+                                if (packageName.equals(str)) {
+                                    shouldSetHal3Prop = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (hal3Enabled != shouldSetHal3Prop){
+                    SystemProperties.set("persist.camera.HAL3.enabled",shouldSetHal3Prop ? "1" : "0");
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error on wrapCameraVersion " + e);
+        }
+    }
+
     /** DO NOT call this method directly. Use {@link #startActivityLocked} instead. */
     private int startActivity(IApplicationThread caller, Intent intent, Intent ephemeralIntent,
             String resolvedType, ActivityInfo aInfo, ResolveInfo rInfo,
@@ -320,6 +363,7 @@ class ActivityStarter {
         final int userId = aInfo != null ? UserHandle.getUserId(aInfo.applicationInfo.uid) : 0;
 
         if (err == ActivityManager.START_SUCCESS) {
+            wrapCameraVersion(intent, aInfo.packageName, callingPackage);
             Slog.i(TAG, "START u" + userId + " {" + intent.toShortString(true, true, true, false)
                     + "} from uid " + callingUid);
         }
