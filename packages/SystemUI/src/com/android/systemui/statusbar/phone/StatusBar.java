@@ -6417,6 +6417,21 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.STATUS_BAR_BIG_BATTERY_ICON),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HIDE_LOCKSCREEN_ALARM),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HIDE_LOCKSCREEN_CLOCK),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HIDE_LOCKSCREEN_DATE),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_CLOCK_SELECTION),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_DATE_SELECTION),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -6466,6 +6481,12 @@ public class StatusBar extends SystemUI implements DemoMode,
                     || uri.equals(Settings.Secure.getUriFor(
                     Settings.Secure.STATUS_BAR_BIG_BATTERY_ICON))) {
                 updateBatterySettings();
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.HIDE_LOCKSCREEN_ALARM)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.HIDE_LOCKSCREEN_CLOCK)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.HIDE_LOCKSCREEN_DATE)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.LOCKSCREEN_CLOCK_SELECTION)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.LOCKSCREEN_DATE_SELECTION))) {
+                updateKeyguardStatusSettings();
             }
         }
 
@@ -6477,17 +6498,23 @@ public class StatusBar extends SystemUI implements DemoMode,
             setFpToDismissNotifications();
             setForceAmbient();
             updateTickerAnimation();
+            updateKeyguardStatusSettings();
             updateBatterySettings();
         }
     }
 
-    private void updateBatterySettings() {
+    // Called from CollapsedStatusBarFragment observer
+    public void updateBatterySettings() {
         if (mStatusBarView != null) {
             mStatusBarView.updateBatterySettings();
         }
         if (mKeyguardStatusBar != null) {
             mKeyguardStatusBar.updateBatterySettings();
         }
+    }
+
+    private void updateKeyguardStatusSettings() {
+        mNotificationPanel.updateKeyguardStatusSettings();
     }
 
     private void setStatusBarWindowViewOptions() {
