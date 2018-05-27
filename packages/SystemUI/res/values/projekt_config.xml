@@ -15,4 +15,8 @@
 -->
 <resources>
     <item name="qs_background_opacity" format="float" type="integer">0.87</item>
+
+    <!-- Config to enable/diaable qs tiles grayscale tinting (Themers, Set this to false to fix custom qs tiles tinting -->
+    <bool name="config_enable_qs_tiles_grayscale_tinting">true</bool>
+
 </resources>

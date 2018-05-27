@@ -50,6 +50,8 @@ import com.android.systemui.plugins.qs.QSTile.State;
 import com.android.systemui.qs.PagedTileLayout.TilePage;
 import com.android.systemui.qs.QSHost;
 
+import com.android.systemui.R;
+
 import java.util.ArrayList;
 
 /**
@@ -382,9 +384,9 @@ public abstract class QSTileImpl<TState extends State> implements QSTile {
                 return Utils.getDisabled(context,
                         Utils.getColorAttr(context, android.R.attr.colorForeground));
             case Tile.STATE_INACTIVE:
-                return Utils.getColorAttr(context, android.R.attr.textColorHint);
+                return context.getResources().getColor(R.color.qs_tiles_inactive_tint);
             case Tile.STATE_ACTIVE:
-                return Utils.getColorAttr(context, android.R.attr.textColorPrimary);
+                return context.getResources().getColor(R.color.qs_tiles_active_tint);
             default:
                 Log.e("QSTile", "Invalid state " + state);
                 return 0;
