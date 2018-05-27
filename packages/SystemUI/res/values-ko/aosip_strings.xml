@@ -21,31 +21,31 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Screenshot Delete Toast -->
-  <string name="delete_screenshot_toast">Screenshot deleted</string>
+  <string name="delete_screenshot_toast">스크린샷이 삭제되었습니다</string>
   <!-- Content description of the data connection type HSPA+ for accessibility (not shown on the screen). [CHAR LIMIT=NONE] -->
   <string name="accessibility_data_connection_hspap">HSPA+</string>
   <!-- QS Tiles -->
-  <string name="quick_settings_reboot_label">Reboot</string>
-  <string name="quick_settings_reboot_recovery_label">Recovery</string>
-  <string name="quick_settings_screenshot_label">Screenshot</string>
-  <string name="quick_settings_region_screenshot_label">Partial screenshot</string>
-  <string name="status_bar_roaming">Roaming</string>
+  <string name="quick_settings_reboot_label">재시작</string>
+  <string name="quick_settings_reboot_recovery_label">복구 모드</string>
+  <string name="quick_settings_screenshot_label">화면 캡쳐</string>
+  <string name="quick_settings_region_screenshot_label">부분 캡처</string>
+  <string name="status_bar_roaming">로밍</string>
   <string name="status_bar_vpn">VPN</string>
-  <string name="lockscreen_default">Default</string>
-  <string name="lockscreen_hidden">None</string>
+  <string name="lockscreen_default">기본</string>
+  <string name="lockscreen_hidden">없음</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-  <string name="custom_hint">Swipe from icon to launch</string>
-  <string name="tuner_quick_settings">Quick settings</string>
-  <string name="tuner_show_brightness_mode">Show brightness mode switch</string>
-  <string name="tuner_show_brightness_new">Show brightness slider</string>
+  <string name="custom_hint">실행하려면 아이콘에서 스와이프하세요.</string>
+  <string name="tuner_quick_settings">빠른 설정</string>
+  <string name="tuner_show_brightness_mode">자동 밝기 토글 버튼 보이기</string>
+  <string name="tuner_show_brightness_new">밝기 조정 슬라이더 보이기</string>
   <!-- Advanced location QS Tile -->
-  <string name="accessibility_quick_settings_location_battery_saving">Location reporting: battery saving mode.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Location reporting: sensors only mode.</string>
-  <string name="accessibility_quick_settings_location_high_accuracy">Location reporting: high accuracy mode.</string>
+  <string name="accessibility_quick_settings_location_battery_saving">위치 모드: 배터리 절약 모드</string>
+  <string name="accessibility_quick_settings_location_gps_only">위치 모드: 기기 전용 모드</string>
+  <string name="accessibility_quick_settings_location_high_accuracy">위치 모드: 높은 정확도 모드</string>
   <!-- Ambient display QS tile -->
-  <string name="quick_settings_ambient_display_label">Ambient display</string>
-  <string name="accessibility_quick_settings_ambient_display_off">Ambient display off.</string>
-  <string name="accessibility_quick_settings_ambient_display_on">Ambient display on.</string>
+  <string name="quick_settings_ambient_display_label">앰비언트 디스플레이</string>
+  <string name="accessibility_quick_settings_ambient_display_off">앰비언트 디스플레이 끄기.</string>
+  <string name="accessibility_quick_settings_ambient_display_on">앰비언트 디스플레이 켜기.</string>
   <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient display turned off.</string>
   <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient display turned on.</string>
   <!-- Always on Display Tile -->

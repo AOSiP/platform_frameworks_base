@@ -28,9 +28,9 @@
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Надати програмі контроль редактором панелі навігації.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_fakePackageSignature">Spoof package signature</string>
+  <string name="permlab_fakePackageSignature">Дозволити підміну підпису додатка</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_fakePackageSignature">Allows the app to pretend to be a different app. Malicious applications might be able to use this to access private application data. Grant this permission with caution only!</string>
+  <string name="permdesc_fakePackageSignature">Дозволяти додатку видавати себе за інший додаток. Небезпечні додатки можуть отримати доступ до приватних даних користувача. Будьте обережні під час надання цього дозволу!</string>
   <!-- ADB over network notification -->
   <string name="adb_net_active_notification_title">ADB по мережі увімкнено</string>
   <!-- ADB over USB and network notification -->
@@ -40,7 +40,9 @@
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Образ не відповідає системі. Будь ласка, прошийте <xliff:g id="string">%s</xliff:g> образ для вашого пристрою</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_preventpower">override power key</string>
+  <string name="permlab_preventpower">переназначити клавішу живлення</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_preventpower">Allows an app to override the power key.</string>
+  <string name="permdesc_preventpower">Дозволити додатку нехтувати кнопкою живлення.</string>
+  <!-- App Blacklist -->
+  <string name="app_blacklist">Blacklist app</string>
 </resources>

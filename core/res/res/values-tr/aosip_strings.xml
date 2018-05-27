@@ -34,7 +34,7 @@
   <!-- ADB over network notification -->
   <string name="adb_net_active_notification_title">Ağ üzerinden ADB etkin</string>
   <!-- ADB over USB and network notification -->
-  <string name="adb_both_active_notification_title">USB üzerinden ADB ve ağı etkin</string>
+  <string name="adb_both_active_notification_title">USB üzerinden ADB ve ağ etkin</string>
   <!-- ADB notification message-->
   <string name="adb_active_generic_notification_message">Hata ayıklamayı devre dışı bırakmak için dokunun.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
@@ -43,4 +43,6 @@
   <string name="permlab_preventpower">güç tuşunu geçersiz kıl</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_preventpower">Uygulamaya güç tuşunu geçersiz kılma izni verir.</string>
+  <!-- App Blacklist -->
+  <string name="app_blacklist">Blacklist app</string>
 </resources>

@@ -87,8 +87,8 @@
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Ricarica rapida (<xliff:g id="charging_time_left" example="4 hours and 2 minutes"> %s</xliff:g> al termine)</string>
-  <string name="keyguard_plugged_in_dash_charging">Ricarica rapida</string>
+  <string name="keyguard_indication_dash_charging_time">Dash Charge (<xliff:g id="charging_time_left" example="4 hours and 2 minutes"> %s</xliff:g> al termine)</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash Charge</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
   <string name="keyguard_indication_turbo_power_time">TurboPower collegato (<xliff:g id="charging_time_left">%s</xliff:g> fino al completamento)</string>
   <string name="keyguard_plugged_in_turbo_power_charging">TurboPower collegato</string>
@@ -235,6 +235,6 @@
   <string name="screenshot_abort_title">Nessuno screenshot catturato</string>
   <string name="screenshot_abort_text">Operazione annullata.</string>
   <!-- Smart pixels QS tile -->
-  <string name="quick_settings_smart_pixels">Smart pixels</string>
-  <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
+  <string name="quick_settings_smart_pixels">Smart Pixel</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Abilita automaticamente Smart Pixel</string>
 </resources>

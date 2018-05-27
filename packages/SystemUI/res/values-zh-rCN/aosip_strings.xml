@@ -235,6 +235,6 @@
   <string name="screenshot_abort_title">无屏幕截图</string>
   <string name="screenshot_abort_text">操作中止</string>
   <!-- Smart pixels QS tile -->
-  <string name="quick_settings_smart_pixels">Smart pixels</string>
-  <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
+  <string name="quick_settings_smart_pixels">智能像素</string>
+  <string name="quick_settings_smart_pixels_on_power_save">自动启用智能像素</string>
 </resources>

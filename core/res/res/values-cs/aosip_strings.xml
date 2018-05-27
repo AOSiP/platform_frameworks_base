@@ -24,7 +24,7 @@
   <string name="reboot_title">Restartovat</string>
   <string name="reboot_message">Restartování systému</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">ovládání navigačního editoru</string>
+  <string name="permlab_toggleNavigationEditor">Ovládání navigačního editoru</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Umožní aplikaci provádět změny v editoru navigačního panelu.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -43,4 +43,6 @@
   <string name="permlab_preventpower">přepsat funkci vypínacího tlačítka</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_preventpower">Umožní změnit chování tlačítka pro zapínání a vypínání.</string>
+  <!-- App Blacklist -->
+  <string name="app_blacklist">Blacklist app</string>
 </resources>

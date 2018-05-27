@@ -235,6 +235,6 @@
   <string name="screenshot_abort_title">Nie wykonano zrzutu ekranu</string>
   <string name="screenshot_abort_text">Operacja przerwana.</string>
   <!-- Smart pixels QS tile -->
-  <string name="quick_settings_smart_pixels">Smart pixels</string>
-  <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
+  <string name="quick_settings_smart_pixels">Inteligentne pixele</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Automatyczne włączanie inteligentnych pixeli</string>
 </resources>

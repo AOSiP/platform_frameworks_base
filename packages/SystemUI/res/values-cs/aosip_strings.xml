@@ -235,6 +235,6 @@
   <string name="screenshot_abort_title">Nebyl pořízen žádný snímek obrazovky</string>
   <string name="screenshot_abort_text">Operace přerušena.</string>
   <!-- Smart pixels QS tile -->
-  <string name="quick_settings_smart_pixels">Smart pixels</string>
-  <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
+  <string name="quick_settings_smart_pixels">Smart Pixels</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Automaticky povolit Smart Pixels</string>
 </resources>

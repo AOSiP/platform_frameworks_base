@@ -235,6 +235,6 @@
   <string name="screenshot_abort_title">No se pudo tomar la captura de pantalla</string>
   <string name="screenshot_abort_text">Operación cancelada.</string>
   <!-- Smart pixels QS tile -->
-  <string name="quick_settings_smart_pixels">Smart pixels</string>
-  <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
+  <string name="quick_settings_smart_pixels">Píxeles inteligentes</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Habilitar píxeles inteligentes automáticamente</string>
 </resources>

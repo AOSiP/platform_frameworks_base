@@ -24,7 +24,7 @@
   <string name="reboot_title">Επανεκκίνηση</string>
   <string name="reboot_message">Επανεκκίνηση</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_toggleNavigationEditor">επεξεργασία ελέγχου πλοήγησης</string>
+  <string name="permlab_toggleNavigationEditor">Επεξεργασία ελέγχου πλοήγησης</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_toggleNavigationEditor">Επιτρέπει σε μια εφαρμογή να ελέγχει την επεξεργασία της γραμμής πλοήγησης.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -36,11 +36,13 @@
   <!-- ADB over USB and network notification -->
   <string name="adb_both_active_notification_title">ADB μέσω δικτύου USB &amp; ενεργοποιημένο</string>
   <!-- ADB notification message-->
-  <string name="adb_active_generic_notification_message">Απεν. του εντοπ. σφαλμάτων Usb.</string>
+  <string name="adb_active_generic_notification_message">Αγγίξτε για απενεργοποίηση του εντοπισμού σφαλμάτων.</string>
   <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
   <string name="system_error_vendorprint">Η εικόνα προμηθευτή σας δεν ταιριάζει με το σύστημα. Παρακαλώ εγκαταστήστε την εικόνα <xliff:g id="string">%s </xliff:g> προμηθευτή για τη συσκευή σας</string>
   <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_preventpower">παράκαμψη πλήκτρου ενεργοποίησης</string>
+  <string name="permlab_preventpower">παράκαμψη πλήκτρου τροφοδοσίας</string>
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_preventpower">Επιτρέπει σε μια εφαρμογή να παρακάμψει το πλήκτρο ενεργοποίησης.</string>
+  <string name="permdesc_preventpower">Επιτρέπει σε μια εφαρμογή να παρακάμψει το πλήκτρο τροφοδοσίας.</string>
+  <!-- App Blacklist -->
+  <string name="app_blacklist">Blacklist app</string>
 </resources>

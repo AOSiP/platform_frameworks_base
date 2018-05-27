@@ -32,7 +32,7 @@
   <string name="status_bar_roaming">Dolaşım</string>
   <string name="status_bar_vpn">VPN</string>
   <string name="lockscreen_default">Varsayılan</string>
-  <string name="lockscreen_hidden">Yok</string>
+  <string name="lockscreen_hidden">Hiçbiri</string>
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <string name="custom_hint">Başlatmak için simgeyi kaydırın</string>
   <string name="tuner_quick_settings">Hızlı ayarlar</string>
@@ -40,7 +40,7 @@
   <string name="tuner_show_brightness_new">Parlaklık kaydırıcısını göster</string>
   <!-- Advanced location QS Tile -->
   <string name="accessibility_quick_settings_location_battery_saving">Konum bildirimi: pil tasarruf modu.</string>
-  <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: yalnızca sensör modu.</string>
+  <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: yalnızca sensörler modu.</string>
   <string name="accessibility_quick_settings_location_high_accuracy">Konum bildirmi: yüksek doğruluk modu.</string>
   <!-- Ambient display QS tile -->
   <string name="quick_settings_ambient_display_label">Ortam ekranı</string>
@@ -186,7 +186,7 @@
   <string name="systemui_theme_style_auto">Otomatik</string>
   <string name="systemui_theme_style_light">Aydınlık</string>
   <string name="systemui_theme_style_dark">Karanlık</string>
-  <string name="systemui_theme_style_blackaf">Siyah</string>
+  <string name="systemui_theme_style_blackaf">BlackAF</string>
   <string name="quick_settings_theme_tile_title">Vurgu rengi</string>
   <string name="quick_settings_theme_tile_accent_detail_title">Renk seçin</string>
   <string name="quick_settings_theme_tile_style_detail_title">Stil seçin</string>
@@ -223,7 +223,7 @@
   <string name="force_stop_dlg_text">Uygulamayı zorla durdurursanız, hatalı davranabilir.</string>
   <string name="kill">Uygulamayı sonlandır</string>
   <!-- QS customizer -->
-  <string name="drag_or_tap_to_add_tiles">Kare eklemek için dokunun</string>
+  <string name="drag_or_tap_to_add_tiles">Kare eklemek için sürükleyin veya dokunun</string>
   <!-- HW Keys Tile -->
   <string name="accessibility_quick_settings_hwkeys_on">Donanım tuşları açık</string>
   <string name="accessibility_quick_settings_hwkeys_off">Donanım tuşları kapalı</string>
@@ -235,6 +235,6 @@
   <string name="screenshot_abort_title">Ekran görüntüsü alınamadı</string>
   <string name="screenshot_abort_text">İşlem iptal edildi.</string>
   <!-- Smart pixels QS tile -->
-  <string name="quick_settings_smart_pixels">Smart pixels</string>
-  <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled smart pixels</string>
+  <string name="quick_settings_smart_pixels">Akıllı pikseller</string>
+  <string name="quick_settings_smart_pixels_on_power_save">Otomatik olarak akıllı pikselleri etkinleştir</string>
 </resources>
