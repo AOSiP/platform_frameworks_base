@@ -64,4 +64,7 @@
     <!-- Fastscroller -->
     <java-symbol type="color" name="fastscroller_text_color" />
 
+    <!-- Flashlight proximity check -->
+    <java-symbol type="integer" name="config_flashlightProximityTimeout" />
+
 </resources>
