@@ -337,12 +337,15 @@ public class NotificationPanelView extends PanelView implements
                 PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
                 if (pm != null) {
                     pm.goToSleep(e.getEventTime());
+<<<<<<< HEAD
                 }
                 // quick pulldown can trigger those values
                 // on double tap - so reset them
                 mQsExpandImmediate = false;
                 requestPanelHeightUpdate();
                 setListening(false);
+=======
+>>>>>>> ad3c89dca3d... SystemUI: refactor quick settings expand fix
                 return true;
             }
         });
@@ -1262,6 +1265,7 @@ public class NotificationPanelView extends PanelView implements
             }
         }
         if (keyguardShowing) {
+            mQsExpandImmediate = false;
             updateDozingVisibilities(false /* animate */);
         }
         resetVerticalPanelPosition();
