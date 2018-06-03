@@ -526,6 +526,10 @@ public class NotificationPanelView extends PanelView implements
         return mKeyguardStatusView.hasCustomClock();
     }
 
+    public KeyguardStatusView getKeyguardStatusView() {
+        return mKeyguardStatusView;
+    }
+
     private void setStatusBar(StatusBar bar) {
         mStatusBar = bar;
         mKeyguardBottomArea.setStatusBar(mStatusBar);
@@ -1277,7 +1281,7 @@ public class NotificationPanelView extends PanelView implements
                 && event.getY() < mStatusBarHeaderHeight) {
             mDoubleTapGesture.onTouchEvent(event);
         }
-        if (mIsLockscreenDoubleTapEnabled
+        if (mIsLockscreenDoubleTapEnabled && !mPulsing && !mDozing
                 && mBarState == StatusBarState.KEYGUARD) {
             mLockscreenDoubleTapToSleep.onTouchEvent(event);
         }
