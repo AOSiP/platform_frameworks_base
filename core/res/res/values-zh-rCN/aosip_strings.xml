@@ -44,5 +44,5 @@
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_preventpower">允许应用程序修改电源键功能</string>
   <!-- App Blacklist -->
-  <string name="app_blacklist">Blacklist app</string>
+  <string name="app_blacklist">黑名单应用</string>
 </resources>
