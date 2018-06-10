@@ -332,7 +332,6 @@ public class KeyguardStatusView extends GridLayout {
     private void updateVisibilities() {
         switch (mClockSelection) {
             case 0: // default digital
-            default:
                 mClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE : View.GONE) : View.VISIBLE);
                 mAnalogClockView.setVisibility(View.GONE);
                 break;
@@ -349,6 +348,10 @@ public class KeyguardStatusView extends GridLayout {
                 mAnalogClockView.setVisibility(View.GONE);
                 break;
             case 4: // analog
+                mAnalogClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE : View.GONE) : View.VISIBLE);
+                mClockView.setVisibility(View.GONE);
+                break;
+            default: // custom analog styles (int > 4)
                 mAnalogClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE : View.GONE) : View.VISIBLE);
                 mClockView.setVisibility(View.GONE);
                 break;
@@ -377,7 +380,6 @@ public class KeyguardStatusView extends GridLayout {
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mKeyguardStatusArea.getLayoutParams();
         switch (mClockSelection) {
             case 0: // default digital
-            default:
                 params.addRule(RelativeLayout.BELOW, R.id.clock_view);
                 mClockView.setSingleLine(true);
                 mAnalogClockView.unregisterReceiver();
@@ -398,6 +400,10 @@ public class KeyguardStatusView extends GridLayout {
                 mAnalogClockView.unregisterReceiver();
                 break;
             case 4: // analog
+                params.addRule(RelativeLayout.BELOW, R.id.analog_clock_view);
+                mAnalogClockView.registerReceiver();
+                break;
+            default: // custom analog styles (int > 4)
                 params.addRule(RelativeLayout.BELOW, R.id.analog_clock_view);
                 mAnalogClockView.registerReceiver();
                 break;

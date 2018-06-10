@@ -50,4 +50,8 @@
     <string name="permdesc_preventpower">Allows an app to override the power key.</string>
     <!-- App Blacklist -->
     <string name="app_blacklist">Blacklist app</string>
+
+    <string name="custom_clock_styles" translatable="false">
+        digital,digital_bold,sammy,sammy_bold,analog
+    </string>
 </resources>
