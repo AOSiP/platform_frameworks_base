@@ -29,6 +29,7 @@ import android.util.Log;
 
 import java.util.List;
 import java.util.Arrays;
+import com.android.internal.R;
 
 
 public class ThemeUtils {
@@ -53,6 +54,11 @@ public class ThemeUtils {
 
     private static final String SUBSTRATUM_VERSION_METADATA = "Substratum_Version";
     private static final String[] WHITELISTED_OVERLAYS = { "android.auto_generated_rro__" };
+
+    private static final String[] getClocks(Context ctx) {
+        final String list = ctx.getResources().getString(R.string.custom_clock_styles);
+        return list.split(",");
+    }
 
     private static boolean isSubstratumOverlay( Context mContext, String packageName) {
         try {
@@ -202,6 +208,36 @@ public class ThemeUtils {
                 } catch (final RemoteException e) {
                     Log.w(TAG, "Can't change theme", e);
                 }
+            }
+        }
+    }
+
+    // Switches the analog clock from one to another or back to stock
+    public static void updateClocks(IOverlayManager om, int userId, int clockSetting, Context ctx) {
+        // all clock already unloaded due to StatusBar observer unloadClocks call
+        // set the custom analog clock overlay
+        if (clockSetting > 4) {
+            try {
+                final String[] clocks = getClocks(ctx);
+                om.setEnabled(clocks[clockSetting],
+                        true, userId);
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change analog clocks", e);
+            }
+        }
+    }
+
+    // Unload all the analog clocks
+    public static void unloadClocks(IOverlayManager om, int userId, Context ctx) {
+        // skip index 0
+        final String[] clocks = getClocks(ctx);
+        for (int i = 1; i < clocks.length; i++) {
+            String clock = clocks[i];
+            try {
+                om.setEnabled(clock,
+                        false /*disable*/, userId);
+            } catch (RemoteException e) {
+                e.printStackTrace();
             }
         }
     }
