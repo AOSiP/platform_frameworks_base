@@ -4808,7 +4808,8 @@ public final class Settings {
             STATUSBAR_CLOCK_DATE_DISPLAY,
             STATUSBAR_CLOCK_DATE_STYLE,
             STATUSBAR_CLOCK_DATE_FORMAT,
-            DATA_DISABLED_ICON
+            DATA_DISABLED_ICON,
+            CHOOSER_ACTIVITY_BLACKLIST
         };
 
         /**
