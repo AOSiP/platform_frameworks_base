@@ -18,6 +18,12 @@
     <!-- Skeleton string format for displaying the date. -->
     <string name="abbrev_wday_month_day_no_year">EEEEMMMMd</string>
 
+    <!-- Skeleton string format for displaying the date. -->
+    <string name="abbrev_wday_day_no_year">EEEE dd</string>
+
+    <!-- Skeleton string format for displaying the date. -->
+    <string name="abbrev_wday_no_year">EEEE</string>
+
     <!-- Skeleton string format for displaying the date when an alarm is set. -->
     <string name="abbrev_wday_month_day_no_year_alarm">EEEMMMd</string>
 

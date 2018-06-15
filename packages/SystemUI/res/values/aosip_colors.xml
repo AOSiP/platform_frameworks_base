@@ -62,4 +62,7 @@
     <color name="quick_settings_theme_tile_black">#000000</color>
     <color name="quick_settings_theme_tile_white">#ffffff</color>
 
+    <!-- Date background -->
+    <color name="accent_date_color">@*android:color/accent_device_default_light</color>
+
 </resources>
