@@ -609,6 +609,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
     boolean mVolumeRockerWake;
 
+    boolean mPartialScreenshot;
+
     int mPointerLocationMode = 0; // guarded by mLock
 
     // The last window we were told about in focusChanged.
@@ -1156,6 +1158,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.RECENTS_LAYOUT_STYLE), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.SCREENSHOT_DEFAULT_MODE), false, this,
                     UserHandle.USER_ALL);
             updateSettings();
         }
@@ -2175,11 +2180,19 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         }
 
         mOPGestures = new OPGesturesListener(context, new OPGesturesListener.Callbacks() {
-                    @Override
-                    public void onSwipeThreeFinger() {
-                        mHandler.post(mScreenshotRunnable);
-                    }
-                });
+            @Override
+            public void onSwipeThreeFinger() {
+                if (mPartialScreenshot) {
+                    mHandler.removeCallbacks(mScreenshotRunnable);
+                    mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_SELECTED_REGION);
+                    mHandler.post(mScreenshotRunnable);
+                } else {
+                    mHandler.removeCallbacks(mScreenshotRunnable);
+                    mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_FULLSCREEN);
+                    mHandler.post(mScreenshotRunnable);
+                }
+            }
+        });
 
         mHandler = new PolicyHandler();
         mWakeGestureListener = new MyWakeGestureListener(mContext, mHandler);
@@ -2633,6 +2646,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             // volume rocker wake
             mVolumeRockerWake = Settings.System.getIntForUser(resolver,
                     Settings.System.VOLUME_ROCKER_WAKE, 0, UserHandle.USER_CURRENT) != 0;
+
+            mPartialScreenshot = Settings.System.getIntForUser(resolver,
+                    Settings.System.SCREENSHOT_DEFAULT_MODE, 0, UserHandle.USER_CURRENT) == 1;
 
             // Configure wake gesture.
             boolean wakeGestureEnabledSetting = Settings.Secure.getIntForUser(resolver,
@@ -7241,8 +7257,15 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (Intent.ACTION_SCREENSHOT.equals(intent.getAction())) {
-                mHandler.removeCallbacks(mScreenshotRunnable);
-                mHandler.post(mScreenshotRunnable);
+                if (mPartialScreenshot) {
+                    mHandler.removeCallbacks(mScreenshotRunnable);
+                    mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_SELECTED_REGION);
+                    mHandler.post(mScreenshotRunnable);
+                } else {
+                    mHandler.removeCallbacks(mScreenshotRunnable);
+                    mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_FULLSCREEN);
+                    mHandler.post(mScreenshotRunnable);
+                }
             }
         }
     };
