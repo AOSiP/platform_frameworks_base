@@ -136,4 +136,7 @@
   <!-- Custom clocks -->
   <java-symbol type="string" name="custom_clock_styles" />
 
+  <!-- UTouch -->
+  <java-symbol type="bool" name="config_use_utouch_hwkeys_binding" />
+
 </resources>
