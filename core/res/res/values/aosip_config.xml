@@ -130,4 +130,7 @@
            1. Lenient threshold
     -->
     <integer name="config_LTE_RSRP_threshold_type">0</integer>
+
+    <!-- UTouch -->
+    <bool name="config_use_utouch_hwkeys_binding">false</bool>
 </resources>
