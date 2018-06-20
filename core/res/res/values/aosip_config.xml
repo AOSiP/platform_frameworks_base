@@ -116,4 +116,7 @@
 
     <!-- Aspect ratio of screen -->
     <item name="config_screenAspectRatio" format="float" type="dimen">2.1</item>
+
+    <!-- UTouch -->
+    <bool name="config_use_utouch_hwkeys_binding">false</bool>
 </resources>
