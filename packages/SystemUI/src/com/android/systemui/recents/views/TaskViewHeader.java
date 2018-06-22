@@ -229,7 +229,7 @@ public class TaskViewHeader extends FrameLayout
         mDarkDismissDrawable = context.getDrawable(R.drawable.recents_dismiss_dark);
         mLightKillDrawable = context.getDrawable(R.drawable.ic_kill_app_light);
         mDarkKillDrawable = context.getDrawable(R.drawable.ic_kill_app_dark);
-        mCornerRadius = Recents.getConfiguration().isGridEnabled() ?
+        mCornerRadius = Recents.getConfiguration().isGridEnabled ?
                 res.getDimensionPixelSize(R.dimen.recents_grid_task_view_rounded_corners_radius) :
                 res.getDimensionPixelSize(R.dimen.recents_task_view_rounded_corners_radius);
         mLightPinDrawable = context.getDrawable(R.drawable.ic_pin);
