@@ -1168,7 +1168,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SCREENSHOT_DEFAULT_MODE), false, this,
                     UserHandle.USER_ALL);
-
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.CARBON_CUSTOM_GESTURE_FINGERS), false, this,
                     UserHandle.USER_ALL);
@@ -1196,7 +1195,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.CARBON_CUSTOM_GESTURE_PACKAGE_DOWN), false, this,
                     UserHandle.USER_ALL);
-
             updateSettings();
         }
 
