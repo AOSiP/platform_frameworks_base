@@ -388,7 +388,7 @@ public class TaskViewHeader extends FrameLayout
 
         mTitleView.setVisibility(showTitle ? View.VISIBLE : View.INVISIBLE);
         if (mMoveTaskButton != null) {
-            mMoveTaskButton.setVisibility(showMoveIcon ? View.VISIBLE : View.INVISIBLE);
+            mMoveTaskButton.setVisibility(GONE);
             mMoveTaskButton.setTranslationX(rightInset);
         }
         mDismissButton.setVisibility(showDismissIcon ? View.VISIBLE : View.INVISIBLE);
@@ -648,16 +648,17 @@ public class TaskViewHeader extends FrameLayout
         }
 
         if (mMoveTaskButton != null) {
-            if (mMoveTaskButton.getVisibility() == VISIBLE) {
-                mMoveTaskButton.setVisibility(View.VISIBLE);
-                mMoveTaskButton.setClickable(true);
+            if (mMoveTaskButton.getVisibility() == GONE) {
+                mMoveTaskButton.setVisibility(View.GONE);
+                mMoveTaskButton.setClickable(false);
                 mMoveTaskButton.animate()
-                        .alpha(1f)
+                        .alpha(0f)
                         .setInterpolator(Interpolators.FAST_OUT_LINEAR_IN)
                         .setDuration(duration)
                         .start();
             } else {
-                mMoveTaskButton.setAlpha(1f);
+                mMoveTaskButton.setAlpha(0f);
+                mMoveTaskButton.setVisibility(View.GONE);
             }
         }
     }
@@ -691,10 +692,10 @@ public class TaskViewHeader extends FrameLayout
         mLockTaskButton.setClickable(true);
 
         if (mMoveTaskButton != null) {
-            mMoveTaskButton.setVisibility(View.VISIBLE);
+            mMoveTaskButton.setVisibility(View.GONE);
             mMoveTaskButton.animate().cancel();
-            mMoveTaskButton.setAlpha(1f);
-            mMoveTaskButton.setClickable(true);
+            mMoveTaskButton.setAlpha(0f);
+            mMoveTaskButton.setClickable(false);
         }
     }
 
@@ -719,7 +720,7 @@ public class TaskViewHeader extends FrameLayout
         mLockTaskButton.setClickable(false);
 
         if (mMoveTaskButton != null) {
-            mMoveTaskButton.setVisibility(View.INVISIBLE);
+            mMoveTaskButton.setVisibility(View.GONE);
             mMoveTaskButton.setAlpha(0f);
             mMoveTaskButton.setClickable(false);
         }
@@ -764,9 +765,9 @@ public class TaskViewHeader extends FrameLayout
                 Toast.makeText(getContext(), R.string.recents_kill_error_warning, Toast.LENGTH_SHORT).show();
             }
         } else if (v == mMoveTaskButton) {
-            TaskView tv = Utilities.findParent(this, TaskView.class);
-            EventBus.getDefault().send(new LaunchTaskEvent(tv, mTask, null,
-                    mMoveTaskTargetStackId, false));
+            //TaskView tv = Utilities.findParent(this, TaskView.class);
+            //EventBus.getDefault().send(new LaunchTaskEvent(tv, mTask, null,
+            //        mMoveTaskTargetStackId, false));
         } else if (v == mAppInfoView) {
             EventBus.getDefault().send(new ShowApplicationInfoEvent(mTask));
         } else if (v == mAppIconView) {
