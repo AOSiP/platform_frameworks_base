@@ -5043,6 +5043,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(SHOW_LTE_FOURGEE);
             PRIVATE_SETTINGS.add(TOAST_ICON);
             PRIVATE_SETTINGS.add(STATUS_BAR_BRIGHTNESS_CONTROL);
+            PRIVATE_SETTINGS.add(VOLUME_LINK_NOTIFICATION);
         }
 
         /**

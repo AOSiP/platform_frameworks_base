@@ -44,6 +44,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.provider.Settings.Global;
 import android.transition.AutoTransition;
 import android.transition.Transition;
@@ -644,6 +645,12 @@ public class VolumeDialogImpl implements VolumeDialog, TunerService.Tunable {
 
     private boolean shouldBeVisibleH(VolumeRow row, VolumeRow activeRow) {
         boolean isActive = row == activeRow;
+        final boolean linkNotificationWithVolume = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.VOLUME_LINK_NOTIFICATION, 1) == 1;
+        final boolean isNotificationStream = row.stream == AudioManager.STREAM_NOTIFICATION;
+        if (linkNotificationWithVolume && isNotificationStream) {
+            return false;
+        }
         if (row.stream == AudioSystem.STREAM_ACCESSIBILITY) {
             return mShowA11yStream;
         }
