@@ -40,6 +40,7 @@ LOCAL_JNI_SHARED_LIBRARIES := libframeworksnettestsjni \
     libnativehelper \
     libnetdaidl \
     libui \
+    libunwind \
     libutils \
     libvndksupport \
     libcrypto \

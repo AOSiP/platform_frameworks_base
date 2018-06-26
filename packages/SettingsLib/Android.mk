@@ -3,8 +3,6 @@ include $(CLEAR_VARS)
 
 LOCAL_USE_AAPT2 := true
 
-LOCAL_AAPT2_ONLY := true
-
 LOCAL_MODULE := SettingsLib
 
 LOCAL_SHARED_ANDROID_LIBRARIES := \
