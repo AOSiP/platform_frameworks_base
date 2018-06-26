@@ -5846,15 +5846,22 @@ public class ActivityManagerService extends IActivityManager.Stub
         if (true || Build.IS_USER) {
             return;
         }
+        String tracesPath = SystemProperties.get("dalvik.vm.stack-trace-file", null);
+        if (tracesPath == null || tracesPath.length() == 0) {
+            return;
+        }
 
         StrictMode.ThreadPolicy oldPolicy = StrictMode.allowThreadDiskReads();
         StrictMode.allowThreadDiskWrites();
         try {
-            File tracesDir = new File("/data/anr");
-            File tracesFile = null;
+            final File tracesFile = new File(tracesPath);
+            final File tracesDir = tracesFile.getParentFile();
+            final File tracesTmp = new File(tracesDir, "__tmp__");
             try {
-                tracesFile = File.createTempFile("app_slow", null, tracesDir);
-
+                if (tracesFile.exists()) {
+                    tracesTmp.delete();
+                    tracesFile.renameTo(tracesTmp);
+                }
                 StringBuilder sb = new StringBuilder();
                 Time tobj = new Time();
                 tobj.set(System.currentTimeMillis());
@@ -5871,14 +5878,14 @@ public class ActivityManagerService extends IActivityManager.Stub
                 fos.close();
                 FileUtils.setPermissions(tracesFile.getPath(), 0666, -1, -1); // -rw-rw-rw-
             } catch (IOException e) {
-                Slog.w(TAG, "Unable to prepare slow app traces file: " + tracesFile, e);
+                Slog.w(TAG, "Unable to prepare slow app traces file: " + tracesPath, e);
                 return;
             }
 
             if (app != null) {
                 ArrayList<Integer> firstPids = new ArrayList<Integer>();
                 firstPids.add(app.pid);
-                dumpStackTraces(tracesFile.getAbsolutePath(), firstPids, null, null, true /* useTombstoned */);
+                dumpStackTraces(tracesPath, firstPids, null, null, true /* useTombstoned */);
             }
 
             File lastTracesFile = null;
@@ -5896,6 +5903,9 @@ public class ActivityManagerService extends IActivityManager.Stub
                 lastTracesFile = curTracesFile;
             }
             tracesFile.renameTo(curTracesFile);
+            if (tracesTmp.exists()) {
+                tracesTmp.renameTo(tracesFile);
+            }
         } finally {
             StrictMode.setThreadPolicy(oldPolicy);
         }
@@ -7012,7 +7022,6 @@ public class ActivityManagerService extends IActivityManager.Stub
 
         mHandler.removeMessages(PROC_START_TIMEOUT_MSG, app);
 
-        boolean didSomething = false;
         boolean normalMode = mProcessesReady || isAllowedWhileBooting(app.info);
         List<ProviderInfo> providers = normalMode ? generateApplicationProvidersLocked(app) : null;
 
@@ -7020,7 +7029,6 @@ public class ActivityManagerService extends IActivityManager.Stub
             Message msg = mHandler.obtainMessage(CONTENT_PROVIDER_PUBLISH_TIMEOUT_MSG);
             msg.obj = app;
             mHandler.sendMessageDelayed(msg, CONTENT_PROVIDER_PUBLISH_TIMEOUT);
-            didSomething = true;
         }
 
         checkTime(startTime, "attachApplicationLocked: before bindApplication");
@@ -7173,6 +7181,7 @@ public class ActivityManagerService extends IActivityManager.Stub
         mProcessesOnHold.remove(app);
 
         boolean badApp = false;
+        boolean didSomething = false;
 
         // See if the top visible activity is waiting to run in this process...
         if (normalMode) {
@@ -7328,13 +7337,8 @@ public class ActivityManagerService extends IActivityManager.Stub
                 try {
                     mInstaller.markBootComplete(VMRuntime.getInstructionSet(abi));
                 } catch (InstallerException e) {
-                    if (!VMRuntime.didPruneDalvikCache()) {
-                        // This is technically not the right filter, as different zygotes may
-                        // have made different pruning decisions. But the log is best effort,
-                        // anyways.
-                        Slog.w(TAG, "Unable to mark boot complete for abi: " + abi + " (" +
-                                e.getMessage() +")");
-                    }
+                    Slog.w(TAG, "Unable to mark boot complete for abi: " + abi + " (" +
+                            e.getMessage() +")");
                 }
                 completedIsas.add(instructionSet);
             }
@@ -12508,7 +12512,7 @@ public class ActivityManagerService extends IActivityManager.Stub
     }
 
     boolean isSleepingLocked() {
-        return mSleeping && mWakefulness != PowerManagerInternal.WAKEFULNESS_AWAKE;
+        return mSleeping;
     }
 
     void onWakefulnessChanged(int wakefulness) {
@@ -23550,14 +23554,6 @@ public class ActivityManagerService extends IActivityManager.Stub
                     } catch (IOException e) {
                     }
                     mProfilerInfo.profileFd = null;
-
-                    if (proc.pid == MY_PID) {
-                        // When profiling the system server itself, avoid closing the file
-                        // descriptor, as profilerControl will not create a copy.
-                        // Note: it is also not correct to just set profileFd to null, as the
-                        //       whole ProfilerInfo instance is passed down!
-                        profilerInfo = null;
-                    }
                 } else {
                     stopProfilerLocked(proc, profileType);
                     if (profilerInfo != null && profilerInfo.profileFd != null) {

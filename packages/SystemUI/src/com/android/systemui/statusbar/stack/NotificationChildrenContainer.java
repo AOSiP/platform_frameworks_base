@@ -1149,7 +1149,6 @@ public class NotificationChildrenContainer extends ViewGroup {
         }
         recreateNotificationHeader(listener);
         initDimens();
-        mHybridGroupManager.initDimens();
         for (int i = 0; i < mDividers.size(); i++) {
             View prevDivider = mDividers.get(i);
             int index = indexOfChild(prevDivider);
