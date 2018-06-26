@@ -845,11 +845,7 @@ abstract public class ManagedServices {
                 Slog.v(TAG, "    disconnecting old " + getCaption() + ": " + info.service);
                 removeServiceLocked(i);
                 if (info.connection != null) {
-                    try {
-                        mContext.unbindService(info.connection);
-                    } catch (IllegalArgumentException e) {
-                        Slog.e(TAG, "failed to unbind " + name, e);
-                    }
+                    mContext.unbindService(info.connection);
                 }
             }
         }
