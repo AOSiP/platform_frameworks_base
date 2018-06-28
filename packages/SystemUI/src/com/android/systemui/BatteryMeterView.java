@@ -179,7 +179,11 @@ public class BatteryMeterView extends LinearLayout implements
 
     @Override
     public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) {
+        boolean wasCharging = mCharging;
         mCharging = pluggedIn;
+        if (mPercentStyle == 3 && wasCharging != pluggedIn) {
+            updateShowPercent();
+        }
         mDrawable.setBatteryLevel(level);
         mDrawable.setCharging(pluggedIn);
         mLevel = level;
@@ -216,6 +220,13 @@ public class BatteryMeterView extends LinearLayout implements
         int style = mPercentStyle;
         if (mForceShowPercent) {
             style = 1; // Default view
+        }
+        if (style == 3) {
+            if (mCharging) {
+                style = 1;
+            } else {
+                style = 2;
+            }
         }
         switch (style) {
             case 1:
