@@ -27,6 +27,8 @@
   <!-- QS Tiles -->
   <string name="quick_settings_reboot_label">Επανεκκίνηση</string>
   <string name="quick_settings_reboot_recovery_label">Ανάκτηση/Recovery</string>
+  <string name="quick_settings_reboot_bootloader_label">Bootloader</string>
+  <string name="quick_settings_poweroff_label">Power off</string>
   <string name="quick_settings_screenshot_label">Στιγμιότυπο οθόνης</string>
   <string name="quick_settings_region_screenshot_label">Μερικό στιγμιότυπο οθόνης</string>
   <string name="status_bar_roaming">Περιαγωγή</string>
@@ -241,4 +243,8 @@
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
+  <!-- Recents kill app -->
+  <string name="recents_app_killed">App killed</string>
+  <string name="recents_locked_app_kill_warning">App is locked. Force stopping but not dismissing this app.</string>
+  <string name="recents_kill_error_warning">Couldn\'t kill or force stop this app. Operation aborted.</string>
 </resources>
