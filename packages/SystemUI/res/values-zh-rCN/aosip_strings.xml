@@ -27,8 +27,8 @@
   <!-- QS Tiles -->
   <string name="quick_settings_reboot_label">重启</string>
   <string name="quick_settings_reboot_recovery_label">恢复模式</string>
-  <string name="quick_settings_reboot_bootloader_label">Bootloader</string>
-  <string name="quick_settings_poweroff_label">Power off</string>
+  <string name="quick_settings_reboot_bootloader_label">引导模式</string>
+  <string name="quick_settings_poweroff_label">关机</string>
   <string name="quick_settings_screenshot_label">屏幕截图</string>
   <string name="quick_settings_region_screenshot_label">局部截图</string>
   <string name="status_bar_roaming">数据漫游</string>
@@ -244,7 +244,7 @@
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Recents kill app -->
-  <string name="recents_app_killed">App killed</string>
-  <string name="recents_locked_app_kill_warning">App is locked. Force stopping but not dismissing this app.</string>
-  <string name="recents_kill_error_warning">Couldn\'t kill or force stop this app. Operation aborted.</string>
+  <string name="recents_app_killed">应用程序已被终止</string>
+  <string name="recents_locked_app_kill_warning">此应用已被锁定。强制停止此应用不会撤消锁定。</string>
+  <string name="recents_kill_error_warning">无法终止或强制停止此应用。操作已中止。</string>
 </resources>

@@ -27,8 +27,8 @@
   <!-- QS Tiles -->
   <string name="quick_settings_reboot_label">Yeniden başlat</string>
   <string name="quick_settings_reboot_recovery_label">Kurtarma modu</string>
-  <string name="quick_settings_reboot_bootloader_label">Bootloader</string>
-  <string name="quick_settings_poweroff_label">Power off</string>
+  <string name="quick_settings_reboot_bootloader_label">Ön yükleyici</string>
+  <string name="quick_settings_poweroff_label">Kapat</string>
   <string name="quick_settings_screenshot_label">Ekran görüntüsü</string>
   <string name="quick_settings_region_screenshot_label">Kısmi ekran görüntüsü</string>
   <string name="status_bar_roaming">Dolaşım</string>
@@ -244,7 +244,7 @@
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Recents kill app -->
-  <string name="recents_app_killed">App killed</string>
-  <string name="recents_locked_app_kill_warning">App is locked. Force stopping but not dismissing this app.</string>
-  <string name="recents_kill_error_warning">Couldn\'t kill or force stop this app. Operation aborted.</string>
+  <string name="recents_app_killed">Uygulama sonlandırıldı</string>
+  <string name="recents_locked_app_kill_warning">Uygulama kilitlendi. Zorla durdur, ancak bu uygulamayı sonlandırma.</string>
+  <string name="recents_kill_error_warning">Bu uygulama sonlandırılamaz veya zorla durdurulamaz. İşlem iptal edildi.</string>
 </resources>
