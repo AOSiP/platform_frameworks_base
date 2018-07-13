@@ -112,8 +112,7 @@ public:
                                                 const ConfigDescription& sourceConfig,
                                                 const int sdkVersionToGenerate);
 
-    ResourceTable(Bundle* bundle, const String16& assetsPackage, PackageType type,
-                  ssize_t pkgIdOverride);
+    ResourceTable(Bundle* bundle, const String16& assetsPackage, PackageType type);
 
     const String16& getAssetsPackage() const {
         return mAssetsPackage;
