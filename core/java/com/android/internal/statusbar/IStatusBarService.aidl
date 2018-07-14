@@ -73,6 +73,7 @@ interface IStatusBarService
     void shutdown();
     void reboot(boolean safeMode);
     void advancedReboot(String mode);
+    void startAssist(in Bundle args);
 
     void addTile(in ComponentName tile);
     void remTile(in ComponentName tile);
