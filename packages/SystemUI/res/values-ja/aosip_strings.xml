@@ -27,8 +27,8 @@
   <!-- QS Tiles -->
   <string name="quick_settings_reboot_label">再起動</string>
   <string name="quick_settings_reboot_recovery_label">リカバリー</string>
-  <string name="quick_settings_reboot_bootloader_label">Bootloader</string>
-  <string name="quick_settings_poweroff_label">Power off</string>
+  <string name="quick_settings_reboot_bootloader_label">ブートローダー</string>
+  <string name="quick_settings_poweroff_label">電源オフ</string>
   <string name="quick_settings_screenshot_label">スクリーンショット</string>
   <string name="quick_settings_region_screenshot_label">範囲を選択してスクリーンショット</string>
   <string name="status_bar_roaming">ローミング</string>
@@ -38,7 +38,7 @@
   <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
   <string name="custom_hint">アイコンをスワイプして起動</string>
   <string name="tuner_quick_settings">クイック設定</string>
-  <string name="tuner_show_brightness_mode">照度センサーボタンを表示</string>
+  <string name="tuner_show_brightness_mode">明るさセンサーボタンを表示する</string>
   <string name="tuner_show_brightness_new">明るさスライダーを表示</string>
   <!-- Advanced location QS Tile -->
   <string name="accessibility_quick_settings_location_battery_saving">位置情報レポート：バッテリー節約モード</string>
@@ -127,7 +127,7 @@
   <string name="qs_menu_item_rows_three">3</string>
   <string name="qs_menu_item_rows_four">4</string>
   <!-- ADB network tile -->
-  <string name="quick_settings_adb_network">ネットワーク経由のADB</string>
+  <string name="quick_settings_adb_network">ネット経由のADB</string>
   <!-- Screenrecord Notification Ticker -->
   <string name="screenrecord_notif_ticker">画面は録画されています</string>
   <string name="screenrecord_notif_final_ticker">画面を録画しました</string>
@@ -244,7 +244,7 @@
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Recents kill app -->
-  <string name="recents_app_killed">App killed</string>
-  <string name="recents_locked_app_kill_warning">App is locked. Force stopping but not dismissing this app.</string>
-  <string name="recents_kill_error_warning">Couldn\'t kill or force stop this app. Operation aborted.</string>
+  <string name="recents_app_killed">アプリを終了しました</string>
+  <string name="recents_locked_app_kill_warning">アプリはロックされています。このアプリを強制停止しても終了しません。</string>
+  <string name="recents_kill_error_warning">このアプリの強制終了や強制停止ができませんでした。 操作が中止されました。</string>
 </resources>
