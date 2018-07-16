@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "44dc49dc_f98ee465",
+        "filename": "core/java/android/view/InputDevice.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2018-07-16T05:28:12Z",
+      "side": 1,
+      "message": "Who ruined muh 4 space indent 😭",
+      "revId": "c62a48f0f16b08fd5a0446ba9a0b336d294be36a",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
