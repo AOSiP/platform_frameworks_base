@@ -28,6 +28,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.UserHandle;
 import android.support.v4.graphics.ColorUtils;
+import android.text.Html;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.AttributeSet;
@@ -195,8 +196,8 @@ public class KeyguardStatusView extends GridLayout {
     public void refreshTime() {
         mDateView.setDatePattern(Patterns.dateViewSkel);
 
-        mClockView.setFormat12Hour(Patterns.clockView12);
-        mClockView.setFormat24Hour(Patterns.clockView24);
+        mClockView.setFormat12Hour("hh\nmm");
+        mClockView.setFormat24Hour("kk\nmm");
     }
 
     private void refresh() {
