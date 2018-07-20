@@ -35,6 +35,7 @@ import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import com.android.internal.util.UserContentObserver;
 
 import com.android.internal.graphics.palette.Palette;
 import com.android.internal.util.aosip.ColorAnimator;
@@ -63,6 +64,8 @@ public class VisualizerView extends View
     private boolean mDisplaying = false; // the state we're animating to
     private boolean mDozing = false;
     private boolean mOccluded = false;
+
+    private SettingsObserver mObserver;
 
     private int mColor;
     private Bitmap mCurrentBitmap;
@@ -205,9 +208,10 @@ public class VisualizerView extends View
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        mSettingObserver = new SettingsObserver(new Handler());
-        mSettingObserver.observe();
-        mSettingObserver.update();
+        Dependency.get(TunerService.class).addTunable(this, LOCKSCREEN_VISUALIZER_ENABLED);
+        mObserver = new SettingsObserver(new Handler());
+        mObserver.observe();
+        mObserver.update();
     }
 
     @Override
@@ -217,6 +221,8 @@ public class VisualizerView extends View
         mSettingObserver.unobserve();
         mSettingObserver = null;
         mCurrentBitmap = null;
+        mObserver.unobserve();
+        mObserver = null;
     }
 
     private void loadValueAnimators() {
@@ -452,9 +458,25 @@ public class VisualizerView extends View
     }
 
     private void checkStateChanged() {
-        boolean isVisible = getVisibility() == View.VISIBLE;
-        if (isVisible && mPlaying && !mDozing && !mPowerSaveMode
-                && mVisualizerEnabled && !mOccluded) {
+        if (getVisibility() == View.VISIBLE && mVisible && mPlaying && mDozing
+                && mAmbientVisualizerEnabled && !mPowerSaveMode && mVisualizerEnabled
+                && !mOccluded) {
+            if (!mDisplaying) {
+                mDisplaying = true;
+                AsyncTask.execute(mLinkVisualizer);
+                animate()
+                        .alpha(0.40f)
+                        .withEndAction(null)
+                        .setDuration(800);
+            } else {
+                mPaint.setColor(mColor);
+                animate()
+                        .alpha(0.40f)
+                        .withEndAction(null)
+                        .setDuration(800);
+            }
+        } else if (getVisibility() == View.VISIBLE && mVisible && mPlaying
+                && !mDozing && !mPowerSaveMode && mVisualizerEnabled && !mOccluded) {
             if (!mDisplaying) {
                 mDisplaying = true;
                 AsyncTask.execute(mLinkVisualizer);
@@ -463,12 +485,18 @@ public class VisualizerView extends View
                         .withEndAction(null)
                         .setDuration(800);
                 if (mLavaLampEnabled) mLavaLamp.start();
+            } else {
+                mPaint.setColor(mColor);
+                animate()
+                        .alpha(1f)
+                        .withEndAction(null)
+                        .setDuration(800);
             }
         } else {
             if (mDisplaying) {
                 mDisplaying = false;
                 mLavaLamp.stop();
-                if (isVisible) {
+                if (mVisible && !mAmbientVisualizerEnabled) {
                     animate()
                             .alpha(0f)
                             .withEndAction(mAsyncUnlinkVisualizer)
@@ -493,6 +521,9 @@ public class VisualizerView extends View
             ContentResolver resolver = mContext.getContentResolver();
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.AMBIENT_VISUALIZER_ENABLED),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.LOCKSCREEN_LAVALAMP_ENABLED),
