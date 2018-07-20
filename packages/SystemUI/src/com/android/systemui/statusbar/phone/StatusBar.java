@@ -605,6 +605,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     private boolean mScreenOn;
     private boolean mKeyguardShowingMedia;
 
+    // LS visualizer on Ambient Display
+    private boolean mAmbientVisualizer;
+
     private BroadcastReceiver mWallpaperChangedReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -5191,6 +5194,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             mEntryManager.updateNotifications();
             updateDozingState();
             updateReportRejectedTouchVisibility();
+            if (mAmbientVisualizer && mDozing) {
+                mVisualizerView.setVisible(true);
+            }
         }
         Trace.endSection();
     }
@@ -5575,6 +5581,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                     Settings.System.ACCENT_PICKER),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.Secure.AMBIENT_VISUALIZER_ENABLED),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.USE_OLD_MOBILETYPE),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
@@ -5608,6 +5617,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                    uri.equals(Settings.System.getUriFor(Settings.System.LOCKSCREEN_INFO)) ||
                    uri.equals(Settings.System.getUriFor(Settings.System.LOCKSCREEN_CLOCK_SELECTION))) {
                 updateKeyguardStatusSettings();
+            } else if (uri.equals(Settings.Secure.getUriFor(
+                    Settings.Secure.AMBIENT_VISUALIZER_ENABLED))) {
+                setAmbientVis();
             } else if (uri.equals(Settings.Secure.getUriFor(
                     Settings.Secure.FP_SWIPE_TO_DISMISS_NOTIFICATIONS))) {
                 setFpToDismissNotifications();
@@ -5654,6 +5666,12 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             ((AmbientIndicationContainer)mAmbientIndicationContainer).setIndication(
                     mediaMetadata, notificationText, nowPlaying);
         }
+    }
+
+    private void setAmbientVis() {
+        mAmbientVisualizer = Settings.Secure.getIntForUser(
+                mContext.getContentResolver(), Settings.Secure.AMBIENT_VISUALIZER_ENABLED, 0,
+                UserHandle.USER_CURRENT) == 1;
     }
 
     private boolean isAmbientContainerAvailable() {
