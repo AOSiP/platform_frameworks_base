@@ -4601,6 +4601,16 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
+         * @hide
+         */
+        public static final String OMNI_USE_BOTTOM_GESTURE_NAVIGATION =
+                "use_bottom_gesture_navigation";
+
+        /** @hide */
+        private static final Validator OMNI_USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * Wheter to show network traffic indicator in statusbar
          * @hide
          */
@@ -4756,6 +4766,7 @@ public final class Settings {
             USE_OLD_MOBILETYPE,
             STATUSBAR_HIDE_NOTCH,
             NOTIFICATION_SOUND_VIB_SCREEN_ON,
+            OMNI_USE_BOTTOM_GESTURE_NAVIGATION,
             BATTERY_LIGHT_ENABLED,
             BATTERY_LIGHT_ALLOW_ON_DND,
             BATTERY_LIGHT_LOW_BLINKING,
@@ -4899,6 +4910,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUSBAR_HIDE_NOTCH);
             PRIVATE_SETTINGS.add(SHOW_FOURG);
             PRIVATE_SETTINGS.add(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD);
+            PRIVATE_SETTINGS.add(OMNI_USE_BOTTOM_GESTURE_NAVIGATION);
             PRIVATE_SETTINGS.add(NOTIFICATION_SOUND_VIB_SCREEN_ON);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_ENABLED);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_ALLOW_ON_DND);
@@ -5009,6 +5021,8 @@ public final class Settings {
             VALIDATORS.put(STATUSBAR_HIDE_NOTCH, STATUSBAR_HIDE_NOTCH_VALIDATOR);
             VALIDATORS.put(SHOW_FOURG, SHOW_FOURG_VALIDATOR);
             VALIDATORS.put(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD_VALIDATOR);
+            VALIDATORS.put(OMNI_USE_BOTTOM_GESTURE_NAVIGATION,
+                    OMNI_USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_SOUND_VIB_SCREEN_ON, NOTIFICATION_SOUND_VIB_SCREEN_ON_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_ENABLED, BATTERY_LIGHT_ENABLED_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_ALLOW_ON_DND, BATTERY_LIGHT_ALLOW_ON_DND_VALIDATOR);

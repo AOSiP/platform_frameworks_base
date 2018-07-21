@@ -447,4 +447,6 @@ interface IWindowManager
      */
     void screenRecordAction(int mode);
 
+    boolean isGestureButtonEnabled();
+    boolean isGestureButtonRegion(int i, int i2);
 }
