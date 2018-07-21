@@ -908,6 +908,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
     private boolean mHideNotch;
     private HardkeyActionHandler mKeyHandler;
+    private boolean mUseGestureButton;
+    private GestureButton mGestureButton;
+    private boolean mGestureButtonRegistered;
 
     private class PolicyHandler extends Handler {
         @Override
@@ -1194,6 +1197,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                     Settings.Secure.NAVIGATION_BAR_WIDTH), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.USE_BOTTOM_GESTURE_NAVIGATION), false, this,
                     UserHandle.USER_ALL);
             updateSettings();
         }
@@ -2857,6 +2863,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             mTorchActionMode = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.TORCH_POWER_BUTTON_GESTURE, 0,
                     UserHandle.USER_CURRENT);
+
+            mUseGestureButton = Settings.System.getIntForUser(resolver,
+                    Settings.System.USE_BOTTOM_GESTURE_NAVIGATION, 0,
+                    UserHandle.USER_CURRENT) != 0;
         }
 
         boolean doShowNavbar = Settings.Secure.getIntForUser(resolver,
@@ -2873,6 +2883,16 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         }
         if (updateRotation) {
             updateRotation(true);
+        }
+
+        if (mUseGestureButton && !mGestureButtonRegistered) {
+            mGestureButton = new GestureButton(mContext, this);
+            mWindowManagerFuncs.registerPointerEventListener(mGestureButton);
+            mGestureButtonRegistered = true;
+        }
+        if (mGestureButtonRegistered && !mUseGestureButton) {
+            mWindowManagerFuncs.unregisterPointerEventListener(mGestureButton);
+            mGestureButtonRegistered = false;
         }
     }
 
@@ -4683,7 +4703,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         return mSearchManager;
     }
 
-    private void preloadRecentApps() {
+    protected void preloadRecentApps() {
         mPreloadedRecentApps = true;
         StatusBarManagerInternal statusbar = getStatusBarManagerInternal();
         if (statusbar != null) {
@@ -4691,7 +4711,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         }
     }
 
-    private void cancelPreloadRecentApps() {
+    protected void cancelPreloadRecentApps() {
         if (mPreloadedRecentApps) {
             mPreloadedRecentApps = false;
             StatusBarManagerInternal statusbar = getStatusBarManagerInternal();
@@ -4701,7 +4721,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         }
     }
 
-    private void toggleRecentApps() {
+    protected void toggleRecentApps() {
         mPreloadedRecentApps = false; // preloading no longer needs to be canceled
         StatusBarManagerInternal statusbar = getStatusBarManagerInternal();
         if (statusbar != null) {
@@ -5019,7 +5039,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         mSystemGestures.screenHeight = displayFrames.mUnrestricted.height();
         mDockLayer = 0x10000000;
         mStatusBarLayer = -1;
-
+        final int displayHeight = displayFrames.mDisplayHeight;
+        final int displayWidth = displayFrames.mDisplayWidth;
+        final int displayRotation = displayFrames.mRotation;
         // start with the current dock rect, which will be (0,0,displayWidth,displayHeight)
         final Rect pf = mTmpParentFrame;
         final Rect df = mTmpDisplayFrame;
@@ -5079,6 +5101,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     displayFrames, pf, df, of, vf, dcf, sysui, isKeyguardShowing);
             if (updateSysUiVisibility) {
                 updateSystemUiVisibilityLw();
+            }
+
+            if (!mNavbarVisible && mUseGestureButton && mGestureButton != null) {
+                mGestureButton.navigationBarPosition(displayWidth, displayHeight, displayRotation);
             }
         }
         layoutScreenDecorWindows(displayFrames, pf, df, dcf);
@@ -9615,5 +9641,18 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 mHandler.post(mScreenrecordRunnable);
             }*/
         }
+    }
+
+    @Override
+    public boolean isGestureButtonRegion(int x, int y) {
+        if (!mUseGestureButton || mGestureButton == null) {
+            return false;
+        }
+        return mGestureButton.isGestureButtonRegion(x, y);
+    }
+
+    @Override
+    public boolean isGestureButtonEnabled() {
+        return mUseGestureButton;
     }
 }
