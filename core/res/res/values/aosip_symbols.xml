@@ -67,6 +67,10 @@
     <java-symbol type="integer" name="config_LTE_antenna_bar_quantity_metric" />
     <java-symbol type="integer" name="config_LTE_RSRP_threshold_type" />
 
+    <!-- OpGestures -->
+    <java-symbol type="dimen" name="nav_gesture_swipe_min_length" />
+    <java-symbol type="dimen" name="nav_gesture_long_press_max_length" />
+
     <!-- App error dialog -->
     <java-symbol type="id" name="aerr_copy" />
     <java-symbol type="string" name="url_copy_success" />
