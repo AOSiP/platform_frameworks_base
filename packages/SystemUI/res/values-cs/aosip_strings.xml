@@ -88,13 +88,6 @@
   <string name="quick_settings_volume_panel_label">Hlasitost</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
-  <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">DASH nabíjení (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> do plného nabití)</string>
-  <string name="keyguard_plugged_in_dash_charging">DASH nabíjení</string>
-  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_turbo_power_time">TurboPower je připojen (zbývá <xliff:g id="charging_time_left">%s</xliff:g> do plna)</string>
-  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower je připojen</string>
-  <string name="keyguard_plugged_in_turbo_charging">Turbo nabíjení</string>
   <!-- SysUI Tuner -->
   <string name="statusbar_icons_blacklist">Ikony stavové lišty</string>
   <string name="navbar_tuner_activity">Tlačítka navigačního panelu</string>
@@ -246,5 +239,5 @@
   <!-- Recents kill app -->
   <string name="recents_app_killed">Aplikace ukončena</string>
   <string name="recents_locked_app_kill_warning">Aplikace je uzamčena. Vynuceně vypnout tuto aplikaci, ale nevyloučit ji.</string>
-  <string name="recents_kill_error_warning">Tuto aplikaci nelze ukončit nebo zastavit.. Operace byla zrušena.</string>
+  <string name="recents_kill_error_warning">Tuto aplikaci nelze ukončit nebo zastavit. Operace byla zrušena.</string>
 </resources>

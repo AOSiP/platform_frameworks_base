@@ -27,8 +27,8 @@
   <!-- QS Tiles -->
   <string name="quick_settings_reboot_label">Перезагрузка</string>
   <string name="quick_settings_reboot_recovery_label">Режим восстановления</string>
-  <string name="quick_settings_reboot_bootloader_label">Bootloader</string>
-  <string name="quick_settings_poweroff_label">Power off</string>
+  <string name="quick_settings_reboot_bootloader_label">Загрузчик</string>
+  <string name="quick_settings_poweroff_label">Выключить</string>
   <string name="quick_settings_screenshot_label">Скриншот</string>
   <string name="quick_settings_region_screenshot_label">Частичный скриншот</string>
   <string name="status_bar_roaming">Роуминг</string>
@@ -88,13 +88,6 @@
   <string name="quick_settings_volume_panel_label">Громкость</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
-  <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Dash-зарядка (осталось <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> до конца)</string>
-  <string name="keyguard_plugged_in_dash_charging">Dash-зарядка</string>
-  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_turbo_power_time">TurboPower подключен (<xliff:g id="charging_time_left">%s</xliff:g> до полной зарядки)</string>
-  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower подключен</string>
-  <string name="keyguard_plugged_in_turbo_charging">Быстрая зарядка</string>
   <!-- SysUI Tuner -->
   <string name="statusbar_icons_blacklist">Значки в строке состояния</string>
   <string name="navbar_tuner_activity">Кнопки панели навигации</string>
@@ -244,7 +237,7 @@
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Recents kill app -->
-  <string name="recents_app_killed">App killed</string>
-  <string name="recents_locked_app_kill_warning">App is locked. Force stopping but not dismissing this app.</string>
-  <string name="recents_kill_error_warning">Couldn\'t kill or force stop this app. Operation aborted.</string>
+  <string name="recents_app_killed">Приложение закрыто</string>
+  <string name="recents_locked_app_kill_warning">Приложение заблокировано. Принудительная остановка, но не выгружает это приложение.</string>
+  <string name="recents_kill_error_warning">Не удалось принудительно остановить это приложение. Операция прервана.</string>
 </resources>

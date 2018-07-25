@@ -88,13 +88,6 @@
   <string name="quick_settings_volume_panel_label">Ένταση</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
-  <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Dash φόρτιση (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> για πλήρη φόρτιση)</string>
-  <string name="keyguard_plugged_in_dash_charging">Dash Φόρτιση</string>
-  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_turbo_power_time">Συνδέθηκε TurboPower (<xliff:g id="charging_time_left">%s</xliff:g> μέχρι τη πλήρη φόρτιση)</string>
-  <string name="keyguard_plugged_in_turbo_power_charging">Συνδέθηκε TurboPower</string>
-  <string name="keyguard_plugged_in_turbo_charging">Γρήγορη φόρτιση</string>
   <!-- SysUI Tuner -->
   <string name="statusbar_icons_blacklist">Εικονίδια γραμμής κατάστασης</string>
   <string name="navbar_tuner_activity">Κουμπιά της γραμμής περιήγησης</string>
