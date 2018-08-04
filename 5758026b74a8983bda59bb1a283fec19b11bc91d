@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3c85c548_2233bff3",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/.StatusBar.java.swp",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2018-08-04T19:16:28Z",
+      "side": 1,
+      "message": "Wat",
+      "revId": "5758026b74a8983bda59bb1a283fec19b11bc91d",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4c7ed08_4a9e7983",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBar.java.save",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2018-08-04T19:16:28Z",
+      "side": 1,
+      "message": "Wat",
+      "revId": "5758026b74a8983bda59bb1a283fec19b11bc91d",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
