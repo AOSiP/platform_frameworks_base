@@ -563,6 +563,23 @@ public class SurfaceControl implements Parcelable {
         }
 
         /**
+         * Indicates whether a 'ContainerLayer' is to be constructed.
+         *
+         * Container layers will not be rendered in any fashion and instead are used
+         * as a parent of renderable layers.
+         *
+         * @param isContainerLayer Whether to create a container layer.
+         */
+        public Builder setContainerLayer(boolean isContainerLayer) {
+            if (isContainerLayer) {
+                mFlags |= FX_SURFACE_CONTAINER;
+            } else {
+                mFlags &= ~FX_SURFACE_CONTAINER;
+            }
+            return this;
+        }
+
+        /**
          * Set 'Surface creation flags' such as {@link HIDDEN}, {@link SECURE}.
          *
          * TODO: Finish conversion to individual builder methods?
