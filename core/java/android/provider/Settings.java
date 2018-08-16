@@ -4620,6 +4620,15 @@ public final class Settings {
         public static final Validator LOCKSCREEN_MEDIA_METADATA_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * @hide
+         */
+        public static final String FORCE_SHOW_NAVBAR = "navigation_bar_show_new";
+
+        /** @hide */
+        private static final Validator FORCE_SHOW_NAVBAR_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
          * Status bar carrier label
          * 0: Hide
          * 1: Display on keyguard status bar
@@ -5546,6 +5555,7 @@ public final class Settings {
             STATUS_BAR_LOGO,
             SCREENSHOT_SHUTTER_SOUND,
             DOUBLE_TAP_SLEEP_GESTURE,
+            FORCE_SHOW_NAVBAR,
             NAVIGATION_HANDLE_WIDTH,
             BACK_GESTURE_HEIGHT,
             BACK_GESTURE_BLOCK_IME,
@@ -5692,6 +5702,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(NAVIGATION_HANDLE_WIDTH);
             PRIVATE_SETTINGS.add(BACK_GESTURE_HEIGHT);
             PRIVATE_SETTINGS.add(BACK_GESTURE_BLOCK_IME);
+            PRIVATE_SETTINGS.add(FORCE_SHOW_NAVBAR);
             PRIVATE_SETTINGS.add(NAVIGATION_BAR_ARROW_KEYS);
             PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
@@ -5835,6 +5846,7 @@ public final class Settings {
                     DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR);
             VALIDATORS.put(NAVIGATION_HANDLE_WIDTH, NAVIGATION_HANDLE_WIDTH_VALIDATOR);
             VALIDATORS.put(BACK_GESTURE_HEIGHT, BACK_GESTURE_HEIGHT_VALIDATOR);
+            VALIDATORS.put(FORCE_SHOW_NAVBAR, FORCE_SHOW_NAVBAR_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_ARROW_KEYS,
                     NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
             VALIDATORS.put(BACK_GESTURE_BLOCK_IME,BACK_GESTURE_BLOCK_IME_VALIDATOR);
