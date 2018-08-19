@@ -6115,9 +6115,15 @@ public final class Settings {
                 Global.DEVELOPMENT_SETTINGS_ENABLED;
 
         /**
-         * Setting to allow setting rounded corner size and content padding
+         * Setting to allow adding/adjusting rounded corners
+         * @hide
          */
         public static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
+
+        /**
+         * Setting to allow adjusting content padding for staus bar
+         * @hide
+         */
         public static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
 
 
