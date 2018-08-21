@@ -1812,7 +1812,6 @@ class ActivityStarter {
         }
 
         if (mSupervisor.isLockTaskModeViolation(mStartActivity.getTask())) {
-            mSupervisor.showLockTaskToast();
             Slog.e(TAG, "Attempted Lock Task Mode violation mStartActivity=" + mStartActivity);
             return START_RETURN_LOCK_TASK_MODE_VIOLATION;
         }
@@ -1843,7 +1842,6 @@ class ActivityStarter {
 
     private int setTaskFromSourceRecord() {
         if (mSupervisor.isLockTaskModeViolation(mSourceRecord.getTask())) {
-            mSupervisor.showLockTaskToast();
             Slog.e(TAG, "Attempted Lock Task Mode violation mStartActivity=" + mStartActivity);
             return START_RETURN_LOCK_TASK_MODE_VIOLATION;
         }
@@ -1938,7 +1936,6 @@ class ActivityStarter {
         // The caller is asking that the new activity be started in an explicit
         // task it has provided to us.
         if (mSupervisor.isLockTaskModeViolation(mInTask)) {
-            mSupervisor.showLockTaskToast();
             Slog.e(TAG, "Attempted Lock Task Mode violation mStartActivity=" + mStartActivity);
             return START_RETURN_LOCK_TASK_MODE_VIOLATION;
         }

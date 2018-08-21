@@ -223,12 +223,6 @@ public class ExifInterface {
     public static final String TAG_NEW_SUBFILE_TYPE = "NewSubfileType";
     /** Type is String. */
     public static final String TAG_OECF = "OECF";
-    /** Type is String. */
-    public static final String TAG_OFFSET_TIME = "OffsetTime";
-    /** Type is String. */
-    public static final String TAG_OFFSET_TIME_ORIGINAL = "OffsetTimeOriginal";
-    /** Type is String. */
-    public static final String TAG_OFFSET_TIME_DIGITIZED = "OffsetTimeDigitized";
     /** Type is int. */
     public static final String TAG_PIXEL_X_DIMENSION = "PixelXDimension";
     /** Type is int. */
@@ -475,7 +469,6 @@ public class ExifInterface {
     private static final int PEF_MAKER_NOTE_SKIP_SIZE = 6;
 
     private static SimpleDateFormat sFormatter;
-    private static SimpleDateFormat sFormatterTz;
 
     // See Exchangeable image file format for digital still cameras: Exif version 2.2.
     // The following values are for parsing EXIF data area. There are tag groups in EXIF data area.
@@ -1022,9 +1015,6 @@ public class ExifInterface {
             new ExifTag(TAG_EXIF_VERSION, 36864, IFD_FORMAT_STRING),
             new ExifTag(TAG_DATETIME_ORIGINAL, 36867, IFD_FORMAT_STRING),
             new ExifTag(TAG_DATETIME_DIGITIZED, 36868, IFD_FORMAT_STRING),
-            new ExifTag(TAG_OFFSET_TIME, 36880, IFD_FORMAT_STRING),
-            new ExifTag(TAG_OFFSET_TIME_ORIGINAL, 36881, IFD_FORMAT_STRING),
-            new ExifTag(TAG_OFFSET_TIME_DIGITIZED, 36882, IFD_FORMAT_STRING),
             new ExifTag(TAG_COMPONENTS_CONFIGURATION, 37121, IFD_FORMAT_UNDEFINED),
             new ExifTag(TAG_COMPRESSED_BITS_PER_PIXEL, 37122, IFD_FORMAT_URATIONAL),
             new ExifTag(TAG_SHUTTER_SPEED_VALUE, 37377, IFD_FORMAT_SRATIONAL),
@@ -1283,8 +1273,6 @@ public class ExifInterface {
     static {
         sFormatter = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
         sFormatter.setTimeZone(TimeZone.getTimeZone("UTC"));
-        sFormatterTz = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss XXX");
-        sFormatterTz.setTimeZone(TimeZone.getTimeZone("UTC"));
 
         // Build up the hash tables to look up Exif tags for reading Exif tags.
         for (int ifdType = 0; ifdType < EXIF_TAGS.length; ++ifdType) {
@@ -2029,29 +2017,22 @@ public class ExifInterface {
     }
 
     /**
-     * Returns number of milliseconds since Jan. 1, 1970, midnight local time and
-     * number of milliseconds since Jan. 1, 1970, midnight UTC in a long array.
-     * The first element is a local time and the second elemenet is the UTC time.
-     * -1 is set if the date time information is not available.
-     *
+     * Returns number of milliseconds since Jan. 1, 1970, midnight local time.
+     * Returns -1 if the date time information if not available.
      * @hide
      */
-    public long[] getDateTime() {
-        long[] output = new long[2];
-        output[0] = -1;
-        output[1] = -1;
-
+    public long getDateTime() {
         String dateTimeString = getAttribute(TAG_DATETIME);
         if (dateTimeString == null
-                || !sNonZeroTimePattern.matcher(dateTimeString).matches()) return output;
+                || !sNonZeroTimePattern.matcher(dateTimeString).matches()) return -1;
 
         ParsePosition pos = new ParsePosition(0);
         try {
-            // The exif date time field is in local time. Parsing it as if it is UTC will yield
-            // time since 1/1/1970 local time
-            Date localtime = sFormatter.parse(dateTimeString, pos);
-            if (localtime == null) return output;
-            long localtimeMsecs = localtime.getTime();
+            // The exif field is in local time. Parsing it as if it is UTC will yield time
+            // since 1/1/1970 local time
+            Date datetime = sFormatter.parse(dateTimeString, pos);
+            if (datetime == null) return -1;
+            long msecs = datetime.getTime();
 
             String subSecs = getAttribute(TAG_SUBSEC_TIME);
             if (subSecs != null) {
@@ -2060,27 +2041,15 @@ public class ExifInterface {
                     while (sub > 1000) {
                         sub /= 10;
                     }
-                    localtimeMsecs += sub;
+                    msecs += sub;
                 } catch (NumberFormatException e) {
                     // Ignored
                 }
             }
-            output[0] = localtimeMsecs;
-
-            String tzString = getAttribute(TAG_OFFSET_TIME);
-            if (tzString != null) {
-                dateTimeString = dateTimeString + " " + tzString;
-                ParsePosition position = new ParsePosition(0);
-                Date utctime = sFormatterTz.parse(dateTimeString, position);
-                if (utctime != null) {
-                    long offsetMsecs = utctime.getTime() - localtime.getTime();
-                    output[1] = localtimeMsecs + offsetMsecs;
-                }
-            }
+            return msecs;
         } catch (IllegalArgumentException e) {
-            // Ignored
+            return -1;
         }
-        return output;
     }
 
     /**
@@ -3197,8 +3166,6 @@ public class ExifInterface {
                 (ExifAttribute) thumbnailData.get(TAG_JPEG_INTERCHANGE_FORMAT_LENGTH);
         if (jpegInterchangeFormatAttribute != null
                 && jpegInterchangeFormatLengthAttribute != null) {
-            in.rewind();
-
             int thumbnailOffset = jpegInterchangeFormatAttribute.getIntValue(mExifByteOrder);
             int thumbnailLength = jpegInterchangeFormatLengthAttribute.getIntValue(mExifByteOrder);
 
@@ -3730,12 +3697,6 @@ public class ExifInterface {
             if (skipBytes((int) byteCount) != (int) byteCount) {
                 throw new IOException("Couldn't seek up to the byteCount");
             }
-        }
-
-        public void rewind() throws IOException {
-            mPosition = 0;
-            mDataInputStream.reset();
-            mDataInputStream.mark(mLength);
         }
 
         public int peek() {

@@ -490,7 +490,6 @@ class TelephonyRegistry extends ITelephonyRegistry.Stub {
                 }
             }
 
-            int phoneId = SubscriptionManager.getPhoneId(subId);
             synchronized (mRecords) {
                 // register
                 Record r;
@@ -522,7 +521,9 @@ class TelephonyRegistry extends ITelephonyRegistry.Stub {
                  } else {//APP specify subID
                     r.subId = subId;
                 }
-                r.phoneId = phoneId;
+                r.phoneId = SubscriptionManager.getPhoneId(r.subId);
+
+                int phoneId = r.phoneId;
                 r.events = events;
                 if (DBG) {
                     log("listen:  Register r=" + r + " r.subId=" + r.subId + " phoneId=" + phoneId);
@@ -960,8 +961,9 @@ class TelephonyRegistry extends ITelephonyRegistry.Stub {
             log("notifyCellInfoForSubscriber: subId=" + subId
                 + " cellInfo=" + cellInfo);
         }
-        int phoneId = SubscriptionManager.getPhoneId(subId);
+
         synchronized (mRecords) {
+            int phoneId = SubscriptionManager.getPhoneId(subId);
             if (validatePhoneId(phoneId)) {
                 mCellInfo.set(phoneId, cellInfo);
                 for (Record r : mRecords) {
@@ -1022,8 +1024,8 @@ class TelephonyRegistry extends ITelephonyRegistry.Stub {
             log("notifyCallForwardingChangedForSubscriber: subId=" + subId
                 + " cfi=" + cfi);
         }
-        int phoneId = SubscriptionManager.getPhoneId(subId);
         synchronized (mRecords) {
+            int phoneId = SubscriptionManager.getPhoneId(subId);
             if (validatePhoneId(phoneId)) {
                 mCallForwarding[phoneId] = cfi;
                 for (Record r : mRecords) {
@@ -1050,8 +1052,8 @@ class TelephonyRegistry extends ITelephonyRegistry.Stub {
         if (!checkNotifyPermission("notifyDataActivity()" )) {
             return;
         }
-        int phoneId = SubscriptionManager.getPhoneId(subId);
         synchronized (mRecords) {
+            int phoneId = SubscriptionManager.getPhoneId(subId);
             if (validatePhoneId(phoneId)) {
                 mDataActivity[phoneId] = state;
                 for (Record r : mRecords) {
@@ -1092,8 +1094,8 @@ class TelephonyRegistry extends ITelephonyRegistry.Stub {
                 + "' apn='" + apn + "' apnType=" + apnType + " networkType=" + networkType
                 + " mRecords.size()=" + mRecords.size());
         }
-        int phoneId = SubscriptionManager.getPhoneId(subId);
         synchronized (mRecords) {
+            int phoneId = SubscriptionManager.getPhoneId(subId);
             if (validatePhoneId(phoneId)) {
                 boolean modified = false;
                 if (state == TelephonyManager.DATA_CONNECTED) {
@@ -1216,8 +1218,8 @@ class TelephonyRegistry extends ITelephonyRegistry.Stub {
             log("notifyCellLocationForSubscriber: subId=" + subId
                 + " cellLocation=" + cellLocation);
         }
-        int phoneId = SubscriptionManager.getPhoneId(subId);
         synchronized (mRecords) {
+            int phoneId = SubscriptionManager.getPhoneId(subId);
             if (validatePhoneId(phoneId)) {
                 mCellLocation[phoneId] = cellLocation;
                 for (Record r : mRecords) {
