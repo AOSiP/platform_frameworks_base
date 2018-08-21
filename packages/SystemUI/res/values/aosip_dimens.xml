@@ -57,8 +57,8 @@
 
     <dimen name="screenrecord_hint_size">48dp</dimen>
 
-    <dimen name="status_bar_logo_end_padding">3dp</dimen>
-    <dimen name="status_bar_left_clock_end_padding">3dp</dimen>
+    <dimen name="status_bar_logo_end_padding">5dp</dimen>
+    <dimen name="status_bar_left_clock_end_padding">5dp</dimen>
     <dimen name="status_bar_battery_large_icon_width">20.5dp</dimen>
     <dimen name="status_bar_battery_large_icon_height">20.5dp</dimen>
 
