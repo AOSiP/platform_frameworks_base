@@ -120,7 +120,6 @@
   <java-symbol type="bool" name="config_useDarkBgNotificationIconTextTinting" />
   <java-symbol type="bool" name="config_useDarkBgNotificationTinting_override" />
   <java-symbol type="bool" name="config_notificationTinting_override" />
-  <java-symbol type="bool" name="config_needsIMEGripAdjust" />
 
   <!-- Whether the device supports Smart Pixels -->
   <java-symbol type="bool" name="config_enableSmartPixels" />
