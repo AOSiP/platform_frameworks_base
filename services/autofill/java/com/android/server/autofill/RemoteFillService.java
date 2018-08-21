@@ -342,8 +342,7 @@ final class RemoteFillService implements DeathRecipient {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             if (mDestroyed || !mBinding) {
-                // This is abnormal. Unbinding the connection has been requested already.
-                Slog.w(LOG_TAG, "onServiceConnected was dispatched after unbindService.");
+                mContext.unbindService(mServiceConnection);
                 return;
             }
             mBinding = false;

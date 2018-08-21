@@ -4295,9 +4295,6 @@ public class NotificationStackScrollLayout extends ViewGroup
     }
 
     public void setStatusBarState(int statusBarState) {
-        if (mStatusBarState != statusBarState) {
-            endDrag();
-        }
         mStatusBarState = statusBarState;
         mAmbientState.setStatusBarState(statusBarState);
     }

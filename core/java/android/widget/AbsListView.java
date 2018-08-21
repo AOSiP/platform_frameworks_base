@@ -3869,7 +3869,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         mHasPerformedLongPress = false;
         mActivePointerId = ev.getPointerId(0);
 
-        hideSelector();
         if (mTouchMode == TOUCH_MODE_OVERFLING) {
             // Stopped the fling. It is a scroll.
             mFlingRunnable.endFling();
@@ -4031,11 +4030,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                 }
                                 mSelector.setHotspot(x, ev.getY());
                             }
-                            if (!mDataChanged && !mIsDetaching && isAttachedToWindow()) {
-                                if (!post(performClick)) {
-                                    performClick.run();
-                                }
-                            }
                             if (mTouchModeReset != null) {
                                 removeCallbacks(mTouchModeReset);
                             }
@@ -4046,6 +4040,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                     mTouchMode = TOUCH_MODE_REST;
                                     child.setPressed(false);
                                     setPressed(false);
+                                    if (!mDataChanged && !mIsDetaching && isAttachedToWindow()) {
+                                        performClick.run();
+                                    }
                                 }
                             };
                             postDelayed(mTouchModeReset,
@@ -5242,21 +5239,17 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         mRecycler.fullyDetachScrapViews();
-        boolean selectorOnScreen = false;
         if (!inTouchMode && mSelectedPosition != INVALID_POSITION) {
             final int childIndex = mSelectedPosition - mFirstPosition;
             if (childIndex >= 0 && childIndex < getChildCount()) {
                 positionSelector(mSelectedPosition, getChildAt(childIndex));
-                selectorOnScreen = true;
             }
         } else if (mSelectorPosition != INVALID_POSITION) {
             final int childIndex = mSelectorPosition - mFirstPosition;
             if (childIndex >= 0 && childIndex < getChildCount()) {
-                positionSelector(mSelectorPosition, getChildAt(childIndex));
-                selectorOnScreen = true;
+                positionSelector(INVALID_POSITION, getChildAt(childIndex));
             }
-        }
-        if (!selectorOnScreen) {
+        } else {
             mSelectorRect.setEmpty();
         }
 

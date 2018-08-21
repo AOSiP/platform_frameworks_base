@@ -3244,16 +3244,12 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
                 continue;
             }
             // The display is awake now, so clean up the going to sleep list.
-            ArrayList<ActivityRecord> toBeRemove = new ArrayList<ActivityRecord>();
-            for (int i = 0; i < mGoingToSleepActivities.size(); i++) {
-                final ActivityRecord r = mGoingToSleepActivities.get(i);
+            for (Iterator<ActivityRecord> it = mGoingToSleepActivities.iterator(); it.hasNext(); ) {
+                final ActivityRecord r = it.next();
                 if (r.getDisplayId() == display.mDisplayId) {
-                    toBeRemove.add(r);
+                    it.remove();
                 }
             }
-
-            for (final ActivityRecord r: toBeRemove) mGoingToSleepActivities.remove(r);
-            toBeRemove= null;
         }
     }
 
@@ -4572,8 +4568,8 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
                                         & (~StatusBarManager.DISABLE_HOME)
                                         & (~StatusBarManager.DISABLE_RECENT);
                             }
-                            getStatusBarService().disableForUser(flags, mToken,
-                                    mService.mContext.getPackageName(), msg.arg1);
+                            getStatusBarService().disable(flags, mToken,
+                                    mService.mContext.getPackageName());
                             getStatusBarService().screenPinningStateChanged(true);
                         }
                         mWindowManager.disableKeyguard(mToken, LOCK_TASK_TAG);
@@ -4589,8 +4585,8 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
                     // When lock task ends, we enable the status bars.
                     try {
                         if (getStatusBarService() != null) {
-                            getStatusBarService().disableForUser(StatusBarManager.DISABLE_NONE, mToken,
-                                    mService.mContext.getPackageName(), msg.arg1);
+                            getStatusBarService().disable(StatusBarManager.DISABLE_NONE, mToken,
+                                    mService.mContext.getPackageName());
                             getStatusBarService().screenPinningStateChanged(false);
                         }
                         mWindowManager.reenableKeyguard(mToken);

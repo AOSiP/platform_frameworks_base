@@ -600,7 +600,7 @@ public class SignalClusterView extends LinearLayout implements NetworkController
             mWifiSignalSpacer.setVisibility(View.GONE);
         }
 
-        if (mNoSimsVisible && !mIsAirplaneMode) {
+        if (mNoSimsVisible) {
             mIconLogger.onIconShown(SLOT_MOBILE);
             mNoSimsCombo.setVisibility(View.VISIBLE);
             if (!Objects.equals(mSimDetected, mNoSimsCombo.getTag())) {

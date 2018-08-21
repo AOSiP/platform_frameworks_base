@@ -1138,36 +1138,21 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
         }
     }
 
-    class PerformPollAsyncThread extends Thread {
-        private int mflags;
-        public PerformPollAsyncThread(String name, int flags) {
-            super(name);
-            this.mflags = flags;
-        }
-        public void run() {
-            if (mTime.getCacheAge() > mSettings.getTimeCacheMaxAge()) {
-                mTime.forceRefresh();
-            }
-
-            synchronized (mStatsLock) {
-                mWakeLock.acquire();
-
-                try {
-                    performPollLocked(mflags);
-                } finally {
-                    mWakeLock.release();
-                }
-            }
-        }
-    }
-
     private void performPoll(int flags) {
-        /**
-         * Use async thread for it since this BroadcastReceiver process may cost 20 second.
-         * That Will delay other ordered BroadcastReceiver process.
-         */
-        PerformPollAsyncThread thr = new PerformPollAsyncThread("PerformPoll Async Thread", flags);
-        thr.start();
+        // try refreshing time source when stale
+        if (mTime.getCacheAge() > mSettings.getTimeCacheMaxAge()) {
+            mTime.forceRefresh();
+        }
+
+        synchronized (mStatsLock) {
+            mWakeLock.acquire();
+
+            try {
+                performPollLocked(flags);
+            } finally {
+                mWakeLock.release();
+            }
+        }
     }
 
     /**

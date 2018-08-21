@@ -442,8 +442,7 @@ public class LocalBluetoothProfileManager {
             if ((BluetoothUuid.isUuidPresent(localUuids, BluetoothUuid.HSP_AG) &&
                     BluetoothUuid.isUuidPresent(uuids, BluetoothUuid.HSP)) ||
                     (BluetoothUuid.isUuidPresent(localUuids, BluetoothUuid.Handsfree_AG) &&
-                            BluetoothUuid.isUuidPresent(uuids, BluetoothUuid.Handsfree)) ||
-                    (mHeadsetProfile.getConnectionStatus(device) == BluetoothProfile.STATE_CONNECTED)) {
+                            BluetoothUuid.isUuidPresent(uuids, BluetoothUuid.Handsfree))) {
                 profiles.add(mHeadsetProfile);
                 removedProfiles.remove(mHeadsetProfile);
             }
@@ -456,9 +455,8 @@ public class LocalBluetoothProfileManager {
             removedProfiles.remove(mHfpClientProfile);
         }
 
-        if ((BluetoothUuid.containsAnyUuid(uuids, A2dpProfile.SINK_UUIDS) &&
-            mA2dpProfile != null) ||
-            (mA2dpProfile.getConnectionStatus(device) == BluetoothProfile.STATE_CONNECTED)) {
+        if (BluetoothUuid.containsAnyUuid(uuids, A2dpProfile.SINK_UUIDS) &&
+            mA2dpProfile != null) {
             profiles.add(mA2dpProfile);
             removedProfiles.remove(mA2dpProfile);
         }

@@ -142,13 +142,7 @@ public class PackageDexOptimizer {
                 targetInstructionSets : getAppDexInstructionSets(pkg.applicationInfo);
         final String[] dexCodeInstructionSets = getDexCodeInstructionSets(instructionSets);
         final List<String> paths = pkg.getAllCodePaths();
-
-        int sharedGid = UserHandle.getSharedAppGid(pkg.applicationInfo.uid);
-        if (sharedGid == -1) {
-            Slog.wtf(TAG, "Well this is awkward; package " + pkg.applicationInfo.name + " had UID "
-                    + pkg.applicationInfo.uid, new Throwable());
-            sharedGid = android.os.Process.NOBODY_UID;
-        }
+        final int sharedGid = UserHandle.getSharedAppGid(pkg.applicationInfo.uid);
 
         // Get the class loader context dependencies.
         // For each code path in the package, this array contains the class loader context that
