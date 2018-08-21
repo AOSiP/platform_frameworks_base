@@ -155,7 +155,6 @@ class AppWindowToken extends WindowToken implements WindowManagerService.AppFree
     StartingSurface startingSurface;
     boolean startingDisplayed;
     boolean startingMoved;
-    boolean startingShouldRemoved;
     // True if the hidden state of this token was forced to false due to a transferred starting
     // window.
     private boolean mHiddenSetFromTransferredStartingWindow;
@@ -270,8 +269,6 @@ class AppWindowToken extends WindowToken implements WindowManagerService.AppFree
             if (getController() != null) {
                 getController().removeStartingWindow();
             }
-        } else {
-            startingShouldRemoved = true;
         }
         updateReportedVisibilityLocked();
     }

@@ -125,7 +125,7 @@ import java.util.Objects;
                  * This is recursive, but it won't spiral out of control because LruCache is
                  * thread safe and the Evictor can only be removed once.
                  */
-                Evictor evictor = mTokenEvictors.remove(new Pair<>(k.account.type, oldVal.token));
+                Evictor evictor = mTokenEvictors.remove(oldVal.token);
                 if (evictor != null) {
                     evictor.evict();
                 }
@@ -134,13 +134,12 @@ import java.util.Objects;
 
         public void putToken(Key k, Value v) {
             // Prepare for removal by token string.
-            Pair<String, String> mapKey = new Pair<>(k.account.type, v.token);
-            Evictor tokenEvictor = mTokenEvictors.get(mapKey);
+            Evictor tokenEvictor = mTokenEvictors.get(v.token);
             if (tokenEvictor == null) {
                 tokenEvictor = new Evictor();
             }
             tokenEvictor.add(k);
-            mTokenEvictors.put(mapKey, tokenEvictor);
+            mTokenEvictors.put(new Pair<>(k.account.type, v.token), tokenEvictor);
 
             // Prepare for removal by associated account.
             Evictor accountEvictor = mAccountEvictors.get(k.account);

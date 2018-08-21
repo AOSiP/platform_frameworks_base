@@ -106,7 +106,7 @@ void NativeCallbackThread::stop() {
         mQueueCond.notify_one();
     }
 
-    if (mThread.get_id() == std::this_thread::get_id()) {
+    if (mThread.get_id() == std::thread::id()) {
         // you can't self-join a thread, but it's ok when calling from our sub-task
         ALOGD("About to stop native callback thread %p", this);
         mThread.detach();

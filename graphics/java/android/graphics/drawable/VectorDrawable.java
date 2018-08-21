@@ -331,18 +331,14 @@ public class VectorDrawable extends Drawable {
             return;
         }
 
-        int pixelCount;
-        // Use Class lock here to prevent race conditions of refresh UI in multi threads
-        synchronized(VectorDrawable.class) {
-            // Color filters always override tint filters.
-            final ColorFilter colorFilter = (mColorFilter == null ? mTintFilter : mColorFilter);
-            final long colorFilterNativeInstance = colorFilter == null ? 0 :
-                    colorFilter.getNativeInstance();
-            boolean canReuseCache = mVectorState.canReuseCache();
-            pixelCount = nDraw(mVectorState.getNativeRenderer(), canvas.getNativeCanvasWrapper(),
-                    colorFilterNativeInstance, mTmpBounds, needMirroring(),
-                    canReuseCache);
-        }
+        // Color filters always override tint filters.
+        final ColorFilter colorFilter = (mColorFilter == null ? mTintFilter : mColorFilter);
+        final long colorFilterNativeInstance = colorFilter == null ? 0 :
+                colorFilter.getNativeInstance();
+        boolean canReuseCache = mVectorState.canReuseCache();
+        int pixelCount = nDraw(mVectorState.getNativeRenderer(), canvas.getNativeCanvasWrapper(),
+                colorFilterNativeInstance, mTmpBounds, needMirroring(),
+                canReuseCache);
         if (pixelCount == 0) {
             // Invalid canvas matrix or drawable bounds. This would not affect existing bitmap
             // cache, if any.

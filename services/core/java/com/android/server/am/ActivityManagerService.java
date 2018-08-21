@@ -1705,21 +1705,9 @@ public class ActivityManagerService extends IActivityManager.Stub
     static ServiceThread sKillThread = null;
     static KillHandler sKillHandler = null;
 
-    static final int UPDATE_OOMADJ_MSG = 99999;
-
     CompatModeDialog mCompatModeDialog;
     UnsupportedDisplaySizeDialog mUnsupportedDisplaySizeDialog;
     long mLastMemUsageReportTime = 0;
-
-    // Min aging threshold in milliseconds to consider a B-service
-    int mMinBServiceAgingTime =
-            SystemProperties.getInt("ro.vendor.qti.sys.fw.bservice_age", 5000);
-    // Threshold for B-services when in memory pressure
-    int mBServiceAppThreshold =
-            SystemProperties.getInt("ro.vendor.qti.sys.fw.bservice_limit", 5);
-    // Enable B-service aging propagation on memory pressure.
-    boolean mEnableBServicePropagation =
-            SystemProperties.getBoolean("ro.vendor.qti.sys.fw.bservice_enable", false);
 
     /**
      * Flag whether the current user is a "monkey", i.e. whether
@@ -2451,11 +2439,6 @@ public class ActivityManagerService extends IActivityManager.Stub
                             }
                         }
                     }
-                }
-            } break;
-            case UPDATE_OOMADJ_MSG: {
-                synchronized (ActivityManagerService.this) {
-                    updateOomAdjLocked();
                 }
             } break;
             }
@@ -4049,12 +4032,8 @@ public class ActivityManagerService extends IActivityManager.Stub
             // starting this process. (We already invoked this method once when
             // the package was initially frozen through KILL_APPLICATION_MSG, so
             // it doesn't hurt to use it again.)
-            mHandler.post(() -> {
-                synchronized(ActivityManagerService.this) {
-                    forceStopPackageLocked(app.info.packageName, UserHandle.getAppId(app.uid), false,
-                        false, true, false, false, UserHandle.getUserId(app.userId), "start failure");
-                }
-            });
+            forceStopPackageLocked(app.info.packageName, UserHandle.getAppId(app.uid), false,
+                    false, true, false, false, UserHandle.getUserId(app.userId), "start failure");
         }
     }
 
@@ -5500,8 +5479,7 @@ public class ActivityManagerService extends IActivityManager.Stub
             handleAppDiedLocked(app, false, true);
 
             if (doOomAdj) {
-                mHandler.removeMessages(UPDATE_OOMADJ_MSG);
-                mHandler.sendEmptyMessage(UPDATE_OOMADJ_MSG);
+                updateOomAdjLocked();
             }
             if (doLowMem) {
                 doLowMemReportIfNeededLocked(app);
@@ -18543,7 +18521,7 @@ public class ActivityManagerService extends IActivityManager.Stub
         IPackageManager pm = AppGlobals.getPackageManager();
         ApplicationInfo app = null;
         try {
-            app = pm.getApplicationInfo(packageName, STOCK_PM_FLAGS, userId);
+            app = pm.getApplicationInfo(packageName, 0, userId);
         } catch (RemoteException e) {
             // can't happen; package manager is process-local
         }
@@ -21033,8 +21011,6 @@ public class ActivityManagerService extends IActivityManager.Stub
                         continue;
                     }
                 }
-                if (r.state == ActivityState.STOPPING && r.finishing)
-                    continue;
                 if (r.visible) {
                     // App has a visible activity; only upgrade adjustment.
                     if (adj > ProcessList.VISIBLE_APP_ADJ) {
@@ -21087,10 +21063,12 @@ public class ActivityManagerService extends IActivityManager.Stub
                     // memory trimming (determing current memory level, trim command to
                     // send to process) since there can be an arbitrary number of stopping
                     // processes and they should soon all go into the cached state.
-                    if (procState > ActivityManager.PROCESS_STATE_LAST_ACTIVITY) {
-                        procState = ActivityManager.PROCESS_STATE_LAST_ACTIVITY;
-                        app.adjType = "stop-activity";
-                        if (DEBUG_OOM_ADJ_REASON) Slog.d(TAG, "Raise to stop-activity: " + app);
+                    if (!r.finishing) {
+                        if (procState > ActivityManager.PROCESS_STATE_LAST_ACTIVITY) {
+                            procState = ActivityManager.PROCESS_STATE_LAST_ACTIVITY;
+                            app.adjType = "stop-activity";
+                            if (DEBUG_OOM_ADJ_REASON) Slog.d(TAG, "Raise to stop-activity: " + app);
+                        }
                     }
                     app.cached = false;
                     app.empty = false;
@@ -22655,39 +22633,8 @@ public class ActivityManagerService extends IActivityManager.Stub
         int nextCachedAdj = curCachedAdj+1;
         int curEmptyAdj = ProcessList.CACHED_APP_MIN_ADJ;
         int nextEmptyAdj = curEmptyAdj+2;
-        ProcessRecord selectedAppRecord = null;
-        long serviceLastActivity = 0;
-        int numBServices = 0;
         for (int i=N-1; i>=0; i--) {
             ProcessRecord app = mLruProcesses.get(i);
-            if (mEnableBServicePropagation && app.serviceb
-                    && (app.curAdj == ProcessList.SERVICE_B_ADJ)) {
-                numBServices++;
-                for (int s = app.services.size() - 1; s >= 0; s--) {
-                    ServiceRecord sr = app.services.valueAt(s);
-                    if (DEBUG_OOM_ADJ) Slog.d(TAG,"app.processName = " + app.processName
-                            + " serviceb = " + app.serviceb + " s = " + s + " sr.lastActivity = "
-                            + sr.lastActivity + " packageName = " + sr.packageName
-                            + " processName = " + sr.processName);
-                    if (SystemClock.uptimeMillis() - sr.lastActivity
-                            < mMinBServiceAgingTime) {
-                        if (DEBUG_OOM_ADJ) {
-                            Slog.d(TAG,"Not aged enough!!!");
-                        }
-                        continue;
-                    }
-                    if (serviceLastActivity == 0) {
-                        serviceLastActivity = sr.lastActivity;
-                        selectedAppRecord = app;
-                    } else if (sr.lastActivity < serviceLastActivity) {
-                        serviceLastActivity = sr.lastActivity;
-                        selectedAppRecord = app;
-                    }
-                }
-            }
-            if (DEBUG_OOM_ADJ && selectedAppRecord != null) Slog.d(TAG,
-                    "Identified app.processName = " + selectedAppRecord.processName
-                    + " app.pid = " + selectedAppRecord.pid);
             if (!app.killedByAm && app.thread != null) {
                 app.procStateChanged = false;
                 computeOomAdjLocked(app, ProcessList.UNKNOWN_ADJ, TOP_APP, true, now);
@@ -22801,14 +22748,6 @@ public class ActivityManagerService extends IActivityManager.Stub
                     numTrimming++;
                 }
             }
-        }
-        if ((numBServices > mBServiceAppThreshold) && (true == mAllowLowerMemLevel)
-                && (selectedAppRecord != null)) {
-            ProcessList.setOomAdj(selectedAppRecord.pid, selectedAppRecord.info.uid,
-                    ProcessList.CACHED_APP_MAX_ADJ);
-            selectedAppRecord.setAdj = selectedAppRecord.curAdj;
-            if (DEBUG_OOM_ADJ) Slog.d(TAG,"app.processName = " + selectedAppRecord.processName
-                        + " app.pid = " + selectedAppRecord.pid + " is moved to higher adj");
         }
 
         incrementProcStateSeqAndNotifyAppsLocked();

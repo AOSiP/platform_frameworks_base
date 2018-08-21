@@ -300,8 +300,7 @@ public class BatteryManager {
      * @return the property value, or Integer.MIN_VALUE if not supported.
      */
     public int getIntProperty(int id) {
-        long val = queryProperty(id);
-        return val == Long.MIN_VALUE ? Integer.MIN_VALUE : (int)val;
+        return (int)queryProperty(id);
     }
 
     /**

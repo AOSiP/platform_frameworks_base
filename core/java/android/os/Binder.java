@@ -22,7 +22,6 @@ import android.util.ExceptionUtils;
 import android.util.Log;
 import android.util.Slog;
 
-import com.android.internal.os.BinderInternal;
 import com.android.internal.util.FastPrintWriter;
 import com.android.internal.util.FunctionalUtils;
 import com.android.internal.util.FunctionalUtils.ThrowingRunnable;
@@ -341,9 +340,7 @@ public class Binder implements IBinder {
      * Add the calling thread to the IPC thread pool.  This function does
      * not return until the current process is exiting.
      */
-    public static final void joinThreadPool() {
-        BinderInternal.joinThreadPool();
-    }
+    public static final native void joinThreadPool();
 
     /**
      * Returns true if the specified interface is a proxy.

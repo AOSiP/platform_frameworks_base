@@ -130,7 +130,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Consumer;
@@ -3736,11 +3735,7 @@ public class AccessibilityManagerService extends IAccessibilityManager.Stub {
                 /* ignore */
             }
             if (mService != null) {
-                try {
-                    mService.unlinkToDeath(this, 0);
-                } catch (NoSuchElementException e) {
-                    Slog.e(LOG_TAG, "Unable to unlinkToDeath", e);
-                }
+                mService.unlinkToDeath(this, 0);
                 mService = null;
             }
             mServiceInterface = null;
