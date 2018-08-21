@@ -17,7 +17,6 @@
 package android.webkit;
 
 import android.app.LoadedApk;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.os.Build;
 import android.os.SystemService;
@@ -69,11 +68,11 @@ public class WebViewZygote {
     private static PackageInfo sPackage;
 
     /**
-     * Original ApplicationInfo for the selected WebView package before stub fixup. This is set from
+     * Cache key for the selected WebView package's classloader. This is set from
      * #onWebViewProviderChanged().
      */
     @GuardedBy("sLock")
-    private static ApplicationInfo sPackageOriginalAppInfo;
+    private static String sPackageCacheKey;
 
     /**
      * Flag for whether multi-process WebView is enabled. If this is false, the zygote
@@ -127,11 +126,10 @@ public class WebViewZygote {
         }
     }
 
-    public static void onWebViewProviderChanged(PackageInfo packageInfo,
-                                                ApplicationInfo originalAppInfo) {
+    public static void onWebViewProviderChanged(PackageInfo packageInfo, String cacheKey) {
         synchronized (sLock) {
             sPackage = packageInfo;
-            sPackageOriginalAppInfo = originalAppInfo;
+            sPackageCacheKey = cacheKey;
 
             // If multi-process is not enabled, then do not start the zygote service.
             if (!sMultiprocessEnabled) {
@@ -220,17 +218,10 @@ public class WebViewZygote {
             final String zip = (zipPaths.size() == 1) ? zipPaths.get(0) :
                     TextUtils.join(File.pathSeparator, zipPaths);
 
-            // In the case where the ApplicationInfo has been modified by the stub WebView,
-            // we need to use the original ApplicationInfo to determine what the original classpath
-            // would have been to use as a cache key.
-            LoadedApk.makePaths(null, false, sPackageOriginalAppInfo, zipPaths, null);
-            final String cacheKey = (zipPaths.size() == 1) ? zipPaths.get(0) :
-                    TextUtils.join(File.pathSeparator, zipPaths);
-
             ZygoteProcess.waitForConnectionToZygote(WEBVIEW_ZYGOTE_SOCKET);
 
             Log.d(LOGTAG, "Preloading package " + zip + " " + librarySearchPath);
-            sZygote.preloadPackageForAbi(zip, librarySearchPath, cacheKey,
+            sZygote.preloadPackageForAbi(zip, librarySearchPath, sPackageCacheKey,
                                          Build.SUPPORTED_ABIS[0]);
         } catch (Exception e) {
             Log.e(LOGTAG, "Error connecting to " + serviceName, e);

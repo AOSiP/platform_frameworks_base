@@ -342,9 +342,9 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         for (TileRecord r : mRecords) {
             r.tile.clearState();
         }
-
-        refreshAllTiles();
-
+        if (mListening) {
+            refreshAllTiles();
+        }
         if (mTileLayout != null) {
             mTileLayout.updateResources();
         }
