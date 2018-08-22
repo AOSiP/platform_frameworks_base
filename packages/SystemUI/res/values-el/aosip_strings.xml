@@ -27,8 +27,8 @@
   <!-- QS Tiles -->
   <string name="quick_settings_reboot_label">Επανεκκίνηση</string>
   <string name="quick_settings_reboot_recovery_label">Ανάκτηση/Recovery</string>
-  <string name="quick_settings_reboot_bootloader_label">Bootloader</string>
-  <string name="quick_settings_poweroff_label">Power off</string>
+  <string name="quick_settings_reboot_bootloader_label">Εκκινητής</string>
+  <string name="quick_settings_poweroff_label">Απενεργοποίηση</string>
   <string name="quick_settings_screenshot_label">Στιγμιότυπο οθόνης</string>
   <string name="quick_settings_region_screenshot_label">Μερικό στιγμιότυπο οθόνης</string>
   <string name="status_bar_roaming">Περιαγωγή</string>
@@ -88,6 +88,13 @@
   <string name="quick_settings_volume_panel_label">Ένταση</string>
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
+  <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
+  <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+  <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
+  <string name="keyguard_indication_turbo_power_time">TurboPower connected (<xliff:g id="charging_time_left">%s</xliff:g> until full)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connected</string>
+  <string name="keyguard_plugged_in_turbo_charging">Turbo Charging</string>
   <!-- SysUI Tuner -->
   <string name="statusbar_icons_blacklist">Εικονίδια γραμμής κατάστασης</string>
   <string name="navbar_tuner_activity">Κουμπιά της γραμμής περιήγησης</string>
@@ -129,6 +136,7 @@
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Διακοπή</string>
   <string name="screenrecord_notif_completed">Η οθόνη καταγράφηκε με επιτυχία</string>
+  <string name="screenrecord_notif_description">Tap to view your screen recording</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Εμφάνιση δείκτη</string>
   <string name="screenrecord_notif_pointer_off">Απόκρυψη δείκτη</string>
@@ -160,6 +168,10 @@
   <string name="quick_settings_compass_SW">ΝΔ</string>
   <string name="quick_settings_compass_W">Δ</string>
   <string name="quick_settings_compass_NW">ΒΔ</string>
+  <!-- LTE QS Tile -->
+  <string name="qs_lte_label">LTE</string>
+  <string name="lte_on">LTE ON </string>
+  <string name="lte_off">LTE OFF</string>
   <!-- Expanded desktop QS Tile -->
   <string name="quick_settings_expanded_desktop_label">Εκτεταμένη επιφάνεια εργασίας</string>
   <string name="quick_settings_expanded_desktop">Επεκταμένο</string>
@@ -237,7 +249,7 @@
          values/config.xml) and must be truncated.
          [CHAR LIMIT=4] -->
   <!-- Recents kill app -->
-  <string name="recents_app_killed">App killed</string>
-  <string name="recents_locked_app_kill_warning">App is locked. Force stopping but not dismissing this app.</string>
-  <string name="recents_kill_error_warning">Couldn\'t kill or force stop this app. Operation aborted.</string>
+  <string name="recents_app_killed">Η εφαρμογή τερματίστηκε</string>
+  <string name="recents_locked_app_kill_warning">Η εφαρμογή είναι κλειδωμένη. Εξαναγκασμένο σταμάτημα αλλά όχι εκκαθάριση της εφαρμογής.</string>
+  <string name="recents_kill_error_warning">Αδυναμία τερματισμού ή εξαναγκαστικής διακοπής εφαρμογής. Η διαδικασία ακυρώθηκε.</string>
 </resources>

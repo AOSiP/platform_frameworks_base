@@ -44,5 +44,5 @@
   <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_preventpower">Επιτρέπει σε μια εφαρμογή να παρακάμψει το πλήκτρο τροφοδοσίας.</string>
   <!-- App Blacklist -->
-  <string name="app_blacklist">Blacklist app</string>
+  <string name="app_blacklist">Λίστα μη επιτρεπόμενων εφαρμογών</string>
 </resources>
