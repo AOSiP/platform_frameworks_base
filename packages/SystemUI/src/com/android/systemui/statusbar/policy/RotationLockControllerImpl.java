@@ -59,6 +59,10 @@ public final class RotationLockControllerImpl implements RotationLockController 
         return RotationPolicy.isRotationLocked(mContext);
     }
 
+    public void setRotationLockedAtAngle(boolean locked, int rotation){
+        RotationPolicy.setRotationLockAtAngle(mContext, locked, rotation);
+    }
+
     public void setRotationLocked(boolean locked) {
         RotationPolicy.setRotationLock(mContext, locked);
     }

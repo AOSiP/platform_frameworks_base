@@ -104,11 +104,13 @@ import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.CommandQueue.Callbacks;
 import com.android.systemui.statusbar.NotificationMediaManager;
 import com.android.systemui.statusbar.policy.AccessibilityManagerWrapper;
+import com.android.systemui.statusbar.policy.ActivityManagerWrapper;
 import com.android.systemui.statusbar.policy.KeyButtonDrawable;
 import com.android.systemui.statusbar.policy.KeyButtonView;
 import com.android.systemui.statusbar.policy.KeyguardMonitor;
 import com.android.systemui.statusbar.policy.RotationLockController;
 import com.android.systemui.statusbar.stack.StackStateAnimator;
+import com.android.systemui.statusbar.policy.TaskStackChangeListener;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -140,6 +142,8 @@ Navigator.OnVerticalChangedListener, KeyguardMonitor.Callback, NotificationMedia
     public static final int NAVIGATION_MODE_DEFAULT = 0;
     public static final int NAVIGATION_MODE_SMARTBAR = 1;
     public static final int NAVIGATION_MODE_FLING = 2;
+
+    private static final int ROTATE_SUGGESTION_TIMEOUT_MS = 4000;
 
     protected Navigator mNavigationBarView = null;
 
@@ -790,6 +794,39 @@ Navigator.OnVerticalChangedListener, KeyguardMonitor.Callback, NotificationMedia
         }
     }
 
+    @Override
+    public void onRotationProposal(final int rotation, boolean isValid) {
+        // This method will be called on rotation suggestion changes even if the proposed rotation
+        // is not valid for the top app. Use invalid rotation choices as a signal to remove the
+        // rotate button if shown.
+
+        if (!isValid) {
+            setRotateSuggestionButtonState(false);
+            return;
+        }
+
+        Handler h = getView().getHandler();
+        if (rotation == mWindowManager.getDefaultDisplay().getRotation()) {
+            // Use this as a signal to remove any current suggestions
+            h.removeCallbacks(mRemoveRotationProposal);
+            setRotateSuggestionButtonState(false);
+        } else {
+            if (mNavigationBarView != null) {
+                mNavigationBarView.setLastRotation(rotation); // Remember rotation for click
+            }
+            setRotateSuggestionButtonState(true);
+            h.removeCallbacks(mRemoveRotationProposal); // Stop any pending removal
+            h.postDelayed(mRemoveRotationProposal,
+                    ROTATE_SUGGESTION_TIMEOUT_MS); // Schedule timeout
+        }
+    }
+
+    public void setRotateSuggestionButtonState(final boolean visible) {
+        if (mNavigationBarView != null) {
+            mNavigationBarView.setRotateSuggestionButtonState(visible, false);
+        }
+    }
+
     // ----- Internal stuffz -----
 
     private void refreshLayout(int layoutDirection) {
@@ -1193,7 +1230,6 @@ Navigator.OnVerticalChangedListener, KeyguardMonitor.Callback, NotificationMedia
             // window in response to the orientation change.
             Handler h = getView().getHandler();
             Message msg = Message.obtain(h, () -> {
-
                 // If the screen rotation changes while locked, potentially update lock to flow with
                 // new screen rotation and hide any showing suggestions.
                 if (mRotationLockController.isRotationLocked()) {
@@ -1202,7 +1238,6 @@ Navigator.OnVerticalChangedListener, KeyguardMonitor.Callback, NotificationMedia
                     }
                     setRotateSuggestionButtonState(false, true);
                 }
-
                 if (mNavigationBarView != null
                         && mNavigationBarView.needsReorient(rotation)) {
                     repositionNavigationBar();
@@ -1497,6 +1532,27 @@ Navigator.OnVerticalChangedListener, KeyguardMonitor.Callback, NotificationMedia
                     Settings.Secure.NAVIGATION_BAR_MODE, NAVIGATION_MODE_DEFAULT,
                     UserHandle.USER_CURRENT);
             changeNavigator();
+        }
+    }
+
+    class TaskStackListenerImpl extends TaskStackChangeListener {
+        // Invalidate any rotation suggestion on task change or activity orientation change
+        // Note: all callbacks happen on main thread
+         @Override
+        public void onTaskStackChanged() {
+            setRotateSuggestionButtonState(false);
+        }
+         @Override
+        public void onTaskRemoved(int taskId) {
+            setRotateSuggestionButtonState(false);
+        }
+         @Override
+        public void onTaskMovedToFront(int taskId) {
+            setRotateSuggestionButtonState(false);
+        }
+         @Override
+        public void onActivityRequestedOrientationChanged(int taskId, int requestedOrientation) {
+            setRotateSuggestionButtonState(false);
         }
     }
 }
