@@ -36,4 +36,7 @@
     <!-- the padding on the start and the end of the statusbar -->
     <dimen name="status_bar_extra_padding">0dp</dimen>
 
+	<!-- Sets a custom extra padding for the QS icons and statusbar date -->
+	<dimen name="qs_items_padding">0dp</dimen>
+
 </resources>
