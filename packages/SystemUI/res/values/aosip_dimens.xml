@@ -20,4 +20,7 @@
 
     <!-- QS tile height -->
     <dimen name="qs_tile_height_wo_label">48dp</dimen>
+
+    <!-- Sets a custom extra padding for the QS icons and statusbar date -->
+    <dimen name="qs_items_padding">0dp</dimen>
 </resources>
