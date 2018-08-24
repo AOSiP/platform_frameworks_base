@@ -17,4 +17,8 @@
   <!-- Device keyhandlers -->
   <java-symbol type="array" name="config_deviceKeyHandlerLibs" />
   <java-symbol type="array" name="config_deviceKeyHandlerClasses" />
+
+  <!-- Max visible notification icons -->
+  <java-symbol type="integer" name="config_maxVisibleNotificationIcons" />
+  <java-symbol type="integer" name="config_maxVisibleNotificationIconsWhenDark" />
 </resources>
