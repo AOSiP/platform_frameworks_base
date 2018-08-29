@@ -162,6 +162,7 @@ import android.os.PersistableBundle;
 import android.os.Process;
 import android.os.RemoteException;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.storage.StorageManager;
 import android.service.voice.IVoiceInteractionSession;
@@ -2361,7 +2362,7 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
         outBounds.setEmpty();
         final boolean higherAspectRatio = Resources.getSystem().getBoolean(
                 com.android.internal.R.bool.config_haveHigherAspectRatioScreen);
-        final float maxAspectRatio = higherAspectRatio ? mFullScreenAspectRatio : info.maxAspectRatio;
+       float maxAspectRatio = higherAspectRatio ? mFullScreenAspectRatio : info.maxAspectRatio;
 
         if (service.mWindowManager.isGestureButtonEnabled()) {
             return;
@@ -2377,6 +2378,12 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
             return;
         }
 
+        if(info.applicationInfo.targetSdkVersion < O) {
+            try {
+                maxAspectRatio = Float.parseFloat(SystemProperties.get("persist.sys.max_aspect_ratio.pre_o", ""));
+            } catch (Throwable t) {}
+            Log.d("PHH", "Overrode aspect ratio because pre-o to " + maxAspectRatio);
+        }
         // We must base this on the parent configuration, because we set our override
         // configuration's appBounds based on the result of this method. If we used our own
         // configuration, it would be influenced by past invocations.
