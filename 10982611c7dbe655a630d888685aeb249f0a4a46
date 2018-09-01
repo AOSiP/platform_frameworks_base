@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b3007ef8_1f02bf90",
+        "filename": "libs/androidfw/AssetManager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-09-01T21:28:07Z",
+      "side": 1,
+      "message": "PROPERTY?",
+      "revId": "10982611c7dbe655a630d888685aeb249f0a4a46",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
