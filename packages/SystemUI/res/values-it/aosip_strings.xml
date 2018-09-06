@@ -89,12 +89,12 @@
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
-  <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+  <string name="keyguard_indication_dash_charging_time">Ricarica Dash (<xliff:g id="charging_time_left" example="4 ore e 2 minuti"> %s</xliff:g> al termine)</string>
+  <string name="keyguard_plugged_in_dash_charging">Ricarica Dash</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_turbo_power_time">TurboPower connected (<xliff:g id="charging_time_left">%s</xliff:g> until full)</string>
-  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connected</string>
-  <string name="keyguard_plugged_in_turbo_charging">Turbo Charging</string>
+  <string name="keyguard_indication_turbo_power_time">TurboPower collegato (<xliff:g id="charging_time_left">%s</xliff:g> al termine)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower collegato</string>
+  <string name="keyguard_plugged_in_turbo_charging">Ricarica Turbo</string>
   <!-- SysUI Tuner -->
   <string name="statusbar_icons_blacklist">Icone della barra di stato</string>
   <string name="navbar_tuner_activity">Pulsanti della barra di navigazione</string>
@@ -136,7 +136,7 @@
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Interrompi</string>
   <string name="screenrecord_notif_completed">Schermo registrato con successo</string>
-  <string name="screenrecord_notif_description">Tap to view your screen recording</string>
+  <string name="screenrecord_notif_description">Tocca per visualizzare la registrazione dello schermo</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Mostra puntatore</string>
   <string name="screenrecord_notif_pointer_off">Nascondi puntatore</string>
@@ -170,8 +170,8 @@
   <string name="quick_settings_compass_NW">NW</string>
   <!-- LTE QS Tile -->
   <string name="qs_lte_label">LTE</string>
-  <string name="lte_on">LTE ON </string>
-  <string name="lte_off">LTE OFF</string>
+  <string name="lte_on">LTE Attivato </string>
+  <string name="lte_off">LTE Disattivato</string>
   <!-- Expanded desktop QS Tile -->
   <string name="quick_settings_expanded_desktop_label">Schermo esteso</string>
   <string name="quick_settings_expanded_desktop">Esteso</string>

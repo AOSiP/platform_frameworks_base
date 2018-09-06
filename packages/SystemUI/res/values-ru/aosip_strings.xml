@@ -89,12 +89,12 @@
   <!-- volte icon switch -->
   <string name="status_bar_volte">VoLTE</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
-  <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+  <string name="keyguard_indication_dash_charging_time">Быстрая зарядка (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> до полной)</string>
+  <string name="keyguard_plugged_in_dash_charging">Быстрая зарядка</string>
   <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_power_charging [CHAR LIMIT=40]-->
-  <string name="keyguard_indication_turbo_power_time">TurboPower connected (<xliff:g id="charging_time_left">%s</xliff:g> until full)</string>
-  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower connected</string>
-  <string name="keyguard_plugged_in_turbo_charging">Turbo Charging</string>
+  <string name="keyguard_indication_turbo_power_time">TurboPower подключен (<xliff:g id="charging_time_left">%s</xliff:g> до полной зарядки)</string>
+  <string name="keyguard_plugged_in_turbo_power_charging">TurboPower подключен</string>
+  <string name="keyguard_plugged_in_turbo_charging">Быстрая зарядка</string>
   <!-- SysUI Tuner -->
   <string name="statusbar_icons_blacklist">Значки в строке состояния</string>
   <string name="navbar_tuner_activity">Кнопки панели навигации</string>
@@ -136,7 +136,7 @@
   <!-- Screenrecord notification action: Stop -->
   <string name="screenrecord_notif_stop">Остановить</string>
   <string name="screenrecord_notif_completed">Экран успешно записан</string>
-  <string name="screenrecord_notif_description">Tap to view your screen recording</string>
+  <string name="screenrecord_notif_description">Нажмите, чтобы просмотреть запись экрана</string>
   <!-- Screenrecord notification action: show/hide pointer -->
   <string name="screenrecord_notif_pointer_on">Показать указатель</string>
   <string name="screenrecord_notif_pointer_off">Скрыть указатель</string>
@@ -170,8 +170,8 @@
   <string name="quick_settings_compass_NW">СЗ</string>
   <!-- LTE QS Tile -->
   <string name="qs_lte_label">LTE</string>
-  <string name="lte_on">LTE ON </string>
-  <string name="lte_off">LTE OFF</string>
+  <string name="lte_on">LTE вкл </string>
+  <string name="lte_off">LTE выкл</string>
   <!-- Expanded desktop QS Tile -->
   <string name="quick_settings_expanded_desktop_label">Расширенный рабочий стол</string>
   <string name="quick_settings_expanded_desktop">Расширенный</string>
