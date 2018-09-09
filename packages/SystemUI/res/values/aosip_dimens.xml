@@ -26,6 +26,8 @@
     <dimen name="floating_action_button_margin_side">54dp</dimen>
     <dimen name="floating_action_button_margin_bottom">54dp</dimen>
 
+    <dimen name="quick_status_bar_system_icons_margin_top">8dp</dimen>
+
     <!-- QS detail view scrolling -->
     <dimen name="qs_detail_item_height_twoline">72dp</dimen>
 
