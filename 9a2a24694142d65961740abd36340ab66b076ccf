@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6403ef49_9899264a",
+        "filename": "core/res/res/values/custom_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-09-10T16:35:18Z",
+      "side": 1,
+      "message": "Need to move to aosip_strings, will do later if someone doesn\u0027t :3",
+      "revId": "9a2a24694142d65961740abd36340ab66b076ccf",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
