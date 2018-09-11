@@ -24,6 +24,9 @@
   <java-symbol type="string" name="config_bodyFontFamily" />
   <java-symbol type="string" name="config_bodyFontFamilyMedium" />
 
+  <!-- Whether device supports an alt. ambient display -->
+  <java-symbol type="bool" name="config_alt_ambient_display"/>
+
   <!-- App error dialog -->
   <java-symbol type="id" name="aerr_copy" />
   <java-symbol type="string" name="url_copy_success" />
