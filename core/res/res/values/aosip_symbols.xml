@@ -18,6 +18,9 @@
   <java-symbol type="array" name="config_deviceKeyHandlerLibs" />
   <java-symbol type="array" name="config_deviceKeyHandlerClasses" />
 
+  <!-- Whether device supports an alt. ambient display -->
+  <java-symbol type="bool" name="config_alt_ambient_display"/>
+
   <!-- App error dialog -->
   <java-symbol type="id" name="aerr_copy" />
   <java-symbol type="string" name="url_copy_success" />
@@ -32,4 +35,5 @@
 
   <!-- Whether to allow process with media UID to access CameraServiceProxy -->
   <java-symbol type="bool" name="config_allowMediaUidForCameraServiceProxy" />
+
 </resources>
