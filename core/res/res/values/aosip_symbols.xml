@@ -45,13 +45,16 @@
     <java-symbol type="bool" name="config_haveHigherAspectRatioScreen" />
     <java-symbol type="dimen" name="config_screenAspectRatio" />
 
-  <!-- From SignalStrength -->
-  <java-symbol type="integer" name="config_LTE_antenna_bar_quantity_metric" />
-  <java-symbol type="integer" name="config_LTE_RSRP_threshold_type" />
+    <!-- From SignalStrength -->
+    <java-symbol type="integer" name="config_LTE_antenna_bar_quantity_metric" />
+    <java-symbol type="integer" name="config_LTE_RSRP_threshold_type" />
 
     <!-- App error dialog -->
     <java-symbol type="id" name="aerr_copy" />
     <java-symbol type="string" name="url_copy_success" />
     <java-symbol type="string" name="url_copy_failed" />
+
+    <!-- Whether device supports an alt. ambient display -->
+    <java-symbol type="bool" name="config_alt_ambient_display"/>
 
 </resources>
