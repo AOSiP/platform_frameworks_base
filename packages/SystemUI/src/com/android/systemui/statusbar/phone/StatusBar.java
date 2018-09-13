@@ -243,6 +243,7 @@ import com.android.systemui.statusbar.policy.NetworkController;
 import com.android.systemui.statusbar.policy.OnHeadsUpChangedListener;
 import com.android.systemui.statusbar.policy.PreviewInflater;
 import com.android.systemui.statusbar.policy.RemoteInputQuickSettingsDisabler;
+import com.android.systemui.statusbar.policy.TelephonyIcons;
 import com.android.systemui.statusbar.policy.UserInfoController;
 import com.android.systemui.statusbar.policy.UserInfoControllerImpl;
 import com.android.systemui.statusbar.policy.UserSwitcherController;
@@ -341,6 +342,8 @@ public class StatusBar extends SystemUI implements DemoMode,
      * libhwui.
      */
     private static final float SRC_MIN_ALPHA = 0.002f;
+
+    public static boolean USE_OLD_MOBILETYPE = false;
 
     static {
         boolean onlyCoreApps;
@@ -5140,10 +5143,16 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.ACCENT_PICKER),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.USE_OLD_MOBILETYPE),
+                    false, this, UserHandle.USER_ALL);
+            update();
         }
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
+             super.onChange(selfChange, uri);
+             update();
             if (uri.equals(Settings.System.getUriFor(
                     Settings.System.SYSTEM_THEME))) {
                 updateTheme();
@@ -5151,10 +5160,18 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.ACCENT_PICKER))) {
                 unloadAccents(); // Unload the accents when users request it
                 updateAccents(); // Update the accents when users request it
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.USE_OLD_MOBILETYPE))) {
+                mCommandQueue.restartUI();
             }
         }
 
         public void update() {
+            ContentResolver resolver = mContext.getContentResolver();
+            USE_OLD_MOBILETYPE = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.USE_OLD_MOBILETYPE, 0,
+                    UserHandle.USER_CURRENT) != 0;
+            TelephonyIcons.updateIcons(USE_OLD_MOBILETYPE);
         }
     }
 
