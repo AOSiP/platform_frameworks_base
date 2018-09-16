@@ -34,9 +34,11 @@ public class StatusBarTuner extends PreferenceFragment {
 
     private static final String SHOW_FOURG = "show_fourg";
     private static final String SHOW_VOLTE = "show_volte";
+    private static final String DATA_DISABLED_ICON = "data_disabled_icon";
 
     private SwitchPreference mShowFourG;
     private SwitchPreference mShowVoLTE;
+    private SwitchPreference mShowDataDisabled;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -45,9 +47,11 @@ public class StatusBarTuner extends PreferenceFragment {
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         mShowFourG = (SwitchPreference) findPreference(SHOW_FOURG);
         mShowVoLTE = (SwitchPreference) findPreference(SHOW_VOLTE);
+        mShowDataDisabled = (SwitchPreference) findPreference(DATA_DISABLED_ICON);
         if (isWifiOnly()) {
             getPreferenceScreen().removePreference(mShowFourG);
             getPreferenceScreen().removePreference(mShowVoLTE);
+            getPreferenceScreen().removePreference(mShowDataDisabled);
         } else {
             mShowFourG.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.SHOW_FOURG,
@@ -55,6 +59,9 @@ public class StatusBarTuner extends PreferenceFragment {
                 UserHandle.USER_CURRENT) == 1);
             mShowVoLTE.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.SHOW_VOLTE_ICON, 0,
+                UserHandle.USER_CURRENT) == 1);
+            mShowDataDisabled.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.DATA_DISABLED_ICON, 1,
                 UserHandle.USER_CURRENT) == 1);
         }
     }
@@ -96,6 +103,11 @@ public class StatusBarTuner extends PreferenceFragment {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SHOW_VOLTE_ICON, checked ? 1 : 0);
+            return true;
+        } else if (preference == mShowDataDisabled) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DATA_DISABLED_ICON, checked ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preference);

@@ -107,4 +107,8 @@
     <string name="quick_settings_locale_label">Language</string>
     <string name="quick_settings_locale_more_locales_toast">Please configure multiple languages to enable toggle functionality</string>
 
+    <!-- Data disabled icon -->
+    <string name="data_disabled_icon_title" translatable="false">Data disabled icon</string>
+    <string name="data_disabled_icon_summary">Display a cross sign next to signal bar when data is disabled</string>
+
 </resources>
