@@ -1794,4 +1794,5 @@ public interface WindowManagerPolicy extends WindowManagerPolicyConstants {
      * Call screen record from WindowManager.
      */
     public void screenRecordAction(int mode);
+
 }
