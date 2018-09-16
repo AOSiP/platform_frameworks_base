@@ -22,6 +22,9 @@
     <!-- Icon packs -->
     <java-symbol type="drawable" name="adaptive_icon_drawable_wrapper" />
 
+    <java-symbol type="anim" name="inv_app_in" />
+    <java-symbol type="anim" name="inv_app_out" />
+
     <!-- Package Manager -->
     <java-symbol type="array" name="config_disabledComponents" />
     <java-symbol type="array" name="config_forceEnabledComponents" />
