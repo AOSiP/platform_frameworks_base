@@ -174,4 +174,7 @@
     <integer name="config_doubleTapOnAppSwitchKeyBehavior">7</integer>
     <integer name="config_longPressOnCameraKeyBehavior">0</integer>
     <integer name="config_doubleTapOnCameraKeyBehavior">0</integer>
+
+    <!-- True if the home button has the ability to wake up phone from lockscreen-->
+    <bool name="config_HomeWakeButton">false</bool>
 </resources>
