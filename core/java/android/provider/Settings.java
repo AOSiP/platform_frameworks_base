@@ -4836,6 +4836,12 @@ public final class Settings {
          */
         public static final String NETWORK_TRAFFIC_TYPE = "network_traffic_type";
 
+	/**
+         * Home wake button
+         * @hide
+         */
+        public static final String HOME_WAKE_BUTTON = "home_wake_button";
+
         /**
          * media artwork wallpaper blur level on lockscreen
          * @hide
