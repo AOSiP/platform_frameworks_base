@@ -77,6 +77,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private KeyguardMonitor mKeyguardMonitor;
     private NetworkController mNetworkController;
     private LinearLayout mSystemIconArea;
+    private LinearLayout mCustomIconArea;
     private View mNotificationIconAreaInner;
     private View mCenteredIconArea;
     private int mDisabled1;
@@ -171,6 +172,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mSystemIconArea = mStatusBar.findViewById(R.id.system_icon_area);
         mClockController = new ClockController(mStatusBar);
         mKronicLogo = (ImageView)mStatusBar.findViewById(R.id.status_bar_logo);
+        mCustomIconArea = mStatusBar.findViewById(R.id.left_icon_area);
         mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);
         Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mKronicLogo);
         updateSettings(false);
@@ -360,6 +362,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     public void hideNotificationIconArea(boolean animate) {
         animateHide(mNotificationIconAreaInner, animate);
+        animateHide(mCustomIconArea, animate);
         animateHide(mCenteredIconArea, animate);
 //      animateHide(mClockController.getClockLayout(), animate);
         if (mShowLogo) {
@@ -369,6 +372,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     public void showNotificationIconArea(boolean animate) {
         animateShow(mNotificationIconAreaInner, animate);
+        animateShow(mCustomIconArea, animate);
         animateShow(mCenteredIconArea, animate);
 //      animateShow(mClockController.getClockLayout(), animate);
         if (mShowLogo) {
