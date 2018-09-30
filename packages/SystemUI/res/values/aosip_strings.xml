@@ -117,7 +117,6 @@
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
 
-
     <!-- Theme tile -->
     <string name="system_theme_style_title">Style</string>
     <string name="system_theme_style_auto">Automatic</string>
@@ -148,6 +147,13 @@
     <string name="quick_settings_theme_tile_color_blue_grey">Blue grey</string>
     <string name="quick_settings_theme_tile_color_black">Black</string>
     <string name="quick_settings_theme_tile_color_white">White</string>
+    <string name="quick_settings_theme_tile_color_user_one">#StayDirty</string>
+    <string name="quick_settings_theme_tile_color_user_two">Grapes</string>
+    <string name="quick_settings_theme_tile_color_user_three">Blu</string>
+    <string name="quick_settings_theme_tile_color_user_four">Mint</string>
+    <string name="quick_settings_theme_tile_color_user_five">Money</string>
+    <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
+    <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
     <string name="theme_info_title">What is this?</string>
     <string name="theme_info_message">The Themes tile is a unique but easy to use tile that allows the user to change the system accent or style.\n\nTo change between accents and styles, simply long press on the tile and then press again to select from the options offered.</string>
 
