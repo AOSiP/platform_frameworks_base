@@ -50,6 +50,7 @@
         android:paddingTop="@dimen/status_bar_padding_top"
         android:orientation="horizontal"
         >
+
         <FrameLayout
             android:layout_height="match_parent"
             android:layout_width="0dp"
@@ -73,6 +74,12 @@
                     android:layout_height="match_parent"
                     android:layout="@layout/operator_name" />
 
+                <com.android.keyguard.AlphaOptimizedLinearLayout
+                    android:id="@+id/left_icon_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
                 <ImageView
                     android:id="@+id/status_bar_logo"
                     android:layout_width="@dimen/status_bar_icon_size"
@@ -90,10 +97,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="start|center_vertical"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="3dp"
                     android:textAppearance="@style/TextAppearance.StatusBar.Clock"
-                    android:paddingEnd="@dimen/status_bar_left_clock_end_padding"
                     android:visibility="gone"
                     android:singleLine="true"/>
+                </com.android.keyguard.AlphaOptimizedLinearLayout>
 
                 <com.android.systemui.statusbar.policy.Clock
                     android:id="@+id/clock"
