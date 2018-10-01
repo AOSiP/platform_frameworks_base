@@ -4539,6 +4539,15 @@ public final class Settings {
         public static final String ROAMING_INDICATOR_ICON = "roaming_indicator_icon";
 
         /**
+         * Show four g instead of LTE
+         * @hide
+         */
+        public static final String SHOW_FOURG = "show_fourg";
+
+        /** @hide */
+        public static final Validator SHOW_FOURG_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Volume rocker wake
          * @hide
          */
@@ -4817,6 +4826,7 @@ public final class Settings {
             BATTERY_LIGHT_MEDIUM_COLOR,
             BATTERY_LIGHT_FULL_COLOR,
             BATTERY_LIGHT_REALLYFULL_COLOR,
+            SHOW_FOURG,
         };
 
         /**
@@ -4948,6 +4958,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(TOAST_ICON);
             PRIVATE_SETTINGS.add(USE_OLD_MOBILETYPE);
             PRIVATE_SETTINGS.add(STATUSBAR_HIDE_NOTCH);
+            PRIVATE_SETTINGS.add(SHOW_FOURG);
             PRIVATE_SETTINGS.add(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD);
             PRIVATE_SETTINGS.add(NOTIFICATION_SOUND_VIB_SCREEN_ON);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_ENABLED);
@@ -5055,6 +5066,7 @@ public final class Settings {
             VALIDATORS.put(STATUSBAR_CLOCK_DATE_FORMAT, STATUSBAR_CLOCK_DATE_FORMAT_VALIDATOR);
             VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
             VALIDATORS.put(STATUSBAR_HIDE_NOTCH, STATUSBAR_HIDE_NOTCH_VALIDATOR);
+            VALIDATORS.put(SHOW_FOURG, SHOW_FOURG_VALIDATOR);
             VALIDATORS.put(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_SOUND_VIB_SCREEN_ON, NOTIFICATION_SOUND_VIB_SCREEN_ON_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_ENABLED, BATTERY_LIGHT_ENABLED_VALIDATOR);
