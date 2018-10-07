@@ -81,4 +81,7 @@
     <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
     <string name="quick_settings_hwkeys_label">HW keys</string>
 
+    <!-- Screenrecord QS tile -->
+    <string name="quick_settings_screenrecord_label">OmniRecord</string>
+
 </resources>
