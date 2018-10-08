@@ -86,6 +86,9 @@
   <!-- Ambient display music ticker -->
   <java-symbol type="bool" name="config_canForceDozeNotifications" />
 
+  <!-- Oreo's recents component activity -->
+  <java-symbol type="string" name="config_recentsComponentNameOreo" />
+
   <!-- Power Menu -->
   <java-symbol type="string" name="reboot_to_recovery_title" />
   <java-symbol type="string" name="reboot_to_recovery_message" />
