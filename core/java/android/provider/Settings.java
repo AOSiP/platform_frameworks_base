@@ -4536,6 +4536,13 @@ public final class Settings {
         public static final String ACCENT_PICKER = "accent_picker";
 
         /**
+         * Select from various styles to use on the QS tiles
+         *
+         * @hide
+         */
+        public static final String QS_TILE_STYLE = "qs_tile_style";
+
+        /**
          * @hide
          */
         public static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";
