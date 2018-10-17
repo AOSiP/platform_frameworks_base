@@ -36,8 +36,8 @@ public class TunerActivity extends SettingsDrawerActivity implements
     private static final String TAG_TUNER = "tuner";
 
     protected void onCreate(Bundle savedInstanceState) {
-        Dependency.initDependencies(this);
         super.onCreate(savedInstanceState);
+        Dependency.initDependencies(this);
 
         if (getFragmentManager().findFragmentByTag(TAG_TUNER) == null) {
             final String action = getIntent().getAction();
