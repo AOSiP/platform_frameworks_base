@@ -4561,6 +4561,13 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
+         * Select from various styles to use on the QS tiles
+         *
+         * @hide
+         */
+        public static final String QS_TILE_STYLE = "qs_tile_style";
+
+        /**
          * @hide
          */
         public static final String ROAMING_INDICATOR_ICON = "roaming_indicator_icon";
