@@ -121,6 +121,13 @@
     <string name="caffeine_info_title">What is this?</string>
     <string name="caffeine_info_message">Caffeine tile is a simple tile that you could switch on to keep your screen on.\n\nPlease note that the tile\'s state will reset itself after turning the screen off.</string>
 
+    <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Peek notifications</string>
+    <string name="accessibility_quick_settings_heads_up_off">Peek notifications disabled.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Peek notifications allowed.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Peek notifications turned off.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Peek notifications turned on.</string>
+
     <string name="tuner_keyguard_show_battery_bar_title">Show battery bar</string>
     <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on charging in always on display</string>
     <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
