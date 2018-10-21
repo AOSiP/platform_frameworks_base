@@ -123,7 +123,7 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
         sStyleItems.add(new ThemeTileItem(2, -1,
                 R.string.system_theme_style_dark, Settings.System.SYSTEM_THEME));
         sStyleItems.add(new ThemeTileItem(3, -1,
-                R.string.system_theme_style_blackaf, Settings.System.SYSTEM_UI_THEME));
+                R.string.system_theme_style_blackaf, Settings.System.SYSTEM_THEME));
     }
 
     private enum Mode {
@@ -297,7 +297,7 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
 
     private ThemeTileItem getThemeItemForStyleMode() {
         if (ThemeAccentUtils.isUsingDarkTheme(mOverlayManager, mCurrentUserId) ||
-            ThemeAccentUtils.isUsingBlackAFTheme(mOverlayManager, mCurrentUserId) {
+            ThemeAccentUtils.isUsingBlackAFTheme(mOverlayManager, mCurrentUserId)) {
             return new ThemeTileItem(20, R.color.quick_settings_theme_tile_white,
                     R.string.quick_settings_theme_tile_color_white);
         } else {
