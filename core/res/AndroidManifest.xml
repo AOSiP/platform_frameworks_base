@@ -3987,7 +3987,9 @@
     <permission android:name="android.permission.DISABLE_HIDDEN_API_CHECKS"
                 android:protectionLevel="signature" />
 
-    <!-- Allows an application to restart the SystemUI process.-->
+    <!-- Allows an application to restart the SystemUI process.
+         @hide <p>No touching, no touching, only seeing, only seeing.
+    -->
     <permission android:name="android.permission.RESTART_UI"
         android:label="@string/permlab_restartUI"
         android:description="@string/permdesc_restartUI"
