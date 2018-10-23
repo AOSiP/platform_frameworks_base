@@ -40,6 +40,7 @@ public class ThemeAccentUtils {
         "com.android.system.theme.blackaf", // 0
         "com.android.settings.theme.blackaf", // 1
         "com.android.settings.intelligence.theme.blackaf", // 2
+        "com.android.gboard.theme.blackaf", // 3
     };
 
     // Accents
