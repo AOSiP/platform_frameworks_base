@@ -19,6 +19,7 @@ package com.android.internal.statusbar;
 import android.content.om.IOverlayManager;
 import android.content.om.OverlayInfo;
 import android.os.RemoteException;
+import android.provider.Settings;
 
 public class ThemeAccentUtils {
 
@@ -92,9 +93,10 @@ public class ThemeAccentUtils {
 
     // Check for the dark system theme
     public static boolean isUsingDarkTheme(IOverlayManager om, int userId) {
+        String theme = useBlackTheme() ? BLACKAF_THEMES[0] : DARK_THEMES[0];
         OverlayInfo themeInfo = null;
         try {
-            themeInfo = om.getOverlayInfo(DARK_THEMES[0],
+            themeInfo = om.getOverlayInfo(theme,
                     userId);
         } catch (RemoteException e) {
             e.printStackTrace();
@@ -102,21 +104,16 @@ public class ThemeAccentUtils {
         return themeInfo != null && themeInfo.isEnabled();
     }
 
-    // Check for the blackaf system theme
-    public static boolean isUsingBlackAFTheme(IOverlayManager om, int userId) {
-        OverlayInfo themeInfo = null;
-        try {
-            themeInfo = om.getOverlayInfo(BLACKAF_THEMES[0],
-                    userId);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-        return themeInfo != null && themeInfo.isEnabled();
+    // Should the black theme be used?
+    public static boolean useBlackTheme() {
+        return Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.SYSTEM_THEME_DARK_BACKGROUND, 0) == 1;
     }
 
     // Set light / dark theme
     public static void setLightDarkTheme(IOverlayManager om, int userId, boolean useDarkTheme) {
-        for (String theme : DARK_THEMES) {
+        String themes[] = useBlackTheme() ? BLACKAF_THEMES : DARK_THEMES;
+        for (String theme : themes) {
             try {
                 om.setEnabled(theme,
                         useDarkTheme, userId);
@@ -129,26 +126,11 @@ public class ThemeAccentUtils {
         }
     }
 
-    // Set black theme
-    public static void setLightBlackAFTheme(IOverlayManager om, int userId, boolean useBlackAFTheme) {
-        for (String theme : BLACKAF_THEMES) {
-            try {
-                om.setEnabled(theme,
-                        useBlackAFTheme, userId);
-                unfuckBlackWhiteAccent(om, userId);
-                if (useBlackAFTheme) {
-                    unloadStockDarkTheme(om, userId);
-                }
-            } catch (RemoteException e) {
-            }
-        }
-    }
-
     // Check for black and white accent overlays
     public static void unfuckBlackWhiteAccent(IOverlayManager om, int userId) {
         OverlayInfo themeInfo = null;
         try {
-            if (isUsingDarkTheme (om, userId) || isUsingBlackAFTheme (om, userId)) {
+            if (isUsingDarkTheme (om, userId)) {
                 themeInfo = om.getOverlayInfo(ACCENTS[20],
                         userId);
                 if (themeInfo != null && themeInfo.isEnabled()) {
@@ -202,8 +184,8 @@ public class ThemeAccentUtils {
             }
         } else if (accentSetting == 20) {
             try {
-                // If using a dark theme we use the white accent, otherwise use the black accent
-                if (isUsingDarkTheme(om, userId) || isUsingBlackAFTheme(om, userId)) {
+                // If using a dark theme we use the white accent
+                if (isUsingDarkTheme(om, userId)) {
                     om.setEnabled(ACCENTS[21],
                             true, userId);
                 } else {

@@ -4420,7 +4420,6 @@ public final class Settings {
          * 0 - wallpaper based
          * 1 - force light
          * 2 - force dark
-         * 2 - force blackaf
          * @hide
          */
         public static final String SYSTEM_THEME = "system_theme";
@@ -4431,6 +4430,14 @@ public final class Settings {
          * @hide
          */
         public static final String ACCENT_PICKER = "accent_picker";
+
+        /**
+         * Select dark/black background for system theme
+         * 0 - Default dark
+         * 1 - Blackaf
+         * @hide
+         */
+        public static final String SYSTEM_THEME_DARK_BACKGROUND = "system_theme_dark_background";
 
         /**
          * @hide
