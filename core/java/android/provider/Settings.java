@@ -2585,6 +2585,12 @@ public final class Settings {
             MOVED_TO_SECURE.add(Secure.INSTALL_NON_MARKET_APPS);
 
             MOVED_TO_SECURE.add(Secure.VOLUME_LINK_NOTIFICATION);
+            MOVED_TO_SECURE.add(Secure.REBOOT_IN_POWER_MENU);
+            MOVED_TO_SECURE.add(Secure.ADVANCED_REBOOT_IN_POWER_MENU);
+            MOVED_TO_SECURE.add(Secure.SCREENSHOT_IN_POWER_MENU);
+            MOVED_TO_SECURE.add(Secure.SCREENRECORD_IN_POWER_MENU);
+            MOVED_TO_SECURE.add(Secure.AMBIENT_VISUALIZER_ENABLED);
+            MOVED_TO_SECURE.add(Secure.LOCKSCREEN_VISUALIZER_ENABLED);
         }
 
         @UnsupportedAppUsage
@@ -4469,13 +4475,6 @@ public final class Settings {
         /** @hide */
         public static final Validator LOCK_TO_APP_ENABLED_VALIDATOR = BOOLEAN_VALIDATOR;
 
-        /** @hide */
-        public static final String GESTURE_PILL_TOGGLE = "gesture_pill_toggle";
-
-        /** @hide */
-        private static final Validator GESTURE_PILL_TOGGLE_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
         /**
          * I am the lolrus.
          * <p>
@@ -4497,41 +4496,49 @@ public final class Settings {
             }
         };
 
-        /**
-        * Whether to show battery light when DND mode is active
-        * @hide
-        */
-       public static final String BATTERY_LIGHT_ALLOW_ON_DND = "battery_light_allow_on_dnd";
+        /** AOSiP Additions */
+ 
+        /** @hide */
+        public static final String GESTURE_PILL_TOGGLE = "gesture_pill_toggle";
+        /** @hide */
+        private static final Validator GESTURE_PILL_TOGGLE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
-        * Whether to show blinking light when battery is low
-        * @hide
-        */
-       public static final String BATTERY_LIGHT_LOW_BLINKING = "battery_light_low_blinking";
+         * Whether to show battery light when DND mode is active
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_ALLOW_ON_DND = "battery_light_allow_on_dnd";
 
         /**
-        * Low battery charging color
-        * @hide
-        */
-       public static final String BATTERY_LIGHT_LOW_COLOR = "battery_light_low_color";
+         * Whether to show blinking light when battery is low
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_LOW_BLINKING = "battery_light_low_blinking";
 
         /**
-        * Medium battery charging color
-        * @hide
-        */
-       public static final String BATTERY_LIGHT_MEDIUM_COLOR = "battery_light_medium_color";
+         * Low battery charging color
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_LOW_COLOR = "battery_light_low_color";
 
         /**
-        * Full battery charging color
-        * @hide
-        */
-       public static final String BATTERY_LIGHT_FULL_COLOR = "battery_light_full_color";
+         * Medium battery charging color
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_MEDIUM_COLOR = "battery_light_medium_color";
 
         /**
-        * Really full 100 battery charging color
-        * @hide
-        */
-       public static final String BATTERY_LIGHT_REALLYFULL_COLOR = "battery_light_reallyfull_color";
+         * Full battery charging color
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_FULL_COLOR = "battery_light_full_color";
+
+        /**
+         * Really full 100 battery charging color
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_REALLYFULL_COLOR = "battery_light_reallyfull_color";
 
         /**
          * Setting to determine whether or not to show the battery percentage in the status bar.
@@ -4540,7 +4547,7 @@ public final class Settings {
          * @hide
          */
         public static final String SHOW_BATTERY_PERCENT = "dummy_show_battery_percent";
-        
+
         /**
          * Battery style
          * @hide
@@ -4562,13 +4569,14 @@ public final class Settings {
          * @hide
          */
         public static final String AMBIENT_WAKE_GESTURES = "ambient_wake_gestures";
+        /** @hide */
+        public static final Validator AMBIENT_WAKE_GESTURES_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * Show 4G instead of LTE
          * @hide
          */
         public static final String SHOW_FOURG = "show_fourg";
-
         /** @hide */
         public static final Validator SHOW_FOURG_VALIDATOR = BOOLEAN_VALIDATOR;
 
@@ -4577,7 +4585,6 @@ public final class Settings {
          * @hide
          */
         public static final String SHOW_VOLTE_ICON = "show_volte_icon";
-
         /** @hide */
         public static final Validator SHOW_VOLTE_ICON_VALIDATOR = BOOLEAN_VALIDATOR;
 
@@ -4588,7 +4595,6 @@ public final class Settings {
          * @hide
          */
         public static final String QS_SHOW_BATTERY_PERCENT = "qs_header_show_battery_percent";
-
         /** @hide */
         private static final Validator QS_SHOW_BATTERY_PERCENT_VALIDATOR = BOOLEAN_VALIDATOR;
 
@@ -4597,7 +4603,6 @@ public final class Settings {
          * @hide
          */
         public static final String VOLTE_ICON_STYLE = "volte_icon_style";
-
         /** @hide */
         public static final Validator VOLTE_ICON_STYLE_VALIDATOR = ANY_INTEGER_VALIDATOR;
 
@@ -4605,7 +4610,7 @@ public final class Settings {
          * @hide
          */
         public static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";
-
+        /** @hide */
         private static final Validator USE_OLD_MOBILETYPE_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
@@ -4615,7 +4620,6 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
-
         /** @hide */
         public static final Validator LOCKSCREEN_MEDIA_METADATA_VALIDATOR = BOOLEAN_VALIDATOR;
 
@@ -4640,7 +4644,6 @@ public final class Settings {
          * @hide
          */
         public static final String SCREENSHOT_SHUTTER_SOUND = "screenshot_shutter_sound";
-
         /** @hide */
         private static final Validator SCREENSHOT_SHUTTER_SOUND_VALIDATOR =
                 BOOLEAN_VALIDATOR;
@@ -4674,6 +4677,9 @@ public final class Settings {
          * @hide
          */
         public static final String PULSE_ON_NEW_TRACKS = "pulse_on_new_tracks";
+        /** @hide */
+        private static final Validator PULSE_ON_NEW_TRACKS_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Whether the user has already accepted MediaProjection permission for the built-in screenrecorder
@@ -4690,9 +4696,9 @@ public final class Settings {
         private static final Validator STATUS_BAR_LOGO_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
-       /**
-        * Statusbar logo Style
-        * @hide
+        /**
+         * Statusbar logo Style
+         * @hide
          */
         public static final String STATUS_BAR_LOGO_STYLE = "status_bar_logo_style";
 
@@ -4700,7 +4706,7 @@ public final class Settings {
          * @hide
          */
         public static final String QS_LAYOUT_COLUMNS = "qs_layout_columns";
-         /** @hide */
+        /** @hide */
         private static final Validator QS_LAYOUT_COLUMNS_VALIDATOR =
                 ANY_INTEGER_VALIDATOR;
 
@@ -4718,16 +4724,21 @@ public final class Settings {
          * @hide
          */
         public static final String QS_TILE_TITLE_VISIBILITY = "qs_tile_title_visibility";
+        /** @hide */
+        private static final Validator QS_TILE_TITLE_VISIBILITY_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
-        /** Whether to skip music track with volume rocker 
         /**
+         * Whether to skip music track with volume rocker
          * @hide
          */
         public static final String VOLUME_BUTTON_MUSIC_CONTROL = "volume_button_music_control";
+        /** @hide */
+        private static final Validator VOLUME_BUTTON_MUSIC_CONTROL_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /** @hide */
         public static final String BACK_GESTURE_HEIGHT = "back_gesture_height";
-
         /** @hide */
         private static final Validator BACK_GESTURE_HEIGHT_VALIDATOR =
                 ANY_INTEGER_VALIDATOR;
@@ -4745,9 +4756,9 @@ public final class Settings {
         public static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
 
         /**
-	 ** What to show in network traffic indicator in statusbar
-	 ** @hide
-	 **/
+	 * What to show in network traffic indicator in statusbar
+	 * @hide
+	 */
         public static final String NETWORK_TRAFFIC_TYPE = "network_traffic_type";
 
         /**
@@ -4755,29 +4766,32 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
+        /** @hide */
+        private static final Validator LOCKSCREEN_MEDIA_BLUR_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
-        * Whether to show the battery info on the lockscreen while charging
-        * @hide
-        */
+         * Whether to show the battery info on the lockscreen while charging
+         * @hide
+         */
         public static final String LOCKSCREEN_BATTERY_INFO = "lockscreen_battery_info";
+        /** @hide */
+        private static final Validator LOCKSCREEN_BATTERY_INFO_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
-        * Whether allowing pocket service to register sensors and dispatch informations.
-        *   0 = disabled
-        *   1 = enabled
-        * @author Carlo Savignano
-        * @hide
-        */
+         * Whether allowing pocket service to register sensors and dispatch informations.
+         *   0 = disabled
+         *   1 = enabled
+         * @hide
+         */
         public static final String POCKET_JUDGE = "pocket_judge";
-
         /** @hide */
         private static final Validator POCKET_JUDGE_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
         /** @hide */
         public static final String BACK_GESTURE_BLOCK_IME = "back_gesture_block_ime";
-
         /** @hide */
         private static final Validator BACK_GESTURE_BLOCK_IME_VALIDATOR =
                 BOOLEAN_VALIDATOR;
@@ -4787,7 +4801,7 @@ public final class Settings {
          * @hide
          */
         public static final String NAVIGATION_BAR_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
-
+        /** @hide */
         private static final Validator NAVIGATION_BAR_ARROW_KEYS_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
@@ -4798,6 +4812,9 @@ public final class Settings {
          * @hide
          */
         public static final String NOTIFICATION_SOUND_VIB_SCREEN_ON = "notification_sound_vib_screen_on";
+        /** @hide */
+        private static final Validator NOTIFICATION_SOUND_VIB_SCREEN_ON_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * modify how the album art shows up on lockscreen
@@ -4810,20 +4827,23 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
+        /** @hide */
+        private static final Validator LOCKSCREEN_ALBUM_ART_FILTER_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
-        * Number of qs rows on landscape orientation
-        * @hide
-        */
+         * Number of qs rows on landscape orientation
+         * @hide
+         */
         public static final String QS_LAYOUT_ROWS_LANDSCAPE = "qs_layout_rows_landscape";
         /** @hide */
         private static final Validator QS_LAYOUT_ROWS_LANDSCAPE_VALIDATOR =
                 ANY_INTEGER_VALIDATOR;
 
         /**
-        * Number of qs rows on portrait orientation
-        * @hide
-        */
+         * Number of qs rows on portrait orientation
+         * @hide
+         */
         public static final String QS_LAYOUT_ROWS = "qs_layout_rows";
         /** @hide */
         private static final Validator QS_LAYOUT_ROWS_VALIDATOR =
@@ -4834,22 +4854,25 @@ public final class Settings {
          * @hide
          */
         public static final String DOZE_TRIGGER_DOUBLETAP = "doze_trigger_doubletap";
+        /** @hide */
+        private static final Validator DOZE_TRIGGER_DOUBLETAP_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
-         /**
+        /**
          * Whether to enable PULSE Edge lights
          * @hide
          */
         public static final String NOTIFICATION_PULSE = "pulse_ambient_light";
-
+        /** @hide */
         private static final Validator NOTIFICATION_PULSE_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
-         /**
+        /**
          * Pulse Ambient lights color
          * @hide
          */
         public static final String NOTIFICATION_PULSE_COLOR = "ambient_notification_light_color";
-
+        /** @hide */
         private static final Validator NOTIFICATION_PULSE_COLOR_VALIDATOR =
                 ANY_INTEGER_VALIDATOR;
 
@@ -4858,50 +4881,45 @@ public final class Settings {
          * @hide
          */
         public static final String AOD_NOTIFICATION_PULSE_TIMEOUT = "ambient_notification_light_timeout";
-
+        /** @hide */
         private static final Validator AOD_NOTIFICATION_PULSE_TIMEOUT_VALIDATOR =
                 ANY_INTEGER_VALIDATOR;
 
-         /**
+        /**
          * Whether to enable Ambient Edge lights
          * @hide
          */
-
         public static final String AOD_NOTIFICATION_PULSE = "ambient_notification_light_enabled";
-
+        /** @hide */
         private static final Validator AOD_NOTIFICATION_PULSE_VALIDATOR = BOOLEAN_VALIDATOR;
 
-         /**
+        /**
          * Whether to change aod pulse state
          * @hide
          */
-
         public static final String AOD_NOTIFICATION_PULSE_TRIGGER = "ambient_notification_light";
 
-         /**
+        /**
          * Whether Ambient Edge lights are activated
          * @hide
          */
-
         public static final String AOD_NOTIFICATION_PULSE_ACTIVATED = "ambient_notification_light_activated";
 
-         /**
+        /**
          * Whether hide everything on aod when  ambient lights are enabled
          * @hide
          */
-
         public static final String AOD_NOTIFICATION_PULSE_CLEAR = "ambient_notification_light_hide_aod";
-
+        /** @hide */
         private static final Validator AOD_NOTIFICATION_PULSE_CLEAR_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
-         /**
+        /**
          * Whether to use accent color for pulse
          * @hide
          */
-
         public static final String NOTIFICATION_PULSE_ACCENT = "ambient_notification_light_accent";
-
+        /** @hide */
         private static final Validator NOTIFICATION_PULSE_ACCENT_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
@@ -4909,7 +4927,7 @@ public final class Settings {
          * @hide
          */
         public static final String NOTIFICATION_PULSE_COLOR_AUTOMATIC = "ambient_notification_light_color_automatic";
-
+        /** @hide */
         private static final Validator NOTIFICATION_PULSE_COLOR_AUTOMATIC_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
@@ -4925,13 +4943,15 @@ public final class Settings {
          * @hide
          */
         public static final String QS_SHOW_BRIGHTNESS_ICON = "qs_show_brightness_icon";
+        /** @hide */
+        private static final Validator QS_SHOW_BRIGHTNESS_ICON_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          *  Enable statusbar double tap gesture on to put device to sleep
          * @hide
          */
         public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
-
         /** @hide */
         private static final Validator DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR =
                 BOOLEAN_VALIDATOR;
@@ -4941,12 +4961,15 @@ public final class Settings {
          * @hide
          */
         public static final String NETWORK_TRAFFIC_ARROW = "network_traffic_arrow";
+        /** @hide */
+        private static final Validator NETWORK_TRAFFIC_ARROW_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * What size to show for network traffic indicator in statusbar
          * @hide
          */
-         public static final String NETWORK_TRAFFIC_FONT_SIZE = "network_traffic_font_size";
+        public static final String NETWORK_TRAFFIC_FONT_SIZE = "network_traffic_font_size";
 
         /**
          * Show network traffic indicator
@@ -4954,14 +4977,13 @@ public final class Settings {
          * 1 - QS Header
          * @hide
          */
-         public static final String NETWORK_TRAFFIC_VIEW_LOCATION = "network_traffic_view_location";
+        public static final String NETWORK_TRAFFIC_VIEW_LOCATION = "network_traffic_view_location";
 
         /**
          * Enable/disable privacy indicators on statusbar
          * @hide
          */
         public static final String STATUSBAR_PRIVACY_INDICATORS = "statusbar_privacy_indicators";
-
         /**
          * @hide
          */
@@ -4972,6 +4994,10 @@ public final class Settings {
          * @hide
          */
         public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
+        /**
+         * @hide
+         */
+        private static final Validator THREE_FINGER_GESTURE_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * Custom button brightness value for manual mode
@@ -5004,7 +5030,6 @@ public final class Settings {
          *  @hide
          */
         public static final String NAVIGATION_HANDLE_WIDTH = "navigation_handle_width";
-
         /** @hide */
         private static final Validator NAVIGATION_HANDLE_WIDTH_VALIDATOR = ANY_INTEGER_VALIDATOR;
 
@@ -5116,6 +5141,7 @@ public final class Settings {
          * @hide
          */
         public static final String RIGHT_VERTICAL_BACK_SWIPE_APP_ACTIVITY_ACTION = "right_vertical_back_swipe_app_activity_action";
+
         /**
          * Gestures nav: long back swipe timeout
          * @hide
@@ -5132,7 +5158,6 @@ public final class Settings {
          * @hide
          */
         public static final String ASPECT_RATIO_APPS_LIST = "aspect_ratio_apps_list";
-
         /** @hide */
         private static final Validator ASPECT_RATIO_APPS_LIST_VALIDATOR = ANY_STRING_VALIDATOR;
 
@@ -5140,7 +5165,6 @@ public final class Settings {
          * @hide
          */
         public static final String ASPECT_RATIO_APPS_ENABLED = "aspect_ratio_apps_enabled";
-
         /** @hide */
         private static final Validator ASPECT_RATIO_APPS_ENABLED_VALIDATOR = BOOLEAN_VALIDATOR;
 
@@ -5149,18 +5173,23 @@ public final class Settings {
          * @hide
          */
         public static final String CHARGING_ANIMATION = "charging_animation";
+        /** @hide */
+        private static final Validator CHARGING_ANIMATION_VALIDATOR =
+               BOOLEAN_VALIDATOR;
 
         /**
          * Whether to show heads up on new music tracks
          * @hide
          */
         public static final String SHOW_MEDIA_HEADS_UP = "show_media_heads_up";
+        /** @hide */
+        private static final Validator SHOW_MEDIA_HEADS_UP_VALIDATOR =
+               BOOLEAN_VALIDATOR;
 
         /**
          * @hide
          */
         public static final String LOCK_SHOW_STATUS_BAR = "lockscreen_show_status_bar";
-
         /** @hide */
         private static final Validator LOCK_SHOW_STATUS_BAR_VALIDATOR =
                BOOLEAN_VALIDATOR;
@@ -5174,38 +5203,54 @@ public final class Settings {
          * @hide
          */
         public static final String ADAPTIVE_PLAYBACK_ENABLED = "adaptive_playback_enabled";
-
-       /**
-        * Defines the global heads up notification snooze
-        * @hide
-        */
-        public static final String HEADS_UP_NOTIFICATION_SNOOZE = "heads_up_notification_snooze";
-
         /** @hide */
-        private static final Validator HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR =
-              new SettingsValidators.InclusiveIntegerRangeValidator(0, 1200000);
+        private static final Validator ADAPTIVE_PLAYBACK_ENABLED_VALIDATOR =
+               BOOLEAN_VALIDATOR;
 
         /**
          * Adaptive playback's timeout in ms
          * @hide
          */
         public static final String ADAPTIVE_PLAYBACK_TIMEOUT = "adaptive_playback_timeout";
+        /** @hide */
+        private static final Validator ADAPTIVE_PLAYBACK_TIMEOUT_VALIDATOR =
+               BOOLEAN_VALIDATOR;
+
+        /**
+         * Defines the global heads up notification snooze
+         * @hide
+         */
+        public static final String HEADS_UP_NOTIFICATION_SNOOZE = "heads_up_notification_snooze";
+        /** @hide */
+        private static final Validator HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR =
+              new SettingsValidators.InclusiveIntegerRangeValidator(0, 1200000);
 
         /**
          * Whether the phone vibrates on call connect
          * @hide
          */
         public static final String VIBRATE_ON_CONNECT = "vibrate_on_connect";
+        /** @hide */
+        private static final Validator VIBRATE_ON_CONNECT_VALIDATOR =
+               BOOLEAN_VALIDATOR;
+
          /**
          * Whether the phone vibrates on call waiting
          * @hide
          */
         public static final String VIBRATE_ON_CALLWAITING = "vibrate_on_callwaiting";
+        /** @hide */
+        private static final Validator VIBRATE_ON_CALLWAITING_VALIDATOR =
+               BOOLEAN_VALIDATOR;
+
          /**
          * Whether the phone vibrates on disconnect
          * @hide
          */
         public static final String VIBRATE_ON_DISCONNECT = "vibrate_on_disconnect";
+        /** @hide */
+        private static final Validator VIBRATE_ON_DISCONNECT_VALIDATOR =
+               BOOLEAN_VALIDATOR;
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -5263,41 +5308,61 @@ public final class Settings {
             VIBRATE_WHEN_RINGING,
             RINGTONE,
             LOCK_TO_APP_ENABLED,
-            GESTURE_PILL_TOGGLE,
             NOTIFICATION_SOUND,
             ACCELEROMETER_ROTATION,
-            QS_SHOW_BATTERY_PERCENT,
-            QS_LAYOUT_COLUMNS,
-            QS_LAYOUT_COLUMNS_LANDSCAPE,
-            QS_LAYOUT_ROWS,
-            QS_LAYOUT_ROWS_LANDSCAPE,
             NOTIFICATION_VIBRATION_INTENSITY,
             RING_VIBRATION_INTENSITY,
             HAPTIC_FEEDBACK_INTENSITY,
             DISPLAY_COLOR_MODE,
             ALARM_ALERT,
-            HEADS_UP_NOTIFICATION_SNOOZE,
-            NOTIFICATION_PULSE,
+            //Additions
+            ADAPTIVE_PLAYBACK_ENABLED,
+            ADAPTIVE_PLAYBACK_TIMEOUT,
+            AMBIENT_WAKE_GESTURES,
             AOD_NOTIFICATION_PULSE,
             AOD_NOTIFICATION_PULSE_CLEAR,
             AOD_NOTIFICATION_PULSE_TIMEOUT,
+            ASPECT_RATIO_APPS_ENABLED,
+            ASPECT_RATIO_APPS_LIST,
+            BACK_GESTURE_BLOCK_IME,
+            BACK_GESTURE_HEIGHT,
+            CHARGING_ANIMATION,
+            DOUBLE_TAP_SLEEP_GESTURE,
+            DOZE_TRIGGER_DOUBLETAP,
+            GESTURE_PILL_TOGGLE,
+            HEADS_UP_NOTIFICATION_SNOOZE,
+            LOCK_SHOW_STATUS_BAR,
+            LOCKSCREEN_ALBUM_ART_FILTER,
+            LOCKSCREEN_BATTERY_INFO,
+            LOCKSCREEN_MEDIA_BLUR,
+            LOCKSCREEN_MEDIA_METADATA,
+            NAVIGATION_BAR_ARROW_KEYS,
+            NAVIGATION_HANDLE_WIDTH,
+            NOTIFICATION_LIGHT_PULSE,
+            NOTIFICATION_PULSE,
             NOTIFICATION_PULSE_ACCENT,
             NOTIFICATION_PULSE_COLOR,
             NOTIFICATION_PULSE_COLOR_AUTOMATIC,
-            USE_OLD_MOBILETYPE,
-            NOTIFICATION_LIGHT_PULSE,
-            STATUS_BAR_LOGO,
+            NOTIFICATION_SOUND_VIB_SCREEN_ON,
+            PULSE_ON_NEW_TRACKS,
+            QS_LAYOUT_COLUMNS,
+            QS_LAYOUT_COLUMNS_LANDSCAPE,
+            QS_LAYOUT_ROWS,
+            QS_LAYOUT_ROWS_LANDSCAPE,
+            QS_SHOW_BATTERY_PERCENT,
+            QS_SHOW_BRIGHTNESS_ICON,
+            QS_TILE_TITLE_VISIBILITY,
             SCREENSHOT_SHUTTER_SOUND,
-            DOUBLE_TAP_SLEEP_GESTURE,
-            NAVIGATION_HANDLE_WIDTH,
-            BACK_GESTURE_HEIGHT,
-            BACK_GESTURE_BLOCK_IME,
-            NAVIGATION_BAR_ARROW_KEYS,
-            LOCK_SHOW_STATUS_BAR,
-            LOCKSCREEN_MEDIA_METADATA,
-            ASPECT_RATIO_APPS_ENABLED,
-            ASPECT_RATIO_APPS_LIST,
+            SHOW_MEDIA_HEADS_UP,
             STATUSBAR_PRIVACY_INDICATORS,
+            STATUS_BAR_LOGO,
+            THREE_FINGER_GESTURE,
+            USE_OLD_MOBILETYPE,
+            VIBRATE_ON_CALLWAITING,
+            VIBRATE_ON_CONNECT,
+            VIBRATE_ON_DISCONNECT,
+            VOLTE_ICON_STYLE,
+            VOLUME_BUTTON_MUSIC_CONTROL,
         };
 
         /**
@@ -5415,47 +5480,66 @@ public final class Settings {
             PRIVATE_SETTINGS.add(LOCKSCREEN_MEDIA_METADATA);
             PRIVATE_SETTINGS.add(POINTER_SPEED);
             PRIVATE_SETTINGS.add(LOCK_TO_APP_ENABLED);
-            PRIVATE_SETTINGS.add(GESTURE_PILL_TOGGLE);
             PRIVATE_SETTINGS.add(EGG_MODE);
-            PRIVATE_SETTINGS.add(QS_SHOW_BATTERY_PERCENT);
-            PRIVATE_SETTINGS.add(QS_LAYOUT_COLUMNS);
-            PRIVATE_SETTINGS.add(QS_LAYOUT_COLUMNS_LANDSCAPE);
-            PRIVATE_SETTINGS.add(QS_LAYOUT_ROWS);
-            PRIVATE_SETTINGS.add(QS_LAYOUT_ROWS_LANDSCAPE);
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
-            PRIVATE_SETTINGS.add(HEADS_UP_NOTIFICATION_SNOOZE);
-            PRIVATE_SETTINGS.add(NOTIFICATION_PULSE);
+            //Additions
+            PRIVATE_SETTINGS.add(ADAPTIVE_PLAYBACK_ENABLED);
+            PRIVATE_SETTINGS.add(ADAPTIVE_PLAYBACK_TIMEOUT);
+            PRIVATE_SETTINGS.add(AMBIENT_WAKE_GESTURES);
             PRIVATE_SETTINGS.add(AOD_NOTIFICATION_PULSE);
             PRIVATE_SETTINGS.add(AOD_NOTIFICATION_PULSE_CLEAR);
             PRIVATE_SETTINGS.add(AOD_NOTIFICATION_PULSE_TIMEOUT);
-            PRIVATE_SETTINGS.add(NOTIFICATION_PULSE_ACCENT);
-            PRIVATE_SETTINGS.add(NOTIFICATION_PULSE_COLOR);
-            PRIVATE_SETTINGS.add(NOTIFICATION_PULSE_COLOR_AUTOMATIC);
-            PRIVATE_SETTINGS.add(SHOW_FOURG);
-            PRIVATE_SETTINGS.add(SHOW_VOLTE_ICON);
-            PRIVATE_SETTINGS.add(VOLTE_ICON_STYLE);
-            PRIVATE_SETTINGS.add(USE_OLD_MOBILETYPE);
-            PRIVATE_SETTINGS.add(SCREENSHOT_SHUTTER_SOUND);
-            PRIVATE_SETTINGS.add(NAVIGATION_HANDLE_WIDTH);
-            PRIVATE_SETTINGS.add(BACK_GESTURE_HEIGHT);
+            PRIVATE_SETTINGS.add(ASPECT_RATIO_APPS_ENABLED);
+            PRIVATE_SETTINGS.add(ASPECT_RATIO_APPS_LIST);
             PRIVATE_SETTINGS.add(BACK_GESTURE_BLOCK_IME);
-            PRIVATE_SETTINGS.add(NAVIGATION_BAR_ARROW_KEYS);
-            PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
+            PRIVATE_SETTINGS.add(BACK_GESTURE_HEIGHT);
+            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ENABLE);
+            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
+            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_TIMEOUT);
+            PRIVATE_SETTINGS.add(CHARGING_ANIMATION);
+            PRIVATE_SETTINGS.add(CUSTOM_BUTTON_BRIGHTNESS);
+            PRIVATE_SETTINGS.add(CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
+            PRIVATE_SETTINGS.add(DOZE_TRIGGER_DOUBLETAP);
+            PRIVATE_SETTINGS.add(GESTURE_PILL_TOGGLE);
             PRIVATE_SETTINGS.add(LOCK_SHOW_STATUS_BAR);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_ALBUM_ART_FILTER);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_BATTERY_INFO);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_MEDIA_BLUR);
+            PRIVATE_SETTINGS.add(HEADS_UP_NOTIFICATION_SNOOZE);
+            PRIVATE_SETTINGS.add(NAVIGATION_BAR_ARROW_KEYS);
+            PRIVATE_SETTINGS.add(NAVIGATION_HANDLE_WIDTH);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_STATE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_TYPE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_FONT_SIZE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_VIEW_LOCATION);
-            PRIVATE_SETTINGS.add(CUSTOM_BUTTON_BRIGHTNESS);
-            PRIVATE_SETTINGS.add(CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS);
-            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ENABLE);
-            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_TIMEOUT);
-            PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
-            PRIVATE_SETTINGS.add(ASPECT_RATIO_APPS_ENABLED);
-            PRIVATE_SETTINGS.add(ASPECT_RATIO_APPS_LIST);
+            PRIVATE_SETTINGS.add(NOTIFICATION_PULSE);
+            PRIVATE_SETTINGS.add(NOTIFICATION_PULSE_ACCENT);
+            PRIVATE_SETTINGS.add(NOTIFICATION_PULSE_COLOR);
+            PRIVATE_SETTINGS.add(NOTIFICATION_PULSE_COLOR_AUTOMATIC);
+            PRIVATE_SETTINGS.add(NOTIFICATION_SOUND_VIB_SCREEN_ON);
+            PRIVATE_SETTINGS.add(PULSE_ON_NEW_TRACKS);
+            PRIVATE_SETTINGS.add(QS_LAYOUT_COLUMNS);
+            PRIVATE_SETTINGS.add(QS_LAYOUT_COLUMNS_LANDSCAPE);
+            PRIVATE_SETTINGS.add(QS_LAYOUT_ROWS);
+            PRIVATE_SETTINGS.add(QS_LAYOUT_ROWS_LANDSCAPE);
+            PRIVATE_SETTINGS.add(QS_SHOW_BATTERY_PERCENT);
+            PRIVATE_SETTINGS.add(QS_SHOW_BRIGHTNESS_ICON);
+            PRIVATE_SETTINGS.add(QS_TILE_TITLE_VISIBILITY);
+            PRIVATE_SETTINGS.add(SCREENSHOT_SHUTTER_SOUND);
+            PRIVATE_SETTINGS.add(SHOW_FOURG);
+            PRIVATE_SETTINGS.add(SHOW_MEDIA_HEADS_UP);
+            PRIVATE_SETTINGS.add(SHOW_VOLTE_ICON);
+            PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
             PRIVATE_SETTINGS.add(STATUSBAR_PRIVACY_INDICATORS);
+            PRIVATE_SETTINGS.add(THREE_FINGER_GESTURE);
+            PRIVATE_SETTINGS.add(USE_OLD_MOBILETYPE);
+            PRIVATE_SETTINGS.add(VIBRATE_ON_CALLWAITING);
+            PRIVATE_SETTINGS.add(VIBRATE_ON_CONNECT);
+            PRIVATE_SETTINGS.add(VIBRATE_ON_DISCONNECT);
+            PRIVATE_SETTINGS.add(VOLTE_ICON_STYLE);
+            PRIVATE_SETTINGS.add(VOLUME_BUTTON_MUSIC_CONTROL);
         }
 
         /**
@@ -5541,47 +5625,66 @@ public final class Settings {
             VALIDATORS.put(SIP_ASK_ME_EACH_TIME, SIP_ASK_ME_EACH_TIME_VALIDATOR);
             VALIDATORS.put(POINTER_SPEED, POINTER_SPEED_VALIDATOR);
             VALIDATORS.put(LOCK_TO_APP_ENABLED, LOCK_TO_APP_ENABLED_VALIDATOR);
-            VALIDATORS.put(GESTURE_PILL_TOGGLE, GESTURE_PILL_TOGGLE_VALIDATOR);
             VALIDATORS.put(EGG_MODE, EGG_MODE_VALIDATOR);
             VALIDATORS.put(WIFI_STATIC_IP, WIFI_STATIC_IP_VALIDATOR);
             VALIDATORS.put(WIFI_STATIC_GATEWAY, WIFI_STATIC_GATEWAY_VALIDATOR);
             VALIDATORS.put(WIFI_STATIC_NETMASK, WIFI_STATIC_NETMASK_VALIDATOR);
             VALIDATORS.put(WIFI_STATIC_DNS1, WIFI_STATIC_DNS1_VALIDATOR);
             VALIDATORS.put(WIFI_STATIC_DNS2, WIFI_STATIC_DNS2_VALIDATOR);
-            VALIDATORS.put(HEADS_UP_NOTIFICATION_SNOOZE,HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR);
-            VALIDATORS.put(NOTIFICATION_PULSE, NOTIFICATION_PULSE_VALIDATOR);
+            //Additions
+            VALIDATORS.put(ADAPTIVE_PLAYBACK_ENABLED, ADAPTIVE_PLAYBACK_ENABLED_VALIDATOR);
+            VALIDATORS.put(ADAPTIVE_PLAYBACK_TIMEOUT, ADAPTIVE_PLAYBACK_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(AMBIENT_WAKE_GESTURES, AMBIENT_WAKE_GESTURES_VALIDATOR);
             VALIDATORS.put(AOD_NOTIFICATION_PULSE, AOD_NOTIFICATION_PULSE_VALIDATOR);
             VALIDATORS.put(AOD_NOTIFICATION_PULSE_CLEAR, AOD_NOTIFICATION_PULSE_CLEAR_VALIDATOR);
             VALIDATORS.put(AOD_NOTIFICATION_PULSE_TIMEOUT, AOD_NOTIFICATION_PULSE_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(ASPECT_RATIO_APPS_ENABLED, ASPECT_RATIO_APPS_ENABLED_VALIDATOR);
+            VALIDATORS.put(ASPECT_RATIO_APPS_LIST, ASPECT_RATIO_APPS_LIST_VALIDATOR);
+            VALIDATORS.put(BACK_GESTURE_BLOCK_IME,BACK_GESTURE_BLOCK_IME_VALIDATOR);
+            VALIDATORS.put(BACK_GESTURE_HEIGHT, BACK_GESTURE_HEIGHT_VALIDATOR);
+            VALIDATORS.put(CHARGING_ANIMATION, CHARGING_ANIMATION_VALIDATOR);
+            VALIDATORS.put(DOUBLE_TAP_SLEEP_GESTURE,
+                    DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR);
+            VALIDATORS.put(DOZE_TRIGGER_DOUBLETAP, DOZE_TRIGGER_DOUBLETAP_VALIDATOR);
+            VALIDATORS.put(GESTURE_PILL_TOGGLE, GESTURE_PILL_TOGGLE_VALIDATOR);
+            VALIDATORS.put(HEADS_UP_NOTIFICATION_SNOOZE,HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR);
+            VALIDATORS.put(LOCK_SHOW_STATUS_BAR, LOCK_SHOW_STATUS_BAR_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_ALBUM_ART_FILTER, LOCKSCREEN_ALBUM_ART_FILTER_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_BATTERY_INFO, LOCKSCREEN_BATTERY_INFO_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_MEDIA_BLUR, LOCKSCREEN_MEDIA_BLUR_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
+            VALIDATORS.put(NAVIGATION_BAR_ARROW_KEYS,
+                    NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
+            VALIDATORS.put(NAVIGATION_HANDLE_WIDTH, NAVIGATION_HANDLE_WIDTH_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_PULSE, NOTIFICATION_PULSE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_PULSE_ACCENT, NOTIFICATION_PULSE_ACCENT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_PULSE_COLOR, NOTIFICATION_PULSE_COLOR_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_PULSE_COLOR_AUTOMATIC,
                     NOTIFICATION_PULSE_COLOR_AUTOMATIC_VALIDATOR);
-            VALIDATORS.put(SHOW_FOURG, SHOW_FOURG_VALIDATOR);
-            VALIDATORS.put(SHOW_VOLTE_ICON, SHOW_VOLTE_ICON_VALIDATOR);
-            VALIDATORS.put(VOLTE_ICON_STYLE, VOLTE_ICON_STYLE_VALIDATOR);
-            VALIDATORS.put(QS_SHOW_BATTERY_PERCENT, QS_SHOW_BATTERY_PERCENT_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_SOUND_VIB_SCREEN_ON, NOTIFICATION_SOUND_VIB_SCREEN_ON_VALIDATOR);
+            VALIDATORS.put(PULSE_ON_NEW_TRACKS, PULSE_ON_NEW_TRACKS_VALIDATOR);
             VALIDATORS.put(QS_LAYOUT_COLUMNS, QS_LAYOUT_COLUMNS_VALIDATOR);
             VALIDATORS.put(QS_LAYOUT_COLUMNS_LANDSCAPE, QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR);
             VALIDATORS.put(QS_LAYOUT_ROWS, QS_LAYOUT_ROWS_VALIDATOR);
             VALIDATORS.put(QS_LAYOUT_ROWS_LANDSCAPE, QS_LAYOUT_ROWS_LANDSCAPE_VALIDATOR);
-            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
+            VALIDATORS.put(QS_SHOW_BATTERY_PERCENT, QS_SHOW_BATTERY_PERCENT_VALIDATOR);
+            VALIDATORS.put(QS_SHOW_BRIGHTNESS_ICON, QS_SHOW_BRIGHTNESS_ICON_VALIDATOR);
+            VALIDATORS.put(QS_TILE_TITLE_VISIBILITY, QS_TILE_TITLE_VISIBILITY_VALIDATOR);
             VALIDATORS.put(SCREENSHOT_SHUTTER_SOUND,
                     SCREENSHOT_SHUTTER_SOUND_VALIDATOR);
+            VALIDATORS.put(SHOW_FOURG, SHOW_FOURG_VALIDATOR);
+            VALIDATORS.put(SHOW_MEDIA_HEADS_UP, SHOW_MEDIA_HEADS_UP_VALIDATOR);
+            VALIDATORS.put(SHOW_VOLTE_ICON, SHOW_VOLTE_ICON_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);
-            VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
-            VALIDATORS.put(DOUBLE_TAP_SLEEP_GESTURE,
-                    DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR);
-            VALIDATORS.put(NAVIGATION_HANDLE_WIDTH, NAVIGATION_HANDLE_WIDTH_VALIDATOR);
-            VALIDATORS.put(BACK_GESTURE_HEIGHT, BACK_GESTURE_HEIGHT_VALIDATOR);
-            VALIDATORS.put(NAVIGATION_BAR_ARROW_KEYS,
-                    NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
-            VALIDATORS.put(BACK_GESTURE_BLOCK_IME,BACK_GESTURE_BLOCK_IME_VALIDATOR);
-            VALIDATORS.put(LOCK_SHOW_STATUS_BAR, LOCK_SHOW_STATUS_BAR_VALIDATOR);
-            VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
-            VALIDATORS.put(ASPECT_RATIO_APPS_ENABLED, ASPECT_RATIO_APPS_ENABLED_VALIDATOR);
-            VALIDATORS.put(ASPECT_RATIO_APPS_LIST, ASPECT_RATIO_APPS_LIST_VALIDATOR);
             VALIDATORS.put(STATUSBAR_PRIVACY_INDICATORS, STATUSBAR_PRIVACY_INDICATORS_VALIDATOR);
+            VALIDATORS.put(THREE_FINGER_GESTURE, THREE_FINGER_GESTURE_VALIDATOR);
+            VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
+            VALIDATORS.put(VIBRATE_ON_CALLWAITING, VIBRATE_ON_CALLWAITING_VALIDATOR);
+            VALIDATORS.put(VIBRATE_ON_CONNECT, VIBRATE_ON_CONNECT_VALIDATOR);
+            VALIDATORS.put(VIBRATE_ON_DISCONNECT, VIBRATE_ON_DISCONNECT_VALIDATOR);
+            VALIDATORS.put(VOLTE_ICON_STYLE, VOLTE_ICON_STYLE_VALIDATOR);
+            VALIDATORS.put(VOLUME_BUTTON_MUSIC_CONTROL, VOLUME_BUTTON_MUSIC_CONTROL_VALIDATOR);
         }
 
         /**
@@ -9651,30 +9754,6 @@ public final class Settings {
         private static final Validator LOCKDOWN_IN_POWER_MENU_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
-         * Whether the Reboot button should be shown in the power menu.
-         * @hide
-         */
-        public static final String REBOOT_IN_POWER_MENU = "reboot_in_power_menu";
-
-        /**
-         * Whether the Advanced reboot button should be shown in the power menu.
-         * @hide
-         */
-        public static final String ADVANCED_REBOOT_IN_POWER_MENU = "advanced_reboot_in_power_menu";
-
-        /**
-         * Whether the Screenshot button should be shown in the power menu.
-         * @hide
-         */
-        public static final String SCREENSHOT_IN_POWER_MENU = "screenshot_in_power_menu";
-
-        /**
-         * Whether the Screenrecord button should be shown in the power menu.
-         * @hide
-         */
-        public static final String SCREENRECORD_IN_POWER_MENU = "screenrecord_in_power_menu";
-
-        /**
          * Backup manager behavioral parameters.
          * This is encoded as a key=value list, separated by commas. Ex:
          *
@@ -10029,7 +10108,7 @@ public final class Settings {
          * @hide
          */
         public static final String VOLUME_LINK_NOTIFICATION = "volume_link_notification";
-
+        /** @hide */
         private static final Validator VOLUME_LINK_NOTIFICATION_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
@@ -10045,12 +10124,18 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer";
+        /** @hide */
+        private static final Validator LOCKSCREEN_VISUALIZER_ENABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Ambient Display Visualizer
          * @hide
          */
         public static final String AMBIENT_VISUALIZER_ENABLED = "ambient_visualizer";
+        /** @hide */
+        private static final Validator AMBIENT_VISUALIZER_ENABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Lockscreen lavalamp psychedelic colors
@@ -10093,8 +10178,45 @@ public final class Settings {
          * @hide
          */
         public static final String TAP_GESTURE = "tap_gesture";
-
+        /** @hide */
         private static final Validator TAP_GESTURE_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
+         * Whether the Reboot button should be shown in the power menu.
+         * @hide
+         */
+        public static final String REBOOT_IN_POWER_MENU = "reboot_in_power_menu";
+        /** @hide */
+        private static final Validator REBOOT_IN_POWER_MENU_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Whether the Advanced reboot button should be shown in the power menu.
+         * @hide
+         */
+        public static final String ADVANCED_REBOOT_IN_POWER_MENU = "advanced_reboot_in_power_menu";
+        /** @hide */
+        private static final Validator ADVANCED_REBOOT_IN_POWER_MENU_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Whether the Screenshot button should be shown in the power menu.
+         * @hide
+         */
+        public static final String SCREENSHOT_IN_POWER_MENU = "screenshot_in_power_menu";
+        /** @hide */
+        private static final Validator SCREENSHOT_IN_POWER_MENU_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Whether the Screenrecord button should be shown in the power menu.
+         * @hide
+         */
+        public static final String SCREENRECORD_IN_POWER_MENU = "screenrecord_in_power_menu";
+        /** @hide */
+        private static final Validator SCREENRECORD_IN_POWER_MENU_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
 
         /**
          * This are the settings to be backed up.
@@ -10234,13 +10356,19 @@ public final class Settings {
             AWARE_LOCK_ENABLED,
             AWARE_TAP_PAUSE_GESTURE_COUNT,
             AWARE_TAP_PAUSE_TOUCH_COUNT,
-            VOLUME_LINK_NOTIFICATION,
-            STATUSBAR_CLOCK_SECONDS,
             STATUS_BAR_CLOCK,
             STATUSBAR_CLOCK_AM_PM_STYLE,
             STATUSBAR_CLOCK_DATE_DISPLAY,
-            STATUSBAR_CLOCK_DATE_STYLE,
             STATUSBAR_CLOCK_DATE_FORMAT,
+            STATUSBAR_CLOCK_DATE_STYLE,
+            STATUSBAR_CLOCK_SECONDS,
+            VOLUME_LINK_NOTIFICATION,
+            REBOOT_IN_POWER_MENU,
+            ADVANCED_REBOOT_IN_POWER_MENU,
+            SCREENSHOT_IN_POWER_MENU,
+            SCREENRECORD_IN_POWER_MENU,
+            AMBIENT_VISUALIZER_ENABLED,
+            LOCKSCREEN_VISUALIZER_ENABLED,
         };
 
         /**
@@ -10441,17 +10569,23 @@ public final class Settings {
             VALIDATORS.put(AWARE_LOCK_ENABLED, AWARE_LOCK_ENABLED_VALIDATOR);
             VALIDATORS.put(AWARE_TAP_PAUSE_GESTURE_COUNT, NON_NEGATIVE_INTEGER_VALIDATOR);
             VALIDATORS.put(AWARE_TAP_PAUSE_TOUCH_COUNT, NON_NEGATIVE_INTEGER_VALIDATOR);
-            VALIDATORS.put(TAP_GESTURE, TAP_GESTURE_VALIDATOR);
-            VALIDATORS.put(DOZE_ON_CHARGE_NOW, DOZE_ON_CHARGE_NOW_VALIDATOR);
             VALIDATORS.put(DOZE_ON_CHARGE, DOZE_ON_CHARGE_VALIDATOR);
-            VALIDATORS.put(VOLUME_LINK_NOTIFICATION, VOLUME_LINK_NOTIFICATION_VALIDATOR);
+            VALIDATORS.put(DOZE_ON_CHARGE_NOW, DOZE_ON_CHARGE_NOW_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_CLOCK, STATUS_BAR_CLOCK_VALIDATOR);
-            VALIDATORS.put(STATUSBAR_CLOCK_SECONDS, STATUSBAR_CLOCK_SECONDS_VALIDATOR);
             VALIDATORS.put(STATUSBAR_CLOCK_AM_PM_STYLE, STATUSBAR_CLOCK_AM_PM_STYLE_VALIDATOR);
-            VALIDATORS.put(STATUSBAR_CLOCK_DATE_STYLE, STATUSBAR_CLOCK_DATE_STYLE_VALIDATOR);
-            VALIDATORS.put(STATUSBAR_CLOCK_DATE_FORMAT, STATUSBAR_CLOCK_DATE_FORMAT_VALIDATOR);
             VALIDATORS.put(STATUSBAR_CLOCK_DATE_DISPLAY, STATUSBAR_CLOCK_DATE_DISPLAY_VALIDATOR);
+            VALIDATORS.put(STATUSBAR_CLOCK_DATE_FORMAT, STATUSBAR_CLOCK_DATE_FORMAT_VALIDATOR);
+            VALIDATORS.put(STATUSBAR_CLOCK_DATE_STYLE, STATUSBAR_CLOCK_DATE_STYLE_VALIDATOR);
+            VALIDATORS.put(STATUSBAR_CLOCK_SECONDS, STATUSBAR_CLOCK_SECONDS_VALIDATOR);
             VALIDATORS.put(STATUSBAR_CLOCK_POSITION, STATUSBAR_CLOCK_POSITION_VALIDATOR);
+            VALIDATORS.put(TAP_GESTURE, TAP_GESTURE_VALIDATOR);
+            VALIDATORS.put(VOLUME_LINK_NOTIFICATION, VOLUME_LINK_NOTIFICATION_VALIDATOR);
+            VALIDATORS.put(REBOOT_IN_POWER_MENU, REBOOT_IN_POWER_MENU_VALIDATOR);
+            VALIDATORS.put(ADVANCED_REBOOT_IN_POWER_MENU, ADVANCED_REBOOT_IN_POWER_MENU_VALIDATOR);
+            VALIDATORS.put(SCREENSHOT_IN_POWER_MENU, SCREENSHOT_IN_POWER_MENU_VALIDATOR);
+            VALIDATORS.put(SCREENRECORD_IN_POWER_MENU, SCREENRECORD_IN_POWER_MENU_VALIDATOR);
+            VALIDATORS.put(AMBIENT_VISUALIZER_ENABLED, AMBIENT_VISUALIZER_ENABLED_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_VISUALIZER_ENABLED, LOCKSCREEN_VISUALIZER_ENABLED_VALIDATOR);
         }
 
         /**
