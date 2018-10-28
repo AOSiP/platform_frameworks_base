@@ -4151,29 +4151,52 @@ public final class Settings {
          * @hide
          */
         public static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
+        /** @hide */
+        private static final Validator SHOW_CLEAR_ALL_RECENTS_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
-        /**
+         /**
          * location of the clear all rectents button
          * @hide
          */
-        public static final String  RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+        public static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+        /** @hide */
+        private static final Validator RECENTS_CLEAR_ALL_LOCATION_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * @hide
          */
         public static final String QS_LAYOUT_COLUMNS = "qs_layout_columns";
+         /** @hide */
+        private static final Validator QS_LAYOUT_COLUMNS_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Number of qs columns on landscape orientation
          * @hide
          */
         public static final String QS_LAYOUT_COLUMNS_LANDSCAPE = "qs_layout_columns_landscape";
+         /** @hide */
+        private static final Validator QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Whether to display qs tile titles in the qs panel
          * @hide
          */
         public static final String QS_TILE_HIDE_TITLE = "qs_tile_hide_title";
+        /** @hide */
+        private static final Validator QS_TILE_HIDE_TITLE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * @hide
+         */
+        public static final String OMNI_QS_QUICKBAR_COLUMNS = "qs_quickbar_columns";
+         /** @hide */
+        private static final Validator OMNI_QS_QUICKBAR_COLUMNS_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Whether to display the reboot option in the power menu
@@ -4181,6 +4204,9 @@ public final class Settings {
          * @hide
          */
         public static final String POWERMENU_REBOOT = "powermenu_reboot";
+        /** @hide */
+        private static final Validator POWERMENU_REBOOT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Whether to display the advanced reboot option in the power menu
@@ -4188,6 +4214,9 @@ public final class Settings {
          * @hide
          */
         public static final String POWERMENU_ADVANCED_REBOOT = "powermenu_advanced_reboot";
+        /** @hide */
+        private static final Validator POWERMENU_ADVANCED_REBOOT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Whether to display the screenshot option in the power menu
@@ -4195,6 +4224,9 @@ public final class Settings {
          * @hide
          */
         public static final String POWERMENU_SCREENSHOT = "powermenu_screenshot";
+        /** @hide */
+        private static final Validator POWERMENU_SCREENSHOT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Whether to display the airplane option in the power menu
@@ -4202,6 +4234,9 @@ public final class Settings {
          * @hide
          */
         public static final String POWERMENU_AIRPLANE = "powermenu_airplane";
+        /** @hide */
+        private static final Validator POWERMENU_AIRPLANE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
          /**
          * Show or hide clock
@@ -4210,7 +4245,6 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_CLOCK = "status_bar_clock";
-
         /** @hide */
         public static final Validator STATUS_BAR_CLOCK_VALIDATOR = BOOLEAN_VALIDATOR;
 
@@ -4222,7 +4256,6 @@ public final class Settings {
          * @hide
          */
         public static final String STATUSBAR_CLOCK_STYLE = "statusbar_clock_style";
-
         /** @hide */
         public static final Validator STATUSBAR_CLOCK_STYLE_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
@@ -4234,7 +4267,6 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_CLOCK_SECONDS = "status_bar_clock_seconds";
-
         /** @hide */
         public static final Validator STATUS_BAR_CLOCK_SECONDS_VALIDATOR = BOOLEAN_VALIDATOR;
 
@@ -4246,7 +4278,6 @@ public final class Settings {
          * @hide
          */
         public static final String STATUSBAR_CLOCK_AM_PM_STYLE = "statusbar_clock_am_pm_style";
-
         /** @hide */
         public static final Validator STATUSBAR_CLOCK_AM_PM_STYLE_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
@@ -4259,7 +4290,6 @@ public final class Settings {
          * @hide
          */
         public static final String STATUSBAR_CLOCK_DATE_DISPLAY = "statusbar_clock_date_display";
-
         /** @hide */
         public static final Validator STATUSBAR_CLOCK_DATE_DISPLAY_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
@@ -4331,7 +4361,6 @@ public final class Settings {
          * @hide
          */
         public static final String STATUSBAR_CLOCK_DATE_STYLE = "statusbar_clock_date_style";
-
         /** @hide */
         public static final Validator STATUSBAR_CLOCK_DATE_STYLE_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
@@ -4341,106 +4370,95 @@ public final class Settings {
           * @hide
           */
          public static final String LOCKSCREEN_CHARGING_CURRENT = "lockscreen_charging_current";
+        /** @hide */
+        private static final Validator LOCKSCREEN_CHARGING_CURRENT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Stores the java DateFormat string for the date
          * @hide
          */
         public static final String STATUSBAR_CLOCK_DATE_FORMAT = "statusbar_clock_date_format";
-
         /** @hide */
         public static final Validator STATUSBAR_CLOCK_DATE_FORMAT_VALIDATOR = ANY_STRING_VALIDATOR;
-
-        /**
-         * @hide
-         */
-        public static final String OMNI_QS_QUICKBAR_COLUMNS = "qs_quickbar_columns";
-         /** @hide */
-        private static final Validator OMNI_QS_QUICKBAR_COLUMNS_VALIDATOR =
-                ANY_INTEGER_VALIDATOR;
 
         /**
          *  Enable statusbar double tap gesture on to put device to sleep
          * @hide
          */
         public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
+        /** @hide */
+        private static final Validator DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Enable double tap gesture anywhere on the lock screen put device to sleep
          * @hide
          */
         public static final String DOUBLE_TAP_SLEEP_ANYWHERE = "double_tap_sleep_anywhere";
+        /** @hide */
+        private static final Validator DOUBLE_TAP_SLEEP_ANYWHERE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Whether to show media art on lockscreen
          * @hide
          */
         public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
-
-        /**
-         * 0 - fullscreen
-         * 1 - partial
-         * @hide
-         */
-        public static final String SCREENSHOT_DEFAULT_MODE = "screenshot_default_mode";
+        /** @hide */
+        private static final Validator LOCKSCREEN_MEDIA_METADATA_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Allow all rotations.
          * @hide
          */
         public static final String ACCELEROMETER_ROTATION_ANGLES = "accelerometer_rotation_angles";
+        /** @hide */
+        private static final Validator ACCELEROMETER_ROTATION_ANGLES_VALIDATOR =
+                ANY_STRING_VALIDATOR;
 
         /**
          * Change volume up and down handlign based on rotation
          * @hide
          */
         public static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+        /** @hide */
+        private static final Validator SWAP_VOLUME_BUTTONS_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Toast icon
          * @hide
          */
         public static final String TOAST_ICON = "toast_icon";
+        /** @hide */
+        private static final Validator TOAST_ICON_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Volume rocker wake
          * @hide
          */
         public static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
+        /** @hide */
+        private static final Validator VOLUME_ROCKER_WAKE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * @hide
          */
         public static final String VOLUME_BUTTON_MUSIC_CONTROL = "volume_button_music_control";
+        /** @hide */
+        private static final Validator VOLUME_BUTTON_MUSIC_CONTROL_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * @hide
          */
         public static final String STATUSBAR_HIDE_NOTCH = "statusbar_hide_notch";
-
         /** @hide */
         private static final Validator STATUSBAR_HIDE_NOTCH_VALIDATOR = BOOLEAN_VALIDATOR;
-
-        /**
-         * Change quick settings tiles animation style
-         *
-         * @hide
-         */
-        public static final String ANIM_TILE_STYLE = "anim_tile_style";
-
-        /**
-         * Change quick settings tiles animation duration
-         *
-         * @hide
-         */
-        public static final String ANIM_TILE_DURATION = "anim_tile_duration";
-
-        /**
-         * Change quick settings tiles interpolator
-         *
-         * @hide
-         */
-        public static final String ANIM_TILE_INTERPOLATOR = "anim_tile_interpolator";
 
         /**
          * Whether to enable status and navigation bar color in battery saver mode.
@@ -4448,40 +4466,58 @@ public final class Settings {
          * @hide
          */
         public static final String HEADS_UP_TIMEOUT = "heads_up_timeout";
+         /** @hide */
+        private static final Validator HEADS_UP_TIMEOUT_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Defines the global heads up notification snooze
          * @hide
          */
         public static final String HEADS_UP_NOTIFICATION_SNOOZE = "heads_up_notification_snooze";
+         /** @hide */
+        private static final Validator HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * volume answer
          * @hide
          */
         public static final String ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER = "call_volume_answer";
+        /** @hide */
+        private static final Validator ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Whether to scramble a pin unlock layout
          * @hide
          */
         public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT = "lockscreen_scramble_pin_layout";
-      
+              /** @hide */
+        private static final Validator LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
         /**
          * Whether to use the custom quick unlock screen control
          * @hide
          */
         public static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL =
                 "lockscreen_quick_unlock_control";
+        /** @hide */
+        private static final Validator LOCKSCREEN_QUICK_UNLOCK_CONTROL_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * 0 - wallpaper based
          * 1 - force light
          * 2 - force dark
-         * 2 - force blackaf
+         * 3 - force blackaf
          * @hide
          */
         public static final String SYSTEM_THEME = "system_theme";
+        /** @hide */
+        public static final Validator SYSTEM_THEME_VALIDATOR =
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 3);
 
         /**
          * Select various accents to go along with system themes
@@ -4489,21 +4525,25 @@ public final class Settings {
          * @hide
          */
         public static final String ACCENT_PICKER = "accent_picker";
+        /** @hide */
+        public static final Validator ACCENT_PICKER_VALIDATOR =
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 28);
 
         /**
          * @hide
          */
         public static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";
-
         /** @hide */
         private static final Validator USE_OLD_MOBILETYPE_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * Screenshod sound enable, This is the noise made when taking a screesnhot
-         * Defaults to 1 - sounds enabled
+         * Defaults to 0 - sounds disabled
          * @hide
          */
         public static final String SCREENSHOT_SHUTTER_SOUND = "screenshot_shutter_sound";
+        /** @hide */
+        private static final Validator SCREENSHOT_SHUTTER_SOUND_VALIDATOR = BOOLEAN_VALIDATOR;
 
          /**
          * Status bar carrier label
@@ -4514,6 +4554,9 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_SHOW_CARRIER = "status_bar_show_carrier";
+        /** @hide */
+        public static final Validator STATUS_BAR_SHOW_CARRIER_VALIDATOR =
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 3);
 
         /**
          * custom carrier label. The value is
@@ -4521,6 +4564,9 @@ public final class Settings {
          * @hide
          */
         public static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+        /** @hide */
+        private static final Validator CUSTOM_CARRIER_LABEL_VALIDATOR =
+                ANY_STRING_VALIDATOR;
 
         /**
          * Whether to mute annoying notifications
@@ -4547,24 +4593,76 @@ public final class Settings {
          * @hide
          */
         public static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
+        /** @hide */
+        private static final Validator NETWORK_TRAFFIC_STATE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Whether or not to hide the network traffic indicator when there is no activity
          * @hide
          */
         public static final String NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide";
+        /** @hide */
+        private static final Validator NETWORK_TRAFFIC_AUTOHIDE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Network traffic inactivity threshold (default is 1 kBs)
          * @hide
          */
         public static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
+         /** @hide */
+        private static final Validator NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Whether to disable showing arrows in network traffic indicators
          * @hide
          */
         public static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
+        /** @hide */
+        private static final Validator NETWORK_TRAFFIC_HIDEARROW_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * 0 - fullscreen
+         * 1 - partial
+         * @hide
+         */
+        public static final String SCREENSHOT_DEFAULT_MODE = "screenshot_default_mode";
+        /** @hide */
+        public static final Validator SCREENSHOT_DEFAULT_MODE_VALIDATOR =
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 1);
+
+        /**
+         * Change quick settings tiles animation style
+         *
+         * @hide
+         */
+        public static final String ANIM_TILE_STYLE = "anim_tile_style";
+        /** @hide */
+        private static final Validator ANIM_TILE_STYLE_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
+         * Change quick settings tiles animation duration
+         *
+         * @hide
+         */
+        public static final String ANIM_TILE_DURATION = "anim_tile_duration";
+        /** @hide */
+        private static final Validator ANIM_TILE_DURATION_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
+         * Change quick settings tiles interpolator
+         *
+         * @hide
+         */
+        public static final String ANIM_TILE_INTERPOLATOR = "anim_tile_interpolator";
+        /** @hide */
+        private static final Validator ANIM_TILE_INTERPOLATOR_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -4626,6 +4724,9 @@ public final class Settings {
             HAPTIC_FEEDBACK_INTENSITY,
             DISPLAY_COLOR_MODE,
             OMNI_QS_QUICKBAR_COLUMNS,
+            QS_LAYOUT_COLUMNS_LANDSCAPE,
+            QS_LAYOUT_COLUMNS,
+            QS_TILE_HIDE_TITLE,
             STATUS_BAR_CLOCK,
             STATUSBAR_CLOCK_STYLE,
             STATUS_BAR_CLOCK_SECONDS,
@@ -4643,7 +4744,39 @@ public final class Settings {
             BATTERY_LIGHT_FULL_COLOR,
             BATTERY_LIGHT_REALLYFULL_COLOR,
             NOTIFICATION_SOUND_VIB_SCREEN_ON,
-
+            SHOW_CLEAR_ALL_RECENTS,
+            RECENTS_CLEAR_ALL_LOCATION,
+            POWERMENU_SCREENSHOT,
+            POWERMENU_AIRPLANE,
+            POWERMENU_ADVANCED_REBOOT,
+            POWERMENU_REBOOT,
+            LOCKSCREEN_CHARGING_CURRENT,
+            DOUBLE_TAP_SLEEP_GESTURE,
+            DOUBLE_TAP_SLEEP_ANYWHERE,
+            LOCKSCREEN_MEDIA_METADATA,
+            ACCELEROMETER_ROTATION_ANGLES,
+            SWAP_VOLUME_BUTTONS,
+            TOAST_ICON,
+            VOLUME_ROCKER_WAKE,
+            VOLUME_BUTTON_MUSIC_CONTROL,
+            HEADS_UP_TIMEOUT,
+            HEADS_UP_NOTIFICATION_SNOOZE,
+            ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER,
+            LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+            LOCKSCREEN_QUICK_UNLOCK_CONTROL,
+            SYSTEM_THEME,
+            ACCENT_PICKER,
+            SCREENSHOT_SHUTTER_SOUND,
+            STATUS_BAR_SHOW_CARRIER,
+            CUSTOM_CARRIER_LABEL,
+            NETWORK_TRAFFIC_STATE,
+            NETWORK_TRAFFIC_AUTOHIDE,
+            NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD,
+            NETWORK_TRAFFIC_HIDEARROW,
+            SCREENSHOT_DEFAULT_MODE,
+            ANIM_TILE_STYLE,
+            ANIM_TILE_DURATION,
+            ANIM_TILE_INTERPOLATOR,
         };
 
         /**
@@ -4784,6 +4917,39 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_FULL_COLOR);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_REALLYFULL_COLOR);
             PRIVATE_SETTINGS.add(NOTIFICATION_SOUND_VIB_SCREEN_ON);
+            PRIVATE_SETTINGS.add(SHOW_CLEAR_ALL_RECENTS);
+            PRIVATE_SETTINGS.add(RECENTS_CLEAR_ALL_LOCATION);
+            PRIVATE_SETTINGS.add(POWERMENU_AIRPLANE);
+            PRIVATE_SETTINGS.add(POWERMENU_REBOOT);
+            PRIVATE_SETTINGS.add(POWERMENU_ADVANCED_REBOOT);
+            PRIVATE_SETTINGS.add(POWERMENU_SCREENSHOT);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_CHARGING_CURRENT);
+            PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
+            PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_ANYWHERE);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_MEDIA_METADATA);
+            PRIVATE_SETTINGS.add(ACCELEROMETER_ROTATION_ANGLES);
+            PRIVATE_SETTINGS.add(SWAP_VOLUME_BUTTONS);
+            PRIVATE_SETTINGS.add(TOAST_ICON);
+            PRIVATE_SETTINGS.add(VOLUME_ROCKER_WAKE);
+            PRIVATE_SETTINGS.add(VOLUME_BUTTON_MUSIC_CONTROL);
+            PRIVATE_SETTINGS.add(HEADS_UP_TIMEOUT);
+            PRIVATE_SETTINGS.add(HEADS_UP_NOTIFICATION_SNOOZE);
+            PRIVATE_SETTINGS.add(ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_QUICK_UNLOCK_CONTROL);
+            PRIVATE_SETTINGS.add(SYSTEM_THEME);
+            PRIVATE_SETTINGS.add(ACCENT_PICKER);
+            PRIVATE_SETTINGS.add(SCREENSHOT_SHUTTER_SOUND);
+            PRIVATE_SETTINGS.add(STATUS_BAR_SHOW_CARRIER);
+            PRIVATE_SETTINGS.add(CUSTOM_CARRIER_LABEL);
+            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_STATE);
+            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE);
+            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
+            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_HIDEARROW);
+            PRIVATE_SETTINGS.add(SCREENSHOT_DEFAULT_MODE);
+            PRIVATE_SETTINGS.add(ANIM_TILE_STYLE);
+            PRIVATE_SETTINGS.add(ANIM_TILE_DURATION);
+            PRIVATE_SETTINGS.add(ANIM_TILE_INTERPOLATOR);
         }
 
         /**
@@ -4873,6 +5039,9 @@ public final class Settings {
             VALIDATORS.put(WIFI_STATIC_DNS2, WIFI_STATIC_DNS2_VALIDATOR);
             VALIDATORS.put(SHOW_BATTERY_PERCENT, SHOW_BATTERY_PERCENT_VALIDATOR);
             VALIDATORS.put(OMNI_QS_QUICKBAR_COLUMNS, OMNI_QS_QUICKBAR_COLUMNS_VALIDATOR);
+            VALIDATORS.put(QS_LAYOUT_COLUMNS_LANDSCAPE, QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR);
+            VALIDATORS.put(QS_LAYOUT_COLUMNS, QS_LAYOUT_COLUMNS_VALIDATOR);
+            VALIDATORS.put(QS_TILE_HIDE_TITLE, QS_TILE_HIDE_TITLE_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_CLOCK, STATUS_BAR_CLOCK_VALIDATOR);
             VALIDATORS.put(STATUSBAR_CLOCK_STYLE, STATUSBAR_CLOCK_STYLE_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_CLOCK_SECONDS, STATUS_BAR_CLOCK_SECONDS_VALIDATOR);
@@ -4891,6 +5060,38 @@ public final class Settings {
             VALIDATORS.put(BATTERY_LIGHT_FULL_COLOR, BATTERY_LIGHT_FULL_COLOR_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_REALLYFULL_COLOR, BATTERY_LIGHT_REALLYFULL_COLOR_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_SOUND_VIB_SCREEN_ON, NOTIFICATION_SOUND_VIB_SCREEN_ON_VALIDATOR);
+            VALIDATORS.put(SHOW_CLEAR_ALL_RECENTS, SHOW_CLEAR_ALL_RECENTS_VALIDATOR);
+            VALIDATORS.put(RECENTS_CLEAR_ALL_LOCATION, RECENTS_CLEAR_ALL_LOCATION_VALIDATOR);
+            VALIDATORS.put(POWERMENU_SCREENSHOT, POWERMENU_SCREENSHOT_VALIDATOR);
+            VALIDATORS.put(POWERMENU_AIRPLANE, POWERMENU_AIRPLANE_VALIDATOR);
+            VALIDATORS.put(POWERMENU_REBOOT, POWERMENU_REBOOT_VALIDATOR);
+            VALIDATORS.put(POWERMENU_ADVANCED_REBOOT, POWERMENU_ADVANCED_REBOOT_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_CHARGING_CURRENT, LOCKSCREEN_CHARGING_CURRENT_VALIDATOR);
+            VALIDATORS.put(DOUBLE_TAP_SLEEP_GESTURE, DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR);
+            VALIDATORS.put(DOUBLE_TAP_SLEEP_ANYWHERE, DOUBLE_TAP_SLEEP_ANYWHERE_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
+            VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES, ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
+            VALIDATORS.put(SWAP_VOLUME_BUTTONS, SWAP_VOLUME_BUTTONS_VALIDATOR);
+            VALIDATORS.put(VOLUME_ROCKER_WAKE, VOLUME_ROCKER_WAKE_VALIDATOR);
+            VALIDATORS.put(VOLUME_BUTTON_MUSIC_CONTROL, VOLUME_BUTTON_MUSIC_CONTROL_VALIDATOR);
+            VALIDATORS.put(HEADS_UP_TIMEOUT, HEADS_UP_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(HEADS_UP_NOTIFICATION_SNOOZE, HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR);
+            VALIDATORS.put(ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_QUICK_UNLOCK_CONTROL, LOCKSCREEN_QUICK_UNLOCK_CONTROL_VALIDATOR);
+            VALIDATORS.put(SYSTEM_THEME, SYSTEM_THEME_VALIDATOR);
+            VALIDATORS.put(ACCENT_PICKER, ACCENT_PICKER_VALIDATOR);
+            VALIDATORS.put(SCREENSHOT_SHUTTER_SOUND, SCREENSHOT_SHUTTER_SOUND_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_SHOW_CARRIER, STATUS_BAR_SHOW_CARRIER_VALIDATOR);
+            VALIDATORS.put(CUSTOM_CARRIER_LABEL, CUSTOM_CARRIER_LABEL_VALIDATOR);
+            VALIDATORS.put(NETWORK_TRAFFIC_STATE, NETWORK_TRAFFIC_STATE_VALIDATOR);
+            VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE, NETWORK_TRAFFIC_AUTOHIDE_VALIDATOR);
+            VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD_VALIDATOR);
+            VALIDATORS.put(NETWORK_TRAFFIC_HIDEARROW, NETWORK_TRAFFIC_HIDEARROW_VALIDATOR);
+            VALIDATORS.put(SCREENSHOT_DEFAULT_MODE, SCREENSHOT_DEFAULT_MODE_VALIDATOR);
+            VALIDATORS.put(ANIM_TILE_STYLE, ANIM_TILE_STYLE_VALIDATOR);
+            VALIDATORS.put(ANIM_TILE_DURATION, ANIM_TILE_DURATION_VALIDATOR);
+            VALIDATORS.put(ANIM_TILE_INTERPOLATOR, ANIM_TILE_INTERPOLATOR_VALIDATOR);
         }
 
         /**
