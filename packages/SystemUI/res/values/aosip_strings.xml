@@ -244,5 +244,6 @@
     <string name="notification_section_header_alerting">Alerting notifications</string>
 
     <string name="tuner_status_bar_bg_transparency">Transparent status bar background</string>
+    <string name="tuner_show_drag_handle">Show drag handle</string>
 
 </resources>
