@@ -191,5 +191,6 @@
     <string name="tuner_status_bar_bg_transparency">Transparent status bar background</string>
     <string name="tuner_keyguard_show_lock_icon_title">Show lock status</string>
     <string name="tuner_keyguard_show_lock_icon_summary">Show current lock status icon on top</string>
+    <string name="tuner_show_drag_handle">Show drag handle</string>
 
 </resources>
