@@ -584,7 +584,9 @@ public class KeyguardIndicationController implements StateListener,
             Settings.System.LOCKSCREEN_BATTERY_INFO_TEMP_UNIT, 0, UserHandle.USER_CURRENT) == 0;
          if (showbatteryInfo) {
             if (mChargingCurrent > 0) {
-                batteryInfo = batteryInfo + (mChargingCurrent / 1000) + "mA";
+                batteryInfo = batteryInfo + (mChargingCurrent < 5 ?
+                        (mChargingCurrent * 1000) : (mChargingCurrent < 4000 ?
+                        mChargingCurrent : (mChargingCurrent / 1000))) + "mA";
             }
             if (mChargingWattage > 0) {
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
