@@ -17,13 +17,14 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Power menu -->
-    <color name="power_menu_power_off">#ff202020</color>
-    <color name="power_menu_hot_reboot">#ff202020</color>
-    <color name="power_menu_restart">#ff202020</color>
-    <color name="power_menu_restart_advanced">#ff202020</color>
-    <color name="power_menu_advanced_bootloader">#ff202020</color>
-    <color name="power_menu_advanced_recovery">#ff202020</color>
-    <color name="power_menu_advanced_system_restart_ui">#ff202020</color>
-    <color name="power_menu_screenshot">#ff202020</color>
+    <color name="power_menu_power_off">#ff4285F4</color>
+    <color name="power_menu_hot_reboot">#ff4285F4</color>
+    <color name="power_menu_restart">#ff4285F4</color>
+    <color name="power_menu_restart_advanced">#ff4285F4</color>
+    <color name="power_menu_advanced_bootloader">#ff4285F4</color>
+    <color name="power_menu_advanced_recovery">#ff4285F4</color>
+    <color name="power_menu_advanced_system_restart_ui">#ff4285F4</color>
+    <color name="power_menu_lockdown">#ff4285F4</color>
+    <color name="power_menu_screenshot">#ff4285F4</color>
 
 </resources>

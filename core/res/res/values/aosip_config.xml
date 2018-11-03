@@ -20,6 +20,7 @@
         <item>power</item>
         <item>restart</item>
         <item>advanced</item>
+        <item>lockdown</item>
         <item>screenshot</item>
     </string-array>
 
