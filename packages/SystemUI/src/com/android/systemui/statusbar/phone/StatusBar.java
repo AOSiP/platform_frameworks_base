@@ -5187,6 +5187,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_TILE_STYLE),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.PULSE_APPS_BLACKLIST),
+                    false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -5203,16 +5206,26 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.USE_OLD_MOBILETYPE))) {
                 mCommandQueue.restartUI();
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_APPS_BLACKLIST))) {
+                setPulseBlacklist();
             }
         }
 
         public void update() {
             ContentResolver resolver = mContext.getContentResolver();
+            setPulseBlacklist();
             USE_OLD_MOBILETYPE = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.USE_OLD_MOBILETYPE, 0,
                     UserHandle.USER_CURRENT) != 0;
             TelephonyIcons.updateIcons(USE_OLD_MOBILETYPE);
+            setPulseBlacklist();
         }
+    }
+
+    private void setPulseBlacklist() {
+        String blacklist = Settings.System.getStringForUser(mContext.getContentResolver(),
+                Settings.System.PULSE_APPS_BLACKLIST, UserHandle.USER_CURRENT);
+        getMediaManager().setPulseBlacklist(blacklist);
     }
 
     private final BroadcastReceiver mBannerActionBroadcastReceiver = new BroadcastReceiver() {
