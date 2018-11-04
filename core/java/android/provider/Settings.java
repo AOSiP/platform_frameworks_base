@@ -4503,6 +4503,12 @@ public final class Settings {
         public static final Validator STATUSBAR_CLOCK_DATE_FORMAT_VALIDATOR = ANY_STRING_VALIDATOR;
 
         /**
+         * Apps to skip for Pulse
+         * @hide
+         */
+        public static final String PULSE_APPS_BLACKLIST = "pulse_apps_blacklist";
+
+        /**
          * @hide
          */
         public static final String QS_QUICKBAR_COLUMNS = "qs_quickbar_columns";
