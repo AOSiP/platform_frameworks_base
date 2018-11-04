@@ -5704,6 +5704,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.LOCKSCREEN_ALBUM_ART_FILTER),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.PULSE_APPS_BLACKLIST),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5735,6 +5738,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.LOCKSCREEN_ALBUM_ART_FILTER))) {
                 updateLockscreenFilter();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.PULSE_APPS_BLACKLIST))) {
+                setPulseBlacklist();
             }
         }
 
@@ -5745,6 +5751,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             updateTheme(false);
             updateLockscreenFilter();
             setOldMobileType();
+            setPulseBlacklist();
         }
     }
 
@@ -5795,7 +5802,13 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         mAlbumArtFilter = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, 0,
                 UserHandle.USER_CURRENT);
-      }
+    }
+
+    private void setPulseBlacklist() {
+        String blacklist = Settings.System.getStringForUser(mContext.getContentResolver(),
+                Settings.System.PULSE_APPS_BLACKLIST, UserHandle.USER_CURRENT);
+        getMediaManager().setPulseBlacklist(blacklist);
+    }
 
     private final BroadcastReceiver mBannerActionBroadcastReceiver = new BroadcastReceiver() {
         @Override
