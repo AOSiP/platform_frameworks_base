@@ -4772,6 +4772,12 @@ public final class Settings {
         public static final Validator INCREASING_RING_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
+        /*
+         * Whether to use smart clock or not
+         * @hide
+         */
+        public static final String SMART_CLOCK_ENABLE = "smart_clock_enable";
+
         /**
          * Start volume fraction for increasing ring volume
          * @hide
