@@ -55,6 +55,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 
+import java.lang.Runnable;
+
 /**
  * Contains the collapsed status bar and handles hiding/showing based on disable flags
  * and keyguard state. Also manages lifecycle to make sure the views it contains are being
@@ -82,6 +84,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private LinearLayout mCenterClockLayout;
     private Handler mHandler;
     private ContentResolver mContentResolver;
+    private Handler smartClockHandler = new Handler();
+    private static final int HIDE_DURATION = 60*1000; // 1 minute
+    private static final int SHOW_DURATION = 5*1000; // 5 seconds
+    private boolean useSmartClock = false;
 
     // custom carrier label
     private View mCustomCarrierLabel;
@@ -107,9 +113,11 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             mContentResolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_LOGO),
                     false, this, UserHandle.USER_ALL);
-
-         mContentResolver.registerContentObserver(Settings.System.getUriFor(
+            mContentResolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_LOGO_STYLE),
+                    false, this, UserHandle.USER_ALL);
+            mContentResolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.SMART_CLOCK_ENABLE),
                     false, this, UserHandle.USER_ALL);
        }
 
@@ -119,10 +127,18 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                 (uri.equals(Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO_STYLE)))){
                  updateStatusBarLogo(true);
         }
+            if (uri.equals(Settings.System.getUriFor(Settings.System.SMART_CLOCK_ENABLE))) {
+                updateSmartClockStatus();
+                if (useSmartClock) {
+                    setupSmartClock();
+                } else {
+                    disableSmartClock();
+                    updateClockStyle(true);
+               }
+           }
             updateSettings(true);
         }
     }
-    private SettingsObserver mSettingsObserver = new SettingsObserver(mHandler);
 
     private SignalCallback mSignalCallback = new SignalCallback() {
         @Override
@@ -141,6 +157,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mHandler = new Handler();
         mSettingsObserver = new SettingsObserver(mHandler);
         mSettingsObserver.observe();
+        updateSmartClockStatus();
     }
 
     @Override
@@ -167,10 +184,12 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);
         mKronicLogo = (ImageView)mStatusBar.findViewById(R.id.status_bar_logo);
         Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mKronicLogo);
-        updateSettings(false);
         showSystemIconArea(false);
+        updateSettings(true);
         initEmergencyCryptkeeperText();
         initOperatorName();
+        mSettingsObserver.observe();
+        setupSmartClock();
     }
 
     @Override
@@ -183,12 +202,14 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     @Override
     public void onResume() {
+        setupSmartClock();
         super.onResume();
         SysUiServiceProvider.getComponent(getContext(), CommandQueue.class).addCallbacks(this);
     }
 
     @Override
     public void onPause() {
+        disableSmartClock();
         super.onPause();
         SysUiServiceProvider.getComponent(getContext(), CommandQueue.class).removeCallbacks(this);
     }
@@ -239,7 +260,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                 animateHide(mClockView, animate, false);
             } else {
                 showNotificationIconArea(animate);
-                updateClockStyle(animate);
+                displaySmartClock(animate);
                 showCarrierName(animate);
             }
         }
@@ -636,5 +657,32 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                 animateHide(mKronicLogo, animate, false);
             }
         }
+
+    private void setupSmartClock() {
+        if (useSmartClock) {
+            displaySmartClock(true);
+            smartClockHandler.postDelayed(()->setupSmartClock(), HIDE_DURATION);
+        }
+    }
+
+    private void displaySmartClock(boolean animate) {
+        animateShow(mClockView, animate);
+        if (useSmartClock) {
+            mHandler.postDelayed(()->animateHide(mClockView, animate, false), SHOW_DURATION);
+        }
+    }
+
+    private void disableSmartClock() {
+        try {
+            smartClockHandler.removeCallbacksAndMessages(null);
+        } catch (NullPointerException e) {
+            // Do nothing
+        }
+    }
+
+    private void updateSmartClockStatus() {
+        useSmartClock = (Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.SMART_CLOCK_ENABLE, 0,
+                UserHandle.USER_CURRENT) == 1);
     }
 }
