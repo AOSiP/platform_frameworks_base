@@ -1,17 +1,17 @@
 <!--
-     Copyright (C) 2015-2018 AOSiP
+   Copyright (C) 2015-2018 AOSiP
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+      http://www.apache.org/licenses/LICENSE-2.0
 
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
 -->
 <resources>
 
@@ -80,19 +80,23 @@
   <java-symbol type="integer" name="config_flashlightProximityTimeout" />
 
   <!-- Weather icons -->
-  <java-symbol type="drawable" name="weather_01" />
-  <java-symbol type="drawable" name="weather_01n" />
-  <java-symbol type="drawable" name="weather_02" />
-  <java-symbol type="drawable" name="weather_02n" />
-  <java-symbol type="drawable" name="weather_03" />
-  <java-symbol type="drawable" name="weather_03n" />
-  <java-symbol type="drawable" name="weather_04" />
-  <java-symbol type="drawable" name="weather_04n" />
-  <java-symbol type="drawable" name="weather_09" />
-  <java-symbol type="drawable" name="weather_10" />
-  <java-symbol type="drawable" name="weather_10n" />
-  <java-symbol type="drawable" name="weather_11" />
-  <java-symbol type="drawable" name="weather_13" />
-  <java-symbol type="drawable" name="weather_50" />
+  <java-symbol type="drawable" name="weather_clear_night" />
+  <java-symbol type="drawable" name="weather_cloudy" />
+  <java-symbol type="drawable" name="weather_foggy" />
+  <java-symbol type="drawable" name="weather_isolated_scattered_thunderstorms_night" />
+  <java-symbol type="drawable" name="weather_isolated_scattered_thunderstorms" />
+  <java-symbol type="drawable" name="weather_mostly_clear_night" />
+  <java-symbol type="drawable" name="weather_mostly_cloudy_night" />
+  <java-symbol type="drawable" name="weather_mostly_cloudy" />
+  <java-symbol type="drawable" name="weather_mostly_sunny" />
+  <java-symbol type="drawable" name="weather_partly_cloudy_night" />
+  <java-symbol type="drawable" name="weather_partly_cloudy" />
+  <java-symbol type="drawable" name="weather_rain" />
+  <java-symbol type="drawable" name="weather_scattered_showers_night" />
+  <java-symbol type="drawable" name="weather_scattered_showers" />
+  <java-symbol type="drawable" name="weather_snow" />
+  <java-symbol type="drawable" name="weather_sunny" />
+  <java-symbol type="drawable" name="weather_thunderstorms" />
+  <java-symbol type="drawable" name="weather_windy" />
 
 </resources>
