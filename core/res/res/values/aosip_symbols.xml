@@ -1,150 +1,154 @@
 <!--
-     Copyright (C) 2015-2018 AOSiP
+   Copyright (C) 2015-2018 AOSiP
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+      http://www.apache.org/licenses/LICENSE-2.0
 
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
 -->
 <resources>
-    <!-- Rotation sensor -->
-    <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
+  <!-- Rotation sensor -->
+  <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
 
-    <java-symbol type="array" name="config_vendorPlatformSignatures" />
+  <java-symbol type="array" name="config_vendorPlatformSignatures" />
 
-    <!-- Icon packs -->
-    <java-symbol type="drawable" name="adaptive_icon_drawable_wrapper" />
+  <!-- Icon packs -->
+  <java-symbol type="drawable" name="adaptive_icon_drawable_wrapper" />
 
-    <java-symbol type="anim" name="inv_app_in" />
-    <java-symbol type="anim" name="inv_app_out" />
+  <java-symbol type="anim" name="inv_app_in" />
+  <java-symbol type="anim" name="inv_app_out" />
 
-    <!-- Hardware key binding -->
-    <java-symbol type="integer" name="config_deviceHardwareKeys" />
+  <!-- Hardware key binding -->
+  <java-symbol type="integer" name="config_deviceHardwareKeys" />
 
-    <!-- Package Manager -->
-    <java-symbol type="array" name="config_disabledComponents" />
-    <java-symbol type="array" name="config_forceEnabledComponents" />
+  <!-- Package Manager -->
+  <java-symbol type="array" name="config_disabledComponents" />
+  <java-symbol type="array" name="config_forceEnabledComponents" />
 
-    <!-- Usb drive persistent notification -->
-    <java-symbol type="bool" name="config_persistUsbDriveNotification" />
+  <!-- Usb drive persistent notification -->
+  <java-symbol type="bool" name="config_persistUsbDriveNotification" />
 
-    <!-- Whether notify fingerprint client of successful cancelled authentication -->
-    <java-symbol type="bool" name="config_notifyClientOnFingerprintCancelSuccess" />
+  <!-- Whether notify fingerprint client of successful cancelled authentication -->
+  <java-symbol type="bool" name="config_notifyClientOnFingerprintCancelSuccess" />
 
-    <!-- ADB notification -->
-    <java-symbol type="string" name="adb_net_active_notification_title" />
-    <java-symbol type="string" name="adb_both_active_notification_title" />
-    <java-symbol type="string" name="adb_active_generic_notification_message" />
+  <!-- ADB notification -->
+  <java-symbol type="string" name="adb_net_active_notification_title" />
+  <java-symbol type="string" name="adb_both_active_notification_title" />
+  <java-symbol type="string" name="adb_active_generic_notification_message" />
 
-    <!-- Forcefully tint notification icon text -->
-    <java-symbol type="bool" name="config_useDarkBgNotificationIconTextTinting" />
-    <java-symbol type="bool" name="config_useDarkBgNotificationTinting_override" />
-    <java-symbol type="bool" name="config_notificationTinting_override" />
+  <!-- Forcefully tint notification icon text -->
+  <java-symbol type="bool" name="config_useDarkBgNotificationIconTextTinting" />
+  <java-symbol type="bool" name="config_useDarkBgNotificationTinting_override" />
+  <java-symbol type="bool" name="config_notificationTinting_override" />
 
-    <!-- Notification icon/text dynamic tint -->
-    <java-symbol type="bool" name="config_allowNotificationIconTextTinting" />
-    <java-symbol type="color" name="notification_text_default_color" />
-    <java-symbol type="color" name="notification_icon_default_color" />
+  <!-- Notification icon/text dynamic tint -->
+  <java-symbol type="bool" name="config_allowNotificationIconTextTinting" />
+  <java-symbol type="color" name="notification_text_default_color" />
+  <java-symbol type="color" name="notification_icon_default_color" />
 
-    <!-- Notification sender text color -->
-    <java-symbol type="color" name="sender_text_color" />
+  <!-- Notification sender text color -->
+  <java-symbol type="color" name="sender_text_color" />
 
-    <!-- Notification app name tint -->
-    <java-symbol type="bool" name="config_allowNotificationAppNameTextTinting" />
+  <!-- Notification app name tint -->
+  <java-symbol type="bool" name="config_allowNotificationAppNameTextTinting" />
 
-    <!-- Auto fill -->
-    <java-symbol type="color" name="autofill_save_title_color" />
-    <java-symbol type="color" name="autofill_autofill_save_custom_subtitle_color" />
+  <!-- Auto fill -->
+  <java-symbol type="color" name="autofill_save_title_color" />
+  <java-symbol type="color" name="autofill_autofill_save_custom_subtitle_color" />
 
-    <!-- Full screen aspect ratio -->
-    <java-symbol type="bool" name="config_haveHigherAspectRatioScreen" />
-    <java-symbol type="dimen" name="config_screenAspectRatio" />
+  <!-- Full screen aspect ratio -->
+  <java-symbol type="bool" name="config_haveHigherAspectRatioScreen" />
+  <java-symbol type="dimen" name="config_screenAspectRatio" />
 
-    <!-- From SignalStrength -->
-    <java-symbol type="integer" name="config_LTE_antenna_bar_quantity_metric" />
-    <java-symbol type="integer" name="config_LTE_RSRP_threshold_type" />
+  <!-- From SignalStrength -->
+  <java-symbol type="integer" name="config_LTE_antenna_bar_quantity_metric" />
+  <java-symbol type="integer" name="config_LTE_RSRP_threshold_type" />
 
-    <!-- OpGestures -->
-    <java-symbol type="dimen" name="nav_gesture_swipe_min_length" />
-    <java-symbol type="dimen" name="nav_gesture_long_press_max_length" />
+  <!-- OpGestures -->
+  <java-symbol type="dimen" name="nav_gesture_swipe_min_length" />
+  <java-symbol type="dimen" name="nav_gesture_long_press_max_length" />
 
-    <!-- App error dialog -->
-    <java-symbol type="id" name="aerr_copy" />
-    <java-symbol type="string" name="url_copy_success" />
-    <java-symbol type="string" name="url_copy_failed" />
+  <!-- App error dialog -->
+  <java-symbol type="id" name="aerr_copy" />
+  <java-symbol type="string" name="url_copy_success" />
+  <java-symbol type="string" name="url_copy_failed" />
 
-    <!-- Ambient display music ticker -->
-    <java-symbol type="bool" name="config_canForceDozeNotifications" />
+  <!-- Ambient display music ticker -->
+  <java-symbol type="bool" name="config_canForceDozeNotifications" />
 
-    <!-- Power Menu -->
-    <java-symbol type="string" name="reboot_to_recovery_title" />
-    <java-symbol type="string" name="reboot_to_recovery_message" />
-    <java-symbol type="string" name="reboot_to_bootloader_title" />
-    <java-symbol type="string" name="reboot_to_bootloader_message" />
-    <java-symbol type="string" name="reboot_title" />
-    <java-symbol type="string" name="reboot_message" />
-    <java-symbol type="array" name="config_custom_globalActionsList" />
+  <!-- Power Menu -->
+  <java-symbol type="string" name="reboot_to_recovery_title" />
+  <java-symbol type="string" name="reboot_to_recovery_message" />
+  <java-symbol type="string" name="reboot_to_bootloader_title" />
+  <java-symbol type="string" name="reboot_to_bootloader_message" />
+  <java-symbol type="string" name="reboot_title" />
+  <java-symbol type="string" name="reboot_message" />
+  <java-symbol type="array" name="config_custom_globalActionsList" />
 
-    <!-- Battery LED -->
-    <java-symbol type="bool" name="config_intrusiveBatteryLed" />
-    <java-symbol type="bool" name="config_multiColorBatteryLed" />
-    <java-symbol type="bool" name="config_ledCanPulse" />
+  <!-- Battery LED -->
+  <java-symbol type="bool" name="config_intrusiveBatteryLed" />
+  <java-symbol type="bool" name="config_multiColorBatteryLed" />
+  <java-symbol type="bool" name="config_ledCanPulse" />
 
-    <!-- ChooserActivity blacklist -->
-    <java-symbol type="array" name="resolver_target_actions_pin_custom" />
-    <java-symbol type="array" name="resolver_target_actions_unpin_custom" />
+  <!-- ChooserActivity blacklist -->
+  <java-symbol type="array" name="resolver_target_actions_pin_custom" />
+  <java-symbol type="array" name="resolver_target_actions_unpin_custom" />
 
-    <!-- Screen off delay -->
-    <java-symbol type="integer" name="config_screen_off_delay" />
+  <!-- Screen off delay -->
+  <java-symbol type="integer" name="config_screen_off_delay" />
 
-    <!-- Emergency button in power menu -->
-    <java-symbol type="bool" name="config_showEmergencyButtonInPowerMenu" />
+  <!-- Emergency button in power menu -->
+  <java-symbol type="bool" name="config_showEmergencyButtonInPowerMenu" />
 
-    <!-- Whether device supports an alt. ambient display -->
-    <java-symbol type="bool" name="config_alt_ambient_display"/>
+  <!-- Whether device supports an alt. ambient display -->
+  <java-symbol type="bool" name="config_alt_ambient_display"/>
 
-    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
-    <java-symbol type="bool" name="config_cleanupUnusedFingerprints" />
+  <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
+  <java-symbol type="bool" name="config_cleanupUnusedFingerprints" />
 
-    <!-- Toast text and bg colors -->
-    <java-symbol type="color" name="toast_bg_color" />
-    <java-symbol type="color" name="toast_text_color" />
+  <!-- Toast text and bg colors -->
+  <java-symbol type="color" name="toast_bg_color" />
+  <java-symbol type="color" name="toast_text_color" />
 
-    <!-- Weather icons -->
-    <java-symbol type="drawable" name="weather_01" />
-    <java-symbol type="drawable" name="weather_01n" />
-    <java-symbol type="drawable" name="weather_02" />
-    <java-symbol type="drawable" name="weather_02n" />
-    <java-symbol type="drawable" name="weather_03" />
-    <java-symbol type="drawable" name="weather_03n" />
-    <java-symbol type="drawable" name="weather_04" />
-    <java-symbol type="drawable" name="weather_04n" />
-    <java-symbol type="drawable" name="weather_09" />
-    <java-symbol type="drawable" name="weather_10" />
-    <java-symbol type="drawable" name="weather_10n" />
-    <java-symbol type="drawable" name="weather_11" />
-    <java-symbol type="drawable" name="weather_13" />
-    <java-symbol type="drawable" name="weather_50" />
+  <!-- Weather icons -->
+  <java-symbol type="drawable" name="weather_clear_night" />
+  <java-symbol type="drawable" name="weather_cloudy" />
+  <java-symbol type="drawable" name="weather_foggy" />
+  <java-symbol type="drawable" name="weather_isolated_scattered_thunderstorms_night" />
+  <java-symbol type="drawable" name="weather_isolated_scattered_thunderstorms" />
+  <java-symbol type="drawable" name="weather_mostly_clear_night" />
+  <java-symbol type="drawable" name="weather_mostly_cloudy_night" />
+  <java-symbol type="drawable" name="weather_mostly_cloudy" />
+  <java-symbol type="drawable" name="weather_mostly_sunny" />
+  <java-symbol type="drawable" name="weather_partly_cloudy_night" />
+  <java-symbol type="drawable" name="weather_partly_cloudy" />
+  <java-symbol type="drawable" name="weather_rain" />
+  <java-symbol type="drawable" name="weather_scattered_showers_night" />
+  <java-symbol type="drawable" name="weather_scattered_showers" />
+  <java-symbol type="drawable" name="weather_snow" />
+  <java-symbol type="drawable" name="weather_sunny" />
+  <java-symbol type="drawable" name="weather_thunderstorms" />
+  <java-symbol type="drawable" name="weather_windy" />
 
-    <!-- Fastscroller -->
-    <java-symbol type="color" name="fastscroller_text_color" />
+  <!-- Fastscroller -->
+  <java-symbol type="color" name="fastscroller_text_color" />
 
-    <!-- Flashlight proximity check -->
-    <java-symbol type="integer" name="config_flashlightProximityTimeout" />
+  <!-- Flashlight proximity check -->
+  <java-symbol type="integer" name="config_flashlightProximityTimeout" />
 
-    <!-- Whether device has dash charging support -->
-    <java-symbol type="bool" name="config_hasDashCharger" />
+  <!-- Whether device has dash charging support -->
+  <java-symbol type="bool" name="config_hasDashCharger" />
 
-    <!-- sensor block -->
-    <java-symbol type="array" name="config_blockPackagesSensorDrain" />
+  <!-- sensor block -->
+  <java-symbol type="array" name="config_blockPackagesSensorDrain" />
 
-    <!-- Whether the device supports Smart Pixels -->
-    <java-symbol type="bool" name="config_enableSmartPixels" />
+  <!-- Whether the device supports Smart Pixels -->
+  <java-symbol type="bool" name="config_enableSmartPixels" />
 </resources>
