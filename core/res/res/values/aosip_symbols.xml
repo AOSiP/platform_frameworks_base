@@ -19,6 +19,9 @@
 
     <java-symbol type="array" name="config_vendorPlatformSignatures" />
 
+    <!-- Icon packs -->
+    <java-symbol type="drawable" name="adaptive_icon_drawable_wrapper" />
+
     <!-- Package Manager -->
     <java-symbol type="array" name="config_disabledComponents" />
     <java-symbol type="array" name="config_forceEnabledComponents" />
