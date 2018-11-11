@@ -8976,7 +8976,7 @@ public final class Settings {
          */
         public static final String PEOPLE_STRIP = "people_strip";
 
-       /**
+        /**
          * Whether to show the clock in the right or left position or show it in the center
          * 0: show the clock in the right position (LTR)
          * 1: show the clock in the center
@@ -9005,6 +9005,56 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_CLOCK_SECONDS = "status_bar_clock_seconds";
+
+        /**
+         * Network traffic: Location
+         * 0 - Disabled
+         * 1 - Status bar
+         * 2 - Quick panel
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_LOCATION = "network_traffic_location";
+
+        /**
+         * Network traffic: Mode
+         * 0 - All/both
+         * 1 - Upload
+         * 2 - Download
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_MODE = "network_traffic_mode";
+
+        /**
+         * Network traffic: Autohide
+         * 0 - Disabled
+         * 1 - Autohide
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide";
+
+        /**
+         * Network traffic: Autohide threshold slider value
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
+
+        /**
+         * Network traffic: Refresh interval slider value
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_REFRESH_INTERVAL = "network_traffic_refresh_interval";
+
+        /**
+         * Network traffic: Speed units
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_UNITS = "network_traffic_units";
+
+        /**
+         * Network traffic: Hide arrows
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
 
         /**
          * Whether or not to enable media resumption
