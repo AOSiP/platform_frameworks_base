@@ -418,7 +418,7 @@ public class KeyguardIndicationController {
 
         String chargingCurrent = "";
         boolean showChargingCurrent = Settings.System.getIntForUser(mContext.getContentResolver(),
-            Settings.System.LOCKSCREEN_CHARGING_CURRENT, 1, UserHandle.USER_CURRENT) == 1;
+            Settings.System.LOCKSCREEN_CHARGING_CURRENT, 0, UserHandle.USER_CURRENT) == 1;
 
         if (mChargingCurrent != 0 && showChargingCurrent) {
             chargingCurrent = "\n" + (mChargingCurrent / 1000) + "mA/h / "
