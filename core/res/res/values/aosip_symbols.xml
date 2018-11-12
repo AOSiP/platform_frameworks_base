@@ -72,5 +72,7 @@
 
     <!-- sensor block -->
     <java-symbol type="array" name="config_blockPackagesSensorDrain" />
-
+	
+    <!-- System fonts -->
+    <java-symbol type="array" name="config_fontPackages" />
 </resources>

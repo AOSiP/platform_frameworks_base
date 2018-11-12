@@ -4586,6 +4586,19 @@ public final class Settings {
         /** @hide */
         private static final Validator NOTIFICATION_SOUND_VIB_SCREEN_ON_VALIDATOR =
                 BOOLEAN_VALIDATOR;
+	/**
+         * Hold current font name and name of the originating package Uses "|" as a delimiter
+         *
+         * @hide
+         */
+        public static final String FONT_INFO = "font_info";
+        
+	 /**
+         * Hold list of installed font provider packages. Uses "|" as a delimiter
+         *
+         * @hide
+         */
+        public static final String FONT_PACKAGES = "font_packages";
 
         /**
          * Wheter to show network traffic indicator in statusbar
