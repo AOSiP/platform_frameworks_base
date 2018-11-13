@@ -703,12 +703,7 @@ public final class SystemServer {
             startSensorService();
             traceLog.traceEnd();
         }, START_SENSOR_SERVICE);
-	
-	// Manages fonts
-        traceBeginAndSlog("StartFontService");
-        mSystemServiceManager.startService(FONT_SERVICE_CLASS);
-        traceEnd();
-    }
+	}
 
     /**
      * Starts some essential services that are not tangled up in the bootstrap process.
@@ -843,6 +838,10 @@ public final class SystemServer {
             // Now that SettingsProvider is ready, reactivate SQLiteCompatibilityWalFlags
             SQLiteCompatibilityWalFlags.reset();
             traceEnd();
+
+			traceBeginAndSlog("StartFontService");
+        	mSystemServiceManager.startService(FONT_SERVICE_CLASS);
+        	traceEnd();
 
             // Records errors and logs, for example wtf()
             // Currently this service indirectly depends on SettingsProvider so do this after
