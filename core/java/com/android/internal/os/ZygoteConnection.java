@@ -642,8 +642,6 @@ class ZygoteConnection {
                 } else if (arg.equals("--preload-default")) {
                     preloadDefault = true;
                     expectRuntimeArgs = false;
-		} else if (arg.equals("--refresh_theme")) {
-                    refreshTheme = true;
                 } else if (arg.equals("--start-child-zygote")) {
                     startChildZygote = true;
                 } else if (arg.equals("--set-api-blacklist-exemptions")) {
@@ -661,7 +659,9 @@ class ZygoteConnection {
                                 "Invalid log sampling rate: " + rateStr, nfe);
                     }
                     expectRuntimeArgs = false;
-                } else {
+                } else if (arg.equals("--refresh_theme")) {
+                    refreshTheme = true;
+		} else {
                     break;
                 }
             }
