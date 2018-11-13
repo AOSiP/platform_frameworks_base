@@ -1222,7 +1222,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         int changed = 0;
         if (delta.fontScale > 0 && fontScale != delta.fontScale) {
             changed |= ActivityInfo.CONFIG_FONT_SCALE;
-	    changed |= ActivityInfo.CONFIG_THEME_FONT;
+			changed |= ActivityInfo.CONFIG_THEME_FONT;
             fontScale = delta.fontScale;
         }
         if (delta.mcc != 0 && mcc != delta.mcc) {
