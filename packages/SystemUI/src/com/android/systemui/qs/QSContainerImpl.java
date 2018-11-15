@@ -129,6 +129,7 @@ public class QSContainerImpl extends FrameLayout implements
         }
 
         updateResources();
+        updateSettings();
         updateStatusbarVisibility();
         mSizePoint.set(0, 0); // Will be retrieved on next measure pass.
     }
