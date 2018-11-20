@@ -140,6 +140,9 @@
   <!-- Fastscroller -->
   <java-symbol type="color" name="fastscroller_text_color" />
 
+  <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
+  <java-symbol type="bool" name="config_custom_swipe_up_gesture_setting_available" />
+
   <!-- Flashlight proximity check -->
   <java-symbol type="integer" name="config_flashlightProximityTimeout" />
 
@@ -151,4 +154,5 @@
 
   <!-- Whether the device supports Smart Pixels -->
   <java-symbol type="bool" name="config_enableSmartPixels" />
+
 </resources>
