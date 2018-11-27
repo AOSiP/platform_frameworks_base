@@ -478,7 +478,8 @@ public class NotificationEntryManager implements Dumpable, NotificationInflater.
             // Mark as seen immediately
             setNotificationShown(shadeEntry.notification);
         } else {
-            if (mStatusBar != null) {
+            boolean shouldTick = shouldTick(shadeEntry);
+            if (mStatusBar != null && shouldTick) {
                 mStatusBar.tick(shadeEntry.notification, true, false, null, null);
             }
         }
@@ -941,7 +942,8 @@ public class NotificationEntryManager implements Dumpable, NotificationInflater.
         if (updateTicker && isForCurrentUser) {
             if (mStatusBar != null) {
                 mStatusBar.haltTicker();
-                if (!shouldPeek) {
+                boolean shouldTick = shouldTick(entry, notification);
+                if (!shouldPeek && shouldTick) {
                     mStatusBar.tick(notification, false, false, null, null);
                 }
             }
@@ -1047,6 +1049,20 @@ public class NotificationEntryManager implements Dumpable, NotificationInflater.
         }
 
         if (!mCallback.shouldPeek(entry, sbn)) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    protected boolean shouldTick(NotificationData.Entry entry) {
+        return shouldTick(entry, entry.notification);
+    }
+
+    public boolean shouldTick(NotificationData.Entry entry, StatusBarNotification sbn) {
+        if (!mPresenter.isDozing() && mNotificationData.shouldSuppressPeek(entry)) {
+            if (DEBUG) Log.d(TAG, "No ticking: suppressed by DND: " + sbn.getKey());
             return false;
         }
 
