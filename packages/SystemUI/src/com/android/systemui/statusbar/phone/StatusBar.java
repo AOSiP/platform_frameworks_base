@@ -1143,10 +1143,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         });
     }
 
-    public NotificationMediaManager getMediaManager() {
-        return mMediaManager;
-    }
-
     /**
      * Returns the {@link android.view.View.OnTouchListener} that will be invoked when the
      * background window of the status bar is clicked.
@@ -5254,9 +5250,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.ACCENT_PICKER),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.PULSE_APPS_BLACKLIST),
-                    false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.USE_OLD_MOBILETYPE),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.Secure.getUriFor(
@@ -5277,8 +5270,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.USE_OLD_MOBILETYPE))) {
                 mCommandQueue.restartUI();
-            } else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_APPS_BLACKLIST))) {
-                setPulseBlacklist();
             } else if (uri.equals(Settings.Secure.getUriFor(
                     Settings.Secure.FP_SWIPE_TO_DISMISS_NOTIFICATIONS))) {
                 setFpToDismissNotifications();
@@ -5290,21 +5281,13 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         public void update() {
             ContentResolver resolver = mContext.getContentResolver();
-            setPulseBlacklist();
             USE_OLD_MOBILETYPE = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.USE_OLD_MOBILETYPE, 0,
                     UserHandle.USER_CURRENT) != 0;
             TelephonyIcons.updateIcons(USE_OLD_MOBILETYPE);
-            setPulseBlacklist();
             setFpToDismissNotifications();
             setForceAmbient();
         }
-    }
-
-    private void setPulseBlacklist() {
-        String blacklist = Settings.System.getStringForUser(mContext.getContentResolver(),
-                Settings.System.PULSE_APPS_BLACKLIST, UserHandle.USER_CURRENT);
-        getMediaManager().setPulseBlacklist(blacklist);
     }
 
     private void setFpToDismissNotifications() {
