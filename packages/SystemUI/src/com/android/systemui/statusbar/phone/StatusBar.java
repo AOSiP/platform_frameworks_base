@@ -24,6 +24,8 @@ import static android.app.StatusBarManager.WindowType;
 import static android.app.StatusBarManager.WindowVisibleState;
 import static android.app.StatusBarManager.windowStateToString;
 import static android.app.WindowConfiguration.WINDOWING_MODE_FULLSCREEN_OR_SPLIT_SCREEN_SECONDARY;
+import static com.android.settingslib.display.BrightnessUtils.GAMMA_SPACE_MAX;
+import static com.android.settingslib.display.BrightnessUtils.convertGammaToLinear;
 
 import static com.android.systemui.Dependency.ALLOW_NOTIFICATION_LONG_PRESS_NAME;
 import static com.android.systemui.Dependency.BG_HANDLER;
@@ -473,11 +475,11 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     private DisplayManager mDisplayManager;
 
     private int mMinBrightness;
+    private int mMaxBrightness;
     private int mInitialTouchX;
     private int mInitialTouchY;
     private int mLinger;
     private int mQuickQsTotalHeight;
-    private boolean mAutomaticBrightness;
     private boolean mBrightnessControl;
     private boolean mBrightnessChanged;
     private boolean mJustPeeked;
@@ -918,9 +920,6 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         mStatusBarWindow.setBypassController(mKeyguardBypassController);
         mStatusBarWindow.setOnTouchListener(getStatusBarWindowTouchListener());
 
-        mMinBrightness = context.getResources().getInteger(
-                com.android.internal.R.integer.config_screenBrightnessDim);
-
         // TODO: Deal with the ugliness that comes from having some of the statusbar broken out
         // into fragments, but the rest here, it leaves some awkward lifecycle and whatnot.
         mNotificationPanel = mStatusBarWindow.findViewById(R.id.notification_panel);
@@ -1157,6 +1156,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         ThreadedRenderer.overrideProperty("ambientRatio", String.valueOf(1.5f));
 
         mFlashlightController = Dependency.get(FlashlightController.class);
+
+        mMinBrightness = pm.getMinimumScreenBrightnessSetting();
+        mMaxBrightness = pm.getMaximumScreenBrightnessSetting();
     }
 
     public void updateBlurVisibility() {
@@ -2569,35 +2571,20 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                 Math.max(BRIGHTNESS_CONTROL_PADDING, raw));
         float value = (padded - BRIGHTNESS_CONTROL_PADDING) /
                 (1 - (2.0f * BRIGHTNESS_CONTROL_PADDING));
-        if (mAutomaticBrightness) {
-            float adj = (2 * value) - 1;
-            adj = Math.max(adj, -1);
-            adj = Math.min(adj, 1);
-            final float val = adj;
-            mDisplayManager.setTemporaryAutoBrightnessAdjustment(val);
-            AsyncTask.execute(new Runnable() {
-                public void run() {
-                    Settings.System.putFloatForUser(mContext.getContentResolver(),
-                            Settings.System.SCREEN_AUTO_BRIGHTNESS_ADJ, val,
-                            UserHandle.USER_CURRENT);
-                }
-            });
-        } else {
-            int newBrightness = mMinBrightness + (int) Math.round(value *
-                    (PowerManager.BRIGHTNESS_ON - mMinBrightness));
-            newBrightness = Math.min(newBrightness, PowerManager.BRIGHTNESS_ON);
-            newBrightness = Math.max(newBrightness, mMinBrightness);
-            final int val = newBrightness;
-            mDisplayManager.setTemporaryBrightness(val);
-            AsyncTask.execute(new Runnable() {
-                @Override
-                public void run() {
-                    Settings.System.putIntForUser(mContext.getContentResolver(),
-                            Settings.System.SCREEN_BRIGHTNESS, val,
-                            UserHandle.USER_CURRENT);
-                }
-            });
-        }
+        int newBrightness = convertGammaToLinear(Math.round(value * GAMMA_SPACE_MAX),
+                mMinBrightness, mMaxBrightness);
+        newBrightness = Math.min(newBrightness, GAMMA_SPACE_MAX);
+        newBrightness = Math.max(newBrightness, 0);
+        final int val = newBrightness;
+        mDisplayManager.setTemporaryBrightness(val);
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                Settings.System.putIntForUser(mContext.getContentResolver(),
+                        Settings.System.SCREEN_BRIGHTNESS, val,
+                        UserHandle.USER_CURRENT);
+            }
+        });
     }
 
     private void brightnessControl(MotionEvent event) {
@@ -5307,10 +5294,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
 
     @Override
     public void onTuningChanged(String key, String newValue) {
-        if (SCREEN_BRIGHTNESS_MODE.equals(key)) {
-            mAutomaticBrightness = newValue != null && Integer.parseInt(newValue)
-                    == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
-        } else if (STATUS_BAR_BRIGHTNESS_CONTROL.equals(key)) {
+        if (STATUS_BAR_BRIGHTNESS_CONTROL.equals(key)) {
             mBrightnessControl = newValue != null && Integer.parseInt(newValue) == 1;
         }
     }
