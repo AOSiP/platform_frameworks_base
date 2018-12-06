@@ -4608,6 +4608,15 @@ public final class Settings {
         public static final String MEDIAPROJECTION_SYSUI_OK = "mediaprojection_sysui_ok";
 
         /**
+         * Whether to display our kronic logo in the statusbar
+         * @hide
+         */
+        public static final String STATUS_BAR_LOGO = "status_bar_logo";
+        /** @hide */
+        private static final Validator STATUS_BAR_LOGO_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * Whether to change the transparency of the qs panel
          * @hide
          */
@@ -4853,6 +4862,7 @@ public final class Settings {
             ALARM_ALERT,
             USE_OLD_MOBILETYPE,
             NOTIFICATION_LIGHT_PULSE,
+            STATUS_BAR_LOGO,
             SCREENSHOT_SHUTTER_SOUND,
             BACK_GESTURE_HEIGHT,
             LOCKSCREEN_MEDIA_METADATA,
@@ -4982,6 +4992,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(QS_PANEL_BG_ALPHA);
             PRIVATE_SETTINGS.add(SCREENSHOT_SHUTTER_SOUND);
             PRIVATE_SETTINGS.add(BACK_GESTURE_HEIGHT);
+            PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_STATE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_TYPE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
@@ -5084,6 +5095,7 @@ public final class Settings {
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
             VALIDATORS.put(SCREENSHOT_SHUTTER_SOUND,
                     SCREENSHOT_SHUTTER_SOUND_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);
             VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
             VALIDATORS.put(QS_PANEL_BG_ALPHA, QS_PANEL_BG_ALPHA_VALIDATOR);
             VALIDATORS.put(BACK_GESTURE_HEIGHT, BACK_GESTURE_HEIGHT_VALIDATOR);
