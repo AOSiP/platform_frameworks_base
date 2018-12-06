@@ -4760,6 +4760,15 @@ public final class Settings {
                 ANY_INTEGER_VALIDATOR;
 
         /**
+         * Whether to display the kronic logo in the statusbar
+         * @hide
+         */
+        public static final String STATUS_BAR_LOGO = "status_bar_logo";
+        /** @hide */
+        private static final Validator STATUS_BAR_LOGO_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * @hide
          */
         public static final String BOTTOM_GESTURE_SWIPE_LIMIT =
@@ -5261,6 +5270,7 @@ public final class Settings {
             STATUSBAR_CLOCK_DATE_POSITION,
             STATUSBAR_HIDE_NOTCH,
             STATUS_BAR_BRIGHTNESS_CONTROL,
+            STATUS_BAR_LOGO,
             STATUS_BAR_SHOW_CARRIER,
             STATUS_BAR_QUICK_QS_PULLDOWN,
             SWAP_VOLUME_BUTTONS,
@@ -5437,7 +5447,7 @@ public final class Settings {
             PUBLIC_SETTINGS.add(BUTTON_BACKLIGHT_ENABLE);
             PUBLIC_SETTINGS.add(BUTTON_BACKLIGHT_TIMEOUT);
             PUBLIC_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
-
+            PUBLIC_SETTINGS.add(STATUS_BAR_LOGO);
         }
 
         /**
@@ -5668,6 +5678,7 @@ public final class Settings {
             VALIDATORS.put(PROXIMITY_ON_WAKE, PROXIMITY_ON_WAKE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
             VALIDATORS.put(DOZE_ON_CHARGE, DOZE_ON_CHARGE_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);
         }
 
         /**
