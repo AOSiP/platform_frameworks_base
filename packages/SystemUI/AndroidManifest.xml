@@ -668,7 +668,7 @@
             </intent-filter>
         </receiver>
 
-        <!-- omni additions start -->
+        <!-- AOSiP additions start -->
         <service android:name=".CPUInfoService"
                 android:exported="false" />
 

@@ -4378,9 +4378,9 @@ public final class Settings {
         /**
          * @hide
          */
-        public static final String OMNI_QS_QUICKBAR_COLUMNS = "qs_quickbar_columns";
+        public static final String QS_QUICKBAR_COLUMNS = "qs_quickbar_columns";
          /** @hide */
-        private static final Validator OMNI_QS_QUICKBAR_COLUMNS_VALIDATOR =
+        private static final Validator QS_QUICKBAR_COLUMNS_VALIDATOR =
                 ANY_INTEGER_VALIDATOR;
 
         /**
@@ -4827,7 +4827,7 @@ public final class Settings {
             NOTIFICATION_VIBRATION_INTENSITY,
             HAPTIC_FEEDBACK_INTENSITY,
             DISPLAY_COLOR_MODE,
-            OMNI_QS_QUICKBAR_COLUMNS,
+            QS_QUICKBAR_COLUMNS,
             STATUS_BAR_CLOCK,
             STATUSBAR_CLOCK_STYLE,
             STATUS_BAR_CLOCK_SECONDS,
@@ -4964,7 +4964,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(QS_LAYOUT_COLUMNS);
             PRIVATE_SETTINGS.add(QS_LAYOUT_COLUMNS_LANDSCAPE);
             PRIVATE_SETTINGS.add(QS_TILE_HIDE_TITLE);
-            PRIVATE_SETTINGS.add(OMNI_QS_QUICKBAR_COLUMNS);
+            PRIVATE_SETTINGS.add(QS_QUICKBAR_COLUMNS);
             PRIVATE_SETTINGS.add(STATUS_BAR_CLOCK);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_STYLE);
             PRIVATE_SETTINGS.add(STATUS_BAR_CLOCK_SECONDS);
@@ -5075,7 +5075,7 @@ public final class Settings {
             VALIDATORS.put(WIFI_STATIC_DNS1, WIFI_STATIC_DNS1_VALIDATOR);
             VALIDATORS.put(WIFI_STATIC_DNS2, WIFI_STATIC_DNS2_VALIDATOR);
             VALIDATORS.put(SHOW_BATTERY_PERCENT, SHOW_BATTERY_PERCENT_VALIDATOR);
-            VALIDATORS.put(OMNI_QS_QUICKBAR_COLUMNS, OMNI_QS_QUICKBAR_COLUMNS_VALIDATOR);
+            VALIDATORS.put(QS_QUICKBAR_COLUMNS, QS_QUICKBAR_COLUMNS_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_CLOCK, STATUS_BAR_CLOCK_VALIDATOR);
             VALIDATORS.put(STATUSBAR_CLOCK_STYLE, STATUSBAR_CLOCK_STYLE_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_CLOCK_SECONDS, STATUS_BAR_CLOCK_SECONDS_VALIDATOR);
