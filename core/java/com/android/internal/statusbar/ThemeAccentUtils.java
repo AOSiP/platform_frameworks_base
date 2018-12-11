@@ -27,6 +27,12 @@ public class ThemeAccentUtils {
     // Stock dark theme package
     private static final String STOCK_DARK_THEME = "com.android.systemui.theme.dark";
 
+      // Light themes
+      private static final String[] LIGHT_THEMES = {
+        "com.google.intelligence.sense.theme.light", // 0
+        "com.android.gboard.theme.light", // 1
+    };
+
     // Dark themes
     private static final String[] DARK_THEMES = {
         "com.android.system.theme.dark", // 0
@@ -102,13 +108,20 @@ public class ThemeAccentUtils {
             try {
                 om.setEnabled(theme,
                         useDarkTheme, userId);
-                unfuckBlackWhiteAccent(om, userId);
                 if (useDarkTheme) {
                     unloadStockDarkTheme(om, userId);
                 }
             } catch (RemoteException e) {
             }
         }
+        for (String theme : LIGHT_THEMES) {
+            try {
+                om.setEnabled(theme,
+                        !useDarkTheme, userId);
+            } catch (RemoteException e) {
+            }
+        }
+        unfuckBlackWhiteAccent(om, userId);
     }
 
     // Check for black and white accent overlays
