@@ -291,6 +291,7 @@ public class NetworkTraffic extends TextView implements DarkReceiver {
         } else {
             setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
         }
+        setTextColor(mTintColor);
     }
 
     public void onDensityOrFontScaleChanged() {
