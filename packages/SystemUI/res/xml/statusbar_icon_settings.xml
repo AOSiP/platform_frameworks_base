@@ -82,4 +82,8 @@
             android:key="managed_profile"
             android:title="@string/status_bar_work" />
 
+        <com.android.systemui.tuner.TunerSwitch
+            android:key="hide_disabled_sim"
+            android:title="@string/tuner_hide_disabled_sim"
+            sysui:defValue="false" />
 </PreferenceScreen>
