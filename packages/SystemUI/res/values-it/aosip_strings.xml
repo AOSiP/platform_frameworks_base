@@ -30,8 +30,8 @@
     <string name="qs_menu_item_titles">Nascondi etichette</string>
     <string name="qs_menu_item_qs_columns">Colonne barra veloce</string>
     <string name="qs_menu_item_columns_auto">Automatico</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_rows_landscape">Righe (orizzontale)</string>
+    <string name="qs_menu_item_rows">Righe</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>

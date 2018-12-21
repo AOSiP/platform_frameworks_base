@@ -30,8 +30,8 @@
     <string name="qs_menu_item_titles">Skrýt popisky</string>
     <string name="qs_menu_item_qs_columns">Sloupce panelu QS</string>
     <string name="qs_menu_item_columns_auto">Automaticky</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_rows_landscape">Řádky (na šířku)</string>
+    <string name="qs_menu_item_rows">Řádky</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -66,8 +66,8 @@
     <string name="powernotif_tuner_activity">Rozšířené oznámení</string>
     <string name="status_bar_vpn">Síť VPN</string>
     <string name="status_bar_roaming">Roaming</string>
-    <string name="tuner_show_info_header_title">Show information header</string>
-    <string name="tuner_show_secure_title">Show security footer</string>
+    <string name="tuner_show_info_header_title">Zobrazit záhlaví informací</string>
+    <string name="tuner_show_secure_title">Zobrazit bezpečnostní zápatí</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB síť</string>
     <string name="quick_settings_network_adb_enabled_label">ADB přes síť</string>

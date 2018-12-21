@@ -30,8 +30,8 @@
     <string name="qs_menu_item_titles">Ocultar etiquetas</string>
     <string name="qs_menu_item_qs_columns">Columnas de Ajustes rápidos</string>
     <string name="qs_menu_item_columns_auto">Automático</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_rows_landscape">Filas en horizontal</string>
+    <string name="qs_menu_item_rows">Filas</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -42,12 +42,12 @@
     <string name="no_home_title">No se encuentra botón de inicio</string>
     <string name="no_home_message">Se necesita un botón de inicio para poder usar el dispositivo. Por favor, añade uno antes de guardar.</string>
     <string name="clipboard_description">Clipboard permite añadir o eliminar elementos en el portapapeles arrastrándalos directamente.</string>
-    <string name="keycode_description">Keycode buttons allow keyboard keys to be added to the Navigation Bar. When pressed they emulate the selected keyboard key. First the key must be selected for the button, followed by an image to be shown on the button.</string>
+    <string name="keycode_description">Con los botones del código de teclado puedes añadir teclas a la barra de navegación que, al pulsarlas, emulan la tecla seleccionada. Primero debes seleccionar la tecla para el botón y, a continuación, la imagen que se va a mostrar en él.</string>
     <string name="start">Iniciar</string>
     <string name="center">Centrado</string>
     <string name="end">Final</string>
-    <string name="space">Spacer</string>
-    <string name="menu_ime">Menu / Keyboard Switcher</string>
+    <string name="space">Separador</string>
+    <string name="menu_ime">Menú / Cambio de Teclado</string>
     <string name="select_button">Select button to add</string>
     <string name="add_button">Add button</string>
     <string name="save">Guardar</string>

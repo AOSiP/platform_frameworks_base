@@ -30,8 +30,8 @@
     <string name="qs_menu_item_titles">Скрыть названия</string>
     <string name="qs_menu_item_qs_columns">Столбцы быстрых настроек</string>
     <string name="qs_menu_item_columns_auto">Автоматически</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_rows_landscape">Строки (ландшафт)</string>
+    <string name="qs_menu_item_rows">Строки</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -66,7 +66,7 @@
     <string name="powernotif_tuner_activity">Уведомления о состоянии питания</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Роуминг</string>
-    <string name="tuner_show_info_header_title">Show information header</string>
+    <string name="tuner_show_info_header_title">Показать заголовок</string>
     <string name="tuner_show_secure_title">Show security footer</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB по сети</string>

@@ -29,7 +29,7 @@
     <string name="qs_menu_item_reset">Reset</string>
     <string name="qs_menu_item_titles">Hide labels</string>
     <string name="qs_menu_item_qs_columns">Quickbar columns</string>
-    <string name="qs_menu_item_columns_auto">Automatic</string>
+    <string name="qs_menu_item_columns_auto">Automático</string>
     <string name="qs_menu_item_rows_landscape">Rows landscape</string>
     <string name="qs_menu_item_rows">Rows</string>
     <string name="qs_menu_item_rows_one">1</string>
@@ -45,12 +45,12 @@
     <string name="keycode_description">Keycode buttons allow keyboard keys to be added to the Navigation Bar. When pressed they emulate the selected keyboard key. First the key must be selected for the button, followed by an image to be shown on the button.</string>
     <string name="start">Start</string>
     <string name="center">Center</string>
-    <string name="end">End</string>
+    <string name="end">Fim</string>
     <string name="space">Spacer</string>
     <string name="menu_ime">Menu / Keyboard Switcher</string>
-    <string name="select_button">Select button to add</string>
-    <string name="add_button">Add button</string>
-    <string name="save">Save</string>
+    <string name="select_button">Selecionar o botão a adicionar</string>
+    <string name="add_button">Adicionar botão</string>
+    <string name="save">Guardar</string>
     <string name="reset">Reset</string>
     <string name="select_keycode">Select Keyboard Button</string>
     <string name="left">Left</string>
@@ -58,7 +58,7 @@
     <string name="navbar_editor_title">Editor</string>
     <string name="navbar_editor_summary">Configure navigaton bar</string>
     <string name="menu_ime_always_show">Menu / Keyboard Switcher (always show)</string>
-    <string name="search">Search</string>
+    <string name="search">Pesquisar</string>
     <!-- SysUI Tuner -->
     <string name="statusbar_icons_blacklist">Status bar icons</string>
     <string name="navbar_tuner_activity">Navigation bar buttons</string>

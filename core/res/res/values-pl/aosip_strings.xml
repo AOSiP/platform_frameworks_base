@@ -17,26 +17,26 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Button that copies the url to the log of a crashed application -->
-    <string name="aerr_copy">Copy crash log URL</string>
-    <string name="url_copy_success">URL copied successfully</string>
-    <string name="url_copy_failed">An error occured while uploading the log to dogbin</string>
+    <string name="aerr_copy">Skopiuj adres URL logu awarii</string>
+    <string name="url_copy_success">URL skopiowany pomyślnie</string>
+    <string name="url_copy_failed">Nastąpił błąd podczas przesyłania logów do dogbin</string>
     <!-- Power menu -->
     <string name="reboot_title">Uruchom ponownie</string>
-    <string name="reboot_message">Ponowne uruchamianie</string>
+    <string name="reboot_message">Ponowne uruchamianie systemu</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_toggleNavigationEditor">edytor paska nawigacji</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_toggleNavigationEditor">Zezwól aplikacjom na używanie edytora paska nawigacji.</string>
+    <string name="permdesc_toggleNavigationEditor">Zezwala aplikacji na kontrolowanie edytora paska nawigacyjnego.</string>
     <!-- ChooserActivity blacklist -->
     <string name="app_blacklist">Czarna lista aplikacji</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">Fałszowanie podpisu pakietu</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_fakePackageSignature">Pozwala aplikacji na udawanie innej aplikacji. Złośliwe aplikacje mogą wykorzystać to w celu uzyskania dostępu do prywatnych danych. Zachowaj ostrożność udzielając uprawnienień!</string>
+    <string name="permdesc_fakePackageSignature">Pozwala aplikacji na udawanie innej aplikacji. Złośliwe aplikacje mogą wykorzystać to w celu uzyskania dostępu do prywatnych danych. Zachowaj ostrożność udzielając uprawnień!</string>
     <!-- ADB over network notification -->
     <string name="adb_net_active_notification_title">ADB przez sieć włączone</string>
     <!-- ADB over USB and network notification -->
-    <string name="adb_both_active_notification_title">ADB przez sieć USB &amp; włączone</string>
+    <string name="adb_both_active_notification_title">ADB przez USB &amp; sieć włączona</string>
     <!-- ADB notification message-->
     <string name="adb_active_generic_notification_message">Dotknij, aby wyłączyć debugowanie.</string>
 </resources>

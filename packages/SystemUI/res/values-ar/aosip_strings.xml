@@ -30,8 +30,8 @@
     <string name="qs_menu_item_titles">إخفاء أسماء التطبيقات</string>
     <string name="qs_menu_item_qs_columns">أعمدة الشريط السريع</string>
     <string name="qs_menu_item_columns_auto">تلقائي</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_rows_landscape">الصفوف - أفقي</string>
+    <string name="qs_menu_item_rows">الصفوف</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -66,8 +66,8 @@
     <string name="powernotif_tuner_activity">إشعارات الطاقة</string>
     <string name="status_bar_vpn">شبكة ظاهرية خاصة</string>
     <string name="status_bar_roaming">التجوال</string>
-    <string name="tuner_show_info_header_title">Show information header</string>
-    <string name="tuner_show_secure_title">Show security footer</string>
+    <string name="tuner_show_info_header_title">إظهار المعلومات في الرأس</string>
+    <string name="tuner_show_secure_title">عرض تنبيه الآمان السفلي</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">شبكة ADB</string>
     <string name="quick_settings_network_adb_enabled_label">Adb عبر الشبكة</string>

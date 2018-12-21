@@ -30,8 +30,8 @@
     <string name="qs_menu_item_titles">레이블 숨기기</string>
     <string name="qs_menu_item_qs_columns">퀵바 열</string>
     <string name="qs_menu_item_columns_auto">자동</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_rows_landscape">행 (가로 모드)</string>
+    <string name="qs_menu_item_rows">행</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -56,7 +56,7 @@
     <string name="left">왼쪽</string>
     <string name="right">오른쪽</string>
     <string name="navbar_editor_title">편집기</string>
-    <string name="navbar_editor_summary">네비게이션 바 설정</string>
+    <string name="navbar_editor_summary">내비게이션 바 설정</string>
     <string name="menu_ime_always_show">메뉴 / 키보드 선택기 (항상 표시)</string>
     <string name="search">검색</string>
     <!-- SysUI Tuner -->
@@ -66,14 +66,14 @@
     <string name="powernotif_tuner_activity">전원 알림</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">로밍</string>
-    <string name="tuner_show_info_header_title">Show information header</string>
-    <string name="tuner_show_secure_title">Show security footer</string>
+    <string name="tuner_show_info_header_title">정보 머리말을 표시</string>
+    <string name="tuner_show_secure_title">보안 꼬리말 보기</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB 네트워크</string>
-    <string name="quick_settings_network_adb_enabled_label">Adb over Net</string>
-    <string name="quick_settings_network_adb_disabled_label">Adb over Net</string>
+    <string name="quick_settings_network_adb_enabled_label">네트워크를 통한 ADB</string>
+    <string name="quick_settings_network_adb_disabled_label">네트워크를 통한 ADB</string>
     <!-- Lockscreen icons -->
-    <string name="lockscreen_tuner_title">잠금화면 바로 가기</string>
+    <string name="lockscreen_tuner_title">잠금 화면 바로 가기</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
     <string name="lte_on">LTE 켜짐</string>
@@ -88,14 +88,14 @@
     <!-- Immersive tile -->
     <string name="quick_settings_immersive_tile">전체 화면 모드</string>
     <string name="quick_settings_immersive_tile_statusbar">전체 화면 상태바</string>
-    <string name="quick_settings_immersive_tile_navbar">전체 화면 내비바</string>
+    <string name="quick_settings_immersive_tile_navbar">전체 화면 내비게이션 바</string>
     <string name="quick_settings_immersive_tile_full">전체화면 꽉차게</string>
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">카페인</string>
     <string name="accessibility_quick_settings_caffeine_off">카페인 꺼짐</string>
     <string name="accessibility_quick_settings_caffeine_on">카페인 켜짐</string>
     <!-- Power menu advanced restart -->
-    <string name="global_action_restart_system">재시작</string>
+    <string name="global_action_restart_system">다시 시작</string>
     <string name="global_action_restart_advanced">고급</string>
     <string name="global_action_restart_recovery">리커버리</string>
     <string name="global_action_restart_bootloader">부트로더</string>
@@ -106,7 +106,7 @@
     <string name="quick_settings_reboot_label">재시작</string>
     <string name="quick_settings_reboot_recovery_label">복구 모드</string>
     <!-- Screenshot QS tile -->
-    <string name="quick_settings_screenshot_label">화면 캡쳐</string>
+    <string name="quick_settings_screenshot_label">스크린샷</string>
     <string name="quick_settings_region_screenshot_label">부분 캡처</string>
     <string name="screenshot_abort_title">저장된 스크린샷이 없음</string>
     <string name="screenshot_abort_text">작업이 중단됨.</string>

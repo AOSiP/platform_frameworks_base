@@ -30,8 +30,8 @@
     <string name="qs_menu_item_titles">ラベルを隠す</string>
     <string name="qs_menu_item_qs_columns">クイックバーの列数</string>
     <string name="qs_menu_item_columns_auto">自動</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_rows_landscape">横向き時の行数</string>
+    <string name="qs_menu_item_rows">行数</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -66,8 +66,8 @@
     <string name="powernotif_tuner_activity">電源の通知</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">ローミング</string>
-    <string name="tuner_show_info_header_title">Show information header</string>
-    <string name="tuner_show_secure_title">Show security footer</string>
+    <string name="tuner_show_info_header_title">情報ヘッダーを表示</string>
+    <string name="tuner_show_secure_title">セキュリティヘッダーを表示</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADBネットワーク</string>
     <string name="quick_settings_network_adb_enabled_label">ネット経由のADB</string>

@@ -30,8 +30,8 @@
     <string name="qs_menu_item_titles">显示标签</string>
     <string name="qs_menu_item_qs_columns">快速栏列</string>
     <string name="qs_menu_item_columns_auto">自动</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_rows_landscape">横屏行数</string>
+    <string name="qs_menu_item_rows">行数</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -66,8 +66,8 @@
     <string name="powernotif_tuner_activity">电量通知</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">漫游服务</string>
-    <string name="tuner_show_info_header_title">Show information header</string>
-    <string name="tuner_show_secure_title">Show security footer</string>
+    <string name="tuner_show_info_header_title">显示信息标题</string>
+    <string name="tuner_show_secure_title">显示安全页脚</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB 网络</string>
     <string name="quick_settings_network_adb_enabled_label">网络 Adb 调试</string>
