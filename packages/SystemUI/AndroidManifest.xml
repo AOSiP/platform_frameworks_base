@@ -311,7 +311,7 @@
                   android:theme="@style/TunerSettings"
                   android:label="@string/system_ui_tuner"
                   android:process=":tuner"
-                  android:parentActivityName="org.carbonrom.carbonfibers.CarbonFibers"
+                  android:parentActivityName="com.aosip.owlsnest.OwlsNestSettings"
                   android:exported="true">
         </activity>
 
@@ -320,7 +320,7 @@
                   android:theme="@style/TunerSettings"
                   android:label="@string/statusbar_icons_blacklist"
                   android:process=":tuner"
-                  android:parentActivityName="org.carbonrom.carbonfibers.fragments.status_bar.StatusBar"
+                  android:parentActivityName="com.aosip.owlsnest.statusbar.IconsCategory"
                   android:exported="true">
         </activity>
 
@@ -328,7 +328,7 @@
                   android:theme="@style/TunerSettings"
                   android:label="@string/navbar_tuner_activity"
                   android:process=":tuner"
-                  android:parentActivityName="org.carbonrom.carbonfibers.fragments.buttons.NavigationBar"
+                  android:parentActivityName="com.aosip.owlsnest.navigation.NavigationCategory"
                   android:exported="true">
         </activity>
 
@@ -336,7 +336,7 @@
                   android:theme="@style/TunerSettings"
                   android:label="@string/lockscreen_tuner_activity"
                   android:process=":tuner"
-                  android:parentActivityName="org.carbonrom.carbonfibers.fragments.lock_screen.LockScreen"
+                  android:parentActivityName="com.aosip.owlsnest.lockscreen.OptionsCategory"
                   android:exported="true">
         </activity>
 
@@ -344,7 +344,7 @@
                   android:theme="@style/TunerSettings"
                   android:label="@string/powernotif_tuner_activity"
                   android:process=":tuner"
-                  android:parentActivityName="org.carbonrom.carbonfibers.fragments.system.NotificationMedia"
+                  android:parentActivityName="com.aosip.owlsnest.notification.NotificationCategory"
                   android:exported="true">
         </activity>
 
