@@ -194,4 +194,6 @@
     <string name="quick_settings_smart_pixels_on_power_save">Автоматичне увімкнення розумних пікселів</string>
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Показувати 4G, замість LTE</string>
+    <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Volume panel</string>
 </resources>

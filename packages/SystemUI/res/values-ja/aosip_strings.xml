@@ -194,4 +194,6 @@
     <string name="quick_settings_smart_pixels_on_power_save">スマートピクセルを自動的に有効化</string>
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">LTE表示の代わりに4G表示を使用</string>
+    <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Volume panel</string>
 </resources>

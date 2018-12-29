@@ -28,7 +28,7 @@
     <string name="qs_menu_item_columns_nine">9</string>
     <string name="qs_menu_item_reset">리셋</string>
     <string name="qs_menu_item_titles">레이블 숨기기</string>
-    <string name="qs_menu_item_qs_columns">퀵바 열</string>
+    <string name="qs_menu_item_qs_columns">Quickbar 열</string>
     <string name="qs_menu_item_columns_auto">자동</string>
     <string name="qs_menu_item_rows_landscape">행 (가로 모드)</string>
     <string name="qs_menu_item_rows">행</string>
@@ -41,7 +41,7 @@
     <string name="keycode">키 코드</string>
     <string name="no_home_title">홈 버튼을 찾지 못했습니다</string>
     <string name="no_home_message">이 기기를 탐색하려면 홈 버튼을 사용해야 합니다. 홈 버튼을 추가한 다음 저장하세요.</string>
-    <string name="clipboard_description">클립보드를 사용하면 항목을 클립보드로 바로 드래그할 수 있습니다. 또한 항목을 클립보드 밖으로 바로 드래그할 수도 있습니다.</string>
+    <string name="clipboard_description">클립보드에 아이템을 끌어서 넣거나 뺄 수 있습니다.</string>
     <string name="keycode_description">키 코드 버튼을 사용하면 키보드 키를 네비게이션 바에 추가할 수 있습니다. 설정된 키 코드 버튼을 누르면 키보드 키가 에뮬레이션됩니다. 먼저 버튼에 할당할 키를 선택하고 그 다음 버튼에 표시될 이미지를 선택해야 합니다.</string>
     <string name="start">시작</string>
     <string name="center">가운데</string>
@@ -97,13 +97,13 @@
     <!-- Power menu advanced restart -->
     <string name="global_action_restart_system">다시 시작</string>
     <string name="global_action_restart_advanced">고급</string>
-    <string name="global_action_restart_recovery">리커버리</string>
+    <string name="global_action_restart_recovery">복구 모드</string>
     <string name="global_action_restart_bootloader">부트로더</string>
     <string name="global_action_restart_ui">시스템 UI</string>
-    <string name="global_action_restart_hot">빠른 재부팅</string>
+    <string name="global_action_restart_hot">빠른 재시작</string>
     <string name="global_action_screenshot">스크린샷</string>
     <!-- Reboot/Recovery QS Tile -->
-    <string name="quick_settings_reboot_label">재시작</string>
+    <string name="quick_settings_reboot_label">다시 시작</string>
     <string name="quick_settings_reboot_recovery_label">복구 모드</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">스크린샷</string>
@@ -112,10 +112,10 @@
     <string name="screenshot_abort_text">작업이 중단됨.</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">헤드업 알림</string>
-    <string name="accessibility_quick_settings_heads_up_off">헤드 업 꺼짐</string>
-    <string name="accessibility_quick_settings_heads_up_on">헤드 업 켜짐</string>
-    <string name="accessibility_quick_settings_heads_up_changed_off">헤드 업 꺼짐</string>
-    <string name="accessibility_quick_settings_heads_up_changed_on">헤드 업 켜짐</string>
+    <string name="accessibility_quick_settings_heads_up_off">헤드업 알림이 꺼짐</string>
+    <string name="accessibility_quick_settings_heads_up_on">헤드업 알림이 켜짐</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">헤드업 알림이 꺼졌습니다</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">헤드업 알림이 켜졌습니다</string>
     <!-- USB Tethering tile -->
     <string name="accessibility_quick_settings_usb_tether_off">USB 테더링 꺼짐</string>
     <string name="accessibility_quick_settings_usb_tether_on">USB 테더링 켜짐</string>
@@ -134,40 +134,40 @@
     <string name="system_theme_style_auto">자동</string>
     <string name="system_theme_style_light">라이트</string>
     <string name="system_theme_style_dark">다크</string>
-    <string name="quick_settings_theme_tile_title">엑센트</string>
-    <string name="quick_settings_theme_tile_accent_detail_title">엑센트 선택</string>
+    <string name="quick_settings_theme_tile_title">강조색</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">강조색 선택</string>
     <string name="quick_settings_theme_tile_style_detail_title">테마 선택</string>
     <string name="quick_settings_theme_tile_color_default">기본값</string>
-    <string name="quick_settings_theme_tile_color_red">레드</string>
-    <string name="quick_settings_theme_tile_color_pink">핑크</string>
-    <string name="quick_settings_theme_tile_color_purple">퍼플</string>
-    <string name="quick_settings_theme_tile_color_deep_purple">딥 퍼플</string>
-    <string name="quick_settings_theme_tile_color_indigo">인디고</string>
-    <string name="quick_settings_theme_tile_color_blue">블루</string>
-    <string name="quick_settings_theme_tile_color_light_blue">라이트 블루</string>
-    <string name="quick_settings_theme_tile_color_cyan">시안</string>
-    <string name="quick_settings_theme_tile_color_teal">틸</string>
-    <string name="quick_settings_theme_tile_color_green">그린</string>
-    <string name="quick_settings_theme_tile_color_light_green">라이트 그린</string>
-    <string name="quick_settings_theme_tile_color_lime">라임</string>
-    <string name="quick_settings_theme_tile_color_yellow">옐로우</string>
-    <string name="quick_settings_theme_tile_color_amber">앰버</string>
-    <string name="quick_settings_theme_tile_color_orange">오렌지</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">딥 오렌지</string>
-    <string name="quick_settings_theme_tile_color_brown">브라운</string>
-    <string name="quick_settings_theme_tile_color_grey">그레이</string>
-    <string name="quick_settings_theme_tile_color_blue_grey">블루 그레이</string>
-    <string name="quick_settings_theme_tile_color_black">블랙</string>
-    <string name="quick_settings_theme_tile_color_white">화이트</string>
-    <string name="quick_settings_theme_tile_color_user_one">#StayDirty</string>
-    <string name="quick_settings_theme_tile_color_user_two">Grapes</string>
-    <string name="quick_settings_theme_tile_color_user_three">Blu</string>
-    <string name="quick_settings_theme_tile_color_user_four">Mint</string>
-    <string name="quick_settings_theme_tile_color_user_five">Money</string>
-    <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
-    <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
+    <string name="quick_settings_theme_tile_color_red">빨간색</string>
+    <string name="quick_settings_theme_tile_color_pink">분홍색</string>
+    <string name="quick_settings_theme_tile_color_purple">보라색</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">짙은 보라색</string>
+    <string name="quick_settings_theme_tile_color_indigo">남색</string>
+    <string name="quick_settings_theme_tile_color_blue">파란색</string>
+    <string name="quick_settings_theme_tile_color_light_blue">밝은 파란색</string>
+    <string name="quick_settings_theme_tile_color_cyan">하늘색</string>
+    <string name="quick_settings_theme_tile_color_teal">청록색</string>
+    <string name="quick_settings_theme_tile_color_green">초록색</string>
+    <string name="quick_settings_theme_tile_color_light_green">밝은 초록색</string>
+    <string name="quick_settings_theme_tile_color_lime">연두색</string>
+    <string name="quick_settings_theme_tile_color_yellow">노란색</string>
+    <string name="quick_settings_theme_tile_color_amber">호박색</string>
+    <string name="quick_settings_theme_tile_color_orange">오렌지색</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">짙은 오렌지색</string>
+    <string name="quick_settings_theme_tile_color_brown">갈색</string>
+    <string name="quick_settings_theme_tile_color_grey">회색</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">푸른 회색</string>
+    <string name="quick_settings_theme_tile_color_black">검은색</string>
+    <string name="quick_settings_theme_tile_color_white">흰색</string>
+    <string name="quick_settings_theme_tile_color_user_one">스테이더티</string>
+    <string name="quick_settings_theme_tile_color_user_two">포도색</string>
+    <string name="quick_settings_theme_tile_color_user_three">블루</string>
+    <string name="quick_settings_theme_tile_color_user_four">민트</string>
+    <string name="quick_settings_theme_tile_color_user_five">머니</string>
+    <string name="quick_settings_theme_tile_color_user_six">모래색</string>
+    <string name="quick_settings_theme_tile_color_user_seven">람스</string>
     <string name="theme_info_title">이게 뭐죠?</string>
-    <string name="theme_info_message">테마 타일은 사용자가 시스템 엑센트 또는 스타일을 변경할 수 있는 독특하지만 사용하기 쉬운 타일입니다.\n\n 엑센트와 스타일을 변경하려면 타일을 길게 누른 후 다시 눌러 제공되는 옵션 중에서 선택하십시오.</string>
+    <string name="theme_info_message">테마 타일은 사용자가 시스템 강조색 또는 스타일을 변경할 수 있는 독특하지만 사용하기 쉬운 타일입니다.\n\n 강조색과 스타일을 변경하려면 타일을 길게 누른 후 다시 눌러 제공되는 옵션 중에서 선택하십시오.</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">화면이 녹화되고 있습니다.</string>
     <string name="screenrecord_notif_final_ticker">화면이 성공적으로 녹화되었습니다</string>
@@ -194,4 +194,6 @@
     <string name="quick_settings_smart_pixels_on_power_save">스마트 픽셀 자동으로 켜기</string>
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">LTE 대신 4G 표시</string>
+    <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Volume panel</string>
 </resources>

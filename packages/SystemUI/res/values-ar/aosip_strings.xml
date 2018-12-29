@@ -86,7 +86,7 @@
     <string name="quick_settings_sound_vibrate">إهتزاز</string>
     <string name="quick_settings_sound_dnd">عدم الإزعاج</string>
     <!-- Immersive tile -->
-    <string name="quick_settings_immersive_tile">وضع ملء الشاشه</string>
+    <string name="quick_settings_immersive_tile">وضع ملء الشاشة</string>
     <string name="quick_settings_immersive_tile_statusbar">شريط الحالة الغامر</string>
     <string name="quick_settings_immersive_tile_navbar">شريط التنقل الغامر</string>
     <string name="quick_settings_immersive_tile_full">الغمر الكامل</string>
@@ -194,4 +194,6 @@
     <string name="quick_settings_smart_pixels_on_power_save">تمكين الدقة الذكية تلقائياً</string>
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">إظهار 4G بدلاً من LTE</string>
+    <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Volume panel</string>
 </resources>
