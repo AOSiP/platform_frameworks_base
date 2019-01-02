@@ -578,13 +578,12 @@ final class ElectronBeam implements ScreenStateAnimator {
                     } else {
                         flags = SurfaceControl.OPAQUE | SurfaceControl.HIDDEN;
                     }
-                    mSurfaceControl = new SurfaceControl.Builder(mSurfaceSession)
-                            .setName("ElectronBeam")
-                            .setSize(mDisplayWidth, mDisplayHeight)
-
+                    SurfaceControl.Builder builder = new SurfaceControl.Builder(mSurfaceSession);
+                    builder.setFlags(flags)
                             .setFormat(PixelFormat.OPAQUE)
-                            .setFlags(flags)
-                            .build();
+                            .setName("ElectronBeam")
+                            .setSize(mDisplayWidth, mDisplayHeight);
+                    mSurfaceControl = builder.build();
                 } catch (OutOfResourcesException ex) {
                     Slog.e(TAG, "Unable to create surface.", ex);
                     return false;

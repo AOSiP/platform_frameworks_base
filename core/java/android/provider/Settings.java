@@ -3732,6 +3732,12 @@ public final class Settings {
         };
 
         /**
+         * Defines the screen-off animation to display
+         * @hide
+         */
+        public static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
+
+        /**
          * Whether the setup wizard has been run before (on first boot), or if
          * it still needs to be run.
          *
@@ -13134,18 +13140,6 @@ public final class Settings {
          */
         public static final String LOCATION_SETTINGS_LINK_TO_PERMISSIONS_ENABLED =
                 "location_settings_link_to_permissions_enabled";
-
-        /**
-         * Defines the screen-off animation to display
-         * @hide
-         */
-        public static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
-
-        /**
-         * Whether to show a screen-on animation
-         * @hide
-         */
-        public static final String SCREEN_ON_ANIMATION = "screen_on_animation";
 
         /**
          * Flag to set the waiting time for euicc factory reset inside System > Settings
