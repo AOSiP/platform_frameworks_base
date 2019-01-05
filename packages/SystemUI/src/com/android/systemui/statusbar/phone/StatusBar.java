@@ -3696,14 +3696,19 @@ public class StatusBar extends SystemUI implements DemoMode,
         // Values on framework resources
         int cornerRadiusRes = (int) (res.getDimension(resourceIdRadius) / density);
         int contentPaddingRes = (int) (res.getDimension(resourceIdPadding) / density);
+        int resourceIdSBPadding = (int) mContext.getResources().getDimension(R.dimen.status_bar_extra_padding);
+        int sbPaddingRes = (int) (resourceIdSBPadding / density);
 
         // Values in Settings DBs
         int cornerRadius = Settings.Secure.getIntForUser(mContext.getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_SIZE, cornerRadiusRes, UserHandle.USER_CURRENT);
         int contentPadding = Settings.Secure.getIntForUser(mContext.getContentResolver(),
                 Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, contentPaddingRes, UserHandle.USER_CURRENT);
+        int sbPadding = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_STATUS_BAR_PADDING, contentPaddingRes, UserHandle.USER_CURRENT);
 
-        return (cornerRadiusRes == cornerRadius) && (contentPaddingRes == contentPadding);
+        return (cornerRadiusRes == cornerRadius) && (contentPaddingRes == contentPadding) &&
+                (sbPaddingRes == sbPadding);
     }
 
     /**
@@ -3739,6 +3744,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                 int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null, null);
                 Settings.Secure.putIntForUser(mContext.getContentResolver(),
                     Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, (int) (res.getDimension(resourceIdPadding) / density), UserHandle.USER_CURRENT);
+                int resourceIdSBPadding = (int) mContext.getResources().getDimension(R.dimen.status_bar_extra_padding);
+                Settings.Secure.putIntForUser(mContext.getContentResolver(),
+                    Settings.Secure.SYSUI_STATUS_BAR_PADDING, (int) (resourceIdSBPadding / density), UserHandle.USER_CURRENT);
             }
         }
     }
