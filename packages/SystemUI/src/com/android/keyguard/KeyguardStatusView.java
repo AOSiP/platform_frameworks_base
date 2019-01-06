@@ -210,6 +210,10 @@ public class KeyguardStatusView extends GridLayout implements
         updateDark();
     }
 
+    public void onThemeChanged(boolean useDarkTheme) {
+        mCustomClockView.onThemeChanged(useDarkTheme, true);
+    }
+
     /**
      * Moves clock and separator, adjusting margins when slice content changes.
      */
