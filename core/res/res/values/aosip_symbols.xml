@@ -62,10 +62,6 @@
     <java-symbol type="bool" name="config_multiColorBatteryLed" />
     <java-symbol type="bool" name="config_ledCanPulse" />
 
-    <!-- ChooserActivity blacklist -->
-    <java-symbol type="array" name="resolver_target_actions_pin_custom" />
-    <java-symbol type="array" name="resolver_target_actions_unpin_custom" />
-
     <!-- Screen off delay -->
     <java-symbol type="integer" name="config_screen_off_delay" />
 
