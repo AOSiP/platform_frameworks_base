@@ -80,6 +80,8 @@
     <string name="lte_off">LTE вимк.</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Знімок екрану видалено</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Звук</string>
     <string name="quick_settings_sound_ring">Дзвінок</string>

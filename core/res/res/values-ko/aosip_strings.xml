@@ -26,7 +26,7 @@
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_toggleNavigationEditor">내비게이션 바 편집</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_toggleNavigationEditor">어플리케이션에서 내비게이션 바 편집기 제어를 허용합니다.</string>
+    <string name="permdesc_toggleNavigationEditor">앱에서 내비게이션 바 편집기 제어를 허용합니다.</string>
     <!-- ChooserActivity blacklist -->
     <string name="app_blacklist">블랙리스트 앱</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

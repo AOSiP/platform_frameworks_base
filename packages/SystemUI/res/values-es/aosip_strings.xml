@@ -48,38 +48,40 @@
     <string name="end">Final</string>
     <string name="space">Separador</string>
     <string name="menu_ime">Menú / Cambio de Teclado</string>
-    <string name="select_button">Select button to add</string>
-    <string name="add_button">Add button</string>
+    <string name="select_button">Selecciona botón para añadirlo</string>
+    <string name="add_button">Añadir botón</string>
     <string name="save">Guardar</string>
     <string name="reset">Restablecer</string>
-    <string name="select_keycode">Select Keyboard Button</string>
-    <string name="left">Left</string>
-    <string name="right">Right</string>
+    <string name="select_keycode">Selecciona un botón de teclado</string>
+    <string name="left">Izquierda</string>
+    <string name="right">Derecha</string>
     <string name="navbar_editor_title">Editor</string>
-    <string name="navbar_editor_summary">Configure navigaton bar</string>
-    <string name="menu_ime_always_show">Menu / Keyboard Switcher (always show)</string>
-    <string name="search">Search</string>
+    <string name="navbar_editor_summary">Configurar barra de navegación</string>
+    <string name="menu_ime_always_show">Menú / Selector de Teclado (mostrar siempre)</string>
+    <string name="search">Buscar</string>
     <!-- SysUI Tuner -->
     <string name="statusbar_icons_blacklist">Iconos de la barra de estado</string>
     <string name="navbar_tuner_activity">Botones de la barra de navegación</string>
-    <string name="lockscreen_tuner_activity">Lock screen shortcuts</string>
+    <string name="lockscreen_tuner_activity">Accesos directos en la pantalla de bloqueo</string>
     <string name="powernotif_tuner_activity">Notificaciones de energía</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Itinerancia de datos</string>
     <string name="tuner_show_info_header_title">Show information header</string>
     <string name="tuner_show_secure_title">Show security footer</string>
     <!-- ADB network tile -->
-    <string name="quick_settings_adb_network">ADB network</string>
-    <string name="quick_settings_network_adb_enabled_label">Adb over Net</string>
-    <string name="quick_settings_network_adb_disabled_label">Adb over Net</string>
+    <string name="quick_settings_adb_network">ADB sobre red</string>
+    <string name="quick_settings_network_adb_enabled_label">Adb sobre Red</string>
+    <string name="quick_settings_network_adb_disabled_label">Adb sobre Red</string>
     <!-- Lockscreen icons -->
-    <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
+    <string name="lockscreen_tuner_title">Accesos directos en la pantalla de bloqueo</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
     <string name="lte_on">LTE Activado </string>
     <string name="lte_off">LTE Desactivado</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Captura de pantalla borrada</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Sonido</string>
     <string name="quick_settings_sound_ring">Sonar</string>
@@ -117,10 +119,10 @@
     <string name="accessibility_quick_settings_heads_up_changed_off">Notificaciones emergentes desactivadas.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Notificaciones emergentes activadas.</string>
     <!-- USB Tethering tile -->
-    <string name="accessibility_quick_settings_usb_tether_off">USB tethering off</string>
-    <string name="accessibility_quick_settings_usb_tether_on">USB tethering on</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_off">USB tethering turned off</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_on">USB tethering turned on</string>
+    <string name="accessibility_quick_settings_usb_tether_off">Anclaje USB desactivado</string>
+    <string name="accessibility_quick_settings_usb_tether_on">Anclaje USB activado</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">El anclaje USB ha sido deshabilitado</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">El anclaje USB ha sido habilitado</string>
     <string name="quick_settings_usb_tether_label">Anclaje USB</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
@@ -128,15 +130,15 @@
     <!-- SysUI Tuner: Button that controls inversion of layout of navigation bar [CHAR LIMIT=60] -->
     <string name="nav_bar_layout_inverse">Invert layout</string>
     <!-- QS customizer -->
-    <string name="drag_or_tap_to_add_tiles">Drag or tap to add/remove tiles</string>
+    <string name="drag_or_tap_to_add_tiles">Arrastre o toque para añadir o quitar accesos directos</string>
     <!-- Theme tile -->
-    <string name="system_theme_style_title">Theme</string>
-    <string name="system_theme_style_auto">Automatic</string>
+    <string name="system_theme_style_title">Tema</string>
+    <string name="system_theme_style_auto">Automático</string>
     <string name="system_theme_style_light">Light</string>
     <string name="system_theme_style_dark">Dark</string>
     <string name="quick_settings_theme_tile_title">Acento</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Select accent</string>
-    <string name="quick_settings_theme_tile_style_detail_title">Select theme</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Selecciona un tema</string>
     <string name="quick_settings_theme_tile_color_default">Predeterminado</string>
     <string name="quick_settings_theme_tile_color_red">Rojo</string>
     <string name="quick_settings_theme_tile_color_pink">Rosa</string>
@@ -166,7 +168,7 @@
     <string name="quick_settings_theme_tile_color_user_five">Money</string>
     <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
     <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
-    <string name="theme_info_title">What is this?</string>
+    <string name="theme_info_title">¿Qué es esto?</string>
     <string name="theme_info_message">The Themes tile is a unique but easy to use tile that allows the user to change the system accent or theme.\n\nTo change between accents and themes, simply long press on the tile and then press again to select from the options offered.</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">La pantalla está siendo grabada</string>
@@ -195,5 +197,5 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Mostrar 4G en lugar de LTE</string>
     <!-- Volume panel QS tile -->
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <string name="quick_settings_volume_panel_label">Panel de volumen</string>
 </resources>

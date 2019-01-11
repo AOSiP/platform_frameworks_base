@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- QS Colums & rows -->
-    <string name="qs_menu_item_columns">Colonne Verticale</string>
-    <string name="qs_menu_item_columns_landscape">Colonne orizzonte</string>
+    <string name="qs_menu_item_columns">Colonne verticali</string>
+    <string name="qs_menu_item_columns_landscape">Colonne orizzontali</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -66,8 +66,8 @@
     <string name="powernotif_tuner_activity">Notifiche del menu di spegnimento</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Roaming</string>
-    <string name="tuner_show_info_header_title">Show information header</string>
-    <string name="tuner_show_secure_title">Show security footer</string>
+    <string name="tuner_show_info_header_title">Mostra informazioni sulle intestazioni</string>
+    <string name="tuner_show_secure_title">Mostra il piè di pagina di sicurezza</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">Rete ADB</string>
     <string name="quick_settings_network_adb_enabled_label">Adb nella Rete</string>
@@ -80,6 +80,8 @@
     <string name="lte_off">LTE Disattivato</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Screenshot eliminato</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Suono</string>
     <string name="quick_settings_sound_ring">Suona</string>
@@ -195,5 +197,5 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Mostra 4G invece di LTE</string>
     <!-- Volume panel QS tile -->
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <string name="quick_settings_volume_panel_label">Pannelo del volume</string>
 </resources>

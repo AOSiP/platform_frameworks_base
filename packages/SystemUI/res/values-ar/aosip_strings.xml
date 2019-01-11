@@ -80,6 +80,8 @@
     <string name="lte_off">LTE لا يعمل</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">تم حذف لقطة الشاشة</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">الصوت</string>
     <string name="quick_settings_sound_ring">رنين</string>
@@ -195,5 +197,5 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">إظهار 4G بدلاً من LTE</string>
     <!-- Volume panel QS tile -->
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <string name="quick_settings_volume_panel_label">لوحة مستوى الصوت</string>
 </resources>

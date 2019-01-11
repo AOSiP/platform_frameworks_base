@@ -80,6 +80,8 @@
     <string name="lte_off">LTE オフ</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">スクリーンショットを削除しました</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">サウンド</string>
     <string name="quick_settings_sound_ring">着信</string>
@@ -195,5 +197,5 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">LTE表示の代わりに4G表示を使用</string>
     <!-- Volume panel QS tile -->
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <string name="quick_settings_volume_panel_label">音量パネル</string>
 </resources>

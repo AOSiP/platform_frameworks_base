@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- QS Colums & rows -->
-    <string name="qs_menu_item_columns">Portrait columns</string>
-    <string name="qs_menu_item_columns_landscape">Landscape columns</string>
+    <string name="qs_menu_item_columns">Hochformat Spalten</string>
+    <string name="qs_menu_item_columns_landscape">Querformat Spalten</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -27,69 +27,71 @@
     <string name="qs_menu_item_columns_eight">8</string>
     <string name="qs_menu_item_columns_nine">9</string>
     <string name="qs_menu_item_reset">Zurücksetzen</string>
-    <string name="qs_menu_item_titles">Hide labels</string>
-    <string name="qs_menu_item_qs_columns">Quickbar columns</string>
-    <string name="qs_menu_item_columns_auto">Automatic</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_titles">Beschriftungen ausblenden</string>
+    <string name="qs_menu_item_qs_columns">Spalten (Schnelleinstellungskacheln)</string>
+    <string name="qs_menu_item_columns_auto">Automatisch</string>
+    <string name="qs_menu_item_rows_landscape">Zeilen Querformat</string>
+    <string name="qs_menu_item_rows">Zeilen</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
     <string name="qs_menu_item_rows_four">4</string>
     <!-- Navbar Tuner -->
-    <string name="preview">Preview</string>
-    <string name="keycode">Keycode</string>
-    <string name="no_home_title">No home button found</string>
-    <string name="no_home_message">A home button is required to be able to navigate this device. Please add a home button before saving.</string>
-    <string name="clipboard_description">The Clipboard allows items to be dragged directly to the clipboard. Items can also be dragged directly out of the clipboard when present.</string>
-    <string name="keycode_description">Keycode buttons allow keyboard keys to be added to the Navigation Bar. When pressed they emulate the selected keyboard key. First the key must be selected for the button, followed by an image to be shown on the button.</string>
+    <string name="preview">Vorschau</string>
+    <string name="keycode">Tastencode</string>
+    <string name="no_home_title">Keine Home-Taste gefunden</string>
+    <string name="no_home_message">Eine Home-Taste ist erforderlich, um dieses Gerät navigieren zu können. Bitte fügen Sie eine Home-Taste vor dem Speichern ein.</string>
+    <string name="clipboard_description">Elemente können direkt in die Zwischenablage gezogen werden. Ebenso können sie direkt aus der Zwischenablage gezogen werden, sofern diese geöffnet ist.</string>
+    <string name="keycode_description">Mit den Tastencode-Schaltflächen kann man der Navigationsleiste Tasten der Tastatur hinzufügen. Wird diese Schaltfläche ausgewählt, führt sie die Aktion der entsprechenden Taste aus. Wähle zuerst die Taste für die Schaltfläche aus und dann ein Bild, das auf der Schaltfläche erscheinen soll.</string>
     <string name="start">Start</string>
-    <string name="center">Center</string>
-    <string name="end">End</string>
-    <string name="space">Spacer</string>
-    <string name="menu_ime">Menu / Keyboard Switcher</string>
-    <string name="select_button">Select button to add</string>
-    <string name="add_button">Add button</string>
-    <string name="save">Save</string>
-    <string name="reset">Reset</string>
-    <string name="select_keycode">Select Keyboard Button</string>
-    <string name="left">Left</string>
-    <string name="right">Right</string>
+    <string name="center">Mitte</string>
+    <string name="end">Ende</string>
+    <string name="space">Abstandshalter</string>
+    <string name="menu_ime">Menü- / Tastaturumschalter</string>
+    <string name="select_button">Wähle eine Taste zum Hinzufügen</string>
+    <string name="add_button">Taste hinzufügen</string>
+    <string name="save">Speichern</string>
+    <string name="reset">Zurücksetzen</string>
+    <string name="select_keycode">Tastatur-Taste auswählen</string>
+    <string name="left">Links</string>
+    <string name="right">Rechts</string>
     <string name="navbar_editor_title">Editor</string>
-    <string name="navbar_editor_summary">Configure navigaton bar</string>
-    <string name="menu_ime_always_show">Menu / Keyboard Switcher (always show)</string>
-    <string name="search">Search</string>
+    <string name="navbar_editor_summary">Navigationsleiste konfigurieren</string>
+    <string name="menu_ime_always_show">Menü / Tastatur-Umschalter (immer anzeigen)</string>
+    <string name="search">Suche</string>
     <!-- SysUI Tuner -->
     <string name="statusbar_icons_blacklist">Statusleisten-Symbole</string>
     <string name="navbar_tuner_activity">Navigationsleisten-Tasten</string>
-    <string name="lockscreen_tuner_activity">Lock screen shortcuts</string>
+    <string name="lockscreen_tuner_activity">Sperrbildschirm-Verknüpfungen</string>
     <string name="powernotif_tuner_activity">Energiestatus Benachrichtigungen</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Roaming</string>
-    <string name="tuner_show_info_header_title">Show information header</string>
-    <string name="tuner_show_secure_title">Show security footer</string>
+    <string name="tuner_show_info_header_title">Informations-Kopfzeile anzeigen</string>
+    <string name="tuner_show_secure_title">Sicherheit-Fußfzeile anzeigen</string>
     <!-- ADB network tile -->
-    <string name="quick_settings_adb_network">ADB network</string>
-    <string name="quick_settings_network_adb_enabled_label">Adb over Net</string>
-    <string name="quick_settings_network_adb_disabled_label">Adb over Net</string>
+    <string name="quick_settings_adb_network">ADB-Netzwerk</string>
+    <string name="quick_settings_network_adb_enabled_label">ADB übers Netzwerk</string>
+    <string name="quick_settings_network_adb_disabled_label">ADB übers Netzwerk</string>
     <!-- Lockscreen icons -->
-    <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
+    <string name="lockscreen_tuner_title">Sperrbildschirm-Verknüpfungen</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
     <string name="lte_on">LTE an </string>
     <string name="lte_off">LTE aus</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Screenshot gelöscht</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Töne</string>
     <string name="quick_settings_sound_ring">Klingeln</string>
     <string name="quick_settings_sound_vibrate">Vibrieren</string>
     <string name="quick_settings_sound_dnd">Bitte nicht stören</string>
     <!-- Immersive tile -->
-    <string name="quick_settings_immersive_tile">Immersive mode</string>
-    <string name="quick_settings_immersive_tile_statusbar">Immersive statusbar</string>
-    <string name="quick_settings_immersive_tile_navbar">Immersive navbar</string>
-    <string name="quick_settings_immersive_tile_full">Immersive full</string>
+    <string name="quick_settings_immersive_tile">Immersiver Modus</string>
+    <string name="quick_settings_immersive_tile_statusbar">Immersive Statusleiste</string>
+    <string name="quick_settings_immersive_tile_navbar">Immersive Navigationsleiste</string>
+    <string name="quick_settings_immersive_tile_full">Immersiv vollständig</string>
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">Koffein</string>
     <string name="accessibility_quick_settings_caffeine_off">Koffein aus</string>
@@ -117,26 +119,26 @@
     <string name="accessibility_quick_settings_heads_up_changed_off">Heads-Up deaktiviert.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Heads-Up aktiviert.</string>
     <!-- USB Tethering tile -->
-    <string name="accessibility_quick_settings_usb_tether_off">USB tethering off</string>
-    <string name="accessibility_quick_settings_usb_tether_on">USB tethering on</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_off">USB tethering turned off</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_on">USB tethering turned on</string>
+    <string name="accessibility_quick_settings_usb_tether_off">USB-Tethering aus</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB-Tethering an</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB-Tethering ausgeschaltet</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB-Tethering eingeschaltet</string>
     <string name="quick_settings_usb_tether_label">USB Tethering</string>
     <!-- Heads up snooze toast -->
-    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Heads-Up Benachrichtigungen sind für 1 Minute deaktiviert.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> - Heads-Up Benachrichtigungen sind für <xliff:g id="number">%d </xliff:g> Minuten deaktiviert.</string>
     <!-- SysUI Tuner: Button that controls inversion of layout of navigation bar [CHAR LIMIT=60] -->
-    <string name="nav_bar_layout_inverse">Invert layout</string>
+    <string name="nav_bar_layout_inverse">Layout umkehren</string>
     <!-- QS customizer -->
-    <string name="drag_or_tap_to_add_tiles">Drag or tap to add/remove tiles</string>
+    <string name="drag_or_tap_to_add_tiles">Ziehe oder tippe, um Kacheln hinzuzufügen/zu entfernen</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">Theme</string>
-    <string name="system_theme_style_auto">Automatic</string>
-    <string name="system_theme_style_light">Light</string>
-    <string name="system_theme_style_dark">Dark</string>
+    <string name="system_theme_style_auto">Automatisch</string>
+    <string name="system_theme_style_light">Hell</string>
+    <string name="system_theme_style_dark">Dunkel</string>
     <string name="quick_settings_theme_tile_title">Akzent</string>
-    <string name="quick_settings_theme_tile_accent_detail_title">Select accent</string>
-    <string name="quick_settings_theme_tile_style_detail_title">Select theme</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Farbakzent wählen</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Design auswählen</string>
     <string name="quick_settings_theme_tile_color_default">Standard</string>
     <string name="quick_settings_theme_tile_color_red">Rot</string>
     <string name="quick_settings_theme_tile_color_pink">Pink</string>
@@ -166,8 +168,8 @@
     <string name="quick_settings_theme_tile_color_user_five">Money</string>
     <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
     <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
-    <string name="theme_info_title">What is this?</string>
-    <string name="theme_info_message">The Themes tile is a unique but easy to use tile that allows the user to change the system accent or theme.\n\nTo change between accents and themes, simply long press on the tile and then press again to select from the options offered.</string>
+    <string name="theme_info_title">Was ist das?</string>
+    <string name="theme_info_message">Mit der Design-Kachel können Sie sowohl die Akzent-Farbe als auch den System-Stil ändern.\n\nHalten Sie die Kachel gedrückt bis die Anzeige umspringt, tippen Sie kurz auf die Kachel, um die angezeigte Auswahl zu öffnen.</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">Bildschirminhalt wird aufgezeichnet</string>
     <string name="screenrecord_notif_final_ticker">Bildschirmaufnahme erfolgreich</string>
@@ -191,9 +193,9 @@
     <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
     <!-- Smart Pixels QS Tile -->
     <string name="quick_settings_smart_pixels">Smart Pixels</string>
-    <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled Smart Pixels</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Smart Pixels automatisch einschalten</string>
     <!-- 4G LTE switch -->
-    <string name="show_fourg_title">Show 4G instead of LTE</string>
+    <string name="show_fourg_title">4G anstatt LTE anzeigen</string>
     <!-- Volume panel QS tile -->
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <string name="quick_settings_volume_panel_label">Lautstärkeregler</string>
 </resources>

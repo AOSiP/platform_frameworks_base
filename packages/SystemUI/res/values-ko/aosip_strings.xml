@@ -80,6 +80,8 @@
     <string name="lte_off">LTE 꺼짐</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">스크린샷이 삭제되었습니다</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">소리</string>
     <string name="quick_settings_sound_ring">벨소리</string>
@@ -128,7 +130,7 @@
     <!-- SysUI Tuner: Button that controls inversion of layout of navigation bar [CHAR LIMIT=60] -->
     <string name="nav_bar_layout_inverse">레이아웃 반전</string>
     <!-- QS customizer -->
-    <string name="drag_or_tap_to_add_tiles">드래그 또는 탭하여 타일 추가/삭제</string>
+    <string name="drag_or_tap_to_add_tiles">끌거나 눌러서 타일 추가/삭제</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">테마</string>
     <string name="system_theme_style_auto">자동</string>
@@ -195,5 +197,5 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">LTE 대신 4G 표시</string>
     <!-- Volume panel QS tile -->
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <string name="quick_settings_volume_panel_label">볼륨 패널</string>
 </resources>

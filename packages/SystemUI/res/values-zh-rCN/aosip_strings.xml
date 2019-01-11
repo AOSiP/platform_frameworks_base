@@ -38,34 +38,34 @@
     <string name="qs_menu_item_rows_four">4</string>
     <!-- Navbar Tuner -->
     <string name="preview">预览</string>
-    <string name="keycode">代码</string>
-    <string name="no_home_title">找不到Home键</string>
+    <string name="keycode">键码</string>
+    <string name="no_home_title">找不到主页按钮</string>
     <string name="no_home_message">要在此设备上使用导航栏，您必须启用主屏幕按钮。请先添加主屏幕按钮，然后再保存。</string>
-    <string name="clipboard_description">此剪贴板允许将文本直接拖动到剪贴板。文本也可以在存在时直接从剪贴板中拖动。</string>
-    <string name="keycode_description">代码按钮允许将键盘键添加到巡览列中。按下时,它们将模拟选定的键盘键。首先，必须为按钮选择按键，然后选择要在按钮上显示的图像。</string>
+    <string name="clipboard_description">剪贴板允许将项目直接拖动到剪贴板。当存在时，也可以将项目直接拖出剪贴板。</string>
+    <string name="keycode_description">键码按钮允许将键盘键添加到导航栏。按下时，它们会模拟选定的键盘键。首先，必须为按钮选择键，然后在按钮上显示图像。</string>
     <string name="start">开始</string>
-    <string name="center">中央</string>
-    <string name="end">结束</string>
+    <string name="center">居中</string>
+    <string name="end">结尾</string>
     <string name="space">间隔</string>
-    <string name="menu_ime">功能表/键盘切换器</string>
+    <string name="menu_ime">菜单/键盘切换器</string>
     <string name="select_button">选择要添加的按钮</string>
-    <string name="add_button">\"添加\" 按钮</string>
+    <string name="add_button">添加按钮</string>
     <string name="save">保存</string>
     <string name="reset">重置</string>
     <string name="select_keycode">选择键盘按钮</string>
-    <string name="left">左</string>
-    <string name="right">中</string>
+    <string name="left">左侧</string>
+    <string name="right">右侧</string>
     <string name="navbar_editor_title">编辑器</string>
     <string name="navbar_editor_summary">配置导航栏</string>
-    <string name="menu_ime_always_show">菜单/键盘切换器 （始终显示）</string>
+    <string name="menu_ime_always_show">菜单/键盘切换器 (始终显示)</string>
     <string name="search">搜索</string>
     <!-- SysUI Tuner -->
     <string name="statusbar_icons_blacklist">状态栏图标</string>
     <string name="navbar_tuner_activity">导航栏按钮</string>
     <string name="lockscreen_tuner_activity">锁定屏幕快捷方式</string>
-    <string name="powernotif_tuner_activity">电量通知</string>
+    <string name="powernotif_tuner_activity">电源通知</string>
     <string name="status_bar_vpn">VPN</string>
-    <string name="status_bar_roaming">漫游服务</string>
+    <string name="status_bar_roaming">数据漫游</string>
     <string name="tuner_show_info_header_title">显示信息标题</string>
     <string name="tuner_show_secure_title">显示安全页脚</string>
     <!-- ADB network tile -->
@@ -80,6 +80,8 @@
     <string name="lte_off">LTE 关闭</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">屏幕截图已删除</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">声音</string>
     <string name="quick_settings_sound_ring">铃声</string>
@@ -96,20 +98,20 @@
     <string name="accessibility_quick_settings_caffeine_on">开启保持亮屏</string>
     <!-- Power menu advanced restart -->
     <string name="global_action_restart_system">重新启动</string>
-    <string name="global_action_restart_advanced">高级</string>
+    <string name="global_action_restart_advanced">高级重启</string>
     <string name="global_action_restart_recovery">恢复模式</string>
     <string name="global_action_restart_bootloader">引导模式</string>
     <string name="global_action_restart_ui">系统界面</string>
     <string name="global_action_restart_hot">快速重启</string>
-    <string name="global_action_screenshot">屏幕截屏</string>
+    <string name="global_action_screenshot">屏幕截图</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">重新启动</string>
     <string name="quick_settings_reboot_recovery_label">恢复模式</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">屏幕截图</string>
     <string name="quick_settings_region_screenshot_label">局部截图</string>
-    <string name="screenshot_abort_title">未截取屏幕截屏</string>
-    <string name="screenshot_abort_text">操作中止。</string>
+    <string name="screenshot_abort_title">无屏幕截图</string>
+    <string name="screenshot_abort_text">操作中止</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">浮动通知</string>
     <string name="accessibility_quick_settings_heads_up_off">浮动通知已关闭</string>
@@ -166,34 +168,34 @@
     <string name="quick_settings_theme_tile_color_user_five">金币</string>
     <string name="quick_settings_theme_tile_color_user_six">桑迪</string>
     <string name="quick_settings_theme_tile_color_user_seven">公羊</string>
-    <string name="theme_info_title">这是怎么？</string>
-    <string name="theme_info_message">\"主题\" 磁贴是一种独特但便于使用的磁贴，它允许用户更改系统强调色或主题。\n如要在强调色和主题之间进行变更，只需长按磁贴，然后再次按下磁贴以从提供的选项中进行选择。</string>
+    <string name="theme_info_title">这是什么?</string>
+    <string name="theme_info_message">主题瓷贴虽然独特但却易于使用，它允许用户更改系统强调色或主题。\n\n想要更改强调色和主题，只需简单地长按瓷贴，然后再次按下即可从所提供的选项中进行选择。</string>
     <!-- Screenrecord Notification Ticker -->
-    <string name="screenrecord_notif_ticker">正在开始录制屏幕</string>
+    <string name="screenrecord_notif_ticker">正在录制屏幕</string>
     <string name="screenrecord_notif_final_ticker">屏幕录制完成</string>
     <!-- Screenrecord notification title -->
-    <string name="screenrecord_notif_title">屏幕录制中</string>
+    <string name="screenrecord_notif_title">正在录制屏幕</string>
     <!-- Screenrecord notification action: Stop -->
     <string name="screenrecord_notif_stop">停止</string>
     <string name="screenrecord_notif_completed">屏幕录制完成</string>
     <!-- Screenrecord notification action: show/hide pointer -->
-    <string name="screenrecord_notif_pointer_on">显示触摸指针</string>
-    <string name="screenrecord_notif_pointer_off">隐藏触摸指针</string>
+    <string name="screenrecord_notif_pointer_on">显示触摸点</string>
+    <string name="screenrecord_notif_pointer_off">隐藏触摸点</string>
     <!-- Screen record notification error title -->
     <string name="screenrecord_notif_error">无法录制屏幕</string>
-    <string name="notification_channel_screenrecord">屏幕录制</string>
+    <string name="notification_channel_screenrecord">屏幕录像</string>
     <string name="screenrecord_hide_hint">隐藏提示</string>
     <string name="screenrecord_show_hint">显示提示</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenrecord_label">屏幕录制</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time">快速充电中 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 后充满)</string>
-    <string name="keyguard_plugged_in_dash_charging">快速充电中</string>
+    <string name="keyguard_indication_dash_charging_time">正在快速充电 (还需<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 充满)</string>
+    <string name="keyguard_plugged_in_dash_charging">Dash 闪充</string>
     <!-- Smart Pixels QS Tile -->
     <string name="quick_settings_smart_pixels">智能像素</string>
     <string name="quick_settings_smart_pixels_on_power_save">自动启用智能像素</string>
     <!-- 4G LTE switch -->
-    <string name="show_fourg_title">使用4G图标替代LTE图标</string>
+    <string name="show_fourg_title">显示 4G，而不是 LTE</string>
     <!-- Volume panel QS tile -->
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <string name="quick_settings_volume_panel_label">音量面板</string>
 </resources>

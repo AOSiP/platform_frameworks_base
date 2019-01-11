@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- QS Colums & rows -->
-    <string name="qs_menu_item_columns">Portrait columns</string>
-    <string name="qs_menu_item_columns_landscape">Landscape columns</string>
+    <string name="qs_menu_item_columns">Oszlopok álló módban</string>
+    <string name="qs_menu_item_columns_landscape">Oszlopok fekvő módban</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -26,50 +26,50 @@
     <string name="qs_menu_item_columns_seven">7</string>
     <string name="qs_menu_item_columns_eight">8</string>
     <string name="qs_menu_item_columns_nine">9</string>
-    <string name="qs_menu_item_reset">Reset</string>
-    <string name="qs_menu_item_titles">Hide labels</string>
-    <string name="qs_menu_item_qs_columns">Quickbar columns</string>
-    <string name="qs_menu_item_columns_auto">Automatic</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_reset">Visszaállítás</string>
+    <string name="qs_menu_item_titles">Címkék elrejtése</string>
+    <string name="qs_menu_item_qs_columns">A Gyorssáv oszlopai</string>
+    <string name="qs_menu_item_columns_auto">Automatikus</string>
+    <string name="qs_menu_item_rows_landscape">Sorok (fekvő módban)</string>
+    <string name="qs_menu_item_rows">Sorok</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
     <string name="qs_menu_item_rows_four">4</string>
     <!-- Navbar Tuner -->
-    <string name="preview">Preview</string>
-    <string name="keycode">Keycode</string>
-    <string name="no_home_title">No home button found</string>
-    <string name="no_home_message">A home button is required to be able to navigate this device. Please add a home button before saving.</string>
-    <string name="clipboard_description">The Clipboard allows items to be dragged directly to the clipboard. Items can also be dragged directly out of the clipboard when present.</string>
-    <string name="keycode_description">Keycode buttons allow keyboard keys to be added to the Navigation Bar. When pressed they emulate the selected keyboard key. First the key must be selected for the button, followed by an image to be shown on the button.</string>
-    <string name="start">Start</string>
-    <string name="center">Center</string>
-    <string name="end">End</string>
-    <string name="space">Spacer</string>
-    <string name="menu_ime">Menu / Keyboard Switcher</string>
-    <string name="select_button">Select button to add</string>
-    <string name="add_button">Add button</string>
-    <string name="save">Save</string>
-    <string name="reset">Reset</string>
-    <string name="select_keycode">Select Keyboard Button</string>
-    <string name="left">Left</string>
-    <string name="right">Right</string>
-    <string name="navbar_editor_title">Editor</string>
-    <string name="navbar_editor_summary">Configure navigaton bar</string>
-    <string name="menu_ime_always_show">Menu / Keyboard Switcher (always show)</string>
-    <string name="search">Search</string>
+    <string name="preview">Előnézet</string>
+    <string name="keycode">Billentyűkód</string>
+    <string name="no_home_title">Nem található a Kezdőoldal-gomb</string>
+    <string name="no_home_message">A készüléken történő navigáláshoz egy Kezdőoldal-gomb szükséges. Kérjük, a mentés előtt adjon hozzá egy Kezdőoldal-gombot.</string>
+    <string name="clipboard_description">A Vágólap lehetővé teszi az elemek áthúzását közvetlenül a vágólapra. Ugyanakkor az elemek le is húzhatóak onnan.</string>
+    <string name="keycode_description">A billentyűkód gombok lehetővé teszik gombok hozzáadását a Navigációs sávhoz. A gombok megnyomásuk esetén a kiválasztott billentyűt imitálják. Először ki kell választani a gombhoz tartozó billentyűt, majd a gombon megjeleníteni kívánt képet.</string>
+    <string name="start">Kezdő</string>
+    <string name="center">Közép</string>
+    <string name="end">Végző</string>
+    <string name="space">Elválasztó</string>
+    <string name="menu_ime">Menü / Billentyűzetváltó</string>
+    <string name="select_button">Válassza ki a hozzáadni kívánt gombot</string>
+    <string name="add_button">Gomb hozzáadása</string>
+    <string name="save">Mentés</string>
+    <string name="reset">Visszaállítás</string>
+    <string name="select_keycode">Válasszon Billentyűgombot</string>
+    <string name="left">Bal</string>
+    <string name="right">Jobb</string>
+    <string name="navbar_editor_title">Szerkesztő</string>
+    <string name="navbar_editor_summary">A Navigációs sáv beállítása</string>
+    <string name="menu_ime_always_show">Menü / Billentyűzetváltó (mindig látszik)</string>
+    <string name="search">Keresés</string>
     <!-- SysUI Tuner -->
-    <string name="statusbar_icons_blacklist">Status bar icons</string>
-    <string name="navbar_tuner_activity">Navigation bar buttons</string>
-    <string name="lockscreen_tuner_activity">Lock screen shortcuts</string>
-    <string name="powernotif_tuner_activity">Power notifications</string>
+    <string name="statusbar_icons_blacklist">Állapotsor ikonjai</string>
+    <string name="navbar_tuner_activity">Navigációs sáv gombok</string>
+    <string name="lockscreen_tuner_activity">Zárképernyő hivatkozások</string>
+    <string name="powernotif_tuner_activity">Kikapcsolási értesítések</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Roaming</string>
-    <string name="tuner_show_info_header_title">Show information header</string>
-    <string name="tuner_show_secure_title">Show security footer</string>
+    <string name="tuner_show_info_header_title">Inferomációs fejléc megjelenítése</string>
+    <string name="tuner_show_secure_title">Biztonsági-lábléc megjelenítése</string>
     <!-- ADB network tile -->
-    <string name="quick_settings_adb_network">ADB network</string>
+    <string name="quick_settings_adb_network">ADB hálózat</string>
     <string name="quick_settings_network_adb_enabled_label">Adb over Net</string>
     <string name="quick_settings_network_adb_disabled_label">Adb over Net</string>
     <!-- Lockscreen icons -->
@@ -80,6 +80,8 @@
     <string name="lte_off">LTE OFF</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Screenshot deleted</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Sound</string>
     <string name="quick_settings_sound_ring">Ring</string>

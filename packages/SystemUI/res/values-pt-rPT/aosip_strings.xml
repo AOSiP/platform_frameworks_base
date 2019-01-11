@@ -80,6 +80,8 @@
     <string name="lte_off">LTE OFF</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Captura de ecrã eliminada</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Sound</string>
     <string name="quick_settings_sound_ring">Ring</string>

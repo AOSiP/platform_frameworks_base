@@ -80,6 +80,8 @@
     <string name="lte_off">LTE выкл.</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Скриншот удален</string>
+    <!-- Ambient Display Pixel-Like string -->
+    <string name="ambientmusic_songinfo">%s by %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Звук</string>
     <string name="quick_settings_sound_ring">Звонок</string>
@@ -195,5 +197,5 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Показывать 4G вместо LTE</string>
     <!-- Volume panel QS tile -->
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <string name="quick_settings_volume_panel_label">Панель громкости</string>
 </resources>
