@@ -19,9 +19,14 @@ package com.android.systemui.statusbar.phone;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.res.Resources;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.view.View;
 
+import com.android.internal.util.aosip.aosipUtils;
 import com.android.systemui.R;
 
 public final class PhoneStatusBarTransitions extends BarTransitions {
@@ -32,7 +37,7 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
     private final PhoneStatusBarView mView;
     private final float mIconAlphaWhenOpaque;
 
-    private View mLeftSide, mStatusIcons, mBattery, mCenterClock, mLogoIcon;
+    private View mLeftSide, mStatusIcons, mBattery, mCenterClock, mLogoIcon, mNetworkTraffic;
     private Animator mCurrentAnimation;
 
     public PhoneStatusBarTransitions(PhoneStatusBarView view) {
@@ -48,6 +53,9 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
         mBattery = mView.findViewById(R.id.battery);
         mCenterClock = mView.findViewById(R.id.center_clock);
         mLogoIcon = mView.findViewById(R.id.status_bar_logo);
+        mNetworkTraffic = mView.findViewById(R.id.networkTraffic);
+        mNetworkTraffic.setVisibility(
+                aosipUtils.hasNotch(mView.getContext()) ? View.GONE : View.VISIBLE);
         applyModeBackground(-1, getMode(), false /*animate*/);
         applyMode(getMode(), false /*animate*/);
     }
@@ -91,6 +99,7 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
                     animateTransitionTo(mLeftSide, newAlpha),
                     animateTransitionTo(mStatusIcons, newAlpha),
                     animateTransitionTo(mBattery, newAlphaBC),
+                    animateTransitionTo(mNetworkTraffic, newAlpha),
                     animateTransitionTo(mCenterClock, newAlphaBC),
                     animateTransitionTo(mLogoIcon, newAlpha)
                     );
@@ -105,6 +114,7 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
             mBattery.setAlpha(newAlphaBC);
             mCenterClock.setAlpha(newAlphaBC);
             mLogoIcon.setAlpha(newAlpha);
+            mNetworkTraffic.setAlpha(newAlpha);
         }
     }
 }
