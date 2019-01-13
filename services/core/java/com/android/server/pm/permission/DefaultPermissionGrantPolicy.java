@@ -789,6 +789,9 @@ public final class DefaultPermissionGrantPolicy {
                 getDefaultProviderAuthorityPackage("com.android.providers.media.MediaProvider", userId), userId,
                 STORAGE_PERMISSIONS);
 
+        // Google sound picker
+        grantSystemFixedPermissionsToSystemPackage("com.google.android.soundpicker", userId, STORAGE_PERMISSIONS);
+
         // ThemePicker
         String themePickerPackage = "com.android.wallpaper";
         PackageInfo pkg = getPackageInfo(themePickerPackage);
