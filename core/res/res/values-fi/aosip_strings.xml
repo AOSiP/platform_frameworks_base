@@ -27,8 +27,6 @@
     <string name="permlab_toggleNavigationEditor">hallitse navigointipalkin editointia</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">Antaa sovelluksen hallita navigointipalkin muokkausta.</string>
-    <!-- ChooserActivity blacklist -->
-    <string name="app_blacklist">Mustalistaa sovellus</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">Väärennä paketin digitaalinen allekirjoitus</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

@@ -27,8 +27,6 @@
     <string name="permlab_toggleNavigationEditor">Editor de la barra de navegacion</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">Permite a una aplicación controlar la barra de navegación.</string>
-    <!-- ChooserActivity blacklist -->
-    <string name="app_blacklist">Lista negra de aplicaciones</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">Falsificar firma del paquete</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

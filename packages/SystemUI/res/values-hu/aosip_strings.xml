@@ -70,132 +70,132 @@
     <string name="tuner_show_secure_title">Biztonsági-lábléc megjelenítése</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB hálózat</string>
-    <string name="quick_settings_network_adb_enabled_label">Adb over Net</string>
-    <string name="quick_settings_network_adb_disabled_label">Adb over Net</string>
+    <string name="quick_settings_network_adb_enabled_label">ADB hálózaton keresztül</string>
+    <string name="quick_settings_network_adb_disabled_label">ADB hálózaton keresztül</string>
     <!-- Lockscreen icons -->
-    <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
+    <string name="lockscreen_tuner_title">Parancsikonok a záróképernyőn</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
-    <string name="lte_on">LTE ON </string>
-    <string name="lte_off">LTE OFF</string>
+    <string name="lte_on">LTE BE </string>
+    <string name="lte_off">LTE KI</string>
     <!-- Screenshot Delete Toast -->
-    <string name="delete_screenshot_toast">Screenshot deleted</string>
+    <string name="delete_screenshot_toast">A képernyőmentés törölve</string>
     <!-- Ambient Display Pixel-Like string -->
-    <string name="ambientmusic_songinfo">%s by %s</string>
+    <string name="ambientmusic_songinfo">%s ,  %s</string>
     <!-- Sound QS Tile -->
-    <string name="quick_settings_sound_label">Sound</string>
-    <string name="quick_settings_sound_ring">Ring</string>
-    <string name="quick_settings_sound_vibrate">Vibrate</string>
-    <string name="quick_settings_sound_dnd">Do not disturb</string>
+    <string name="quick_settings_sound_label">Hangok</string>
+    <string name="quick_settings_sound_ring">Csengés</string>
+    <string name="quick_settings_sound_vibrate">Rezgés</string>
+    <string name="quick_settings_sound_dnd">Ne zavarj</string>
     <!-- Immersive tile -->
-    <string name="quick_settings_immersive_tile">Immersive mode</string>
-    <string name="quick_settings_immersive_tile_statusbar">Immersive statusbar</string>
-    <string name="quick_settings_immersive_tile_navbar">Immersive navbar</string>
-    <string name="quick_settings_immersive_tile_full">Immersive full</string>
+    <string name="quick_settings_immersive_tile">Teljes képernyős mód</string>
+    <string name="quick_settings_immersive_tile_statusbar">Immerzív állapotsáv</string>
+    <string name="quick_settings_immersive_tile_navbar">Immerzív navigációs sáv</string>
+    <string name="quick_settings_immersive_tile_full">Teljes képernyős mód</string>
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">Caffeine</string>
-    <string name="accessibility_quick_settings_caffeine_off">Caffeine off</string>
-    <string name="accessibility_quick_settings_caffeine_on">Caffeine on</string>
+    <string name="accessibility_quick_settings_caffeine_off">Caffeine ki</string>
+    <string name="accessibility_quick_settings_caffeine_on">Caffeine be</string>
     <!-- Power menu advanced restart -->
-    <string name="global_action_restart_system">Reboot</string>
-    <string name="global_action_restart_advanced">Advanced</string>
+    <string name="global_action_restart_system">Újraindítás</string>
+    <string name="global_action_restart_advanced">Speciális</string>
     <string name="global_action_restart_recovery">Recovery</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
-    <string name="global_action_restart_ui">SystemUI</string>
+    <string name="global_action_restart_ui">Rendszer UI</string>
     <string name="global_action_restart_hot">Hot</string>
-    <string name="global_action_screenshot">Screenshot</string>
+    <string name="global_action_screenshot">Képernyőmentés</string>
     <!-- Reboot/Recovery QS Tile -->
-    <string name="quick_settings_reboot_label">Reboot</string>
+    <string name="quick_settings_reboot_label">Újraindítás</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>
     <!-- Screenshot QS tile -->
-    <string name="quick_settings_screenshot_label">Screenshot</string>
-    <string name="quick_settings_region_screenshot_label">Partial screenshot</string>
-    <string name="screenshot_abort_title">No screenshot taken</string>
-    <string name="screenshot_abort_text">Operation aborted.</string>
+    <string name="quick_settings_screenshot_label">Képernyőmentés</string>
+    <string name="quick_settings_region_screenshot_label">Részleges képernyőmentés</string>
+    <string name="screenshot_abort_title">Képernyőmentés nem készült el</string>
+    <string name="screenshot_abort_text">Művelet megszakítva.</string>
     <!-- Heads Up QS Tile -->
-    <string name="quick_settings_heads_up_label">Heads up</string>
-    <string name="accessibility_quick_settings_heads_up_off">Heads up off.</string>
-    <string name="accessibility_quick_settings_heads_up_on">Heads up on.</string>
-    <string name="accessibility_quick_settings_heads_up_changed_off">Heads up turned off.</string>
-    <string name="accessibility_quick_settings_heads_up_changed_on">Heads up turned on.</string>
+    <string name="quick_settings_heads_up_label">Lebegő értesítések</string>
+    <string name="accessibility_quick_settings_heads_up_off">Lebegő értesítések ki.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Lebegő értesítések be.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Lebegő értesítések kikapcsolva.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Lebegő értesítések bekapcsolva.</string>
     <!-- USB Tethering tile -->
-    <string name="accessibility_quick_settings_usb_tether_off">USB tethering off</string>
-    <string name="accessibility_quick_settings_usb_tether_on">USB tethering on</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_off">USB tethering turned off</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_on">USB tethering turned on</string>
-    <string name="quick_settings_usb_tether_label">USB tethering</string>
+    <string name="accessibility_quick_settings_usb_tether_off">USB internetmegosztás ki</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB internetmegosztás be</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB internetmegosztás kikapcsolva</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB internetmegosztás bekapcsolva</string>
+    <string name="quick_settings_usb_tether_label">USB internetmegosztás</string>
     <!-- Heads up snooze toast -->
-    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - lebegő értesítései 1 percig elhalasztásra kerülnek.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - lebegő értesítései <xliff:g id="number">%d</xliff:g> percig elhalasztásra kerülnek.</string>
     <!-- SysUI Tuner: Button that controls inversion of layout of navigation bar [CHAR LIMIT=60] -->
-    <string name="nav_bar_layout_inverse">Invert layout</string>
+    <string name="nav_bar_layout_inverse">Fordított elrendezés</string>
     <!-- QS customizer -->
-    <string name="drag_or_tap_to_add_tiles">Drag or tap to add/remove tiles</string>
+    <string name="drag_or_tap_to_add_tiles">Húzza, vagy érintse meg csempe hozzáadásához/eltávolításához</string>
     <!-- Theme tile -->
-    <string name="system_theme_style_title">Theme</string>
-    <string name="system_theme_style_auto">Automatic</string>
-    <string name="system_theme_style_light">Light</string>
-    <string name="system_theme_style_dark">Dark</string>
-    <string name="quick_settings_theme_tile_title">Accent</string>
-    <string name="quick_settings_theme_tile_accent_detail_title">Select accent</string>
-    <string name="quick_settings_theme_tile_style_detail_title">Select theme</string>
-    <string name="quick_settings_theme_tile_color_default">Default</string>
-    <string name="quick_settings_theme_tile_color_red">Red</string>
-    <string name="quick_settings_theme_tile_color_pink">Pink</string>
-    <string name="quick_settings_theme_tile_color_purple">Purple</string>
-    <string name="quick_settings_theme_tile_color_deep_purple">Deep purple</string>
-    <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
-    <string name="quick_settings_theme_tile_color_blue">Blue</string>
-    <string name="quick_settings_theme_tile_color_light_blue">Light blue</string>
-    <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
-    <string name="quick_settings_theme_tile_color_teal">Teal</string>
-    <string name="quick_settings_theme_tile_color_green">Green</string>
-    <string name="quick_settings_theme_tile_color_light_green">Light green</string>
+    <string name="system_theme_style_title">Téma</string>
+    <string name="system_theme_style_auto">Automatikus</string>
+    <string name="system_theme_style_light">Világos</string>
+    <string name="system_theme_style_dark">Sötét</string>
+    <string name="quick_settings_theme_tile_title">Kiemelőszín</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Kiemelőszín választása</string>
+    <string name="quick_settings_theme_tile_style_detail_title">Téma választása</string>
+    <string name="quick_settings_theme_tile_color_default">Alapértelmezett</string>
+    <string name="quick_settings_theme_tile_color_red">Vörös</string>
+    <string name="quick_settings_theme_tile_color_pink">Rózsaszín</string>
+    <string name="quick_settings_theme_tile_color_purple">Lila</string>
+    <string name="quick_settings_theme_tile_color_deep_purple">Sötétlila</string>
+    <string name="quick_settings_theme_tile_color_indigo">Indigó</string>
+    <string name="quick_settings_theme_tile_color_blue">Kék</string>
+    <string name="quick_settings_theme_tile_color_light_blue">Világoskék</string>
+    <string name="quick_settings_theme_tile_color_cyan">Cián</string>
+    <string name="quick_settings_theme_tile_color_teal">Türkiz</string>
+    <string name="quick_settings_theme_tile_color_green">Zöld</string>
+    <string name="quick_settings_theme_tile_color_light_green">Világoszöld</string>
     <string name="quick_settings_theme_tile_color_lime">Lime</string>
-    <string name="quick_settings_theme_tile_color_yellow">Yellow</string>
-    <string name="quick_settings_theme_tile_color_amber">Amber</string>
-    <string name="quick_settings_theme_tile_color_orange">Orange</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">Deep orange</string>
-    <string name="quick_settings_theme_tile_color_brown">Brown</string>
-    <string name="quick_settings_theme_tile_color_grey">Grey</string>
-    <string name="quick_settings_theme_tile_color_blue_grey">Blue grey</string>
-    <string name="quick_settings_theme_tile_color_black">Black</string>
-    <string name="quick_settings_theme_tile_color_white">White</string>
+    <string name="quick_settings_theme_tile_color_yellow">Sárga</string>
+    <string name="quick_settings_theme_tile_color_amber">Borostyán</string>
+    <string name="quick_settings_theme_tile_color_orange">Narancs</string>
+    <string name="quick_settings_theme_tile_color_deep_orange">Mélynarancs</string>
+    <string name="quick_settings_theme_tile_color_brown">Barna</string>
+    <string name="quick_settings_theme_tile_color_grey">Szürke</string>
+    <string name="quick_settings_theme_tile_color_blue_grey">Szürkéskék</string>
+    <string name="quick_settings_theme_tile_color_black">Fekete</string>
+    <string name="quick_settings_theme_tile_color_white">Fehér</string>
     <string name="quick_settings_theme_tile_color_user_one">#StayDirty</string>
-    <string name="quick_settings_theme_tile_color_user_two">Grapes</string>
+    <string name="quick_settings_theme_tile_color_user_two">Szőlő</string>
     <string name="quick_settings_theme_tile_color_user_three">Blu</string>
-    <string name="quick_settings_theme_tile_color_user_four">Mint</string>
-    <string name="quick_settings_theme_tile_color_user_five">Money</string>
-    <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
-    <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
-    <string name="theme_info_title">What is this?</string>
-    <string name="theme_info_message">The Themes tile is a unique but easy to use tile that allows the user to change the system accent or theme.\n\nTo change between accents and themes, simply long press on the tile and then press again to select from the options offered.</string>
+    <string name="quick_settings_theme_tile_color_user_four">Menta</string>
+    <string name="quick_settings_theme_tile_color_user_five">Pénz</string>
+    <string name="quick_settings_theme_tile_color_user_six">Homokos</string>
+    <string name="quick_settings_theme_tile_color_user_seven">Kos</string>
+    <string name="theme_info_title">Mi ez?</string>
+    <string name="theme_info_message">A \"Témák\" csempe egy egyedi, de könnyen használható elem, amely lehetővé teszi, hogy a felhasználó megváltoztathassa a rendszer kiemelőszínét és stílusát.\n\nA kiemelőszínek és stílusok módosításához nyomja hosszan a csempét, majd válasszon a megjelenő lehetőségek közül.</string>
     <!-- Screenrecord Notification Ticker -->
-    <string name="screenrecord_notif_ticker">Screen is being recorded</string>
-    <string name="screenrecord_notif_final_ticker">Screen recorded successfully</string>
+    <string name="screenrecord_notif_ticker">Képernyőfelvétel van folyamatban</string>
+    <string name="screenrecord_notif_final_ticker">A képernyőfelvétel elkészült</string>
     <!-- Screenrecord notification title -->
-    <string name="screenrecord_notif_title">Recording screen</string>
+    <string name="screenrecord_notif_title">Képernyőfelvétel folyamatban</string>
     <!-- Screenrecord notification action: Stop -->
-    <string name="screenrecord_notif_stop">Stop</string>
-    <string name="screenrecord_notif_completed">Screen recorded successfully</string>
+    <string name="screenrecord_notif_stop">Leállítás</string>
+    <string name="screenrecord_notif_completed">A képernyőfelvétel elkészült</string>
     <!-- Screenrecord notification action: show/hide pointer -->
-    <string name="screenrecord_notif_pointer_on">Show pointer</string>
-    <string name="screenrecord_notif_pointer_off">Hide pointer</string>
+    <string name="screenrecord_notif_pointer_on">A Mutató megjelenítése</string>
+    <string name="screenrecord_notif_pointer_off">A Mutató elrejtése</string>
     <!-- Screen record notification error title -->
-    <string name="screenrecord_notif_error">Unable to record screen</string>
-    <string name="notification_channel_screenrecord">Screenrecords</string>
-    <string name="screenrecord_hide_hint">Hide hint</string>
-    <string name="screenrecord_show_hint">Show hint</string>
+    <string name="screenrecord_notif_error">Nem lehetséges felvételt készíteni a képernyőről</string>
+    <string name="notification_channel_screenrecord">Képernyőfelvételek</string>
+    <string name="screenrecord_hide_hint">Tipp elrejtése</string>
+    <string name="screenrecord_show_hint">Tipp megjelenítése</string>
     <!-- Screenshot QS tile -->
-    <string name="quick_settings_screenrecord_label">Screenrecord</string>
+    <string name="quick_settings_screenrecord_label">Képernyőfelvétel</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
-    <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+    <string name="keyguard_indication_dash_charging_time">Dash-töltés (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> a teljes töltöttségig)</string>
+    <string name="keyguard_plugged_in_dash_charging">Dash-töltés</string>
     <!-- Smart Pixels QS Tile -->
-    <string name="quick_settings_smart_pixels">Smart Pixels</string>
-    <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled Smart Pixels</string>
+    <string name="quick_settings_smart_pixels">Intelligens pixelek</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Intelligens pixelek automatikus engedélyezése</string>
     <!-- 4G LTE switch -->
-    <string name="show_fourg_title">Show 4G instead of LTE</string>
+    <string name="show_fourg_title">4G megjelenítése LTE helyett</string>
     <!-- Volume panel QS tile -->
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <string name="quick_settings_volume_panel_label">Hangerő panel</string>
 </resources>

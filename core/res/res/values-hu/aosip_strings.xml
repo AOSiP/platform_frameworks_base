@@ -27,8 +27,6 @@
     <string name="permlab_toggleNavigationEditor">a navigációssáv-szerkesztő kezelése</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">Lehetővé teszi egy alkalmazás számára, hogy a navigációssáv-szerkesztőt kezelje.</string>
-    <!-- ChooserActivity blacklist -->
-    <string name="app_blacklist">Feketelistás alkalmazások</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">Csomag aláírásának hamisítása</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

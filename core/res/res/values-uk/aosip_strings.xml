@@ -27,8 +27,6 @@
     <string name="permlab_toggleNavigationEditor">керування редактором панелі навігації</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">Дозволяє додатку контролювати редактор панелі навігації.</string>
-    <!-- ChooserActivity blacklist -->
-    <string name="app_blacklist">Чорний список програм</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">Дозволити підміну підпису додатка</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
