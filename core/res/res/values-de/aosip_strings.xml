@@ -27,8 +27,6 @@
     <string name="permlab_toggleNavigationEditor">Navigationseditor kontrollieren</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">Erlaubt einer Applikation die Kontrolle über den Navigationsleisteneditor.</string>
-    <!-- ChooserActivity blacklist -->
-    <string name="app_blacklist">Gesperrte Apps</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_fakePackageSignature">Paketsignatur imitieren</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

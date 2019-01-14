@@ -81,7 +81,7 @@
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">屏幕截图已删除</string>
     <!-- Ambient Display Pixel-Like string -->
-    <string name="ambientmusic_songinfo">%s by %s</string>
+    <string name="ambientmusic_songinfo">由 %s的%s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">声音</string>
     <string name="quick_settings_sound_ring">铃声</string>
