@@ -256,7 +256,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mPrivacyChip.setOnClickListener(this::onClick);
         mCarrierGroup = findViewById(R.id.carrier_group);
 
-
         updateResources();
 
         Rect tintArea = new Rect(0, 0, 0, 0);
@@ -288,6 +287,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mRingerModeTextView.setSelected(true);
         mNextAlarmTextView.setSelected(true);
         updateSettings();
+
+        Dependency.get(TunerService.class).addTunable(this,
+                StatusBarIconController.ICON_BLACKLIST);
 
         mPermissionsHubEnabled = PrivacyItemControllerKt.isPermissionsHubEnabled();
         // Change the ignored slots when DeviceConfig flag changes
@@ -742,6 +744,8 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 
     @Override
     public void onTuningChanged(String key, String newValue) {
+        mClockView.setClockVisibleByUser(!StatusBarIconController.getIconBlacklist(newValue)
+                .contains("clock"));
         if (QSFooterImpl.QS_SHOW_DRAG_HANDLE.equals(key)) {
             mHideDragHandle = newValue != null && Integer.parseInt(newValue) == 0;
             updateResources();
