@@ -642,7 +642,10 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 
     @Override
     public void onTuningChanged(String key, String newValue) {
-        if (QS_SHOW_INFO_HEADER.equals(key)) {
+        if (StatusBarIconController.ICON_BLACKLIST.equals(key)) {
+            mClockView.setClockVisibleByUser(!StatusBarIconController.getIconBlacklist(newValue)
+                    .contains("clock"));
+        } else if (QS_SHOW_INFO_HEADER.equals(key)) {
             mHeaderTextContainerView.setVisibility(newValue == null || Integer.parseInt(newValue) != 0 ? VISIBLE : GONE);
         }
     }
