@@ -74,7 +74,6 @@ import android.service.dreams.DreamManagerInternal;
 import android.service.vr.IVrManager;
 import android.service.vr.IVrStateCallbacks;
 import android.telephony.TelephonyManager;
-import android.util.EventLog;
 import android.util.KeyValueListParser;
 import android.util.PrintWriterPrinter;
 import android.util.Slog;
@@ -230,7 +229,7 @@ public final class PowerManagerService extends SystemService
 
     // Persistent property for last reboot reason
     private static final String LAST_REBOOT_PROPERTY = "persist.sys.boot.reason";
-    
+
     private static final float PROXIMITY_NEAR_THRESHOLD = 5.0f;
 
     private final Context mContext;
@@ -828,7 +827,7 @@ public final class PowerManagerService extends SystemService
             }
 
             // Initialize proximity sensor
-            mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
+            mSensorManager = mContext.getSystemService(SensorManager.class);
             mProximitySensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
             // Go.
@@ -882,10 +881,10 @@ public final class PowerManagerService extends SystemService
                 Settings.Global.DEVICE_DEMO_MODE),
                 false, mSettingsObserver, UserHandle.USER_SYSTEM);
         resolver.registerContentObserver(Settings.System.getUriFor(
-                Settings.System.PROXIMITY_ON_WAKE),
+                Settings.System.WAKE_WHEN_PLUGGED_OR_UNPLUGGED),
                 false, mSettingsObserver, UserHandle.USER_ALL);
         resolver.registerContentObserver(Settings.System.getUriFor(
-                Settings.System.WAKE_WHEN_PLUGGED_OR_UNPLUGGED),
+                Settings.System.PROXIMITY_ON_WAKE),
                 false, mSettingsObserver, UserHandle.USER_ALL);
         IVrManager vrManager = (IVrManager) getBinderService(Context.VR_SERVICE);
         if (vrManager != null) {
@@ -977,13 +976,13 @@ public final class PowerManagerService extends SystemService
         mSupportsDoubleTapWakeConfig = resources.getBoolean(
                 com.android.internal.R.bool.config_supportDoubleTapWake);
         mProximityWakeSupported = resources.getBoolean(
-                 com.android.internal.R.bool.config_proximityCheckOnWake);
+                com.android.internal.R.bool.config_proximityCheckOnWake);
         mProximityWakeEnabledByDefaultConfig = resources.getBoolean(
-                 com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
+                com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
         mProximityTimeOut = resources.getInteger(
                 com.android.internal.R.integer.config_proximityCheckTimeout);
         if (mProximityWakeSupported) {
-            mProximityWakeLock = ((PowerManager) mContext.getSystemService(Context.POWER_SERVICE))
+            mProximityWakeLock = mContext.getSystemService(PowerManager.class)
                     .newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ProximityWakeLock");
         }
 
@@ -1022,6 +1021,10 @@ public final class PowerManagerService extends SystemService
         mWakeUpWhenPluggedOrUnpluggedSetting = Settings.System.getIntForUser(resolver,
                 Settings.System.WAKE_WHEN_PLUGGED_OR_UNPLUGGED, 0,
                 UserHandle.USER_CURRENT);
+        mProximityWakeEnabled = (Settings.System.getIntForUser(resolver,
+                Settings.System.PROXIMITY_ON_WAKE,
+                mProximityWakeEnabledByDefaultConfig ? 1 : 0,
+                UserHandle.USER_CURRENT) != 0);
 
         if (mSupportsDoubleTapWakeConfig) {
             boolean doubleTapWakeEnabled = Settings.Secure.getIntForUser(resolver,
@@ -1041,10 +1044,6 @@ public final class PowerManagerService extends SystemService
         mScreenBrightnessModeSetting = Settings.System.getIntForUser(resolver,
                 Settings.System.SCREEN_BRIGHTNESS_MODE,
                 Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL, UserHandle.USER_CURRENT);
-
-        mProximityWakeEnabled = Settings.System.getInt(resolver,
-                Settings.System.PROXIMITY_ON_WAKE,
-                mProximityWakeEnabledByDefaultConfig ? 1 : 0) == 1;
 
         updateButtonLightSettings();
         mDirty |= DIRTY_SETTINGS;
