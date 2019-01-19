@@ -198,6 +198,7 @@
     <string name="screenrecord_notif_final_ticker">Screen recorded successfully</string>
     <!-- Screenrecord notification title -->
     <string name="screenrecord_notif_title">Recording screen</string>
+    <string name="screenrecord_notif_description">Tap to play your screen recording</string>
     <!-- Screenrecord notification action: Stop -->
     <string name="screenrecord_notif_stop">Stop</string>
     <string name="screenrecord_notif_completed">Screen recorded successfully</string>

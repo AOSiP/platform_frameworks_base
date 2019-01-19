@@ -84,8 +84,10 @@ class GlobalScreenrecord {
     private static final int MSG_TASK_ENDED = 1;
     private static final int MSG_TASK_ERROR = 2;
 
-    private static final String TMP_PATH = Environment.getExternalStorageDirectory()
-            + File.separator + "._tmp_screenrecord.mp4";
+    private static final String TMP_FOLDER = Environment.getExternalStorageDirectory()
+            + File.separator + ".screenrec_tmp";
+    private static final String TMP_PATH = TMP_FOLDER
+            + File.separator + "_tmp_screenrecord.mp4";
 
     private static final String SCREENRECORD_SHARE_SUBJECT_TEMPLATE = "Screenrecord (%s)";
     private static final String SCREENRECORD_URI_ID = "android:screenrecord_uri_id";
@@ -552,9 +554,13 @@ class GlobalScreenrecord {
             .setTicker(r.getString(R.string.screenrecord_notif_final_ticker))
             .setContentTitle(r.getString(R.string.screenrecord_notif_completed) + " ("
                     + totalTime + ", " + size + "MB" + ")")
+            .setContentText(r.getString(R.string.screenrecord_notif_description))
             .setSmallIcon(R.drawable.ic_capture_video)
             .setWhen(System.currentTimeMillis())
-            .setAutoCancel(true);
+            .setShowWhen(true)
+            .setAutoCancel(true)
+            .setColor(r.getColor(com.android.internal.R.color.system_notification_accent_color));
+        com.android.systemui.SystemUI.overrideNotificationAppName(mContext, builder, true);
         builder
             .addAction(R.drawable.ic_screenshot_share,
                 r.getString(com.android.internal.R.string.share), shareAction)
