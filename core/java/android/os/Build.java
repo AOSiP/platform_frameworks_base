@@ -1002,8 +1002,7 @@ public class Build {
     public static final String FINGERPRINT = deriveFingerprint();
 
     /** @hide */
-    public static final String AOSIP_FINGERPRINT = SystemProperties.get("ro.aosip.fingerprint",
-            deriveFingerprint());
+    public static final String AOSIP_FINGERPRINT = getString("ro.build.date");
 
     /**
      * Some devices split the fingerprint components between multiple
