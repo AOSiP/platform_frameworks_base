@@ -81,7 +81,7 @@
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">스크린샷이 삭제되었습니다</string>
     <!-- Ambient Display Pixel-Like string -->
-    <string name="ambientmusic_songinfo">%s에 의한 %s</string>
+    <string name="ambientmusic_songinfo">%s - %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">소리</string>
     <string name="quick_settings_sound_ring">벨소리</string>
@@ -189,7 +189,7 @@
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenrecord_label">화면녹화</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time">고속 충전 중 (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> 후 충전 완료)</string>
+    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
     <string name="keyguard_plugged_in_dash_charging">고속 충전 중</string>
     <!-- Smart Pixels QS Tile -->
     <string name="quick_settings_smart_pixels">스마트 픽셀</string>
