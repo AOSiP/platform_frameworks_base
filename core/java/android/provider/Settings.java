@@ -4680,6 +4680,13 @@ public final class Settings {
                BOOLEAN_VALIDATOR;
 
         /**
+         * Ambient screen settings
+         * "screen_brightness_array=0:1:2:3:4"
+         * @hide
+         */
+        public static final String ALWAYS_ON_DISPLAY_CONSTANTS_CUST = "always_on_display_constants_cust";
+
+        /**
          * Select various accents to go along with system themes
          *
          * @hide
