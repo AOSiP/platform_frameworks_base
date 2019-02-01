@@ -5047,6 +5047,21 @@ public final class Settings {
         public static final Validator STATUSBAR_CLOCK_DATE_POSITION_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
+         /**
+         * Whether to enable DOZE only when charging
+         * @hide
+         */
+        public static final String DOZE_ON_CHARGE = "doze_on_charge";
+
+        private static final Validator DOZE_ON_CHARGE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * hidden stting of the current state of DOZE only when charging
+         * @hide
+         */
+        public static final String DOZE_ON_CHARGE_NOW = "doze_on_charge_now";
+
         /**
          * Three Finger Gesture from Oppo
          * @hide
@@ -5251,6 +5266,7 @@ public final class Settings {
             VOLUME_KEY_CURSOR_CONTROL,
             VOLUME_ROCKER_WAKE,
             WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+            DOZE_ON_CHARGE
         };
 
         /**
@@ -5460,6 +5476,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(EGG_MODE);
             PRIVATE_SETTINGS.add(SHOW_BATTERY_PERCENT);
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
+            PRIVATE_SETTINGS.add(DOZE_ON_CHARGE);
         }
 
         /**
@@ -5640,6 +5657,7 @@ public final class Settings {
             VALIDATORS.put(RECENTS_COMPONENT,RECENTS_COMPONENT_VALIDATOR);
             VALIDATORS.put(PROXIMITY_ON_WAKE, PROXIMITY_ON_WAKE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
+            VALIDATORS.put(DOZE_ON_CHARGE, DOZE_ON_CHARGE_VALIDATOR);
         }
 
         /**
