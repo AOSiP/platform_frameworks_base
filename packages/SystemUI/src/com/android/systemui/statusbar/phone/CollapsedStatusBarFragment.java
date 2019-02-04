@@ -98,6 +98,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private boolean mShowLogo;
     private int mLogoStyle;
 
+    private SettingsObserver mSettingsObserver = new SettingsObserver(mHandler);
+
     private class SettingsObserver extends ContentObserver {
        SettingsObserver(Handler handler) {
            super(handler);
@@ -307,7 +309,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         animateHide(mSystemIconArea, animate, true);
         animateHide(mCenterClockLayout, animate, true);
         if (mClockStyle == 2) {
-            animateHide(mRightClock, animate, true);
+            animateHide(mRightClock, animate, false);
         }
     }
 
@@ -657,6 +659,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                 animateHide(mKronicLogo, animate, false);
             }
         }
+    }
 
     private void setupSmartClock() {
         if (useSmartClock) {
@@ -666,9 +669,13 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     }
 
     private void displaySmartClock(boolean animate) {
-        animateShow(mClockView, animate);
-        if (useSmartClock) {
-            mHandler.postDelayed(()->animateHide(mClockView, animate, false), SHOW_DURATION);
+       if (useSmartClock) {
+            updateClockStyle(animate);
+            if (mClockStyle == 2) {
+                mHandler.postDelayed(()->animateHide(mRightClock, animate, false), SHOW_DURATION);
+            } else {
+                mHandler.postDelayed(()->animateHide(mClockView, animate, false), SHOW_DURATION);
+            }
         }
     }
 
