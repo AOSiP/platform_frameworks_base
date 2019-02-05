@@ -258,7 +258,7 @@ public class DreamBackend {
 
     public void launchSettings(Context uiContext, DreamInfo dreamInfo) {
         logd("launchSettings(%s)", dreamInfo);
-        if (dreamInfo == null || dreamInfo.settingsComponentName == null) {
+        if (dreamInfo == null || dreamInfo.settingsComponentName == null)
             return;
         }
         uiContext.startActivity(new Intent().setComponent(dreamInfo.settingsComponentName));
