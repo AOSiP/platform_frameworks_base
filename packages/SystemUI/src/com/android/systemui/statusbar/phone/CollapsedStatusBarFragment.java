@@ -271,12 +271,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     public void hideSystemIconArea(boolean animate) {
         animateHide(mSystemIconArea, animate);
-        animateHide(mClockController.getClockLayout(), animate);
     }
 
     public void showSystemIconArea(boolean animate) {
         animateShow(mSystemIconArea, animate);
-        animateShow(mClockController.getClockLayout(), animate);
     }
 
     public void hideClock(boolean animate) {
@@ -300,7 +298,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     public void hideNotificationIconArea(boolean animate) {
         animateHide(mNotificationIconAreaInner, animate, true);
-        animateHide(mClockController.getClockLayout(), animate);
         if (mShowLogo) {
             animateHide(mKronicLogo, animate, true);
         }
@@ -308,7 +305,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     public void showNotificationIconArea(boolean animate) {
         animateShow(mNotificationIconAreaInner, animate);
-        animateShow(mClockController.getClockLayout(), animate);
         if (mShowLogo) {
             animateShow(mKronicLogo, animate);
         }
