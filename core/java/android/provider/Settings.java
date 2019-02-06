@@ -9567,6 +9567,13 @@ public final class Settings {
         public static final String PULSE_SOLID_UNITS_COUNT = "pulse_solid_units_count";
 
         /**
+         * Select various actions for squeeze gesture
+         *
+         * @hide
+         */
+        public static final String SQUEEZE_SELECTION = "squeeze_selection";
+
+        /**
          * Pulse Solid units opacity
          * @hide
          */
