@@ -4318,16 +4318,6 @@ public final class Settings {
         private static final Validator POWERMENU_AIRPLANE_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
-        /**
-         * Weather lockscreen temperature scale
-         * @hide
-         */
-        public static final String WEATHER_LOCKSCREEN_UNIT = "weather_lockscreen_unit";
-
-        /** @hide */
-        private static final Validator WEATHER_LOCKSCREEN_UNIT_VALIDATOR =
-               BOOLEAN_VALIDATOR;
-
          /**
          * Show or hide clock
          * 0 - hide
@@ -5272,7 +5262,6 @@ public final class Settings {
             VOLUME_KEY_CURSOR_CONTROL,
             VOLUME_ROCKER_WAKE,
             WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
-            WEATHER_LOCKSCREEN_UNIT,
         };
 
         /**
@@ -5429,7 +5418,6 @@ public final class Settings {
             PUBLIC_SETTINGS.add(VOLUME_KEY_CURSOR_CONTROL);
             PUBLIC_SETTINGS.add(VOLUME_ROCKER_WAKE);
             PUBLIC_SETTINGS.add(WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
-            PUBLIC_SETTINGS.add(WEATHER_LOCKSCREEN_UNIT);
             PUBLIC_SETTINGS.add(CUSTOM_BUTTON_BRIGHTNESS);
             PUBLIC_SETTINGS.add(CUSTOM_BUTTON_USE_SCREEN_BRIGHTNESS);
             PUBLIC_SETTINGS.add(BUTTON_BACKLIGHT_ENABLE);
@@ -5662,7 +5650,6 @@ public final class Settings {
             VALIDATORS.put(VOLUME_KEY_CURSOR_CONTROL, VOLUME_KEY_CURSOR_CONTROL_VALIDATOR);
             VALIDATORS.put(VOLUME_ROCKER_WAKE, VOLUME_ROCKER_WAKE_VALIDATOR);
             VALIDATORS.put(WAKE_WHEN_PLUGGED_OR_UNPLUGGED, WAKE_WHEN_PLUGGED_OR_UNPLUGGED_VALIDATOR);
-            VALIDATORS.put(WEATHER_LOCKSCREEN_UNIT, WEATHER_LOCKSCREEN_UNIT_VALIDATOR);
             VALIDATORS.put(RECENTS_COMPONENT,RECENTS_COMPONENT_VALIDATOR);
             VALIDATORS.put(PROXIMITY_ON_WAKE, PROXIMITY_ON_WAKE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
