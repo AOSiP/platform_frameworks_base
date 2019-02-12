@@ -58,11 +58,12 @@ public class ThemeAccentUtils {
     // BlackAF themes
     private static final String[] BLACKAF_THEMES = {
         "com.android.system.theme.blackaf", // 0
-        "com.android.settings.theme.blackaf", // 1
-        "com.android.settings.intelligence.theme.blackaf", // 2
-        "com.android.gboard.theme.blackaf", // 3
-        "com.android.updater.theme.blackaf", // 4
-        "com.android.wellbeing.theme.blackaf", // 5
+        "com.android.systemui.theme.custom.blackaf", // 1
+        "com.android.settings.theme.blackaf", // 2
+        "com.android.settings.intelligence.theme.blackaf", // 3
+        "com.android.gboard.theme.blackaf", // 4
+        "com.android.updater.theme.blackaf", // 5
+        "com.android.wellbeing.theme.blackaf", // 6
     };
 
     // Accents
@@ -96,6 +97,17 @@ public class ThemeAccentUtils {
         "com.accents.userfive", // 26
         "com.accents.usersix", // 27
         "com.accents.userseven", // 28
+    };
+
+    private static final String[] QS_TILE_THEMES = {
+        "default", // 0
+        "com.android.systemui.qstile.square", // 1
+        "com.android.systemui.qstile.roundedsquare", // 2
+        "com.android.systemui.qstile.squircle", // 3
+        "com.android.systemui.qstile.teardrop", // 4
+        "com.android.systemui.qstile.circlegradient", //5
+        "com.android.systemui.qstile.circleoutline", //6
+        "com.android.systemui.qstile.justicons", //7
     };
 
     // Unloads the stock dark theme
@@ -257,5 +269,44 @@ public class ThemeAccentUtils {
                 e.printStackTrace();
             }
         }
+    }
+
+    // Switches qs tile style to user selected.
+    public static void updateTileStyle(IOverlayManager om, int userId, int qsTileStyle) {
+        if (qsTileStyle == 0) {
+            unlockQsTileStyles(om, userId);
+        } else {
+            try {
+                om.setEnabled(QS_TILE_THEMES[qsTileStyle],
+                        true, userId);
+            } catch (RemoteException e) {
+            }
+        }
+    }
+
+    // Unload all the qs tile styles
+    public static void unlockQsTileStyles(IOverlayManager om, int userId) {
+        // skip index 0
+        for (int i = 1; i < QS_TILE_THEMES.length; i++) {
+            String qstiletheme = QS_TILE_THEMES[i];
+            try {
+                om.setEnabled(qstiletheme,
+                        false /*disable*/, userId);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    // Check for any QS tile styles overlay
+    public static boolean isUsingQsTileStyles(IOverlayManager om, int userId, int qsstyle) {
+        OverlayInfo themeInfo = null;
+        try {
+            themeInfo = om.getOverlayInfo(QS_TILE_THEMES[qsstyle],
+                    userId);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return themeInfo != null && themeInfo.isEnabled();
     }
 }
