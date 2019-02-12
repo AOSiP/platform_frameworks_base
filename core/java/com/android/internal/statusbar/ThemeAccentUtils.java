@@ -58,11 +58,12 @@ public class ThemeAccentUtils {
     // BlackAF themes
     private static final String[] BLACKAF_THEMES = {
         "com.android.system.theme.blackaf", // 0
-        "com.android.settings.theme.blackaf", // 1
-        "com.android.settings.intelligence.theme.blackaf", // 2
-        "com.android.gboard.theme.blackaf", // 3
-        "com.android.updater.theme.blackaf", // 4
-        "com.android.wellbeing.theme.blackaf", // 5
+        "com.android.systemui.theme.custom.blackaf", // 1
+        "com.android.settings.theme.blackaf", // 2
+        "com.android.settings.intelligence.theme.blackaf", // 3
+        "com.android.gboard.theme.blackaf", // 4
+        "com.android.updater.theme.blackaf", // 5
+        "com.android.wellbeing.theme.blackaf", // 6
     };
 
     // Accents
