@@ -116,4 +116,9 @@
     <string name="caffeine_info_title">What is this?</string>
     <string name="caffeine_info_message">Caffeine tile is a simple tile that you could switch on to keep your screen on.\n\nPlease note that the tile\'s state will reset itself after turning the screen off.</string>
 
+    <string name="tuner_keyguard_show_battery_bar_title">Show battery bar</string>
+    <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on charging in always on display</string>
+    <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
+    <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging</string>
+
 </resources>

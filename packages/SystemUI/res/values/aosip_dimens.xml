@@ -15,4 +15,6 @@
 
     <dimen name="qs_tile_height_wo_label">48dp</dimen>
 
+    <dimen name="battery_bar_view_height">6dp</dimen>
+
 </resources>
