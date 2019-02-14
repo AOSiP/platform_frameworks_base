@@ -33,6 +33,9 @@
   <java-symbol type="bool" name="config_button_brightness_support" />
   <java-symbol type="integer" name="config_button_brightness_default" />
 
+  <!-- Whether to enable OP5/T OP cam hack -->
+  <java-symbol type="bool" name="config_hasOnePlusCamera" />
+
   <!-- Package Manager -->
   <java-symbol type="array" name="config_disabledComponents" />
   <java-symbol type="array" name="config_forceEnabledComponents" />
