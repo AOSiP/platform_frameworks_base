@@ -98,7 +98,7 @@
     <string name="accessibility_quick_settings_caffeine_on">暫停休眠 開啟</string>
     <!-- Power menu advanced restart -->
     <string name="global_action_restart_system">重新啟動</string>
-    <string name="global_action_restart_advanced">進階</string>
+    <string name="global_action_restart_advanced">進階重新啟動</string>
     <string name="global_action_restart_recovery">修復模式</string>
     <string name="global_action_restart_bootloader">開機載入器</string>
     <string name="global_action_restart_ui">系統使用者介面</string>

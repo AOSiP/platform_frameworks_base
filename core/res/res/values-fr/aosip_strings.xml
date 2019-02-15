@@ -17,24 +17,24 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Button that copies the url to the log of a crashed application -->
-    <string name="aerr_copy">Copy crash log URL</string>
-    <string name="url_copy_success">URL copied successfully</string>
-    <string name="url_copy_failed">An error occured while uploading the log to dogbin</string>
+    <string name="aerr_copy">Copier l\'URL du log du crash</string>
+    <string name="url_copy_success">URL copiée avec succès</string>
+    <string name="url_copy_failed">Une erreur est survenue pendant l\'envoi du journal à dogbin</string>
     <!-- Power menu -->
     <string name="reboot_title">Redémarrer</string>
     <string name="reboot_message">Redémarrage du système</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_toggleNavigationEditor">control navigation editor</string>
+    <string name="permlab_toggleNavigationEditor">éditeur de navigation de contrôle</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_toggleNavigationEditor">Allows an application to control the navigation bar editor.</string>
+    <string name="permdesc_toggleNavigationEditor">Permet à une application de contrôler l\'éditeur de la barre de navigation.</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_fakePackageSignature">Spoof package signature</string>
+    <string name="permlab_fakePackageSignature">Falsifier signature paquet</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_fakePackageSignature">Allows the app to pretend to be a different app. Malicious applications might be able to use this to access private application data. Grant this permission with caution only!</string>
+    <string name="permdesc_fakePackageSignature">Permet à l\'application de prétendre être une application différente. Les applications malveillantes peuvent l\'utiliser pour accéder à des données d\'applications privées. N\'accordez cette autorisation qu\'avec prudence !</string>
     <!-- ADB over network notification -->
-    <string name="adb_net_active_notification_title">ADB over network enabled</string>
+    <string name="adb_net_active_notification_title">ADB par réseau activé</string>
     <!-- ADB over USB and network notification -->
-    <string name="adb_both_active_notification_title">ADB over USB &amp; network enabled</string>
+    <string name="adb_both_active_notification_title">ADB par USB &amp; réseau activé</string>
     <!-- ADB notification message-->
-    <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
+    <string name="adb_active_generic_notification_message">Toucher pour désactiver le déboguage.</string>
 </resources>
