@@ -24,6 +24,7 @@ import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.text.TextUtils;
@@ -109,9 +110,15 @@ public class BluetoothTile extends QSTileImpl<BooleanState> {
         mController.setBluetoothEnabled(!isEnabled);
     }
 
+    private boolean isUnlockingRequired() {
+        return (Settings.Secure.getIntForUser(
+                mContext.getContentResolver(), Settings.Secure.QSTILE_REQUIRES_UNLOCKING, 1,
+                UserHandle.USER_CURRENT) == 1);
+    }
+
     @Override
     protected void handleClick() {
-        if (mKeyguard.isSecure() && mKeyguard.isShowing()) {
+        if (mKeyguard.isSecure() && mKeyguard.isShowing() && isUnlockingRequired()) {
             Dependency.get(ActivityStarter.class).postQSRunnableDismissingKeyguard(() -> {
                 mHost.openPanels();
                 handleClickInner();
