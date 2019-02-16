@@ -16,6 +16,7 @@ package com.android.systemui.qs.tiles;
 
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.widget.Switch;
@@ -70,9 +71,15 @@ public class DataSaverTile extends QSTileImpl<BooleanState> implements
         return new Intent(Settings.ACTION_DATA_SAVER_SETTINGS);
     }
 
+    private boolean isUnlockingRequired() {
+        return (Settings.Secure.getIntForUser(
+                mContext.getContentResolver(), Settings.Secure.QSTILE_REQUIRES_UNLOCKING, 1,
+                UserHandle.USER_CURRENT) == 1);
+    }
+
     @Override
     protected void handleClick() {
-        if (mKeyguard.isSecure() && mKeyguard.isShowing()) {
+        if (mKeyguard.isSecure() && mKeyguard.isShowing() && isUnlockingRequired()) {
             Dependency.get(ActivityStarter.class).postQSRunnableDismissingKeyguard(() -> {
                 mHost.openPanels();
                 handleClickInner();
