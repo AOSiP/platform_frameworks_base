@@ -9396,6 +9396,13 @@ public final class Settings {
         public static final String LOCKSCREEN_SOLID_UNITS_OPACITY = "lockscreen_solid_units_opacity";
 
         /**
+         * Whether user has to unlock the secured lock screen before they can use a quick settings tile.
+         * @hide
+         */
+        public static final String QSTILE_REQUIRES_UNLOCKING =
+                "qstile_requires_unlocking";
+
+        /**
          * This are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
