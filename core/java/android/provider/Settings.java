@@ -9258,6 +9258,13 @@ public final class Settings {
                 "packages_to_clear_data_before_full_restore";
 
         /**
+         * Select various actions for squeeze gesture
+         *
+         * @hide
+         */
+        public static final String SQUEEZE_SELECTION_SMART_ACTIONS = "squeeze_selection_smart_actions";
+
+        /**
          * Display style of the status bar battery information
          * 0: Display the battery an icon in portrait mode
          * 1: Display the battery as a circle
@@ -9552,13 +9559,6 @@ public final class Settings {
          * @hide
          */
         public static final String PULSE_SOLID_UNITS_COUNT = "pulse_solid_units_count";
-
-        /**
-         * Select various actions for squeeze gesture
-         *
-         * @hide
-         */
-        public static final String SQUEEZE_SELECTION = "squeeze_selection";
 
         /**
          * Pulse Solid units opacity
