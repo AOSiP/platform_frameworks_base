@@ -145,6 +145,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.STATUS_BAR_BATTERY_STYLE), false,
                     this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System
+                    .getUriFor(Settings.System.SHOW_QS_CLOCK), false,
+                    this, UserHandle.USER_ALL);
             }
 
         @Override
@@ -221,7 +224,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 
         mClockView = findViewById(R.id.clock);
         mClockView.setOnClickListener(this);
-        mClockView.setClockHideableByUser(false);
         mClockView.setQsHeader();
         mDateView = findViewById(R.id.date);
 
@@ -357,6 +359,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private void updateSettings() {
         updateQSBatteryMode();
         updateSBBatteryStyle();
+        updateQSClock();
         updateResources();
     }
 
@@ -386,6 +389,12 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mBatteryRemainingIcon.updateBatteryStyle();
         mBatteryRemainingIcon.updatePercentView();
         mBatteryRemainingIcon.updateVisibility();
+    }
+
+    private void updateQSClock() {
+        int show = Settings.System.getInt(mContext.getContentResolver(),
+        Settings.System.SHOW_QS_CLOCK, 1);
+        mClockView.setClockVisibleByUser(show == 1);
     }
 
     private void updateStatusIconAlphaAnimator() {
