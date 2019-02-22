@@ -40,7 +40,7 @@
     <string name="preview">プレビュー</string>
     <string name="keycode">キーコード</string>
     <string name="no_home_title">ホームボタンが見つかりません</string>
-    <string name="no_home_message">この端末を操作できるようにするにはホームボタンが必要です。保存する前にホームボタンを追加してください。</string>
+    <string name="no_home_message">この端末を操作できるようにするにはホームボタンが必要です。保存する前にホームボタンを追加して下さい。</string>
     <string name="clipboard_description">クリップボード機能ではクリップボードにアイテムを直接ドラッグできます。クリップボードにアイテムがある場合、直接そのアイテムをドラッグして取り出すこともできます。</string>
     <string name="keycode_description">キーコードボタンを利用すると、ナビゲーションバーにキーボードのキー機能を追加できるようになります。ボタンを押すと選択済みのキーボードのキーがエミュレートされます。まずボタン用にキーを選択し、次にボタン上の画像を選択する必要があります。</string>
     <string name="start">開始</string>
@@ -57,7 +57,7 @@
     <string name="right">右側</string>
     <string name="navbar_editor_title">エディター</string>
     <string name="navbar_editor_summary">ナビゲーションバーを編集</string>
-    <string name="menu_ime_always_show">メニュー/キーボード切り替え（常時表示）</string>
+    <string name="menu_ime_always_show">メニュー/キーボード切り替え (常時表示)</string>
     <string name="search">検索</string>
     <!-- SysUI Tuner -->
     <string name="statusbar_icons_blacklist">ステータスバーのアイコン</string>
@@ -69,22 +69,22 @@
     <string name="tuner_show_info_header_title">情報ヘッダーを表示</string>
     <string name="tuner_show_secure_title">セキュリティヘッダーを表示</string>
     <!-- ADB network tile -->
-    <string name="quick_settings_adb_network">ADBネットワーク</string>
-    <string name="quick_settings_network_adb_enabled_label">ネット経由のADB</string>
-    <string name="quick_settings_network_adb_disabled_label">ネット経由のADB</string>
+    <string name="quick_settings_adb_network">ADB ネットワーク</string>
+    <string name="quick_settings_network_adb_enabled_label">ネット経由の ADB</string>
+    <string name="quick_settings_network_adb_disabled_label">ネット経由の ADB</string>
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">ロック画面のショートカット</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
-    <string name="lte_on">LTE オン </string>
-    <string name="lte_off">LTE オフ</string>
+    <string name="lte_on">LTE ON</string>
+    <string name="lte_off">LTE OFF</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">スクリーンショットを削除しました</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s / %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">サウンド</string>
-    <string name="quick_settings_sound_ring">着信</string>
+    <string name="quick_settings_sound_ring">鳴動</string>
     <string name="quick_settings_sound_vibrate">振動</string>
     <string name="quick_settings_sound_dnd">マナーモード</string>
     <!-- Immersive tile -->
@@ -94,14 +94,14 @@
     <string name="quick_settings_immersive_tile_full">全て隠す</string>
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">カフェイン</string>
-    <string name="accessibility_quick_settings_caffeine_off">カフェイン オフ</string>
-    <string name="accessibility_quick_settings_caffeine_on">カフェイン オン</string>
+    <string name="accessibility_quick_settings_caffeine_off">カフェイン OFF</string>
+    <string name="accessibility_quick_settings_caffeine_on">カフェイン ON</string>
     <!-- Power menu advanced restart -->
     <string name="global_action_restart_system">再起動</string>
     <string name="global_action_restart_advanced">高度な再起動</string>
     <string name="global_action_restart_recovery">リカバリー</string>
     <string name="global_action_restart_bootloader">ブートローダー</string>
-    <string name="global_action_restart_ui">システムUI</string>
+    <string name="global_action_restart_ui">システム UI</string>
     <string name="global_action_restart_hot">ソフトリブート</string>
     <string name="global_action_screenshot">スクリーンショット</string>
     <!-- Reboot/Recovery QS Tile -->
@@ -114,23 +114,23 @@
     <string name="screenshot_abort_text">操作は中断されました</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">Heads Up</string>
-    <string name="accessibility_quick_settings_heads_up_off">Heads Up オフ</string>
-    <string name="accessibility_quick_settings_heads_up_on">Heads Up オン</string>
-    <string name="accessibility_quick_settings_heads_up_changed_off">Heads Upをオフにしました</string>
-    <string name="accessibility_quick_settings_heads_up_changed_on">Heads Upをオンにしました</string>
+    <string name="accessibility_quick_settings_heads_up_off">Heads Up OFF</string>
+    <string name="accessibility_quick_settings_heads_up_on">Heads Up ON</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Heads Up をオフにしました</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Heads Up を ON にしました</string>
     <!-- USB Tethering tile -->
-    <string name="accessibility_quick_settings_usb_tether_off">USBテザリング オフ</string>
-    <string name="accessibility_quick_settings_usb_tether_on">USBテザリング オン</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_off">USBテザリングをオフにしました</string>
-    <string name="accessibility_quick_settings_usb_tether_changed_on">USBテザリングをオンにしました</string>
+    <string name="accessibility_quick_settings_usb_tether_off">USB テザリング  OFF</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB テザリング ON</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB テザリングを OFF にしました</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB テザリングを ON にしました</string>
     <string name="quick_settings_usb_tether_label">USBテザリング</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 通知の表示は1分間一時停止します</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 通知の表示は<xliff:g id="number">%d</xliff:g>分間停止します</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 通知の表示は <xliff:g id="number">%d</xliff:g> 分間停止します</string>
     <!-- SysUI Tuner: Button that controls inversion of layout of navigation bar [CHAR LIMIT=60] -->
     <string name="nav_bar_layout_inverse">レイアウトを反転</string>
     <!-- QS customizer -->
-    <string name="drag_or_tap_to_add_tiles">タイルを追加や削除するにはドラックかタップしてください</string>
+    <string name="drag_or_tap_to_add_tiles">タイルを追加や削除するにはドラックかタップして下さい</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">テーマ</string>
     <string name="system_theme_style_auto">自動</string>
@@ -168,8 +168,8 @@
     <string name="quick_settings_theme_tile_color_user_five">マネー</string>
     <string name="quick_settings_theme_tile_color_user_six">砂</string>
     <string name="quick_settings_theme_tile_color_user_seven">ラム肉</string>
-    <string name="theme_info_title">これは何ですか？</string>
-    <string name="theme_info_message">テーマタイルは、システムアクセントやテーマをユーザが簡単に変更できるようにします。\n\nアクセントとテーマを切り替えるには、タイルを長押しした後再度タップして、表示されたオプションから選択するだけです。</string>
+    <string name="theme_info_title">これは何ですか?</string>
+    <string name="theme_info_message">テーマタイルはシステムアクセントやテーマをユーザが簡単に変更できるようにします。\n\nアクセントとテーマを切り替えるには、タイルを長押しした後再度タップして、表示されたオプションから選択するだけです。</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">画面は録画されています</string>
     <string name="screenrecord_notif_final_ticker">画面を録画しました</string>
@@ -189,13 +189,13 @@
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenrecord_label">画面録画</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • 急速充電中 (満充電まで残り<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
+    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • 急速充電中 (充電完了まで残り <xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_dash_charging">急速充電中</string>
     <!-- Smart Pixels QS Tile -->
     <string name="quick_settings_smart_pixels">スマートピクセル</string>
     <string name="quick_settings_smart_pixels_on_power_save">スマートピクセルを自動的に有効化</string>
     <!-- 4G LTE switch -->
-    <string name="show_fourg_title">LTE表示の代わりに4G表示を使用</string>
+    <string name="show_fourg_title">LTE の代わりに 4G を表示</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">音量パネル</string>
 </resources>
