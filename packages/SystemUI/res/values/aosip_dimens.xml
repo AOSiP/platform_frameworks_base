@@ -32,4 +32,7 @@
     <dimen name="horizontal_max_swift">3.0dp</dimen>
     <dimen name="vertical_max_swift">1.0dp</dimen>
 
+    <!-- System icon area layout weight -->
+    <item name="system_icon_area_weight" format="float" type="integer">1</item>
+
 </resources>
