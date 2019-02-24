@@ -5239,8 +5239,6 @@ public final class Settings {
             SWAP_VOLUME_BUTTONS,
             THREE_FINGER_GESTURE,
             TOAST_ICON,
-            USE_BLACKAF_THEME,
-            USE_BOTTOM_GESTURE_NAVIGATION,
             USE_OLD_MOBILETYPE,
             VIBRATE_ON_CONNECT,
             VIBRATE_ON_CALLWAITING,
@@ -9718,7 +9716,6 @@ public final class Settings {
             MANUAL_RINGER_TOGGLE_COUNT,
             HUSH_GESTURE_USED,
             STATUS_BAR_BATTERY_STYLE,
-            NAVIGATION_BAR_VISIBLE,
             AMBIENT_VISUALIZER_ENABLED,
             LOCKSCREEN_VISUALIZER_ENABLED,
             QUICK_SETTINGS_TILES_VIBRATE
