@@ -47,6 +47,7 @@ import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.IWindowManager;
 import android.view.WindowManagerGlobal;
 
@@ -346,6 +347,17 @@ public class aosipUtils {
         Intent intent = new Intent(Intent.ACTION_SEARCH_LONG_PRESS);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
+    }
+
+    public static void sendSystemKeyToStatusBar(int keyCode) {
+        IStatusBarService service = getStatusBarService();
+        if (service != null) {
+            try {
+                service.handleSystemKey(keyCode);
+            } catch (RemoteException e) {
+                // do nothing.
+            }
+        }
     }
 
     public static void killForegroundApp() {
