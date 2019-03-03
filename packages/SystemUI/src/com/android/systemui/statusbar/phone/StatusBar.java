@@ -4327,7 +4327,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                 && (config.uiMode & Configuration.UI_MODE_NIGHT_MASK)
                     == Configuration.UI_MODE_NIGHT_YES;
         final boolean useDarkTheme = nightModeWantsDarkTheme;
-        boolean useBlackAFTheme = useDarkTheme && (Settings.System.getIntForUser(mContext.getContentResolver(),
+        final boolean useBlackAFTheme = useDarkTheme && (Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.USE_BLACKAF_THEME, 0, UserHandle.USER_CURRENT) == 1);
         if (isUsingDarkTheme() != useDarkTheme) {
             mUiOffloadThread.submit(() -> {
@@ -4339,7 +4339,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         if (isUsingBlackAFTheme() != useBlackAFTheme) {
             mUiOffloadThread.submit(() -> {
                 unfuckBlackWhiteAccent();
-                ThemeAccentUtils.setLightBlackAFTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useBlackAFTheme);
+                ThemeAccentUtils.setBlackAFTheme(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), useBlackAFTheme);
                 mNotificationPanel.setLockscreenClockTheme(useDarkTheme);
             });
         }
