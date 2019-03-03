@@ -114,6 +114,21 @@ public class ThemeAccentUtils {
         }
     }
 
+    // Unload our dark theme
+    public static void unloadDarkTheme(IOverlayManager om, int userId) {
+        OverlayInfo themeInfo = null;
+        try {
+            themeInfo = om.getOverlayInfo(DARK_THEMES[0],
+                    userId);
+            if (themeInfo != null && themeInfo.isEnabled()) {
+                om.setEnabled(DARK_THEMES[0],
+                        false /*disable*/, userId);
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
     // Check for the dark system theme
     public static boolean isUsingDarkTheme(IOverlayManager om, int userId) {
         OverlayInfo themeInfo = null;
@@ -161,7 +176,7 @@ public class ThemeAccentUtils {
     }
 
     // Set black theme
-    public static void setLightBlackAFTheme(IOverlayManager om, int userId, boolean useBlackAFTheme) {
+    public static void setBlackAFTheme(IOverlayManager om, int userId, boolean useBlackAFTheme) {
         for (String theme : BLACKAF_THEMES) {
             try {
                 om.setEnabled(theme,
@@ -169,6 +184,7 @@ public class ThemeAccentUtils {
                 unfuckBlackWhiteAccent(om, userId);
                 if (useBlackAFTheme) {
                     unloadStockDarkTheme(om, userId);
+                    unloadDarkTheme(om, userId);
                 }
             } catch (RemoteException e) {
             }
