@@ -126,11 +126,10 @@ public class SystemUIApplication extends Application implements SysUiServiceProv
      */
 
     public void startServicesIfNeeded() {
-        String[] names = getResources().getStringArray(R.array.config_systemUIServiceComponents);
-        String[] elmyra =
-                  getResources().getStringArray(R.array.config_systemUIServiceComponents_elmyra);
-        startServicesIfNeeded(!getResources().getBoolean(
-                  R.bool.has_elmyra_service) ? names : elmyra);
+        String[] names = getResources().getStringArray(getResources().getBoolean(R.bool.has_elmyra_service)
+                                                       ? R.array.config_systemUIServiceComponents_elmyra
+                                                       : R.array.config_systemUIServiceComponents);
+        startServicesIfNeeded(names);
     }
 
     /**
