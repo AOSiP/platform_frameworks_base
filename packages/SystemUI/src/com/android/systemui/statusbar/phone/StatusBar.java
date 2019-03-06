@@ -487,6 +487,8 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     private ArrayList<String> mStoplist = new ArrayList<String>();
     private ArrayList<String> mBlacklist = new ArrayList<String>();
 
+    private int mPreviousDarkMode;
+
     /**
      * Helper that is responsible for showing the right toast when a disallowed activity operation
      * occurred. In pinned mode, we show instructions on how to break out of this mode, whilst in
