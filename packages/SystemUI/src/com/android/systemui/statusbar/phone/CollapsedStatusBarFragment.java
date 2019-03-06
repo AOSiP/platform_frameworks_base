@@ -225,7 +225,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         // visibility to GONE from INVISIBLE or vice versa
         if ((diff1 & DISABLE_CLOCK) != 0 ||
                 mClockController.getClock().getVisibility() != clockHiddenMode()) {
-            if ((state1 & DISABLE_CLOCK) != 0) {
+            if ((state1 & DISABLE_CLOCK) != 0 || mClockController.isClockBlacklistened()) {
                 hideClock(animate);
             } else {
                 showClock(animate);
