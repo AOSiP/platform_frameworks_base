@@ -86,6 +86,10 @@ public class ClockController implements TunerService.Tunable {
         mActiveClock.setClockVisibleByUser(!mBlackListed);
     }
 
+    public boolean isClockBlacklistened() {
+        return mBlackListed;
+    }
+
     @Override
     public void onTuningChanged(String key, String newValue) {
         Log.d(TAG, "onTuningChanged key=" + key + " value=" + newValue);
