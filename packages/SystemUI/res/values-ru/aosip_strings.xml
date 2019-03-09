@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
     <!-- QS Colums & rows -->
     <string name="qs_menu_item_columns">Столбцы в портретном режиме</string>
     <string name="qs_menu_item_columns_landscape">Столбцы в ландшафтном режиме</string>
@@ -189,7 +191,7 @@
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenrecord_label">Запись экрана</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
+    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Зарядка Dash (<xliff:g id="charging_time_left" example="4 часа и 2 минуты">%s</xliff:g> до полной зарядки)</string>
     <string name="keyguard_plugged_in_dash_charging">Быстрая зарядка</string>
     <!-- Smart Pixels QS Tile -->
     <string name="quick_settings_smart_pixels">Умные Пиксели</string>

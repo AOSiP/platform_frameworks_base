@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
     <!-- QS Colums & rows -->
     <string name="qs_menu_item_columns">縦向き時の列数</string>
     <string name="qs_menu_item_columns_landscape">横向き時の列数</string>
