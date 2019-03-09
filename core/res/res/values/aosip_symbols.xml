@@ -172,4 +172,7 @@
   <!-- Whether the device supports Smart Pixels -->
   <java-symbol type="bool" name="config_enableSmartPixels" />
 
+  <!-- Does device have ActiveEdge -->
+  <java-symbol type="bool" name="config_hasActiveEdge" />
+
 </resources>

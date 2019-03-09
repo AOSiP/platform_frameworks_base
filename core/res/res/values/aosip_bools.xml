@@ -20,4 +20,7 @@
     <!-- Whether device supports an alt. ambient display -->
     <bool name="config_alt_ambient_display">false</bool>
 
+    <!-- Active Edge device detection -->
+    <bool name="config_hasActiveEdge">false</bool>
+
 </resources>
