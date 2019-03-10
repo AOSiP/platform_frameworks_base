@@ -62,8 +62,9 @@ public class ThemeAccentUtils {
         "com.android.settings.theme.blackaf", // 2
         "com.android.settings.intelligence.theme.blackaf", // 3
         "com.android.gboard.theme.blackaf", // 4
-        "com.android.updater.theme.blackaf", // 5
-        "com.android.wellbeing.theme.blackaf", // 6
+        "com.google.intelligence.sense.theme.blackaf", // 5
+        "com.android.updater.theme.blackaf", // 6
+        "com.android.wellbeing.theme.blackaf", // 7
     };
 
     // Accents
