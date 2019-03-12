@@ -4653,16 +4653,6 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
-         * Volume key controls ringtone or media sound stream
-         * @hide
-         */
-        public static final String VOLUME_KEYS_CONTROL_RING_TONE =
-                "volume_keys_control_ring_tone";
-        /** @hide */
-        private static final Validator VOLUME_KEYS_CONTROL_RING_TONE_VALIDATOR =
-               BOOLEAN_VALIDATOR;
-
-        /**
          * Select various accents to go along with system themes
          *
          * @hide
@@ -5260,7 +5250,6 @@ public final class Settings {
             VIBRATE_ON_DISCONNECT,
             VIBRATION_ON_CHARGE_STATE_CHANGED,
             VOLUME_BUTTON_MUSIC_CONTROL,
-            VOLUME_KEYS_CONTROL_RING_TONE,
             VOLUME_KEY_CURSOR_CONTROL,
             VOLUME_ROCKER_WAKE,
             WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
@@ -5416,7 +5405,6 @@ public final class Settings {
             PUBLIC_SETTINGS.add(VIBRATE_ON_DISCONNECT);
             PUBLIC_SETTINGS.add(VIBRATION_ON_CHARGE_STATE_CHANGED);
             PUBLIC_SETTINGS.add(VOLUME_BUTTON_MUSIC_CONTROL);
-            PUBLIC_SETTINGS.add(VOLUME_KEYS_CONTROL_RING_TONE);
             PUBLIC_SETTINGS.add(VOLUME_KEY_CURSOR_CONTROL);
             PUBLIC_SETTINGS.add(VOLUME_ROCKER_WAKE);
             PUBLIC_SETTINGS.add(WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
@@ -5648,7 +5636,6 @@ public final class Settings {
             VALIDATORS.put(VIBRATE_ON_DISCONNECT, VIBRATE_ON_DISCONNECT_VALIDATOR);
             VALIDATORS.put(VIBRATION_ON_CHARGE_STATE_CHANGED, VIBRATION_ON_CHARGE_STATE_CHANGED_VALIDATOR);
             VALIDATORS.put(VOLUME_BUTTON_MUSIC_CONTROL, VOLUME_BUTTON_MUSIC_CONTROL_VALIDATOR);
-            VALIDATORS.put(VOLUME_KEYS_CONTROL_RING_TONE,VOLUME_KEYS_CONTROL_RING_TONE_VALIDATOR);
             VALIDATORS.put(VOLUME_KEY_CURSOR_CONTROL, VOLUME_KEY_CURSOR_CONTROL_VALIDATOR);
             VALIDATORS.put(VOLUME_ROCKER_WAKE, VOLUME_ROCKER_WAKE_VALIDATOR);
             VALIDATORS.put(WAKE_WHEN_PLUGGED_OR_UNPLUGGED, WAKE_WHEN_PLUGGED_OR_UNPLUGGED_VALIDATOR);
