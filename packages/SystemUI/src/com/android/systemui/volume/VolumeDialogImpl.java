@@ -78,6 +78,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -121,11 +122,14 @@ public class VolumeDialogImpl implements VolumeDialog {
 
     private Window mWindow;
     private CustomDialog mDialog;
+    private LinearLayout mDialogLL;
     private ViewGroup mDialogView;
     private ViewGroup mDialogRowsView;
     private ViewGroup mRinger;
     private ImageButton mRingerIcon;
     private View mExpandRowsView;
+    private ExpandableIndicator mExpandRowsLeft;
+    private ExpandableIndicator mExpandRowsRight;
     private ExpandableIndicator mExpandRows;
     private FrameLayout mZenIcon;
     private final List<VolumeRow> mRows = new ArrayList<>();
@@ -230,6 +234,7 @@ public class VolumeDialogImpl implements VolumeDialog {
                     .start();
         });
         mDialogView = mDialog.findViewById(R.id.volume_dialog);
+        mDialogLL = mDialog.findViewById(R.id.volume_dialog);
         mDialogView.setOnHoverListener((v, event) -> {
             int action = event.getActionMasked();
             mHovering = (action == MotionEvent.ACTION_HOVER_ENTER)
@@ -247,16 +252,18 @@ public class VolumeDialogImpl implements VolumeDialog {
         mDialogRowsView = mDialog.findViewById(R.id.volume_dialog_rows);
         mRinger = mDialog.findViewById(R.id.ringer);
         mExpandRowsView = mDialog.findViewById(R.id.expandable_indicator_container);
-        mExpandRows = mDialog.findViewById(R.id.expandable_indicator);
+        mExpandRowsLeft = mDialog.findViewById(R.id.expandable_indicator_left);
+        mExpandRowsRight = mDialog.findViewById(R.id.expandable_indicator_right);
         if(!isAudioPanelOnLeftSide()) {
-            mRinger.setForegroundGravity(Gravity.RIGHT);
-            mExpandRows.setForegroundGravity(Gravity.RIGHT);
-            mExpandRows.setRotation(90);
+            mDialogLL.setGravity(Gravity.RIGHT);
+            mExpandRowsLeft.setVisibility(View.GONE);
+            mExpandRows = mExpandRowsRight;
         } else {
-            mRinger.setForegroundGravity(Gravity.LEFT);
-            mExpandRows.setForegroundGravity(Gravity.LEFT);
-            mExpandRows.setRotation(-90);
+            mDialogLL.setGravity(Gravity.LEFT);
+            mExpandRowsRight.setVisibility(View.GONE);
+            mExpandRows = mExpandRowsLeft;
         }
+
         mRingerIcon = mRinger.findViewById(R.id.ringer_icon);
         mZenIcon = mRinger.findViewById(R.id.dnd_icon);
 
