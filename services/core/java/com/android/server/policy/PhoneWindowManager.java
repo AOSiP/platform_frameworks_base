@@ -197,10 +197,6 @@ import android.hardware.hdmi.HdmiPlaybackClient.OneTouchPlayCallback;
 import android.hardware.input.InputManager;
 import android.hardware.input.InputManagerInternal;
 import android.hardware.power.V1_0.PowerHint;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.AudioManagerInternal;
@@ -864,12 +860,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private boolean mAodShowing;
 
     private int mTorchActionMode;
-    private static final float PROXIMITY_DISTANCE_THRESHOLD = 5.0f;
-    private int mProximityTimeOut;
-    private SensorManager mSensorManager;
-    private Sensor mProximitySensor;
-    private SensorEventListener mProximityListener;
-    private android.os.PowerManager.WakeLock mProximityWakeLock;
 
     private static final int MSG_ENABLE_POINTER_LOCATION = 1;
     private static final int MSG_DISABLE_POINTER_LOCATION = 2;
@@ -902,7 +892,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private static final int MSG_RINGER_TOGGLE_CHORD = 30;
     private static final int MSG_DISPATCH_VOLKEY_WITH_WAKE_LOCK = 31;
     private static final int MSG_TOGGLE_TORCH = 32;
-    private static final int MSG_CLEAR_PROXIMITY = 33;
 
     private static final int MSG_REQUEST_TRANSIENT_BARS_ARG_STATUS = 0;
     private static final int MSG_REQUEST_TRANSIENT_BARS_ARG_NAVIGATION = 1;
@@ -1035,78 +1024,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     break;
                 }
                 case MSG_TOGGLE_TORCH:
-                    toggleFlashLightProximityCheck();
-                    break;
-                case MSG_CLEAR_PROXIMITY:
-                    cleanupProximity();
+                    performHapticFeedbackLw(null, HapticFeedbackConstants.LONG_PRESS, true);
+                    aosipUtils.toggleCameraFlash();
                     break;
             }
         }
-    }
-
-    private void runPostProximityCheck() {
-        if (mSensorManager == null) {
-            return;
-        }
-        synchronized (mProximityWakeLock) {
-            mProximityWakeLock.acquire();
-            mProximityListener = new SensorEventListener() {
-                @Override
-                public void onSensorChanged(SensorEvent event) {
-                    cleanupProximityLocked();
-                    if (!mHandler.hasMessages(MSG_CLEAR_PROXIMITY)) {
-                        return;
-                    }
-                    mHandler.removeMessages(MSG_CLEAR_PROXIMITY);
-                    final float distance = event.values[0];
-                    if (distance >= PROXIMITY_DISTANCE_THRESHOLD ||
-                            distance >= mProximitySensor.getMaximumRange()) {
-                        toggleFlashLight();
-                    }
-                }
-
-                @Override
-                public void onAccuracyChanged(Sensor sensor, int accuracy) {
-                }
-            };
-            mSensorManager.registerListener(mProximityListener,
-                   mProximitySensor, SensorManager.SENSOR_DELAY_FASTEST);
-        }
-    }
-
-    private void cleanupProximityLocked() {
-        if (mProximityWakeLock.isHeld()) {
-            mProximityWakeLock.release();
-        }
-        if (mProximityListener != null) {
-            mSensorManager.unregisterListener(mProximityListener);
-            mProximityListener = null;
-        }
-    }
-
-    private void cleanupProximity() {
-        synchronized (mProximityWakeLock) {
-            cleanupProximityLocked();
-        }
-    }
-
-    private void toggleFlashLightProximityCheck() {
-        if (mProximitySensor != null && mProximityTimeOut != -1) {
-            if (mHandler.hasMessages(MSG_CLEAR_PROXIMITY)) {
-                // A message is already queued
-                return;
-            }
-            final Message newMsg = mHandler.obtainMessage(MSG_CLEAR_PROXIMITY);
-            mHandler.sendMessageDelayed(newMsg, mProximityTimeOut);
-            runPostProximityCheck();
-        } else {
-            toggleFlashLight();
-        }
-    }
-
-    private void toggleFlashLight() {
-        performHapticFeedbackLw(null, HapticFeedbackConstants.LONG_PRESS, true);
-        aosipUtils.toggleCameraFlash();
     }
 
     private UEventObserver mHDMIObserver = new UEventObserver() {
@@ -1781,7 +1703,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         switch (behavior) {
             case MULTI_PRESS_POWER_NOTHING:
                 if ((mTorchActionMode == 1) && (!isScreenOn() || isDozeMode())) {
-                    toggleFlashLightProximityCheck();
+                    performHapticFeedbackLw(null, HapticFeedbackConstants.LONG_PRESS, true);
+                    aosipUtils.toggleCameraFlash();
                 }
                 break;
             case MULTI_PRESS_POWER_THEATER_MODE:
@@ -2601,13 +2524,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         + deviceKeyHandlerLib, e);
             }
         }
-
-        mProximityTimeOut = mContext.getResources().getInteger(
-                com.android.internal.R.integer.config_flashlightProximityTimeout);
-        mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        mProximitySensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-        mProximityWakeLock = mContext.getSystemService(PowerManager.class)
-                .newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ProximityWakeLock");
     }
 
     /**
@@ -6605,8 +6521,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         if (isValidGlobalKey(keyCode)
                 && mGlobalKeyManager.shouldHandleGlobalKey(keyCode, event)) {
             if (isWakeKey) {
-                wakeUp(event.getEventTime(), mAllowTheaterModeWakeFromKey,
-                       "android.policy:KEY", true);
+                wakeUp(event.getEventTime(), mAllowTheaterModeWakeFromKey, "android.policy:KEY");
             }
             return result;
         }
@@ -6995,8 +6910,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         }
 
         if (isWakeKey) {
-            wakeUp(event.getEventTime(), mAllowTheaterModeWakeFromKey, "android.policy:KEY",
-                    event.getKeyCode() == KeyEvent.KEYCODE_WAKEUP); // Check prox only on wake key
+            wakeUp(event.getEventTime(), mAllowTheaterModeWakeFromKey, "android.policy:KEY");
         }
 
         return result;
@@ -7451,15 +7365,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     }
 
     private void wakeUpFromPowerKey(long eventTime) {
-        wakeUp(eventTime, mAllowTheaterModeWakeFromPowerKey, "android.policy:POWER", true);
+        wakeUp(eventTime, mAllowTheaterModeWakeFromPowerKey, "android.policy:POWER");
     }
 
     private boolean wakeUp(long wakeTime, boolean wakeInTheaterMode, String reason) {
-        return wakeUp(wakeTime, wakeInTheaterMode, reason, false);
-    }
-
-    private boolean wakeUp(long wakeTime, boolean wakeInTheaterMode, String reason,
-            final boolean withProximityCheck) {
         final boolean theaterModeEnabled = isTheaterModeEnabled();
         if (!wakeInTheaterMode && theaterModeEnabled) {
             return false;
@@ -7470,11 +7379,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     Settings.Global.THEATER_MODE_ON, 0);
         }
 
-        if (withProximityCheck) {
-            mPowerManager.wakeUpWithProximityCheck(wakeTime, reason);
-        } else {
-            mPowerManager.wakeUp(wakeTime, reason);
-        }
+        mPowerManager.wakeUp(wakeTime, reason);
         return true;
     }
 
