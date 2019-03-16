@@ -5144,15 +5144,6 @@ public final class Settings {
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 1);
 
         /**
-         * Check the proximity sensor during wakeup
-         * 0 = 0ff, 1 = on
-         */
-        public static final String PROXIMITY_ON_WAKE = "proximity_on_wake";
-
-        /** @hide */
-        public static final Validator PROXIMITY_ON_WAKE_VALIDATOR = BOOLEAN_VALIDATOR;
-
-        /**
          *  Weather to use a custom color for the visualizer on the lock screen
          * @hide
          */
@@ -5286,7 +5277,6 @@ public final class Settings {
             POWERMENU_AIRPLANE,
             POWERMENU_ADVANCED_REBOOT,
             POWERMENU_REBOOT,
-            PROXIMITY_ON_WAKE,
             QS_LAYOUT_ROWS,
             QS_LAYOUT_ROWS_LANDSCAPE,
             QS_LAYOUT_COLUMNS_LANDSCAPE,
@@ -5440,7 +5430,6 @@ public final class Settings {
             PUBLIC_SETTINGS.add(POWERMENU_AIRPLANE);
             PUBLIC_SETTINGS.add(POWERMENU_REBOOT);
             PUBLIC_SETTINGS.add(POWERMENU_SCREENSHOT);
-            PUBLIC_SETTINGS.add(PROXIMITY_ON_WAKE);
             PUBLIC_SETTINGS.add(QS_LAYOUT_ROWS);
             PUBLIC_SETTINGS.add(QS_LAYOUT_ROWS_LANDSCAPE);
             PUBLIC_SETTINGS.add(QS_LAYOUT_COLUMNS);
@@ -5671,7 +5660,6 @@ public final class Settings {
             VALIDATORS.put(POWERMENU_AIRPLANE, POWERMENU_AIRPLANE_VALIDATOR);
             VALIDATORS.put(POWERMENU_REBOOT, POWERMENU_REBOOT_VALIDATOR);
             VALIDATORS.put(POWERMENU_SCREENSHOT, POWERMENU_SCREENSHOT_VALIDATOR);
-            VALIDATORS.put(PROXIMITY_ON_WAKE, PROXIMITY_ON_WAKE_VALIDATOR);
             VALIDATORS.put(QS_LAYOUT_ROWS, QS_LAYOUT_ROWS_VALIDATOR);
             VALIDATORS.put(QS_LAYOUT_ROWS_LANDSCAPE, QS_LAYOUT_ROWS_LANDSCAPE_VALIDATOR);
             VALIDATORS.put(QS_LAYOUT_COLUMNS_LANDSCAPE, QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR);
@@ -5715,7 +5703,6 @@ public final class Settings {
             VALIDATORS.put(VOLUME_ROCKER_WAKE, VOLUME_ROCKER_WAKE_VALIDATOR);
             VALIDATORS.put(WAKE_WHEN_PLUGGED_OR_UNPLUGGED, WAKE_WHEN_PLUGGED_OR_UNPLUGGED_VALIDATOR);
             VALIDATORS.put(RECENTS_COMPONENT,RECENTS_COMPONENT_VALIDATOR);
-            VALIDATORS.put(PROXIMITY_ON_WAKE, PROXIMITY_ON_WAKE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
             VALIDATORS.put(DOZE_ON_CHARGE, DOZE_ON_CHARGE_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);

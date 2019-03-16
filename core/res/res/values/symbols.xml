@@ -3414,18 +3414,6 @@
   <java-symbol type="integer" name="config_defaultHapticFeedbackIntensity" />
   <java-symbol type="integer" name="config_defaultNotificationVibrationIntensity" />
 
-  <!-- Proximity check on screen on -->
-  <java-symbol type="bool" name="config_proximityCheckOnWake" />
-
-  <!-- Proximity check timeout -->
-  <java-symbol type="integer" name="config_proximityCheckTimeout" />
-
-  <!-- Proximity check on screen on default -->
-  <java-symbol type="bool" name="config_proximityCheckOnWakeEnabledByDefault" />
-
-  <!-- Should proximity check also affect fingerprint reader-->
-  <java-symbol type="bool" name="config_proximityCheckOnFingerprintWake" />
-
   <!-- Gesture Sensor -->
   <java-symbol type="bool" name="config_enableGestureService" />
 

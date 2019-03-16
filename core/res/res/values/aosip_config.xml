@@ -117,10 +117,6 @@
         <item>screenshot</item>
     </string-array>
 
-    <!-- Time to give to the proximity sensor before toggling the flashlight with the Power button.
-    Set to -1 to disable the proximity sensor check at all-->
-    <integer name="config_flashlightProximityTimeout">300</integer>
-
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
     <bool name="config_custom_swipe_up_gesture_setting_available">false</bool>
 
