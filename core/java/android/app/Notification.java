@@ -5504,6 +5504,8 @@ public class Notification implements Parcelable
         int resolveAppNameTinting() {
             if (!mContext.getResources().getBoolean(R.bool.config_allowNotificationAppNameTextTinting)) {
                 return getSecondaryTextColor();
+            } else {
+                return resolveContrastColor();
             }
         }
         

@@ -15,6 +15,9 @@
 -->
 <resources>
 
+  <!-- Notification sender text color -->
+  <java-symbol type="color" name="sender_text_color" />
+
   <!-- Rotation sensor -->
   <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
 
