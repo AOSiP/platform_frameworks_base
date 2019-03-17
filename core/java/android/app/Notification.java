@@ -4460,6 +4460,11 @@ public class Notification implements Parcelable
         private CharSequence processTextSpans(CharSequence text) {
             if (hasForegroundColor()) {
                 return NotificationColorUtil.clearColorSpans(text);
+            } else if (mContext.getResources()
+                .getBoolean(R.bool.config_useDarkBgNotificationIconTextTinting)) {
+                // Some notifications have color spans, assuming a dark background,
+                // so let's remove them
+                return NotificationColorUtil.clearColorSpans(text);
             }
             return text;
         }
@@ -5437,7 +5442,7 @@ public class Notification implements Parcelable
             } else if (isColorized()) {
                 color = getPrimaryTextColor();
             } else {
-                color = resolveContrastColor();
+                color = resolveIconContrastColor();
             }
             if (colorable) {
                 contentView.setDrawableTint(R.id.icon, false, color,
@@ -5457,7 +5462,7 @@ public class Notification implements Parcelable
             if (largeIcon != null && isLegacy()
                     && getColorUtil().isGrayscaleIcon(mContext, largeIcon)) {
                 // resolve color will fall back to the default when legacy
-                contentView.setDrawableTint(R.id.icon, false, resolveContrastColor(),
+                contentView.setDrawableTint(R.id.icon, false, resolveIconContrastColor(),
                         PorterDuff.Mode.SRC_ATOP);
             }
         }
@@ -5471,12 +5476,21 @@ public class Notification implements Parcelable
         int resolveAppNameTinting() {
             if (!mContext.getResources().getBoolean(R.bool.config_allowNotificationAppNameTextTinting)) {
                 return getSecondaryTextColor();
+            }
+        }
+
+        int resolveIconContrastColor() {
+            if (!mContext.getResources().getBoolean(R.bool.config_allowNotificationIconTextTinting)) {
+                return mContext.getColor(R.color.notification_icon_default_color);
             } else {
                 return resolveContrastColor();
             }
         }
 
         int resolveContrastColor() {
+            if (!mContext.getResources().getBoolean(R.bool.config_allowNotificationIconTextTinting)) {
+                return mContext.getColor(R.color.notification_text_default_color);
+            }
             if (mCachedContrastColorIsFor == mN.color && mCachedContrastColor != COLOR_INVALID) {
                 return mCachedContrastColor;
             }
@@ -5516,6 +5530,9 @@ public class Notification implements Parcelable
         }
 
         int resolveAmbientColor() {
+            if (!mContext.getResources().getBoolean(R.bool.config_allowNotificationIconTextTinting)) {
+                return mContext.getColor(R.color.notification_ambient_icon_default_color);
+            }
             if (mCachedAmbientColorIsFor == mN.color && mCachedAmbientColorIsFor != COLOR_INVALID) {
                 return mCachedAmbientColor;
             }
