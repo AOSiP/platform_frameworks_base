@@ -53,14 +53,6 @@
   <java-symbol type="bool" name="config_useDarkBgNotificationTinting_override" />
   <java-symbol type="bool" name="config_notificationTinting_override" />
 
-  <!-- Notification icon/text dynamic tint -->
-  <java-symbol type="bool" name="config_allowNotificationIconTextTinting" />
-  <java-symbol type="color" name="notification_text_default_color" />
-  <java-symbol type="color" name="notification_icon_default_color" />
-
-  <!-- Notification sender text color -->
-  <java-symbol type="color" name="sender_text_color" />
-
   <!-- Notification app name tint -->
   <java-symbol type="bool" name="config_allowNotificationAppNameTextTinting" />
 
@@ -129,10 +121,6 @@
 
   <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
   <java-symbol type="bool" name="config_cleanupUnusedFingerprints" />
-
-  <!-- Toast text and bg colors -->
-  <java-symbol type="color" name="toast_bg_color" />
-  <java-symbol type="color" name="toast_text_color" />
 
   <!-- Weather icons -->
   <java-symbol type="drawable" name="weather_clear_night" />
