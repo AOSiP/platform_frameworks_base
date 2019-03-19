@@ -150,6 +150,7 @@ import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.statusbar.NotificationVisibility;
 import com.android.internal.statusbar.StatusBarIcon;
 import com.android.internal.statusbar.ThemeAccentUtils;
+import com.android.internal.util.aosip.ImageHelper;
 import com.android.internal.utils.ActionConstants;
 import com.android.internal.utils.ActionUtils;
 import com.android.internal.utils.SmartPackageMonitor;
@@ -404,6 +405,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     protected FingerprintUnlockController mFingerprintUnlockController;
     private LightBarController mLightBarController;
     protected LockscreenWallpaper mLockscreenWallpaper;
+    private int mAlbumArtFilter;
 
     private int mNaturalBarHeight = -1;
 
@@ -1854,7 +1856,17 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                 // might still be null
             }
             if (artworkBitmap != null) {
-                artworkDrawable = new BitmapDrawable(mBackdropBack.getResources(), artworkBitmap);
+                switch (mAlbumArtFilter) {
+                    case 1:
+                        artworkDrawable = new BitmapDrawable(mBackdropBack.getResources(), ImageHelper.toGrayscale(artworkBitmap));
+                        break;
+                    case 2:
+                        artworkDrawable = new BitmapDrawable(mBackdropBack.getResources(), ImageHelper.getBlurredImage(mContext, artworkBitmap));
+                        break;
+                    case 0:
+                    default:
+                        artworkDrawable = new BitmapDrawable(mBackdropBack.getResources(), artworkBitmap);
+                }
             }
         }
         mKeyguardShowingMedia = artworkDrawable != null;
@@ -5666,6 +5678,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.USE_BLACKAF_THEME),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                  Settings.System.LOCKSCREEN_ALBUM_ART_FILTER),
+                  false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -5694,6 +5709,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.USE_BLACKAF_THEME))) {
                 updateTheme(false);
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_ALBUM_ART_FILTER))) {
+                updateLockscreenFilter();
             }
         }
 
@@ -5707,6 +5725,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             setFpToDismissNotifications();
             setForceAmbient();
             updateTheme(false);
+            updateLockscreenFilter();
         }
     }
 
@@ -5745,6 +5764,12 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     private boolean isAmbientContainerAvailable() {
         return mAmbientMediaPlaying && mAmbientIndicationContainer != null;
     }
+
+    private void updateLockscreenFilter() {
+        mAlbumArtFilter = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, 0,
+                UserHandle.USER_CURRENT);
+      }
 
     private final BroadcastReceiver mBannerActionBroadcastReceiver = new BroadcastReceiver() {
         @Override
