@@ -54,6 +54,9 @@
          Used to decide if the user can change the colors -->
     <bool name="config_multiColorBatteryLed">true</bool>
 
+    <!-- Whether the Dreamliner (Pixel Stand) service should be enabled -->
+    <bool name="config_enableDreamlinerService">false</bool>
+
     <!-- minimal way before long swipe will get accepted - in dp -->
     <integer name="nav_gesture_swipe_min_length">60</integer>
     <!-- time in ms that needs to pass before trigger the action -->
