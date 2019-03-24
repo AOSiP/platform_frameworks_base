@@ -83,8 +83,9 @@ public class MobileSignalController extends SignalController<
     private MobileIconGroup mDefaultIcons;
     private Config mConfig;
 
+    private ContentResolver mContentResolver;
+    private Handler mHandler;
     private ImsManager mImsManager;
-    private boolean mRoamingIconAllowed;
     private boolean mVoLTEicon;
 
     // 4G instead of LTE
@@ -124,14 +125,12 @@ public class MobileSignalController extends SignalController<
         int phoneId = SubscriptionManager.getPhoneId(mSubscriptionInfo.getSubscriptionId());
         mImsManager = ImsManager.getInstance(mContext, phoneId);
         updateImsRegistrationState();
-
         mObserver = new ContentObserver(new Handler(receiverLooper)) {
             @Override
             public void onChange(boolean selfChange) {
                 updateTelephony();
             }
         };
-
         Handler mHandler = new Handler();
         SettingsObserver settingsObserver = new SettingsObserver(mHandler);
         settingsObserver.observe();
@@ -142,18 +141,14 @@ public class MobileSignalController extends SignalController<
             super(handler);
         }
 
-        void observe() {
-            ContentResolver resolver = mContext.getContentResolver();
-            Uri uri = Settings.System.getUriFor(Settings.System.ROAMING_INDICATOR_ICON);
-            resolver.registerContentObserver(uri, false,
-                    this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(
-                    Settings.System.getUriFor(Settings.System.SHOW_VOLTE_ICON), false,
-                    this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(
-                    Settings.System.getUriFor(Settings.System.SHOW_FOURG),false,
-                    this, UserHandle.USER_ALL);
-            updateSettings();
+    void observe() {
+        ContentResolver resolver = mContext.getContentResolver();
+        resolver.registerContentObserver(Settings.System.getUriFor(
+                Settings.System.SHOW_VOLTE_ICON),
+                false, this, UserHandle.USER_ALL);
+        resolver.registerContentObserver(Settings.System.getUriFor(
+                Settings.System.SHOW_FOURG),
+                false, this, UserHandle.USER_ALL);
         }
 
         /*
@@ -167,15 +162,9 @@ public class MobileSignalController extends SignalController<
 
     private void updateSettings() {
         ContentResolver resolver = mContext.getContentResolver();
-
-        mRoamingIconAllowed = Settings.System.getIntForUser(resolver,
-                Settings.System.ROAMING_INDICATOR_ICON, 1,
-                UserHandle.USER_CURRENT) == 1;
-
         mVoLTEicon = Settings.System.getIntForUser(resolver,
                 Settings.System.SHOW_VOLTE_ICON, 0,
                 UserHandle.USER_CURRENT) == 1;
-
         mShow4G = Settings.System.getIntForUser(resolver,
                 Settings.System.SHOW_FOURG, 0,
                 UserHandle.USER_CURRENT) == 1;
@@ -574,7 +563,7 @@ public class MobileSignalController extends SignalController<
         mCurrentState.dataConnected = mCurrentState.connected
                 && mDataState == TelephonyManager.DATA_CONNECTED;
 
-        mCurrentState.roaming = isRoaming() && mRoamingIconAllowed;
+        mCurrentState.roaming = isRoaming();
         if (isCarrierNetworkChangeActive()) {
             mCurrentState.iconGroup = TelephonyIcons.CARRIER_NETWORK_CHANGE;
         } else if (isDataDisabled() && !mConfig.alwaysShowDataRatIcon) {

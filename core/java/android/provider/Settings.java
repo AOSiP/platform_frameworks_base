@@ -4561,14 +4561,6 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
-         * @hide
-         */
-        public static final String ROAMING_INDICATOR_ICON = "roaming_indicator_icon";
-        /** @hide */
-        private static final Validator ROAMING_INDICATOR_ICON_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
-        /**
          * Show four g instead of LTE
          * @hide
          */
@@ -5244,7 +5236,6 @@ public final class Settings {
             QS_QUICKBAR_COLUMNS,
             RECENTS_CLEAR_ALL_LOCATION,
             RECENTS_COMPONENT,
-            ROAMING_INDICATOR_ICON,
             SCREENSHOT_DEFAULT_MODE,
             SCREENSHOT_SHUTTER_SOUND,
             SCREENRECORD_QUALITY_MODE,
@@ -5398,7 +5389,6 @@ public final class Settings {
             PUBLIC_SETTINGS.add(QS_TILE_HIDE_TITLE);
             PUBLIC_SETTINGS.add(RECENTS_CLEAR_ALL_LOCATION);
             PUBLIC_SETTINGS.add(RECENTS_COMPONENT);
-            PUBLIC_SETTINGS.add(ROAMING_INDICATOR_ICON);
             PUBLIC_SETTINGS.add(SCREENSHOT_DEFAULT_MODE);
             PUBLIC_SETTINGS.add(SCREENSHOT_SHUTTER_SOUND);
             PUBLIC_SETTINGS.add(SCREENRECORD_QUALITY_MODE);
@@ -5630,7 +5620,6 @@ public final class Settings {
             VALIDATORS.put(QS_TILE_HIDE_TITLE, QS_TILE_HIDE_TITLE_VALIDATOR);
             VALIDATORS.put(RECENTS_CLEAR_ALL_LOCATION, RECENTS_CLEAR_ALL_LOCATION_VALIDATOR);
             VALIDATORS.put(RECENTS_COMPONENT,RECENTS_COMPONENT_VALIDATOR);
-            VALIDATORS.put(ROAMING_INDICATOR_ICON,ROAMING_INDICATOR_ICON_VALIDATOR);
             VALIDATORS.put(SCREENSHOT_DEFAULT_MODE, SCREENSHOT_DEFAULT_MODE_VALIDATOR);
             VALIDATORS.put(SCREENRECORD_QUALITY_MODE, SCREENRECORD_QUALITY_MODE_VALIDATOR);
             VALIDATORS.put(SCREENSHOT_SHUTTER_SOUND, SCREENSHOT_SHUTTER_SOUND_VALIDATOR);
