@@ -4784,13 +4784,19 @@ public final class Settings {
 
 
         /**
-         * Wheter to show network traffic indicator in statusbar
+         * Whether to show network traffic indicator (in statusbar by default)
          * @hide
          */
         public static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
         /** @hide */
         private static final Validator NETWORK_TRAFFIC_STATE_VALIDATOR =
                 BOOLEAN_VALIDATOR;
+
+        /**
+         * Whether to show network traffic indicator in expanded header
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_VIEW_LOCATION = "network_traffic_view_location";
 
         /**
          * Whether or not to hide the network traffic indicator when there is no activity
