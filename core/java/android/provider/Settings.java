@@ -4782,6 +4782,11 @@ public final class Settings {
         private static final Validator BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR =
                 ANY_INTEGER_VALIDATOR;
 
+        /**
+         * Whether to show network traffic indicator in expanded header
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_VIEW_LOCATION = "network_traffic_view_location";
 
         /**
          * Wheter to show network traffic indicator in statusbar
