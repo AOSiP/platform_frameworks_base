@@ -141,14 +141,15 @@ public class MobileSignalController extends SignalController<
             super(handler);
         }
 
-    void observe() {
-        ContentResolver resolver = mContext.getContentResolver();
-        resolver.registerContentObserver(Settings.System.getUriFor(
-                Settings.System.SHOW_VOLTE_ICON),
-                false, this, UserHandle.USER_ALL);
-        resolver.registerContentObserver(Settings.System.getUriFor(
-                Settings.System.SHOW_FOURG),
-                false, this, UserHandle.USER_ALL);
+        void observe() {
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.SHOW_VOLTE_ICON),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.SHOW_FOURG),
+                    false, this, UserHandle.USER_ALL);
+            updateSettings();
         }
 
         /*
