@@ -164,8 +164,10 @@ public class QSContainerImpl extends FrameLayout {
          if (mQsHeaderBgAlpha < 255) {
              mQsHeaderBg.setAlpha(mQsHeaderBgAlpha);
              mStatusBarBackground.setBackground(mQsHeaderBg);
+             mBackgroundGradient.getBackground().setAlpha(mQsHeaderBgAlpha);
          } else {
              mStatusBarBackground.setVisibility(View.VISIBLE);
+             mBackgroundGradient.setVisibility(View.VISIBLE);
          }
      }
 
