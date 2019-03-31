@@ -20,7 +20,7 @@
     <string name="quick_settings_aod_label">دائماً على الشاشة</string>
     <!-- QS Colums & rows -->
     <string name="qs_menu_item_columns">أعمدة الوضع الرأسي</string>
-    <string name="qs_menu_item_columns_landscape">اعمده افقيه</string>
+    <string name="qs_menu_item_columns_landscape">أعمدة أفقية</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>

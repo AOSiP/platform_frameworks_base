@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- AOD QS tile -->
-    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_label">Schermo sempre attivo</string>
     <!-- QS Colums & rows -->
     <string name="qs_menu_item_columns">Colonne verticali</string>
     <string name="qs_menu_item_columns_landscape">Colonne orizzontali</string>
@@ -83,7 +83,7 @@
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Screenshot eliminato</string>
     <!-- Ambient Display Pixel-Like string -->
-    <string name="ambientmusic_songinfo">%s by %s</string>
+    <string name="ambientmusic_songinfo">%s di %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Suono</string>
     <string name="quick_settings_sound_ring">Suona</string>
@@ -191,7 +191,7 @@
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenrecord_label">Registra schermo</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
+    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Dash charge (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> al completamento)</string>
     <string name="keyguard_plugged_in_dash_charging">Ricarica Dash</string>
     <!-- Smart Pixels QS Tile -->
     <string name="quick_settings_smart_pixels">Pixel Intelligenti</string>
