@@ -764,6 +764,18 @@ public class StatusBarManagerService extends IStatusBarService.Stub {
             try {
                 mBar.toggleCameraFlashState(enable);
             } catch (RemoteException ex) {
+                // do nothing
+            }
+        }
+    }
+
+    @Override
+    public void handleInDisplayFingerprintView(boolean show, boolean isEnrolling) {
+        if (mBar != null) {
+            try {
+                mBar.handleInDisplayFingerprintView(show, isEnrolling);
+            } catch (RemoteException ex) {
+                // do nothing
             }
         }
     }
