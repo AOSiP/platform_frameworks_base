@@ -167,4 +167,7 @@
   <!-- Does device have ActiveEdge -->
   <java-symbol type="bool" name="config_hasActiveEdge" />
 
+  <!-- FoD -->
+  <java-symbol type="bool" name="config_needCustomFODView" />
+  <java-symbol type="bool" name="config_usesOnePlusFOD" />
 </resources>
