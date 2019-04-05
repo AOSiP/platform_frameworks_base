@@ -175,4 +175,9 @@ public class aosipUtils {
             }
         }
     }
+    
+    // Check to see if device has FOD
+    public static boolean hasFodSupport(Context context) {
+        return context.getResources().getBoolean(com.android.internal.R.bool.config_supportsInDisplayFingerprint);
+    }
 }
