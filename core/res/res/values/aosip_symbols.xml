@@ -46,4 +46,7 @@
   <java-symbol name="reboot_system_message" type="string" />
   <java-symbol type="array" name="config_rebootActionsList" />
   <java-symbol type="array" name="values_globalActionsList" />
+
+  <!-- In-display Fingerprint -->
+  <java-symbol type="bool" name="config_needCustomFODView" />
 </resources>
