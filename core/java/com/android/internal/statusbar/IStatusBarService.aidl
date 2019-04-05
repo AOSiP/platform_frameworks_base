@@ -110,6 +110,7 @@ interface IStatusBarService
     void toggleCameraFlash();
     void toggleCameraFlashState(boolean enable);
     void restartUI();
+    void handleInDisplayFingerprintView(boolean show, boolean isEnrolling);
 
     // Start SmartNav methods
     void toggleRecentApps();
