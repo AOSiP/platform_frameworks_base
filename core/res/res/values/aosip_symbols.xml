@@ -200,4 +200,6 @@
    <java-symbol type="id" name="notification_media_elapsed_time" />
    <java-symbol type="id" name="notification_media_total_time" />
 
+    <!-- Whether to show a custom view for FOD -->
+    <java-symbol type="bool" name="config_needCustomFODView" />
 </resources>
