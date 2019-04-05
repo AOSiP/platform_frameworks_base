@@ -63,6 +63,10 @@
   <java-symbol type="color" name="autofill_save_title_color" />
   <java-symbol type="color" name="autofill_autofill_save_custom_subtitle_color" />
 
+  <!-- FoD -->
+  <java-symbol type="bool" name="config_needCustomFODView" />
+  <java-symbol type="bool" name="config_usesOnePlusFOD" />
+
   <!-- Full screen aspect ratio -->
   <java-symbol type="bool" name="config_haveHigherAspectRatioScreen" />
   <java-symbol type="dimen" name="config_screenAspectRatio" />
@@ -166,5 +170,4 @@
 
   <!-- Does device have ActiveEdge -->
   <java-symbol type="bool" name="config_hasActiveEdge" />
-
 </resources>
