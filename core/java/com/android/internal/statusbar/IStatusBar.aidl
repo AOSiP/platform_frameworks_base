@@ -159,6 +159,7 @@ oneway interface IStatusBar
      */
     void toggleCameraFlash();
     void toggleCameraFlashState(boolean enable);
+    void handleInDisplayFingerprintView(boolean show, boolean isEnrolling);
 
     // Start SmartNav API
     void screenPinningStateChanged(boolean enabled);
