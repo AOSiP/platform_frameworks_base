@@ -29,6 +29,10 @@ import android.util.Log;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.settingslib.fuelgauge.BatterySaverUtils;
+import com.android.settingslib.utils.PowerUtil;
+import com.android.systemui.Dependency;
+import com.android.systemui.power.EnhancedEstimates;
+import com.android.systemui.power.Estimate;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -48,6 +52,7 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
     private final ArrayList<BatteryController.BatteryStateChangeCallback> mChangeCallbacks = new ArrayList<>();
     private final PowerManager mPowerManager;
     private final Handler mHandler;
+    private final Handler mBgHandler;
     private final Context mContext;
 
     protected int mLevel;
@@ -59,15 +64,23 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
     private boolean mTestmode = false;
     private boolean mHasReceivedBattery = false;
 
-    public BatteryControllerImpl(Context context) {
-        this(context, context.getSystemService(PowerManager.class));
+    private Estimate mEstimate = null;
+    private final EnhancedEstimates mEstimates;
+    private final ArrayList<EstimateFetchCompletion> mFetchCallbacks = new ArrayList<>();
+    private boolean mFetchingEstimate = false;
+    private long mLastEstimateTimestamp = -1;
+
+    public BatteryControllerImpl(Context context, EnhancedEstimates enhancedEstimates) {
+        this(context, enhancedEstimates, context.getSystemService(PowerManager.class));
     }
 
     @VisibleForTesting
-    BatteryControllerImpl(Context context, PowerManager powerManager) {
+    BatteryControllerImpl(Context context, EnhancedEstimates enhancedEstimates, PowerManager powerManager) {
         mContext = context;
         mHandler = new Handler();
+        mBgHandler = new Handler(Dependency.get(Dependency.BG_LOOPER));
         mPowerManager = powerManager;
+        mEstimates = enhancedEstimates;
 
         registerReceiver();
         updatePowerSave();
@@ -241,5 +254,47 @@ public class BatteryControllerImpl extends BroadcastReceiver implements BatteryC
             }
             fireBatteryLevelChanged();
         }
+    }
+
+    public void getEstimatedTimeRemainingString(EstimateFetchCompletion callback) {
+        if (mEstimate == null || mLastEstimateTimestamp <= System.currentTimeMillis() - 60000) {
+            synchronized (mFetchCallbacks) {
+                mFetchCallbacks.add(callback);
+            }
+            updateEstimateInBackground();
+            return;
+        }
+        callback.onBatteryRemainingEstimateRetrieved(generateTimeRemainingString());
+    }
+    
+    private void updateEstimateInBackground() {
+        if (!mFetchingEstimate) {
+            mFetchingEstimate = true;
+            mBgHandler.post(this::updateEstimate);
+        }
+    }
+
+    private void updateEstimate() {
+        mEstimate = mEstimates.isHybridNotificationEnabled() ? mEstimates.getEstimate() : null;
+        mLastEstimateTimestamp = System.currentTimeMillis();
+        mFetchingEstimate = false;
+        mHandler.post(this::notifyEstimateFetchCallbacks);
+    }
+
+    private void notifyEstimateFetchCallbacks() {
+        String remaining = generateTimeRemainingString();
+        synchronized (mFetchCallbacks) {
+            for (EstimateFetchCompletion callback : mFetchCallbacks) {
+                callback.onBatteryRemainingEstimateRetrieved(remaining);
+            }
+            mFetchCallbacks.clear();
+        }
+    }
+
+    private String generateTimeRemainingString() {
+        if (mEstimate == null) {
+            return null;
+        }
+        return PowerUtil.getBatteryRemainingShortStringFormatted(mContext, mEstimate.estimateMillis);
     }
 }
