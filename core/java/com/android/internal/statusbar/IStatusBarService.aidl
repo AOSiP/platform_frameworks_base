@@ -111,6 +111,10 @@ interface IStatusBarService
     void toggleCameraFlashState(boolean enable);
     void restartUI();
 
+    // Used to show or hide in display fingerprint view
+    void showInDisplayFingerprintView();
+    void hideInDisplayFingerprintView();
+
     // Start SmartNav methods
     void toggleRecentApps();
     void toggleSplitScreen();
