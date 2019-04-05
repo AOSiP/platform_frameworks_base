@@ -26,4 +26,7 @@
   <!-- Max visible notification icons -->
   <java-symbol type="integer" name="config_maxVisibleNotificationIcons" />
   <java-symbol type="integer" name="config_maxVisibleNotificationIconsWhenDark" />
+
+  <!-- Whether to show a custom view for FOD -->
+  <java-symbol type="bool" name="config_needCustomFODView" />
 </resources>
