@@ -4933,6 +4933,14 @@ public final class Settings {
         public static final Validator STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * The enabled mode for the theme tile.
+         * - ACCENT
+         * - STYLE
+         * @hide
+         */
+        public static final String THEME_TILE_ENABLED_MODE = "theme_tile_enabled_mode";
+
+        /**
          * Custom Ambient tilt gesture
          * @hide
          */
