@@ -297,9 +297,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     }
 
     public void hideNotificationIconArea(boolean animate) {
-        animateHide(mNotificationIconAreaInner, animate, true);
+        animateHide(mNotificationIconAreaInner, animate);
         if (mShowLogo) {
-            animateHide(mKronicLogo, animate, true);
+            animateGone(mKronicLogo);
         }
     }
 
@@ -437,7 +437,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                     animateShow(mKronicLogo, animate);
                 }
             } else {
-                animateHide(mKronicLogo, animate, false);
+                animateGone(mKronicLogo);
             }
       }
         setCarrierLabel(animate);
