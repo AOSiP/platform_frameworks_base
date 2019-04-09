@@ -4318,62 +4318,6 @@ public final class Settings {
         private static final Validator POWERMENU_AIRPLANE_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
-         /**
-         * Show or hide clock
-         * 0 - hide
-         * 1 - show (default)
-         * @hide
-         */
-        public static final String STATUS_BAR_CLOCK = "status_bar_clock";
-        /** @hide */
-        public static final Validator STATUS_BAR_CLOCK_VALIDATOR = BOOLEAN_VALIDATOR;
-
-        /**
-         * Style of clock
-         * 0 - Left Clock (default)
-         * 1 - Center Clock
-         * 2 - Right Clock
-         * @hide
-         */
-        public static final String STATUSBAR_CLOCK_STYLE = "statusbar_clock_style";
-        /** @hide */
-        public static final Validator STATUSBAR_CLOCK_STYLE_VALIDATOR =
-                new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
-
-        /**
-         * Whether to show seconds next to clock in status bar
-         * 0 - hide (default)
-         * 1 - show
-         * @hide
-         */
-        public static final String STATUS_BAR_CLOCK_SECONDS = "status_bar_clock_seconds";
-        /** @hide */
-        public static final Validator STATUS_BAR_CLOCK_SECONDS_VALIDATOR = BOOLEAN_VALIDATOR;
-
-        /**
-         * AM/PM Style for clock options
-         * 0 - Normal AM/PM
-         * 1 - Small AM/PM
-         * 2 - No AM/PM  (default)
-         * @hide
-         */
-        public static final String STATUSBAR_CLOCK_AM_PM_STYLE = "statusbar_clock_am_pm_style";
-        /** @hide */
-        public static final Validator STATUSBAR_CLOCK_AM_PM_STYLE_VALIDATOR =
-                new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
-
-        /**
-         * Shows custom date before clock time
-         * 0 - No Date
-         * 1 - Small Date
-         * 2 - Normal Date
-         * @hide
-         */
-        public static final String STATUSBAR_CLOCK_DATE_DISPLAY = "statusbar_clock_date_display";
-        /** @hide */
-        public static final Validator STATUSBAR_CLOCK_DATE_DISPLAY_VALIDATOR =
-                new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
-
         /**
          * Whether the battery light should be enabled (if hardware supports it)
          * The value is boolean (1 or 0).
@@ -4460,18 +4404,6 @@ public final class Settings {
         private static final Validator LOCKSCREEN_INFO_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
-        /**
-         * Sets the date string style
-         * 0 - Regular style
-         * 1 - Lowercase
-         * 2 - Uppercase
-         * @hide
-         */
-        public static final String STATUSBAR_CLOCK_DATE_STYLE = "statusbar_clock_date_style";
-        /** @hide */
-        public static final Validator STATUSBAR_CLOCK_DATE_STYLE_VALIDATOR =
-                new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
-
           /**
           * Whether to show the negociated charger current in the lockscreen
           * @hide
@@ -4480,14 +4412,6 @@ public final class Settings {
         /** @hide */
         private static final Validator LOCKSCREEN_CHARGING_CURRENT_VALIDATOR =
                 BOOLEAN_VALIDATOR;
-
-        /**
-         * Stores the java DateFormat string for the date
-         * @hide
-         */
-        public static final String STATUSBAR_CLOCK_DATE_FORMAT = "statusbar_clock_date_format";
-        /** @hide */
-        public static final Validator STATUSBAR_CLOCK_DATE_FORMAT_VALIDATOR = ANY_STRING_VALIDATOR;
 
         /**
          * @hide
@@ -5038,17 +4962,6 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
          /**
-         * Position of date
-         * 0 - Left of clock
-         * 1 - Right of clock
-         * @hide
-         */
-        public static final String STATUSBAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
-        /** @hide */
-        public static final Validator STATUSBAR_CLOCK_DATE_POSITION_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
-         /**
          * Whether to enable DOZE only when charging
          * @hide
          */
@@ -5268,14 +5181,6 @@ public final class Settings {
             SHOW_CLEAR_ALL_RECENTS,
             SHOW_FOURG,
             SHOW_VOLTE_ICON,
-            STATUS_BAR_CLOCK,
-            STATUS_BAR_CLOCK_SECONDS,
-            STATUSBAR_CLOCK_STYLE,
-            STATUSBAR_CLOCK_AM_PM_STYLE,
-            STATUSBAR_CLOCK_DATE_DISPLAY,
-            STATUSBAR_CLOCK_DATE_STYLE,
-            STATUSBAR_CLOCK_DATE_FORMAT,
-            STATUSBAR_CLOCK_DATE_POSITION,
             STATUSBAR_HIDE_NOTCH,
             STATUS_BAR_BRIGHTNESS_CONTROL,
             STATUS_BAR_LOGO,
@@ -5425,14 +5330,6 @@ public final class Settings {
             PUBLIC_SETTINGS.add(STATUS_BAR_BRIGHTNESS_CONTROL);
             PUBLIC_SETTINGS.add(STATUS_BAR_QUICK_QS_PULLDOWN);
             PUBLIC_SETTINGS.add(STATUS_BAR_SHOW_CARRIER);
-            PUBLIC_SETTINGS.add(STATUS_BAR_CLOCK);
-            PUBLIC_SETTINGS.add(STATUSBAR_CLOCK_STYLE);
-            PUBLIC_SETTINGS.add(STATUS_BAR_CLOCK_SECONDS);
-            PUBLIC_SETTINGS.add(STATUSBAR_CLOCK_AM_PM_STYLE);
-            PUBLIC_SETTINGS.add(STATUSBAR_CLOCK_DATE_DISPLAY);
-            PUBLIC_SETTINGS.add(STATUSBAR_CLOCK_DATE_STYLE);
-            PUBLIC_SETTINGS.add(STATUSBAR_CLOCK_DATE_FORMAT);
-            PUBLIC_SETTINGS.add(STATUSBAR_CLOCK_DATE_POSITION);
             PUBLIC_SETTINGS.add(STATUSBAR_HIDE_NOTCH);
             PUBLIC_SETTINGS.add(SWAP_VOLUME_BUTTONS);
             PUBLIC_SETTINGS.add(TOAST_ICON);
@@ -5656,14 +5553,6 @@ public final class Settings {
             VALIDATORS.put(STATUS_BAR_BRIGHTNESS_CONTROL, STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_QUICK_QS_PULLDOWN, STATUS_BAR_QUICK_QS_PULLDOWN_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_SHOW_CARRIER, STATUS_BAR_SHOW_CARRIER_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_CLOCK, STATUS_BAR_CLOCK_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_CLOCK_SECONDS, STATUS_BAR_CLOCK_SECONDS_VALIDATOR);
-            VALIDATORS.put(STATUSBAR_CLOCK_AM_PM_STYLE, STATUSBAR_CLOCK_AM_PM_STYLE_VALIDATOR);
-            VALIDATORS.put(STATUSBAR_CLOCK_DATE_DISPLAY, STATUSBAR_CLOCK_DATE_DISPLAY_VALIDATOR);
-            VALIDATORS.put(STATUSBAR_CLOCK_DATE_STYLE, STATUSBAR_CLOCK_DATE_STYLE_VALIDATOR);
-            VALIDATORS.put(STATUSBAR_CLOCK_DATE_FORMAT, STATUSBAR_CLOCK_DATE_FORMAT_VALIDATOR);
-            VALIDATORS.put(STATUSBAR_CLOCK_DATE_POSITION, STATUSBAR_CLOCK_DATE_POSITION_VALIDATOR);
-            VALIDATORS.put(STATUSBAR_CLOCK_STYLE, STATUSBAR_CLOCK_STYLE_VALIDATOR);
             VALIDATORS.put(STATUSBAR_HIDE_NOTCH, STATUSBAR_HIDE_NOTCH_VALIDATOR);
             VALIDATORS.put(SWAP_VOLUME_BUTTONS, SWAP_VOLUME_BUTTONS_VALIDATOR);
             VALIDATORS.put(TOAST_ICON, TOAST_ICON_VALIDATOR);
