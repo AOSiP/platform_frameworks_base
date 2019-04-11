@@ -224,7 +224,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         if ((diff1 & DISABLE_NOTIFICATION_ICONS) != 0) {
             if ((state1 & DISABLE_NOTIFICATION_ICONS) != 0) {
                 hideNotificationIconArea(animate);
-                animateHide(mClockView, animate, false);
+                animateHide(mClockView, animate, mClockStyle == 0);
             } else {
                 showNotificationIconArea(animate);
                 updateClockStyle(animate);
