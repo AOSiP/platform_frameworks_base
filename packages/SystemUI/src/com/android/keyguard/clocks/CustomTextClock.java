@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.text.format.DateUtils;
@@ -21,10 +22,10 @@ import com.android.systemui.R;
 
 public class CustomTextClock extends TextView {
 
-    private final String[] TensString = {"", "", "Twenty","Thirty","Forty", "Fifty", "Sixty"};
-    private final String[] UnitsString = {"Clock", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
-    private final String[] TensStringH = {"", "", "Twenty","Thirty","Forty", "Fifty", "Sixty"};
-    private final String[] UnitsStringH = {"Twelve", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
+    private final String[] TensString = getResources().getStringArray(R.array.TensString);
+    private final String[] UnitsString = getResources().getStringArray(R.array.UnitsString);
+    private final String[] TensStringH = getResources().getStringArray(R.array.TensStringH);
+    private final String[] UnitsStringH = getResources().getStringArray(R.array.UnitsStringH);
             
     private Time mCalendar;
 
