@@ -77,12 +77,11 @@
                 android:layout_alignParentTop="true"
                 android:orientation="vertical" >
             <com.android.keyguard.clocks.CustomTextClock
-            android:id="@+id/textView"
+            android:id="@+id/custom_textclock_view0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:letterSpacing="0.03"
-                style="@style/customtextclock_big_thin"
                 android:textColor="@color/custom_text_clock_top_color"
             android:text="@string/custom_text_clock_top_text_default"
                 analog:HandType="2" />
@@ -92,7 +91,6 @@
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.03"
                 android:textColor="?attr/wallpaperTextColor"
-                style="@style/customtextclock_big_thin"
                 analog:HandType="0" />
             <com.android.keyguard.clocks.CustomTextClock
                 android:id="@+id/custom_textclock_view2"
@@ -101,7 +99,6 @@
                 android:layout_alignParentTop="true"
                 android:letterSpacing="0.03"
                 android:textColor="?attr/wallpaperTextColor"
-                style="@style/customtextclock_big_thin"
                 analog:HandType="1" />
             </LinearLayout>
 
