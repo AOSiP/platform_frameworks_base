@@ -117,14 +117,14 @@ public class CustomTextClock extends TextView {
         switch(handType){
             case 0:
                 if (hour == 12 && minute == 0) {
-                setText("High");
+                setText(R.string.high_noon_first_row);
                 } else {
                 setText(getIntStringHour(hour));
                 }
                 break;
             case 1:
                 if (hour == 12 && minute == 0) {
-                setText("Noon");
+                setText(R.string.high_noon_second_row);
                 } else {
                 setText(getIntStringMin(minute));
                 }
