@@ -30,16 +30,16 @@
     </string-array>
 
     <string-array translatable="true" name="UnitsString">
-        <item>O'Clock</item>          
-        <item>O'One</item>          
-        <item>O'Two</item>    
-        <item>O'Three</item>    
-        <item>O'Four</item>     
-        <item>O'Five</item>     
-        <item>O'Six</item>
-        <item>O'Seven</item>
-        <item>O'Eight</item>
-        <item>O'Nine</item>
+        <item>"O'Clock"</item>          
+        <item>"O'One"</item>          
+        <item>"O'Two"</item>    
+        <item>"O'Three"</item>    
+        <item>"O'Four"</item>     
+        <item>"O'Five"</item>     
+        <item>"O'Six"</item>
+        <item>"O'Seven"</item>
+        <item>"O'Eight"</item>
+        <item>"O'Nine"</item>
         <item>Ten</item>
         <item>Eleven</item>
         <item>Twelve</item>
