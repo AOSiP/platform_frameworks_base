@@ -188,7 +188,7 @@ public class CustomTextClock extends TextView {
                 NumString = TensString[tens]+" "+UnitsString[units];
             }
         } else if (num < 10 ) {
-            NumString = "O\'"+UnitsString[num];
+            NumString = UnitsString[num];
         } else if (num >= 10 && num < 20) {
             NumString = UnitsString[num];
         }
