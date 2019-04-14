@@ -85,4 +85,8 @@
         <item>Nineteen</item>
     </string-array>
 
+    <string-array translatable="false" name="langExceptions">
+        <item>it</item>
+    </string-array>
+
 </resources>

@@ -34,6 +34,10 @@ import android.util.Log;
 import android.widget.TextView;
 import android.provider.Settings;
 
+import com.android.internal.util.ArrayUtils;
+
+import java.lang.String;
+import java.util.Locale;
 import java.util.TimeZone;
 
 import com.android.systemui.R;
@@ -44,7 +48,8 @@ public class CustomTextClock extends TextView {
     private final String[] UnitsString = getResources().getStringArray(R.array.UnitsString);
     private final String[] TensStringH = getResources().getStringArray(R.array.TensStringH);
     private final String[] UnitsStringH = getResources().getStringArray(R.array.UnitsStringH);
-            
+    private final String[] langExceptions = getResources().getStringArray(R.array.langExceptions);
+
     private Time mCalendar;
 
     private boolean mAttached;
@@ -185,7 +190,20 @@ public class CustomTextClock extends TextView {
             if ( units == 0 ) {
                 NumString = TensStringH[tens];
             } else {
-                NumString = TensStringH[tens]+" "+UnitsStringH[units];
+                // Guard exceptions for languages that don't do "number-to-text" typesetting
+                // ex. Thirty One, it's composed by Thirty and One
+                // ex. Trentuno (it), it's composed by Trenta (30) and Uno (1)
+                // in a cutted form for Trenta (Trent) and merged with the Uno (1)
+                if (ArrayUtils.contains(langExceptions, Locale.getDefault().getLanguage())) {
+                    if (Locale.getDefault().getLanguage() == "it") {
+                        if (units == 1) {
+                            NumString = TensString[tens].substring(0, TensString.length - 1) + UnitsString[units].toLowerCase();
+                        }
+                        NumString = TensString[tens] + UnitsString[units].toLowerCase();
+                    }
+                } else {
+                    NumString = TensString[tens]+" "+UnitsString[units];
+                }
             }
         } else if (num < 20 ) {
             NumString = UnitsStringH[num];
@@ -203,7 +221,17 @@ public class CustomTextClock extends TextView {
             if ( units == 0 ) {
                 NumString = TensString[tens];
             } else {
-                NumString = TensString[tens]+" "+UnitsString[units];
+                // Guard exceptions part 2 - same reason as before
+                if (ArrayUtils.contains(langExceptions, Locale.getDefault().getLanguage())) { 
+                    if (Locale.getDefault().getLanguage() == "it") {
+                        if (units == 1) {
+                            NumString = TensString[tens].substring(0, TensString.length - 1) + UnitsString[units].toLowerCase();
+                        }
+                        NumString = TensString[tens] + UnitsString[units].toLowerCase();
+                    }
+                } else {
+                    NumString = TensString[tens]+" "+UnitsString[units];
+                }
             }
         } else if (num < 10 ) {
             NumString = UnitsString[num];
