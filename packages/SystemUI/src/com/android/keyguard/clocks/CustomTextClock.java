@@ -49,6 +49,7 @@ public class CustomTextClock extends TextView {
     private final String[] TensStringH = getResources().getStringArray(R.array.TensStringH);
     private final String[] UnitsStringH = getResources().getStringArray(R.array.UnitsStringH);
     private final String[] langExceptions = getResources().getStringArray(R.array.langExceptions);
+    private final String curLang = Locale.getDefault().getLanguage();
 
     private Time mCalendar;
 
@@ -193,13 +194,23 @@ public class CustomTextClock extends TextView {
                 // Guard exceptions for languages that don't do "number-to-text" typesetting
                 // ex. Thirty One, it's composed by Thirty and One
                 // ex. Trentuno (it), it's composed by Trenta (30) and Uno (1)
-                // in a cutted form for Trenta (Trent) and merged with the Uno (1)
-                if (ArrayUtils.contains(langExceptions, Locale.getDefault().getLanguage())) {
-                    if (Locale.getDefault().getLanguage() == "it") {
-                        if (units == 1) {
-                            NumString = TensString[tens].substring(0, TensString[tens].length() - 1) + UnitsString[units].toLowerCase();
-                        }
-                        NumString = TensString[tens] + UnitsString[units].toLowerCase();
+                // in a cutted form for Trenta (Trent) and merged with Uno (1)
+                if (langExEval(curLang)) {
+                    switch (curLang) {
+                        case "it":
+                            if (units == 1) {
+                                NumString = TensString[tens].substring(0, TensString[tens].length() - 1)+
+                                            UnitsString[units].toLowerCase() + " e";
+                                break;
+                            }
+
+                            if (units == 3) {
+                                NumString = TensString[tens] + "tré" + " e";
+                                break;
+                            }
+
+                        default:
+                             NumString = TensString[tens] + UnitsString[units].toLowerCase();
                     }
                 } else {
                     NumString = TensString[tens]+" "+UnitsString[units];
@@ -222,12 +233,22 @@ public class CustomTextClock extends TextView {
                 NumString = TensString[tens];
             } else {
                 // Guard exceptions part 2 - same reason as before
-                if (ArrayUtils.contains(langExceptions, Locale.getDefault().getLanguage())) { 
-                    if (Locale.getDefault().getLanguage() == "it") {
-                        if (units == 1) {
-                            NumString = TensString[tens].substring(0, TensString[tens].length() - 1) + UnitsString[units].toLowerCase();
-                        }
-                        NumString = TensString[tens] + UnitsString[units].toLowerCase();
+                if (langExEval(curLang)) {
+                    switch (curLang) {
+                        case "it":
+                            if (units == 1) {
+                                NumString = TensString[tens].substring(0, TensString[tens].length() - 1)+
+                                            UnitsString[units].toLowerCase();
+                                            break;
+                            }
+
+                            if (units == 3) {
+                                 NumString = TensString[tens] + "tré";
+                                 break;
+                            }
+
+                        default:
+                             NumString = TensString[tens] + UnitsString[units].toLowerCase();
                     }
                 } else {
                     NumString = TensString[tens]+" "+UnitsString[units];
@@ -242,4 +263,7 @@ public class CustomTextClock extends TextView {
         return NumString;
     }
 
+    private boolean langExEval (String langVal) {
+        return (ArrayUtils.contains(langExceptions, langVal) ? true : false);
+    }
 }
