@@ -197,7 +197,7 @@ public class CustomTextClock extends TextView {
                 if (ArrayUtils.contains(langExceptions, Locale.getDefault().getLanguage())) {
                     if (Locale.getDefault().getLanguage() == "it") {
                         if (units == 1) {
-                            NumString = TensString[tens].substring(0, TensString.length - 1) + UnitsString[units].toLowerCase();
+                            NumString = TensString[tens].substring(0, TensString[tens].length() - 1) + UnitsString[units].toLowerCase();
                         }
                         NumString = TensString[tens] + UnitsString[units].toLowerCase();
                     }
@@ -225,7 +225,7 @@ public class CustomTextClock extends TextView {
                 if (ArrayUtils.contains(langExceptions, Locale.getDefault().getLanguage())) { 
                     if (Locale.getDefault().getLanguage() == "it") {
                         if (units == 1) {
-                            NumString = TensString[tens].substring(0, TensString.length - 1) + UnitsString[units].toLowerCase();
+                            NumString = TensString[tens].substring(0, TensString[tens].length() - 1) + UnitsString[units].toLowerCase();
                         }
                         NumString = TensString[tens] + UnitsString[units].toLowerCase();
                     }
