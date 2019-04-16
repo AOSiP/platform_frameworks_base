@@ -171,9 +171,19 @@ public class CustomTextClock extends TextView {
                 break;
             case 1:
                 if (hour == 12 && minute == 0) {
-                setText(R.string.high_noon_second_row);
+                    setText(R.string.high_noon_second_row);
                 } else {
-                setText(getIntStringMin(minute));
+                    if (minute == 0) {
+                            setText(UnitsString[0]);
+                    }
+                    if (!langExEval(curLang) && minute != 0) {
+                        setVisibility(VISIBLE);
+                        setText(getIntStringMin(minute));
+                    } 
+                    if (langExEval(curLang)) {
+                        setVisibility(VISIBLE);
+                        setText(getIntStringMin(minute));
+                    }
                 }
                 break;
             default:
