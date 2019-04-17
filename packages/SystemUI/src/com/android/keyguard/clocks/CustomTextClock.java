@@ -55,12 +55,15 @@ import com.android.systemui.R;
 
 public class CustomTextClock extends TextView {
 
-    private final String[] TensString = getResources().getStringArray(R.array.TensString);
-    private final String[] UnitsString = getResources().getStringArray(R.array.UnitsString);
-    private final String[] TensStringH = getResources().getStringArray(R.array.TensStringH);
-    private final String[] UnitsStringH = getResources().getStringArray(R.array.UnitsStringH);
-    private final String[] langExceptions = getResources().getStringArray(R.array.langExceptions);
-    private final String curLang = Locale.getDefault().getLanguage();
+    private String[] TensString = getResources().getStringArray(R.array.TensString);
+    private String[] UnitsString = getResources().getStringArray(R.array.UnitsString);
+    private String[] TensStringH = getResources().getStringArray(R.array.TensStringH);
+    private String[] UnitsStringH = getResources().getStringArray(R.array.UnitsStringH);
+    private String[] langExceptions = getResources().getStringArray(R.array.langExceptions);
+    private String curLang = Locale.getDefault().getLanguage();
+    private String topText = getResources().getString(R.string.custom_text_clock_top_text_default);
+    private String highNoonFirstRow = getResources().getString(R.string.high_noon_first_row);
+    private String highNoonSecondRow = getResources().getString(R.string.high_noon_second_row);
 
     private Time mCalendar;
 
@@ -137,6 +140,7 @@ public class CustomTextClock extends TextView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (handType == 2) {
+            setText(topText);
             Bitmap mBitmap;
             //Get wallpaper as bitmap
             WallpaperManager manager = WallpaperManager.getInstance(mContext);
@@ -191,17 +195,17 @@ public class CustomTextClock extends TextView {
         switch(handType){
             case 0:
                 if (hour == 12 && minute == 0) {
-                setText(R.string.high_noon_first_row);
+                setText(highNoonFirstRow);
                 } else {
                 setText(getIntStringHour(hour));
                 }
                 break;
             case 1:
                 if (hour == 12 && minute == 0) {
-                    setText(R.string.high_noon_second_row);
+                    setText(highNoonSecondRow);
                 } else {
                     if (minute == 0) {
-                            setText(UnitsString[0]);
+                        setText(UnitsString[0]);
                     }
                     if (!langExEval(curLang) && minute != 0) {
                         setVisibility(VISIBLE);
@@ -234,6 +238,10 @@ public class CustomTextClock extends TextView {
                 UnitsString = getResources().getStringArray(R.array.UnitsString);
                 TensStringH = getResources().getStringArray(R.array.TensStringH);
                 UnitsStringH = getResources().getStringArray(R.array.UnitsStringH);
+                curLang = Locale.getDefault().getLanguage();
+                topText = getResources().getString(R.string.custom_text_clock_top_text_default);
+                highNoonFirstRow = getResources().getString(R.string.high_noon_first_row);
+                highNoonSecondRow = getResources().getString(R.string.high_noon_second_row);
             }
 
             onTimeChanged();
