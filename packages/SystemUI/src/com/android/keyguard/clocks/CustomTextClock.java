@@ -97,7 +97,8 @@ public class CustomTextClock extends TextView {
             filter.addAction(Intent.ACTION_TIME_TICK);
             filter.addAction(Intent.ACTION_TIME_CHANGED);
             filter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
-
+            filter.addAction(Intent.ACTION_LOCALE_CHANGED);
+            
             // OK, this is gross but needed. This class is supported by the
             // remote views machanism and as a part of that the remote views
             // can be inflated by a context for another user without the app
@@ -200,6 +201,13 @@ public class CustomTextClock extends TextView {
             if (intent.getAction().equals(Intent.ACTION_TIMEZONE_CHANGED)) {
                 String tz = intent.getStringExtra("time-zone");
                 mCalendar = new Time(TimeZone.getTimeZone(tz).getID());
+            }
+
+            if (intent.getAction().equals(Intent.ACTION_LOCALE_CHANGED)) {
+                TensString = getResources().getStringArray(R.array.TensString);
+                UnitsString = getResources().getStringArray(R.array.UnitsString);
+                TensStringH = getResources().getStringArray(R.array.TensStringH);
+                UnitsStringH = getResources().getStringArray(R.array.UnitsStringH);
             }
 
             onTimeChanged();
