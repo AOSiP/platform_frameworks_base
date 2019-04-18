@@ -165,9 +165,9 @@ public class CustomTextClock extends TextView {
         switch(handType){
             case 0:
                 if (hour == 12 && minute == 0) {
-                setText(highNoonFirstRow);
+                    setText(highNoonFirstRow);
                 } else {
-                setText(getIntStringHour(hour));
+                    setText(getIntStringHour(hour));
                 }
                 break;
             case 1:
@@ -177,11 +177,11 @@ public class CustomTextClock extends TextView {
                     if (minute == 0) {
                         setText(UnitsString[0]);
                     }
-                    if (!langExEval(curLang) && minute != 0) {
+                    if (!LangGuard.isAvailable(langExceptions,curLang) && minute != 0) {
                         setVisibility(VISIBLE);
                         setText(getIntStringMin(minute));
                     } 
-                    if (langExEval(curLang)) {
+                    if (LangGuard.isAvailable(langExceptions,curLang)) {
                         setVisibility(VISIBLE);
                         setText(getIntStringMin(minute));
                     }
@@ -190,7 +190,6 @@ public class CustomTextClock extends TextView {
             default:
                 break;
         }
-
 
         updateContentDescription(mCalendar, getContext());
     }
