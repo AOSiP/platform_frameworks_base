@@ -31,6 +31,9 @@
     <!-- QS detail view scrolling -->
     <dimen name="qs_detail_item_height_twoline">72dp</dimen>
 
+    <!-- Padding needed on bottom of lockscreen for FoD devices -->
+    <dimen name="op_keyguard_indication_margin_bottom">415.0px</dimen>
+
     <!-- Sets a custom extra padding for the QS icons and statusbar date -->
     <dimen name="qs_items_padding">8dp</dimen>
 
