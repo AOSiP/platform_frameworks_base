@@ -106,6 +106,12 @@
     <string name="global_action_restart_ui">Rendszer UI</string>
     <string name="global_action_restart_hot">Hot</string>
     <string name="global_action_screenshot">Képernyőmentés</string>
+    <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Kényszeríti a leállítást?</string>
+    <string name="force_stop_dlg_text">Ha egy alkalmazást leállásra kényszerít, lehetséges, hogy az hibásan fog működni.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/mégse</string>
+    <string name="guts_force_close_app">Alkalmazás bezárása</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Újraindítás</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>

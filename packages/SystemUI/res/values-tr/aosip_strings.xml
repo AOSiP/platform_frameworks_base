@@ -106,6 +106,12 @@
     <string name="global_action_restart_ui">Arayüz</string>
     <string name="global_action_restart_hot">Hızlı</string>
     <string name="global_action_screenshot">Ekran görüntüsü</string>
+    <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Zorla durdurulsun mu?</string>
+    <string name="force_stop_dlg_text">Uygulamayı zorla durdurursanız, hatalı davranabilir.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">Uygulamayı kapat</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Yeniden başlat</string>
     <string name="quick_settings_reboot_recovery_label">Kurtarma</string>

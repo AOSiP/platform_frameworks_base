@@ -106,6 +106,12 @@
     <string name="global_action_restart_ui">SystemUI</string>
     <string name="global_action_restart_hot">Horký restart</string>
     <string name="global_action_screenshot">Snímek obrazovky</string>
+    <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Vynutit ukončení?</string>
+    <string name="force_stop_dlg_text">Vynucené ukončení může způsobit nepředvídatelné chování aplikace.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">Zavřít aplikaci</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Restartovat</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>

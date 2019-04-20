@@ -106,6 +106,12 @@
     <string name="global_action_restart_ui">SystemUI</string>
     <string name="global_action_restart_hot">Warm</string>
     <string name="global_action_screenshot">Screenshot</string>
+    <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Beenden erzwingen?</string>
+    <string name="force_stop_dlg_text">Wenn du ein App beendet hast, darf es sich daneben benehmen</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">App schließen</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Neustarten</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>

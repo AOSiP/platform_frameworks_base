@@ -106,6 +106,12 @@
     <string name="global_action_restart_ui">Interfaz de sistema</string>
     <string name="global_action_restart_hot">Caliente</string>
     <string name="global_action_screenshot">Captura de Pantalla</string>
+    <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Force stop?</string>
+    <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">Close App</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Reiniciar</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>

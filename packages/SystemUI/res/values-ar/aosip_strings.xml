@@ -106,6 +106,12 @@
     <string name="global_action_restart_ui">واجهة النظام</string>
     <string name="global_action_restart_hot">اعادة تشغيل سريع</string>
     <string name="global_action_screenshot">لقطة الشاشة</string>
+    <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">إيقاف إجباري؟</string>
+    <string name="force_stop_dlg_text">في حالة فرض إيقاف التطبيق، ربما لا يعمل بشكل صحيح.</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">إغلاق التطبيق</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">إعادة التشغيل</string>
     <string name="quick_settings_reboot_recovery_label">الإسترداد</string>

@@ -106,6 +106,12 @@
     <string name="global_action_restart_ui">系统界面</string>
     <string name="global_action_restart_hot">快速重启</string>
     <string name="global_action_screenshot">屏幕截图</string>
+    <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">是否强制停止？</string>
+    <string name="force_stop_dlg_text">强行停止某个应用可能导致其出现异常。</string>
+    <string name="dlg_ok">@android:string/ok</string>
+    <string name="dlg_cancel">@android:string/cancel</string>
+    <string name="guts_force_close_app">关闭应用程序</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">重新启动</string>
     <string name="quick_settings_reboot_recovery_label">恢复模式</string>
