@@ -106,6 +106,10 @@
     <string name="global_action_restart_ui">Interface utilisateur</string>
     <string name="global_action_restart_hot">À chaud</string>
     <string name="global_action_screenshot">Capture d\'écran</string>
+    <!-- Kill button in notification guts -->
+    <string name="force_stop_dlg_title">Forcer l\'arrêt ?</string>
+    <string name="force_stop_dlg_text">Si vous forcez l\'arrêt d\'une application, cela peut provoquer son dysfonctionnement.</string>
+    <string name="guts_force_close_app">Fermer l\'application</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Redémarrer</string>
     <string name="quick_settings_reboot_recovery_label">Récupération</string>
