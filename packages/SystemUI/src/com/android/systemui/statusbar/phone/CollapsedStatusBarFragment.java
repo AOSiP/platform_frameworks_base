@@ -82,8 +82,10 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private DarkIconManager mDarkIconManager;
     private View mOperatorNameFrame;
     private LinearLayout mCenterClockLayout;
-    private Handler mHandler;
+
+    // smart clock
     private ContentResolver mContentResolver;
+    private Handler mHandler = new Handler();
     private Handler smartClockHandler = new Handler();
     private static final int HIDE_DURATION = 60*1000; // 1 minute
     private static final int SHOW_DURATION = 5*1000; // 5 seconds
@@ -156,7 +158,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mKeyguardMonitor = Dependency.get(KeyguardMonitor.class);
         mNetworkController = Dependency.get(NetworkController.class);
         mStatusBarComponent = SysUiServiceProvider.getComponent(getContext(), StatusBar.class);
-        mHandler = new Handler();
         mSettingsObserver = new SettingsObserver(mHandler);
         mSettingsObserver.observe();
         updateSmartClockStatus();
@@ -187,10 +188,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mKronicLogo = (ImageView)mStatusBar.findViewById(R.id.status_bar_logo);
         Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mKronicLogo);
         showSystemIconArea(false);
-        updateSettings(true);
+        updateSettings(false);
         initEmergencyCryptkeeperText();
         initOperatorName();
-        mSettingsObserver.observe();
         setupSmartClock();
     }
 
@@ -309,7 +309,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         animateHide(mSystemIconArea, animate, true);
         animateHide(mCenterClockLayout, animate, true);
         if (mClockStyle == 2) {
-            animateHide(mRightClock, animate, false);
+            animateHide(mRightClock, animate, true);
         }
     }
 
@@ -444,6 +444,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         updateStatusBarLogo(animate);
         updateClockStyle(animate);
         setCarrierLabel(animate);
+        setupSmartClock();
     }
 
     private void updateClockStyle(boolean animate) {
@@ -670,13 +671,15 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     private void displaySmartClock(boolean animate) {
        if (useSmartClock) {
-            updateClockStyle(animate);
-            if (mClockStyle == 2) {
+            if (mClockStyle == 1) {
+                mHandler.postDelayed(()->animateHide(mCenterClockLayout, animate, false), SHOW_DURATION);
+            } if (mClockStyle == 2) {
                 mHandler.postDelayed(()->animateHide(mRightClock, animate, false), SHOW_DURATION);
             } else {
                 mHandler.postDelayed(()->animateHide(mClockView, animate, false), SHOW_DURATION);
             }
         }
+       updateClockStyle(animate);
     }
 
     private void disableSmartClock() {
