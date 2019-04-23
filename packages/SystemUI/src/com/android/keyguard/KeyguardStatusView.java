@@ -455,7 +455,7 @@ public class KeyguardStatusView extends GridLayout implements
                        View.GONE) : View.VISIBLE);
                 mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
-                mClockView.setLineSpacing(0,1f);
+                mClockView.setLineSpacing(0,0.8f);
                 mCustomClockView.setVisibility(View.GONE);
                 break;
             case 4: // sammy (bold)
@@ -463,7 +463,7 @@ public class KeyguardStatusView extends GridLayout implements
                        View.GONE) : View.VISIBLE);
                 mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
-                mClockView.setLineSpacing(0,1f);
+                mClockView.setLineSpacing(0,0.8f);
                 mCustomClockView.setVisibility(View.GONE);
                 break;
             case 5: // sammy accent
@@ -471,7 +471,7 @@ public class KeyguardStatusView extends GridLayout implements
                        View.GONE) : View.VISIBLE);
                 mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.widget_sammy_accent_font_size));
-                mClockView.setLineSpacing(0,1f);
+                mClockView.setLineSpacing(0,0.8f);
                 mCustomClockView.setVisibility(View.GONE);
                 break;
             case 6: // sammy accent alt
@@ -479,7 +479,7 @@ public class KeyguardStatusView extends GridLayout implements
                        View.GONE) : View.VISIBLE);
                 mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getResources().getDimensionPixelSize(R.dimen.widget_sammy_accent_font_size));
-                mClockView.setLineSpacing(0,1f);
+                mClockView.setLineSpacing(0,0.8f);
                 mCustomClockView.setVisibility(View.GONE);
                 break;
         }
