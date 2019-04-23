@@ -107,8 +107,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             mContentResolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_LOGO),
                     false, this, UserHandle.USER_ALL);
-
-         mContentResolver.registerContentObserver(Settings.System.getUriFor(
+            mContentResolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_LOGO_STYLE),
                     false, this, UserHandle.USER_ALL);
        }
