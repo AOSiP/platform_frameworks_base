@@ -441,94 +441,41 @@ public class KeyguardStatusView extends GridLayout implements
     }
 
     private void updateVisibilities() {
+        mClockView.setVisibility(View.GONE);
+        mCustomClockView.setVisibility(View.GONE);
+        mTextClock.setVisibility(View.GONE);
+        final int mClockVisibility = mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
+                       View.GONE) : View.VISIBLE;
         switch (mClockSelection) {
             case 0: // default digital
-            default:
-                mClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
-                       View.GONE) : View.VISIBLE);
-                mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
-                mClockView.setLineSpacing(0,1f);
-                mCustomClockView.setVisibility(View.GONE);
-                mTextClock.setVisibility(View.GONE);
-                break;
             case 1: // digital (bold)
-                mClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
-                       View.GONE) : View.VISIBLE);
+            default:
+                mClockView.setVisibility(mClockVisibility);
                 mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
-                mClockView.setLineSpacing(0,1f);
-                mCustomClockView.setVisibility(View.GONE);
-                mTextClock.setVisibility(View.GONE);
+                    getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
+                mClockView.setLineSpacing(0, 1f);
                 break;
             case 2: // custom analog
-                mCustomClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
-                       View.GONE) : View.VISIBLE);
-                mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
-                mClockView.setLineSpacing(0,1f);
-                mClockView.setVisibility(View.GONE);
-                mTextClock.setVisibility(View.GONE);
+                mCustomClockView.setVisibility(mClockVisibility);
                 break;
             case 3: // sammy
-                mClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
-                       View.GONE) : View.VISIBLE);
-                mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
-                mClockView.setLineSpacing(0,0.8f);
-                mCustomClockView.setVisibility(View.GONE);
-                mTextClock.setVisibility(View.GONE);
-                break;
             case 4: // sammy (bold)
-                mClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
-                       View.GONE) : View.VISIBLE);
-                mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
-                mClockView.setLineSpacing(0,0.8f);
-                mCustomClockView.setVisibility(View.GONE);
-                mTextClock.setVisibility(View.GONE);
-                break;
             case 5: // sammy accent
-                mClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
-                       View.GONE) : View.VISIBLE);
+                mClockView.setVisibility(mClockVisibility);
                 mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                getResources().getDimensionPixelSize(R.dimen.widget_sammy_accent_font_size));
-                mClockView.setLineSpacing(0,0.8f);
-                mCustomClockView.setVisibility(View.GONE);
-                mTextClock.setVisibility(View.GONE);
+                    getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
+                mClockView.setLineSpacing(0, 0.8f);
                 break;
             case 6: // sammy accent bold
-                mClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
-                       View.GONE) : View.VISIBLE);
-                mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                getResources().getDimensionPixelSize(R.dimen.widget_sammy_accent_font_size));
-                mClockView.setLineSpacing(0,0.8f);
-                mCustomClockView.setVisibility(View.GONE);
-                mTextClock.setVisibility(View.GONE);
-                break;
             case 7: // sammy accent alt
-                mClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
-                       View.GONE) : View.VISIBLE);
-                mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                getResources().getDimensionPixelSize(R.dimen.widget_sammy_accent_font_size));
-                mClockView.setLineSpacing(0,0.8f);
-                mCustomClockView.setVisibility(View.GONE);
-                mTextClock.setVisibility(View.GONE);
-                break;
             case 8: // sammy accent alt bold
-                mClockView.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
-                       View.GONE) : View.VISIBLE);
+                mClockView.setVisibility(mClockVisibility);
                 mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                getResources().getDimensionPixelSize(R.dimen.widget_sammy_accent_font_size));
-                mClockView.setLineSpacing(0,0.8f);
-                mCustomClockView.setVisibility(View.GONE);
-                mTextClock.setVisibility(View.GONE);
+                    getResources().getDimensionPixelSize(R.dimen.widget_sammy_accent_font_size));
+                mClockView.setLineSpacing(0, 0.8f);
                 break;
             case 9: // custom text clock
-                mTextClock.setVisibility(mDarkAmount != 1 ? (mShowClock ? View.VISIBLE :
-                       View.GONE) : View.VISIBLE);
-                mClockView.setVisibility(View.GONE);
-                mCustomClockView.setVisibility(View.GONE);
+                mTextClock.setVisibility(mClockVisibility);
         }
     }
 
