@@ -21,7 +21,6 @@
 <com.android.keyguard.KeyguardStatusView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:androidprv="http://schemas.android.com/apk/res-auto"
-    xmlns:analog="http://schemas.android.com/apk/res-auto"
     android:id="@+id/keyguard_status_view"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -76,33 +75,33 @@
                 android:layout_marginTop="@dimen/custom_clock_top_margin"
                 android:layout_alignParentTop="true"
                 android:orientation="vertical" >
-            <com.android.keyguard.clocks.CustomTextClock
-	        android:id="@+id/textView"
-        	android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:letterSpacing="0.03"
-                style="@style/customtextclock_big_thin"
-                android:textColor="@color/custom_text_clock_top_color"
-        	android:text="@string/custom_text_clock_top_text_default"
-                analog:HandType="2" />
-            <com.android.keyguard.clocks.CustomTextClock
-                android:id="@+id/custom_textclock_view1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:letterSpacing="0.03"
-                android:textColor="?attr/wallpaperTextColor"
-                style="@style/customtextclock_big_thin"
-                analog:HandType="0" />
-            <com.android.keyguard.clocks.CustomTextClock
-                android:id="@+id/custom_textclock_view2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:letterSpacing="0.03"
-                android:textColor="?attr/wallpaperTextColor"
-                style="@style/customtextclock_big_thin"
-                analog:HandType="1" />
+                <com.android.keyguard.clocks.CustomTextClock
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:letterSpacing="0.03"
+                    style="@style/customtextclock_big_thin"
+                    android:textColor="@color/custom_text_clock_top_color"
+                    android:text="@string/custom_text_clock_top_text_default"
+                    androidprv:handType="2" />
+                <com.android.keyguard.clocks.CustomTextClock
+                    android:id="@+id/custom_textclock_view1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.03"
+                    android:textColor="?attr/wallpaperTextColor"
+                    style="@style/customtextclock_big_thin"
+                    androidprv:handType="0" />
+                <com.android.keyguard.clocks.CustomTextClock
+                    android:id="@+id/custom_textclock_view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:letterSpacing="0.03"
+                    android:textColor="?attr/wallpaperTextColor"
+                    style="@style/customtextclock_big_thin"
+                    androidprv:handType="1" />
             </LinearLayout>
 
             <com.android.keyguard.clocks.CustomAnalogClock
@@ -113,12 +112,12 @@
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="@dimen/custom_clock_top_margin"
-                analog:custom_dial="@drawable/custom_clock_dial"
-                analog:custom_dial_dark="@drawable/custom_clock_dial_dark"
-                analog:custom_dial_buttons="@drawable/custom_dial_buttons"
-                analog:custom_hand_hour="@drawable/custom_clock_hand_hour"
-                analog:custom_hand_minute="@drawable/custom_clock_hand_minute"
-                analog:custom_clock_dial_ambient="@drawable/custom_clock_dial_ambient"/>
+                androidprv:custom_dial="@drawable/custom_clock_dial"
+                androidprv:custom_dial_dark="@drawable/custom_clock_dial_dark"
+                androidprv:custom_dial_buttons="@drawable/custom_dial_buttons"
+                androidprv:custom_hand_hour="@drawable/custom_clock_hand_hour"
+                androidprv:custom_hand_minute="@drawable/custom_clock_hand_minute"
+                androidprv:custom_clock_dial_ambient="@drawable/custom_clock_dial_ambient"/>
             <View
                 android:id="@+id/clock_separator"
                 android:layout_width="@dimen/widget_separator_width"
