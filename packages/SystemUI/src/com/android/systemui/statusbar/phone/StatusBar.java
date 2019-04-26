@@ -5697,9 +5697,8 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                     Settings.System.USE_BLACKAF_THEME),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                  Settings.System.LOCKSCREEN_ALBUM_ART_FILTER),
-                  false, this, UserHandle.USER_ALL);
-            update();
+                    Settings.System.LOCKSCREEN_ALBUM_ART_FILTER),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5710,6 +5709,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                 updateAccents();
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.USE_OLD_MOBILETYPE))) {
+                setOldMobileType();
                 mCommandQueue.restartUI();
             } else if (uri.equals(Settings.System.getUriFor(Settings.System.LOCKSCREEN_CLOCK)) ||
                    uri.equals(Settings.System.getUriFor(Settings.System.LOCKSCREEN_INFO)) ||
@@ -5734,21 +5734,24 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         }
 
         public void update() {
-            ContentResolver resolver = mContext.getContentResolver();
-            USE_OLD_MOBILETYPE = Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.USE_OLD_MOBILETYPE, 0,
-                    UserHandle.USER_CURRENT) != 0;
-            TelephonyIcons.updateIcons(USE_OLD_MOBILETYPE);
             updateKeyguardStatusSettings();
             setFpToDismissNotifications();
             setForceAmbient();
             updateTheme(false);
             updateLockscreenFilter();
+            setOldMobileType();
         }
     }
 
     private void updateKeyguardStatusSettings() {
         mNotificationPanel.updateKeyguardStatusSettings();
+    }
+
+    private void setOldMobileType() {
+        USE_OLD_MOBILETYPE = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.USE_OLD_MOBILETYPE, 0,
+                UserHandle.USER_CURRENT) != 0;
+        TelephonyIcons.updateIcons(USE_OLD_MOBILETYPE);
     }
 
     private void setFpToDismissNotifications() {
