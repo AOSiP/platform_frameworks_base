@@ -22,11 +22,13 @@ import android.annotation.Nullable;
 import android.annotation.StyleableRes;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ActivityInfo.Config;
+import android.content.res.Resources.NotFoundException;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.StrictMode;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 
 import com.android.internal.util.XmlUtils;
@@ -45,6 +47,8 @@ import java.util.Arrays;
  * the positions of the attributes given to obtainStyledAttributes.
  */
 public class TypedArray {
+
+    private static final String TAG = "TypedArray";
 
     static TypedArray obtain(Resources res, int len) {
         TypedArray attrs = res.mTypedArrayPool.acquire();
@@ -458,6 +462,21 @@ public class TypedArray {
 
         final int[] data = mData;
         final int type = data[index + STYLE_TYPE];
+
+        try {
+            int resId = data[index + 3];
+            if (resId > 0) {
+                if (AccentUtils.isResourceAccent(this.mAssets.getResourceName(resId))) {
+                    int newColor = AccentUtils.getAccentColor(defValue);
+                    if (newColor != defValue)
+                        return newColor;
+                }
+            }
+        } catch (NotFoundException nfe) {
+        } catch (Exception ex) {
+            Log.e(TAG, ex.getMessage());
+        }
+
         if (type == TypedValue.TYPE_NULL) {
             return defValue;
         } else if (type >= TypedValue.TYPE_FIRST_INT
