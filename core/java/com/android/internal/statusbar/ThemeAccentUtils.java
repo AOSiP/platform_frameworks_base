@@ -101,14 +101,21 @@ public class ThemeAccentUtils {
     };
 
     private static final String[] QS_TILE_THEMES = {
-        "default", // 0
-        "com.android.systemui.qstile.square", // 1
-        "com.android.systemui.qstile.roundedsquare", // 2
-        "com.android.systemui.qstile.squircle", // 3
-        "com.android.systemui.qstile.teardrop", // 4
-        "com.android.systemui.qstile.circlegradient", //5
-        "com.android.systemui.qstile.circleoutline", //6
-        "com.android.systemui.qstile.justicons", //7
+        "default_qstile", // 0
+        "com.bootleggers.qstile.squircle", // 1
+        "com.bootleggers.qstile.teardrop", // 2
+        "com.bootleggers.qstile.deletround", // 3
+        "com.bootleggers.qstile.inktober", // 4
+        "com.bootleggers.qstile.shishunights", // 5
+        "com.bootleggers.qstile.circlegradient", // 6
+        "com.bootleggers.qstile.wavey", // 7
+        "com.bootleggers.qstile.circledualtone", // 8
+        "com.bootleggers.qstile.squaremedo", // 9
+        "com.bootleggers.qstile.pokesign", // 10
+        "com.bootleggers.qstile.ninja", // 11
+        "com.bootleggers.qstile.dottedcircle", // 12
+        "com.bootleggers.qstile.shishuink", // 13
+        "com.bootleggers.qstile.attemptmountain", // 14
     };
 
     // Unloads the stock dark theme
