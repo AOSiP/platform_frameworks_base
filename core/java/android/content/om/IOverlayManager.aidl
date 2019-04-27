@@ -150,4 +150,7 @@ interface IOverlayManager {
      * @param userId The user for which to change the overlay.
      */
     boolean setLowestPriority(in String packageName, in int userId);
+
+    void reloadAssets(in String packageName, in int userId);
+    void reloadAndroidAssets(in int userId);
 }
