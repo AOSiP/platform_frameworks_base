@@ -45,6 +45,7 @@ import com.android.internal.widget.LockPatternUtils;
 import com.android.systemui.Dependency;
 import com.android.systemui.R;
 import com.android.systemui.statusbar.policy.ConfigurationController;
+import com.android.systemui.tuner.TunerService;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -52,7 +53,8 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 public class KeyguardStatusView extends GridLayout implements
-        ConfigurationController.ConfigurationListener {
+        ConfigurationController.ConfigurationListener,
+        TunerService.Tunable {
     private static final boolean DEBUG = KeyguardConstants.DEBUG;
     private static final String TAG = "KeyguardStatusView";
     private static final int MARQUEE_DELAY_MS = 2000;
@@ -80,6 +82,15 @@ public class KeyguardStatusView extends GridLayout implements
     private int mIconTopMargin;
     private int mIconTopMarginWithHeader;
     private boolean mShowingHeader;
+
+    private int mDateSelection;
+
+    // Date styles paddings
+    private int mDateVerPadding;
+    private int mDateHorPadding;
+
+    private static final String LOCKSCREEN_DATE_SELECTION =
+            "system:" + Settings.System.LOCKSCREEN_DATE_SELECTION;
 
     private KeyguardUpdateMonitorCallback mInfoCallback = new KeyguardUpdateMonitorCallback() {
 
@@ -139,6 +150,8 @@ public class KeyguardStatusView extends GridLayout implements
         mIActivityManager = ActivityManager.getService();
         mLockPatternUtils = new LockPatternUtils(getContext());
         mHandler = new Handler(Looper.myLooper());
+        final TunerService tunerService = Dependency.get(TunerService.class);
+        tunerService.addTunable(this, LOCKSCREEN_DATE_SELECTION);
         onDensityOrFontScaleChanged();
     }
 
@@ -245,9 +258,41 @@ public class KeyguardStatusView extends GridLayout implements
             mClockView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                     getResources().getDimensionPixelSize(R.dimen.widget_big_font_size));
         }
+
         if (mOwnerInfo != null) {
             mOwnerInfo.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                     getResources().getDimensionPixelSize(R.dimen.widget_label_font_size));
+        }
+
+        switch (mDateSelection) {
+            case 0: // default
+            default:
+                try {
+                    mKeyguardSlice.setViewBackgroundResource(0);
+                    mDateVerPadding = 0;
+                    mDateHorPadding = 0;
+                    mKeyguardSlice.setViewPadding(mDateHorPadding,mDateVerPadding,mDateHorPadding,mDateVerPadding);
+                } catch (Exception e) {
+                }
+                break;
+            case 1: // semi-transparent box
+                try {
+                    mKeyguardSlice.setViewBackground(getResources().getDrawable(R.drawable.date_box_str_border));
+                    mDateHorPadding = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.widget_date_box_padding_hor),getResources().getDisplayMetrics()));
+                    mDateVerPadding = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.widget_date_box_padding_ver),getResources().getDisplayMetrics()));
+                    mKeyguardSlice.setViewPadding(mDateHorPadding,mDateVerPadding,mDateHorPadding,mDateVerPadding);
+                } catch (Exception e) {
+                }
+                break;
+            case 2: // semi-transparent box (round)
+                try {
+                    mKeyguardSlice.setViewBackground(getResources().getDrawable(R.drawable.date_str_border));
+                    mDateHorPadding = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.widget_date_box_padding_hor),getResources().getDisplayMetrics()));
+                    mDateVerPadding = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.widget_date_box_padding_ver),getResources().getDisplayMetrics()));
+                    mKeyguardSlice.setViewPadding(mDateHorPadding,mDateVerPadding,mDateHorPadding,mDateVerPadding);
+                } catch (Exception e) {
+                }
+                break;
         }
         loadBottomMargin();
     }
@@ -349,6 +394,18 @@ public class KeyguardStatusView extends GridLayout implements
     @Override
     public void onLocaleListChanged() {
         refreshFormat();
+    }
+
+    @Override
+    public void onTuningChanged(String key, String newValue) {
+        switch (key) {
+            case LOCKSCREEN_DATE_SELECTION:
+                    mDateSelection = TunerService.parseInteger(newValue, 0);
+                onDensityOrFontScaleChanged();
+                break;
+            default:
+                break;
+        }
     }
 
     public void dump(FileDescriptor fd, PrintWriter pw, String[] args) {

@@ -4795,11 +4795,10 @@ public final class Settings {
         public static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
 
         /**
-         * IMPORTANT: If you add a new public settings you also have to add it to
-         * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
-         * it to PRIVATE_SETTINGS below. Also add a validator that can validate
-         * the setting value. See an example above.
+         * Select which lockscreen date style to display
+         * @hide
          */
+        public static final String LOCKSCREEN_DATE_SELECTION = "lockscreen_date_selection";
 
         /**
          * Use doubletap as doze pulse triggers
