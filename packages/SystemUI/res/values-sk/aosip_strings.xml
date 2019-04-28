@@ -80,6 +80,10 @@
     <string name="qs_lte_label">LTE</string>
     <string name="lte_on">LTE zap.</string>
     <string name="lte_off">LTE vyp,</string>
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
+    <string name="quick_settings_hwkeys_label">HW keys</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Snímka obrazovky bola odstránená</string>
     <!-- Ambient Display Pixel-Like string -->
