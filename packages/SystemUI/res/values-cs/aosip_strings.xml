@@ -81,9 +81,9 @@
     <string name="lte_on">LTE zap. </string>
     <string name="lte_off">LTE vyp.</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">HW tlačítka zapnuta</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW tlačítka vypnuta</string>
+    <string name="quick_settings_hwkeys_label">HW tlačítka</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Snímek obrazovky smazán</string>
     <!-- Ambient Display Pixel-Like string -->

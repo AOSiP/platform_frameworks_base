@@ -24,13 +24,13 @@
     <string name="reboot_title">重新启动</string>
     <string name="reboot_message">正在重启</string>
     <!-- App ops requests -->
-    <string name="app_ops_access_camera">access the camera</string>
-    <string name="app_ops_access_location">access your location</string>
-    <string name="app_ops_access_notifications">read your notifications</string>
-    <string name="app_ops_activate_vpn">activate a VPN</string>
-    <string name="app_ops_add_voicemail">add a voicemail</string>
-    <string name="app_ops_app_start_foreground">start instant app in foreground</string>
-    <string name="app_ops_assist_screenshot">take a screenshot</string>
+    <string name="app_ops_access_camera">访问摄像头</string>
+    <string name="app_ops_access_location">访问您的位置信息</string>
+    <string name="app_ops_access_notifications">读取您的通知</string>
+    <string name="app_ops_activate_vpn">激活 VPN</string>
+    <string name="app_ops_add_voicemail">添加语音邮件</string>
+    <string name="app_ops_app_start_foreground">在前台启动即时应用</string>
+    <string name="app_ops_assist_screenshot">屏幕截图</string>
     <string name="app_ops_assist_structure">use assist structure</string>
     <string name="app_ops_audio_accessibility_volume">audio accessibility volume</string>
     <string name="app_ops_auto_start">start at power up</string>
