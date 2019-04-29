@@ -65,7 +65,6 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
     private int txtSize;
     private int txtImgPadding;
     private boolean mHideArrow;
-    private boolean mAutoHide;
     private int mAutoHideThreshold;
     private int mTintColor;
     private int mVisibleState = -1;
@@ -138,7 +137,7 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
         private boolean shouldHide(long rxData, long txData, long timeDelta) {
             long speedTxKB = (long)(txData / (timeDelta / 1000f)) / KB;
             long speedRxKB = (long)(rxData / (timeDelta / 1000f)) / KB;
-            return mAutoHide && !getConnectAvailable() ||
+            return !getConnectAvailable() ||
                     (speedRxKB < mAutoHideThreshold &&
                     speedTxKB < mAutoHideThreshold);
         }
@@ -160,9 +159,6 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
             ContentResolver resolver = mContext.getContentResolver();
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.NETWORK_TRAFFIC_STATE), false,
-                    this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System
-                    .getUriFor(Settings.System.NETWORK_TRAFFIC_AUTOHIDE), false,
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD), false,
@@ -289,9 +285,6 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
         ContentResolver resolver = mContext.getContentResolver();
         mIsEnabled = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_STATE, 0,
-                UserHandle.USER_CURRENT) == 1;
-        mAutoHide = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE, 0,
                 UserHandle.USER_CURRENT) == 1;
         mAutoHideThreshold = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 0,

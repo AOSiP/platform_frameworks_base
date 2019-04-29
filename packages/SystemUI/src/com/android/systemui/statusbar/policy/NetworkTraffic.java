@@ -54,7 +54,6 @@ public class NetworkTraffic extends TextView {
     private int txtImgPadding;
     private boolean mHideArrow;
     private int mAutoHideThreshold;
-    private boolean mAutoHide;
     private int mTintColor;
     private boolean mTrafficInHeaderView;
     private boolean mScreenOn = true;
@@ -124,8 +123,7 @@ public class NetworkTraffic extends TextView {
         private boolean shouldHide(long rxData, long txData, long timeDelta) {
             long speedTxKB = (long)(txData / (timeDelta / 1000f)) / KB;
             long speedRxKB = (long)(rxData / (timeDelta / 1000f)) / KB;
-            return mAutoHide &&
-                    !getConnectAvailable() ||
+            return !getConnectAvailable() ||
                     (speedRxKB < mAutoHideThreshold &&
                     speedTxKB < mAutoHideThreshold);
         }
@@ -147,9 +145,6 @@ public class NetworkTraffic extends TextView {
             ContentResolver resolver = mContext.getContentResolver();
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.NETWORK_TRAFFIC_STATE), false,
-                    this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System
-                    .getUriFor(Settings.System.NETWORK_TRAFFIC_AUTOHIDE), false,
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD), false,
@@ -254,9 +249,6 @@ public class NetworkTraffic extends TextView {
         mTrafficInHeaderView = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, 1,
                 UserHandle.USER_CURRENT) == 0;
-        mAutoHide = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE, 0,
-                UserHandle.USER_CURRENT) == 1;
         if (mIsEnabled) {
             if (mAttached) {
                 totalRxBytes = TrafficStats.getTotalRxBytes();
