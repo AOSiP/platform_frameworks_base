@@ -23,8 +23,11 @@ import static com.android.systemui.statusbar.phone.StatusBar.SYSTEM_DIALOG_REASO
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.annotation.Nullable;
+import android.app.ActivityManager;
 import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.om.IOverlayManager;
+import android.content.om.OverlayInfo;
 import android.content.ContentResolver;
 import android.content.res.Configuration;
 import android.database.ContentObserver;
@@ -33,11 +36,14 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.PointF;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.IRemoteCallback;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.util.ArraySet;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -59,6 +65,7 @@ import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.android.internal.colorextraction.ColorExtractor;
 import com.android.internal.colorextraction.drawable.GradientDrawable;
@@ -435,6 +442,7 @@ public class RecentsView extends FrameLayout {
             EventBus.getDefault().send(new DismissAllTaskViewsEvent());
             }
         });
+        updateClearRecentsFabTint();
         super.onAttachedToWindow();
     }
 
@@ -1184,4 +1192,27 @@ public class RecentsView extends FrameLayout {
                 Settings.System.SHOW_CLEAR_ALL_RECENTS, 1, UserHandle.USER_CURRENT) != 0;
          }
      }
+
+    private void updateClearRecentsFabTint() {
+        final ImageView v = (ImageView) mClearRecents;
+        Drawable d = v.getDrawable();
+        int colorRes = isUsingWhiteAccent() ? R.color.floating_action_button_icon_color_white_accent
+                : R.color.floating_action_button_icon_color;
+        if (d != null) {
+            d.setColorFilter(mContext.getResources().getColor(colorRes), PorterDuff.Mode.SRC_ATOP);
+        }
+    }
+
+    private static boolean isUsingWhiteAccent() {
+        IOverlayManager om = IOverlayManager.Stub.asInterface(
+                ServiceManager.getService(Context.OVERLAY_SERVICE));
+        OverlayInfo themeInfo = null;
+        try {
+            themeInfo = om.getOverlayInfo("com.accents.white",
+                    ActivityManager.getCurrentUser());
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return themeInfo != null && themeInfo.isEnabled();
+    }
 }
