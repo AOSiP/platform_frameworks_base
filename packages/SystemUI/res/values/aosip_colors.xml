@@ -18,6 +18,7 @@
     <!-- Floating action button -->
     <color name="fab_color">@*android:color/accent_device_default_light</color>
     <color name="floating_action_button_icon_color">@android:color/white</color>
+    <color name="floating_action_button_icon_color_white_accent">#6d6d6d</color>
 
     <!-- VPN footer -->
     <color name="quick_settings_footer_background_color">@android:color/transparent</color>
