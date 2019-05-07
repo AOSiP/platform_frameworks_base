@@ -669,6 +669,10 @@ public class KeyguardStatusView extends GridLayout implements
         }
     }
 
+    public KeyguardSliceView getSliceView() {
+        return mKeyguardSlice;
+    }
+
     private class ClipChildrenAnimationListener extends AnimatorListenerAdapter implements
             ViewClippingUtil.ClippingParameters {
 
