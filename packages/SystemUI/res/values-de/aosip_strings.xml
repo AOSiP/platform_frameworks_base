@@ -81,9 +81,9 @@
     <string name="lte_on">LTE an </string>
     <string name="lte_off">LTE aus</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">HW-Tasten an</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW-Tasten aus</string>
+    <string name="quick_settings_hwkeys_label">Hardware-Tasten</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Screenshot gelöscht</string>
     <!-- Ambient Display Pixel-Like string -->
@@ -134,6 +134,14 @@
     <string name="accessibility_quick_settings_usb_tether_changed_off">USB-Tethering ausgeschaltet</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB-Tethering eingeschaltet</string>
     <string name="quick_settings_usb_tether_label">USB Tethering</string>
+    <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Gaming Mode</string>
+    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
+    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
+    <string name="gaming_mode_dialog_title">Gaming Mode</string>
+    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Heads-Up Benachrichtigungen sind für 1 Minute deaktiviert.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> - Heads-Up Benachrichtigungen sind für <xliff:g id="number">%d </xliff:g> Minuten deaktiviert.</string>

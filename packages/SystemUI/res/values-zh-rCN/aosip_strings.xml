@@ -81,9 +81,9 @@
     <string name="lte_on">LTE 开启 </string>
     <string name="lte_off">LTE 关闭</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">实体按键开启</string>
+    <string name="accessibility_quick_settings_hwkeys_off">实体按键关闭</string>
+    <string name="quick_settings_hwkeys_label">实体按键</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">屏幕截图已删除</string>
     <!-- Ambient Display Pixel-Like string -->
@@ -134,6 +134,14 @@
     <string name="accessibility_quick_settings_usb_tether_changed_off">USB 网络共享已关闭</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB 网络共享已打开</string>
     <string name="quick_settings_usb_tether_label">USB 网络共享</string>
+    <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Gaming Mode</string>
+    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
+    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
+    <string name="gaming_mode_dialog_title">Gaming Mode</string>
+    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 浮动通知已被暂停 1 分钟。</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 浮动通知已被暂停 <xliff:g id="number">%d</xliff:g> 分钟。</string>

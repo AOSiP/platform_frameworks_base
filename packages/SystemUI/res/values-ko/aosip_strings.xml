@@ -81,9 +81,9 @@
     <string name="lte_on">LTE 켜짐</string>
     <string name="lte_off">LTE 꺼짐</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">하드웨어 키 사용</string>
+    <string name="accessibility_quick_settings_hwkeys_off">하드웨어 키 사용 안함</string>
+    <string name="quick_settings_hwkeys_label">하드웨어 키</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">스크린샷 삭제됨</string>
     <!-- Ambient Display Pixel-Like string -->
@@ -111,9 +111,9 @@
     <string name="global_action_restart_hot">빠른 재시작</string>
     <string name="global_action_screenshot">스크린샷</string>
     <!-- Kill button in notification guts -->
-    <string name="force_stop_dlg_title">Force stop?</string>
-    <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
-    <string name="guts_force_close_app">Close App</string>
+    <string name="force_stop_dlg_title">강제로 중지하시겠습니까?</string>
+    <string name="force_stop_dlg_text">강제로 앱을 종료하면 예기치 않은 오류가 발생할 수 있습니다.</string>
+    <string name="guts_force_close_app">어플리케이션 닫기</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">다시 시작</string>
     <string name="quick_settings_reboot_recovery_label">복구 모드</string>
@@ -134,6 +134,14 @@
     <string name="accessibility_quick_settings_usb_tether_changed_off">USB 테더링 꺼짐</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB 테더링 켜짐</string>
     <string name="quick_settings_usb_tether_label">USB 테더링</string>
+    <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Gaming Mode</string>
+    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
+    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
+    <string name="gaming_mode_dialog_title">Gaming Mode</string>
+    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 알림 엿보기를 1분간 중지합니다</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> • 알림 엿보기를 <xliff:g id="number">%d </xliff:g> 분간 중지합니다.</string>

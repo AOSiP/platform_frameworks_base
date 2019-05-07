@@ -69,7 +69,7 @@
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Роуминг</string>
     <string name="tuner_show_info_header_title">Показать заголовок</string>
-    <string name="tuner_show_secure_title">Показать футер безопасности</string>
+    <string name="tuner_show_secure_title">Показать заголовок безопасности</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB по сети</string>
     <string name="quick_settings_network_adb_enabled_label">ADB по сети</string>
@@ -81,9 +81,9 @@
     <string name="lte_on">LTE вкл.</string>
     <string name="lte_off">LTE выкл.</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Аппаратные кнопки включены</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Аппаратные кнопки выключены</string>
+    <string name="quick_settings_hwkeys_label">Аппаратные кнопки</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Скриншот удален</string>
     <!-- Ambient Display Pixel-Like string -->
@@ -134,6 +134,14 @@
     <string name="accessibility_quick_settings_usb_tether_changed_off">USB-модем выключен</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB-модем включен</string>
     <string name="quick_settings_usb_tether_label">USB-модем</string>
+    <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Gaming Mode</string>
+    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
+    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
+    <string name="gaming_mode_dialog_title">Gaming Mode</string>
+    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Всплывающие уведомления выключены на 1 минуту.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Всплывающие уведомления выключены на <xliff:g id="number">%d</xliff:g> минут.</string>
