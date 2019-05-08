@@ -27450,14 +27450,14 @@ public class ActivityManagerService extends IActivityManager.Stub
 
         public void registerObserver() {
             mContext.getContentResolver().registerContentObserver(
-                    Settings.System.getUriFor(Settings.System.SWIPE_TO_SCREENSHOT),
+                    Settings.System.getUriFor(Settings.System.THREE_FINGER_GESTURE),
                     false, this, UserHandle.USER_ALL);
             update();
         }
 
         private void update() {
             mIsSwipeToScrenshotEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.SWIPE_TO_SCREENSHOT, 0, UserHandle.USER_CURRENT) == 1;
+                    Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
         }
 
         public void onChange(boolean selfChange) {
@@ -27468,7 +27468,7 @@ public class ActivityManagerService extends IActivityManager.Stub
     @Override
     public boolean isSwipeToScreenshotGestureActive() {
         synchronized (this) {
-            return mIsSwipeToScrenshotEnabled;
+            return mIsSwipeToScrenshotEnabled && SystemProperties.getBoolean("sys.android.screenshot", false);
         }
     }
 }
