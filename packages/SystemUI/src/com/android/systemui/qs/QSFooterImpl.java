@@ -57,22 +57,18 @@ import com.android.systemui.plugins.ActivityStarter;
 import com.android.systemui.qs.TouchAnimator.Builder;
 import com.android.systemui.statusbar.phone.MultiUserSwitch;
 import com.android.systemui.statusbar.policy.DeviceProvisionedController;
-import com.android.systemui.statusbar.policy.NetworkController;
-import com.android.systemui.statusbar.policy.NetworkController.EmergencyListener;
-import com.android.systemui.statusbar.policy.NetworkController.SignalCallback;
 import com.android.systemui.statusbar.policy.UserInfoController;
 import com.android.systemui.statusbar.policy.UserInfoController.OnUserInfoChangedListener;
 
 import static android.content.Context.VIBRATOR_SERVICE;
 
 public class QSFooterImpl extends FrameLayout implements QSFooter,
-        OnClickListener, OnLongClickListener, OnUserInfoChangedListener, EmergencyListener, SignalCallback {
+        OnClickListener, OnLongClickListener, OnUserInfoChangedListener {
 
     private ActivityStarter mActivityStarter;
     private UserInfoController mUserInfoController;
     private View mSettingsButton;
     private PageIndicator mPageIndicator;
-    private CarrierText mCarrierText;
 
     private boolean mQsDisabled;
     private QSPanel mQsPanel;
@@ -82,7 +78,6 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
 
     private boolean mListening;
 
-    private boolean mShowEmergencyCallsOnly;
     private View mDivider;
     protected MultiUserSwitch mMultiUserSwitch;
     private ImageView mMultiUserAvatar;
@@ -95,11 +90,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
 
     private View mActionsContainer;
     private View mDragHandle;
-    private View mMobileGroup;
-    private ImageView mMobileSignal;
-    private ImageView mMobileRoaming;
     private final int mColorForeground;
-    private final CellSignalState mInfo = new CellSignalState();
     private OnClickListener mExpandClickListener;
 
     private Vibrator mVibrator;
@@ -125,11 +116,6 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         mSettingsButton.setOnClickListener(this);
         mSettingsButton.setOnLongClickListener(this);
 
-        mMobileGroup = findViewById(R.id.mobile_combo);
-        mMobileSignal = findViewById(R.id.mobile_signal);
-        mMobileRoaming = findViewById(R.id.mobile_roaming);
-        mCarrierText = findViewById(R.id.qs_carrier_text);
-
         mMultiUserSwitch = findViewById(R.id.multi_user_switch);
         mMultiUserAvatar = mMultiUserSwitch.findViewById(R.id.multi_user_avatar);
 
@@ -151,11 +137,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     }
 
     private void updateAnimator(int width) {
-        int endMargin = (mInfo.visible ? mContext.getResources().getDimensionPixelSize(R.dimen.qs_footer_mobilegroup_margin_end) : 0);
-        int sum = endMargin + (mInfo.visible ? mMobileGroup.getWidth() : 0);
-
         mSettingsCogAnimator = new Builder()
-                .addFloat(mCarrierText, "translationX", -sum, 0)
                 .addFloat(mSettingsButton, "rotation", -120, 0)
                 .build();
 
@@ -193,11 +175,9 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     @Nullable
     private TouchAnimator createFooterAnimator() {
         return new TouchAnimator.Builder()
-                .addFloat(mDivider, "alpha", 0, 1)
+                .addFloat(mDivider, "alpha", 0, 0)
                 .addFloat(mEdit, "alpha", 0, 1)
                 .addFloat(mPageIndicator, "alpha", 0, 1)
-                .addFloat(mMobileSignal, "alpha", 0, 1)
-                .addFloat(mMobileRoaming, "alpha", 0, 1)
                 .addFloat(mDragHandle, "alpha", 0, 0, 0)
                 .setStartDelay(0.15f)
                 .build();
@@ -309,14 +289,8 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     private void updateListeners() {
         if (mListening) {
             mUserInfoController.addCallback(this);
-            if (Dependency.get(NetworkController.class).hasVoiceCallingFeature()) {
-                Dependency.get(NetworkController.class).addEmergencyListener(this);
-                Dependency.get(NetworkController.class).addCallback(this);
-            }
         } else {
             mUserInfoController.removeCallback(this);
-            Dependency.get(NetworkController.class).removeEmergencyListener(this);
-            Dependency.get(NetworkController.class).removeCallback(this);
         }
     }
 
@@ -368,17 +342,6 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     }
 
     @Override
-    public void setEmergencyCallsOnly(boolean show) {
-        boolean changed = show != mShowEmergencyCallsOnly;
-        if (changed) {
-            mShowEmergencyCallsOnly = show;
-            if (mExpanded) {
-                updateEverything();
-            }
-        }
-    }
-
-    @Override
     public void onUserInfoChanged(String name, Drawable picture, String userAccount) {
         if (picture != null &&
                 UserManager.get(mContext).isGuestUser(KeyguardUpdateMonitor.getCurrentUser()) &&
@@ -389,65 +352,5 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
                     Mode.SRC_IN);
         }
         mMultiUserAvatar.setImageDrawable(picture);
-    }
-
-    private void handleUpdateState() {
-        mMobileGroup.setVisibility(mInfo.visible ? View.VISIBLE : View.GONE);
-        if (mInfo.visible) {
-            mMobileRoaming.setVisibility(mInfo.roaming ? View.VISIBLE : View.GONE);
-            mMobileRoaming.setImageTintList(ColorStateList.valueOf(mColorForeground));
-            SignalDrawable d = new SignalDrawable(mContext);
-            d.setDarkIntensity(QuickStatusBarHeader.getColorIntensity(mColorForeground));
-            mMobileSignal.setImageDrawable(d);
-            mMobileSignal.setImageLevel(mInfo.mobileSignalIconId);
-
-            StringBuilder contentDescription = new StringBuilder();
-            if (mInfo.contentDescription != null) {
-                contentDescription.append(mInfo.contentDescription).append(", ");
-            }
-            if (mInfo.roaming) {
-                contentDescription
-                        .append(mContext.getString(R.string.data_connection_roaming))
-                        .append(", ");
-            }
-            // TODO: show mobile data off/no internet text for 5 seconds before carrier text
-            if (TextUtils.equals(mInfo.typeContentDescription,
-                    mContext.getString(R.string.data_connection_no_internet))
-                || TextUtils.equals(mInfo.typeContentDescription,
-                    mContext.getString(R.string.cell_data_off_content_description))) {
-                contentDescription.append(mInfo.typeContentDescription);
-            }
-            mMobileSignal.setContentDescription(contentDescription);
-        }
-    }
-
-    @Override
-    public void setMobileDataIndicators(NetworkController.IconState statusIcon,
-            NetworkController.IconState qsIcon, int statusType,
-            int qsType, boolean activityIn, boolean activityOut, int volteId,
-            String typeContentDescription,
-            String description, boolean isWide, int subId, boolean roaming) {
-        mInfo.visible = statusIcon.visible;
-        mInfo.mobileSignalIconId = statusIcon.icon;
-        mInfo.contentDescription = statusIcon.contentDescription;
-        mInfo.typeContentDescription = typeContentDescription;
-        mInfo.roaming = roaming;
-        handleUpdateState();
-    }
-
-    @Override
-    public void setNoSims(boolean hasNoSims, boolean simDetected) {
-        if (hasNoSims) {
-            mInfo.visible = false;
-        }
-        handleUpdateState();
-    }
-
-    private final class CellSignalState {
-        boolean visible;
-        int mobileSignalIconId;
-        public String contentDescription;
-        String typeContentDescription;
-        boolean roaming;
     }
 }
