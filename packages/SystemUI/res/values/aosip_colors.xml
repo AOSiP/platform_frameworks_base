@@ -17,6 +17,9 @@
 <resources>
     <color name="qs_background_dark_color">@android:color/white</color>
 
+    <!-- QS -->
+    <color name="qs_status_bar_background">#ff000000</color>
+
     <!-- Color of the FOD view -->
     <color name="config_fodColor">#00ff00</color>
 
