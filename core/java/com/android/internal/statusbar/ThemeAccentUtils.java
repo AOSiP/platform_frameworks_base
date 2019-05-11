@@ -99,6 +99,7 @@ public class ThemeAccentUtils {
         "com.accents.usersix", // 27
         "com.accents.userseven", // 28
         "com.accents.usereight", // 29
+        "com.accents.usernine", // 30
     };
 
     // Unloads the stock dark theme
