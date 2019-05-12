@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB 网络共享已打开</string>
     <string name="quick_settings_usb_tether_label">USB 网络共享</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">游戏模式</string>
+    <string name="gaming_mode_tile_toast">游戏模式已启用</string>
+    <string name="gaming_mode_tile_toast_disabled">游戏模式已禁用</string>
+    <string name="gaming_mode_dialog_title">游戏模式</string>
+    <string name="gaming_mode_dialog_message">当启用游戏模式时，所有浮动消息将被禁用，实体按键将被屏蔽。所有禁用的设置将在退出游戏模式后重置为默认设置。</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">游戏模式开启</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">游戏模式关闭</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 浮动通知已被暂停 1 分钟。</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 浮动通知已被暂停 <xliff:g id="number">%d</xliff:g> 分钟。</string>

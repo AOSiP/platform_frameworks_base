@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">Partage de connexion USB a été activé</string>
     <string name="quick_settings_usb_tether_label">Partage de connexion USB</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">Mode jeu</string>
+    <string name="gaming_mode_tile_toast">Mode jeu activé</string>
+    <string name="gaming_mode_tile_toast_disabled">Mode jeu désactivé</string>
+    <string name="gaming_mode_dialog_title">Mode jeu</string>
+    <string name="gaming_mode_dialog_message">Lorsque le mode jeu est activé, tous les notifications flottantes sont désactivés et les touches physiques sont désactivées. Tous les paramètres désactivés seront réinitialisés par défaut lorsque vous quitterez le mode Jeu.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Mode jeu actif</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Mode jeu inactif</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Notification furtive pendant 1 minute.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Les notifications sont flottantes pour <xliff:g id="number">%d</xliff:g> minutes.</string>

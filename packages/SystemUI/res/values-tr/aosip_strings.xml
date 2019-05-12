@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB internet paylaşımı açıldı</string>
     <string name="quick_settings_usb_tether_label">USB internet paylaşımı</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">Oyun Modu</string>
+    <string name="gaming_mode_tile_toast">Oyun modu etkin</string>
+    <string name="gaming_mode_tile_toast_disabled">Oyun modu devre dışı</string>
+    <string name="gaming_mode_dialog_title">Oyun Modu</string>
+    <string name="gaming_mode_dialog_message">Oyun modu etkinleştirildiğinde, tüm bildirim pencereleri mesajları devre dışı bırakılacak ve donanım tuşları kapatılacaktır. Oyun modundan çıktıktan sonra tüm devre dışı ayarlar varsayılan değerlere sıfırlanacaktır.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Oyun modu açık</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Oyun modu kapalı</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Bildirim pencereleri 1 dakikalığına erteleniyor.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Bildirim pencereleri <xliff:g id="number">%d</xliff:g> dakika erteleniyor.</string>
