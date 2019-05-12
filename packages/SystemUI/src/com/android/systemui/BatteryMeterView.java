@@ -100,6 +100,9 @@ public class BatteryMeterView extends LinearLayout implements
     private int mNonAdaptedForegroundColor;
     private int mNonAdaptedBackgroundColor;
 
+    private int mPercentageStyleId;
+    private int mPercentageSize;
+
     public BatteryMeterView(Context context) {
         this(context, null, 0);
     }
@@ -119,6 +122,8 @@ public class BatteryMeterView extends LinearLayout implements
                 defStyle, 0);
         final int frameColor = atts.getColor(R.styleable.BatteryMeterView_frameColor,
                 context.getColor(R.color.meter_background_color));
+        mPercentageStyleId = atts.getResourceId(R.styleable.BatteryMeterView_textAppearance, 0);
+        mPercentageSize = atts.getDimensionPixelSize(R.styleable.BatteryMeterView_textSize, 0);
         mFrameColor = frameColor;
         mDrawable = new ThemedBatteryDrawable(context, frameColor);
         atts.recycle();
@@ -281,11 +286,18 @@ public class BatteryMeterView extends LinearLayout implements
 
     private void updatePercentText() {
         if (mBatteryController != null && mBatteryPercentView != null) {
+            updatePercentSize();
             if (!mShowEstimate || mCharging) {
                 setPercentTextAtCurrentLevel();
             } else {
                 mBatteryController.getEstimatedTimeRemainingString(this::onEstimateFetchComplete);
             }
+        }
+    }
+
+    private void updatePercentSize() {
+        if (mPercentageSize != 0) {
+            mBatteryPercentView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mPercentageSize);
         }
     }
 
@@ -325,6 +337,7 @@ public class BatteryMeterView extends LinearLayout implements
                 if (!showing) {
                     mBatteryPercentView = loadPercentView();
                     if (mTextColor != 0) mBatteryPercentView.setTextColor(mTextColor);
+                    if (mPercentageStyleId != 0) mBatteryPercentView.setTextAppearance(mPercentageStyleId);
                     updatePercentText();
                     addView(mBatteryPercentView,
                             //0,
