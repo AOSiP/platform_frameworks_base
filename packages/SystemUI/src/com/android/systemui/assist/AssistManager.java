@@ -399,7 +399,6 @@ public class AssistManager {
         intent.putExtras(args);
 
         if (structureEnabled && AssistUtils.isDisclosureEnabled(mContext)) {
-            showDisclosure();
         }
 
         try {
@@ -492,9 +491,7 @@ public class AssistManager {
         return getAssistInfoForUser(KeyguardUpdateMonitor.getCurrentUser());
     }
 
-    public void showDisclosure() {
-        mAssistDisclosure.postShow();
-    }
+    public void showDisclosure() {}
 
     public void onLockscreenShown() {
         AsyncTask.execute(new Runnable() {
