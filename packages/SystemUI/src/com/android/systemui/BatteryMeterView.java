@@ -286,6 +286,7 @@ public class BatteryMeterView extends LinearLayout implements
 
     private void updatePercentText() {
         if (mBatteryController != null && mBatteryPercentView != null) {
+            updatePercentSize();
             if (!mShowEstimate || mCharging) {
                 setPercentTextAtCurrentLevel();
             } else {
