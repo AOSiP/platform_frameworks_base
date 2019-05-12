@@ -769,7 +769,7 @@
     <dimen name="volume_expander_margin_top">6dp</dimen>
 
     <!-- Thickness of the assist disclosure beams -->
-    <dimen name="assist_disclosure_thickness">2.5dp</dimen>
+    <dimen name="assist_disclosure_thickness">0dp</dimen>
 
     <!-- Thickness of the shadows of the assist disclosure beams -->
     <dimen name="assist_disclosure_shadow_thickness">1.5dp</dimen>
