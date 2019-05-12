@@ -55,7 +55,6 @@ public class AssistManager implements ConfigurationChangedReceiver {
 
     protected final Context mContext;
     private final WindowManager mWindowManager;
-    private final AssistDisclosure mAssistDisclosure;
     private final InterestingConfigChanges mInterestingConfigChanges;
 
     private AssistOrbContainer mView;
@@ -90,8 +89,6 @@ public class AssistManager implements ConfigurationChangedReceiver {
         mDeviceProvisionedController = controller;
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         mAssistUtils = new AssistUtils(context);
-        mAssistDisclosure = new AssistDisclosure(context, new Handler());
-
         registerVoiceInteractionSessionListener();
         mInterestingConfigChanges = new InterestingConfigChanges(ActivityInfo.CONFIG_ORIENTATION
                 | ActivityInfo.CONFIG_LOCALE | ActivityInfo.CONFIG_UI_MODE
@@ -219,10 +216,6 @@ public class AssistManager implements ConfigurationChangedReceiver {
         intent.setComponent(assistComponent);
         intent.putExtras(args);
 
-        if (structureEnabled) {
-            showDisclosure();
-        }
-
         try {
             final ActivityOptions opts = ActivityOptions.makeCustomAnimation(mContext,
                     R.anim.search_launch_enter, R.anim.search_launch_exit);
@@ -303,10 +296,6 @@ public class AssistManager implements ConfigurationChangedReceiver {
     @Nullable
     private ComponentName getAssistInfo() {
         return mAssistUtils.getAssistComponentForUser(KeyguardUpdateMonitor.getCurrentUser());
-    }
-
-    public void showDisclosure() {
-        mAssistDisclosure.postShow();
     }
 
     public void onLockscreenShown() {
