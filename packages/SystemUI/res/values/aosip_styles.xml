@@ -18,6 +18,7 @@
     <!-- Custom Carrier Label -->
     <style name="TextAppearance.StatusBar.CarrierLabel" parent="@*android:style/TextAppearance.StatusBar.Icon">
         <item name="android:textSize">@dimen/status_bar_carrier_height</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamilyMedium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/status_bar_carrier_color</item>
     </style>
@@ -25,7 +26,7 @@
     <!-- VPN footer -->
     <style name="TextAppearance.QS.VPN">
         <item name="android:textSize">@dimen/qs_tile_text_size</item>
-        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
         <item name="android:textStyle">bold</item>
     </style>
 
