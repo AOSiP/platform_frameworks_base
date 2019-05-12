@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB tethering je zapnutý</string>
     <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">Herní režim</string>
+    <string name="gaming_mode_tile_toast">Herní režim povolen</string>
+    <string name="gaming_mode_tile_toast_disabled">Herní režim zakázán</string>
+    <string name="gaming_mode_dialog_title">Herní režim</string>
+    <string name="gaming_mode_dialog_message">Pokud je herní režim povolen, budou všechny zprávy plovoucích oznámení a hardwarová tlačítka vypnuty. Po ukončení herního režimu budou všechna vypnutá nastavení obnovena na výchozí.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Herní režim zap.</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Herní režim vyp.</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Plovoucí oznámení jsou odložena na dobu 1 minuty.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> - Plovoucí oznámení jsou odložena na dobu <xliff:g id="number">%d </xliff:g> minut.</string>

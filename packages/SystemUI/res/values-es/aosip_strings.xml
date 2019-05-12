@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- AOD QS tile -->
-    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_label">Pantalla siempre encendida</string>
     <!-- QS Colums & rows -->
     <string name="qs_menu_item_columns">Columnas en modo vertical</string>
     <string name="qs_menu_item_columns_landscape">Columnas en modo apaisado</string>
@@ -81,9 +81,9 @@
     <string name="lte_on">LTE Activado </string>
     <string name="lte_off">LTE Desactivado</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Botones fisicos encendidos</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Botones fisicos apagados</string>
+    <string name="quick_settings_hwkeys_label">Botones fisicos</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Captura de pantalla borrada</string>
     <!-- Ambient Display Pixel-Like string -->
@@ -111,9 +111,9 @@
     <string name="global_action_restart_hot">Caliente</string>
     <string name="global_action_screenshot">Captura de Pantalla</string>
     <!-- Kill button in notification guts -->
-    <string name="force_stop_dlg_title">Force stop?</string>
-    <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
-    <string name="guts_force_close_app">Close App</string>
+    <string name="force_stop_dlg_title">¿Forzar detención?</string>
+    <string name="force_stop_dlg_text">Si fuerzas la detención de la aplicación, podría causar problemas.</string>
+    <string name="guts_force_close_app">Cerrar aplicación</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Reiniciar</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>
@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">El anclaje USB ha sido activado</string>
     <string name="quick_settings_usb_tether_label">Anclaje USB</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">Modo Gaming</string>
+    <string name="gaming_mode_tile_toast">Modo Gaming activado</string>
+    <string name="gaming_mode_tile_toast_disabled">Modo Gaming desactivado</string>
+    <string name="gaming_mode_dialog_title">Modo Gaming</string>
+    <string name="gaming_mode_dialog_message">Cuando el Modo Gaming esta activado, las notificaciones en pantalla y los botones físicos serán desactivados. Todas esas configuraciones regresaran a su estado normal cuando desactives este modo.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Modo Gaming encendido</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Modo Gaming apagado</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Las notificaciones flotantes están desactivadas durante 1 minuto.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Las notificaciones flotantes están desactivadas durante <xliff:g id="number">%d</xliff:g> minutos.</string>

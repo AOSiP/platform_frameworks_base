@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">تم تشغيل الانترنت عبر USB</string>
     <string name="quick_settings_usb_tether_label">الربط عبر USB</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">وضع الألعاب</string>
+    <string name="gaming_mode_tile_toast">وضع الألعاب مفعل</string>
+    <string name="gaming_mode_tile_toast_disabled">وضع الألعاب معطل</string>
+    <string name="gaming_mode_dialog_title">وضع الألعاب</string>
+    <string name="gaming_mode_dialog_message">عند تمكين وضع الألعاب ، سيتم تعطيل جميع الرسائل العلوية وسيتم إيقاف تشغيل مفاتيح الجهاز. سيتم إعادة تعيين جميع الإعدادات المعطلة إلى الوضع الافتراضي بمجرد خروجك من وضع الألعاب.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">وضع الألعاب مفعل</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">وضع الألعاب معطل</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - التنبيهات الخاطفة غافية لدقيقة واحدة.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - التنبيهات الخاطفة غافية ل <xliff:g id="number">%d</xliff:g> دقائق.</string>

@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB テザリングを ON にしました</string>
     <string name="quick_settings_usb_tether_label">USBテザリング</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">ゲームモード</string>
+    <string name="gaming_mode_tile_toast">ゲームモード有効</string>
+    <string name="gaming_mode_tile_toast_disabled">ゲームモード無効</string>
+    <string name="gaming_mode_dialog_title">ゲームモード</string>
+    <string name="gaming_mode_dialog_message">ゲームモードが有効になると、Heads Up メッセージは全て無効になりハードウェアキーは OFF になります。無効にした設定はゲームモードを終了すると全て規定値にリセットされます。</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">ゲームモード ON</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">ゲームモード OFF</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 通知の表示は1分間一時停止します</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 通知の表示は<xliff:g id="number">%d</xliff:g>分間停止します</string>

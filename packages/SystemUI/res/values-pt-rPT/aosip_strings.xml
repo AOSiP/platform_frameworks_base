@@ -81,9 +81,9 @@
     <string name="lte_on">LTE LIGADO</string>
     <string name="lte_off">LTE DESLIGADO</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Botões físicos ativados</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Botões físicos desativados</string>
+    <string name="quick_settings_hwkeys_label">Botões físicos</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Captura de ecrã eliminada</string>
     <!-- Ambient Display Pixel-Like string -->
@@ -111,9 +111,9 @@
     <string name="global_action_restart_hot">Quente</string>
     <string name="global_action_screenshot">Captura de ecrã</string>
     <!-- Kill button in notification guts -->
-    <string name="force_stop_dlg_title">Force stop?</string>
-    <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
-    <string name="guts_force_close_app">Close App</string>
+    <string name="force_stop_dlg_title">Forçar paragem?</string>
+    <string name="force_stop_dlg_text">Se forçar a paragem de uma aplicação esta pode ficar a funcionar incorretamente.</string>
+    <string name="guts_force_close_app">Fechar aplicação</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Reiniciar</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>
@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">A partilha de Internet por USB foi ligada</string>
     <string name="quick_settings_usb_tether_label">Partilha de Internet por USB</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">Modo de Jogo</string>
+    <string name="gaming_mode_tile_toast">Modo de Jogo ativado</string>
+    <string name="gaming_mode_tile_toast_disabled">Modo de Jogo desativado</string>
+    <string name="gaming_mode_dialog_title">Modo de Jogo</string>
+    <string name="gaming_mode_dialog_message">Quando o Modo de Jogo for ativado, todas as notificações flutuantes e os botões físicos serão desativados. Todas as definições desativadas serão redefinidas para o padrão assim que sair do Modo de Jogo.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Modo de Jogo ligado</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Modo de Jogo desligado</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - as notificações flutuantes serão pausadas por 1 minuto.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - as notificações flutuantes serão pausadas por <xliff:g id="number">%d</xliff:g> minutos.</string>

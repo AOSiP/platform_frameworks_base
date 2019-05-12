@@ -17,10 +17,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- AOD QS tile -->
-    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_label">Luôn luôn bật màn hình</string>
     <!-- QS Colums & rows -->
-    <string name="qs_menu_item_columns">Cột</string>
-    <string name="qs_menu_item_columns_landscape">Cột (ngang)</string>
+    <string name="qs_menu_item_columns">Số cột màn hình đứng</string>
+    <string name="qs_menu_item_columns_landscape">Số cột màn hình ngang</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
     <string name="qs_menu_item_columns_five">5</string>
@@ -29,11 +29,11 @@
     <string name="qs_menu_item_columns_eight">8</string>
     <string name="qs_menu_item_columns_nine">9</string>
     <string name="qs_menu_item_reset">Đặt lại</string>
-    <string name="qs_menu_item_titles">Ẩn tiêu đề</string>
-    <string name="qs_menu_item_qs_columns">Cột (thu nhỏ)</string>
+    <string name="qs_menu_item_titles">Ẩn nhãn</string>
+    <string name="qs_menu_item_qs_columns">Số cột thanh thu gọn</string>
     <string name="qs_menu_item_columns_auto">Tự động</string>
-    <string name="qs_menu_item_rows_landscape">Hàng (ngang)</string>
-    <string name="qs_menu_item_rows">Hàng</string>
+    <string name="qs_menu_item_rows_landscape">Số hàng màn hình ngang</string>
+    <string name="qs_menu_item_rows">Số hàng</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -41,9 +41,9 @@
     <!-- Navbar Tuner -->
     <string name="preview">Xem trước</string>
     <string name="keycode">Mã phím</string>
-    <string name="no_home_title">Không tìm thấy phím Trang chính</string>
-    <string name="no_home_message">Thiết bị này cần có phím Trang chính để điều hướng. Hãy thêm phím Trang chính trước khi lưu.</string>
-    <string name="clipboard_description">Bảng nhớ tạm cho phép các mục được kéo thả trực tiếp vào bảng tạm. Các mục cũng có thể được lấy ra khỏi bảng nhớ tạm khi cần thiết.</string>
+    <string name="no_home_title">Không tìm thấy nút Home</string>
+    <string name="no_home_message">Nút Home được yêu cầu bật để điều hướng thiết bị này. Làm ơn thêm vào nút Home trước khi lưu.</string>
+    <string name="clipboard_description">Bảng cho phép kéo thả các biểu tượng. Các biểu tượng cũng có thể được lấy ra khỏi bảng khi cần.</string>
     <string name="keycode_description">Các mã phím cho phép thêm các phím trên bàn phím vào Thanh điều hướng. Khi bạn nhấn, các nút này sẽ mô phỏng phím trên bàn phím được chọn. Trước tiên, bạn phải chọn phím cho nút, sau đó chọn một hình ảnh để hiển thị trên nút.</string>
     <string name="start">Đầu</string>
     <string name="center">Giữa</string>
@@ -81,9 +81,9 @@
     <string name="lte_on">LTE BẬT </string>
     <string name="lte_off">LTE TẮT</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Bật phím cứng</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Tắt phím cứng</string>
+    <string name="quick_settings_hwkeys_label">Phím cứng</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Đã xoá ảnh chụp màn hình</string>
     <!-- Ambient Display Pixel-Like string -->
@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">Chia sẻ kết nối USB đã bật</string>
     <string name="quick_settings_usb_tether_label">Chia sẻ kết nối qua USB</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">Chế độ trò chơi</string>
+    <string name="gaming_mode_tile_toast">Bật chế độ trò chơi</string>
+    <string name="gaming_mode_tile_toast_disabled">Tắt chế độ trò chơi</string>
+    <string name="gaming_mode_dialog_title">Chế độ trò chơi</string>
+    <string name="gaming_mode_dialog_message">Khi chế độ trò chơi được kích hoạt, chế độ hiển thị các tin nhắn, phím cứng sẽ bị ngắt. Tất cả cài đặt sẽ được phục hồi về mặc định khi bạn ngắt chế độ trò chơi.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Bật chế độ trò chơi</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Tắt chế độ trò chơi</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Thông báo nổi sẽ báo lại sau 1 phút.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Thông báo nổi sẽ báo lại sau <xliff:g id="number">%d</xliff:g> phút.</string>
