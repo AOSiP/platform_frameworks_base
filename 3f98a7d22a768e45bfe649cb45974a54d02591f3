@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8872b9af_7fad8953",
+        "filename": "packages/SystemUI/res/values/dimens.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 775,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2019-05-12T17:34:47Z",
+      "side": 1,
+      "message": "might want to set 0 as well",
+      "revId": "3f98a7d22a768e45bfe649cb45974a54d02591f3",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
