@@ -175,6 +175,7 @@ public class Tonal implements ExtractionType {
                 Float.NEGATIVE_INFINITY, Float.POSITIVE_INFINITY);
         float[] s = fit(palette.s, hsl[1], fitIndex, 0.0f, 1.0f);
         float[] l = fit(palette.l, hsl[2], fitIndex, 0.0f, 1.0f);
+        int[] colorPalette = getColorPalette(h, s, l);
 
         if (DEBUG) {
             StringBuilder builder = new StringBuilder("Tonal Palette - index: " + fitIndex +
@@ -211,6 +212,7 @@ public class Tonal implements ExtractionType {
         // Normal colors:
         outColorsNormal.setMainColor(mainColor);
         outColorsNormal.setSecondaryColor(mainColor);
+        outColorsNormal.setColorPalette(colorPalette);
 
         // Dark colors:
         // Stops at 4th color, only lighter if dark text is supported
@@ -224,6 +226,7 @@ public class Tonal implements ExtractionType {
         mainColor = getColorInt(primaryIndex, h, s, l);
         outColorsDark.setMainColor(mainColor);
         outColorsDark.setSecondaryColor(mainColor);
+        outColorsDark.setColorPalette(colorPalette);
 
         // Extra Dark:
         // Stay close to dark colors until dark text is supported
@@ -237,6 +240,7 @@ public class Tonal implements ExtractionType {
         mainColor = getColorInt(primaryIndex, h, s, l);
         outColorsExtraDark.setMainColor(mainColor);
         outColorsExtraDark.setSecondaryColor(mainColor);
+        outColorsExtraDark.setColorPalette(colorPalette);
 
         outColorsNormal.setSupportsDarkText(supportsDarkText);
         outColorsDark.setSupportsDarkText(supportsDarkText);
@@ -248,6 +252,18 @@ public class Tonal implements ExtractionType {
         }
 
         return true;
+    }
+
+    private int[] getColorPalette(float[] h, float[] s, float[] l) {
+        int[] palette = new int[h.length];
+        for (int i = 0; i < palette.length; i++) {
+            palette[i] = getColorInt(i, h, s, l);
+        }
+        return palette;
+    }
+    
+    private int[] getColorPalette(TonalPalette tonalPalette) {
+        return getColorPalette(tonalPalette.h, tonalPalette.s, tonalPalette.l);
     }
 
     private void applyFallback(@Nullable WallpaperColors inWallpaperColors,
@@ -271,9 +287,13 @@ public class Tonal implements ExtractionType {
                 != 0;
         final int color = light ? MAIN_COLOR_LIGHT : MAIN_COLOR_DARK;
 
+        float[] hsl = new float[3];
+        ColorUtils.colorToHSL(color, hsl);
+
         outGradientColors.setMainColor(color);
         outGradientColors.setSecondaryColor(color);
         outGradientColors.setSupportsDarkText(light);
+        outGradientColors.setColorPalette(getColorPalette(findTonalPalette(hsl[0], hsl[1])));
     }
 
     private int getColorInt(int fitIndex, float[] h, float[] s, float[] l) {
