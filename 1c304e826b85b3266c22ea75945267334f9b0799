@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab05793c_ed074618",
+        "filename": "packages/SystemUI/src/com/android/keyguard/clocks/TypographicClock.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000167
+      },
+      "writtenOn": "2019-05-13T15:49:42Z",
+      "side": 1,
+      "message": "Whitespace",
+      "revId": "1c304e826b85b3266c22ea75945267334f9b0799",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c478984_db72040a",
+        "filename": "packages/SystemUI/src/com/android/keyguard/clocks/TypographicClock.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000167
+      },
+      "writtenOn": "2019-05-13T15:49:42Z",
+      "side": 1,
+      "message": "Whitespace",
+      "revId": "1c304e826b85b3266c22ea75945267334f9b0799",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e8b98fb_435f8bd9",
+        "filename": "packages/SystemUI/src/com/android/keyguard/clocks/TypographicClock.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000167
+      },
+      "writtenOn": "2019-05-13T15:49:42Z",
+      "side": 1,
+      "message": "Whitespace",
+      "revId": "1c304e826b85b3266c22ea75945267334f9b0799",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
