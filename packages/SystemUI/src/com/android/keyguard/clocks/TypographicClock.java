@@ -1,5 +1,6 @@
 package com.android.keyguard.clocks;
 
+import android.app.WallpaperManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.res.Resources;
@@ -15,21 +16,25 @@ import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.android.internal.colorextraction.ColorExtractor;
 import com.android.keyguard.R;
+import com.android.systemui.Dependency;
+import com.android.systemui.colorextraction.SysuiColorExtractor;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class TypographicClock extends TextView {
+public class TypographicClock extends TextView implements ColorExtractor.OnColorsChangedListener {
 
-    private int mAccentColor;
+    private int mPrimaryColor;
     private String mDescFormat;
     private final String[] mHours;
     private final String[] mMinutes;
     private final Resources mResources;
     private final Calendar mTime;
     private TimeZone mTimeZone;
+    private SysuiColorExtractor mColorExtractor;
 
     private final BroadcastReceiver mTimeZoneChangedReceiver = new BroadcastReceiver() {
         @Override
@@ -41,7 +46,6 @@ public class TypographicClock extends TextView {
             }
         }
     };
-
     public TypographicClock(Context context) {
         this(context, null);
     }
@@ -53,12 +57,14 @@ public class TypographicClock extends TextView {
     public TypographicClock(Context context, AttributeSet attributeSet, int defStyleAttr) {
         super(context, attributeSet, defStyleAttr);
 
+        mColorExtractor = Dependency.get(SysuiColorExtractor.class);
+        mColorExtractor.addOnColorsChangedListener(this);
         mTime = Calendar.getInstance(TimeZone.getDefault());
         mDescFormat = ((SimpleDateFormat) DateFormat.getTimeFormat(context)).toLocalizedPattern();
         mResources = context.getResources();
         mHours = mResources.getStringArray(R.array.type_clock_hours);
         mMinutes = mResources.getStringArray(R.array.type_clock_minutes);
-        mAccentColor = mResources.getColor(R.color.custom_text_clock_top_color, null);
+        mPrimaryColor.getColors(WallpaperManager.FLAG_LOCK).getMainColor();
     }
 
     public void onTimeChanged() {
@@ -71,9 +77,9 @@ public class TypographicClock extends TextView {
         SpannableString colored = new SpannableString(rawFormat);
         for (Annotation annotation : annotationArr) {
             if ("color".equals(annotation.getValue())) {
-                colored.setSpan(new ForegroundColorSpan(mAccentColor), 
-                        colored.getSpanStart(annotation), 
-                        colored.getSpanEnd(annotation), 
+                colored.setSpan(new ForegroundColorSpan(mPrimaryColor),
+                        colored.getSpanStart(annotation),
+                        colored.getSpanEnd(annotation),
                         Spanned.SPAN_POINT_POINT);
             }
         }
@@ -86,8 +92,13 @@ public class TypographicClock extends TextView {
     }
 
     public void setClockColor(int i) {
-        mAccentColor = i;
+        mPrimaryColor = i;
         onTimeChanged();
+    }
+
+    @Override
+    public void onColorsChanged(ColorExtractor extractor, int which) {
+        setClockColor(extractor.getColors(WallpaperManager.FLAG_LOCK).getMainColor());
     }
 
     @Override
@@ -114,7 +125,6 @@ public class TypographicClock extends TextView {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        
         getContext().unregisterReceiver(mTimeZoneChangedReceiver);
     }
 }
