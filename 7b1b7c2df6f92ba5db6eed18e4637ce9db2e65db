@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0a70be5_c1e33e8f",
+        "filename": "packages/SystemUI/src/com/android/keyguard/clocks/TypographicClock.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000167
+      },
+      "writtenOn": "2019-05-13T15:25:21Z",
+      "side": 1,
+      "message": "Whitespace",
+      "revId": "7b1b7c2df6f92ba5db6eed18e4637ce9db2e65db",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
