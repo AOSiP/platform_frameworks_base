@@ -201,6 +201,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 
             mBatteryMeterView.isQsbHeader();
             mBatteryMeterView.setShowEstimate(true);
+            mBatteryMeterView.setOnClickListener(this);
         }
 
         mClockView = findViewById(R.id.clock);
