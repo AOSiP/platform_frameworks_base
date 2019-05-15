@@ -481,12 +481,14 @@ public class KeyguardStatusView extends GridLayout implements
     }
 
     private void updateSettings() {
-        final ContentResolver resolver = getContext().getContentResolver();
-
-        mShowClock = Settings.System.getIntForUser(resolver,
+        mShowClock = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.LOCKSCREEN_CLOCK, 1, UserHandle.USER_CURRENT) == 1;
-        mClockSelection = Settings.System.getIntForUser(resolver,
-                Settings.System.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT);
+
+        setStyle();
+    }
+
+    public void setClockSelection(int selection) {
+        mClockSelection = selection;
 
         setStyle();
     }

@@ -5743,6 +5743,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.PULSE_APPS_BLACKLIST),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_CLOCK_SELECTION),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5780,6 +5783,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.PULSE_APPS_BLACKLIST))) {
                 setPulseBlacklist();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_CLOCK_SELECTION))) {
+                setClockSelection();
             }
         }
 
@@ -5792,6 +5798,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             updateLockscreenFilter();
             setOldMobileType();
             setPulseBlacklist();
+            setClockSelection();
         }
     }
 
@@ -5856,6 +5863,12 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         String blacklist = Settings.System.getStringForUser(mContext.getContentResolver(),
                 Settings.System.PULSE_APPS_BLACKLIST, UserHandle.USER_CURRENT);
         getMediaManager().setPulseBlacklist(blacklist);
+    }
+
+    private void setClockSelection() {
+        int selection = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT);
+        mNotificationPanel.setClockSelection(selection);
     }
 
     private final BroadcastReceiver mBannerActionBroadcastReceiver = new BroadcastReceiver() {
