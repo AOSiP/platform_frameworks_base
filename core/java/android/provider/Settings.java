@@ -4860,6 +4860,11 @@ public final class Settings {
         public static final String POCKET_JUDGE = "pocket_judge";
 
         /**
+         * @hide
+         */
+        public static final String SHOW_BATTERY_ESTIMATE = "show_battery_estimate";
+
+        /**
          * 0 - fullscreen
          * 1 - partial
          * @hide
