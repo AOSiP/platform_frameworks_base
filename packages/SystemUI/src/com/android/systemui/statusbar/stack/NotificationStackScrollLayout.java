@@ -422,6 +422,8 @@ public class NotificationStackScrollLayout extends ViewGroup
 
     private Interpolator mDarkXInterpolator = Interpolators.FAST_OUT_SLOW_IN;
 
+    private int mDarkLeft;
+
     public NotificationStackScrollLayout(Context context) {
         this(context, null);
     }
@@ -532,6 +534,14 @@ public class NotificationStackScrollLayout extends ViewGroup
         }
     }
 
+    public void setClockSelection(int selection) {
+        if (selection == 9) {
+            mDarkLeft = getResources().getDimensionPixelSize(R.dimen.custom_clock_left_padding);
+        } else {
+            mDarkLeft = 0;
+        }
+    }
+
     public void setCleanLayout(int reason) {
         mForcedMediaDoze =
                 reason == DozeLog.PULSE_REASON_FORCED_MEDIA_NOTIFICATION;
@@ -548,7 +558,7 @@ public class NotificationStackScrollLayout extends ViewGroup
             separatorThickness = mSeparatorThickness;
             separatorWidth = mSeparatorWidth;
         }
-        final int darkLeft = getWidth() / 2 - separatorWidth / 2;
+        final int darkLeft = mDarkLeft != 0 ? mDarkLeft : getWidth() / 2 - separatorWidth / 2;
         final int darkRight = darkLeft + separatorWidth;
         final int darkTop = (int) (mRegularTopPadding + separatorThickness / 2f);
         final int darkBottom = darkTop + separatorThickness;

@@ -2909,6 +2909,11 @@ public class NotificationPanelView extends PanelView implements
         mKeyguardStatusView.setPulsing(pulsing, animatePulse);
     }
 
+    public void setClockSelection(int selection) {
+        mNotificationStackScroller.setClockSelection(selection);
+        mKeyguardStatusView.setClockSelection(selection);
+    }
+
     public void setCleanLayout(int reason) {
         mKeyguardStatusView.setCleanLayout(reason);
         mNotificationStackScroller.setCleanLayout(reason);
