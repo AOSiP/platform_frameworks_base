@@ -2921,7 +2921,6 @@ public class NotificationPanelView extends PanelView implements
     }
 
     public void dozeTimeTick() {
-        mKeyguardStatusBar.dozeTimeTick();
         mKeyguardStatusView.dozeTimeTick();
         mKeyguardBottomArea.dozeTimeTick();
         if (mInterpolatedDarkAmount > 0) {
