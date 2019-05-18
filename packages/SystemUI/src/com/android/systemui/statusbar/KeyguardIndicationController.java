@@ -310,7 +310,9 @@ public class KeyguardIndicationController {
                         mTextView.switchIndication(indication);
                     }
                 } else {
-                    mTextView.switchIndication(null);
+                    String percentage = NumberFormat.getPercentInstance()
+                            .format(mBatteryLevel / 100f);
+                    mTextView.switchIndication(percentage);
                 }
                 return;
             }
