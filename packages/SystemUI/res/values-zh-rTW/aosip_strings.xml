@@ -186,6 +186,8 @@
     <string name="quick_settings_theme_tile_color_user_five">錢</string>
     <string name="quick_settings_theme_tile_color_user_six">桑迪</string>
     <string name="quick_settings_theme_tile_color_user_seven">公羊</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
     <string name="theme_info_title">這是什麼？</string>
     <string name="theme_info_message">這個主題圖塊雖獨特但易於使用，它允許使用者修改系統的強調色或是主題。\n\n若要變更強調色與主題，只需簡單的長按圖塊，並且再次按下即可從所提供的選項中選擇。</string>
     <!-- Screenrecord Notification Ticker -->
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">顯示 4G 而非 LTE 圖示</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">No title</string>
 </resources>

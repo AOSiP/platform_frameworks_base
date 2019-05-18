@@ -186,6 +186,8 @@
     <string name="quick_settings_theme_tile_color_user_five">머니</string>
     <string name="quick_settings_theme_tile_color_user_six">모래색</string>
     <string name="quick_settings_theme_tile_color_user_seven">람스</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q 그린</string>
     <string name="theme_info_title">이게 뭐죠?</string>
     <string name="theme_info_message">테마 타일은 사용자가 시스템 강조색 또는 스타일을 변경할 수 있는 독특하지만 사용하기 쉬운 타일입니다.\n\n 강조색과 스타일을 변경하려면 타일을 길게 누른 후 다시 눌러 제공되는 옵션 중에서 선택하십시오.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">LTE 대신 4G 표시</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">볼륨 패널</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">제목 없음</string>
 </resources>

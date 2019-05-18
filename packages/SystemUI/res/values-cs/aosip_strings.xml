@@ -186,6 +186,8 @@
     <string name="quick_settings_theme_tile_color_user_five">Money</string>
     <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
     <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Zelená - Q</string>
     <string name="theme_info_title">Co je to?</string>
     <string name="theme_info_message">Dlaždice motivů je jedinečná a snadno použitelná dlaždice, která uživateli umožňuje měnit odstín nebo motiv stystému.\n\nChcete-li provést změnu odstínu a motivu, jednoduše stiskněte dlouze dlaždici a poté ji stiskněte znovu pro výběr nabízených možností.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">Zobrazit 4G místo LTE</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Panel hlasitosti</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">Bez názvu</string>
 </resources>

@@ -186,6 +186,8 @@
     <string name="quick_settings_theme_tile_color_user_five">Dinheiro</string>
     <string name="quick_settings_theme_tile_color_user_six">Arenoso</string>
     <string name="quick_settings_theme_tile_color_user_seven">Carneiros</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
     <string name="theme_info_title">O que é isso?</string>
     <string name="theme_info_message">O atalho Tema é um atalho único mas fácil de usar que permite ao usuário alterar o estilo do sistema.\n\nPara trocar entre diferentes estilos, toque e segure no atalho e então toque novamente para selecionar uma das opções oferecidas.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">Mostrar 4G em vez de LTE</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Painel de volume</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">No title</string>
 </resources>

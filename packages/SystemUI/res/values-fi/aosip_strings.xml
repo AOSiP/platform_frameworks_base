@@ -186,6 +186,8 @@
     <string name="quick_settings_theme_tile_color_user_five">Money</string>
     <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
     <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
     <string name="theme_info_title">What is this?</string>
     <string name="theme_info_message">The Themes tile is a unique but easy to use tile that allows the user to change the system accent or theme.\n\nTo change between accents and themes, simply long press on the tile and then press again to select from the options offered.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">Show 4G instead of LTE</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">No title</string>
 </resources>

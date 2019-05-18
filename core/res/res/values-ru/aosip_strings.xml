@@ -28,7 +28,7 @@
     <string name="app_ops_access_location">доступ к местоположению</string>
     <string name="app_ops_access_notifications">чтение уведомлений</string>
     <string name="app_ops_activate_vpn">активация VPN</string>
-    <string name="app_ops_add_voicemail">добавление сообщения голосовой почты</string>
+    <string name="app_ops_add_voicemail">добавление голосового сообщения</string>
     <string name="app_ops_app_start_foreground">запуск приложений с мгновенным запуском</string>
     <string name="app_ops_assist_screenshot">сделать снимок экрана</string>
     <string name="app_ops_assist_structure">использовать ассистента</string>
@@ -42,7 +42,7 @@
     <string name="app_ops_delete_mms">удаление MMS-сообщений</string>
     <string name="app_ops_delete_sms">удаление SMS-сообщений</string>
     <string name="app_ops_draw_on_top">отображение элементов интерфейса поверх других окон</string>
-    <string name="app_ops_get_accounts">информация об аккаунтах</string>
+    <string name="app_ops_get_accounts">информация об учетных записях</string>
     <string name="app_ops_get_usage_stats">получение статистики использования</string>
     <string name="app_ops_accept_handover">передача вызова из другого приложения</string>
     <string name="app_ops_install_packages">установка приложений</string>
@@ -105,11 +105,11 @@
     <string name="app_ops_write_mms">создание MMS-сообщения</string>
     <string name="app_ops_write_sms">создание SMS-сообщения</string>
     <!-- Privacy Guard -->
-    <string name="permlab_changePrivacyGuardState">включение или выключение защищённого режима</string>
-    <string name="permdesc_changePrivacyGuardState">Приложение сможет изменять состояние Защищённого Режима вдля других приложений. Когда приложение запущено в защищенном режиме, оно не получит доступа к персональным данным, таким как контакты, сообщения или журнал звонков.</string>
-    <string name="privacy_guard_notification">Защищённый режим включён</string>
-    <string name="privacy_guard_notification_detail"><xliff:g id="app"> %1$s</xliff:g> не сможет получить доступ к личной информации</string>
-    <string name="privacy_guard_dialog_title">Защищённый режим</string>
+    <string name="permlab_changePrivacyGuardState">включение или выключение защищенного режима</string>
+    <string name="permdesc_changePrivacyGuardState">Приложение сможет изменять состояние защищенного режима для других приложений. Когда приложение запущено в защищенном режиме, оно не получит доступа к персональным данным, таким как контакты, сообщения или журнал звонков.</string>
+    <string name="privacy_guard_notification">Защищенный режим включен</string>
+    <string name="privacy_guard_notification_detail"><xliff:g id="app">%1$s</xliff:g> не сможет получить доступ к личной информации</string>
+    <string name="privacy_guard_dialog_title">Защищенный режим</string>
     <string name="privacy_guard_dialog_summary"><xliff:g id="app">%1$s</xliff:g> запрашивает <xliff:g id="op">%2$s</xliff:g>.</string>
     <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
     <string name="permission_remember_choice">Запомнить мой выбор</string>

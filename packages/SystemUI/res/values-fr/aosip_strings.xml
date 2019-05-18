@@ -186,6 +186,8 @@
     <string name="quick_settings_theme_tile_color_user_five">Argent</string>
     <string name="quick_settings_theme_tile_color_user_six">Sable</string>
     <string name="quick_settings_theme_tile_color_user_seven">Bélier</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q Vert</string>
     <string name="theme_info_title">Qu\'est-ce que c\'est ?</string>
     <string name="theme_info_message">La tuile thème permet de changer la couleur d\'accentuation ou le style du thème système.\n\nPour basculer entre ces deux modes, effectuer un appui prolongé sur la tuile, puis faire défiler les options disponibles par appui simple.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">Afficher 4G au lieu de LTE</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Panneau de volume</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">Sans titre</string>
 </resources>

@@ -55,7 +55,7 @@
     <string name="app_ops_modify_clipboard">クリップボードの変更</string>
     <string name="app_ops_modify_contacts">連絡先の更新</string>
     <string name="app_ops_modify_settings">システム設定の更新</string>
-    <string name="app_ops_mute_unmute_microphone">マイクのミュート/ミュート解除</string>
+    <string name="app_ops_mute_unmute_microphone">マイクの切り替え</string>
     <string name="app_ops_phone_calls">電話に応答</string>
     <string name="app_ops_picture_in_picture">Picture in Picture の使用</string>
     <string name="app_ops_play_audio">音声の再生</string>

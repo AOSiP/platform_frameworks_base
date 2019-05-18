@@ -27,9 +27,9 @@
     <string name="app_ops_access_camera">truy cập máy ảnh</string>
     <string name="app_ops_access_location">truy cập vị trí của bạn</string>
     <string name="app_ops_access_notifications">đọc thông báo của bạn</string>
-    <string name="app_ops_activate_vpn">kích hoạt một mạng riêng ảo</string>
-    <string name="app_ops_add_voicemail">thêm một thư thoại</string>
-    <string name="app_ops_app_start_foreground">bắt đầu ứng dụng tức thì chạy ngầm</string>
+    <string name="app_ops_activate_vpn">kích hoạt VPN</string>
+    <string name="app_ops_add_voicemail">thêm thư thoại</string>
+    <string name="app_ops_app_start_foreground">bắt đầu ứng dụng trên nền</string>
     <string name="app_ops_assist_screenshot">chụp ảnh màn hình</string>
     <string name="app_ops_assist_structure">sử dụng cấu trúc hổ trợ</string>
     <string name="app_ops_audio_accessibility_volume">âm thanh truy cập tùy chỉnh</string>
@@ -70,49 +70,49 @@
     <string name="app_ops_read_mms">đọc tin nhắn đa phương tiện của bạn</string>
     <string name="app_ops_read_phone_numbers">đọc số điện thoại</string>
     <string name="app_ops_read_phone_state">truy cập trạng thái điện thoại</string>
-    <string name="app_ops_read_sms">đọc tin nhắn</string>
-    <string name="app_ops_receive_sms">nhận tin nhắn</string>
+    <string name="app_ops_read_sms">đọc tin nhắn SMS</string>
+    <string name="app_ops_receive_sms">nhận tin nhắn SMS</string>
     <string name="app_ops_receive_emergency_broadcast">nhận tin nhắn thu phát khẩn cấp</string>
     <string name="app_ops_record_audio">ghi âm</string>
-    <string name="app_ops_request_delete_packages">request delete packages</string>
-    <string name="app_ops_run_in_background">run in background</string>
-    <string name="app_ops_run_any_in_background">run any in background</string>
-    <string name="app_ops_scan_wifi">scan Wi-Fi networks</string>
-    <string name="app_ops_send_mms">send an MMS message</string>
-    <string name="app_ops_send_sms">send an SMS message</string>
-    <string name="app_ops_start_at_bootup">start at power up</string>
-    <string name="app_ops_start_foreground">start foreground</string>
-    <string name="app_ops_toast_window">display toast messages</string>
-    <string name="app_ops_toggle_bluetooth">toggle Bluetooth</string>
-    <string name="app_ops_toggle_mobile_data">toggle cellular data</string>
-    <string name="app_ops_toggle_nfc">toggle NFC</string>
-    <string name="app_ops_toggle_wifi">toggle Wi-Fi</string>
-    <string name="app_ops_turn_on_screen">turn the screen on</string>
-    <string name="app_ops_use_alarm_volume">control alarm volume</string>
-    <string name="app_ops_use_audio_focus">control the audio focus</string>
-    <string name="app_ops_use_bluetooth_volume">control the Bluetooth volume</string>
-    <string name="app_ops_use_body_sensors">use body sensors</string>
-    <string name="app_ops_use_fingerprint">use fingerprint</string>
-    <string name="app_ops_use_master_volume">control the master volume</string>
-    <string name="app_ops_use_media_buttons">use the media buttons</string>
-    <string name="app_ops_use_media_volume">control the media volume</string>
-    <string name="app_ops_use_notification_volume">control the notification volume</string>
-    <string name="app_ops_use_ring_volume">control the ringtone volume</string>
-    <string name="app_ops_use_vibrate">use haptic feedback</string>
-    <string name="app_ops_use_voice_volume">control the voice call volume</string>
-    <string name="app_ops_wifi_change">change Wi-Fi state</string>
-    <string name="app_ops_write_external_storage">write external storage</string>
-    <string name="app_ops_write_mms">write an MMS message</string>
-    <string name="app_ops_write_sms">write an SMS message</string>
+    <string name="app_ops_request_delete_packages">yêu cầu xoá gói cài đặt</string>
+    <string name="app_ops_run_in_background">chạy trong nền</string>
+    <string name="app_ops_run_any_in_background">chạy các tác vụ nền</string>
+    <string name="app_ops_scan_wifi">quét Wi-Fi</string>
+    <string name="app_ops_send_mms">gửi tin nhắn MMS</string>
+    <string name="app_ops_send_sms">gửi tin nhắn SMS</string>
+    <string name="app_ops_start_at_bootup">tự chạy khi khởi động</string>
+    <string name="app_ops_start_foreground">chạy trên nền</string>
+    <string name="app_ops_toast_window">hiển thị thông báo nổi</string>
+    <string name="app_ops_toggle_bluetooth">bật/tắt Bluetooth</string>
+    <string name="app_ops_toggle_mobile_data">bật/tắt dữ liệu di động</string>
+    <string name="app_ops_toggle_nfc">bật/tắt NFC</string>
+    <string name="app_ops_toggle_wifi">bật/tắt Wi-Fi</string>
+    <string name="app_ops_turn_on_screen">bật sáng màn hình</string>
+    <string name="app_ops_use_alarm_volume">điều chỉnh âm lượng báo thức</string>
+    <string name="app_ops_use_audio_focus">điều chỉnh trọng tâm âm thanh</string>
+    <string name="app_ops_use_bluetooth_volume">điều chỉnh âm lượng Bluetooth</string>
+    <string name="app_ops_use_body_sensors">sử dụng cảm biến cơ thể</string>
+    <string name="app_ops_use_fingerprint">sử dụng vân tay</string>
+    <string name="app_ops_use_master_volume">điều chỉnh âm lượng chung</string>
+    <string name="app_ops_use_media_buttons">sử dụng nút đa phương tiện</string>
+    <string name="app_ops_use_media_volume">điều chỉnh âm lượng phương tiện</string>
+    <string name="app_ops_use_notification_volume">điều chỉnh âm lượng thông báo</string>
+    <string name="app_ops_use_ring_volume">điều chỉnh âm lượng chuông</string>
+    <string name="app_ops_use_vibrate">phản hồi xúc giác</string>
+    <string name="app_ops_use_voice_volume">điều chỉnh âm lượng cuộc gọi</string>
+    <string name="app_ops_wifi_change">thay đổi trạng thái Wi-Fi</string>
+    <string name="app_ops_write_external_storage">ghi vào bộ nhớ ngoài</string>
+    <string name="app_ops_write_mms">viết tin nhắn MMS</string>
+    <string name="app_ops_write_sms">viết tin nhắn SMS</string>
     <!-- Privacy Guard -->
-    <string name="permlab_changePrivacyGuardState">enable or disable Privacy Guard</string>
-    <string name="permdesc_changePrivacyGuardState">Allows the app to change whether another app runs with Privacy Guard. When an app is running with Privacy Guard, it will not have access to personal data such as contacts, call logs, or messages.</string>
-    <string name="privacy_guard_notification">Privacy Guard active</string>
-    <string name="privacy_guard_notification_detail"><xliff:g id="app">%1$s</xliff:g> will not be able to access personal data</string>
-    <string name="privacy_guard_dialog_title">Privacy Guard</string>
-    <string name="privacy_guard_dialog_summary"><xliff:g id="app">%1$s</xliff:g> would like to <xliff:g id="op">%2$s</xliff:g>.</string>
+    <string name="permlab_changePrivacyGuardState">bật/tắt Bảo vệ Quyền riêng tư</string>
+    <string name="permdesc_changePrivacyGuardState">Cho phép ứng dụng thay đổi cách các ứng dụng khác hoạt động với tính năng Bảo vệ Quyền riêng tư. Khi một ứng dụng đang chạy với Bảo vệ Quyền riêng tư, nó sẽ không thể truy cập vào dữ liệu cá nhân của bạn như danh bạ, nhật kí cuộc gọi, hay tin nhắn.</string>
+    <string name="privacy_guard_notification">Bảo vệ Quyền riêng tư đang hoạt động</string>
+    <string name="privacy_guard_notification_detail"><xliff:g id="app">%1$s</xliff:g> sẽ không thể truy cập vào dữ liệu cá nhân của bạn</string>
+    <string name="privacy_guard_dialog_title">Bảo vệ Quyền riêng tư</string>
+    <string name="privacy_guard_dialog_summary"><xliff:g id="app">%1$s</xliff:g> muốn <xliff:g id="op">%2$s</xliff:g>.</string>
     <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
-    <string name="permission_remember_choice">Remember my choice</string>
+    <string name="permission_remember_choice">Nhớ lựa chọn của tôi</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permlab_toggleNavigationEditor">chỉnh sửa điều hướng</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -128,7 +128,7 @@
     <!-- ADB notification message-->
     <string name="adb_active_generic_notification_message">Chạm để vô hiệu hoá gỡ lỗi.</string>
     <!-- Pocket Lock -->
-    <string name="pocket_lock_message_long_press">Long press power button to interact</string>
+    <string name="pocket_lock_message_long_press">Nhấn giữ phím nguồn để tương tác</string>
     <!-- Defines the sysfs attribute path used by pocket bridge
         to communicate pocket state to the pocket judge kernel driver. -->
     <string name="config_pocketBridgeSysfsInpocket"></string>

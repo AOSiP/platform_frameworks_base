@@ -186,6 +186,8 @@
     <string name="quick_settings_theme_tile_color_user_five">Dinheiro</string>
     <string name="quick_settings_theme_tile_color_user_six">Arenoso</string>
     <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
     <string name="theme_info_title">O que é isto?</string>
     <string name="theme_info_message">O mosaico dos temas é um mosaico original mas também fácil de usar que permite ao utilizador alterar o tema ou a cor de realce.\n\nPara mudar entre temas ou cores de realce, basta uma pressão longa no mosaico e um novo toque para seleccionar entre as opções mostradas.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">Mostrar 4G em vez de LTE</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Painel de volume</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">No title</string>
 </resources>

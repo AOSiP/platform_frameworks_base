@@ -186,6 +186,8 @@
     <string name="quick_settings_theme_tile_color_user_five">マネー</string>
     <string name="quick_settings_theme_tile_color_user_six">砂</string>
     <string name="quick_settings_theme_tile_color_user_seven">ラム肉</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q グリーン</string>
     <string name="theme_info_title">これは何ですか?</string>
     <string name="theme_info_message">テーマタイルはシステムアクセントやテーマをユーザが簡単に変更できるようにします。\n\nアクセントとテーマを切り替えるには、タイルを長押しした後再度タップして、表示されたオプションから選択するだけです。</string>
     <!-- Screenrecord Notification Ticker -->
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">LTE の代わりに 4G を表示</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">音量パネル</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">無題</string>
 </resources>

@@ -186,6 +186,8 @@
     <string name="quick_settings_theme_tile_color_user_five">Pieniądze</string>
     <string name="quick_settings_theme_tile_color_user_six">Piaszczysty</string>
     <string name="quick_settings_theme_tile_color_user_seven">Barany</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
     <string name="theme_info_title">Co to jest?</string>
     <string name="theme_info_message">Kafelek \"Motywy\" jest unikalny, ale łatwy w użyciu. Pozwala on na zmianę koloru akcentu lub stylu systemu.\n\nAby przełączyć się między kolorem akcentu i stylem, przytrzymaj kafelek, po czym naciśnij go, aby wybrać jedną z proponowanych opcji.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">Pokaż 4G zamiast LTE</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Panel głośności</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">No title</string>
 </resources>

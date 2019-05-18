@@ -17,9 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- AOD QS tile -->
-    <string name="quick_settings_aod_label">Luôn luôn bật màn hình</string>
+    <string name="quick_settings_aod_label">Màn hình luôn bật</string>
     <!-- QS Colums & rows -->
-    <string name="qs_menu_item_columns">Số cột màn hình đứng</string>
+    <string name="qs_menu_item_columns">Số cột màn hình dọc</string>
     <string name="qs_menu_item_columns_landscape">Số cột màn hình ngang</string>
     <string name="qs_menu_item_columns_three">3</string>
     <string name="qs_menu_item_columns_four">4</string>
@@ -30,10 +30,10 @@
     <string name="qs_menu_item_columns_nine">9</string>
     <string name="qs_menu_item_reset">Đặt lại</string>
     <string name="qs_menu_item_titles">Ẩn nhãn</string>
-    <string name="qs_menu_item_qs_columns">Số cột thanh thu gọn</string>
+    <string name="qs_menu_item_qs_columns">Số ô thu nhỏ</string>
     <string name="qs_menu_item_columns_auto">Tự động</string>
     <string name="qs_menu_item_rows_landscape">Số hàng màn hình ngang</string>
-    <string name="qs_menu_item_rows">Số hàng</string>
+    <string name="qs_menu_item_rows">Số hàng màn hình dọc</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -41,9 +41,9 @@
     <!-- Navbar Tuner -->
     <string name="preview">Xem trước</string>
     <string name="keycode">Mã phím</string>
-    <string name="no_home_title">Không tìm thấy nút Home</string>
-    <string name="no_home_message">Nút Home được yêu cầu bật để điều hướng thiết bị này. Làm ơn thêm vào nút Home trước khi lưu.</string>
-    <string name="clipboard_description">Bảng cho phép kéo thả các biểu tượng. Các biểu tượng cũng có thể được lấy ra khỏi bảng khi cần.</string>
+    <string name="no_home_title">Không tìm thấy phím Trang chính</string>
+    <string name="no_home_message">Thiết bị này cần có phím Trang chính để điều hướng. Hãy thêm phím Trang chính trước khi lưu.</string>
+    <string name="clipboard_description">Bảng nhớ tạm cho phép các mục được kéo thả trực tiếp vào bảng tạm. Các mục cũng có thể được lấy ra khỏi bảng nhớ tạm khi cần thiết.</string>
     <string name="keycode_description">Các mã phím cho phép thêm các phím trên bàn phím vào Thanh điều hướng. Khi bạn nhấn, các nút này sẽ mô phỏng phím trên bàn phím được chọn. Trước tiên, bạn phải chọn phím cho nút, sau đó chọn một hình ảnh để hiển thị trên nút.</string>
     <string name="start">Đầu</string>
     <string name="center">Giữa</string>
@@ -62,7 +62,7 @@
     <string name="menu_ime_always_show">Menu / Bộ chọn Bàn phím (luôn hiển thị)</string>
     <string name="search">Tìm kiếm</string>
     <!-- SysUI Tuner -->
-    <string name="statusbar_icons_blacklist">Biểu hiện thanh trạng thái</string>
+    <string name="statusbar_icons_blacklist">Biểu tượng thanh trạng thái</string>
     <string name="navbar_tuner_activity">Nút thanh điều hướng</string>
     <string name="lockscreen_tuner_activity">Phím tắt màn hình khoá</string>
     <string name="powernotif_tuner_activity">Thông báo nguồn</string>
@@ -71,15 +71,15 @@
     <string name="tuner_show_info_header_title">Hiển thị thông tin trên tiêu đề</string>
     <string name="tuner_show_secure_title">Hiển thị cảnh báo bảo mật</string>
     <!-- ADB network tile -->
-    <string name="quick_settings_adb_network">Mạng ADB</string>
-    <string name="quick_settings_network_adb_enabled_label">ADB qua mạng</string>
-    <string name="quick_settings_network_adb_disabled_label">ADB qua mạng</string>
+    <string name="quick_settings_adb_network">Kết nối ADB</string>
+    <string name="quick_settings_network_adb_enabled_label">Kết nối Adb</string>
+    <string name="quick_settings_network_adb_disabled_label">Kết nối Adb</string>
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lối tắt màn hình khoá</string>
     <!-- LTE QS Tile -->
-    <string name="qs_lte_label">LTE</string>
-    <string name="lte_on">LTE BẬT </string>
-    <string name="lte_off">LTE TẮT</string>
+    <string name="qs_lte_label">Chế độ 3G/4G</string>
+    <string name="lte_on">Bật chế độ 3G/4G </string>
+    <string name="lte_off">Tắt chế độ 3G/4G</string>
     <!-- HW Keys Tile -->
     <string name="accessibility_quick_settings_hwkeys_on">Bật phím cứng</string>
     <string name="accessibility_quick_settings_hwkeys_off">Tắt phím cứng</string>
@@ -87,7 +87,7 @@
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Đã xoá ảnh chụp màn hình</string>
     <!-- Ambient Display Pixel-Like string -->
-    <string name="ambientmusic_songinfo">%s bới %s</string>
+    <string name="ambientmusic_songinfo">%s bởi %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Âm thanh</string>
     <string name="quick_settings_sound_ring">Chuông</string>
@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">Chia sẻ kết nối USB đã bật</string>
     <string name="quick_settings_usb_tether_label">Chia sẻ kết nối qua USB</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Chế độ trò chơi</string>
-    <string name="gaming_mode_tile_toast">Bật chế độ trò chơi</string>
-    <string name="gaming_mode_tile_toast_disabled">Tắt chế độ trò chơi</string>
-    <string name="gaming_mode_dialog_title">Chế độ trò chơi</string>
-    <string name="gaming_mode_dialog_message">Khi chế độ trò chơi được kích hoạt, chế độ hiển thị các tin nhắn, phím cứng sẽ bị ngắt. Tất cả cài đặt sẽ được phục hồi về mặc định khi bạn ngắt chế độ trò chơi.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Bật chế độ trò chơi</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Tắt chế độ trò chơi</string>
+    <string name="gaming_mode_tile_title">Chế độ Trò chơi</string>
+    <string name="gaming_mode_tile_toast">Chế độ trò chơi đã bật</string>
+    <string name="gaming_mode_tile_toast_disabled">Chế độ trò chơi đã tắt</string>
+    <string name="gaming_mode_dialog_title">Chế độ Trò chơi</string>
+    <string name="gaming_mode_dialog_message">Khi Chế độ Trò chơi được bật, mọi thông báo nổi sẽ bị ẩn và các phím cứng sẽ bị vô hiệu hoá. Mọi thứ sẽ được đặt lại mặc định khi bạn tắt Chế độ Trò chơi.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Chế độ trò chơi đã bật</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Chế độ trò chơi đã tắt</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Thông báo nổi sẽ báo lại sau 1 phút.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Thông báo nổi sẽ báo lại sau <xliff:g id="number">%d</xliff:g> phút.</string>
@@ -155,7 +155,7 @@
     <string name="system_theme_style_light">Sáng</string>
     <string name="system_theme_style_dark">Tối</string>
     <string name="quick_settings_theme_tile_title">Màu nhấn</string>
-    <string name="quick_settings_theme_tile_accent_detail_title">Chọn màu nhấn</string>
+    <string name="quick_settings_theme_tile_accent_detail_title">Chọn màu chủ đề</string>
     <string name="quick_settings_theme_tile_style_detail_title">Chọn chủ đề</string>
     <string name="quick_settings_theme_tile_color_default">Mặc định</string>
     <string name="quick_settings_theme_tile_color_red">Đỏ</string>
@@ -186,8 +186,10 @@
     <string name="quick_settings_theme_tile_color_user_five">Tiền</string>
     <string name="quick_settings_theme_tile_color_user_six">Cát</string>
     <string name="quick_settings_theme_tile_color_user_seven">Ram</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Xanh Q</string>
     <string name="theme_info_title">Đây là cái gì?</string>
-    <string name="theme_info_message">Chủ đề là một tính năng độc đáo và dễ sử dụng, cho phép người dùng thay đổi màu nhấn hoặc chủ đề hệ thống.\n\nĐể thay đổi màu nhấn hoặc chủ đề, bạn chỉ cần nhấn giữ trên ô Chủ đề và nhấn lại để chọn một trong các màu nhấn và chủ đề yêu thích.</string>
+    <string name="theme_info_message">Chủ đề là một tính năng độc đáo và dễ sử dụng, cho phép người dùng thay đổi màu chủ đề hoặc chủ đề hệ thống.\n\nĐể thay đổi màu chủ đề hoặc chủ đề hệ thống, bạn chỉ cần nhấn giữ trên ô Chủ đề và nhấn lại để chọn một trong các màu và chủ đề yêu thích.</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">Đang quay phim màn hình</string>
     <string name="screenrecord_notif_final_ticker">Quay phim màn hình thành công</string>
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">Hiển thị 4G thay cho LTE</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Bảng âm lượng</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">Không có tiêu đề</string>
 </resources>

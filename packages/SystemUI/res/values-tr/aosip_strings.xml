@@ -186,6 +186,8 @@
     <string name="quick_settings_theme_tile_color_user_five">Money</string>
     <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
     <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
+    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q Yeşil</string>
     <string name="theme_info_title">Bu nedir?</string>
     <string name="theme_info_message">Temalar karesi, kullanıcının sistem vurgu rengini veya temasını değiştirmesine izin veren, benzersiz fakat kullanımı kolay bir karedir.\n\nVurgu renkleri ve temalar arasında geçiş yapmak için, sadece kare üzerine uzun basın ve ardından sunulan seçeneklerden seçim yapmak için tekrar basın.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -216,4 +218,6 @@
     <string name="show_fourg_title">LTE yerine 4G göster</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Ses paneli</string>
+    <!-- AOD media indication -->
+    <string name="music_controls_no_title">Başlık yok</string>
 </resources>
