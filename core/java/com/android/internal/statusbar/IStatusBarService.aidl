@@ -118,6 +118,7 @@ interface IStatusBarService
      * AOSiP
      */
     void toggleCameraFlash();
+    void toggleCameraFlashState(boolean enable);
     void toggleRecentApps();
     void toggleSplitScreen();
     void preloadRecentApps();

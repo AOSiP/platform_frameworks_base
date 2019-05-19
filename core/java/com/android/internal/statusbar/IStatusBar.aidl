@@ -180,4 +180,6 @@ oneway interface IStatusBar
      * AOSiP
      */
     void toggleCameraFlash();
+    void toggleCameraFlashState(boolean enable);
+
 }
