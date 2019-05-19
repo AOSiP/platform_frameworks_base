@@ -2588,6 +2588,19 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         }
     }
 
+    @Override
+    public void toggleCameraFlashState(boolean enable) {
+        if (DEBUG) {
+            Log.d(TAG, "Disabling camera flashlight");
+        }
+        if (mFlashlightController != null) {
+            mFlashlightController.initFlashLight();
+            if (mFlashlightController.hasFlashlight() && mFlashlightController.isAvailable()) {
+                mFlashlightController.setFlashlight(enable);
+            }
+        }
+    }
+
     boolean panelsEnabled() {
         return (mDisabled1 & StatusBarManager.DISABLE_EXPAND) == 0
                 && (mDisabled2 & StatusBarManager.DISABLE2_NOTIFICATION_SHADE) == 0

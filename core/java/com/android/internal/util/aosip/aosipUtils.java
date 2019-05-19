@@ -212,6 +212,16 @@ public class aosipUtils {
             }
         }
     }
+    public static void toggleCameraFlashState(boolean enable) {
+        IStatusBarService service = getStatusBarService();
+        if (service != null) {
+            try {
+                service.toggleCameraFlashState(enable);
+            } catch (RemoteException e) {
+                // do nothing.s
+            }
+        }
+    }
     // Cycle ringer modes
     public static void toggleRingerModes (Context context) {
         AudioManager am = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);

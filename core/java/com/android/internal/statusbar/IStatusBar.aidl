@@ -158,6 +158,7 @@ oneway interface IStatusBar
      * AOSiP
      */
     void toggleCameraFlash();
+    void toggleCameraFlashState(boolean enable);
 
     // Start SmartNav API
     void screenPinningStateChanged(boolean enabled);
