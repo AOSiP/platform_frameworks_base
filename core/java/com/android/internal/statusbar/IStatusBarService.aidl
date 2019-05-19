@@ -108,6 +108,7 @@ interface IStatusBarService
      * AOSiP
      */
     void toggleCameraFlash();
+    void toggleCameraFlashState(boolean enable);
     void restartUI();
 
     // Start SmartNav methods
