@@ -17,6 +17,7 @@ package com.android.systemui;
 
 import static android.app.StatusBarManager.DISABLE2_SYSTEM_ICONS;
 import static android.app.StatusBarManager.DISABLE_NONE;
+import static android.provider.Settings.System.SHOW_BATTERY_ESTIMATE;
 import static android.provider.Settings.System.SHOW_BATTERY_PERCENT;
 import static android.provider.Settings.Secure.STATUS_BAR_BATTERY_STYLE;
 
@@ -234,6 +235,9 @@ public class BatteryMeterView extends LinearLayout implements
         getContext().getContentResolver().registerContentObserver(
                 Settings.System.getUriFor(SHOW_BATTERY_PERCENT), false, mSettingObserver, mUser);
         updateShowPercent();
+        getContext().getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(SHOW_BATTERY_ESTIMATE), false, mSettingObserver, mUser);
+        updatePercentText();
         Dependency.get(TunerService.class).addTunable(this, STATUS_BAR_BATTERY_STYLE);
         Dependency.get(ConfigurationController.class).addCallback(this);
         mUserTracker.startTracking();
@@ -307,7 +311,29 @@ public class BatteryMeterView extends LinearLayout implements
 
     private void onEstimateFetchComplete(String estimate) {
         if (estimate != null) {
-            mBatteryPercentView.setText(estimate);
+            int percentageStyle = Settings.System.getIntForUser(getContext().getContentResolver(),
+                    SHOW_BATTERY_PERCENT, 0, mUser);
+            if (getMeterStyle() == BatteryMeterDrawableBase.BATTERY_STYLE_TEXT) {
+                if (Settings.System.getInt(mContext.getContentResolver(),
+                        Settings.System.SHOW_BATTERY_ESTIMATE, 0) != 0) {
+                    mBatteryPercentView.setText(NumberFormat.getPercentInstance().format(mLevel / 100f) + " | " + estimate);
+                } else {
+                    setPercentTextAtCurrentLevel();
+                }
+            } else {
+                if (Settings.System.getInt(mContext.getContentResolver(),
+                        Settings.System.SHOW_BATTERY_ESTIMATE, 0) != 0) {
+                    if ( percentageStyle == 1 ) {
+                        mBatteryPercentView.setText(NumberFormat.getPercentInstance().format(mLevel / 100f) + " | " + estimate);
+                    } else if (percentageStyle == 0 ) {
+                        mBatteryPercentView.setText(estimate);
+                    } else {
+                        setPercentTextAtCurrentLevel();
+                    }
+                } else {
+                    setPercentTextAtCurrentLevel();
+                }
+            }
         } else {
             setPercentTextAtCurrentLevel();
         }
@@ -372,6 +398,8 @@ public class BatteryMeterView extends LinearLayout implements
                     getMeterStyle() == BatteryMeterDrawableBase.BATTERY_STYLE_TEXT ? 0 : startPadding,
                     0, 0, 0);
         }
+
+        updatePercentText();
     }
 
     private void createPercentView() {
