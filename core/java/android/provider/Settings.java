@@ -5088,6 +5088,18 @@ public final class Settings {
         public static final String CUSTOM_AMBIENT_POCKETMODE_GESTURE = "custom_ambient_pocketmode_gesture";
 
         /**
+         * Battery Estimate
+         * @hide
+         */
+        public static final String SHOW_BATTERY_ESTIMATE = "show_battery_estimate";
+
+        /**
+         * Battery Estimate Position
+         * @hide
+         */
+        public static final String BATTERY_ESTIMATE_POSITION = "battery_estimate_position";
+
+        /**
          * Whether to enable gaming mode or not
          *
          * @hide
