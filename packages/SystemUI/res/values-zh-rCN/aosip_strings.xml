@@ -187,7 +187,7 @@
     <string name="quick_settings_theme_tile_color_user_six">桑迪</string>
     <string name="quick_settings_theme_tile_color_user_seven">公羊</string>
     <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
+    <string name="quick_settings_theme_tile_color_user_nine">绿色</string>
     <string name="theme_info_title">这是什么?</string>
     <string name="theme_info_message">主题瓷贴虽然独特但却易于使用，它允许用户更改系统强调色或主题。\n\n想要更改强调色和主题，只需简单地长按瓷贴，然后再次按下即可从所提供的选项中进行选择。</string>
     <!-- Screenrecord Notification Ticker -->
@@ -219,5 +219,5 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">音量面板</string>
     <!-- AOD media indication -->
-    <string name="music_controls_no_title">No title</string>
+    <string name="music_controls_no_title">无标题</string>
 </resources>

@@ -187,7 +187,7 @@
     <string name="quick_settings_theme_tile_color_user_six">Arenoso</string>
     <string name="quick_settings_theme_tile_color_user_seven">Aries</string>
     <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q Verde</string>
     <string name="theme_info_title">¿Qué es esto?</string>
     <string name="theme_info_message">El ajuste rápido de Temas es una única pero fácil manera de cambiar el estilo o acento del sistema.\n\nPara cambiar entre acentos o estilos, simplemente mantén presionado en el icono y luego presiona nuevamente para seleccionar entre las opciones ofrecidas.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -219,5 +219,5 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Panel de volumen</string>
     <!-- AOD media indication -->
-    <string name="music_controls_no_title">No title</string>
+    <string name="music_controls_no_title">Sin título</string>
 </resources>

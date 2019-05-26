@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- AOD QS tile -->
-    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_label">Tryb Always-On-Display</string>
     <!-- QS Colums & rows -->
     <string name="qs_menu_item_columns">Kolumny w ułożeniu pionowym</string>
     <string name="qs_menu_item_columns_landscape">Kolumny w ułożeniu poziomym</string>
@@ -81,13 +81,13 @@
     <string name="lte_on">LTE włączone </string>
     <string name="lte_off">LTE wyłączone</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Klawisze sprzętowe włączone</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Klawisze sprzętowe wyłączone</string>
+    <string name="quick_settings_hwkeys_label">Klawisze sprzętowe</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Zrzut ekranu usunięty</string>
     <!-- Ambient Display Pixel-Like string -->
-    <string name="ambientmusic_songinfo">%s by %s</string>
+    <string name="ambientmusic_songinfo">%s przez %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Dźwięk</string>
     <string name="quick_settings_sound_ring">Dzwonek</string>
@@ -111,9 +111,9 @@
     <string name="global_action_restart_hot">Szybki restart</string>
     <string name="global_action_screenshot">Zrzut ekranu</string>
     <!-- Kill button in notification guts -->
-    <string name="force_stop_dlg_title">Force stop?</string>
-    <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
-    <string name="guts_force_close_app">Close App</string>
+    <string name="force_stop_dlg_title">Wymusić zatrzymanie?</string>
+    <string name="force_stop_dlg_text">Jeśli wymusisz zatrzymanie aplikacji, może ona działać nieprawidłowo.</string>
+    <string name="guts_force_close_app">Zamknij aplikację</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Uruchom ponownie</string>
     <string name="quick_settings_reboot_recovery_label">Tryb recovery</string>
@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">Tethering USB włączony</string>
     <string name="quick_settings_usb_tether_label">Tethering przez USB</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">Tryb grania</string>
+    <string name="gaming_mode_tile_toast">Włączono Tryb grania</string>
+    <string name="gaming_mode_tile_toast_disabled">Wyłączono Tryb grania</string>
+    <string name="gaming_mode_dialog_title">Tryb grania</string>
+    <string name="gaming_mode_dialog_message">Kiedy tryb gry jest włączony, powiadomienia heads-up i klawisze sprzętowe zostaną wyłączone. Wszystkie wyłączone ustawienia będą przywrócone do domyślnych po wyłączeniu trybu gry.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Tryb grania włączony</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Tryb grania wyłączony</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> Powiadomienia z podglądem w trybie drzemki znajdują się tam 1 minutę.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> Wyskakująe powiadomienia zostały uśpione na <xliff:g id="number">%d</xliff:g> minut.</string>
@@ -187,7 +187,7 @@
     <string name="quick_settings_theme_tile_color_user_six">Piaszczysty</string>
     <string name="quick_settings_theme_tile_color_user_seven">Barany</string>
     <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Zielony</string>
     <string name="theme_info_title">Co to jest?</string>
     <string name="theme_info_message">Kafelek \"Motywy\" jest unikalny, ale łatwy w użyciu. Pozwala on na zmianę koloru akcentu lub stylu systemu.\n\nAby przełączyć się między kolorem akcentu i stylem, przytrzymaj kafelek, po czym naciśnij go, aby wybrać jedną z proponowanych opcji.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -209,7 +209,7 @@
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenrecord_label">Nagrywanie ekranu</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
+    <string name="keyguard_indication_dash_charging_time">&lt;xliff:g id="percentage"&gt;%2$s&lt;/xliff:g&gt; • Szybkie Ładowanie (&lt;xliff:g id="charging_time_left" Na przykład="4 godziny i 2 minuty"&gt;%s&lt;/xliff:g&gt; do naładowania)</string>
     <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
     <!-- Smart Pixels QS Tile -->
     <string name="quick_settings_smart_pixels">Inteligentne piksele</string>
@@ -219,5 +219,5 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Panel głośności</string>
     <!-- AOD media indication -->
-    <string name="music_controls_no_title">No title</string>
+    <string name="music_controls_no_title">Bez tytułu</string>
 </resources>

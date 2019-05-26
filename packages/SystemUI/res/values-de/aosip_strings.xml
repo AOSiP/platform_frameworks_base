@@ -187,7 +187,7 @@
     <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
     <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
     <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q Grün</string>
     <string name="theme_info_title">Was ist das?</string>
     <string name="theme_info_message">Mit der Design-Kachel können Sie sowohl die Akzent-Farbe als auch den System-Stil ändern.\n\nHalten Sie die Kachel gedrückt bis die Anzeige umspringt, tippen Sie kurz auf die Kachel, um die angezeigte Auswahl zu öffnen.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -219,5 +219,5 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Lautstärkeregler</string>
     <!-- AOD media indication -->
-    <string name="music_controls_no_title">No title</string>
+    <string name="music_controls_no_title">Kein Titel</string>
 </resources>
