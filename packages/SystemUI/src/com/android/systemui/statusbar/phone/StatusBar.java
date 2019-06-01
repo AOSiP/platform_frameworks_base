@@ -67,7 +67,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
-import android.content.ContentResolver;
 import android.content.om.IOverlayManager;
 import android.content.om.OverlayInfo;
 import android.content.pm.IPackageManager;
@@ -837,9 +836,6 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         }
 
         createAndAddWindows();
-
-        mNosSettingsObserver.observe();
-        mNosSettingsObserver.update();
 
         // Make sure we always have the most current wallpaper info.
         IntentFilter wallpaperChangedFilter = new IntentFilter(Intent.ACTION_WALLPAPER_CHANGED);
@@ -5112,39 +5108,6 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         }
     };
 
-    private NosSettingsObserver mNosSettingsObserver = new NosSettingsObserver(mHandler);
-    private class NosSettingsObserver extends ContentObserver {
-        NosSettingsObserver(Handler handler) {
-            super(handler);
-        }
-         void observe() {
-            ContentResolver resolver = mContext.getContentResolver();
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.HEADS_UP_STOPLIST_VALUES), false, this);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.HEADS_UP_BLACKLIST_VALUES), false, this);
-        }
-         @Override
-        public void onChange(boolean selfChange, Uri uri) {
-            update();
-        }
-         public void update() {
-            setHeadsUpStoplist();
-            setHeadsUpBlacklist();
-        }
-    }
-
-    private void setHeadsUpStoplist() {
-        final String stopString = Settings.System.getString(mContext.getContentResolver(),
-                    Settings.System.HEADS_UP_STOPLIST_VALUES);
-        splitAndAddToArrayList(mStoplist, stopString, "\\|");
-    }
-     private void setHeadsUpBlacklist() {
-        final String blackString = Settings.System.getString(mContext.getContentResolver(),
-                    Settings.System.HEADS_UP_BLACKLIST_VALUES);
-        splitAndAddToArrayList(mBlacklist, blackString, "\\|");
-    }
-
     public int getWakefulnessState() {
         return mWakefulnessLifecycle.getWakefulness();
     }
@@ -5747,6 +5710,12 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                     Settings.System.USE_BLACKAF_THEME),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_STOPLIST_VALUES),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.LOCKSCREEN_ALBUM_ART_FILTER),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
@@ -5799,9 +5768,22 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             setForceAmbient();
             updateTheme(false);
             updateLockscreenFilter();
+            setHeadsUpStoplist();
+            setHeadsUpBlacklist();
             setOldMobileType();
             setPulseBlacklist();
         }
+    }
+
+    private void setHeadsUpStoplist() {
+        final String stopString = Settings.System.getString(mContext.getContentResolver(),
+                    Settings.System.HEADS_UP_STOPLIST_VALUES);
+        splitAndAddToArrayList(mStoplist, stopString, "\\|");
+    }
+     private void setHeadsUpBlacklist() {
+        final String blackString = Settings.System.getString(mContext.getContentResolver(),
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES);
+        splitAndAddToArrayList(mBlacklist, blackString, "\\|");
     }
 
     private void updateKeyguardStatusSettings() {
