@@ -50,6 +50,7 @@ import com.android.systemui.qs.tiles.RotationLockTile;
 import com.android.systemui.qs.tiles.SoundTile;
 import com.android.systemui.qs.tiles.ScreenshotTile;
 import com.android.systemui.qs.tiles.ScreenrecordTile;
+import com.android.systemui.qs.tiles.SyncTile;
 import com.android.systemui.qs.tiles.ThemeTile;
 import com.android.systemui.qs.tiles.UsbTetherTile;
 import com.android.systemui.qs.tiles.SmartPixelsTile;
@@ -146,6 +147,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new AODTile(mHost);
             case "gaming":
                 return new GamingModeTile(mHost);
+            case "sync":
+                return new SyncTile(mHost);
         }
 
         // Intent tiles.
