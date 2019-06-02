@@ -18,6 +18,8 @@
 <resources>
     <plurals name="type_clock_header">
         <item quantity="other"><annotation name="color">Sono le</annotation>\" ^1 ^2\"</item>
-        <item quantity="one"><annotation name="color">Sono le</annotation>\" ^1 ^2\"</item>
+        <item quantity="one"><annotation name="color">Sono le</annotation>\"
+^1 e
+^2\"</item>
     </plurals>
 </resources>

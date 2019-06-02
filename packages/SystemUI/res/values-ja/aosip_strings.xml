@@ -58,7 +58,7 @@
     <string name="left">左側</string>
     <string name="right">右側</string>
     <string name="navbar_editor_title">エディター</string>
-    <string name="navbar_editor_summary">ナビゲーションバーを編集</string>
+    <string name="navbar_editor_summary">ナビゲーションバーを編集する</string>
     <string name="menu_ime_always_show">メニュー/キーボード切り替え (常時表示)</string>
     <string name="search">検索</string>
     <!-- SysUI Tuner -->

@@ -81,9 +81,9 @@
     <string name="lte_on">LTE Ligado </string>
     <string name="lte_off">LTE desligado</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Teclas físicas ativadas</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Teclas físicas desativadas</string>
+    <string name="quick_settings_hwkeys_label">Teclas físicas</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">A captura de tela foi apagada</string>
     <!-- Ambient Display Pixel-Like string -->
@@ -135,13 +135,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">O roteamento USB foi ligado</string>
     <string name="quick_settings_usb_tether_label">Compartilhamento USB</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">Modo de Jogos</string>
+    <string name="gaming_mode_tile_toast">Modo de jogos ativado</string>
+    <string name="gaming_mode_tile_toast_disabled">Modo de jogos desativado</string>
+    <string name="gaming_mode_dialog_title">Modo de Jogos</string>
+    <string name="gaming_mode_dialog_message">Quando o modo de jogos está ativado, todas as mensagens de heads-up e chaves de hardware serão desativadas. Todas as configurações serão redefinidas para o padrão quando você sair do Modo de Jogos.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Modo de jogos ligado</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Modo de jogos desligado</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s </xliff:g> • As notificações flutuantes foram silenciadas por 1 minuto.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • As notificações estão silenciadas por <xliff:g id="number">%d</xliff:g> minutos.</string>
@@ -187,7 +187,7 @@
     <string name="quick_settings_theme_tile_color_user_six">Arenoso</string>
     <string name="quick_settings_theme_tile_color_user_seven">Carneiros</string>
     <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q Verde</string>
     <string name="theme_info_title">O que é isso?</string>
     <string name="theme_info_message">O atalho Tema é um atalho único mas fácil de usar que permite ao usuário alterar o estilo do sistema.\n\nPara trocar entre diferentes estilos, toque e segure no atalho e então toque novamente para selecionar uma das opções oferecidas.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -219,5 +219,5 @@
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">Painel de volume</string>
     <!-- AOD media indication -->
-    <string name="music_controls_no_title">No title</string>
+    <string name="music_controls_no_title">Sem título</string>
 </resources>

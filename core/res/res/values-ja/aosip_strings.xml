@@ -105,7 +105,7 @@
     <string name="app_ops_write_mms">MMS メッセージの書き込み</string>
     <string name="app_ops_write_sms">SMS メッセージの書き込み</string>
     <!-- Privacy Guard -->
-    <string name="permlab_changePrivacyGuardState">プライバシーガードを有効/無効化</string>
+    <string name="permlab_changePrivacyGuardState">プライバシーガードの切り替え</string>
     <string name="permdesc_changePrivacyGuardState">他のアプリでプライバシーガードを有効にするかどうかの変更をアプリに許可します。プライバシーガードを有効にしてアプリを実行すると、そのアプリは連絡先、通話履歴、メッセージなどの個人データにアクセスできなくなります。</string>
     <string name="privacy_guard_notification">プライバシーガードは有効です</string>
     <string name="privacy_guard_notification_detail"><xliff:g id="app">%1$s</xliff:g>は個人データにアクセスできません</string>
