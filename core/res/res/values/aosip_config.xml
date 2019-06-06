@@ -143,4 +143,7 @@
 
     <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
     <bool name="config_cleanupUnusedFingerprints">true</bool>
+
+    <!-- Stop listening to the fingerprint reader when NON-WAKEUP proximity sensor is covered & screen is off. -->
+    <bool name="config_proximityCheckOnFingerprintWake">true</bool>
 </resources>
