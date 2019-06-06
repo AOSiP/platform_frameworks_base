@@ -45,7 +45,7 @@ import java.util.Collection;
  */
 public class QuickQSPanel extends QSPanel {
 
-    public static final int NUM_QUICK_TILES_DEFAULT = 6;
+    public static final int NUM_QUICK_TILES_DEFAULT = 5;
 
     private boolean mDisabledByPolicy;
     private int mMaxTiles;
