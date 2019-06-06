@@ -239,6 +239,7 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     private boolean mIsDreaming;
     private final DevicePolicyManager mDevicePolicyManager;
     private boolean mLogoutEnabled;
+    private boolean mProximityCheckOnFingerprintWake;
 
     /**
      * Short delay before restarting fingerprint authentication after a successful try
@@ -1340,11 +1341,13 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     }
 
     private boolean shouldListenForFingerprint() {
+        mProximityCheckOnFingerprintWake = mContext.getResources().getBoolean(
+                            com.android.internal.R.bool.config_proximityCheckOnFingerprintWake);
         return (mKeyguardIsVisible || !mDeviceInteractive ||
                 (mBouncer && !mKeyguardGoingAway) || mGoingToSleep ||
                 shouldListenForFingerprintAssistant() || (mKeyguardOccluded && mIsDreaming))
                 && !mSwitchingUser && !isFingerprintDisabled(getCurrentUser())
-                && !mKeyguardGoingAway && !mIsDeviceInPocket;
+                && !mKeyguardGoingAway && mProximityCheckOnFingerprintWake ? !mIsDeviceInPocket : null;
     }
 
     private void startListeningForFingerprint() {
