@@ -3,6 +3,7 @@ package com.android.keyguard.clocks;
 import android.app.WallpaperManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.res.AccentUtils;
 import android.content.res.Resources;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -25,6 +26,7 @@ import com.android.internal.util.NotificationColorUtil;
 import com.android.keyguard.R;
 import com.android.systemui.Dependency;
 import com.android.systemui.colorextraction.SysuiColorExtractor;
+import com.android.systemui.statusbar.policy.ConfigurationController;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -77,7 +79,8 @@ public class TypographicClock extends TextView implements ColorExtractor.OnColor
         mResources = context.getResources();
         mHours = mResources.getStringArray(R.array.type_clock_hours);
         mMinutes = mResources.getStringArray(R.array.type_clock_minutes);
-        mSystemAccent = mResources.getColor(R.color.custom_text_clock_top_color, null);
+        mSystemAccent = AccentUtils.getAccentColor(mResources
+                .getColor(R.color.custom_text_clock_top_color, null));
         mFallbackColor = mResources.getColor(R.color.custom_text_clock_top_fallback_color, null);
         onColorsChanged(mColorExtractor, 0);
     }
