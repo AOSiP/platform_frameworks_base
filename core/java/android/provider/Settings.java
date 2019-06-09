@@ -4693,16 +4693,6 @@ public final class Settings {
         public static final String ALWAYS_ON_DISPLAY_CONSTANTS_CUST = "always_on_display_constants_cust";
 
         /**
-         * Select various accents to go along with system themes
-         *
-         * @hide
-         */
-        public static final String ACCENT_PICKER = "accent_picker";
-        /** @hide */
-        public static final Validator ACCENT_PICKER_VALIDATOR =
-                new SettingsValidators.InclusiveIntegerRangeValidator(0, 30);
-
-        /**
          * Whether to use blackaf themes in place of dark
          *
          * @hide
@@ -5275,7 +5265,6 @@ public final class Settings {
             HAPTIC_FEEDBACK_INTENSITY,
             DISPLAY_COLOR_MODE,
             ACCELEROMETER_ROTATION_ANGLES,
-            ACCENT_PICKER,
             ANIM_TILE_STYLE,
             ANIM_TILE_DURATION,
             ANIM_TILE_INTERPOLATOR,
@@ -5428,7 +5417,6 @@ public final class Settings {
             PUBLIC_SETTINGS.add(SHOW_WEB_SUGGESTIONS);
             PUBLIC_SETTINGS.add(VIBRATE_WHEN_RINGING);
             PUBLIC_SETTINGS.add(ACCELEROMETER_ROTATION_ANGLES);
-            PUBLIC_SETTINGS.add(ACCENT_PICKER);
             PUBLIC_SETTINGS.add(ANIM_TILE_STYLE);
             PUBLIC_SETTINGS.add(ANIM_TILE_DURATION);
             PUBLIC_SETTINGS.add(ANIM_TILE_INTERPOLATOR);
@@ -5661,7 +5649,6 @@ public final class Settings {
             VALIDATORS.put(WIFI_STATIC_DNS2, WIFI_STATIC_DNS2_VALIDATOR);
             VALIDATORS.put(SHOW_BATTERY_PERCENT, SHOW_BATTERY_PERCENT_VALIDATOR);
             VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES, ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
-            VALIDATORS.put(ACCENT_PICKER, ACCENT_PICKER_VALIDATOR);
             VALIDATORS.put(ANIM_TILE_STYLE, ANIM_TILE_STYLE_VALIDATOR);
             VALIDATORS.put(ANIM_TILE_DURATION, ANIM_TILE_DURATION_VALIDATOR);
             VALIDATORS.put(ANIM_TILE_INTERPOLATOR, ANIM_TILE_INTERPOLATOR_VALIDATOR);
