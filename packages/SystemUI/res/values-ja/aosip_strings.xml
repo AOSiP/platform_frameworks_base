@@ -83,20 +83,20 @@
     <!-- HW Keys Tile -->
     <string name="accessibility_quick_settings_hwkeys_on">ハードウェアキー ON</string>
     <string name="accessibility_quick_settings_hwkeys_off">ハードウェアキー OFF</string>
-    <string name="quick_settings_hwkeys_label">ハードウェアキー</string>
+    <string name="quick_settings_hwkeys_label">ハードウェア\nキー</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">スクリーンショットを削除しました</string>
     <!-- Ambient Display Pixel-Like string -->
     <string name="ambientmusic_songinfo">%s / %s</string>
     <!-- Sound QS Tile -->
-    <string name="quick_settings_sound_label">サウンド</string>
+    <string name="quick_settings_sound_label">音声</string>
     <string name="quick_settings_sound_ring">鳴動</string>
     <string name="quick_settings_sound_vibrate">振動</string>
     <string name="quick_settings_sound_dnd">サイレント</string>
     <!-- Immersive tile -->
-    <string name="quick_settings_immersive_tile">拡張デスクトップモード</string>
+    <string name="quick_settings_immersive_tile">拡張デスクトップ</string>
     <string name="quick_settings_immersive_tile_statusbar">ステータスバーを隠す</string>
-    <string name="quick_settings_immersive_tile_navbar">ステータスバーを隠す</string>
+    <string name="quick_settings_immersive_tile_navbar">ナビゲーションバーを隠す</string>
     <string name="quick_settings_immersive_tile_full">全て隠す</string>
     <!-- Caffeine QS Tile -->
     <string name="quick_settings_caffeine_label">カフェイン</string>
@@ -118,8 +118,8 @@
     <string name="quick_settings_reboot_label">再起動</string>
     <string name="quick_settings_reboot_recovery_label">リカバリー</string>
     <!-- Screenshot QS tile -->
-    <string name="quick_settings_screenshot_label">スクリーンショット</string>
-    <string name="quick_settings_region_screenshot_label">範囲を選択してスクリーンショット</string>
+    <string name="quick_settings_screenshot_label">スクリーン\nショット</string>
+    <string name="quick_settings_region_screenshot_label">範囲選択してスクリーンショット</string>
     <string name="screenshot_abort_title">スクリーンショットは撮影されていません</string>
     <string name="screenshot_abort_text">操作は中断されました</string>
     <!-- Heads Up QS Tile -->
@@ -133,7 +133,7 @@
     <string name="accessibility_quick_settings_usb_tether_on">USB テザリング ON</string>
     <string name="accessibility_quick_settings_usb_tether_changed_off">USB テザリングを OFF にしました</string>
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB テザリングを ON にしました</string>
-    <string name="quick_settings_usb_tether_label">USBテザリング</string>
+    <string name="quick_settings_usb_tether_label">USB\nテザリング</string>
     <!-- Gaming Mode -->
     <string name="gaming_mode_tile_title">ゲームモード</string>
     <string name="gaming_mode_tile_toast">ゲームモード有効</string>
@@ -212,12 +212,43 @@
     <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • 急速充電中 (充電完了まで残り<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g>)</string>
     <string name="keyguard_plugged_in_dash_charging">急速充電中</string>
     <!-- Smart Pixels QS Tile -->
-    <string name="quick_settings_smart_pixels">スマートピクセル</string>
-    <string name="quick_settings_smart_pixels_on_power_save">スマートピクセルを自動的に有効化</string>
+    <string name="quick_settings_smart_pixels">スマート\nピクセル</string>
+    <string name="quick_settings_smart_pixels_on_power_save">自動有効</string>
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">LTE の代わりに 4G を表示</string>
     <!-- Volume panel QS tile -->
     <string name="quick_settings_volume_panel_label">音量パネル</string>
     <!-- AOD media indication -->
     <string name="music_controls_no_title">無題</string>
+    <!-- Content description of the location tile in quick settings when on, battery saving mode (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_battery_saving">位置情報レポート: バッテリー節約モード</string>
+    <!-- Content description of the location tile in quick settings when on, sensors only mode (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_gps_only">位置情報レポート: 端末のみモード</string>
+    <!-- Content description of the location tile in quick settings when on, high accuracy mode (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート: 高精度モード</string>
+    <!-- QuickSettings: Location (On, low-power) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_battery_saving_label">バッテリー節約</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">バッテリー\n節約</string>
+    <!-- QuickSettings: Location (On, gps-only) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_gps_only_label">GPS のみ</string>
+    <string name="quick_settings_location_gps_only_label_twoline">GPS のみ</string>
+    <!-- QuickSettings: Location (On, high-accuracy) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_high_accuracy_label">高精度</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">高精度</string>
+    <!-- QuickSettings: Location detail panel title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_detail_title">位置情報</string>
+    <!-- QuickSettings: Location detail panel menu title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_detail_menu_title">選択モード:</string>
+    <!-- [CHAR LIMIT=30] Location detail panel, high accuracy location mode -->
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">高精度</string>
+    <!-- [CHAR LIMIT=30] Location detail panel, battery saving location mode -->
+    <string name="quick_settings_location_detail_mode_battery_saving_title">バッテリー節約</string>
+    <!-- [CHAR LIMIT=30] Location detail panel, device only location mode -->
+    <string name="quick_settings_location_detail_mode_sensors_only_title">端末のみ</string>
+    <!-- [CHAR LIMIT=130] Location detail panel, description for high accuracy mode -->
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">GPS・Wi‑Fi・Bluetooth・モバイルネットワークで現在地を特定する</string>
+    <!-- [CHAR LIMIT=130] Location detail panel, description for battery saving mode -->
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Wi‑Fi・Bluetooth・モバイルネットワークで現在地を特定する</string>
+    <!-- [CHAR LIMIT=130] Location detail panel, description for sensors only mode -->
+    <string name="quick_settings_location_detail_mode_sensors_only_description">GPS で現在地を特定する</string>
 </resources>

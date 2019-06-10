@@ -57,7 +57,7 @@
     <string name="app_ops_modify_settings">cập nhật cài đặt hệ thống</string>
     <string name="app_ops_mute_unmute_microphone">tắt/bật micro</string>
     <string name="app_ops_phone_calls">trả lời cuộc gọi</string>
-    <string name="app_ops_picture_in_picture">sử dụng chế độ hình ảnh trên hình ảnh</string>
+    <string name="app_ops_picture_in_picture">sử dụng ảnh trong ảnh</string>
     <string name="app_ops_play_audio">phát âm thanh</string>
     <string name="app_ops_post_notification">gửi một thông báo</string>
     <string name="app_ops_project_media">dự án đa phương tiện</string>
