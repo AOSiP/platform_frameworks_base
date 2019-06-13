@@ -30,7 +30,12 @@
         android:key="managed_profile"
         android:title="@string/status_bar_work" />
 
-    <!-- ime -->
+    <SwitchPreference
+        android:key="show_volte"
+        android:title="@string/volte_switch_title"
+        android:summary="@string/volte_switch_summary"
+        android:defaultValue="false" />
+
     <!-- sync_failing -->
     <!-- sync_active -->
 
