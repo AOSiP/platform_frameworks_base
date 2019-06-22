@@ -117,6 +117,7 @@ public class SystemSensorManager extends SensorManager {
         for (int index = 0;; ++index) {
             Sensor sensor = new Sensor();
             if (!nativeGetSensorAtIndex(mNativeInstance, sensor, index)) break;
+            sensor.updateTypeMapping();
             mFullSensorsList.add(sensor);
             mHandleToSensor.put(sensor.getHandle(), sensor);
         }

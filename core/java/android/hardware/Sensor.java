@@ -685,6 +685,10 @@ public final class Sensor {
     public static final String STRING_TYPE_ACCELEROMETER_UNCALIBRATED =
             "android.sensor.accelerometer_uncalibrated";
 
+    public static final int TYPE_QTI_HARDWARE_LIGHT = 33171030;
+    public static final String STRING_TYPE_QTI_HARDWARE_LIGHT =
+            "qti.sensor.hardware_light";
+
     /**
      * A constant describing all sensor types.
      */
@@ -916,6 +920,13 @@ public final class Sensor {
      */
     public int getType() {
         return mType;
+    }
+
+    void updateTypeMapping() {
+        if (mType == TYPE_QTI_HARDWARE_LIGHT) {
+            android.util.Log.d("SensorHack", "Replaced qti hardware light with Android light");
+            mType = TYPE_LIGHT;
+        }
     }
 
     /**
