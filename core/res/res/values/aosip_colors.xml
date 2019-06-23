@@ -63,4 +63,7 @@
     <color name="power_menu_screenshot">#ff202020</color>
     <color name="power_menu_hot">#ff202020</color>
 
+    <!-- Custom accent color -->
+    <color name="custom_accent_color">@color/accent_device_default_light</color>
+
 </resources>
