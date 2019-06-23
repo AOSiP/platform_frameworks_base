@@ -139,6 +139,9 @@
   <java-symbol type="color" name="toast_bg_color" />
   <java-symbol type="color" name="toast_text_color" />
 
+  <!-- Custom accent color -->
+  <java-symbol type="color" name="custom_accent_color" />
+
   <!-- Weather icons -->
   <java-symbol type="drawable" name="weather_clear_night" />
   <java-symbol type="drawable" name="weather_cloudy" />
@@ -195,4 +198,6 @@
    <java-symbol type="id" name="notification_media_elapsed_time" />
    <java-symbol type="id" name="notification_media_total_time" />
 
+  <!-- Custom accent color -->
+  <java-symbol type="color" name="custom_accent_color" />
 </resources>
