@@ -139,6 +139,9 @@
   <java-symbol type="color" name="toast_bg_color" />
   <java-symbol type="color" name="toast_text_color" />
 
+  <!-- Custom accent color -->
+  <java-symbol type="color" name="custom_accent_color" />
+
   <!-- Weather icons -->
   <java-symbol type="drawable" name="weather_clear_night" />
   <java-symbol type="drawable" name="weather_cloudy" />
