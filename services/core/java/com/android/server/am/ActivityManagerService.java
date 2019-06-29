@@ -332,6 +332,7 @@ import com.android.internal.os.ProcessCpuTracker;
 import com.android.internal.os.TransferPipe;
 import com.android.internal.os.Zygote;
 import com.android.internal.util.ArrayUtils;
+import com.android.internal.util.custom.GamingModeController;
 import com.android.internal.util.DumpUtils;
 import com.android.internal.util.FastPrintWriter;
 import com.android.internal.util.FrameworkStatsLog;
@@ -1680,6 +1681,8 @@ public class ActivityManagerService extends IActivityManager.Stub
 
     final SwipeToScreenshotObserver mSwipeToScreenshotObserver;
     private boolean mIsSwipeToScreenshotEnabled;
+
+    private GamingModeController mGamingModeController;
 
     /**
      * Used to notify activity lifecycle events.
@@ -7929,6 +7932,9 @@ public class ActivityManagerService extends IActivityManager.Stub
         //mUsageStatsService.monitorPackages();
 
         mSystemSensorManager = new SystemSensorManager(mContext, mHandler.getLooper());
+
+        // Gaming mode provider
+        mGamingModeController = new GamingModeController(mContext);
     }
 
     void startPersistentApps(int matchFlags) {
@@ -16209,6 +16215,9 @@ public class ActivityManagerService extends IActivityManager.Stub
                                         if (mSystemSensorManager != null) {
                                             mSystemSensorManager.notePackageUninstalled(ssp);
                                         }
+                                        if (mGamingModeController != null) {
+                                             mGamingModeController.notePackageUninstalled(ssp);
+                                        }
                                     }
                                 } else {
                                     if (killProcess) {
@@ -17943,7 +17952,16 @@ public class ActivityManagerService extends IActivityManager.Stub
             } finally {
                 Binder.restoreCallingIdentity(identity);
             }
-
+            if (mCurResumedPackage != null && mGamingModeController != null && mGamingModeController.isGamingModeEnabled()) {
+                if (mGamingModeController.topAppChanged(mCurResumedPackage) && !mGamingModeController.isGamingModeActivated()) {
+                    Settings.System.putInt(mContext.getContentResolver(),
+                        Settings.System.GAMING_MODE_ACTIVE, 1);
+                } else if (!mGamingModeController.topAppChanged(mCurResumedPackage) &&
+                        mGamingModeController.isGamingModeActivated()) {
+                    Settings.System.putInt(mContext.getContentResolver(),
+                        Settings.System.GAMING_MODE_ACTIVE, 0);
+                }
+           }
         }
         return r;
     }
