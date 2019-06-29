@@ -17,15 +17,9 @@
 -->
 <resources>
     <plurals name="type_clock_header">
-        <item quantity="other"><annotation name="color">It’s</annotation>\"
-^1
-^2\"</item>
+        <item quantity="other">Сейчас</item>
         <item quantity="one">Сейчас</item>
-        <item quantity="few"><annotation name="color">It’s</annotation>\"
-^1
-^2\"</item>
-        <item quantity="many"><annotation name="color">It’s</annotation>\"
-^1
-^2\"</item>
+        <item quantity="few">Сейчас</item>
+        <item quantity="many">Сейчас</item>
     </plurals>
 </resources>

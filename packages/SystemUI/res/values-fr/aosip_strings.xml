@@ -149,6 +149,12 @@
     <string name="nav_bar_layout_inverse">Inverser le schéma</string>
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Faites glisser ou appuyez pour ajouter/retirer des tuiles</string>
+    <!-- Sync QS Tile -->
+    <string name="quick_settings_sync_label">Synchronisation</string>
+    <string name="accessibility_quick_settings_sync_off">Synchronisation désactivée</string>
+    <string name="accessibility_quick_settings_sync_on">Synchronisation activée</string>
+    <string name="accessibility_quick_settings_sync_changed_off">La synchronisation est désactivée</string>
+    <string name="accessibility_quick_settings_sync_changed_on">La synchronisation est activée</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">Thème</string>
     <string name="system_theme_style_auto">Automatique</string>

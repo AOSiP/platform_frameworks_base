@@ -149,6 +149,12 @@
     <string name="nav_bar_layout_inverse">Đảo ngược bố cục</string>
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Kéo hoặc chạm để thêm/xoá phím tắt</string>
+    <!-- Sync QS Tile -->
+    <string name="quick_settings_sync_label">Đồng bộ hoá</string>
+    <string name="accessibility_quick_settings_sync_off">Tắt đồng bộ hoá</string>
+    <string name="accessibility_quick_settings_sync_on">Bật đồng bộ hoá</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Đã tắt đồng bộ hoá</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Đã bật đồng bộ hoá</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">Chủ đề</string>
     <string name="system_theme_style_auto">Tự động</string>
