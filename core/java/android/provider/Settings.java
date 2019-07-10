@@ -5027,6 +5027,16 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
+         * Enable face auto unlock on secure lock screens
+         *
+         * @hide
+         */
+        public static final String OMNI_DISPLAY_MODE = "omni_display_mode";
+
+        private static final Validator OMNI_DISPLAY_MODE_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
          * Whether to use icon pack for Recents
          * @hide
          */
@@ -5357,6 +5367,7 @@ public final class Settings {
             BOTTOM_GESTURE_SWIPE_LIMIT,
             BOTTOM_GESTURE_FEEDBACK_DURATION,
             CUSTOM_CARRIER_LABEL,
+            OMNI_DISPLAY_MODE,
             DOUBLE_TAP_SLEEP_GESTURE,
             DOUBLE_TAP_SLEEP_ANYWHERE,
             FINGERPRINT_SUCCESS_VIB,
@@ -5645,6 +5656,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(HEADSET_CONNECT_PLAYER);
             // Pocket mode handler.
             PRIVATE_SETTINGS.add(POCKET_JUDGE);
+            PRIVATE_SETTINGS.add(OMNI_DISPLAY_MODE);
         }
 
         /**
@@ -5828,6 +5840,8 @@ public final class Settings {
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
             VALIDATORS.put(DOZE_ON_CHARGE, DOZE_ON_CHARGE_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);
+            VALIDATORS.put(OMNI_DISPLAY_MODE,
+                    OMNI_DISPLAY_MODE_VALIDATOR);
         }
 
         /**
