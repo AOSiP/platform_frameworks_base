@@ -109,15 +109,10 @@ public class ThemeAccentUtils {
         "com.android.systemui.qstile.deletround", // 3
         "com.android.systemui.qstile.inktober", // 4
         "com.android.systemui.qstile.shishunights", // 5
-        "com.android.systemui.qstile.circlegradient", // 6
-        "com.android.systemui.qstile.wavey", // 7
-        "com.android.systemui.qstile.circledualtone", // 8
-        "com.android.systemui.qstile.squaremedo", // 9
-        "com.android.systemui.qstile.pokesign", // 10
-        "com.android.systemui.qstile.ninja", // 11
-        "com.android.systemui.qstile.dottedcircle", // 12
-        "com.android.systemui.qstile.shishuink", // 13
-        "com.android.systemui.qstile.attemptmountain", // 14
+        "com.android.systemui.qstile.circledualtone", // 6
+        "com.android.systemui.qstile.dottedcircle", // 7
+        "com.android.systemui.qstile.shishuink", // 8
+        "com.android.systemui.qstile.attemptmountain", // 9
     };
 
     // Unloads the stock dark theme
