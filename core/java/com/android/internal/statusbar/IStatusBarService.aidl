@@ -103,7 +103,6 @@ interface IStatusBarService
     void onFingerprintError(String error);
     // Used to hide the fingerprint dialog when the authenticationclient is stopped
     void hideFingerprintDialog();
-    void handleInDisplayFingerprintView(boolean show, boolean isEnrolling);
 
     /**
      * AOSiP
@@ -111,6 +110,10 @@ interface IStatusBarService
     void toggleCameraFlash();
     void toggleCameraFlashState(boolean enable);
     void restartUI();
+
+    // Used to show or hide in display fingerprint view
+    void showInDisplayFingerprintView();
+    void hideInDisplayFingerprintView();
 
     // Start SmartNav methods
     void toggleRecentApps();
