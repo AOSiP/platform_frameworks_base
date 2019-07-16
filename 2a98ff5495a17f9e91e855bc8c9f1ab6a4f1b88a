@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77d5d1fb_01ecdecd",
+        "filename": "packages/SystemUI/res/values/aosip_dimens.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000155
+      },
+      "writtenOn": "2019-07-16T04:39:04Z",
+      "side": 1,
+      "message": "Is this generic? why not pass it as an overlay instead?",
+      "revId": "2a98ff5495a17f9e91e855bc8c9f1ab6a4f1b88a",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
