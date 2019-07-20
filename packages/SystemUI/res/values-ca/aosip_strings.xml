@@ -73,13 +73,13 @@
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB network</string>
     <string name="quick_settings_network_adb_enabled_label">Adb over Net</string>
-    <string name="quick_settings_network_adb_disabled_label">Adb sobre xarxa</string>
+    <string name="quick_settings_network_adb_disabled_label">ADB per la xarxa</string>
     <!-- Lockscreen icons -->
-    <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
+    <string name="lockscreen_tuner_title">Dreceres a la pantalla de bloqueig</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
-    <string name="lte_on">LTE ON </string>
-    <string name="lte_off">LTE OFF</string>
+    <string name="lte_on">LTE activat </string>
+    <string name="lte_off">LTE desactivat</string>
     <!-- HW Keys Tile -->
     <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
     <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
@@ -99,17 +99,17 @@
     <string name="quick_settings_immersive_tile_navbar">Immersive navbar</string>
     <string name="quick_settings_immersive_tile_full">Immersive full</string>
     <!-- Caffeine QS Tile -->
-    <string name="quick_settings_caffeine_label">Caffeine</string>
-    <string name="accessibility_quick_settings_caffeine_off">Caffeine off</string>
-    <string name="accessibility_quick_settings_caffeine_on">Caffeine on</string>
+    <string name="quick_settings_caffeine_label">Cafeïna</string>
+    <string name="accessibility_quick_settings_caffeine_off">Mode cafeïna desactivat</string>
+    <string name="accessibility_quick_settings_caffeine_on">Mode cafeïna activat</string>
     <!-- Power menu advanced restart -->
-    <string name="global_action_restart_system">Reboot</string>
-    <string name="global_action_restart_advanced">Advanced</string>
-    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_system">Reiniciar</string>
+    <string name="global_action_restart_advanced">Avançat</string>
+    <string name="global_action_restart_recovery">Recuperació</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
-    <string name="global_action_restart_ui">SystemUI</string>
-    <string name="global_action_restart_hot">Hot</string>
-    <string name="global_action_screenshot">Screenshot</string>
+    <string name="global_action_restart_ui">Interfície del sistema</string>
+    <string name="global_action_restart_hot">Ràpid</string>
+    <string name="global_action_screenshot">Captura de pantalla</string>
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Force stop?</string>
     <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
@@ -193,16 +193,16 @@
     <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
     <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
     <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
-    <string name="theme_info_title">What is this?</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Q verd</string>
+    <string name="theme_info_title">Què és això?</string>
     <string name="theme_info_message">The Themes tile is a unique but easy to use tile that allows the user to change the system accent or theme.\n\nTo change between accents and themes, simply long press on the tile and then press again to select from the options offered.</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">Screen is being recorded</string>
     <string name="screenrecord_notif_final_ticker">Screen recorded successfully</string>
     <!-- Screenrecord notification title -->
-    <string name="screenrecord_notif_title">Recording screen</string>
+    <string name="screenrecord_notif_title">Gravant la pantalla</string>
     <!-- Screenrecord notification action: Stop -->
-    <string name="screenrecord_notif_stop">Stop</string>
+    <string name="screenrecord_notif_stop">Aturar</string>
     <string name="screenrecord_notif_completed">Screen recorded successfully</string>
     <!-- Screenrecord notification action: show/hide pointer -->
     <string name="screenrecord_notif_pointer_on">Show pointer</string>

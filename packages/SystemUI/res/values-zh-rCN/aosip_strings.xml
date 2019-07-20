@@ -150,11 +150,11 @@
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">拖动或点击以添加/删除瓷贴</string>
     <!-- Sync QS Tile -->
-    <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+    <string name="quick_settings_sync_label">同步</string>
+    <string name="accessibility_quick_settings_sync_off">同步关闭</string>
+    <string name="accessibility_quick_settings_sync_on">同步开启</string>
+    <string name="accessibility_quick_settings_sync_changed_off">同步已关闭</string>
+    <string name="accessibility_quick_settings_sync_changed_on">同步已开启</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">主题</string>
     <string name="system_theme_style_auto">自动</string>

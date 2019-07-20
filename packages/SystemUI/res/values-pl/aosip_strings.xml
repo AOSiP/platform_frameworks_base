@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- AOD QS tile -->
-    <string name="quick_settings_aod_label">Tryb Always-On-Display</string>
+    <string name="quick_settings_aod_label">AOD</string>
     <!-- QS Colums & rows -->
     <string name="qs_menu_item_columns">Kolumny w ułożeniu pionowym</string>
     <string name="qs_menu_item_columns_landscape">Kolumny w ułożeniu poziomym</string>
@@ -150,11 +150,11 @@
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Przeciągnij lub dotknij aby dodać/usunąć kafelki</string>
     <!-- Sync QS Tile -->
-    <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+    <string name="quick_settings_sync_label">Synchronizacja</string>
+    <string name="accessibility_quick_settings_sync_off">Synchronizacja wyłączona</string>
+    <string name="accessibility_quick_settings_sync_on">Synchronizacja włączona</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronizacja została wyłączona</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronizacja została włączona</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">Motyw</string>
     <string name="system_theme_style_auto">Automatycznie</string>
@@ -215,8 +215,8 @@
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenrecord_label">Nagrywanie ekranu</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time">&lt;xliff:g id="percentage"&gt;%2$s&lt;/xliff:g&gt; • Szybkie Ładowanie (&lt;xliff:g id="charging_time_left" Na przykład="4 godziny i 2 minuty"&gt;%s&lt;/xliff:g&gt; do naładowania)</string>
-    <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
+    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Ładowanie Dash (<xliff:g id="charging_time_left" example="4 godziny i 2 minuty">%s</xliff:g> do pełnego naładowania)</string>
+    <string name="keyguard_plugged_in_dash_charging">Ładowanie Dash</string>
     <!-- Smart Pixels QS Tile -->
     <string name="quick_settings_smart_pixels">Inteligentne piksele</string>
     <string name="quick_settings_smart_pixels_on_power_save">Automatyczne włączanie Inteligentnych pikseli</string>

@@ -150,11 +150,11 @@
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Σύρετε ή πατήστε για να προσθέσετε πλακίδια</string>
     <!-- Sync QS Tile -->
-    <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+    <string name="quick_settings_sync_label">Συγχρονισμός</string>
+    <string name="accessibility_quick_settings_sync_off">Συγχρονισμός ανενεργός</string>
+    <string name="accessibility_quick_settings_sync_on">Συγχρονισμός ενεργός</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Ο συγχρονισμός απενεργοποιήθηκε</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Ο συγχρονισμός ενεργοποιήθηκε</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">Θέμα</string>
     <string name="system_theme_style_auto">Αυτομάτο</string>

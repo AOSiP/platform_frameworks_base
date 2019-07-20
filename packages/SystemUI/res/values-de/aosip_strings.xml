@@ -151,10 +151,10 @@
     <string name="drag_or_tap_to_add_tiles">Ziehe oder tippe, um Kacheln hinzuzufügen/zu entfernen</string>
     <!-- Sync QS Tile -->
     <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+    <string name="accessibility_quick_settings_sync_off">Sync aus</string>
+    <string name="accessibility_quick_settings_sync_on">Sync an</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sync ausgeschaltet</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sync eingeschaltet</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">Theme</string>
     <string name="system_theme_style_auto">Automatisch</string>

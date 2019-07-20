@@ -150,11 +150,11 @@
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Trascina o tocca per aggiungere/rimuovere tasti</string>
     <!-- Sync QS Tile -->
-    <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+    <string name="quick_settings_sync_label">Sincronizzazione</string>
+    <string name="accessibility_quick_settings_sync_off">Sincronizzazione spenta</string>
+    <string name="accessibility_quick_settings_sync_on">Sincronizzazione accesa</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sincronizzazione disattivata</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sincronizzazione attivata</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">Tema</string>
     <string name="system_theme_style_auto">Automatico</string>

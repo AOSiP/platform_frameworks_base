@@ -119,7 +119,7 @@
     <string name="quick_settings_reboot_recovery_label">リカバリー</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">スクリーン\nショット</string>
-    <string name="quick_settings_region_screenshot_label">範囲選択してスクリーンショット</string>
+    <string name="quick_settings_region_screenshot_label">範囲選択</string>
     <string name="screenshot_abort_title">スクリーンショットは撮影されていません</string>
     <string name="screenshot_abort_text">操作は中断されました</string>
     <!-- Heads Up QS Tile -->
