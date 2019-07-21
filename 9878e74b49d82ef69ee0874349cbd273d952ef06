@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2949161f_d138ee44",
+        "filename": "core/java/com/android/internal/statusbar/ThemeAccentUtils.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2019-07-21T22:34:41Z",
+      "side": 1,
+      "message": "pro aniboob",
+      "revId": "9878e74b49d82ef69ee0874349cbd273d952ef06",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
