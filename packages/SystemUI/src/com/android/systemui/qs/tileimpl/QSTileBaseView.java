@@ -17,6 +17,7 @@ import static com.android.systemui.qs.tileimpl.QSIconViewImpl.QS_ANIM_LENGTH;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.AccentUtils;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -101,7 +102,7 @@ public class QSTileBaseView extends com.android.systemui.plugins.qs.QSTileView {
                     Utils.getColorAttr(context, android.R.attr.textColorTertiary));
             mColorInactive = Utils.getColorAttr(context, android.R.attr.textColorSecondary);
         } else {
-            mColorActive = context.getColor(R.color.qs_tiles_background_active_tint);
+            mColorActive = AccentUtils.getAccentColor(getResources().getColor(R.color.qs_tiles_background_active_tint));
             mColorDisabled = Utils.getDisabled(context,
                     context.getColor(R.color.qs_tiles_background_disabled_tint));
             mColorInactive = context.getColor(R.color.qs_tiles_background_inactive_tint);
