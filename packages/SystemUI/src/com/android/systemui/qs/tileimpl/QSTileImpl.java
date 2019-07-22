@@ -26,6 +26,7 @@ import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AccentUtils;
 import android.graphics.drawable.Drawable;
 import android.metrics.LogMaker;
 import android.os.Handler;
@@ -425,7 +426,8 @@ public abstract class QSTileImpl<TState extends State> implements QSTile {
                 if (!enableQsTileTinting) {
                     return Utils.getColorAttr(context, android.R.attr.colorPrimary);
                 } else {
-                    return context.getColor(R.color.qs_tiles_active_tint);
+                    return AccentUtils.getAccentColor(
+                        context.getResources().getColor(R.color.qs_tiles_active_tint));
                 }
             default:
                 Log.e("QSTile", "Invalid state " + state);
