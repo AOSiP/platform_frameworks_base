@@ -379,7 +379,7 @@ public class NotificationInterruptionStateProvider {
         String notificationPackageName = sbn.getPackageName().toLowerCase();
         isImportantHeadsUp = notificationPackageName.contains("dialer") ||
                 notificationPackageName.contains("messaging");
-        return !mStatusBarStateController.isDozing() && mLessBoringHeadsUp && !isImportantHeadsUp;
+        return (mLessBoringHeadsUp || mSkipHeadsUp) && !isImportantHeadsUp;
     }
 
     /**
