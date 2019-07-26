@@ -4962,6 +4962,14 @@ public final class Settings {
         private static final Validator THREE_FINGER_GESTURE_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * Whether to show heads up only for dialer and sms apps
+         * @hide
+         */
+        public static final String LESS_BORING_HEADS_UP = "less_boring_heads_up";
+        /** @hide */
+        private static final Validator LESS_BORING_HEADS_UP_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Custom button brightness value for manual mode
          *
          * @hide
@@ -5645,6 +5653,7 @@ public final class Settings {
             FINGERPRINT_SUCCESS_VIB,
             FORCE_SHOW_NAVBAR,
             HEADS_UP_NOTIFICATION_SNOOZE,
+            LESS_BORING_HEADS_UP,
             LOCK_SHOW_STATUS_BAR,
             LOCKSCREEN_ALBUM_ART_FILTER,
             LOCKSCREEN_BATTERY_INFO,
@@ -5820,6 +5829,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(FINGERPRINT_ERROR_VIB);
             PRIVATE_SETTINGS.add(FINGERPRINT_SUCCESS_VIB);
             PRIVATE_SETTINGS.add(FORCE_SHOW_NAVBAR);
+            PRIVATE_SETTINGS.add(LESS_BORING_HEADS_UP);
             PRIVATE_SETTINGS.add(LOCK_SHOW_STATUS_BAR);
             PRIVATE_SETTINGS.add(LOCKSCREEN_ALBUM_ART_FILTER);
             PRIVATE_SETTINGS.add(LOCKSCREEN_BATTERY_INFO);
@@ -5981,6 +5991,7 @@ public final class Settings {
             VALIDATORS.put(FINGERPRINT_SUCCESS_VIB, FINGERPRINT_SUCCESS_VIB_VALIDATOR);
             VALIDATORS.put(FORCE_SHOW_NAVBAR, FORCE_SHOW_NAVBAR_VALIDATOR);
             VALIDATORS.put(HEADS_UP_NOTIFICATION_SNOOZE,HEADS_UP_NOTIFICATION_SNOOZE_VALIDATOR);
+            VALIDATORS.put(LESS_BORING_HEADS_UP, LESS_BORING_HEADS_UP_VALIDATOR);
             VALIDATORS.put(LOCK_SHOW_STATUS_BAR, LOCK_SHOW_STATUS_BAR_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_ALBUM_ART_FILTER, LOCKSCREEN_ALBUM_ART_FILTER_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_BATTERY_INFO, LOCKSCREEN_BATTERY_INFO_VALIDATOR);
