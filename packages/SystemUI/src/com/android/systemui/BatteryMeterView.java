@@ -324,12 +324,17 @@ public class BatteryMeterView extends LinearLayout implements
                 NumberFormat.getPercentInstance().format(mLevel / 100f));
     }
 
+    public boolean getForceHideBatteryPercent() {
+        return getResources().getBoolean(
+                R.bool.config_forceHideBatteryPercent);
+    }
+
     private void updateShowPercent() {
         final boolean showing = mBatteryPercentView != null;
         int percentageStyle = Settings.System.getIntForUser(getContext().getContentResolver(),
                 SHOW_BATTERY_PERCENT, 0, mUser);
         mShowPercent = percentageStyle;
-        boolean showAnyway = alwaysShowPercentage() || mPowerSave || mCharging || mShowEstimate;
+        boolean showAnyway = (alwaysShowPercentage() || mPowerSave || mCharging || mShowEstimate) && !getForceHideBatteryPercent();
         if (!showAnyway
                 && getMeterStyle() == BatteryMeterDrawableBase.BATTERY_STYLE_HIDDEN) {
             // don't show percentage

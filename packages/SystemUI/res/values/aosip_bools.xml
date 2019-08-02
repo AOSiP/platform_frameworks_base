@@ -24,5 +24,8 @@
     <!-- Active Edge -->
     <bool name="has_elmyra_service">false</bool>
 
+    <!-- Force hide battery percentage -->
+    <bool name="config_forceHideBatteryPercent">false</bool>
+
 </resources>
 
