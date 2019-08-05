@@ -70,6 +70,7 @@
     <string name="status_bar_roaming">Roaming</string>
     <string name="tuner_show_info_header_title">Informations-Kopfzeile anzeigen</string>
     <string name="tuner_show_secure_title">Sicherheit-Fußfzeile anzeigen</string>
+    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB-Netzwerk</string>
     <string name="quick_settings_network_adb_enabled_label">ADB übers Netzwerk</string>

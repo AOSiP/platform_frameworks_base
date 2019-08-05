@@ -70,6 +70,7 @@
     <string name="status_bar_roaming">Roaming</string>
     <string name="tuner_show_info_header_title">Mostra informazioni sulle intestazioni</string>
     <string name="tuner_show_secure_title">Mostra il piè di pagina di sicurezza</string>
+    <string name="tuner_hide_disabled_sim">Nascondi SIM disabilitate</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">Rete ADB</string>
     <string name="quick_settings_network_adb_enabled_label">Adb nella Rete</string>

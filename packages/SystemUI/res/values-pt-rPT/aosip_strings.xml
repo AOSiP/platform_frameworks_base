@@ -70,6 +70,7 @@
     <string name="status_bar_roaming">Roaming</string>
     <string name="tuner_show_info_header_title">Mostrar cabeçalho de informação</string>
     <string name="tuner_show_secure_title">Mostrar rodapé de segurança</string>
+    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">Rede ADB</string>
     <string name="quick_settings_network_adb_enabled_label">Adb sobre rede</string>
@@ -150,11 +151,11 @@
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Arrastar ou tocar para adicionar mosaicos</string>
     <!-- Sync QS Tile -->
-    <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+    <string name="quick_settings_sync_label">Sincronizar</string>
+    <string name="accessibility_quick_settings_sync_off">Sincronização desativada</string>
+    <string name="accessibility_quick_settings_sync_on">Sincronização ativada</string>
+    <string name="accessibility_quick_settings_sync_changed_off">A sincronização foi desligada</string>
+    <string name="accessibility_quick_settings_sync_changed_on">A sincronização foi ligada</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">Tema</string>
     <string name="system_theme_style_auto">Automático</string>

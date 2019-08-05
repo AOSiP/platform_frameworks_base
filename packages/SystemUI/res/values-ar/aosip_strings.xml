@@ -70,6 +70,7 @@
     <string name="status_bar_roaming">التجوال</string>
     <string name="tuner_show_info_header_title">إظهار المعلومات في الرأس</string>
     <string name="tuner_show_secure_title">عرض تنبيه الآمان السفلي</string>
+    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">شبكة ADB</string>
     <string name="quick_settings_network_adb_enabled_label">Adb عبر الشبكة</string>

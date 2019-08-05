@@ -70,6 +70,7 @@
     <string name="status_bar_roaming">Roaming</string>
     <string name="tuner_show_info_header_title">Zobrazit záhlaví informací</string>
     <string name="tuner_show_secure_title">Zobrazit bezpečnostní zápatí</string>
+    <string name="tuner_hide_disabled_sim">Skrýt odpojené SIM karty</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB síť</string>
     <string name="quick_settings_network_adb_enabled_label">ADB přes síť</string>

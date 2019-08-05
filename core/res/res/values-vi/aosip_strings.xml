@@ -19,7 +19,7 @@
     <!-- Button that copies the url to the log of a crashed application -->
     <string name="aerr_copy">Sao chép URL nhật ký lỗi</string>
     <string name="url_copy_success">Sao chép URL thành công</string>
-    <string name="url_copy_failed">Đã có lỗi xảy ra khi tải nhật kí lỗi lên dogbin</string>
+    <string name="url_copy_failed">Đã xảy ra lỗi khi tải nhật ký lên dogbin</string>
     <!-- Power menu -->
     <string name="reboot_title">Khởi động lại</string>
     <string name="reboot_message">Đang khởi động lại</string>
@@ -31,19 +31,19 @@
     <string name="app_ops_add_voicemail">thêm thư thoại</string>
     <string name="app_ops_app_start_foreground">bắt đầu ứng dụng trên nền</string>
     <string name="app_ops_assist_screenshot">chụp ảnh màn hình</string>
-    <string name="app_ops_assist_structure">sử dụng cấu trúc hổ trợ</string>
+    <string name="app_ops_assist_structure">sử dụng cấu trúc hỗ trợ</string>
     <string name="app_ops_audio_accessibility_volume">âm thanh truy cập tùy chỉnh</string>
     <string name="app_ops_auto_start">bắt đầu khởi động</string>
     <string name="app_ops_bind_accessibility_service">ràng buộc dịch vụ truy cập</string>
-    <string name="app_ops_bluetooth_scan">quét thiết bị bluetooth</string>
+    <string name="app_ops_bluetooth_scan">quét bluetooth</string>
     <string name="app_ops_change_wallpaper">thay đổi hình nền</string>
     <string name="app_ops_delete_call_log">xóa nhật ký cuộc gọi của bạn</string>
     <string name="app_ops_delete_contacts">xóa danh bạ của bạn</string>
-    <string name="app_ops_delete_mms">xóa tin nhắn đa phương tiện của bạn</string>
-    <string name="app_ops_delete_sms">xóa tin nhắn của bạn</string>
+    <string name="app_ops_delete_mms">xoá tin nhắn MMS của bạn</string>
+    <string name="app_ops_delete_sms">xoá tin nhắn SMS của bạn</string>
     <string name="app_ops_draw_on_top">hiện cửa sổ trên cùng</string>
     <string name="app_ops_get_accounts">lấy tài khoản thiết bị</string>
-    <string name="app_ops_get_usage_stats">lấy trạng thái các ứng dụng đang dùng</string>
+    <string name="app_ops_get_usage_stats">lấy số liệu thống kê sử dụng ứng dụng</string>
     <string name="app_ops_accept_handover">chuyển cuộc gọi từ một ứng dụng khác</string>
     <string name="app_ops_install_packages">cài đặt gói ứng dụng</string>
     <string name="app_ops_keep_device_awake">giữ màn hình luôn bật</string>
@@ -67,7 +67,7 @@
     <string name="app_ops_read_clipboard">đọc bảng</string>
     <string name="app_ops_read_contacts">đọc danh bạ của bạn</string>
     <string name="app_ops_read_external_storage">đọc bộ nhớ lưu trữ ngoài</string>
-    <string name="app_ops_read_mms">đọc tin nhắn đa phương tiện của bạn</string>
+    <string name="app_ops_read_mms">đọc tin nhắn MMS của bạn</string>
     <string name="app_ops_read_phone_numbers">đọc số điện thoại</string>
     <string name="app_ops_read_phone_state">truy cập trạng thái điện thoại</string>
     <string name="app_ops_read_sms">đọc tin nhắn SMS</string>
@@ -77,17 +77,17 @@
     <string name="app_ops_request_delete_packages">yêu cầu xoá gói cài đặt</string>
     <string name="app_ops_run_in_background">chạy trong nền</string>
     <string name="app_ops_run_any_in_background">chạy các tác vụ nền</string>
-    <string name="app_ops_scan_wifi">quét Wi-Fi</string>
+    <string name="app_ops_scan_wifi">quét mạng Wi-Fi</string>
     <string name="app_ops_send_mms">gửi tin nhắn MMS</string>
     <string name="app_ops_send_sms">gửi tin nhắn SMS</string>
-    <string name="app_ops_start_at_bootup">tự chạy khi khởi động</string>
+    <string name="app_ops_start_at_bootup">bắt đầu khởi động</string>
     <string name="app_ops_start_foreground">chạy trên nền</string>
     <string name="app_ops_toast_window">hiển thị thông báo nổi</string>
     <string name="app_ops_toggle_bluetooth">bật/tắt Bluetooth</string>
     <string name="app_ops_toggle_mobile_data">bật/tắt dữ liệu di động</string>
     <string name="app_ops_toggle_nfc">bật/tắt NFC</string>
     <string name="app_ops_toggle_wifi">bật/tắt Wi-Fi</string>
-    <string name="app_ops_turn_on_screen">bật sáng màn hình</string>
+    <string name="app_ops_turn_on_screen">bật màn hình</string>
     <string name="app_ops_use_alarm_volume">điều chỉnh âm lượng báo thức</string>
     <string name="app_ops_use_audio_focus">điều chỉnh trọng tâm âm thanh</string>
     <string name="app_ops_use_bluetooth_volume">điều chỉnh âm lượng Bluetooth</string>
@@ -106,7 +106,7 @@
     <string name="app_ops_write_sms">viết tin nhắn SMS</string>
     <!-- Privacy Guard -->
     <string name="permlab_changePrivacyGuardState">bật/tắt Bảo vệ Quyền riêng tư</string>
-    <string name="permdesc_changePrivacyGuardState">Cho phép ứng dụng thay đổi cách các ứng dụng khác hoạt động với tính năng Bảo vệ Quyền riêng tư. Khi một ứng dụng đang chạy với Bảo vệ Quyền riêng tư, nó sẽ không thể truy cập vào dữ liệu cá nhân của bạn như danh bạ, nhật kí cuộc gọi, hay tin nhắn.</string>
+    <string name="permdesc_changePrivacyGuardState">Cho phép ứng dụng thay đổi ứng dụng khác chạy với Bảo vệ quyền riêng tư. Khi một ứng dụng chạy với Bảo vệ quyền riêng tư, nó sẽ không có quyền truy cập dữ liệu cá nhân như số liên lạc, nhật ký cuộc gọi hoặc tin nhắn.</string>
     <string name="privacy_guard_notification">Bảo vệ Quyền riêng tư đang hoạt động</string>
     <string name="privacy_guard_notification_detail"><xliff:g id="app">%1$s</xliff:g> sẽ không thể truy cập vào dữ liệu cá nhân của bạn</string>
     <string name="privacy_guard_dialog_title">Bảo vệ Quyền riêng tư</string>

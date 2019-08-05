@@ -32,8 +32,8 @@
     <string name="qs_menu_item_titles">Сховати підписи</string>
     <string name="qs_menu_item_qs_columns">Стобвці швидких налаштувань</string>
     <string name="qs_menu_item_columns_auto">Автоматично</string>
-    <string name="qs_menu_item_rows_landscape">Rows landscape</string>
-    <string name="qs_menu_item_rows">Rows</string>
+    <string name="qs_menu_item_rows_landscape">Рядки (ландшафт)</string>
+    <string name="qs_menu_item_rows">Рядки</string>
     <string name="qs_menu_item_rows_one">1</string>
     <string name="qs_menu_item_rows_two">2</string>
     <string name="qs_menu_item_rows_three">3</string>
@@ -68,8 +68,9 @@
     <string name="powernotif_tuner_activity">Сповіщення про живлення</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Роумінг</string>
-    <string name="tuner_show_info_header_title">Show information header</string>
-    <string name="tuner_show_secure_title">Show security footer</string>
+    <string name="tuner_show_info_header_title">Показати заголовок</string>
+    <string name="tuner_show_secure_title">Інформація про безпеку</string>
+    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB мережа</string>
     <string name="quick_settings_network_adb_enabled_label">ADB по мережі</string>
@@ -81,13 +82,13 @@
     <string name="lte_on">LTE увімкнено </string>
     <string name="lte_off">LTE вимк.</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Апаратні клавіші увімкнено</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Апаратні клавіші вимкнено</string>
+    <string name="quick_settings_hwkeys_label">Апаратні клавіші</string>
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Знімок екрану видалено</string>
     <!-- Ambient Display Pixel-Like string -->
-    <string name="ambientmusic_songinfo">%s by %s</string>
+    <string name="ambientmusic_songinfo">%s від %s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Звук</string>
     <string name="quick_settings_sound_ring">Дзвінок</string>
@@ -111,9 +112,9 @@
     <string name="global_action_restart_hot">Швидке перезавантаження</string>
     <string name="global_action_screenshot">Знімок екрану</string>
     <!-- Kill button in notification guts -->
-    <string name="force_stop_dlg_title">Force stop?</string>
-    <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
-    <string name="guts_force_close_app">Close App</string>
+    <string name="force_stop_dlg_title">Примусово зупинити?</string>
+    <string name="force_stop_dlg_text">Примусове вимкнення додатка може призвести до збою в його роботі.</string>
+    <string name="guts_force_close_app">Закрити додаток</string>
     <!-- Reboot/Recovery QS Tile -->
     <string name="quick_settings_reboot_label">Перезавантаження</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>
@@ -135,13 +136,13 @@
     <string name="accessibility_quick_settings_usb_tether_changed_on">USB-модем увімкнено</string>
     <string name="quick_settings_usb_tether_label">USB-модем</string>
     <!-- Gaming Mode -->
-    <string name="gaming_mode_tile_title">Gaming Mode</string>
-    <string name="gaming_mode_tile_toast">Gaming mode enabled</string>
-    <string name="gaming_mode_tile_toast_disabled">Gaming mode disabled</string>
-    <string name="gaming_mode_dialog_title">Gaming Mode</string>
-    <string name="gaming_mode_dialog_message">When gaming mode is enabled, all heads-up messages will be disabled and hardware keys will be turned off. All the disabled settings will be reset to default once you exit Gaming Mode.</string>
-    <string name="accessibility_quick_settings_gaming_mode_on">Gaming mode on</string>
-    <string name="accessibility_quick_settings_gaming_mode_off">Gaming mode off</string>
+    <string name="gaming_mode_tile_title">Ігровий режим</string>
+    <string name="gaming_mode_tile_toast">Ігровий режим ввімкнено</string>
+    <string name="gaming_mode_tile_toast_disabled">Ігровий режим вимк.</string>
+    <string name="gaming_mode_dialog_title">Ігровий режим</string>
+    <string name="gaming_mode_dialog_message">Коли ігровий режим увімкнений, спливаючі повідомлення і апаратні кнопки будуть відключені. Всі відключені настройки будуть скинуті до значеннями за замовчуванням після виходу з ігрового режиму.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Ігровий режим увімк.</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Ігровий режим вимк.</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Спливаючі сповіщення вимкнено на 1 хвилину.</string>
     <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Спливаючі сповіщення вимкнено на <xliff:g id="number">%d</xliff:g> хвилин.</string>
@@ -150,11 +151,11 @@
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Перетягніть або торкніться, щоб додати плитки</string>
     <!-- Sync QS Tile -->
-    <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+    <string name="quick_settings_sync_label">Синхронізація</string>
+    <string name="accessibility_quick_settings_sync_off">Синхронізація вимкнена</string>
+    <string name="accessibility_quick_settings_sync_on">Синхронізація увімкнена</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Синхронізація вимкнена</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Синхронізація увімкнута</string>
     <!-- Theme tile -->
     <string name="system_theme_style_title">Тема оформлення</string>
     <string name="system_theme_style_auto">Автоматично</string>
@@ -193,7 +194,7 @@
     <string name="quick_settings_theme_tile_color_user_six">Пісочний</string>
     <string name="quick_settings_theme_tile_color_user_seven">Ремз</string>
     <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q Green</string>
+    <string name="quick_settings_theme_tile_color_user_nine">Зелений</string>
     <string name="theme_info_title">Що це?</string>
     <string name="theme_info_message">Плитка Теми є унікальною, але простою у використанні й дозволяє користувачеві змінювати відтінки або тему оформлення.\n\nДля зміни відтінку або теми оформлення натисніть й утримуйте плитку, а потім натисніть ще раз для вибору запропонованих варіантів.</string>
     <!-- Screenrecord Notification Ticker -->
@@ -215,7 +216,7 @@
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenrecord_label">Запис екрану</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
+    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> Швидке заряджання (<xliff:g id="charging_time_left" example="4 години і 2 хвилини">%s</xliff:g> до кінця зарядки)</string>
     <string name="keyguard_plugged_in_dash_charging">Швидка зарядка</string>
     <!-- Smart Pixels QS Tile -->
     <string name="quick_settings_smart_pixels">Розумні пікселі</string>
@@ -223,38 +224,38 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Показувати 4G, замість LTE</string>
     <!-- Volume panel QS tile -->
-    <string name="quick_settings_volume_panel_label">Volume panel</string>
+    <string name="quick_settings_volume_panel_label">Панель гучності</string>
     <!-- AOD media indication -->
-    <string name="music_controls_no_title">No title</string>
+    <string name="music_controls_no_title">Немає заголовка</string>
     <!-- Content description of the location tile in quick settings when on, battery saving mode (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_location_battery_saving">Location reporting: battery saving mode.</string>
+    <string name="accessibility_quick_settings_location_battery_saving">Визначення місцезнаходження: режим економії енергії.</string>
     <!-- Content description of the location tile in quick settings when on, sensors only mode (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_location_gps_only">Location reporting: sensors only mode.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Визначення місцезнаходження: тільки датчики.</string>
     <!-- Content description of the location tile in quick settings when on, high accuracy mode (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_location_high_accuracy">Location reporting: high accuracy mode.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Визначення місцезнаходження: режим високої точності.</string>
     <!-- QuickSettings: Location (On, low-power) [CHAR LIMIT=NONE] -->
-    <string name="quick_settings_location_battery_saving_label">Battery saving</string>
-    <string name="quick_settings_location_battery_saving_label_twoline">Battery\nsaving</string>
+    <string name="quick_settings_location_battery_saving_label">Режим економії енергії</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Економія\nбатареї</string>
     <!-- QuickSettings: Location (On, gps-only) [CHAR LIMIT=NONE] -->
-    <string name="quick_settings_location_gps_only_label">GPS only</string>
-    <string name="quick_settings_location_gps_only_label_twoline">GPS only</string>
+    <string name="quick_settings_location_gps_only_label">Тільки GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Тільки GPS</string>
     <!-- QuickSettings: Location (On, high-accuracy) [CHAR LIMIT=NONE] -->
-    <string name="quick_settings_location_high_accuracy_label">High accuracy</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">High\naccuracy</string>
+    <string name="quick_settings_location_high_accuracy_label">Висока точність</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Висока\nточність</string>
     <!-- QuickSettings: Location detail panel title [CHAR LIMIT=NONE] -->
-    <string name="quick_settings_location_detail_title">Location</string>
+    <string name="quick_settings_location_detail_title">Локація</string>
     <!-- QuickSettings: Location detail panel menu title [CHAR LIMIT=NONE] -->
-    <string name="quick_settings_location_detail_menu_title">Select mode:</string>
+    <string name="quick_settings_location_detail_menu_title">Виберіть режим:</string>
     <!-- [CHAR LIMIT=30] Location detail panel, high accuracy location mode -->
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">High accuracy</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Висока точність</string>
     <!-- [CHAR LIMIT=30] Location detail panel, battery saving location mode -->
-    <string name="quick_settings_location_detail_mode_battery_saving_title">Battery saving</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Режим економії енергії</string>
     <!-- [CHAR LIMIT=30] Location detail panel, device only location mode -->
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Device only</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Лише GPS</string>
     <!-- [CHAR LIMIT=130] Location detail panel, description for high accuracy mode -->
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">Use GPS, Wi\u2011Fi, Bluetooth, or cellular networks to determine location </string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Використовувати GPS, Wi‑Fi, Bluetooth і мобільні мережі, щоб визначати місцеположення</string>
     <!-- [CHAR LIMIT=130] Location detail panel, description for battery saving mode -->
-    <string name="quick_settings_location_detail_mode_battery_saving_description">Use Wi\u2011Fi, Bluetooth, or cellular networks to determine location</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Використовувати Wi‑Fi, Bluetooth і мобільні мережі, щоб визначати місцеположення</string>
     <!-- [CHAR LIMIT=130] Location detail panel, description for sensors only mode -->
-    <string name="quick_settings_location_detail_mode_sensors_only_description">Use GPS to determine your location</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Використовувати GPS для визначення місцезнаходження</string>
 </resources>
