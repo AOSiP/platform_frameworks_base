@@ -70,6 +70,7 @@
     <string name="status_bar_roaming">로밍</string>
     <string name="tuner_show_info_header_title">정보 머리말을 표시</string>
     <string name="tuner_show_secure_title">보안 꼬리말 보기</string>
+    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB 네트워크</string>
     <string name="quick_settings_network_adb_enabled_label">네트워크를 통한 ADB</string>

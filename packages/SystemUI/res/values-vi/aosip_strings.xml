@@ -29,7 +29,7 @@
     <string name="qs_menu_item_columns_eight">8</string>
     <string name="qs_menu_item_columns_nine">9</string>
     <string name="qs_menu_item_reset">Đặt lại</string>
-    <string name="qs_menu_item_titles">Ẩn nhãn</string>
+    <string name="qs_menu_item_titles">Ẩn tên</string>
     <string name="qs_menu_item_qs_columns">Số ô thu nhỏ</string>
     <string name="qs_menu_item_columns_auto">Tự động</string>
     <string name="qs_menu_item_rows_landscape">Số hàng màn hình ngang</string>
@@ -59,7 +59,7 @@
     <string name="right">Phải</string>
     <string name="navbar_editor_title">Trình chỉnh sửa</string>
     <string name="navbar_editor_summary">Chỉnh sửa thanh điều hướng</string>
-    <string name="menu_ime_always_show">Menu / Bộ chọn Bàn phím (luôn hiển thị)</string>
+    <string name="menu_ime_always_show">Chuyển đổi bàn phím (luôn hiển thị)</string>
     <string name="search">Tìm kiếm</string>
     <!-- SysUI Tuner -->
     <string name="statusbar_icons_blacklist">Biểu tượng thanh trạng thái</string>
@@ -70,16 +70,17 @@
     <string name="status_bar_roaming">Chuyển vùng</string>
     <string name="tuner_show_info_header_title">Hiển thị thông tin trên tiêu đề</string>
     <string name="tuner_show_secure_title">Hiển thị cảnh báo bảo mật</string>
+    <string name="tuner_hide_disabled_sim">Ẩn thẻ SIM đã bị vô hiệu hóa</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">Kết nối ADB</string>
-    <string name="quick_settings_network_adb_enabled_label">Kết nối Adb</string>
-    <string name="quick_settings_network_adb_disabled_label">Kết nối Adb</string>
+    <string name="quick_settings_network_adb_enabled_label">Adb trên Net</string>
+    <string name="quick_settings_network_adb_disabled_label">Adb trên Net</string>
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lối tắt màn hình khoá</string>
     <!-- LTE QS Tile -->
-    <string name="qs_lte_label">Chế độ 3G/4G</string>
-    <string name="lte_on">Bật chế độ 3G/4G </string>
-    <string name="lte_off">Tắt chế độ 3G/4G</string>
+    <string name="qs_lte_label">LTE</string>
+    <string name="lte_on">LTE BẬT </string>
+    <string name="lte_off">LTE TẮT</string>
     <!-- HW Keys Tile -->
     <string name="accessibility_quick_settings_hwkeys_on">Bật phím cứng</string>
     <string name="accessibility_quick_settings_hwkeys_off">Tắt phím cứng</string>
@@ -94,7 +95,7 @@
     <string name="quick_settings_sound_vibrate">Rung</string>
     <string name="quick_settings_sound_dnd">Không làm phiền</string>
     <!-- Immersive tile -->
-    <string name="quick_settings_immersive_tile">Chế độ Toàn màn hình</string>
+    <string name="quick_settings_immersive_tile">Chế độ toàn màn hình</string>
     <string name="quick_settings_immersive_tile_statusbar">Ẩn thanh trạng thái</string>
     <string name="quick_settings_immersive_tile_navbar">Ẩn thanh điều hướng</string>
     <string name="quick_settings_immersive_tile_full">Toàn màn hình</string>
@@ -177,7 +178,7 @@
     <string name="quick_settings_theme_tile_color_light_green">Xanh lá nhạt</string>
     <string name="quick_settings_theme_tile_color_lime">Vàng chanh</string>
     <string name="quick_settings_theme_tile_color_yellow">Vàng</string>
-    <string name="quick_settings_theme_tile_color_amber">Hổ phách</string>
+    <string name="quick_settings_theme_tile_color_amber">Vàng cam</string>
     <string name="quick_settings_theme_tile_color_orange">Cam</string>
     <string name="quick_settings_theme_tile_color_deep_orange">Cam đậm</string>
     <string name="quick_settings_theme_tile_color_brown">Nâu</string>
@@ -227,11 +228,11 @@
     <!-- AOD media indication -->
     <string name="music_controls_no_title">Không có tiêu đề</string>
     <!-- Content description of the location tile in quick settings when on, battery saving mode (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_location_battery_saving">Báo cáo vị trí: chế độ tiết kiệm pin.</string>
+    <string name="accessibility_quick_settings_location_battery_saving">GPS: tiết kiệm pin.</string>
     <!-- Content description of the location tile in quick settings when on, sensors only mode (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_location_gps_only">Báo cáo vị trí: chế độ chỉ các cảm biến.</string>
+    <string name="accessibility_quick_settings_location_gps_only">GPS: chỉ cảm biến.</string>
     <!-- Content description of the location tile in quick settings when on, high accuracy mode (not shown on the screen). [CHAR LIMIT=NONE] -->
-    <string name="accessibility_quick_settings_location_high_accuracy">Báo cáo vị trí: chế độ chính xác cao.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">GPS: chính xác cao.</string>
     <!-- QuickSettings: Location (On, low-power) [CHAR LIMIT=NONE] -->
     <string name="quick_settings_location_battery_saving_label">Tiết kiệm pin</string>
     <string name="quick_settings_location_battery_saving_label_twoline">Tiết kiệm\npin</string>
@@ -239,22 +240,22 @@
     <string name="quick_settings_location_gps_only_label">Chỉ GPS</string>
     <string name="quick_settings_location_gps_only_label_twoline">Chỉ GPS</string>
     <!-- QuickSettings: Location (On, high-accuracy) [CHAR LIMIT=NONE] -->
-    <string name="quick_settings_location_high_accuracy_label">Độ chính xác cao</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">Độ chính xác\ncao</string>
+    <string name="quick_settings_location_high_accuracy_label">Chính xác cao</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Chính xác\ncao</string>
     <!-- QuickSettings: Location detail panel title [CHAR LIMIT=NONE] -->
-    <string name="quick_settings_location_detail_title">Vị trí</string>
+    <string name="quick_settings_location_detail_title">GPS</string>
     <!-- QuickSettings: Location detail panel menu title [CHAR LIMIT=NONE] -->
     <string name="quick_settings_location_detail_menu_title">Chọn chế độ:</string>
     <!-- [CHAR LIMIT=30] Location detail panel, high accuracy location mode -->
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">Độ chính xác cao</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Chính xác cao</string>
     <!-- [CHAR LIMIT=30] Location detail panel, battery saving location mode -->
     <string name="quick_settings_location_detail_mode_battery_saving_title">Tiết kiệm pin</string>
     <!-- [CHAR LIMIT=30] Location detail panel, device only location mode -->
     <string name="quick_settings_location_detail_mode_sensors_only_title">Chỉ thiết bị</string>
     <!-- [CHAR LIMIT=130] Location detail panel, description for high accuracy mode -->
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">Sử dụng GPS, Wi\u2011Fi, Bluetooth hoặc mạng di động để xác định vị trí </string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Sử dụng GPS, Wi\u2011Fi, Bluetooth hoặc Mạng di động để xác định vị trí </string>
     <!-- [CHAR LIMIT=130] Location detail panel, description for battery saving mode -->
-    <string name="quick_settings_location_detail_mode_battery_saving_description">Sử dụng Wi\u2011Fi, Bluetooth hoặc mạng di động để xác định vị trí</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Sử dụng Wi\u2011Fi, Bluetooth hoặc Mạng di động để xác định vị trí</string>
     <!-- [CHAR LIMIT=130] Location detail panel, description for sensors only mode -->
     <string name="quick_settings_location_detail_mode_sensors_only_description">Sử dụng GPS để xác định vị trí của bạn</string>
 </resources>

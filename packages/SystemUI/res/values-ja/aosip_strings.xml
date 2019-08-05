@@ -70,6 +70,7 @@
     <string name="status_bar_roaming">ローミング</string>
     <string name="tuner_show_info_header_title">情報ヘッダーを表示</string>
     <string name="tuner_show_secure_title">セキュリティヘッダーを表示</string>
+    <string name="tuner_hide_disabled_sim">無効な SIM カードを隠す</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB\nネットワーク</string>
     <string name="quick_settings_network_adb_enabled_label">ネット経由の ADB</string>

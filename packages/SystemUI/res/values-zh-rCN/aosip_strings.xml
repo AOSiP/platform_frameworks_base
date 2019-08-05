@@ -70,6 +70,7 @@
     <string name="status_bar_roaming">数据漫游</string>
     <string name="tuner_show_info_header_title">显示信息标题</string>
     <string name="tuner_show_secure_title">显示安全页脚</string>
+    <string name="tuner_hide_disabled_sim">隐藏禁用的 SIM 卡</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB 网络</string>
     <string name="quick_settings_network_adb_enabled_label">网络 Adb 调试</string>

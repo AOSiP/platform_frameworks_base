@@ -70,6 +70,7 @@
     <string name="status_bar_roaming">Περιαγωγή</string>
     <string name="tuner_show_info_header_title">Κεφαλίδα πληροφοριών</string>
     <string name="tuner_show_secure_title">Εμφάνιση υποσέλιδου ασφαλείας</string>
+    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">Δίκτυο ADB</string>
     <string name="quick_settings_network_adb_enabled_label">Adb πάνω σε Δίκτυο</string>
