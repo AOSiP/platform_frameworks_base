@@ -514,6 +514,8 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.android.internal.custom.screenshot.StitchImageUtility;
+
 public class ActivityManagerService extends IActivityManager.Stub
         implements Watchdog.Monitor, BatteryStatsImpl.BatteryCallback {
 
@@ -9720,7 +9722,8 @@ public class ActivityManagerService extends IActivityManager.Stub
         // must always grant permissions on behalf of someone explicit.
         final int callingAppId = UserHandle.getAppId(callingUid);
         if ((callingAppId == SYSTEM_UID) || (callingAppId == ROOT_UID)) {
-            if ("com.android.settings.files".equals(grantUri.uri.getAuthority())) {
+            if ("com.android.settings.files".equals(grantUri.uri.getAuthority()) ||
+                    StitchImageUtility.STITCHIMAGE_FILEPROVIDER_CLASS.equals(grantUri.uri.getAuthority())) {
                 // Exempted authority for
                 // 1. cropping user photos and sharing a generated license html
                 //    file in Settings app
