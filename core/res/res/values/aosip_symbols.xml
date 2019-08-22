@@ -175,4 +175,7 @@
   <!-- Ambient music: allow disable dt2skiptrack on Soli devices -->
   <java-symbol type="bool" name="config_has_Soli" />
 
+  <!-- Whether device supports internal audio recording -->
+  <java-symbol type="bool" name="config_hasInternalAudioRecordingSupport" />
+
 </resources>
