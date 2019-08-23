@@ -161,4 +161,7 @@
 
     <!-- Whether to show a custom view for FOD -->
     <bool name="config_needCustomFODView">false</bool>
+
+    <!-- Whether device supports internal audio recording -->
+    <bool name="config_hasInternalAudioRecordingSupport">true</bool>
 </resources>
