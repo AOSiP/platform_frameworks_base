@@ -296,7 +296,7 @@ public class InputMethodManagerService extends IInputMethodManager.Stub
     }
 
     // Long screenshot
-    private long LONGSHOT_BLOCK_SHOWING_TIMEOUT = 1000;
+    private long LONGSHOT_BLOCK_SHOWING_TIMEOUT = 1500;
     public boolean mLongshotBlockShowing = false;
 
     final Context mContext;
