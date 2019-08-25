@@ -114,7 +114,7 @@
     <!-- Text of the checkbox for the permission confirmation dialog to remember the user's choice. [CHAR LIMIT=40] -->
     <string name="permission_remember_choice">Nhớ lựa chọn của tôi</string>
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_toggleNavigationEditor">chỉnh sửa điều hướng</string>
+    <string name="permlab_toggleNavigationEditor">trình tùy biến thanh điều hướng</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_toggleNavigationEditor">Cho phép ứng dụng chỉnh sửa thanh điều hướng.</string>
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

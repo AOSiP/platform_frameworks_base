@@ -70,7 +70,7 @@
     <string name="status_bar_roaming">التجوال</string>
     <string name="tuner_show_info_header_title">إظهار المعلومات في الرأس</string>
     <string name="tuner_show_secure_title">عرض تنبيه الآمان السفلي</string>
-    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
+    <string name="tuner_hide_disabled_sim">إخفاء بطاقات SIM المعطلة</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">شبكة ADB</string>
     <string name="quick_settings_network_adb_enabled_label">Adb عبر الشبكة</string>
@@ -156,47 +156,6 @@
     <string name="accessibility_quick_settings_sync_on">المزامنة تعمل</string>
     <string name="accessibility_quick_settings_sync_changed_off">تم إيقاف المزامنة</string>
     <string name="accessibility_quick_settings_sync_changed_on">تم تشغيل المزامنة</string>
-    <!-- Theme tile -->
-    <string name="system_theme_style_title">السمة</string>
-    <string name="system_theme_style_auto">تلقائي</string>
-    <string name="system_theme_style_light">فاتح</string>
-    <string name="system_theme_style_dark">مظلم</string>
-    <string name="quick_settings_theme_tile_title">اللون الثانوي</string>
-    <string name="quick_settings_theme_tile_accent_detail_title">اختر اللون الثانوي</string>
-    <string name="quick_settings_theme_tile_style_detail_title">اختر السمة</string>
-    <string name="quick_settings_theme_tile_color_default">الافتراضي</string>
-    <string name="quick_settings_theme_tile_color_red">أحمر</string>
-    <string name="quick_settings_theme_tile_color_pink">وردي</string>
-    <string name="quick_settings_theme_tile_color_purple">بنفسجي</string>
-    <string name="quick_settings_theme_tile_color_deep_purple">بنفسجي داكن</string>
-    <string name="quick_settings_theme_tile_color_indigo">نيلي</string>
-    <string name="quick_settings_theme_tile_color_blue">أزرق</string>
-    <string name="quick_settings_theme_tile_color_light_blue">ازرق فاتح</string>
-    <string name="quick_settings_theme_tile_color_cyan">سماوي</string>
-    <string name="quick_settings_theme_tile_color_teal">أزرق مخضّر</string>
-    <string name="quick_settings_theme_tile_color_green">أخضر</string>
-    <string name="quick_settings_theme_tile_color_light_green">أخضر فاتح</string>
-    <string name="quick_settings_theme_tile_color_lime">الجيري</string>
-    <string name="quick_settings_theme_tile_color_yellow">أصفر</string>
-    <string name="quick_settings_theme_tile_color_amber">كهرماني</string>
-    <string name="quick_settings_theme_tile_color_orange">برتقالي</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">برتقالي مشبّع</string>
-    <string name="quick_settings_theme_tile_color_brown">بني</string>
-    <string name="quick_settings_theme_tile_color_grey">رمادي</string>
-    <string name="quick_settings_theme_tile_color_blue_grey">أزرق رمادي</string>
-    <string name="quick_settings_theme_tile_color_black">أسود</string>
-    <string name="quick_settings_theme_tile_color_white">أبيض</string>
-    <string name="quick_settings_theme_tile_color_user_one">#ابقى قذراً</string>
-    <string name="quick_settings_theme_tile_color_user_two">عنب</string>
-    <string name="quick_settings_theme_tile_color_user_three">بلو</string>
-    <string name="quick_settings_theme_tile_color_user_four">نعناع</string>
-    <string name="quick_settings_theme_tile_color_user_five">المال</string>
-    <string name="quick_settings_theme_tile_color_user_six">رملي</string>
-    <string name="quick_settings_theme_tile_color_user_seven">الكباش</string>
-    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q أخضر</string>
-    <string name="theme_info_title">ما هذا ؟</string>
-    <string name="theme_info_message">سمات مربعات الإعدادات هي ميزة فريدة من نوعها من السهل إستخدام مربعات الإعدادات التي تسمح للمستخدم لتغيير لكنة النظام أو الشكل.\n\n للتغيير بين اللكنات والأشكال، ببساطة بالضغط لفترة طويلة على مربعات الإعدادات ثم اضغط مرة أخرى للتحديد من الخيارات المتاحة.</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">يتم الآن تسجيل الشاشة</string>
     <string name="screenrecord_notif_final_ticker">تم تسجيل الشاشة بنجاح</string>
