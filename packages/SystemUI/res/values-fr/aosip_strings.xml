@@ -70,7 +70,7 @@
     <string name="status_bar_roaming">Itinérance</string>
     <string name="tuner_show_info_header_title">Afficher l\'en-tête d\'informations</string>
     <string name="tuner_show_secure_title">Afficher le pied de page de sécurité</string>
-    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
+    <string name="tuner_hide_disabled_sim">Masquer les cartes SIM désactivées</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB par le réseau</string>
     <string name="quick_settings_network_adb_enabled_label">Adb par le réseau</string>
@@ -156,47 +156,6 @@
     <string name="accessibility_quick_settings_sync_on">Synchronisation activée</string>
     <string name="accessibility_quick_settings_sync_changed_off">La synchronisation est désactivée</string>
     <string name="accessibility_quick_settings_sync_changed_on">La synchronisation est activée</string>
-    <!-- Theme tile -->
-    <string name="system_theme_style_title">Thème</string>
-    <string name="system_theme_style_auto">Automatique</string>
-    <string name="system_theme_style_light">Clair</string>
-    <string name="system_theme_style_dark">Sombre</string>
-    <string name="quick_settings_theme_tile_title">Couleur d\'accentuation</string>
-    <string name="quick_settings_theme_tile_accent_detail_title">Sélectionner la couleur d\'accentuation</string>
-    <string name="quick_settings_theme_tile_style_detail_title">Sélectionner un thème</string>
-    <string name="quick_settings_theme_tile_color_default">Par Défaut</string>
-    <string name="quick_settings_theme_tile_color_red">Rouge</string>
-    <string name="quick_settings_theme_tile_color_pink">Rose</string>
-    <string name="quick_settings_theme_tile_color_purple">Violet</string>
-    <string name="quick_settings_theme_tile_color_deep_purple">Violet foncé</string>
-    <string name="quick_settings_theme_tile_color_indigo">Indigo</string>
-    <string name="quick_settings_theme_tile_color_blue">Bleu</string>
-    <string name="quick_settings_theme_tile_color_light_blue">Bleu clair</string>
-    <string name="quick_settings_theme_tile_color_cyan">Cyan</string>
-    <string name="quick_settings_theme_tile_color_teal">Turquoise</string>
-    <string name="quick_settings_theme_tile_color_green">Vert</string>
-    <string name="quick_settings_theme_tile_color_light_green">Vert clair</string>
-    <string name="quick_settings_theme_tile_color_lime">Citron vert</string>
-    <string name="quick_settings_theme_tile_color_yellow">Jaune</string>
-    <string name="quick_settings_theme_tile_color_amber">Ambre</string>
-    <string name="quick_settings_theme_tile_color_orange">Orange</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">Orange foncé</string>
-    <string name="quick_settings_theme_tile_color_brown">Marron</string>
-    <string name="quick_settings_theme_tile_color_grey">Gris</string>
-    <string name="quick_settings_theme_tile_color_blue_grey">Bleu Gris</string>
-    <string name="quick_settings_theme_tile_color_black">Noir</string>
-    <string name="quick_settings_theme_tile_color_white">Blanc</string>
-    <string name="quick_settings_theme_tile_color_user_one">#StayDirty</string>
-    <string name="quick_settings_theme_tile_color_user_two">Raisins</string>
-    <string name="quick_settings_theme_tile_color_user_three">Bleu</string>
-    <string name="quick_settings_theme_tile_color_user_four">Menthe</string>
-    <string name="quick_settings_theme_tile_color_user_five">Argent</string>
-    <string name="quick_settings_theme_tile_color_user_six">Sable</string>
-    <string name="quick_settings_theme_tile_color_user_seven">Bélier</string>
-    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q Vert</string>
-    <string name="theme_info_title">Qu\'est-ce que c\'est ?</string>
-    <string name="theme_info_message">La tuile thème permet de changer la couleur d\'accentuation ou le style du thème système.\n\nPour basculer entre ces deux modes, effectuer un appui prolongé sur la tuile, puis faire défiler les options disponibles par appui simple.</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">L\'écran est en cours d\'enregistrement</string>
     <string name="screenrecord_notif_final_ticker">Écran enregistré avec succès</string>

@@ -76,7 +76,7 @@
     <string name="quick_settings_network_adb_enabled_label">Adb trên Net</string>
     <string name="quick_settings_network_adb_disabled_label">Adb trên Net</string>
     <!-- Lockscreen icons -->
-    <string name="lockscreen_tuner_title">Lối tắt màn hình khoá</string>
+    <string name="lockscreen_tuner_title">Phím tắt màn hình khoá</string>
     <!-- LTE QS Tile -->
     <string name="qs_lte_label">LTE</string>
     <string name="lte_on">LTE BẬT </string>
@@ -156,47 +156,6 @@
     <string name="accessibility_quick_settings_sync_on">Bật đồng bộ hoá</string>
     <string name="accessibility_quick_settings_sync_changed_off">Đã tắt đồng bộ hoá</string>
     <string name="accessibility_quick_settings_sync_changed_on">Đã bật đồng bộ hoá</string>
-    <!-- Theme tile -->
-    <string name="system_theme_style_title">Chủ đề</string>
-    <string name="system_theme_style_auto">Tự động</string>
-    <string name="system_theme_style_light">Sáng</string>
-    <string name="system_theme_style_dark">Tối</string>
-    <string name="quick_settings_theme_tile_title">Màu nhấn</string>
-    <string name="quick_settings_theme_tile_accent_detail_title">Chọn màu chủ đề</string>
-    <string name="quick_settings_theme_tile_style_detail_title">Chọn chủ đề</string>
-    <string name="quick_settings_theme_tile_color_default">Mặc định</string>
-    <string name="quick_settings_theme_tile_color_red">Đỏ</string>
-    <string name="quick_settings_theme_tile_color_pink">Hồng</string>
-    <string name="quick_settings_theme_tile_color_purple">Tím</string>
-    <string name="quick_settings_theme_tile_color_deep_purple">Tím đậm</string>
-    <string name="quick_settings_theme_tile_color_indigo">Chàm</string>
-    <string name="quick_settings_theme_tile_color_blue">Xanh</string>
-    <string name="quick_settings_theme_tile_color_light_blue">Xanh nhạt</string>
-    <string name="quick_settings_theme_tile_color_cyan">Xanh lơ</string>
-    <string name="quick_settings_theme_tile_color_teal">Xanh mòng két</string>
-    <string name="quick_settings_theme_tile_color_green">Xanh lá</string>
-    <string name="quick_settings_theme_tile_color_light_green">Xanh lá nhạt</string>
-    <string name="quick_settings_theme_tile_color_lime">Vàng chanh</string>
-    <string name="quick_settings_theme_tile_color_yellow">Vàng</string>
-    <string name="quick_settings_theme_tile_color_amber">Vàng cam</string>
-    <string name="quick_settings_theme_tile_color_orange">Cam</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">Cam đậm</string>
-    <string name="quick_settings_theme_tile_color_brown">Nâu</string>
-    <string name="quick_settings_theme_tile_color_grey">Xám</string>
-    <string name="quick_settings_theme_tile_color_blue_grey">Xanh xám</string>
-    <string name="quick_settings_theme_tile_color_black">Đen</string>
-    <string name="quick_settings_theme_tile_color_white">Trắng</string>
-    <string name="quick_settings_theme_tile_color_user_one">#StayDirty</string>
-    <string name="quick_settings_theme_tile_color_user_two">Nho</string>
-    <string name="quick_settings_theme_tile_color_user_three">Xanh</string>
-    <string name="quick_settings_theme_tile_color_user_four">Bạc hà</string>
-    <string name="quick_settings_theme_tile_color_user_five">Tiền</string>
-    <string name="quick_settings_theme_tile_color_user_six">Cát</string>
-    <string name="quick_settings_theme_tile_color_user_seven">Ram</string>
-    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Xanh Q</string>
-    <string name="theme_info_title">Đây là cái gì?</string>
-    <string name="theme_info_message">Chủ đề là một tính năng độc đáo và dễ sử dụng, cho phép người dùng thay đổi màu chủ đề hoặc chủ đề hệ thống.\n\nĐể thay đổi màu chủ đề hoặc chủ đề hệ thống, bạn chỉ cần nhấn giữ trên ô Chủ đề và nhấn lại để chọn một trong các màu và chủ đề yêu thích.</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">Đang quay phim màn hình</string>
     <string name="screenrecord_notif_final_ticker">Quay phim màn hình thành công</string>

@@ -70,7 +70,7 @@
     <string name="status_bar_roaming">Roaming</string>
     <string name="tuner_show_info_header_title">Pokaż nagłówek informacji</string>
     <string name="tuner_show_secure_title">Pokaż stopę bezpieczeństwa</string>
-    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
+    <string name="tuner_hide_disabled_sim">Ukryj wyłączone karty SIM</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">Sieć ADB</string>
     <string name="quick_settings_network_adb_enabled_label">Adb przez Sieć</string>
@@ -156,47 +156,6 @@
     <string name="accessibility_quick_settings_sync_on">Synchronizacja włączona</string>
     <string name="accessibility_quick_settings_sync_changed_off">Synchronizacja została wyłączona</string>
     <string name="accessibility_quick_settings_sync_changed_on">Synchronizacja została włączona</string>
-    <!-- Theme tile -->
-    <string name="system_theme_style_title">Motyw</string>
-    <string name="system_theme_style_auto">Automatycznie</string>
-    <string name="system_theme_style_light">Jasny</string>
-    <string name="system_theme_style_dark">Ciemny</string>
-    <string name="quick_settings_theme_tile_title">Akcent</string>
-    <string name="quick_settings_theme_tile_accent_detail_title">Wybierz akcent</string>
-    <string name="quick_settings_theme_tile_style_detail_title">Wybierz motyw</string>
-    <string name="quick_settings_theme_tile_color_default">Domyślny</string>
-    <string name="quick_settings_theme_tile_color_red">Czerwony</string>
-    <string name="quick_settings_theme_tile_color_pink">Różowy</string>
-    <string name="quick_settings_theme_tile_color_purple">Fioletowy</string>
-    <string name="quick_settings_theme_tile_color_deep_purple">Ciemnofioletowy</string>
-    <string name="quick_settings_theme_tile_color_indigo">Indygo</string>
-    <string name="quick_settings_theme_tile_color_blue">Niebieski</string>
-    <string name="quick_settings_theme_tile_color_light_blue">Jasnoniebieski</string>
-    <string name="quick_settings_theme_tile_color_cyan">Cyjan</string>
-    <string name="quick_settings_theme_tile_color_teal">Morski</string>
-    <string name="quick_settings_theme_tile_color_green">Zielony</string>
-    <string name="quick_settings_theme_tile_color_light_green">Jasnozielony</string>
-    <string name="quick_settings_theme_tile_color_lime">Limonowy</string>
-    <string name="quick_settings_theme_tile_color_yellow">Żółty</string>
-    <string name="quick_settings_theme_tile_color_amber">Bursztynowy</string>
-    <string name="quick_settings_theme_tile_color_orange">Pomarańczowy</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">Ciemnopomarańczowy</string>
-    <string name="quick_settings_theme_tile_color_brown">Brązowy</string>
-    <string name="quick_settings_theme_tile_color_grey">Szary</string>
-    <string name="quick_settings_theme_tile_color_blue_grey">Niebieskoszary</string>
-    <string name="quick_settings_theme_tile_color_black">Czarny</string>
-    <string name="quick_settings_theme_tile_color_white">Biały</string>
-    <string name="quick_settings_theme_tile_color_user_one">#StayDirty</string>
-    <string name="quick_settings_theme_tile_color_user_two">Winogrona</string>
-    <string name="quick_settings_theme_tile_color_user_three">Niebieski</string>
-    <string name="quick_settings_theme_tile_color_user_four">Miętowy</string>
-    <string name="quick_settings_theme_tile_color_user_five">Pieniądze</string>
-    <string name="quick_settings_theme_tile_color_user_six">Piaszczysty</string>
-    <string name="quick_settings_theme_tile_color_user_seven">Barany</string>
-    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Zielony</string>
-    <string name="theme_info_title">Co to jest?</string>
-    <string name="theme_info_message">Kafelek \"Motywy\" jest unikalny, ale łatwy w użyciu. Pozwala on na zmianę koloru akcentu lub stylu systemu.\n\nAby przełączyć się między kolorem akcentu i stylem, przytrzymaj kafelek, po czym naciśnij go, aby wybrać jedną z proponowanych opcji.</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">Nagrywanie ekranu rozpoczęte</string>
     <string name="screenrecord_notif_final_ticker">Nagrywanie ekranu zakończone powodzeniem</string>

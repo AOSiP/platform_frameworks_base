@@ -70,7 +70,7 @@
     <string name="status_bar_roaming">Dolaşım</string>
     <string name="tuner_show_info_header_title">Başlık bilgisini göster</string>
     <string name="tuner_show_secure_title">Güvenlik altbilgisini göster</string>
-    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
+    <string name="tuner_hide_disabled_sim">Devre dışı SIM kartları gizle</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">ADB ağı</string>
     <string name="quick_settings_network_adb_enabled_label">Net üzerinde Adb</string>
@@ -156,47 +156,6 @@
     <string name="accessibility_quick_settings_sync_on">Eşitleme açık</string>
     <string name="accessibility_quick_settings_sync_changed_off">Eşitleme kapatıldı</string>
     <string name="accessibility_quick_settings_sync_changed_on">Eşitleme açıldı</string>
-    <!-- Theme tile -->
-    <string name="system_theme_style_title">Tema</string>
-    <string name="system_theme_style_auto">Otomatik</string>
-    <string name="system_theme_style_light">Aydınlık</string>
-    <string name="system_theme_style_dark">Karanlık</string>
-    <string name="quick_settings_theme_tile_title">Vurgu rengi</string>
-    <string name="quick_settings_theme_tile_accent_detail_title">Vurgu rengi seçin</string>
-    <string name="quick_settings_theme_tile_style_detail_title">Tema seçin</string>
-    <string name="quick_settings_theme_tile_color_default">Varsayılan</string>
-    <string name="quick_settings_theme_tile_color_red">Kırmızı</string>
-    <string name="quick_settings_theme_tile_color_pink">Pembe</string>
-    <string name="quick_settings_theme_tile_color_purple">Mor</string>
-    <string name="quick_settings_theme_tile_color_deep_purple">Koyu mor</string>
-    <string name="quick_settings_theme_tile_color_indigo">İndigo</string>
-    <string name="quick_settings_theme_tile_color_blue">Mavi</string>
-    <string name="quick_settings_theme_tile_color_light_blue">Açık mavi</string>
-    <string name="quick_settings_theme_tile_color_cyan">Camgöbeği</string>
-    <string name="quick_settings_theme_tile_color_teal">Yeşilimsi mavi</string>
-    <string name="quick_settings_theme_tile_color_green">Yeşil</string>
-    <string name="quick_settings_theme_tile_color_light_green">Açık yeşil</string>
-    <string name="quick_settings_theme_tile_color_lime">Misket limonu</string>
-    <string name="quick_settings_theme_tile_color_yellow">Sarı</string>
-    <string name="quick_settings_theme_tile_color_amber">Koyu sarı</string>
-    <string name="quick_settings_theme_tile_color_orange">Turuncu</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">Koyu turuncu</string>
-    <string name="quick_settings_theme_tile_color_brown">Kahverengi</string>
-    <string name="quick_settings_theme_tile_color_grey">Gri</string>
-    <string name="quick_settings_theme_tile_color_blue_grey">Mavi gri</string>
-    <string name="quick_settings_theme_tile_color_black">Siyah</string>
-    <string name="quick_settings_theme_tile_color_white">Beyaz</string>
-    <string name="quick_settings_theme_tile_color_user_one">#StayDirty</string>
-    <string name="quick_settings_theme_tile_color_user_two">Grapes</string>
-    <string name="quick_settings_theme_tile_color_user_three">Blu</string>
-    <string name="quick_settings_theme_tile_color_user_four">Mint</string>
-    <string name="quick_settings_theme_tile_color_user_five">Money</string>
-    <string name="quick_settings_theme_tile_color_user_six">Sandy</string>
-    <string name="quick_settings_theme_tile_color_user_seven">Rams</string>
-    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q Yeşil</string>
-    <string name="theme_info_title">Bu nedir?</string>
-    <string name="theme_info_message">Temalar karesi, kullanıcının sistem vurgu rengini veya temasını değiştirmesine izin veren, benzersiz fakat kullanımı kolay bir karedir.\n\nVurgu renkleri ve temalar arasında geçiş yapmak için, sadece kare üzerine uzun basın ve ardından sunulan seçeneklerden seçim yapmak için tekrar basın.</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">Ekran kaydediliyor</string>
     <string name="screenrecord_notif_final_ticker">Ekran başarıyla kaydedildi</string>

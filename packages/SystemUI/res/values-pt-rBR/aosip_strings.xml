@@ -70,7 +70,7 @@
     <string name="status_bar_roaming">Roaming</string>
     <string name="tuner_show_info_header_title">Mostrar Informações do cabeçalho</string>
     <string name="tuner_show_secure_title">Mostrar rodapé de segurança</string>
-    <string name="tuner_hide_disabled_sim">Hide disabled SIM cards</string>
+    <string name="tuner_hide_disabled_sim">Ocultar cartões SIM desativados</string>
     <!-- ADB network tile -->
     <string name="quick_settings_adb_network">Rede ADB</string>
     <string name="quick_settings_network_adb_enabled_label">Adb sobre rede</string>
@@ -151,52 +151,11 @@
     <!-- QS customizer -->
     <string name="drag_or_tap_to_add_tiles">Arraste ou toque para adicionar atalhos</string>
     <!-- Sync QS Tile -->
-    <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
-    <!-- Theme tile -->
-    <string name="system_theme_style_title">Tema</string>
-    <string name="system_theme_style_auto">Automático</string>
-    <string name="system_theme_style_light">Claro</string>
-    <string name="system_theme_style_dark">Escuro</string>
-    <string name="quick_settings_theme_tile_title">Destaque</string>
-    <string name="quick_settings_theme_tile_accent_detail_title">Selecionar cor de destaque</string>
-    <string name="quick_settings_theme_tile_style_detail_title">Selecionar tema</string>
-    <string name="quick_settings_theme_tile_color_default">Padrão</string>
-    <string name="quick_settings_theme_tile_color_red">Vermelho</string>
-    <string name="quick_settings_theme_tile_color_pink">Rosa</string>
-    <string name="quick_settings_theme_tile_color_purple">Roxo</string>
-    <string name="quick_settings_theme_tile_color_deep_purple">Roxo escuro</string>
-    <string name="quick_settings_theme_tile_color_indigo">Azul indigo</string>
-    <string name="quick_settings_theme_tile_color_blue">Azul</string>
-    <string name="quick_settings_theme_tile_color_light_blue">Azul claro</string>
-    <string name="quick_settings_theme_tile_color_cyan">Ciano</string>
-    <string name="quick_settings_theme_tile_color_teal">Azul-petróleo</string>
-    <string name="quick_settings_theme_tile_color_green">Verde</string>
-    <string name="quick_settings_theme_tile_color_light_green">Verde claro</string>
-    <string name="quick_settings_theme_tile_color_lime">Verde limão</string>
-    <string name="quick_settings_theme_tile_color_yellow">Amarelo</string>
-    <string name="quick_settings_theme_tile_color_amber">Âmbar</string>
-    <string name="quick_settings_theme_tile_color_orange">Laranja</string>
-    <string name="quick_settings_theme_tile_color_deep_orange">Laranja escuro</string>
-    <string name="quick_settings_theme_tile_color_brown">Marrom</string>
-    <string name="quick_settings_theme_tile_color_grey">Cinza</string>
-    <string name="quick_settings_theme_tile_color_blue_grey">Azul acizentado</string>
-    <string name="quick_settings_theme_tile_color_black">Preto</string>
-    <string name="quick_settings_theme_tile_color_white">Branco</string>
-    <string name="quick_settings_theme_tile_color_user_one">#StayDirty</string>
-    <string name="quick_settings_theme_tile_color_user_two">Uvas</string>
-    <string name="quick_settings_theme_tile_color_user_three">Blu</string>
-    <string name="quick_settings_theme_tile_color_user_four">Hortelã</string>
-    <string name="quick_settings_theme_tile_color_user_five">Dinheiro</string>
-    <string name="quick_settings_theme_tile_color_user_six">Arenoso</string>
-    <string name="quick_settings_theme_tile_color_user_seven">Carneiros</string>
-    <string name="quick_settings_theme_tile_color_user_eight">Q</string>
-    <string name="quick_settings_theme_tile_color_user_nine">Q Verde</string>
-    <string name="theme_info_title">O que é isso?</string>
-    <string name="theme_info_message">O atalho Tema é um atalho único mas fácil de usar que permite ao usuário alterar o estilo do sistema.\n\nPara trocar entre diferentes estilos, toque e segure no atalho e então toque novamente para selecionar uma das opções oferecidas.</string>
+    <string name="quick_settings_sync_label">Sincronizar</string>
+    <string name="accessibility_quick_settings_sync_off">Sincronização desativada</string>
+    <string name="accessibility_quick_settings_sync_on">Sincronização ativada</string>
+    <string name="accessibility_quick_settings_sync_changed_off">A sincronização foi desativada</string>
+    <string name="accessibility_quick_settings_sync_changed_on">A sincronização foi ativada</string>
     <!-- Screenrecord Notification Ticker -->
     <string name="screenrecord_notif_ticker">A tela está sendo gravada</string>
     <string name="screenrecord_notif_final_ticker">Tela gravada com sucesso</string>
