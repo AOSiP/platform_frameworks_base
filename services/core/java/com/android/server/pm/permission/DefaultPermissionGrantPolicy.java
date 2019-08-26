@@ -798,6 +798,9 @@ public final class DefaultPermissionGrantPolicy {
         // Pixel Live Wallpapers
         grantSystemFixedPermissionsToSystemPackage("com.google.pixel.livewallpaper", userId, ALWAYS_LOCATION_PERMISSIONS);
 
+        // Google Markup
+        grantSystemFixedPermissionsToSystemPackage("com.google.android.markup", userId, STORAGE_PERMISSIONS);
+
         // ThemePicker
         String themePickerPackage = "com.android.wallpaper";
         PackageInfo pkg = getPackageInfo(themePickerPackage);
