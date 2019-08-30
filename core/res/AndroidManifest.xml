@@ -610,6 +610,9 @@
     <!-- Used to get active package name. -->
     <protected-broadcast android:name="android.intent.action.ACTIVE_PACKAGE_CHANGED" />
 
+    <!-- Used to get camera status. -->
+    <protected-broadcast android:name="android.intent.action.CAMERA_STATUS_CHANGED" />
+
     <!-- ====================================================================== -->
     <!--                          RUNTIME PERMISSIONS                           -->
     <!-- ====================================================================== -->
