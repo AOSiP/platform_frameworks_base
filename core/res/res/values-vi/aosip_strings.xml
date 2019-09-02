@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Button that copies the url to the log of a crashed application -->
-    <string name="aerr_copy">Sao chép URL nhật ký lỗi</string>
+    <string name="aerr_copy">Sao chép URL sự cố lỗi</string>
     <string name="url_copy_success">Sao chép URL thành công</string>
     <string name="url_copy_failed">Đã xảy ra lỗi khi tải nhật ký lên dogbin</string>
     <!-- Power menu -->
@@ -37,7 +37,7 @@
     <string name="app_ops_bind_accessibility_service">ràng buộc dịch vụ truy cập</string>
     <string name="app_ops_bluetooth_scan">quét bluetooth</string>
     <string name="app_ops_change_wallpaper">thay đổi hình nền</string>
-    <string name="app_ops_delete_call_log">xóa nhật ký cuộc gọi của bạn</string>
+    <string name="app_ops_delete_call_log">xóa lịch sử cuộc gọi của bạn</string>
     <string name="app_ops_delete_contacts">xóa danh bạ của bạn</string>
     <string name="app_ops_delete_mms">xoá tin nhắn MMS của bạn</string>
     <string name="app_ops_delete_sms">xoá tin nhắn SMS của bạn</string>
@@ -62,7 +62,7 @@
     <string name="app_ops_post_notification">gửi một thông báo</string>
     <string name="app_ops_project_media">dự án đa phương tiện</string>
     <string name="app_ops_read_calendar">đọc lịch của bạn</string>
-    <string name="app_ops_read_call_log">đọc nhật ký cuộc gọi</string>
+    <string name="app_ops_read_call_log">đọc lịch sử cuộc gọi</string>
     <string name="app_ops_read_cell_broadcasts">đọc phát sóng di động</string>
     <string name="app_ops_read_clipboard">đọc bảng</string>
     <string name="app_ops_read_contacts">đọc danh bạ của bạn</string>

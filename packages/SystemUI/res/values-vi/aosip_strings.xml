@@ -175,7 +175,7 @@
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenrecord_label">Quay phim màn hình</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> cho đến khi đầy)</string>
+    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Đang sạc nhanh (<xliff:g id="charging_time_left" example="4 giờ và 2 phút">%s</xliff:g> nữa sẽ đầy)</string>
     <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>
     <!-- Smart Pixels QS Tile -->
     <string name="quick_settings_smart_pixels">Điểm ảnh thông minh</string>
