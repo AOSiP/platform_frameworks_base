@@ -7431,9 +7431,6 @@ message MetricsEvent {
     // END OF AOSP CONSTANTS
 
     // OwlsNest
-    OWLSNEST = 420;
-
-    // QS Tiles
-    OWL_TILE = 421;
+    OWLSNEST = 10001;
   }
 }
