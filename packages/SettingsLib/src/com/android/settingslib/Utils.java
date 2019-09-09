@@ -207,6 +207,14 @@ public class Utils {
     }
 
     @ColorInt
+    public static int getColorStateListDefaultColor(Context context, int resId) {
+        final ColorStateList list =
+                context.getResources().getColorStateList(resId, context.getTheme());
+
+        return list.getDefaultColor();
+    }
+
+    @ColorInt
     public static int getColorAccent(Context context) {
         return getColorAttr(context, android.R.attr.colorAccent);
     }
