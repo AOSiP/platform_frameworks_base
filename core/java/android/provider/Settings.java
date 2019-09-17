@@ -4483,6 +4483,11 @@ public final class Settings {
          */
         public static final String SCREENSHOT_SHUTTER_SOUND = "screenshot_shutter_sound";
 
+        /**
+         * @hide
+         */
+        public static final String DEVICE_FEATURE_SETTINGS = "device_feature_settings";
+
         /** @hide */
         private static final Validator SCREENSHOT_SHUTTER_SOUND_VALIDATOR =
                 BOOLEAN_VALIDATOR;
