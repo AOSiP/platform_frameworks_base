@@ -5814,11 +5814,6 @@ public class WindowManagerService extends IWindowManager.Stub
     }
 
     @Override
-    public void sendCustomAction(Intent intent) {
-        mPolicy.sendCustomAction(intent);
-    }
-
-    @Override
     public void lockNow(Bundle options) {
         mPolicy.lockNow(options);
     }
@@ -7106,6 +7101,16 @@ public class WindowManagerService extends IWindowManager.Stub
             throw new SecurityException("Requires USER_ACTIVITY permission");
         }
         mPolicy.requestUserActivityNotification();
+    }
+
+    /**
+     * Allow ActionHandler to send custom actions to window manager
+     *
+     * @hide
+     */
+    @Override
+    public void sendCustomAction(Intent intent) {
+        mPolicy.sendCustomAction(intent);
     }
 
     void markForSeamlessRotation(WindowState w, boolean seamlesslyRotated) {

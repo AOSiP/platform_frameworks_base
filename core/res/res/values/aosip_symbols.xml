@@ -93,4 +93,11 @@
   <!-- Whether notify fingerprint client of successful cancelled authentication -->
   <java-symbol type="bool" name="config_notifyClientOnFingerprintCancelSuccess" />
 
+  <!-- Last app switch animations -->
+  <java-symbol type="anim" name="smartaction_app_in" />
+  <java-symbol type="anim" name="smartaction_app_out" />
+
+  <!-- Kill app message -->
+  <java-symbol type="string" name="app_killed_message" />
+
 </resources>

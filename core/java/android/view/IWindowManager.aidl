@@ -315,11 +315,6 @@ interface IWindowManager
     oneway void setForceShowSystemBars(boolean show);
 
     /**
-     * Send some ActionHandler commands to WindowManager.
-     */
-    void sendCustomAction(in Intent intent);
-
-    /**
      * Called by System UI to notify of changes to the visibility of Recents.
      */
     oneway void setRecentsVisibility(boolean visible);
@@ -644,4 +639,9 @@ interface IWindowManager
      * native InputManager before proceeding with tests.
      */
     void syncInputTransactions();
+
+    /**
+     * Allow ActionHandler to send custom actions to window manager
+     */
+    void sendCustomAction(in Intent intent);
 }

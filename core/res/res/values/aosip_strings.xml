@@ -30,4 +30,7 @@
 
     <!-- Pocket Lock -->
     <string name="pocket_lock_message_long_press">Long press power button to interact</string>
+
+    <!-- App killed message -->
+    <string name="app_killed_message">%s killed</string>
 </resources>
