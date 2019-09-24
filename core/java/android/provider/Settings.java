@@ -4791,7 +4791,14 @@ public final class Settings {
         /** @hide */
         private static final Validator VIBRATE_ON_DISCONNECT_VALIDATOR =
                 BOOLEAN_VALIDATOR;
-
+        /**
+         *  Enable statusbar double tap gesture on to put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
+        /** @hide */
+        private static final Validator DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
@@ -4860,9 +4867,13 @@ public final class Settings {
             NOTIFICATION_LIGHT_PULSE,
             SCREENSHOT_SHUTTER_SOUND,
             BACK_GESTURE_HEIGHT,
+<<<<<<< HEAD
             VIBRATE_ON_CONNECT,
             VIBRATE_ON_CALLWAITING,
             VIBRATE_ON_DISCONNECT,
+=======
+            DOUBLE_TAP_SLEEP_GESTURE,
+>>>>>>> 399c9a68d9e... base: double tap to sleep on statusbar
         };
 
         /**
@@ -4993,9 +5004,13 @@ public final class Settings {
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_FONT_SIZE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_VIEW_LOCATION);
+<<<<<<< HEAD
             PRIVATE_SETTINGS.add(VIBRATE_ON_CONNECT);
             PRIVATE_SETTINGS.add(VIBRATE_ON_CALLWAITING);
             PRIVATE_SETTINGS.add(VIBRATE_ON_DISCONNECT);
+=======
+            PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
+>>>>>>> 399c9a68d9e... base: double tap to sleep on statusbar
         }
 
         /**
@@ -5096,9 +5111,13 @@ public final class Settings {
             VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
             VALIDATORS.put(QS_PANEL_BG_ALPHA, QS_PANEL_BG_ALPHA_VALIDATOR);
             VALIDATORS.put(BACK_GESTURE_HEIGHT, BACK_GESTURE_HEIGHT_VALIDATOR);
+<<<<<<< HEAD
             VALIDATORS.put(VIBRATE_ON_CONNECT, VIBRATE_ON_CONNECT_VALIDATOR);
             VALIDATORS.put(VIBRATE_ON_CALLWAITING, VIBRATE_ON_CALLWAITING_VALIDATOR);
             VALIDATORS.put(VIBRATE_ON_DISCONNECT, VIBRATE_ON_DISCONNECT_VALIDATOR);
+=======
+            VALIDATORS.put(DOUBLE_TAP_SLEEP_GESTURE, DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR);
+>>>>>>> 399c9a68d9e... base: double tap to sleep on statusbar
         }
 
         /**
