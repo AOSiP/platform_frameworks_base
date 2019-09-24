@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d40f157e_5c3d3765",
+        "filename": "packages/SystemUI/res/values/aosip_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2019-09-24T17:51:56Z",
+      "side": 1,
+      "message": "untranslatable\u003d\"true\" in all number strings",
+      "revId": "d806a148abe9f3020a1a504526c807802d290243",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cfdaf7c_c075a30c",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/QuickQSPanel.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2019-09-24T17:51:56Z",
+      "side": 1,
+      "message": "WHY\nIS\nTHIS\nA\nTAB",
+      "revId": "d806a148abe9f3020a1a504526c807802d290243",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2deb515b_a8c680fb",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/TileLayout.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2019-09-24T17:51:56Z",
+      "side": 1,
+      "message": "Add a Resources parameter and re-use the one acquired in updateResources()",
+      "revId": "d806a148abe9f3020a1a504526c807802d290243",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3942f963_cab9a10f",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/customize/QSCustomizer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2019-09-24T17:51:56Z",
+      "side": 1,
+      "message": "switch(item.getItemId()) {\n  case R.id.menu_item_reset:\n  // and so on\n}",
+      "revId": "d806a148abe9f3020a1a504526c807802d290243",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b793dea_d0cbab2d",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/customize/QSCustomizer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2019-09-24T17:51:56Z",
+      "side": 1,
+      "message": "fuck me with this indentation",
+      "revId": "d806a148abe9f3020a1a504526c807802d290243",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
