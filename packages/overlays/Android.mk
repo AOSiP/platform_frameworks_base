@@ -29,6 +29,8 @@ LOCAL_REQUIRED_MODULES := \
 	DisplayCutoutEmulationTallOverlay \
 	FontAclonicaSourceOverlay \
 	FontAmaranteSourceOverlay \
+	FontArbutusSourceOverlay \
+	FontArvoLatoOverlay \
 	FontBariolSourceOverlay \
 	FontCagliostroSourceOverlay \
 	FontCoolstorySourceOverlay \
@@ -37,6 +39,7 @@ LOCAL_REQUIRED_MODULES := \
 	FontRosemarySourceOverlay \
 	FontSonySketchSourceOverlay \
 	FontSurferSourceOverlay \
+	FontRubikRubikOverlay \
 	IconPackCircularAndroidOverlay \
 	IconPackCircularLauncherOverlay \
 	IconPackCircularSettingsOverlay \
