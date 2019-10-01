@@ -17,4 +17,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- AOD QS tile -->
     <string name="quick_settings_aod_label">AOD</string>
+
+    <!-- Tuner items -->
+    <string name="status_bar_data_saver">Data saver</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_roaming">Roaming</string>
+
 </resources>
