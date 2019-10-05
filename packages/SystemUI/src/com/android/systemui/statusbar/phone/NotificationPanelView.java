@@ -68,7 +68,9 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.keyguard.KeyguardClockSwitch;
 import com.android.internal.util.aosip.aosipUtils;
+import com.android.internal.widget.LockPatternUtils;
 import com.android.keyguard.KeyguardStatusView;
+import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardUpdateMonitorCallback;
 import com.android.systemui.DejankUtils;
@@ -342,6 +344,10 @@ public class NotificationPanelView extends PanelView implements
     private FalsingManager mFalsingManager;
     private String mLastCameraLaunchSource = KeyguardBottomAreaView.CAMERA_LAUNCH_SOURCE_AFFORDANCE;
 
+    // AOSiP additions
+    private boolean mQsSecureExpandDisabled;
+    private LockPatternUtils mLockPatternUtils;
+
     private Runnable mHeadsUpExistenceChangedRunnable = new Runnable() {
         @Override
         public void run() {
@@ -483,6 +489,7 @@ public class NotificationPanelView extends PanelView implements
         setWillNotDraw(!DEBUG);
         mInjectionInflationController = injectionInflationController;
         mFalsingManager = falsingManager;
+        mLockPatternUtils = new LockPatternUtils(context);
         mPowerManager = context.getSystemService(PowerManager.class);
         mWakeUpCoordinator = coordinator;
         mAccessibilityManager = context.getSystemService(AccessibilityManager.class);
@@ -993,7 +1000,7 @@ public class NotificationPanelView extends PanelView implements
     }
 
     public void setQsExpansionEnabled(boolean qsExpansionEnabled) {
-        mQsExpansionEnabled = qsExpansionEnabled;
+        mQsExpansionEnabled = qsExpansionEnabled && !isQsSecureExpandDisabled();
         if (mQs == null) return;
         mQs.setHeaderClickable(qsExpansionEnabled);
     }
@@ -1442,7 +1449,8 @@ public class NotificationPanelView extends PanelView implements
         }
         showQsOverride &= mBarState == StatusBarState.SHADE;
 
-        return twoFingerDrag || showQsOverride || stylusButtonClickDrag || mouseButtonClickDrag;
+        return !isQsSecureExpandDisabled() && (showQsOverride || twoFingerDrag
+                || stylusButtonClickDrag || mouseButtonClickDrag);
     }
 
     private void handleQsDown(MotionEvent event) {
@@ -1678,6 +1686,9 @@ public class NotificationPanelView extends PanelView implements
         mBarState = statusBarState;
         mKeyguardShowing = keyguardShowing;
 
+        if (mQs != null) {
+            mQs.setSecureExpandDisabled(isQsSecureExpandDisabled());
+        }
         if (oldState == StatusBarState.KEYGUARD
                 && (goingToFullShade || statusBarState == StatusBarState.SHADE_LOCKED)) {
             animateKeyguardStatusBarOut();
@@ -3796,5 +3807,18 @@ public class NotificationPanelView extends PanelView implements
 
     public void setQsQuickPulldown(int mode) {
         mOneFingerQuickSettingsIntercept = mode;
+    }
+
+    public void updateSettings() {
+        mQsSecureExpandDisabled = Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.LOCK_QS_DISABLED, 0,
+                UserHandle.USER_CURRENT) != 0;
+    }
+
+    private boolean isQsSecureExpandDisabled() {
+        final boolean keyguardOrShadeShowing = mBarState == StatusBarState.KEYGUARD
+                || mBarState == StatusBarState.SHADE_LOCKED;
+        return mLockPatternUtils.isSecure(KeyguardUpdateMonitor.getCurrentUser()) && mQsSecureExpandDisabled &&
+                keyguardOrShadeShowing;
     }
 }
