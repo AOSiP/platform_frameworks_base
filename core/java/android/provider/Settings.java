@@ -5751,6 +5751,28 @@ public final class Settings {
         public static final String AMBIENT_BATTERY_PERCENT = "ambient_battery_percent";
 
         /**
+         * User definable value of pulse notification screen brightness
+         *
+         * @hide
+         */
+        public static final String OMNI_PULSE_BRIGHTNESS = "pulse_brightness";
+
+        /** @hide */
+        private static final Validator OMNI_PULSE_BRIGHTNESS_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
+         * User definable value of aod screen brightness
+         *
+         * @hide
+         */
+        public static final String OMNI_DOZE_BRIGHTNESS = "doze_brightness";
+
+        /** @hide */
+        private static final Validator OMNI_DOZE_BRIGHTNESS_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -5870,6 +5892,8 @@ public final class Settings {
             VIBRATE_ON_DISCONNECT,
             VOLTE_ICON_STYLE,
             VOLUME_BUTTON_MUSIC_CONTROL,
+            OMNI_PULSE_BRIGHTNESS,
+            OMNI_DOZE_BRIGHTNESS,
         };
 
         /**
@@ -6067,6 +6091,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(VIBRATE_ON_DISCONNECT);
             PRIVATE_SETTINGS.add(VOLTE_ICON_STYLE);
             PRIVATE_SETTINGS.add(VOLUME_BUTTON_MUSIC_CONTROL);
+            PRIVATE_SETTINGS.add(OMNI_PULSE_BRIGHTNESS);
+            PRIVATE_SETTINGS.add(OMNI_DOZE_BRIGHTNESS);
         }
 
         /**
@@ -6223,6 +6249,8 @@ public final class Settings {
             VALIDATORS.put(VIBRATE_ON_DISCONNECT, VIBRATE_ON_DISCONNECT_VALIDATOR);
             VALIDATORS.put(VOLTE_ICON_STYLE, VOLTE_ICON_STYLE_VALIDATOR);
             VALIDATORS.put(VOLUME_BUTTON_MUSIC_CONTROL, VOLUME_BUTTON_MUSIC_CONTROL_VALIDATOR);
+            VALIDATORS.put(OMNI_PULSE_BRIGHTNESS, OMNI_PULSE_BRIGHTNESS_VALIDATOR);
+            VALIDATORS.put(OMNI_DOZE_BRIGHTNESS, OMNI_DOZE_BRIGHTNESS_VALIDATOR);
         }
 
         /**
