@@ -4553,6 +4553,16 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
+         * Whether to show media art on lockscreen
+         * Boolean setting. 0 = off, 1 = on.
+         * @hide
+         */
+        public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
+
+        /** @hide */
+        public static final Validator LOCKSCREEN_MEDIA_METADATA_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * @hide
          */
         public static final String SCREENSHOT_SHUTTER_SOUND = "screenshot_shutter_sound";
@@ -4833,6 +4843,7 @@ public final class Settings {
             NOTIFICATION_LIGHT_PULSE,
             SCREENSHOT_SHUTTER_SOUND,
             BACK_GESTURE_HEIGHT,
+            LOCKSCREEN_MEDIA_METADATA,
         };
 
         /**
@@ -4947,6 +4958,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(SIP_ALWAYS);
             PRIVATE_SETTINGS.add(SIP_ADDRESS_ONLY);
             PRIVATE_SETTINGS.add(SIP_ASK_ME_EACH_TIME);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_MEDIA_METADATA);
             PRIVATE_SETTINGS.add(POINTER_SPEED);
             PRIVATE_SETTINGS.add(LOCK_TO_APP_ENABLED);
             PRIVATE_SETTINGS.add(EGG_MODE);
@@ -5063,6 +5075,7 @@ public final class Settings {
             VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
             VALIDATORS.put(QS_PANEL_BG_ALPHA, QS_PANEL_BG_ALPHA_VALIDATOR);
             VALIDATORS.put(BACK_GESTURE_HEIGHT, BACK_GESTURE_HEIGHT_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
         }
 
         /**
