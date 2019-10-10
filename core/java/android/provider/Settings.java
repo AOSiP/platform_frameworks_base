@@ -4679,6 +4679,29 @@ public final class Settings {
          */
         public static final String NOTIFICATION_SOUND_VIB_SCREEN_ON = "notification_sound_vib_screen_on";
 
+         /**
+         * Whether to enable PULSE Ambient light
+         * @hide
+         */
+        public static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
+        /** @hide */
+        private static final Validator PULSE_AMBIENT_LIGHT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+        /** @hide */
+        public static final String AMBIENT_NOTIFICATION_LIGHT_ENABLED = "ambient_notification_light_enabled";
+        /** @hide */
+        private static final Validator AMBIENT_NOTIFICATION_LIGHT_ENABLED_VALIDATOR = BOOLEAN_VALIDATOR;
+        /** @hide */
+        public static final String AMBIENT_NOTIFICATION_LIGHT = "ambient_notification_light";
+        /** @hide */
+        private static final Validator AMBIENT_NOTIFICATION_LIGHT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+        /** @hide */
+        public static final String AMBIENT_NOTIFICATION_LIGHT_ACTIVATED = "ambient_notification_light_activated";
+        /** @hide */
+        private static final Validator AMBIENT_NOTIFICATION_LIGHT_ACTIVATED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
@@ -4753,7 +4776,6 @@ public final class Settings {
          * 1 - QS Header
          * @hide
          */
-
          public static final String NETWORK_TRAFFIC_VIEW_LOCATION = "network_traffic_view_location";
 
         /**
@@ -4820,6 +4842,10 @@ public final class Settings {
             DISPLAY_COLOR_MODE,
             QS_PANEL_BG_ALPHA,
             ALARM_ALERT,
+            PULSE_AMBIENT_LIGHT,
+            AMBIENT_NOTIFICATION_LIGHT,
+            AMBIENT_NOTIFICATION_LIGHT_ACTIVATED,
+            AMBIENT_NOTIFICATION_LIGHT_ENABLED,
             USE_OLD_MOBILETYPE,
             NOTIFICATION_LIGHT_PULSE,
             SCREENSHOT_SHUTTER_SOUND,
@@ -4945,6 +4971,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(SHOW_FOURG);
             PRIVATE_SETTINGS.add(SHOW_VOLTE_ICON);
             PRIVATE_SETTINGS.add(USE_OLD_MOBILETYPE);
+            PRIVATE_SETTINGS.add(PULSE_AMBIENT_LIGHT);
+            PRIVATE_SETTINGS.add(AMBIENT_NOTIFICATION_LIGHT_ENABLED);
             PRIVATE_SETTINGS.add(QS_PANEL_BG_ALPHA);
             PRIVATE_SETTINGS.add(SCREENSHOT_SHUTTER_SOUND);
             PRIVATE_SETTINGS.add(BACK_GESTURE_HEIGHT);
@@ -5050,6 +5078,10 @@ public final class Settings {
             VALIDATORS.put(SCREENSHOT_SHUTTER_SOUND,
                     SCREENSHOT_SHUTTER_SOUND_VALIDATOR);
             VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
+            VALIDATORS.put(PULSE_AMBIENT_LIGHT, PULSE_AMBIENT_LIGHT_VALIDATOR);
+            VALIDATORS.put(AMBIENT_NOTIFICATION_LIGHT, AMBIENT_NOTIFICATION_LIGHT_VALIDATOR);
+            VALIDATORS.put(AMBIENT_NOTIFICATION_LIGHT_ACTIVATED, AMBIENT_NOTIFICATION_LIGHT_ACTIVATED_VALIDATOR);
+            VALIDATORS.put(AMBIENT_NOTIFICATION_LIGHT_ENABLED, AMBIENT_NOTIFICATION_LIGHT_ENABLED_VALIDATOR);
             VALIDATORS.put(QS_PANEL_BG_ALPHA, QS_PANEL_BG_ALPHA_VALIDATOR);
             VALIDATORS.put(BACK_GESTURE_HEIGHT, BACK_GESTURE_HEIGHT_VALIDATOR);
         }
