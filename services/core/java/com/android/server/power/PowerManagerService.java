@@ -552,6 +552,8 @@ public final class PowerManagerService extends SystemService
     // doze on charge
     private boolean mDozeOnChargeEnabled;
 
+    private boolean mDozeOnNotification;
+
     private final class ForegroundProfileObserver extends SynchronousUserSwitchObserver {
         @Override
         public void onUserSwitching(int newUserId) throws RemoteException {}
@@ -835,6 +837,8 @@ public final class PowerManagerService extends SystemService
         // set initial value
         Settings.Secure.putIntForUser(mContext.getContentResolver(),
                 Settings.Secure.DOZE_ON_CHARGE_NOW, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(mContext.getContentResolver(),
+                Settings.System.AMBIENT_NOTIFICATION_LIGHT_ACTIVATED, 0, UserHandle.USER_CURRENT);
 
         synchronized (mLock) {
             mSystemReady = true;
@@ -934,6 +938,12 @@ public final class PowerManagerService extends SystemService
                 false, mSettingsObserver, UserHandle.USER_ALL);
         resolver.registerContentObserver(Settings.Secure.getUriFor(
                 Settings.Secure.DOZE_ON_CHARGE),
+                false, mSettingsObserver, UserHandle.USER_ALL);
+        resolver.registerContentObserver(Settings.System.getUriFor(
+                Settings.System.AMBIENT_NOTIFICATION_LIGHT),
+                false, mSettingsObserver, UserHandle.USER_ALL);
+        resolver.registerContentObserver(Settings.System.getUriFor(
+                Settings.System.AMBIENT_NOTIFICATION_LIGHT_ACTIVATED),
                 false, mSettingsObserver, UserHandle.USER_ALL);
 
         IVrManager vrManager = IVrManager.Stub.asInterface(getBinderService(Context.VR_SERVICE));
@@ -1039,6 +1049,16 @@ public final class PowerManagerService extends SystemService
         Settings.Secure.putIntForUser(mContext.getContentResolver(),
                 Settings.Secure.DOZE_ON_CHARGE_NOW, mDozeOnChargeEnabled && mIsPowered ? 1 : 0,
                 UserHandle.USER_CURRENT);
+        boolean mAmbientLights = Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.AMBIENT_NOTIFICATION_LIGHT_ENABLED,
+                0, UserHandle.USER_CURRENT) != 0;
+        if (mAmbientLights) {
+                mDozeOnNotification = Settings.System.getIntForUser(resolver,
+                Settings.System.AMBIENT_NOTIFICATION_LIGHT, 0, UserHandle.USER_CURRENT) != 0;
+                Settings.System.putIntForUser(mContext.getContentResolver(),
+                Settings.System.AMBIENT_NOTIFICATION_LIGHT_ACTIVATED, mDozeOnNotification ? 1 : 0,
+                UserHandle.USER_CURRENT);
+        }
         if (mSupportsDoubleTapWakeConfig) {
             boolean doubleTapWakeEnabled = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.DOUBLE_TAP_TO_WAKE, DEFAULT_DOUBLE_TAP_TO_WAKE,

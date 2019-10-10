@@ -67,6 +67,9 @@
   <!-- Rotation sensor -->
   <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
 
+  <!-- Ambiant Pulse Light -->
+  <java-symbol type="integer" name="config_AmbiantPulseLightColor" />
+
   <java-symbol type="bool" name="config_has_Soli" />
 
   <!-- Custom permissions list -->
