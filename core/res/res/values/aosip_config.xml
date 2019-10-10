@@ -42,6 +42,9 @@
     <!-- Does the device have a notification/battery LED? -->
     <bool name="config_deviceHasLED">true</bool>
 
+    <!-- Default value for Ambiant Pulse light color -->
+    <integer name="config_AmbiantPulseLightColor" >0x3980FF</integer>
+
     <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
     <bool name="config_cleanupUnusedFingerprints">true</bool>
 
