@@ -27,22 +27,23 @@ LOCAL_REQUIRED_MODULES := \
 	DisplayCutoutEmulationCornerOverlay \
 	DisplayCutoutEmulationDoubleOverlay \
 	DisplayCutoutEmulationTallOverlay \
-	FontAclonicaSourceOverlay \
-	FontAmaranteSourceOverlay \
 	FontArbutusSourceOverlay \
 	FontArvoLatoOverlay \
+	FontGoogleSansOverlay \
+	FontNotoSerifSourceOverlay \
+	FontRubikRubikOverlay \
+	FontCircularStdOverlay \
+	FontSlateForOnePlusOverlay \
+	FontAclonicaSourceOverlay \
+	FontAmaranteSourceOverlay \
 	FontBariolSourceOverlay \
 	FontCagliostroSourceOverlay \
 	FontCoolstorySourceOverlay \
 	FontLGSmartGothicSourceOverlay \
-	FontGoogleSansOverlay \
 	FontNotoSerifSourceOverlay \
 	FontRosemarySourceOverlay \
 	FontSonySketchSourceOverlay \
 	FontSurferSourceOverlay \
-	FontRubikRubikOverlay \
-	FontCircularStdOverlay \
-	FontSlateForOnePlusOverlay \
 	IconPackCircularAndroidOverlay \
 	IconPackCircularPixelLauncherOverlay \
 	IconPackCircularPixelThemePickerOverlay \
