@@ -23,4 +23,8 @@
 
     <!-- Sets a custom extra padding for the QS icons and statusbar date -->
     <dimen name="qs_items_padding">0dp</dimen>
+
+    <!-- Max visible system icons -->
+    <integer name="config_maxVisibleStatusIconContainer">6</integer>
+
 </resources>
