@@ -25,4 +25,7 @@
     -->
     <integer name="hardware_ui_align">53</integer>
 
+    <!-- Max visible system icons -->
+    <integer name="config_maxVisibleStatusIconContainer">6</integer>
+
 </resources>
