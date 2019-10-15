@@ -3690,13 +3690,13 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
 
         // Resource IDs for framework properties
-        int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
-        int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null, null);
+        int resourceIdRadius = (int) mContext.getResources().getDimension(com.android.internal.R.dimen.rounded_corner_radius);
+        int resourceIdPadding = (int) mContext.getResources().getDimension(R.dimen.rounded_corner_content_padding);
+        int resourceIdSBPadding = (int) mContext.getResources().getDimension(R.dimen.status_bar_extra_padding);
 
         // Values on framework resources
         int cornerRadiusRes = (int) (res.getDimension(resourceIdRadius) / density);
         int contentPaddingRes = (int) (res.getDimension(resourceIdPadding) / density);
-        int resourceIdSBPadding = (int) mContext.getResources().getDimension(R.dimen.status_bar_extra_padding);
         int sbPaddingRes = (int) (resourceIdSBPadding / density);
 
         // Values in Settings DBs
@@ -3738,16 +3738,15 @@ public class StatusBar extends SystemUI implements DemoMode,
             }
 
             if (res != null) {
-                int resourceIdRadius = res.getIdentifier("com.android.systemui:dimen/rounded_corner_radius", null, null);
-                Settings.Secure.putIntForUser(mContext.getContentResolver(),
-                    Settings.Secure.SYSUI_ROUNDED_SIZE, (int) (res.getDimension(resourceIdRadius) / density), UserHandle.USER_CURRENT);
-                int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null, null);
-                Settings.Secure.putIntForUser(mContext.getContentResolver(),
-                    Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, (int) (res.getDimension(resourceIdPadding) / density), UserHandle.USER_CURRENT);
-                int resourceIdSBPadding = (int) mContext.getResources().getDimension(R.dimen.status_bar_extra_padding);
-                Settings.Secure.putIntForUser(mContext.getContentResolver(),
-                    Settings.Secure.SYSUI_STATUS_BAR_PADDING, (int) (resourceIdSBPadding / density), UserHandle.USER_CURRENT);
-            }
+            int resourceIdRadius = (int) mContext.getResources().getDimension(com.android.internal.R.dimen.rounded_corner_radius);
+            Settings.Secure.putIntForUser(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_SIZE, (int) (resourceIdRadius / density), UserHandle.USER_CURRENT);
+            int resourceIdPadding = (int) mContext.getResources().getDimension(R.dimen.rounded_corner_content_padding);
+            Settings.Secure.putIntForUser(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING, (int) (resourceIdPadding / density), UserHandle.USER_CURRENT);
+            int resourceIdSBPadding = (int) mContext.getResources().getDimension(R.dimen.status_bar_extra_padding);
+            Settings.Secure.putIntForUser(mContext.getContentResolver(),
+                Settings.Secure.SYSUI_STATUS_BAR_PADDING, (int) (resourceIdSBPadding / density), UserHandle.USER_CURRENT);
         }
     }
 
