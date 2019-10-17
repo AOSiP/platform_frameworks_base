@@ -4748,6 +4748,16 @@ public final class Settings {
         public static final Validator STATUSBAR_CLOCK_AM_PM_STYLE_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
 
+
+        /**
+         * Whether footer #DerpFest text shows
+         * @hide
+         */
+        public static final String DERP_FOOTER_TEXT_SHOW = "derp_footer_text_show";
+         /** @hide */
+        private static final Validator DERP_FOOTER_TEXT_SHOW_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
         /**
          * Shows custom date before clock time
          * 0 - No Date
