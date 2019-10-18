@@ -317,7 +317,7 @@ public interface StatusBarIconController {
 
         private NetworkTrafficSB onCreateNetworkTraffic(String slot) {
             NetworkTrafficSB view = new NetworkTrafficSB(mContext);
-            view.setPadding(2, 0, 2, 0);
+            //view.setPadding(2, 0, 2, 0);
             view.setGravity(Gravity.RIGHT | Gravity.CENTER_VERTICAL);
             return view;
         }
