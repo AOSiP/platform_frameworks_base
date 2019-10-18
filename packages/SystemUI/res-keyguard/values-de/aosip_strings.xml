@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (C) 2019 The PixelDust Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- [CHAR LIMIT=8] -->
+    <plurals name="type_clock_header">
+        <item quantity="one"><annotation name="color">Es ist</annotation>\n^1\n^2</item>
+        <item quantity="few"><annotation name="color">Es ist</annotation>\n^1\n^2</item>
+        <item quantity="other"><annotation name="color">Es ist</annotation>\n^1\n^2</item>
+    </plurals>
+
+    <!-- [CHAR LIMIT=12] -->
+    <string-array name="type_clock_hours_12">
+        <item>Null Uhr</item>
+        <item>Ein Uhr</item>
+        <item>Zwei Uhr</item>
+        <item>Drei Uhr</item>
+        <item>Vier Uhr</item>
+        <item>Fünf Uhr</item>
+        <item>Sechs Uhr</item>
+        <item>Sieben Uhr</item>
+        <item>Acht Uhr</item>
+        <item>Neun Uhr</item>
+        <item>Zehn Uhr</item>
+        <item>Elf Uhr</item>
+    </string-array>
+
+    <string-array name="type_clock_hours_24">
+        <item>Null Uhr</item>
+        <item>Ein Uhr</item>
+        <item>Zwei Uhr</item>
+        <item>Drei Uhr</item>
+        <item>Vier Uhr</item>
+        <item>Fünf Uhr</item>
+        <item>Sechs Uhr</item>
+        <item>Sieben Uhr</item>
+        <item>Acht Uhr</item>
+        <item>Neun Uhr</item>
+        <item>Zehn Uhr</item>
+        <item>Elf Uhr</item>
+        <item>Zwölf Uhr</item>
+        <item>Dreizehn Uhr</item>
+        <item>Vierzehn Uhr</item>
+        <item>Fünfzehn Uhr</item>
+        <item>Sechzehn Uhr</item>
+        <item>Siebzehn Uhr</item>
+        <item>Achtzehn Uhr</item>
+        <item>Neunzehn Uhr</item>
+        <item>Zwanzig Uhr</item>
+        <item>Einundzwanzig Uhr</item>
+        <item>Zweiundzwanzig Uhr</item>
+        <item>Dreiundzwanzig Uhr</item>
+    </string-array>
+
+    <!-- [CHAR LIMIT=20] -->
+    <string-array name="type_clock_minutes">
+        <item> </item>
+        <item>Eins</item>
+        <item>Zwei</item>
+        <item>Drei</item>
+        <item>Vier</item>
+        <item>Fünf</item>
+        <item>Sechs</item>
+        <item>Sieben</item>
+        <item>Acht</item>
+        <item>Neun</item>
+        <item>Zehn</item>
+        <item>Elf</item>
+        <item>Zwölf</item>
+        <item>Dreizehn</item>
+        <item>Vierzehn</item>
+        <item>Fünfzehn</item>
+        <item>Sechzehn</item>
+        <item>Siebzehn</item>
+        <item>Achtzehn</item>
+        <item>Neunzehn</item>
+        <item>Zwanzig</item>
+        <item>Einundzwanzig</item>
+        <item>Zweiundzwanzig</item>
+        <item>Dreiundzwanzig</item>
+        <item>Vierundzwanzig</item>
+        <item>Fünfundzwanzig</item>
+        <item>Sechsundzwanzig</item>
+        <item>Siebenundzwanzig</item>
+        <item>Achtundzwanzig</item>
+        <item>Neunundzwanzig</item>
+        <item>Dreißig</item>
+        <item>Einunddreißig</item>
+        <item>Zweiunddreißig</item>
+        <item>Dreiunddreißig</item>
+        <item>Vierunddreißig</item>
+        <item>Fünfunddreißig</item>
+        <item>Sechsunddreißig</item>
+        <item>Siebenunddreißig</item>
+        <item>Achtunddreißig</item>
+        <item>Neununddreißig</item>
+        <item>Vierzig</item>
+        <item>Einundvierzig</item>
+        <item>Zweiundvierzig</item>
+        <item>Dreiundvierzig</item>
+        <item>Vierundvierzig</item>
+        <item>Fünfundvierzig</item>
+        <item>Sechsundvierzig</item>
+        <item>Siebenundvierzig</item>
+        <item>Achtundvierzig</item>
+        <item>Neunundvierzig</item>
+        <item>Fünfzig</item>
+        <item>Einundfünfzig</item>
+        <item>Zweiundfünfzig</item>
+        <item>Dreiundfünfzig</item>
+        <item>Vierundfünfzig</item>
+        <item>Fünfundfünfzig</item>
+        <item>Sechsundfünfzig</item>
+        <item>Siebenundfünfzig</item>
+        <item>Achtundfünfzig</item>
+        <item>Neunundfünfzig</item>
+    </string-array>
+
+    <!-- [CHAR LIMIT=8] -->
+    <string name="clock_title_default" translatable="false">Standard</string>
+    <!-- [CHAR LIMIT=8] -->
+    <string name="clock_title_bubble" translatable="false">Blase</string>
+    <!-- [CHAR LIMIT=8] -->
+    <string name="clock_title_analog" translatable="false">Analog</string>
+    <!-- [CHAR LIMIT=8] -->
+    <string name="clock_title_type" translatable="false">Typografisch</string>
+
+</resources>
