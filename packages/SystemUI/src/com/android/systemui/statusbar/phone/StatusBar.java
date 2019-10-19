@@ -3616,6 +3616,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     public void keyguardGoingAway() {
         // Treat Keyguard exit animation as an app transition to achieve nice transition for status
         // bar.
+        mKeyguardIndicationController.setVisible(false);
         mKeyguardStateController.notifyKeyguardGoingAway(true);
         mCommandQueue.appTransitionPending(mDisplayId, true /* forced */);
         mPulseController.notifyKeyguardGoingAway();
@@ -3801,7 +3802,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             }
             if (mStatusBarView != null) mStatusBarView.removePendingHideExpandedRunnables();
         } else {
-            mKeyguardIndicationController.setVisible(false);
             if (mKeyguardUserSwitcher != null) {
                 mKeyguardUserSwitcher.setKeyguard(false,
                         mStatusBarStateController.goingToFullShade() ||
