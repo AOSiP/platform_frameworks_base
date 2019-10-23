@@ -14,14 +14,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Padding added to keyguard status area when Type clock is in use -->
-    <dimen name="keyguard_status_area_typeclock_padding">32dp</dimen>
-
-    <dimen name="binary_clock_dot_size">8dp</dimen>
-    <dimen name="binary_clock_stroke_width">2dp</dimen>
-    <dimen name="binary_clock_width">100dp</dimen>
-    <dimen name="binary_clock_height">100dp</dimen>
+    <string name="clock_title_binary" translatable="false">Binary</string>
 
 </resources>
