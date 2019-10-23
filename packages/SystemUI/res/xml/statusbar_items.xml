@@ -70,8 +70,4 @@
         android:key="zen"
         android:title="@string/quick_settings_dnd_label" />
 
-    <com.android.systemui.tuner.BatteryPreference
-        android:title="@string/battery"
-        android:summary="%s"
-        android:entries="@array/battery_options" />
 </PreferenceScreen>
