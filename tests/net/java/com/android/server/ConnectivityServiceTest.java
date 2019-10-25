@@ -4519,6 +4519,54 @@ public class ConnectivityServiceTest {
     }
 
     @Test
+    public void testVpnUnvalidated() throws Exception {
+        final TestNetworkCallback callback = new TestNetworkCallback();
+        mCm.registerDefaultNetworkCallback(callback);
+
+        // Enable private DNS.
+        setPrivateDnsSettings(PRIVATE_DNS_MODE_PROVIDER_HOSTNAME, "strict.example.com");
+
+        // Bring up Ethernet.
+        mEthernetNetworkAgent = new MockNetworkAgent(TRANSPORT_ETHERNET);
+        mEthernetNetworkAgent.getWrappedNetworkMonitor().dnsLookupResults =
+                new InetAddress[]{ InetAddress.getByName("2001:db8::1") };
+        mEthernetNetworkAgent.connect(true);
+        callback.expectAvailableThenValidatedCallbacks(mEthernetNetworkAgent);
+        callback.assertNoCallback();
+
+        // Bring up a VPN that has the INTERNET capability but does not provide Internet access.
+        final int uid = Process.myUid();
+        final MockNetworkAgent vpnNetworkAgent = new MockNetworkAgent(TRANSPORT_VPN);
+        vpnNetworkAgent.getWrappedNetworkMonitor().gen204ProbeResult = 500;
+        vpnNetworkAgent.getWrappedNetworkMonitor().dnsLookupResults = null;
+
+        final ArraySet<UidRange> ranges = new ArraySet<>();
+        ranges.add(new UidRange(uid, uid));
+        mMockVpn.setNetworkAgent(vpnNetworkAgent);
+        mMockVpn.setUids(ranges);
+        vpnNetworkAgent.connect(false /* validated */, true /* hasInternet */);
+        mMockVpn.connect();
+
+        // The VPN validates and becomes the default network for our app.
+        callback.expectAvailableCallbacksValidated(vpnNetworkAgent);
+        // TODO: this looks like a spurious callback.
+        callback.expectCallback(CallbackState.NETWORK_CAPABILITIES, vpnNetworkAgent);
+        callback.assertNoCallback();
+
+        assertTrue(vpnNetworkAgent.getScore() > mEthernetNetworkAgent.getScore());
+        assertEquals(ConnectivityConstants.VPN_DEFAULT_SCORE, vpnNetworkAgent.getScore());
+        assertEquals(vpnNetworkAgent.getNetwork(), mCm.getActiveNetwork());
+
+        NetworkCapabilities nc = mCm.getNetworkCapabilities(vpnNetworkAgent.getNetwork());
+        assertTrue(nc.hasCapability(NET_CAPABILITY_VALIDATED));
+        assertTrue(nc.hasCapability(NET_CAPABILITY_INTERNET));
+
+        vpnNetworkAgent.disconnect();
+        callback.expectCallback(CallbackState.LOST, vpnNetworkAgent);
+        callback.expectAvailableCallbacksValidated(mEthernetNetworkAgent);
+    }
+
+    @Test
     public void testVpnSetUnderlyingNetworks() {
         final int uid = Process.myUid();
 
