@@ -4457,6 +4457,12 @@ public final class Settings {
          */
         public static final String SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
+        /**
+         * Whether the user has already accepted MediaProjection permission for the built-in screenrecorder
+         * @hide
+         */
+        public static final String MEDIAPROJECTION_SYSUI_OK = "mediaprojection_sysui_ok";
+
         /** @hide */
         private static final Validator SHOW_BATTERY_PERCENT_VALIDATOR = BOOLEAN_VALIDATOR;
 
