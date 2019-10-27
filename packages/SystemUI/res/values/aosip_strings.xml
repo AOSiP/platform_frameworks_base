@@ -15,6 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
     <!-- AOD QS tile -->
     <string name="quick_settings_aod_label">AOD</string>
 
@@ -28,5 +29,11 @@
     <string name="quick_settings_network_adb_disabled_label">Disabled</string>
     <string name="quick_settings_network_adb_label">ADB over network</string>
     <string name="quick_settings_network_adb_toast">USB debugging is not enabled</string>
+
+    <!-- Screen recorder -->
+    <string name="screenrecord_stopdot_label">Show stop dot</string>
+
+    <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
+    <string name="global_action_screenshot_cust">"Screenshot/Rec"</string>
 
 </resources>
