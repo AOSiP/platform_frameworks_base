@@ -5397,6 +5397,11 @@ public final class Settings {
         private static final Validator CHARGING_ANIMATION_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * @hide
+         */
+        public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
+
+         /**
          * Ambient Display Visualizer
          *
          * @hide
