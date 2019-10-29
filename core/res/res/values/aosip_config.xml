@@ -37,6 +37,10 @@
         <item>com.android.wallpaper.livepicker</item>
     </string-array>
 
+     <!-- Defines the sysfs attribute path used by pocket bridge
+     to communicate pocket state to the pocket judge kernel driver. -->
+     <string name="config_pocketBridgeSysfsInpocket"></string>
+
     <!-- The list of components which should be automatically disabled for a specific device.
          Note: this MUST not be used to randomly disable components, ask for approval first! -->
     <string-array name="config_deviceDisabledComponents" translatable="false">
