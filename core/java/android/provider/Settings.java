@@ -4468,6 +4468,13 @@ public final class Settings {
          */
         public static final String SHOW_BATTERY_PERCENT = "dummy_show_battery_percent";
 
+        /** Whether to show ambient or lockscreen if AoD is disabled
+         * and we do a wake gesture like lift to wake or double tap
+         *
+         * @hide
+         */
+        public static final String AMBIENT_WAKE_GESTURES = "ambient_wake_gestures";
+
         /**
          * Show 4G instead of LTE
          * @hide
