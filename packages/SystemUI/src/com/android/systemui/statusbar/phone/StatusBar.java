@@ -645,6 +645,8 @@ public class StatusBar extends SystemUI implements DemoMode,
     private ActivityIntentHelper mActivityIntentHelper;
     private ShadeController mShadeController;
 
+    private KeyguardSliceProvider mSliceProvider;
+
     private class CustomSettingsObserver extends ContentObserver {
         CustomSettingsObserver(Handler handler) {
             super(handler);
@@ -674,6 +676,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             } else if (uri.equals(Settings.Secure.getUriFor(
                     Settings.System.FORCE_SHOW_NAVBAR))) {
                 updateNavigationBarVisibility();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.PULSE_ON_NEW_TRACKS))) {
+                setPulseOnNewTracks();
             }
             update();
         }
@@ -683,6 +688,15 @@ public class StatusBar extends SystemUI implements DemoMode,
                 mStatusBarWindow.updateSettings();
             }
             setFpToDismissNotifications();
+            setPulseOnNewTracks();
+        }
+    }
+
+    private void setPulseOnNewTracks() {
+        if (mSliceProvider != null) {
+            mSliceProvider.setPulseOnNewTracks(Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.PULSE_ON_NEW_TRACKS, 1,
+                    UserHandle.USER_CURRENT) == 1);
         }
     }
 
@@ -766,9 +780,9 @@ public class StatusBar extends SystemUI implements DemoMode,
         mBubbleController = Dependency.get(BubbleController.class);
         mBubbleController.setExpandListener(mBubbleExpandListener);
         mActivityIntentHelper = new ActivityIntentHelper(mContext);
-        KeyguardSliceProvider sliceProvider = KeyguardSliceProvider.getAttachedInstance();
-        if (sliceProvider != null) {
-            sliceProvider.initDependencies(mMediaManager, mStatusBarStateController,
+        mSliceProvider = KeyguardSliceProvider.getAttachedInstance();
+        if (mSliceProvider != null) {
+            mSliceProvider.initDependencies(mMediaManager, mStatusBarStateController,
                     mKeyguardBypassController, DozeParameters.getInstance(mContext));
         } else {
             Log.w(TAG, "Cannot init KeyguardSliceProvider dependencies");
