@@ -49,6 +49,7 @@ import com.android.systemui.qs.QSHost;
 import com.android.systemui.qs.SignalTileView;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 import com.android.systemui.statusbar.phone.SystemUIDialog;
+import com.android.systemui.statusbar.phone.UnlockMethodCache;
 import com.android.systemui.statusbar.policy.KeyguardMonitor;
 import com.android.systemui.statusbar.policy.NetworkController;
 import com.android.systemui.statusbar.policy.NetworkController.IconState;
@@ -70,6 +71,7 @@ public class CellularTile extends QSTileImpl<SignalState> {
     private final KeyguardMonitor mKeyguard;
     private final KeyguardMonitor mKeyguardMonitor;
     private final KeyguardCallback mKeyguardCallback = new KeyguardCallback();
+    private final UnlockMethodCache mUnlockMethodCache;
 
     @Inject
     public CellularTile(QSHost host, NetworkController networkController,
@@ -82,6 +84,7 @@ public class CellularTile extends QSTileImpl<SignalState> {
         mKeyguard = Dependency.get(KeyguardMonitor.class);
         mDataController = mController.getMobileDataController();
         mDetailAdapter = new CellularDetailAdapter();
+        mUnlockMethodCache = UnlockMethodCache.getInstance(mContext);
         mController.observe(getLifecycle(), mSignalCallback);
     }
 
@@ -177,7 +180,7 @@ public class CellularTile extends QSTileImpl<SignalState> {
             return;
         }
         if (mDataController.isMobileDataSupported()) {
-            if (mKeyguard.isSecure() && !mKeyguardMonitor.canSkipBouncer() && mKeyguard.isShowing()) {
+            if (mKeyguard.isSecure() && !mUnlockMethodCache.canSkipBouncer() && mKeyguard.isShowing()) {
                 mActivityStarter.postQSRunnableDismissingKeyguard(() -> {
                     mHost.openPanels();
                     showDetail(true);
