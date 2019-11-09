@@ -4699,6 +4699,18 @@ public final class Settings {
         public static final String NOTIFICATION_SOUND_VIB_SCREEN_ON = "notification_sound_vib_screen_on";
 
         /**
+         * modify how the album art shows up on lockscreen
+         * 0 - normal
+         * 1 - grayscale
+         * 2 - accent tint
+         * 3 - blurry
+         * 4 - grayscale and blurry
+         * 5 - gradient blur (default)
+         * @hide
+         */
+        public static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
+
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate

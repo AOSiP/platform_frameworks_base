@@ -59,11 +59,13 @@ import android.provider.Settings;
 
 import com.android.internal.config.sysui.SystemUiDeviceConfigFlags;
 import com.android.internal.statusbar.NotificationVisibility;
+import com.android.internal.util.aosip.ImageHelper;
 import com.android.systemui.Dependency;
 import com.android.systemui.Dumpable;
 import com.android.systemui.Interpolators;
 import com.android.systemui.colorextraction.SysuiColorExtractor;
 import com.android.systemui.plugins.statusbar.StatusBarStateController;
+import com.android.systemui.R;
 import com.android.systemui.statusbar.notification.NotificationEntryListener;
 import com.android.systemui.statusbar.notification.NotificationEntryManager;
 import com.android.systemui.statusbar.notification.collection.NotificationEntry;
@@ -157,6 +159,7 @@ public class NotificationMediaManager implements Dumpable {
 
     private boolean mShowCompactMediaSeekbar;
     private boolean mShowMediaMetadata;
+    private int mAlbumArtFilter;
     private final DeviceConfig.OnPropertiesChangedListener mPropertiesChangedListener =
             new DeviceConfig.OnPropertiesChangedListener() {
         @Override
@@ -257,6 +260,9 @@ public class NotificationMediaManager implements Dumpable {
             resolver.registerContentObserver(Settings.System.getUriFor(
                 Settings.System.LOCKSCREEN_MEDIA_METADATA),
                 false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                Settings.System.LOCKSCREEN_ALBUM_ART_FILTER),
+                false, this, UserHandle.USER_ALL);
             updateSettings();
         }
 
@@ -274,6 +280,9 @@ public class NotificationMediaManager implements Dumpable {
         mShowMediaMetadata = Settings.System.getIntForUser(resolver,
                 Settings.System.LOCKSCREEN_MEDIA_METADATA, 1,
                 UserHandle.USER_CURRENT) == 1;
+        mAlbumArtFilter = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, 5,
+                UserHandle.USER_CURRENT);
     }
 
     public static boolean isPlayingState(int state) {
@@ -765,7 +774,22 @@ public class NotificationMediaManager implements Dumpable {
     };
 
     private Bitmap processArtwork(Bitmap artwork) {
-        return mMediaArtworkProcessor.processArtwork(mContext, artwork, mLockscreenMediaBlur);
+        switch (mAlbumArtFilter) {
+            case 0:
+                // TODO: Implement a proper fix to use this recycled bitmap
+                return Bitmap.createBitmap(ImageHelper.getBlurredImage(mContext, artwork, 0.001f));
+            case 1:
+                return Bitmap.createBitmap(ImageHelper.toGrayscale(artwork));
+            case 2:
+                return Bitmap.createBitmap(ImageHelper.getColoredBitmap(new BitmapDrawable(mBackdropBack.getResources(), artwork), mContext.getResources().getColor(R.color.system_light_accent)));
+            case 3:
+                return Bitmap.createBitmap(ImageHelper.getBlurredImage(mContext, artwork, mLockscreenMediaBlur));
+            case 4:
+                return Bitmap.createBitmap(ImageHelper.getGrayscaleBlurredImage(mContext, artwork, mLockscreenMediaBlur));
+            case 5:
+            default:
+                return mMediaArtworkProcessor.processArtwork(mContext, artwork, mLockscreenMediaBlur);
+        }
     }
 
     public void setLockScreenMediaBlurLevel() {
