@@ -27,9 +27,9 @@
     <!-- Do not translate. Defines the slots for the right-hand side icons.  That is to say, the
          icons in the status bar that are not notifications. -->
     <string-array name="config_statusBarIcons">
-        <item><xliff:g id="id">@string/status_bar_alarm_clock</xliff:g></item>
         <item><xliff:g id="id">@string/status_bar_rotate</xliff:g></item>
         <item><xliff:g id="id">@string/status_bar_headset</xliff:g></item>
+        <item><xliff:g id="id">@string/status_bar_alarm_clock</xliff:g></item>
         <item><xliff:g id="id">@string/status_bar_data_saver</xliff:g></item>
         <item><xliff:g id="id">@string/status_bar_ime</xliff:g></item>
         <item><xliff:g id="id">@string/status_bar_sync_failing</xliff:g></item>
