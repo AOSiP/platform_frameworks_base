@@ -5165,6 +5165,12 @@ public final class Settings {
          */
         public static final String ADAPTIVE_PLAYBACK_ENABLED = "adaptive_playback_enabled";
 
+        /**
+         * Whether to display qs tile titles in the qs panel
+         * @hide
+         */
+        public static final String QS_TILE_TITLE_VISIBILITY = "qs_tile_title_visibility";
+
        /**
         * Defines the global heads up notification snooze
         * @hide
