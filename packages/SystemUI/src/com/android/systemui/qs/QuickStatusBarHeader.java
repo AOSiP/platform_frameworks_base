@@ -417,6 +417,62 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         updatePrivacyChipAlphaAnimator();
     }
 
+    private void updateSettings() {
+        updateQSClock();
+        updateQSBatteryMode();
+        updateSBBatteryStyle();
+        updateResources();
+    }
+
+    private void updateQSBatteryMode() {
+        int showEstimate = Settings.System.getInt(mContext.getContentResolver(),
+        Settings.System.QS_BATTERY_MODE, 0);
+        if (showEstimate == 0) {
+            mBatteryRemainingIcon.setShowPercent(0);
+            mBatteryRemainingIcon.setPercentShowMode(BatteryMeterView.MODE_OFF);
+            mBatteryMeterView.setShowPercent(0);
+            mBatteryMeterView.setPercentShowMode(BatteryMeterView.MODE_OFF);
+        } else if (showEstimate == 1) {
+            mBatteryRemainingIcon.setShowPercent(0);
+            mBatteryRemainingIcon.setPercentShowMode(BatteryMeterView.MODE_ON);
+            mBatteryMeterView.setShowPercent(0);
+            mBatteryMeterView.setPercentShowMode(BatteryMeterView.MODE_ON);
+        } else if (showEstimate == 2) {
+            mBatteryRemainingIcon.setShowPercent(1);
+            mBatteryRemainingIcon.setPercentShowMode(BatteryMeterView.MODE_OFF);
+            mBatteryMeterView.setShowPercent(1);
+            mBatteryMeterView.setPercentShowMode(BatteryMeterView.MODE_OFF);
+        } else if (showEstimate == 3 || showEstimate == 4) {
+            mBatteryRemainingIcon.setShowPercent(0);
+            mBatteryRemainingIcon.setPercentShowMode(BatteryMeterView.MODE_ESTIMATE);
+            mBatteryMeterView.setShowPercent(0);
+            mBatteryMeterView.setPercentShowMode(BatteryMeterView.MODE_ESTIMATE);
+        }
+        mBatteryRemainingIcon.updatePercentView();
+        mBatteryRemainingIcon.updateVisibility();
+        mBatteryMeterView.updatePercentView();
+        mBatteryMeterView.updateVisibility();
+    }
+
+    private void updateSBBatteryStyle() {
+        mBatteryRemainingIcon.setBatteryStyle(Settings.System.getInt(mContext.getContentResolver(),
+        Settings.System.STATUS_BAR_BATTERY_STYLE, 0));
+        mBatteryMeterView.setBatteryStyle(Settings.System.getInt(mContext.getContentResolver(),
+        Settings.System.STATUS_BAR_BATTERY_STYLE, 0));
+        mBatteryRemainingIcon.updateBatteryStyle();
+        mBatteryRemainingIcon.updatePercentView();
+        mBatteryRemainingIcon.updateVisibility();
+        mBatteryMeterView.updateBatteryStyle();
+        mBatteryMeterView.updatePercentView();
+        mBatteryMeterView.updateVisibility();
+    }
+
+    private void updateQSClock() {
+        int show = Settings.System.getInt(mContext.getContentResolver(),
+        Settings.System.SHOW_QS_CLOCK, 1);
+        mClockView.setClockVisibleByUser(show == 1);
+    }
+
     private void updateStatusIconAlphaAnimator() {
         mStatusIconsAlphaAnimator = new TouchAnimator.Builder()
                 .addFloat(mQuickQsStatusIcons, "alpha", 1, 0, 0)
