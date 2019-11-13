@@ -79,6 +79,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     private PageIndicator mPageIndicator;
 
     private boolean mQsDisabled;
+    private boolean isAlwaysShowSettings;
     private QSPanel mQsPanel;
     private QuickQSPanel mQuickQSPanel;
 
@@ -107,6 +108,9 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         public void onChange(boolean selfChange, Uri uri) {
             super.onChange(selfChange, uri);
             setBuildText();
+            setDragHandle();
+            setSettingsIcon();
+            updateResources();
         }
     };
 
@@ -162,6 +166,8 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         updateEverything();
         setBuildText();
         setDragHandle();
+        setSettingsIcon();
+        updateResources();
     }
 
     private void setBuildText() {
@@ -187,7 +193,15 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         }
     }
 
+    private void setSettingsIcon() {
+        isAlwaysShowSettings = Settings.System.getIntForUser(mContext.getContentResolver(),
+                        Settings.System.QS_ALWAYS_SHOW_SETINGS, 0,
+                        UserHandle.USER_CURRENT) == 1;
+        createFooterAnimator();
+    }
+
     private void updateAnimator(int width) {
+      if (!isAlwaysShowSettings) {
         int numTiles = mQuickQSPanel.getNumQuickTiles();
         int size = mContext.getResources().getDimensionPixelSize(R.dimen.qs_quick_tile_size)
                 - mContext.getResources().getDimensionPixelSize(dimen.qs_quick_tile_padding);
@@ -199,8 +213,8 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
                         isLayoutRtl() ? (remaining - defSpace) : -(remaining - defSpace), 0)
                 .addFloat(mSettingsButton, "rotation", -120, 0)
                 .build();
-
         setExpansion(mExpansionAmount);
+      }
     }
 
     @Override
@@ -208,6 +222,9 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         super.onConfigurationChanged(newConfig);
         updateResources();
         setDragHandle();
+        setSettingsIcon();
+        updateResources();
+        updateEverything();
     }
 
     @Override
@@ -226,6 +243,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
 
     @Nullable
     private TouchAnimator createFooterAnimator() {
+      if (!isAlwaysShowSettings) {
         return new TouchAnimator.Builder()
                 .addFloat(mActionsContainer, "alpha", 0, 1)
                 .addFloat(mEditContainer, "alpha", 0, 1)
@@ -233,6 +251,16 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
                 .addFloat(mPageIndicator, "alpha", 0, 1)
                 .setStartDelay(0.15f)
                 .build();
+      }
+      else {
+        return new TouchAnimator.Builder()
+                .addFloat(mActionsContainer, "alpha", 1, 1)
+                .addFloat(mEditContainer, "alpha", 0, 1)
+                .addFloat(mDragHandle, "alpha", 0, 0, 0)
+                .addFloat(mPageIndicator, "alpha", 0, 1)
+                .setStartDelay(0.15f)
+                .build();
+      }
     }
 
     @Override
@@ -271,6 +299,10 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
 
         mContext.getContentResolver().registerContentObserver(
                 Settings.System.getUriFor(Settings.System.QS_DRAG_HANDLE), false,
+                mSettingsObserver, UserHandle.USER_ALL);
+
+        mContext.getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(Settings.System.QS_ALWAYS_SHOW_SETINGS), false,
                 mSettingsObserver, UserHandle.USER_ALL);
     }
 
@@ -327,7 +359,8 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     private void updateClickabilities() {
         mMultiUserSwitch.setClickable(mMultiUserSwitch.getVisibility() == View.VISIBLE);
         mEdit.setClickable(mEdit.getVisibility() == View.VISIBLE);
-        mSettingsButton.setClickable(mSettingsButton.getVisibility() == View.VISIBLE);
+        if (!isAlwaysShowSettings)
+            mSettingsButton.setClickable(mSettingsButton.getVisibility() == View.VISIBLE);
     }
 
     private void updateVisibilities() {
@@ -335,7 +368,10 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         final boolean isDemo = UserManager.isDeviceInDemoMode(mContext);
         mMultiUserSwitch.setVisibility(showUserSwitcher() ? View.VISIBLE : View.INVISIBLE);
         mEditContainer.setVisibility(isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE);
-        mSettingsButton.setVisibility(isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE);
+        if (!isAlwaysShowSettings)
+          mSettingsButton.setVisibility(isDemo || !mExpanded ? View.INVISIBLE : View.VISIBLE);
+        else
+          mSettingsButton.setVisibility(View.VISIBLE);
     }
 
     private boolean showUserSwitcher() {
@@ -363,7 +399,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     @Override
     public void onClick(View v) {
         // Don't do anything until view are unhidden
-        if (!mExpanded) {
+        if (!mExpanded && !isAlwaysShowSettings) {
             return;
         }
 
