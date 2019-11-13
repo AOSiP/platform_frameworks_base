@@ -108,6 +108,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private boolean mExpanded;
     private boolean mListening;
     private boolean mQsDisabled;
+    private boolean isShowDragHandle;
 
     private QSCarrierGroup mCarrierGroup;
     protected QuickQSPanel mHeaderQsPanel;
@@ -151,6 +152,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.SHOW_QS_CLOCK), false,
+                    this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System
+                    .getUriFor(Settings.System.QS_DRAG_HANDLE), false,
                     this, UserHandle.USER_ALL);
             }
 
@@ -387,10 +391,11 @@ public class QuickStatusBarHeader extends RelativeLayout implements
                 qsHeight += resources.getDimensionPixelSize(R.dimen.qs_header_image_offset);
             }
 
-            // always add the margin below the statusbar with or without image
-            qsHeight += statusBarBottomMargin;
             lp.height = Math.max(getMinimumHeight(), qsHeight);
         }
+
+        if (!isShowDragHandle && !isAlwaysShowSettings)
+            lp.height -= 40; // save some space if not showing drag handle & settings icon
 
         setLayoutParams(lp);
 
@@ -654,6 +659,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private void updateSettings() {
         mHeaderImageEnabled = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0,
+                UserHandle.USER_CURRENT) == 1;
+        isShowDragHandle = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.QS_DRAG_HANDLE, 1,
                 UserHandle.USER_CURRENT) == 1;
         updateQSBatteryMode();
         updateSBBatteryStyle();

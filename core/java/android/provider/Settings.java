@@ -4816,6 +4816,15 @@ public final class Settings {
                 ANY_INTEGER_VALIDATOR;
 
         /**
+        * Wether to show QS drag handle
+        * @hide
+        */
+        public static final String QS_DRAG_HANDLE = "qs_drag_handle";
+        /** @hide */
+        private static final Validator QS_DRAG_HANDLE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * Stores the java DateFormat string for the date
          * @hide
          */

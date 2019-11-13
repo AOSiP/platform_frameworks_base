@@ -161,6 +161,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_YES);
         updateEverything();
         setBuildText();
+        setDragHandle();
     }
 
     private void setBuildText() {
@@ -174,6 +175,15 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
             v.setVisibility(View.VISIBLE);
         } else {
             v.setVisibility(View.GONE);
+        }
+    }
+
+    private void setDragHandle() {
+        boolean isShow = Settings.System.getIntForUser(mContext.getContentResolver(),
+                        Settings.System.QS_DRAG_HANDLE, 1,
+                        UserHandle.USER_CURRENT) == 1;
+        if (mDragHandle != null) {
+            mDragHandle.setVisibility(isShow ? View.VISIBLE : View.GONE);
         }
     }
 
@@ -197,6 +207,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
     protected void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         updateResources();
+        setDragHandle();
     }
 
     @Override
@@ -256,6 +267,10 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
         super.onAttachedToWindow();
         mContext.getContentResolver().registerContentObserver(
                 Settings.System.getUriFor(Settings.System.DERP_FOOTER_TEXT_SHOW), false,
+                mSettingsObserver, UserHandle.USER_ALL);
+
+        mContext.getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(Settings.System.QS_DRAG_HANDLE), false,
                 mSettingsObserver, UserHandle.USER_ALL);
     }
 
