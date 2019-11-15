@@ -84,8 +84,7 @@
         android:key="show_fourg"
         android:title="@string/show_fourg_title"
         android:summary="@string/show_fourg_summary"
-        android:dependency="mobile"
-        android:defaultValue="@bool/config_show4GForLTE" />
+        android:dependency="mobile"/>
 
     <com.android.systemui.tuner.StatusBarSwitch
         android:key="vpn"

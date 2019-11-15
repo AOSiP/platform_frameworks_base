@@ -19,7 +19,10 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.provider.Settings;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.os.UserHandle;
+import android.telephony.CarrierConfigManager;
+import android.telephony.SubscriptionManager;
 import android.view.MenuItem;
 
 import androidx.preference.Preference;
@@ -54,8 +57,7 @@ public class StatusBarTuner extends PreferenceFragment {
             getPreferenceScreen().removePreference(mShowDataDisabled);
         } else {
             mShowFourG.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
-                Settings.System.SHOW_FOURG,
-                getActivity().getResources().getBoolean(R.bool.config_show4GForLTE) ? 1 : 0,
+                Settings.System.SHOW_FOURG, get4gForLTEDefaultBool() ? 1 : 0,
                 UserHandle.USER_CURRENT) == 1);
             mShowVoLTE.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.SHOW_VOLTE_ICON, 0,
@@ -117,5 +119,15 @@ public class StatusBarTuner extends PreferenceFragment {
         ConnectivityManager cm = (ConnectivityManager)getActivity().getSystemService(
                 Context.CONNECTIVITY_SERVICE);
         return (cm != null && cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE) == false);
+    }
+
+    private boolean get4gForLTEDefaultBool() {
+            CarrierConfigManager configMgr = (CarrierConfigManager) getContext().getSystemService(
+                Context.CARRIER_CONFIG_SERVICE);
+            final int defaultDataSubId = SubscriptionManager.from(getContext())
+                .getDefaultDataSubscriptionId();
+            PersistableBundle b = configMgr.getConfigForSubId(defaultDataSubId);
+
+            return b.getBoolean(CarrierConfigManager.KEY_SHOW_4G_FOR_LTE_DATA_ICON_BOOL);
     }
 }
