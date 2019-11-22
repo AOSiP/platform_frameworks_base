@@ -13660,6 +13660,9 @@ public final class Settings {
          */
         public static final String POLICY_CONTROL = "policy_control";
 
+        public static final String THERMAL_CONTROL = "thermal_control";
+
+
         /**
          * {@link android.view.DisplayCutout DisplayCutout} emulation mode.
          *

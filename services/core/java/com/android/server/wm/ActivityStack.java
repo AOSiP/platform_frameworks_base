@@ -2709,6 +2709,11 @@ class ActivityStack extends ConfigurationContainer {
 
         if (DEBUG_SWITCH) Slog.v(TAG_SWITCH, "Resuming " + next);
 
+        String nextActivePackageName = next.intent.getComponent().getPackageName();
+        if (prev != next) {
+           mService.setThermalConfig(nextActivePackageName);
+        }
+
         // If we are currently pausing an activity, then don't do anything until that is done.
         if (!mRootActivityContainer.allPausedActivitiesComplete()) {
             if (DEBUG_SWITCH || DEBUG_PAUSE || DEBUG_STATES) Slog.v(TAG_PAUSE,

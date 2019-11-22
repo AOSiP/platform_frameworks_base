@@ -310,6 +310,8 @@ public class ActivityTaskManagerService extends IActivityTaskManager.Stub {
     private static final String TAG_LOCKTASK = TAG + POSTFIX_LOCKTASK;
     private static final String TAG_CONFIGURATION = TAG + POSTFIX_CONFIGURATION;
 
+    private static final String THERMAL_SCONFIG = "/sys/class/thermal/thermal_message/sconfig";
+
     // How long we wait until we timeout on key dispatching.
     public static final int KEY_DISPATCHING_TIMEOUT_MS = 5 * 1000;
     // How long we wait until we timeout on key dispatching during instrumentation.
@@ -7483,5 +7485,31 @@ public class ActivityTaskManagerService extends IActivityTaskManager.Stub {
                 mCompanionAppUidsMap.put(userId, result);
             }
         }
+    }
+
+    public void setThermalConfig(String packageName) {
+        String value = Settings.Global.getStringForUser(mContext.getContentResolver(),
+                Settings.Global.THERMAL_CONTROL, UserHandle.USER_CURRENT);
+        String modes[];
+        String state = "0";
+
+        if (value != null) {
+            modes = value.split(":");
+
+            if (modes[0].contains(packageName)) {
+                state = "10";
+            } else if (modes[1].contains(packageName)) {
+                state = "11";
+            } else if (modes[2].contains(packageName)) {
+                state = "12";
+            } else if (modes[3].contains(packageName)) {
+                state = "8";
+            } else if (modes[4].contains(packageName)) {
+                state = "13";
+            } else if (modes[5].contains(packageName)) {
+                state = "14";
+            }
+        }
+        com.android.internal.util.aosip.FileUtils.writeLine(THERMAL_SCONFIG, state);
     }
 }
