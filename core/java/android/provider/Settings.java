@@ -4820,6 +4820,12 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
+         * QS footer text
+         * @hide
+         */
+        public static final String DERP_FOOTER_TEXT_STRING = "derp_footer_text_string";
+
+        /**
          * Shows custom date before clock time
          * 0 - No Date
          * 1 - Small Date
@@ -15169,11 +15175,11 @@ public final class Settings {
         private static final Validator POWER_BUTTON_VERY_LONG_PRESS_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 1);
 
-        /**  
+        /**
          * AOKP Custom System Animations
          * @hide
-         */  
-        public static final String[] ACTIVITY_ANIMATION_CONTROLS = new String[] {  
+         */
+        public static final String[] ACTIVITY_ANIMATION_CONTROLS = new String[] {
                 "activity_open",
                 "activity_close",
                 "task_open",
@@ -15185,7 +15191,7 @@ public final class Settings {
                 "wallpaper_intra_open",
                 "wallpaper_intra_close",
                 "task_open_behind",
-        };  
+        };
         public static final String ANIMATION_CONTROLS_DURATION = "animation_controls_duration";
 
         /**

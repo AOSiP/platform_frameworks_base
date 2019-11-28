@@ -148,13 +148,8 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         int qsTitlesValue = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.QS_TILE_TITLE_VISIBILITY, 1,
                 UserHandle.USER_CURRENT);
-        int qsFooterValue = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.DERP_FOOTER_TEXT_SHOW, 0,
-                UserHandle.USER_CURRENT);
         MenuItem qsTitlesMenuItem = mToolbar.getMenu().findItem(R.id.menu_item_titles);
-        MenuItem qsFooterText = mToolbar.getMenu().findItem(R.id.footer_text);
         qsTitlesMenuItem.setChecked(qsTitlesValue == 1);
-        qsFooterText.setChecked(qsFooterValue == 1);
 
         int accentColor = Utils.getColorAccentDefaultColor(context);
         mToolbar.setTitleTextColor(accentColor);
@@ -376,11 +371,6 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         } else if (id ==  R.id.menu_item_qs_columns_auto) {
             Settings.System.putIntForUser(mContext.getContentResolver(),
                     Settings.System.QS_QUICKBAR_COLUMNS, -1, UserHandle.USER_CURRENT);
-        } else if (id == R.id.footer_text) {
-            item.setChecked(!item.isChecked());
-            Settings.System.putIntForUser(mContext.getContentResolver(),
-                   Settings.System.DERP_FOOTER_TEXT_SHOW, item.isChecked() ? 1 : 0,
-                   UserHandle.USER_CURRENT);
         } else if (id == R.id.menu_item_rows_one) {
             Settings.System.putIntForUser(mContext.getContentResolver(),
                     Settings.System.QS_LAYOUT_ROWS, 1, UserHandle.USER_CURRENT);
