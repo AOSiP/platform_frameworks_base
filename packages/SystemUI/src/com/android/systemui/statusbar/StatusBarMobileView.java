@@ -132,7 +132,7 @@ public class StatusBarMobileView extends FrameLayout implements DarkReceiver,
         addView(mDotView, lp);
     }
 
-    public void applyMobileState(MobileIconState state, boolean oldStyleType) {
+    public void applyMobileState(MobileIconState state) {
         boolean requestLayout = false;
         if (state == null) {
             requestLayout = getVisibility() != View.GONE;
@@ -141,10 +141,9 @@ public class StatusBarMobileView extends FrameLayout implements DarkReceiver,
         } else if (mState == null) {
             requestLayout = true;
             mState = state.copy();
-            mOldStyleType = oldStyleType;
             initViewState();
-        } else if (!mState.equals(state) || mOldStyleType != oldStyleType) {
-            requestLayout = updateState(state.copy(), oldStyleType);
+        } else if (!mState.equals(state)) {
+            requestLayout = updateState(state.copy());
         }
 
         if (requestLayout) {
@@ -210,7 +209,7 @@ public class StatusBarMobileView extends FrameLayout implements DarkReceiver,
         mMobileSignalType.setLayoutParams(p);
     }
 
-    private boolean updateState(MobileIconState state, boolean oldStyleType) {
+    private boolean updateState(MobileIconState state) {
         boolean needsLayout = false;
 
         setContentDescription(state.contentDescription);
@@ -222,10 +221,10 @@ public class StatusBarMobileView extends FrameLayout implements DarkReceiver,
             mMobileDrawable.setLevel(state.strengthId);
         }
         boolean showRoamingSpace = false;
-        if (mState.typeId != state.typeId || mOldStyleType != oldStyleType) {
+        if (mState.typeId != state.typeId) {
             needsLayout |= state.typeId == 0 || mState.typeId == 0;
             if (state.typeId != 0) {
-                if (oldStyleType) {
+                if (mOldStyleType) {
                     mMobileType.setVisibility(View.GONE);
                     mMobileRoaming.setContentDescription(state.typeContentDescription);
                     mMobileRoaming.setImageResource(state.typeId);
@@ -266,11 +265,9 @@ public class StatusBarMobileView extends FrameLayout implements DarkReceiver,
 
         needsLayout |= state.roaming != mState.roaming
                 || state.activityIn != mState.activityIn
-                || state.activityOut != mState.activityOut
-                || mOldStyleType != oldStyleType;
+                || state.activityOut != mState.activityOut;
 
         mState = state;
-        mOldStyleType = oldStyleType;
         return needsLayout;
     }
 
