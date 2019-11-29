@@ -372,10 +372,10 @@ public class KeyguardIndicationController implements StateListener,
         }
 
         if (mVisible) {
-            final boolean showBatteryBar = Dependency.get(TunerService.class)
-                    .getValue(KEYGUARD_SHOW_BATTERY_BAR, 1) == 1;
-            final boolean showBatteryBarAlways = Dependency.get(TunerService.class)
-                    .getValue(KEYGUARD_SHOW_BATTERY_BAR_ALWAYS, 0) == 1;
+            final boolean showBatteryBar = Settings.Secure.getInt(mContext.getContentResolver(),
+                    KEYGUARD_SHOW_BATTERY_BAR, 1) == 1;
+            final boolean showBatteryBarAlways = Settings.Secure.getInt(mContext.getContentResolver(),
+                    KEYGUARD_SHOW_BATTERY_BAR_ALWAYS, 0) == 1;
 
             // Walk down a precedence-ordered list of what indication
             // should be shown based on user or device state

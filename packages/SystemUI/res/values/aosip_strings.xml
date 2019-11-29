@@ -131,11 +131,6 @@
     <!-- AOD QS tile -->
     <string name="quick_settings_aod_label">AOD</string>
 
-    <string name="tuner_keyguard_show_battery_bar_title">Show battery bar</string>
-    <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on charging in always on display</string>
-    <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
-    <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging</string>
-
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
     <string name="keyguard_indication_dash_charging_time">Dash Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%s</xliff:g> until full)</string>
     <string name="keyguard_plugged_in_dash_charging">Dash Charging</string>

@@ -4760,6 +4760,26 @@ public final class Settings {
         private static final Validator FINGERPRINT_SUCCESS_VIB_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
+        /**
+         * whether to enable or disable battery bar on lock screen
+         *
+         * @hide
+         */
+        public static final String SYSUI_KEYGUARD_SHOW_BATTERY_BAR = "sysui_keyguard_show_battery_bar";
+        /** @hide */
+        private static final Validator SYSUI_KEYGUARD_SHOW_BATTERY_BAR_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * whether to always show battery bar on lock screen
+         *
+         * @hide
+         */
+        public static final String SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS = "sysui_keyguard_show_battery_bar_always";
+        /** @hide */
+        private static final Validator SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
          /**
          * Show or hide clock
          * 0 - hide
@@ -5529,6 +5549,8 @@ public final class Settings {
             BATTERY_LIGHT_FULL_COLOR,
             BATTERY_LIGHT_REALLYFULL_COLOR,
             FINGERPRINT_SUCCESS_VIB,
+            SYSUI_KEYGUARD_SHOW_BATTERY_BAR,
+            SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS,
             POWERMENU_SOUNDPANEL,
             POWERMENU_SCREENSHOT,
             POWERMENU_SETTINGS,
@@ -5887,6 +5909,8 @@ public final class Settings {
             VALIDATORS.put(BATTERY_LIGHT_FULL_COLOR, BATTERY_LIGHT_FULL_COLOR_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_REALLYFULL_COLOR, BATTERY_LIGHT_REALLYFULL_COLOR_VALIDATOR);
             VALIDATORS.put(FINGERPRINT_SUCCESS_VIB, FINGERPRINT_SUCCESS_VIB_VALIDATOR);
+            VALIDATORS.put(SYSUI_KEYGUARD_SHOW_BATTERY_BAR, SYSUI_KEYGUARD_SHOW_BATTERY_BAR_VALIDATOR);
+            VALIDATORS.put(SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS, SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS_VALIDATOR);
             VALIDATORS.put(POWERMENU_SOUNDPANEL, POWERMENU_SOUNDPANEL_VALIDATOR);
             VALIDATORS.put(POWERMENU_SCREENSHOT, POWERMENU_SCREENSHOT_VALIDATOR);
             VALIDATORS.put(POWERMENU_SETTINGS, POWERMENU_SETTINGS_VALIDATOR);
