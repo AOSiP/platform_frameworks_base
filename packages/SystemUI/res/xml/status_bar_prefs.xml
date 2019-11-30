@@ -70,11 +70,6 @@
         android:key="volume"
         android:title="@*android:string/volume_unknown" />
 
-    <com.android.systemui.tuner.BatteryPreference
-        android:title="@string/battery"
-        android:summary="%s"
-        android:entries="@array/battery_options" />
-
     <com.android.systemui.tuner.StatusBarSwitch
         android:key="vpn"
         android:title="@string/status_bar_vpn" />
@@ -82,11 +77,6 @@
     <com.android.systemui.tuner.StatusBarSwitch
         android:key="wifi"
         android:title="@string/quick_settings_wifi_label" />
-
-    <com.android.systemui.tuner.BatteryPreference
-        android:title="@string/battery"
-        android:summary="%s"
-        android:entries="@array/battery_options" />
 
     <com.android.systemui.tuner.TunerSwitch
         android:key="low_priority"
