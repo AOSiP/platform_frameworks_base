@@ -22,6 +22,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.database.ContentObserver;
+import android.graphics.drawable.Drawable;
 import android.net.NetworkCapabilities;
 import android.net.Uri;
 import android.os.Handler;
@@ -111,6 +112,8 @@ public class MobileSignalController extends SignalController<
 
     // Volte Icon
     private boolean mVoLTEicon;
+    // Volte Icon Style
+    private int mVoLTEstyle;
 
     // Data disabled icon
     private boolean mDataDisabledIcon;
@@ -198,7 +201,10 @@ public class MobileSignalController extends SignalController<
                   false, this, UserHandle.USER_ALL);
            resolver.registerContentObserver(Settings.System.getUriFor(
                   Settings.System.SHOW_VOLTE_ICON),
-                  false, this, UserHandle.USER_ALL);
+                  false,this, UserHandle.USER_ALL);
+           resolver.registerContentObserver(
+	            Settings.System.getUriFor(Settings.System.VOLTE_ICON_STYLE),
+                  false,this, UserHandle.USER_ALL);
            resolver.registerContentObserver(
                   Settings.System.getUriFor(Settings.System.DATA_DISABLED_ICON),
                   false, this, UserHandle.USER_ALL);
@@ -222,13 +228,16 @@ public class MobileSignalController extends SignalController<
         mVoLTEicon = Settings.System.getIntForUser(resolver,
                 Settings.System.SHOW_VOLTE_ICON, 0,
                 UserHandle.USER_CURRENT) == 1;
-
+        mVoLTEstyle = Settings.System.getIntForUser(resolver,
+                Settings.System.VOLTE_ICON_STYLE, 0,
+                UserHandle.USER_CURRENT);
         mDataDisabledIcon = Settings.System.getIntForUser(resolver,
                 Settings.System.DATA_DISABLED_ICON, 1,
                 UserHandle.USER_CURRENT) == 1;
 
         mapIconSets();
         updateTelephony();
+        notifyListeners();
     }
 
     public void setConfiguration(Config config) {
@@ -414,9 +423,27 @@ public class MobileSignalController extends SignalController<
 
     private int getVolteResId() {
         int resId = 0;
-        if ( (mCurrentState.voiceCapable || mCurrentState.videoCapable)
-                &&  mCurrentState.imsRegistered && mVoLTEicon ) {
-            resId = R.drawable.ic_volte;
+
+        if (mCurrentState.imsRegistered && mVoLTEicon) {
+            switch(mVoLTEstyle) {
+                // VoLTE
+                case 1:
+                    resId = R.drawable.ic_volte1;
+                    break;
+                // OOS VoLTE
+                case 2:
+                    resId = R.drawable.ic_volte2;
+                    break;
+                // HD Icon
+                case 3:
+                    resId = R.drawable.ic_hd_volte;
+                    break;
+ 	        //Vo
+                case 0:
+                default:
+                    resId = R.drawable.ic_volte;
+                    break;
+            }
         }
         return resId;
     }
