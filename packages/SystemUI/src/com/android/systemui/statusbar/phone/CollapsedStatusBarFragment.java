@@ -494,9 +494,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             case 1:
                 logo = getContext().getDrawable(R.drawable.ic_derpquest_logo);
                 break;
-                // Android
+                // DerpQuest 2
             case 2:
-                logo = getContext().getResources().getDrawable(R.drawable.ic_android_logo);
+                logo = getContext().getResources().getDrawable(R.drawable.ic_derpquest1_logo);
                 break;
                 // OWL
             case 3:
@@ -506,9 +506,21 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             case 4:
                 logo = getContext().getResources().getDrawable(R.drawable.ic_owl1_logo);
                 break;
-                // OWL 2
+                // Q
             case 5:
-                logo = getContext().getResources().getDrawable(R.drawable.ic_owl2_logo);
+                logo = getContext().getResources().getDrawable(R.drawable.ic_q_logo);
+                break;
+                // OnePlus
+            case 6:
+                logo = getContext().getResources().getDrawable(R.drawable.ic_oneplus_logo);
+                break;
+                // Trident
+            case 7:
+                logo = getContext().getResources().getDrawable(R.drawable.ic_trident_logo);
+                break;
+                // Android
+            case 8:
+                logo = getContext().getResources().getDrawable(R.drawable.ic_android_logo);
                 break;
                 // DerpQuest
             case 0:
