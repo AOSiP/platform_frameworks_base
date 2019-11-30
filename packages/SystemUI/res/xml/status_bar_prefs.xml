@@ -83,11 +83,6 @@
         android:key="wifi"
         android:title="@string/quick_settings_wifi_label" />
 
-    <com.android.systemui.tuner.BatteryPreference
-        android:title="@string/battery"
-        android:summary="%s"
-        android:entries="@array/battery_options" />
-
     <com.android.systemui.tuner.TunerSwitch
         android:key="low_priority"
         android:title="@string/tuner_low_priority"
