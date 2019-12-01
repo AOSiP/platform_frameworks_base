@@ -119,4 +119,5 @@ interface IStatusBarService
      * AOSiP
      */
     void toggleCameraFlash();
+    void setPartialScreenshot(boolean active);
 }
