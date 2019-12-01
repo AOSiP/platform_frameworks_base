@@ -38,10 +38,12 @@ public class StatusBarTuner extends PreferenceFragment {
     private static final String SHOW_FOURG = "show_fourg";
     private static final String SHOW_VOLTE = "show_volte";
     private static final String DATA_DISABLED_ICON = "data_disabled_icon";
+    private static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";
 
     private SwitchPreference mShowFourG;
     private SwitchPreference mShowVoLTE;
     private SwitchPreference mShowDataDisabled;
+    private SwitchPreference mUseOldMobileType;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -51,10 +53,12 @@ public class StatusBarTuner extends PreferenceFragment {
         mShowFourG = (SwitchPreference) findPreference(SHOW_FOURG);
         mShowVoLTE = (SwitchPreference) findPreference(SHOW_VOLTE);
         mShowDataDisabled = (SwitchPreference) findPreference(DATA_DISABLED_ICON);
+        mUseOldMobileType = (SwitchPreference) findPreference(USE_OLD_MOBILETYPE);
         if (isWifiOnly()) {
             getPreferenceScreen().removePreference(mShowFourG);
             getPreferenceScreen().removePreference(mShowVoLTE);
             getPreferenceScreen().removePreference(mShowDataDisabled);
+            getPreferenceScreen().removePreference(mUseOldMobileType);
         } else {
             mShowFourG.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.SHOW_FOURG, get4gForLTEDefaultBool() ? 1 : 0,
@@ -64,6 +68,9 @@ public class StatusBarTuner extends PreferenceFragment {
                 UserHandle.USER_CURRENT) == 1);
             mShowDataDisabled.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.DATA_DISABLED_ICON, 1,
+                UserHandle.USER_CURRENT) == 1);
+            mUseOldMobileType.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.USE_OLD_MOBILETYPE, 0,
                 UserHandle.USER_CURRENT) == 1);
         }
     }
@@ -110,6 +117,11 @@ public class StatusBarTuner extends PreferenceFragment {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.DATA_DISABLED_ICON, checked ? 1 : 0);
+            return true;
+        } else if (preference == mUseOldMobileType) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.USE_OLD_MOBILETYPE, checked ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preference);
