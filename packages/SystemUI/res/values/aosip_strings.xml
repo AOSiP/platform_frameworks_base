@@ -101,8 +101,7 @@
     <string name="use_old_mobiletype_summary">Merge signal and type icons</string>
 
     <!-- VoLTE switch -->
-    <string name="volte_switch_title" translatable="false">VoLTE icon</string>
-    <string name="volte_switch_summary">Display VoLTE icon</string>
+    <string name="volte_switch_title" translatable="false">VoLTE</string>
 
     <!-- Name of the nfc status bar icon. -->
     <string name="status_bar_nfc">NFC</string>
@@ -162,4 +161,10 @@
     <string name="quick_settings_compass_SW">SW</string>
     <string name="quick_settings_compass_W">W</string>
     <string name="quick_settings_compass_NW">NW</string>
+
+    <!-- StatusBar tuner categories -->
+    <string name="status_bar_icons_category">Icon Toggles</string>
+    <string name="status_bar_signal_category">Signal Icon Tweaks</string>
+    <string name="status_bar_etc_category">ETC</string>
+
 </resources>
