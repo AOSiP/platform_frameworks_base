@@ -49,6 +49,6 @@
     <!-- Custom permissions list for apps to be grant when dirty flashing -->
     <string-array translatable="false" name="config_customPermissionsList">
         <item>com.google.android.apps.wellbeing</item>
-        <!-- <item>more packages</item>-->
+        <item>com.android.wallpaper.livepicker</item>
     </string-array>
 </resources>
