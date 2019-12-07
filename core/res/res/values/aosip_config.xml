@@ -30,7 +30,7 @@
     <string name="config_regularFontFamily" translatable="false">sans-serif-regular</string>
 
     <string-array translatable="false" name="config_customPermissionsList">
-        <!-- <item>more packages</item>-->
+        <item>com.android.wallpaper.livepicker</item>
     </string-array>
 
     <!-- The list of components which should be automatically disabled for a specific device.
