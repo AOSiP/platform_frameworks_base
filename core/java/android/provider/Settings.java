@@ -4919,13 +4919,6 @@ public final class Settings {
         public static final String CUSTOM_AMBIENT_POCKETMODE_GESTURE = "custom_ambient_pocketmode_gesture";
 
         /**
-         * Ambient screen settings
-         * "screen_brightness_array=0:1:2:3:4"
-         * @hide
-         */
-        public static final String ALWAYS_ON_DISPLAY_CONSTANTS_CUST = "always_on_display_constants_cust";
-
-        /**
          * Whether to show Brightness Icon On Brightness Slider
          * @hide
          */
