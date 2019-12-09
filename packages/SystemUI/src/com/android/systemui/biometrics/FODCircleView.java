@@ -28,6 +28,7 @@ import android.hardware.biometrics.BiometricSourceType;
 import android.os.Handler;
 import android.os.IHwBinder;
 import android.os.Looper;
+import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.provider.Settings;
@@ -79,7 +80,8 @@ public class FODCircleView extends ImageView implements OnTouchListener {
     private boolean mIsRemoving;
 
     private Handler mHandler;
-
+    private PowerManager mPowerManager;
+    private PowerManager.WakeLock mWakeLock;
     private Timer mBurnInProtectionTimer;
 
     private IFingerprintInscreenCallback mFingerprintInscreenCallback =
@@ -115,6 +117,11 @@ public class FODCircleView extends ImageView implements OnTouchListener {
         @Override
         public void onDreamingStateChanged(boolean dreaming) {
             super.onDreamingStateChanged(dreaming);
+            if (dreaming &&  !mWakeLock.isHeld()) {
+                mWakeLock.acquire();
+            } else {
+                mWakeLock.release();
+            }
             mIsDreaming = dreaming;
             mIsInsideCircle = false;
             if (dreaming) {
@@ -242,6 +249,8 @@ public class FODCircleView extends ImageView implements OnTouchListener {
 
         mUpdateMonitor = KeyguardUpdateMonitor.getInstance(context);
         mUpdateMonitor.registerCallback(mMonitorCallback);
+        mPowerManager = context.getSystemService(PowerManager.class);
+        mWakeLock = mPowerManager.newWakeLock(1, "fod");
     }
 
     @Override
@@ -269,7 +278,7 @@ public class FODCircleView extends ImageView implements OnTouchListener {
                 IFingerprintInscreen daemon = getFingerprintInScreenDaemon();
                 if (daemon != null) {
                     try {
-                        daemon.onPress();
+                        daemon.onPress(mIsDreaming ? 1 : 0);
                     } catch (RemoteException e) {
                         // do nothing
                     }
