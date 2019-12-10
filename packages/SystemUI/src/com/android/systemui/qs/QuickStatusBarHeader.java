@@ -160,7 +160,10 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.QS_ALWAYS_SHOW_SETINGS), false,
                     this, UserHandle.USER_ALL);
-            }
+            resolver.registerContentObserver(Settings.System
+                    .getUriFor(Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER), false,
+                    this, UserHandle.USER_ALL);
+        }
 
         @Override
         public void onChange(boolean selfChange) {
