@@ -203,7 +203,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
 
     private void setSettingsIcon() {
         isAlwaysShowSettings = Settings.System.getIntForUser(mContext.getContentResolver(),
-                        Settings.System.QS_ALWAYS_SHOW_SETINGS, 0,
+                        Settings.System.QS_ALWAYS_SHOW_SETTINGS, 0,
                         UserHandle.USER_CURRENT) == 1;
         createFooterAnimator();
     }
@@ -314,7 +314,7 @@ public class QSFooterImpl extends FrameLayout implements QSFooter,
                 mSettingsObserver, UserHandle.USER_ALL);
 
         mContext.getContentResolver().registerContentObserver(
-                Settings.System.getUriFor(Settings.System.QS_ALWAYS_SHOW_SETINGS), false,
+                Settings.System.getUriFor(Settings.System.QS_ALWAYS_SHOW_SETTINGS), false,
                 mSettingsObserver, UserHandle.USER_ALL);
     }
 

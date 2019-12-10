@@ -158,7 +158,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
                     .getUriFor(Settings.System.QS_DRAG_HANDLE), false,
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
-                    .getUriFor(Settings.System.QS_ALWAYS_SHOW_SETINGS), false,
+                    .getUriFor(Settings.System.QS_ALWAYS_SHOW_SETTINGS), false,
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER), false,
@@ -652,7 +652,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
                 Settings.System.QS_DRAG_HANDLE, 1,
                 UserHandle.USER_CURRENT) == 1;
         isAlwaysShowSettings = Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.QS_ALWAYS_SHOW_SETINGS, 0,
+                Settings.System.QS_ALWAYS_SHOW_SETTINGS, 0,
                 UserHandle.USER_CURRENT) == 1;
         updateQSBatteryMode();
         updateSBBatteryStyle();
