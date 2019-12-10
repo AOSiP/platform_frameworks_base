@@ -380,6 +380,9 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         } else if (id == R.id.menu_item_rows_three) {
             Settings.System.putIntForUser(mContext.getContentResolver(),
                     Settings.System.QS_LAYOUT_ROWS, 3, UserHandle.USER_CURRENT);
+        } else if (id == R.id.menu_item_rows_four) {
+            Settings.System.putIntForUser(mContext.getContentResolver(),
+                    Settings.System.QS_LAYOUT_ROWS, 4, UserHandle.USER_CURRENT);
         } else if (id == R.id.menu_item_rows_landscape_one) {
             Settings.System.putIntForUser(mContext.getContentResolver(),
                     Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, 1, UserHandle.USER_CURRENT);
@@ -578,6 +581,8 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         menuItemTwo.setChecked(rows == 2);
         MenuItem menuItemThree = mToolbar.getMenu().findItem(R.id.menu_item_rows_three);
         menuItemThree.setChecked(rows == 3);
+        MenuItem menuItemFour = mToolbar.getMenu().findItem(R.id.menu_item_rows_four);
+        menuItemFour.setChecked(rows == 4);
 
         int rowsLandscape = Settings.System.getIntForUser(
                 mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, 2,

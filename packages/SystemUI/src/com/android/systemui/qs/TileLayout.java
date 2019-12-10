@@ -36,7 +36,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
     protected final ArrayList<TileRecord> mRecords = new ArrayList<>();
     private int mCellMarginTop;
     private boolean mListening;
-    protected int mMaxAllowedRows = 3;
+    protected int mMaxAllowedRows = 4;
 
     public TileLayout(Context context) {
         this(context, null);
