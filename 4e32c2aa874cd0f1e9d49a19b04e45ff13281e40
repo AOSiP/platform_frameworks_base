@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "db7e62f9_9ddbc947",
+        "filename": "core/res/res/values/aosip_config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000075
+      },
+      "writtenOn": "2019-12-11T18:08:21Z",
+      "side": 1,
+      "message": "remove tab",
+      "revId": "4e32c2aa874cd0f1e9d49a19b04e45ff13281e40",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3bbddfb_6ae67469",
+        "filename": "core/res/res/values/aosip_symbols.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000075
+      },
+      "writtenOn": "2019-12-11T18:08:21Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "4e32c2aa874cd0f1e9d49a19b04e45ff13281e40",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
