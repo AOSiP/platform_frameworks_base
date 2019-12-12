@@ -259,6 +259,9 @@
     <protected-broadcast android:name="com.google.android.systemui.smartspace.EXPIRE_EVENT"/>
     <protected-broadcast android:name="com.google.android.systemui.smartspace.CLICK_EVENT"/>
 
+    <!-- Permission to broadcast doze intents -->
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
