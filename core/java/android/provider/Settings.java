@@ -5630,6 +5630,25 @@ public final class Settings {
                 ANY_INTEGER_VALIDATOR;
 
         /**
+         * Ambient edge light color
+         * @hide
+         */
+        public static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
+
+        /** @hide */
+        private static final Validator PULSE_AMBIENT_LIGHT_COLOR_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
+         * Wether to use color from wallpaper for Ambient edge light
+         * @hide
+         */
+        public static final String PULSE_AMBIENT_AUTO_COLOR = "pulse_ambient_auto_color";
+
+        /** @hide */
+        private static final Validator PULSE_AMBIENT_AUTO_COLOR_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Whether to change the transparency of the qs panel
          * @hide
          */
@@ -6112,6 +6131,8 @@ public final class Settings {
             OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED,
             OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED,
             OMNI_AMBIENT_NOTIFICATION_LIGHT_HIDE_AOD,
+            PULSE_AMBIENT_LIGHT_COLOR,
+            PULSE_AMBIENT_AUTO_COLOR,
             OMNI_BACK_GESTURE_HEIGHT,
             CHARGING_ANIMATION,
             OMNI_ASPECT_RATIO_APPS_ENABLED,
@@ -6341,6 +6362,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(OMNI_STATUS_BAR_FILE_HEADER_IMAGE);
             PRIVATE_SETTINGS.add(OMNI_PULSE_AMBIENT_LIGHT);
             PRIVATE_SETTINGS.add(OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED);
+            PRIVATE_SETTINGS.add(PULSE_AMBIENT_LIGHT_COLOR);
+            PRIVATE_SETTINGS.add(PULSE_AMBIENT_AUTO_COLOR);
             PRIVATE_SETTINGS.add(OMNI_BACK_GESTURE_HEIGHT);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_STATE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_TYPE);
@@ -6568,6 +6591,8 @@ public final class Settings {
             VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED, OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED_VALIDATOR);
             VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED, OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED_VALIDATOR);
             VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_HIDE_AOD, OMNI_AMBIENT_NOTIFICATION_LIGHT_HIDE_AOD_VALIDATOR);
+            VALIDATORS.put(PULSE_AMBIENT_LIGHT_COLOR, PULSE_AMBIENT_LIGHT_COLOR_VALIDATOR);
+            VALIDATORS.put(PULSE_AMBIENT_AUTO_COLOR, PULSE_AMBIENT_AUTO_COLOR_VALIDATOR);
             VALIDATORS.put(OMNI_BACK_GESTURE_HEIGHT, OMNI_BACK_GESTURE_HEIGHT_VALIDATOR);
             VALIDATORS.put(CHARGING_ANIMATION, CHARGING_ANIMATION_VALIDATOR);
             VALIDATORS.put(OMNI_ASPECT_RATIO_APPS_ENABLED,
