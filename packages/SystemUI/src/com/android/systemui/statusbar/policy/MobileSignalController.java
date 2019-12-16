@@ -430,11 +430,15 @@ public class MobileSignalController extends SignalController<
                 case 3:
                     resId = R.drawable.ic_hd_volte;
                     break;
-		  // VoLIT
+		        // VoLIT
                 case 4:
                     resId = R.drawable.ic_volit;
                     break;
-		 //Vo
+                // ASUS VoLTE
+                case 5:
+                    resId = R.drawable.ic_volte3;
+                    break;
+		        //Vo
                 case 0:
                 default:
                     resId = R.drawable.ic_volte;
