@@ -188,4 +188,6 @@
     <string name="volte_switch_title" translatable="false">VoLTE icon</string>
     <string name="volte_switch_summary">Display VoLTE icon</string>
 
+    <string name="tuner_status_bar_bg_transparency">Transparent status bar background</string>
+
 </resources>
