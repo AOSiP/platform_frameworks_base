@@ -242,4 +242,7 @@
 
     <!-- Alerting notification header label -->
     <string name="notification_section_header_alerting">Alerting notifications</string>
+
+    <string name="tuner_status_bar_bg_transparency">Transparent status bar background</string>
+
 </resources>
