@@ -39,6 +39,8 @@ import com.android.systemui.Dependency;
 import com.android.systemui.Interpolators;
 import com.android.systemui.R;
 import com.android.systemui.SysUiServiceProvider;
+import com.android.systemui.plugins.DarkIconDispatcher;
+import com.android.systemui.plugins.DarkIconDispatcher.DarkReceiver;
 import com.android.systemui.plugins.statusbar.StatusBarStateController;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.StatusBarState;
@@ -53,8 +55,6 @@ import android.widget.ImageView;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuff.Mode;
 
 /**
  * Contains the collapsed status bar and handles hiding/showing based on disable flags
@@ -93,7 +93,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private ImageView mDerpQuestLogoRight;
     private int mLogoStyle;
     private int mShowLogo;
-    private int mLogoColor;
 
     // custom carrier label
     private View mCustomCarrierLabel;
@@ -119,9 +118,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                     Settings.System.STATUS_BAR_LOGO_STYLE),
                     false, this, UserHandle.USER_ALL);
          mContentResolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_LOGO_COLOR),
-                    false, this, UserHandle.USER_ALL);
-         mContentResolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_CARRIER),
                     false, this, UserHandle.USER_ALL);
        }
@@ -129,8 +125,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
        @Override
        public void onChange(boolean selfChange, Uri uri) {
             if ((uri.equals(Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO))) ||
-                (uri.equals(Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO_STYLE))) ||
-                (uri.equals(Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO_COLOR)))){
+                (uri.equals(Settings.System.getUriFor(Settings.System.STATUS_BAR_LOGO_STYLE)))){
                  updateLogoSettings(true);
             }
             updateSettings(true);
@@ -178,9 +173,11 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mClockView = mStatusBar.findViewById(R.id.clock);
         mCenterClockLayout = (LinearLayout) mStatusBar.findViewById(R.id.center_clock_layout);
         mRightClock = mStatusBar.findViewById(R.id.right_clock);
+        mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);
         mDerpQuestLogo = mStatusBar.findViewById(R.id.status_bar_logo);
         mDerpQuestLogoRight = mStatusBar.findViewById(R.id.status_bar_logo_right);
-        mCustomCarrierLabel = mStatusBar.findViewById(R.id.statusbar_carrier_text);
+        Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mDerpQuestLogo);
+        Dependency.get(DarkIconDispatcher.class).addDarkReceiver(mDerpQuestLogoRight);
         updateSettings(false);
         updateLogoSettings(false);
         showSystemIconArea(false);
@@ -220,6 +217,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         if (mNetworkController.hasEmergencyCryptKeeperText()) {
             mNetworkController.removeCallback(mSignalCallback);
         }
+        Dependency.get(DarkIconDispatcher.class).removeDarkReceiver(mDerpQuestLogo);
+        Dependency.get(DarkIconDispatcher.class).removeDarkReceiver(mDerpQuestLogoRight);
     }
 
     public void initNotificationIconArea(NotificationIconAreaController
@@ -509,9 +508,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mShowLogo = Settings.System.getIntForUser(
                 getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO, 0,
                 UserHandle.USER_CURRENT);
-        mLogoColor = Settings.System.getIntForUser(
-                getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO_COLOR, 0xffff8800,
-                UserHandle.USER_CURRENT);
         mLogoStyle = Settings.System.getIntForUser(
                 getContext().getContentResolver(), Settings.System.STATUS_BAR_LOGO_STYLE, 0,
                 UserHandle.USER_CURRENT);
@@ -559,11 +555,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         if (mShowLogo == 1) {
 	          mDerpQuestLogo.setImageDrawable(null);
 	          mDerpQuestLogo.setImageDrawable(logo);
- 	          mDerpQuestLogo.setColorFilter(mLogoColor, PorterDuff.Mode.MULTIPLY);
 	      } else if (mShowLogo == 2) {
 	          mDerpQuestLogoRight.setImageDrawable(null);
 	          mDerpQuestLogoRight.setImageDrawable(logo);
-	          mDerpQuestLogoRight.setColorFilter(mLogoColor, PorterDuff.Mode.MULTIPLY);
 	      }
 
         if (mNotificationIconAreaInner != null) {
