@@ -4293,4 +4293,8 @@
     <string name="service_not_subscribed"></string>
     <string name="multi_conn_to_same_pdn_not_allowed"></string>
 
+    <!-- make sure you enable this only if your device supports deep slepp
+    with active proximity sensor event listener -->
+    <bool name="config_proxiSensorWakupCheck">false</bool>
+
 </resources>

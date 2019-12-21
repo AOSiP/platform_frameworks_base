@@ -5655,6 +5655,15 @@ public final class Settings {
         public static final String DOZE_TRIGGER_DOUBLETAP = "doze_trigger_doubletap";
 
         /**
+         * @hide
+         */
+        public static final String OMNI_SYSTEM_PROXI_CHECK_ENABLED = "system_proxi_check_enabled";
+
+        /** @hide */
+        private static final Validator OMNI_SYSTEM_PROXI_CHECK_ENABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * Wheter to play notification sound and vibration if screen is on
          * @hide
          */
@@ -5827,6 +5836,7 @@ public final class Settings {
             NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD,
             NETWORK_TRAFFIC_FONT_SIZE,
             AMBIENT_VISUALIZER_ENABLED,
+            OMNI_SYSTEM_PROXI_CHECK_ENABLED,
         };
 
         /**
@@ -6043,6 +6053,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(QS_PANEL_BG_ALPHA);
             PRIVATE_SETTINGS.add(PULSE_BRIGHTNESS);
             PRIVATE_SETTINGS.add(DOZE_BRIGHTNESS);
+            PRIVATE_SETTINGS.add(OMNI_SYSTEM_PROXI_CHECK_ENABLED);
         }
 
         /**
@@ -6253,6 +6264,7 @@ public final class Settings {
             VALIDATORS.put(NETWORK_TRAFFIC_VIEW_LOCATION, NETWORK_TRAFFIC_VIEW_LOCATION_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_SHOW_BATTERY_PERCENT, STATUS_BAR_SHOW_BATTERY_PERCENT_VALIDATOR);
             VALIDATORS.put(AMBIENT_VISUALIZER_ENABLED, AMBIENT_VISUALIZER_ENABLED_VALIDATOR);
+            VALIDATORS.put(OMNI_SYSTEM_PROXI_CHECK_ENABLED, OMNI_SYSTEM_PROXI_CHECK_ENABLED_VALIDATOR);
         }
 
         /**
