@@ -63,4 +63,7 @@
     <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">true</bool>
+
+    <!-- Does the device have a notification/battery LED? -->
+    <bool name="config_deviceHasLED">true</bool>
 </resources>
