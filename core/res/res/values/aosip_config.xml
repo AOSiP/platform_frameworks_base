@@ -107,4 +107,7 @@
     <!-- Whether to send camera status intent -->
     <bool name="config_sendCameraStatusIntent">false</bool>
 
+    <!-- Ambient wake gestures -->
+    <bool name="config_supportAmbientWakeGestures">true</bool>
+
 </resources>

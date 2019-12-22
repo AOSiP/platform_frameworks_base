@@ -169,4 +169,7 @@
   <!-- Whether to send camera status intent -->
   <java-symbol type="bool" name="config_sendCameraStatusIntent" />
 
+  <!-- Ambient wake gestures -->
+  <java-symbol type="bool" name="config_supportAmbientWakeGestures"/>
+
 </resources>
