@@ -24,6 +24,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.om.IOverlayManager;
+import android.content.om.OverlayInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -43,6 +45,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.text.TextUtils;
@@ -54,6 +57,7 @@ import android.view.WindowManagerGlobal;
 import com.android.internal.R;
 import com.android.internal.statusbar.IStatusBarService;
 
+import java.util.List;
 import java.util.Locale;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
@@ -65,6 +69,8 @@ public class aosipUtils {
     public static final String INTENT_REGION_SCREENSHOT = "action_handler_region_screenshot";
 
     private static IStatusBarService mStatusBarService = null;
+
+    private static OverlayManager sOverlayService;
 
     private static IStatusBarService getStatusBarService() {
         synchronized (aosipUtils.class) {
@@ -358,6 +364,28 @@ public class aosipUtils {
                 // do nothing.
             }
         }
+    }
+
+    // Method to detect whether an overlay is enabled or not
+    public static boolean isThemeEnabled(String packageName) {
+        if (sOverlayService == null) {
+            sOverlayService = new OverlayManager();
+        }
+        try {
+            ArrayList<OverlayInfo> infos = new ArrayList<OverlayInfo>();
+            infos.addAll(sOverlayService.getOverlayInfosForTarget("android",
+                    UserHandle.myUserId()));
+            infos.addAll(sOverlayService.getOverlayInfosForTarget("com.android.systemui",
+                    UserHandle.myUserId()));
+            for (int i = 0, size = infos.size(); i < size; i++) {
+                if (infos.get(i).packageName.equals(packageName)) {
+                    return infos.get(i).isEnabled();
+                }
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public static void killForegroundApp() {
