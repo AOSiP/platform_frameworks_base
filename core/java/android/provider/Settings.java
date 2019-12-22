@@ -8927,6 +8927,7 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKDOWN_IN_POWER_MENU = "lockdown_in_power_menu";
+        private static final Validator LOCKDOWN_IN_POWER_MENU_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * Whether the Reboot button should be shown in the power menu.
@@ -8946,7 +8947,11 @@ public final class Settings {
          */
         public static final String SCREENSHOT_IN_POWER_MENU = "screenshot_in_power_menu";
 
-        private static final Validator LOCKDOWN_IN_POWER_MENU_VALIDATOR = BOOLEAN_VALIDATOR;
+        /**
+         * Whether the Screenrecord button should be shown in the power menu.
+         * @hide
+         */
+        public static final String SCREENRECORD_IN_POWER_MENU = "screenrecord_in_power_menu";
 
         /**
          * Backup manager behavioral parameters.
