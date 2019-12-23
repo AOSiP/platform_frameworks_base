@@ -166,6 +166,7 @@
     <!-- StatusBar tuner categories -->
     <string name="status_bar_icons_category">Icon Toggles</string>
     <string name="status_bar_signal_category">Signal Icon Tweaks</string>
+    <string name="status_bar_volte_category">VoLTE</string>
     <string name="status_bar_etc_category">ETC</string>
 
     <!-- DataSwitch Tile -->
@@ -174,5 +175,16 @@
     <string name="qs_data_switch_toast_1">Currently only one SIM card is inserted</string>
     <string name="qs_data_switch_changed_1">Switch data card to SIM 1.</string>
     <string name="qs_data_switch_changed_2">Switch data card to SIM 2.</string>
+
+    <!-- Show VoLTE icon on statusbar -->
+    <string name="volte_icon_asus">VoLTE Asus Icon</string>
+    <string name="volte_icon_title">VoLTE icon</string>
+    <string name="volte_icon_summary">Display VoLTE icon</string>
+    <string name="volte_icon_style_title">Select VoLTE Icon</string>
+    <string name="volte_icon_vo">Vo Only Icon</string>
+    <string name="volte_icon_volte">VoLTE Icon</string>
+    <string name="volte_icon_oos">VoLTE OOS Icon</string>
+    <string name="volte_icon_hd">HD Icon</string>
+    <string name="volte_icon_volit">VoLIT Icon</string>
 
 </resources>

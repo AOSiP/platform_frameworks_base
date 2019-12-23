@@ -25,7 +25,9 @@ import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionManager;
 import android.view.MenuItem;
 
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 
@@ -33,17 +35,20 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.systemui.R;
 
-public class StatusBarTuner extends PreferenceFragment {
+public class StatusBarTuner extends PreferenceFragment implements
+        OnPreferenceChangeListener {
 
     private static final String SHOW_FOURG = "show_fourg";
     private static final String SHOW_VOLTE = "show_volte";
     private static final String DATA_DISABLED_ICON = "data_disabled_icon";
     private static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";
+    private static final String VOLTE_ICON = "volte_icon_style";
 
     private SwitchPreference mShowFourG;
     private SwitchPreference mShowVoLTE;
     private SwitchPreference mShowDataDisabled;
     private SwitchPreference mUseOldMobileType;
+    private ListPreference mVoLTEIcon;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -54,11 +59,13 @@ public class StatusBarTuner extends PreferenceFragment {
         mShowVoLTE = (SwitchPreference) findPreference(SHOW_VOLTE);
         mShowDataDisabled = (SwitchPreference) findPreference(DATA_DISABLED_ICON);
         mUseOldMobileType = (SwitchPreference) findPreference(USE_OLD_MOBILETYPE);
+        mVoLTEIcon = (ListPreference) findPreference(VOLTE_ICON);
         if (isWifiOnly()) {
             getPreferenceScreen().removePreference(mShowFourG);
             getPreferenceScreen().removePreference(mShowVoLTE);
             getPreferenceScreen().removePreference(mShowDataDisabled);
             getPreferenceScreen().removePreference(mUseOldMobileType);
+            getPreferenceScreen().removePreference(mVoLTEIcon);
         } else {
             mShowFourG.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.SHOW_FOURG, get4gForLTEDefaultBool() ? 1 : 0,
@@ -72,6 +79,9 @@ public class StatusBarTuner extends PreferenceFragment {
             mUseOldMobileType.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.USE_OLD_MOBILETYPE, 0,
                 UserHandle.USER_CURRENT) == 1);
+            mVoLTEIcon.setValue(Settings.System.getStringForUser(getActivity().getContentResolver(),
+                Settings.System.VOLTE_ICON_STYLE, UserHandle.USER_CURRENT));
+            mVoLTEIcon.setOnPreferenceChangeListener(this);
         }
     }
 
@@ -125,6 +135,17 @@ public class StatusBarTuner extends PreferenceFragment {
             return true;
         }
         return super.onPreferenceTreeClick(preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mVoLTEIcon) {
+          int value = Integer.parseInt((String) objValue);
+          Settings.System.putInt(getActivity().getContentResolver(),
+                  Settings.System.VOLTE_ICON_STYLE, value);
+          return true;
+        }
+        return false;
     }
 
     private boolean isWifiOnly() {
