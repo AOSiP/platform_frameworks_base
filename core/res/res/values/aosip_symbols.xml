@@ -41,6 +41,9 @@
   <java-symbol type="bool" name="config_ledCanPulse" />
   <java-symbol type="bool" name="config_deviceHasLED" />
 
+  <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
+  <java-symbol type="bool" name="config_cleanupUnusedFingerprints" />
+
     <!-- Advanced reboot -->
   <java-symbol type="string" name="reboot_to_recovery_title" />
   <java-symbol type="string" name="reboot_to_recovery_message" />
