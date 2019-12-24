@@ -42,7 +42,7 @@ LOCAL_REQUIRED_MODULES := \
 	FontSurferSourceOverlay \
 	FontRubikRubikOverlay \
 	FontCircularStdOverlay \
-	FontOnePlusSlateOverlay \
+	FontSlateForOnePlusOverlay \
 	IconPackCircularAndroidOverlay \
 	IconPackCircularPixelLauncherOverlay \
 	IconPackCircularPixelThemePickerOverlay \
