@@ -47,7 +47,6 @@ public class BrightnessMirrorController
     private final ArraySet<BrightnessMirrorListener> mBrightnessMirrorListeners = new ArraySet<>();
     private final int[] mInt2Cache = new int[2];
     private View mBrightnessMirror;
-    private ImageView mIcon;
     private Context mContext;
 
     public BrightnessMirrorController(Context context, StatusBarWindowView statusBarWindow,
@@ -60,13 +59,9 @@ public class BrightnessMirrorController
             mBrightnessMirror.setVisibility(View.INVISIBLE);
         });
         mVisibilityCallback = visibilityCallback;
-        mIcon = (ImageView) mBrightnessMirror.findViewById(R.id.brightness_icon);
-        // enable the brightness icon
-        mIcon.setVisibility(View.VISIBLE);
     }
 
     public void showMirror() {
-        updateIcon();
         mBrightnessMirror.setVisibility(View.VISIBLE);
         mVisibilityCallback.accept(true);
         mNotificationPanel.setPanelAlpha(0, true /* animate */);
@@ -144,20 +139,5 @@ public class BrightnessMirrorController
 
     public interface BrightnessMirrorListener {
         void onBrightnessMirrorReinflated(View brightnessMirror);
-    }
-
-    private void updateIcon() {
-        if (mIcon == null) {
-            return;
-        }
-        // enable the brightness icon
-        mIcon = (ImageView) mBrightnessMirror.findViewById(R.id.brightness_icon);
-        boolean automatic = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.SCREEN_BRIGHTNESS_MODE,
-                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
-                UserHandle.USER_CURRENT) != Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
-        mIcon.setImageResource(automatic ?
-                com.android.systemui.R.drawable.ic_qs_brightness_auto_on :
-                com.android.systemui.R.drawable.ic_qs_brightness_auto_off);
     }
 }
