@@ -77,6 +77,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
     public static final String QS_SHOW_BRIGHTNESS = "qs_show_brightness";
     public static final String QS_BRIGHTNESS_POSITION_BOTTOM = "qs_brightness_position_bottom";
+    public static final String QS_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
+    public static final String QS_SHOW_MINMAX_BRIGHTNESS = "qs_show_minmax_brightness";
     public static final String QS_SHOW_SECURITY = "qs_show_secure";
 
     private static final String TAG = "QSPanel";
@@ -108,8 +110,14 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     private BrightnessMirrorController mBrightnessMirrorController;
     private View mDivider;
 
+    private ImageView mBrightnessIcon;
+    private ImageView mMinBrightness;
+    private ImageView mMaxBrightness;
+
     private boolean mBrightnessBottom;
     private boolean mBrightnessVisible;
+    private boolean mShowAutoBrightness;
+    private boolean mShowMinMaxBrightness;
     private View mBrightnessPlaceholder;
 
     private final Vibrator mVibrator;
@@ -137,8 +145,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             R.layout.quick_settings_brightness_dialog, this, false);
         mBrightnessPlaceholder = LayoutInflater.from(mContext).inflate(
             R.layout.quick_settings_brightness_placeholder, this, false);
-        ImageView brightnessIcon = mBrightnessView.findViewById(R.id.brightness_icon);
-        brightnessIcon.setVisibility(View.VISIBLE);
+        mBrightnessIcon = mBrightnessView.findViewById(R.id.brightness_icon);
+        mBrightnessIcon.setVisibility(View.VISIBLE);
         addView(mBrightnessPlaceholder);
         addView(mBrightnessView);
 
@@ -151,7 +159,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         mQsTileRevealController = new QSTileRevealController(mContext, this,
                 (PagedTileLayout) mTileLayout);
 
-        ImageView mMinBrightness = mBrightnessView.findViewById(R.id.brightness_left);
+        mMinBrightness = mBrightnessView.findViewById(R.id.brightness_left);
         mMinBrightness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -174,7 +182,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             }
         });
 
-        ImageView mMaxBrightness = mBrightnessView.findViewById(R.id.brightness_right);
+        mMaxBrightness = mBrightnessView.findViewById(R.id.brightness_right);
         mMaxBrightness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -254,6 +262,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         tunerService.addTunable(this, QS_SHOW_BRIGHTNESS);
         tunerService.addTunable(this, QS_BRIGHTNESS_POSITION_BOTTOM);
         tunerService.addTunable(this, QS_SHOW_SECURITY);
+        tunerService.addTunable(this, QS_SHOW_AUTO_BRIGHTNESS);
+        tunerService.addTunable(this, QS_SHOW_MINMAX_BRIGHTNESS);
         if (mHost != null) {
             setTiles(mHost.getTiles());
         }
@@ -302,6 +312,20 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                 mBrightnessBottom = true;
             }
         }
+        if (QS_SHOW_AUTO_BRIGHTNESS.equals(key)) {
+            if (newValue == null || Integer.parseInt(newValue) == 0)
+                mShowAutoBrightness = false;
+            else
+                mShowAutoBrightness = true;
+            updateBrightnessButtonsVisibility();
+        }
+        if (QS_SHOW_MINMAX_BRIGHTNESS.equals(key)) {
+            if (newValue == null || Integer.parseInt(newValue) == 0)
+                mShowMinMaxBrightness = false;
+            else
+                mShowMinMaxBrightness = true;
+            updateBrightnessButtonsVisibility();
+        }
         if (QS_SHOW_SECURITY.equals(key)) {
             mFooter.setForceHide(newValue != null && Integer.parseInt(newValue) == 0);
         }
@@ -332,6 +356,12 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             mBrightnessView.setVisibility(GONE);
             mBrightnessPlaceholder.setVisibility(View.VISIBLE);
         }
+    }
+
+    private void updateBrightnessButtonsVisibility() {
+        mBrightnessIcon.setVisibility(mShowAutoBrightness ? View.VISIBLE : View.GONE);
+        mMaxBrightness.setVisibility(mShowMinMaxBrightness ? View.VISIBLE : View.GONE);
+        mMinBrightness.setVisibility(mShowMinMaxBrightness ? View.VISIBLE : View.GONE);
     }
 
     public void openDetails(String subPanel) {
@@ -867,6 +897,14 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
     public boolean isBrightnessViewBottom() {
         return mBrightnessBottom;
+    }
+
+    public boolean isShowAutoBrightness() {
+        return mShowAutoBrightness;
+    }
+
+    public boolean isShowMinMaxBrightness() {
+        return mShowMinMaxBrightness;
     }
 
     public int getNumColumns() {
