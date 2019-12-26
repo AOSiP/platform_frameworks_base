@@ -172,4 +172,7 @@
   <!-- Ambient wake gestures -->
   <java-symbol type="bool" name="config_supportAmbientWakeGestures"/>
 
+  <!-- Ambient music: allow disable dt2skiptrack on Soli devices -->
+  <java-symbol type="bool" name="config_has_Soli" />
+
 </resources>

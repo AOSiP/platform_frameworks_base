@@ -678,6 +678,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     private HeadsUpAppearanceController mHeadsUpAppearanceController;
     private boolean mVibrateOnOpening;
     private VibratorHelper mVibratorHelper;
+    private boolean mDeviceHasSoli;
     private ActivityLaunchAnimator mActivityLaunchAnimator;
     protected StatusBarNotificationPresenter mPresenter;
     private NotificationActivityStarter mNotificationActivityStarter;
@@ -1053,6 +1054,9 @@ public class StatusBar extends SystemUI implements DemoMode,
         int disabledFlags2 = result.mDisabledFlags2;
         Dependency.get(InitController.class).addPostInitTask(
                 () -> setUpDisableFlags(disabledFlags1, disabledFlags2));
+
+        mDeviceHasSoli = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_has_Soli);
 
         mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
         mCustomSettingsObserver.observe();
@@ -4785,6 +4789,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     public boolean isDoubleTapOnMusicTicker(float eventX, float eventY) {
+        if (mDeviceHasSoli) return false;
         final KeyguardSliceProvider sliceProvider = KeyguardSliceProvider.getAttachedInstance();
         View trackTitleView = null;
         if (mNotificationPanel != null) {

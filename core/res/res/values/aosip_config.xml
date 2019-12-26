@@ -110,4 +110,7 @@
     <!-- Ambient wake gestures -->
     <bool name="config_supportAmbientWakeGestures">true</bool>
 
+    <!-- Ambient music: allow disable dt2skiptrack on Soli devices -->
+    <bool name="config_has_Soli">false</bool>
+
 </resources>
