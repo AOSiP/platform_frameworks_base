@@ -61,6 +61,8 @@
   <!-- Rotation sensor -->
   <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
 
+  <java-symbol type="bool" name="config_has_Soli" />
+
   <!-- Custom permissions list -->
   <java-symbol type="array" name="config_customPermissionsList" />
 
