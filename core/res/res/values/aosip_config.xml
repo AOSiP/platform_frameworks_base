@@ -61,6 +61,8 @@
          true will use SystemClock.elapsedRealtimeNanos() to set timestamp. -->
     <bool name="config_useSystemClockforRotationSensor">false</bool>
 
+    <bool name="config_has_Soli">false</bool>
+
     <!-- Custom permissions list for apps to be grant when dirty flashing -->
     <string-array translatable="false" name="config_customPermissionsList">
         <item>com.google.android.apps.wellbeing</item>
