@@ -57,6 +57,8 @@
     <string-array name="config_forceEnabledComponents" translatable="false">
     </string-array>
 
+    <bool name="config_has_Soli">false</bool>
+
     <!-- Custom permissions list for apps to be grant when dirty flashing -->
     <string-array translatable="false" name="config_customPermissionsList">
         <item>com.google.android.apps.wellbeing</item>
