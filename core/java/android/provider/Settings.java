@@ -5772,6 +5772,12 @@ public final class Settings {
         private static final Validator LOCKOWNER_FONT_SIZE_VALIDATOR =
                 ANY_INTEGER_VALIDATOR;
 
+        /** @hide */
+        public static final String GESTURE_PILL_TOGGLE = "gesture_pill_toggle";
+
+        /** @hide */
+        private static final Validator GESTURE_PILL_TOGGLE_VALIDATOR = BOOLEAN_VALIDATOR;
+
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
@@ -5950,6 +5956,7 @@ public final class Settings {
             LOCKCLOCK_FONT_SIZE,
             LOCK_OWNERINFO_FONTS,
             LOCKOWNER_FONT_SIZE,
+            GESTURE_PILL_TOGGLE,
         };
 
         /**
@@ -6169,6 +6176,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DOZE_BRIGHTNESS);
             PRIVATE_SETTINGS.add(OMNI_SYSTEM_PROXI_CHECK_ENABLED);
             PRIVATE_SETTINGS.add(LOCK_SHOW_STATUS_BAR);
+            PRIVATE_SETTINGS.add(GESTURE_PILL_TOGGLE);
         }
 
         /**
@@ -6395,6 +6403,7 @@ public final class Settings {
             VALIDATORS.put(LOCKCLOCK_FONT_SIZE, LOCKCLOCK_FONT_SIZE_VALIDATOR);
             VALIDATORS.put(LOCK_OWNERINFO_FONTS, LOCK_OWNERINFO_FONTS_VALIDATOR);
             VALIDATORS.put(LOCKOWNER_FONT_SIZE, LOCKOWNER_FONT_SIZE_VALIDATOR);
+            VALIDATORS.put(GESTURE_PILL_TOGGLE, GESTURE_PILL_TOGGLE_VALIDATOR);
         }
 
         /**
