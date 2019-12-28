@@ -241,7 +241,7 @@ public class AmbientDisplayConfiguration {
 
     public boolean isAmbientGestureEnabled(int user) {
         return Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.AMBIENT_WAKE_GESTURES, 1, user) != 0;
+                Settings.System.AMBIENT_WAKE_GESTURES, 0, user) != 0;
     }
 
     public boolean isAmbientTickerEnabled(int user) {
