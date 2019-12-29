@@ -550,114 +550,119 @@ public class KeyguardSliceView extends LinearLayout implements View.OnClickListe
     private void refreshLockDateFont(KeyguardSliceButton button) {
         final Resources res = getContext().getResources();
         boolean isPrimary = UserHandle.getCallingUserId() == UserHandle.USER_OWNER;
-        int lockDateFont = isPrimary ? getLockDateFont() : 28;
-        if (lockDateFont == 0) {
-            button.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
-        }
-        if (lockDateFont == 1) {
-            button.setTypeface(Typeface.create("sans-serif", Typeface.BOLD));
-        }
-        if (lockDateFont == 2) {
-            button.setTypeface(Typeface.create("sans-serif", Typeface.ITALIC));
-        }
-        if (lockDateFont == 3) {
-            button.setTypeface(Typeface.create("sans-serif", Typeface.BOLD_ITALIC));
-        }
-        if (lockDateFont == 4) {
-            button.setTypeface(Typeface.create("sans-serif-light", Typeface.ITALIC));
-        }
-        if (lockDateFont == 5) {
-            button.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
-        }
-        if (lockDateFont == 6) {
-            button.setTypeface(Typeface.create("sans-serif-thin", Typeface.ITALIC));
-        }
-        if (lockDateFont == 7) {
-            button.setTypeface(Typeface.create("sans-serif-thin", Typeface.NORMAL));
-        }
-        if (lockDateFont == 8) {
-            button.setTypeface(Typeface.create("sans-serif-condensed", Typeface.NORMAL));
-        }
-        if (lockDateFont == 9) {
-            button.setTypeface(Typeface.create("sans-serif-condensed", Typeface.ITALIC));
-        }
-        if (lockDateFont == 10) {
-            button.setTypeface(Typeface.create("sans-serif-condensed", Typeface.BOLD));
-        }
-        if (lockDateFont == 11) {
-            button.setTypeface(Typeface.create("sans-serif-condensed", Typeface.BOLD_ITALIC));
-        }
-        if (lockDateFont == 12) {
-            button.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
-        }
-        if (lockDateFont == 13) {
-            button.setTypeface(Typeface.create("sans-serif-medium", Typeface.ITALIC));
-        }
-        if (lockDateFont == 14) {
-            button.setTypeface(Typeface.create("sans-serif-condensed-light", Typeface.NORMAL));
-        }
-        if (lockDateFont == 15) {
-            button.setTypeface(Typeface.create("sans-serif-condensed-light", Typeface.ITALIC));
-        }
-        if (lockDateFont == 16) {
-            button.setTypeface(Typeface.create("sans-serif-black", Typeface.NORMAL));
-        }
-        if (lockDateFont == 17) {
-            button.setTypeface(Typeface.create("sans-serif-black", Typeface.ITALIC));
-        }
-        if (lockDateFont == 18) {
-            button.setTypeface(Typeface.create("cursive", Typeface.NORMAL));
-        }
-        if (lockDateFont == 19) {
-            button.setTypeface(Typeface.create("cursive", Typeface.BOLD));
-        }
-        if (lockDateFont == 20) {
-            button.setTypeface(Typeface.create("casual", Typeface.NORMAL));
-        }
-        if (lockDateFont == 21) {
-            button.setTypeface(Typeface.create("serif", Typeface.NORMAL));
-        }
-        if (lockDateFont == 22) {
-            button.setTypeface(Typeface.create("serif", Typeface.ITALIC));
-        }
-        if (lockDateFont == 23) {
-            button.setTypeface(Typeface.create("serif", Typeface.BOLD));
-        }
-        if (lockDateFont == 24) {
-            button.setTypeface(Typeface.create("serif", Typeface.BOLD_ITALIC));
-        }
-        if (lockDateFont == 25) {
-            button.setTypeface(Typeface.create("gobold-light-sys", Typeface.NORMAL));
-        }
-        if (lockDateFont == 26) {
-            button.setTypeface(Typeface.create("roadrage-sys", Typeface.NORMAL));
-        }
-        if (lockDateFont == 27) {
-            button.setTypeface(Typeface.create("snowstorm-sys", Typeface.NORMAL));
-        }
-        if (lockDateFont == 28) {
-            button.setTypeface(Typeface.create("googlesans-sys", Typeface.NORMAL));
-        }
-        if (lockDateFont == 29) {
-            button.setTypeface(Typeface.create("neoneon-sys", Typeface.NORMAL));
-        }
-        if (lockDateFont == 30) {
-            button.setTypeface(Typeface.create("themeable-sys", Typeface.NORMAL));
-        }
-        if (lockDateFont == 31) {
-            button.setTypeface(Typeface.create("samsung-sys", Typeface.NORMAL));
-        }
-        if (lockDateFont == 32) {
-            button.setTypeface(Typeface.create("mexcellent-sys", Typeface.NORMAL));
-        }
-        if (lockDateFont == 33) {
-            button.setTypeface(Typeface.create("burnstown-sys", Typeface.NORMAL));
-        }
-        if (lockDateFont == 34) {
-            button.setTypeface(Typeface.create("dumbledor-sys", Typeface.NORMAL));
-        }
-        if (lockDateFont == 35) {
-            button.setTypeface(Typeface.create("phantombold-sys", Typeface.NORMAL));
+        int lockDateFont = isPrimary ? getLockDateFont() : -1;
+        switch (lockDateFont) {
+            case 0:
+                button.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
+                break;
+            case 1:
+                button.setTypeface(Typeface.create("sans-serif", Typeface.BOLD));
+                break;
+            case 2:
+                button.setTypeface(Typeface.create("sans-serif", Typeface.ITALIC));
+                break;
+            case 3:
+                button.setTypeface(Typeface.create("sans-serif", Typeface.BOLD_ITALIC));
+                break;
+            case 4:
+                button.setTypeface(Typeface.create("sans-serif-light", Typeface.ITALIC));
+                break;
+            case 5:
+                button.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
+                break;
+            case 6:
+                button.setTypeface(Typeface.create("sans-serif-thin", Typeface.ITALIC));
+                break;
+            case 7:
+                button.setTypeface(Typeface.create("sans-serif-thin", Typeface.NORMAL));
+                break;
+            case 8:
+                button.setTypeface(Typeface.create("sans-serif-condensed", Typeface.NORMAL));
+                break;
+            case 9:
+                button.setTypeface(Typeface.create("sans-serif-condensed", Typeface.ITALIC));
+                break;
+            case 10:
+                button.setTypeface(Typeface.create("sans-serif-condensed", Typeface.BOLD));
+                break;
+            case 11:
+                button.setTypeface(Typeface.create("sans-serif-condensed", Typeface.BOLD_ITALIC));
+                break;
+            case 12:
+                button.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
+                break;
+            case 13:
+                button.setTypeface(Typeface.create("sans-serif-medium", Typeface.ITALIC));
+                break;
+            case 14:
+                button.setTypeface(Typeface.create("sans-serif-condensed-light", Typeface.NORMAL));
+                break;
+            case 15:
+                button.setTypeface(Typeface.create("sans-serif-condensed-light", Typeface.ITALIC));
+                break;
+            case 16:
+                button.setTypeface(Typeface.create("sans-serif-black", Typeface.NORMAL));
+                break;
+            case 17:
+                button.setTypeface(Typeface.create("sans-serif-black", Typeface.ITALIC));
+                break;
+            case 18:
+                button.setTypeface(Typeface.create("cursive", Typeface.NORMAL));
+                break;
+            case 19:
+                button.setTypeface(Typeface.create("cursive", Typeface.BOLD));
+                break;
+            case 20:
+                button.setTypeface(Typeface.create("casual", Typeface.NORMAL));
+                break;
+            case 21:
+                button.setTypeface(Typeface.create("serif", Typeface.NORMAL));
+                break;
+            case 22:
+                button.setTypeface(Typeface.create("serif", Typeface.ITALIC));
+                break;
+            case 23:
+                button.setTypeface(Typeface.create("serif", Typeface.BOLD));
+                break;
+            case 24:
+                button.setTypeface(Typeface.create("serif", Typeface.BOLD_ITALIC));
+                break;
+            case 25:
+                button.setTypeface(Typeface.create("gobold-light-sys", Typeface.NORMAL));
+                break;
+            case 26:
+                button.setTypeface(Typeface.create("roadrage-sys", Typeface.NORMAL));
+                break;
+            case 27:
+                button.setTypeface(Typeface.create("snowstorm-sys", Typeface.NORMAL));
+                break;
+            case 28:
+                button.setTypeface(Typeface.create("googlesans-sys", Typeface.NORMAL));
+                break;
+            case 29:
+                button.setTypeface(Typeface.create("neoneon-sys", Typeface.NORMAL));
+                break;
+            case 30:
+                button.setTypeface(Typeface.create("themeable-sys", Typeface.NORMAL));
+                break;
+            case 31:
+                button.setTypeface(Typeface.create("samsung-sys", Typeface.NORMAL));
+                break;
+            case 32:
+                button.setTypeface(Typeface.create("mexcellent-sys", Typeface.NORMAL));
+                break;
+            case 33:
+                button.setTypeface(Typeface.create("burnstown-sys", Typeface.NORMAL));
+                break;
+            case 34:
+                button.setTypeface(Typeface.create("dumbledor-sys", Typeface.NORMAL));
+                break;
+            case 35:
+                button.setTypeface(Typeface.create("phantombold-sys", Typeface.NORMAL));
+                break;
+            default: // set desired default font here
+                button.setTypeface(Typeface.create("googlesans-sys", Typeface.NORMAL));
+                break;
         }
     }
 
