@@ -44,7 +44,7 @@ public class SoundSearchTile extends QSTileImpl<BooleanState> {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.OWL_TILE;
+        return MetricsEvent.OWLSNEST;
     }
 
     @Override
