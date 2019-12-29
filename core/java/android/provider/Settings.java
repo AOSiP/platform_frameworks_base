@@ -5428,10 +5428,13 @@ public final class Settings {
          */
         public static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
 
+        private static final Validator NETWORK_TRAFFIC_STATE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
         /**
-	 ** What to show in network traffic indicator in statusbar
-	 ** @hide
-	 **/
+         * What to show in network traffic indicator in statusbar
+         * @hide
+        **/
         public static final String NETWORK_TRAFFIC_TYPE = "network_traffic_type";
 
         private static final Validator NETWORK_TRAFFIC_TYPE_VALIDATOR =
@@ -5562,6 +5565,9 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_SHOW_CARRIER = "status_bar_show_carrier";
+        /** @hide */
+        private static final Validator STATUS_BAR_SHOW_CARRIER_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * custom carrier label. The value is
@@ -5569,24 +5575,36 @@ public final class Settings {
          * @hide
          */
         public static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+        /** @hide */
+        private static final Validator CUSTOM_CARRIER_LABEL_VALIDATOR =
+                ANY_STRING_VALIDATOR;
 
         /**
          * Carrier Label Custom Color
          * @hide
          */
         public static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
+        /** @hide */
+        private static final Validator STATUS_BAR_CARRIER_COLOR_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Settings for carrier label font size
          * @hide
          */
         public static final String STATUS_BAR_CARRIER_FONT_SIZE = "status_bar_carrier_font_size";
+        /** @hide */
+        private static final Validator STATUS_BAR_CARRIER_FONT_SIZE_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Custom carrier label font style
          * @hide
          */
         public static final String STATUS_BAR_CARRIER_FONT_STYLE = "status_bar_carrier_font_style";
+        /** @hide */
+        private static final Validator STATUS_BAR_CARRIER_FONT_STYLE_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Whether to enable Ambient edge light
@@ -5662,6 +5680,9 @@ public final class Settings {
          * @hide
          */
         public static final String DOZE_TRIGGER_DOUBLETAP = "doze_trigger_doubletap";
+        /** @hide */
+        private static final Validator DOZE_TRIGGER_DOUBLETAP_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * @hide
@@ -5697,6 +5718,9 @@ public final class Settings {
          * @hide
          */
         public static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
+        /** @hide */
+        private static final Validator LOCK_CLOCK_FONTS_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Change fonts for the system lockscreen date
@@ -5704,13 +5728,19 @@ public final class Settings {
          * @hide
          */
         public static final String LOCK_DATE_FONTS = "lock_date_fonts";
+        /** @hide */
+        private static final Validator LOCK_DATE_FONTS_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Change font size for the system lockscreen date
          *
          * @hide
          */
-        public static final String LOCKDATE_FONT_SIZE= "lockdate_font_size";
+        public static final String LOCKDATE_FONT_SIZE = "lockdate_font_size";
+        /** @hide */
+        private static final Validator LOCKDATE_FONT_SIZE_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Change font size for the system lockscreen clock widget
@@ -5718,6 +5748,9 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKCLOCK_FONT_SIZE = "lockclock_font_size";
+        /** @hide */
+        private static final Validator LOCKCLOCK_FONT_SIZE_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Change fonts for the system lockscreen Owner info
@@ -5725,6 +5758,9 @@ public final class Settings {
          * @hide
          */
         public static final String LOCK_OWNERINFO_FONTS = "lock_ownerinfo_fonts";
+        /** @hide */
+        private static final Validator LOCK_OWNERINFO_FONTS_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Change font size for the system lockscreen owner
@@ -5732,6 +5768,9 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKOWNER_FONT_SIZE= "lockowner_font_size";
+        /** @hide */
+        private static final Validator LOCKOWNER_FONT_SIZE_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -5862,6 +5901,11 @@ public final class Settings {
             STATUS_BAR_LOGO,
             STATUS_BAR_LOGO_STYLE,
             STATUS_BAR_LOGO_COLOR,
+            STATUS_BAR_SHOW_CARRIER,
+            CUSTOM_CARRIER_LABEL,
+            STATUS_BAR_CARRIER_COLOR,
+            STATUS_BAR_CARRIER_FONT_SIZE,
+            STATUS_BAR_CARRIER_FONT_STYLE,
             LOCKSCREEN_MEDIA_METADATA,
             LOCKSCREEN_MEDIA_BLUR,
             ENABLE_CONDITIONS,
@@ -5891,6 +5935,7 @@ public final class Settings {
             DOZE_BRIGHTNESS,
             FLASH_ON_CALL_WAITING,
             FLASH_ON_CALLWAITING_DELAY,
+            NETWORK_TRAFFIC_STATE,
             NETWORK_TRAFFIC_VIEW_LOCATION,
             NETWORK_TRAFFIC_TYPE,
             NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD,
@@ -5898,6 +5943,13 @@ public final class Settings {
             AMBIENT_VISUALIZER_ENABLED,
             OMNI_SYSTEM_PROXI_CHECK_ENABLED,
             LOCK_SHOW_STATUS_BAR,
+            DOZE_TRIGGER_DOUBLETAP,
+            LOCK_CLOCK_FONTS,
+            LOCK_DATE_FONTS,
+            LOCKDATE_FONT_SIZE,
+            LOCKCLOCK_FONT_SIZE,
+            LOCK_OWNERINFO_FONTS,
+            LOCKOWNER_FONT_SIZE,
         };
 
         /**
@@ -6281,6 +6333,11 @@ public final class Settings {
             VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_LOGO_STYLE, STATUS_BAR_LOGO_STYLE_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_LOGO_COLOR, STATUS_BAR_LOGO_COLOR_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_SHOW_CARRIER, STATUS_BAR_SHOW_CARRIER_VALIDATOR);
+            VALIDATORS.put(CUSTOM_CARRIER_LABEL, CUSTOM_CARRIER_LABEL_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CARRIER_COLOR, STATUS_BAR_CARRIER_COLOR_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CARRIER_FONT_SIZE, STATUS_BAR_CARRIER_FONT_SIZE_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CARRIER_FONT_STYLE, STATUS_BAR_CARRIER_FONT_STYLE_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_MEDIA_BLUR, LOCKSCREEN_MEDIA_BLUR_VALIDATOR);
             VALIDATORS.put(ENABLE_CONDITIONS, ENABLE_CONDITIONS_VALIDATOR);
@@ -6321,6 +6378,7 @@ public final class Settings {
             VALIDATORS.put(DOZE_BRIGHTNESS, DOZE_BRIGHTNESS_VALIDATOR);
             VALIDATORS.put(FLASH_ON_CALL_WAITING, FLASH_ON_CALL_WAITING_VALIDATOR);
             VALIDATORS.put(FLASH_ON_CALLWAITING_DELAY, FLASH_ON_CALLWAITING_DELAY_VALIDATOR);
+            VALIDATORS.put(NETWORK_TRAFFIC_STATE, NETWORK_TRAFFIC_STATE_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_TYPE, NETWORK_TRAFFIC_TYPE_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_ARROW, NETWORK_TRAFFIC_ARROW_VALIDATOR);
@@ -6330,6 +6388,13 @@ public final class Settings {
             VALIDATORS.put(AMBIENT_VISUALIZER_ENABLED, AMBIENT_VISUALIZER_ENABLED_VALIDATOR);
             VALIDATORS.put(OMNI_SYSTEM_PROXI_CHECK_ENABLED, OMNI_SYSTEM_PROXI_CHECK_ENABLED_VALIDATOR);
             VALIDATORS.put(LOCK_SHOW_STATUS_BAR,LOCK_SHOW_STATUS_BAR_VALIDATOR);
+            VALIDATORS.put(DOZE_TRIGGER_DOUBLETAP, DOZE_TRIGGER_DOUBLETAP_VALIDATOR);
+            VALIDATORS.put(LOCK_CLOCK_FONTS, LOCK_CLOCK_FONTS_VALIDATOR);
+            VALIDATORS.put(LOCK_DATE_FONTS, LOCK_DATE_FONTS_VALIDATOR);
+            VALIDATORS.put(LOCKDATE_FONT_SIZE, LOCKDATE_FONT_SIZE_VALIDATOR);
+            VALIDATORS.put(LOCKCLOCK_FONT_SIZE, LOCKCLOCK_FONT_SIZE_VALIDATOR);
+            VALIDATORS.put(LOCK_OWNERINFO_FONTS, LOCK_OWNERINFO_FONTS_VALIDATOR);
+            VALIDATORS.put(LOCKOWNER_FONT_SIZE, LOCKOWNER_FONT_SIZE_VALIDATOR);
         }
 
         /**
