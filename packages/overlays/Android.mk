@@ -53,6 +53,7 @@ LOCAL_REQUIRED_MODULES := \
 	IconPackRoundedPixelThemePickerOverlay \
 	IconPackRoundedSettingsOverlay \
 	IconPackRoundedSystemUIOverlay \
+	IconShapeCylinderOverlay \
 	IconShapeRoundedRectOverlay \
 	IconShapeSquareOverlay \
 	IconShapeSquircleOverlay \
