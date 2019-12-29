@@ -7433,9 +7433,6 @@ message MetricsEvent {
     // OwlsNest
     OWLSNEST = 420;
 
-    // QS Tiles
-    OWL_TILE = 421;
-
     TILE_LOCATION_DETAIL = 2001;
   }
 }
