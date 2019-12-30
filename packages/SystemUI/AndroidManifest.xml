@@ -248,32 +248,6 @@
     <protected-broadcast android:name="com.android.settingslib.action.UNREGISTER_SLICE_RECEIVER" />
     <protected-broadcast android:name="com.android.settings.flashlight.action.FLASHLIGHT_CHANGED" />
 
-    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
-
-    <!-- Pixel Live Wallpapers -->
-    <protected-broadcast android:name="com.breel.wallpapers.NOTIFICATION_RECEIVED"/>
-    <permission android:name="com.breel.wallpapers.notifications"/>
-    <uses-permission android:name="com.breel.wallpapers.notifications"/>
-
-    <!-- Smart space -->
-    <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.QSB"/>
-    <protected-broadcast android:name="com.google.android.systemui.smartspace.ENABLE_UPDATE"/>
-    <protected-broadcast android:name="com.google.android.systemui.smartspace.EXPIRE_EVENT"/>
-    <protected-broadcast android:name="com.google.android.systemui.smartspace.CLICK_EVENT"/>
-
-    <!-- Permission to broadcast doze intents -->
-    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
-
-    <!-- Sync tile -->
-    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
-
-    <!-- Locale QS -->
-    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
-
-    <!-- DataSwitch tile -->
-    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
-
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
@@ -338,15 +312,6 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".CPUInfoService"
-                android:exported="true" />
-
-        <receiver android:name=".BootReceiver" androidprv:systemUserOnly="true">
-            <intent-filter android:priority="1000">
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
         <service android:name=".ImageWallpaper"
                 android:permission="android.permission.BIND_WALLPAPER"
                 android:exported="true" />
@@ -378,22 +343,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity-alias>
-
-        <activity android:name=".tuner.NavBarActivity"
-                  android:theme="@style/ExTunerSettings"
-                  android:label="@string/nav_bar"
-                  android:process=":tuner"
-                  android:parentActivityName="com.aosip.owlsnest.navigation.NavigationHolder"
-                  android:exported="true">
-        </activity>
-
-        <activity android:name=".tuner.LockscreenActivity"
-                  android:theme="@style/ExTunerSettings"
-                  android:label="@string/tuner_lock_screen"
-                  android:process=":tuner"
-                  android:parentActivityName="com.aosip.owlsnest.lockscreen.LockscreenHolder"
-                  android:exported="true">
-        </activity>
 
         <activity
             android:name=".stackdivider.ForcedResizableInfoActivity"
