@@ -274,7 +274,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mDateView = findViewById(R.id.date);
         mSpace = findViewById(R.id.space);
         mDateView.setOnClickListener(this);
-        mClockView.setQsHeader(mDateView);
+        mClockView.setQsHeader();
 
         // Tint for the battery icons are handled in setupHost()
         mBatteryRemainingIcon = findViewById(R.id.batteryRemainingIcon);
