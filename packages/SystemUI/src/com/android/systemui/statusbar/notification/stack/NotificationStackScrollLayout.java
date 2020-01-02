@@ -503,6 +503,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
     private float mLastSentAppear;
     private float mLastSentExpandedHeight;
     private boolean mWillExpand;
+    private final boolean mShowGentleHeader;
 
     @Inject
     public NotificationStackScrollLayout(
@@ -533,13 +534,16 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
         mKeyguardBypassController = keyguardBypassController;
         mFalsingManager = falsingManager;
 
+        mShowGentleHeader = NotificationUtils.showGentleHeader();
+
         mSectionsManager =
                 new NotificationSectionsManager(
                         this,
                         activityStarter,
                         statusBarStateController,
                         configurationController,
-                        NotificationUtils.useNewInterruptionModel(context));
+                        NotificationUtils.useNewInterruptionModel(context),
+                        mShowGentleHeader);
         mSectionsManager.initialize(LayoutInflater.from(context));
         mSectionsManager.setOnClearGentleNotifsClickListener(v -> {
             // Leave the shade open if there will be other notifs left over to clear
@@ -5446,7 +5450,8 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
 
     @ShadeViewRefactor(RefactorComponent.SHADE_VIEW)
     public void manageNotifications(View v) {
-        Intent intent = new Intent(Settings.ACTION_ALL_APPS_NOTIFICATION_SETTINGS);
+        Intent intent = new Intent(mShowGentleHeader ? Settings.ACTION_ALL_APPS_NOTIFICATION_SETTINGS :
+                Settings.ACTION_NOTIFICATION_SETTINGS);
         mStatusBar.startActivity(intent, true, true, Intent.FLAG_ACTIVITY_SINGLE_TOP);
     }
 
