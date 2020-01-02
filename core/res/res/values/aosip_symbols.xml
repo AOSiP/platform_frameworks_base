@@ -114,6 +114,12 @@
   <java-symbol type="integer" name="config_sms_authorization_timeout_ms" />
   <java-symbol type="bool" name="config_sms_authorization_enabled" />
 
+  <!-- True if the notification's should dynamically tint the app icon and text -->
+  <java-symbol type="bool" name="config_allowNotificationIconTextTinting" />
+  <!-- True if the notification's dynamic app icon and text tint should be optimised for dark
+       backgrounds -->
+  <java-symbol type="bool" name="config_useDarkBgNotificationIconTextTinting" />
+
   <!-- Input policy constants  -->
   <java-symbol type="integer" name="config_deviceHardwareKeys" />
   <java-symbol type="integer" name="config_doubleTapOnHomeKeyBehavior" />

@@ -122,6 +122,12 @@
     <!-- Enable sms authorization framework-->
     <bool name="config_sms_authorization_enabled">false</bool>
 
+    <!-- True if the notification's should dynamically tint the app icon and text -->
+    <bool name="config_allowNotificationIconTextTinting">true</bool>
+    <!-- True if the notification's dynamic app icon and text tint should be optimised for dark
+         backgrounds -->
+    <bool name="config_useDarkBgNotificationIconTextTinting">false</bool>
+
     <!-- Hardware 'face' keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:
