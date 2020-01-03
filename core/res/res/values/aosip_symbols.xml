@@ -51,9 +51,6 @@
   <!-- Whether to allow process with media UID to access CameraServiceProxy -->
   <java-symbol type="bool" name="config_allowMediaUidForCameraServiceProxy" />
 
-  <!-- Seconds after which power button torch times out when proximity sensor is covered -->
-  <java-symbol type="integer" name="config_flashlightProximityTimeout" />
-
   <!-- Package Manager -->
   <java-symbol type="array" name="config_disabledComponents" />
   <java-symbol type="array" name="config_forceEnabledComponents" />

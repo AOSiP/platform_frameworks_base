@@ -46,9 +46,6 @@
     <!-- Whether to allow process with media UID to access CameraServiceProxy -->
     <bool name="config_allowMediaUidForCameraServiceProxy">false</bool>
 
-    <!-- Seconds after which power button torch times out when proximity sensor is covered -->
-    <integer name="config_flashlightProximityTimeout">300</integer>
-
     <!-- The list of components which should be automatically disabled. -->
     <string-array name="config_disabledComponents" translatable="false">
     </string-array>
