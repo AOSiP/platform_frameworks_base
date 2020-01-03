@@ -16,4 +16,7 @@
 <resources>
     <!-- Allow devices override audio panel location to the left side -->
     <bool name="config_audioPanelOnLeftSide">false</bool>
+
+    <!-- Allow devices to use unordinary cutout overlays -->
+    <bool name="config_customCutout">false</bool>
 </resources>
