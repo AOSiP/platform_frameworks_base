@@ -10729,11 +10729,28 @@ public final class Settings {
                 ANY_INTEGER_VALIDATOR;
 
         /**
-         * Setting to allow setting rounded corner size and content padding
+         * Rounded corners radius
          */
         public static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
+
+        private static final Validator SYSUI_ROUNDED_SIZE_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
+         * Rounded corners content padding
+         */
         public static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
+
+        private static final Validator SYSUI_ROUNDED_CONTENT_PADDING_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
+         * Rounded corners statusbar padding
+         */
         public static final String SYSUI_STATUS_BAR_PADDING = "sysui_status_bar_padding";
+
+        private static final Validator SYSUI_STATUS_BAR_PADDING_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Setting to disable rounded corner preferences and use frameworks values instead
@@ -10741,13 +10758,17 @@ public final class Settings {
          */
         public static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
 
+        private static final Validator SYSUI_ROUNDED_FWVALS_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
         /**
          * Defines the device hostname
          * @hide
          */
         public static final String DEVICE_HOSTNAME = "device_hostname";
 
-        private static  final Validator DEVICE_HOSTNAME_VALIDATOR = ANY_STRING_VALIDATOR;
+        private static  final Validator DEVICE_HOSTNAME_VALIDATOR =
+                ANY_STRING_VALIDATOR;
 
         /**
          * This are the settings to be backed up.
@@ -10903,6 +10924,10 @@ public final class Settings {
             LOCKSCREEN_SOLID_FUDGE_FACTOR,
             LOCKSCREEN_SOLID_UNITS_OPACITY,
             VOLUME_LINK_NOTIFICATION,
+            SYSUI_ROUNDED_FWVALS,
+            SYSUI_ROUNDED_SIZE,
+            SYSUI_ROUNDED_CONTENT_PADDING,
+            SYSUI_STATUS_BAR_PADDING,
             DEVICE_HOSTNAME,
         };
 
@@ -11112,6 +11137,10 @@ public final class Settings {
             VALIDATORS.put(LOCKSCREEN_SOLID_UNITS_OPACITY, LOCKSCREEN_SOLID_UNITS_OPACITY_VALIDATOR);
             VALIDATORS.put(VOLUME_LINK_NOTIFICATION, VOLUME_LINK_NOTIFICATION_VALIDATOR);
             VALIDATORS.put(QUICK_SETTINGS_TILES_VIBRATE, QUICK_SETTINGS_TILES_VIBRATE_VALIDATOR);
+            VALIDATORS.put(SYSUI_ROUNDED_FWVALS, SYSUI_ROUNDED_FWVALS_VALIDATOR);
+            VALIDATORS.put(SYSUI_ROUNDED_SIZE, SYSUI_ROUNDED_SIZE_VALIDATOR);
+            VALIDATORS.put(SYSUI_ROUNDED_CONTENT_PADDING, SYSUI_ROUNDED_CONTENT_PADDING_VALIDATOR);
+            VALIDATORS.put(SYSUI_STATUS_BAR_PADDING, SYSUI_STATUS_BAR_PADDING_VALIDATOR);
             VALIDATORS.put(DEVICE_HOSTNAME, DEVICE_HOSTNAME_VALIDATOR);
         }
 
