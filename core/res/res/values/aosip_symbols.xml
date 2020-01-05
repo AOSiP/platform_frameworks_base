@@ -181,4 +181,8 @@
   <!-- Whether to use scaled brightness (set -1 to disable) -->
   <java-symbol type="integer" name="config_useScaleBrightness" />
 
+  <!-- Light / Regular style fonts -->
+  <java-symbol type="string" name="config_lightFontFamily" />
+  <java-symbol type="string" name="config_regularFontFamily" />
+
 </resources>
