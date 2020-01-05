@@ -10569,6 +10569,12 @@ public final class Settings {
          * Whether tethering is allowed to use VPN upstreams
          */
         public static final String TETHERING_ALLOW_VPN_UPSTREAMS = "tethering_allow_vpn_upstreams";
+         * Whether to hide lock icon on lockscreen
+         * {@hide}
+         */
+        public static final String HIDE_LOCKICON = "hide_lockicon";
+
+        private static final Validator HIDE_LOCKICON_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * This are the settings to be backed up.
@@ -10721,6 +10727,7 @@ public final class Settings {
             SCREENRECORD_IN_POWER_MENU,
             AMBIENT_VISUALIZER_ENABLED,
             LOCKSCREEN_VISUALIZER_ENABLED,
+            HIDE_LOCKICON
         };
 
         /**
@@ -10938,6 +10945,7 @@ public final class Settings {
             VALIDATORS.put(SCREENRECORD_IN_POWER_MENU, SCREENRECORD_IN_POWER_MENU_VALIDATOR);
             VALIDATORS.put(AMBIENT_VISUALIZER_ENABLED, AMBIENT_VISUALIZER_ENABLED_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_VISUALIZER_ENABLED, LOCKSCREEN_VISUALIZER_ENABLED_VALIDATOR);
+            VALIDATORS.put(HIDE_LOCKICON, HIDE_LOCKICON_VALIDATOR);
         }
 
         /**
