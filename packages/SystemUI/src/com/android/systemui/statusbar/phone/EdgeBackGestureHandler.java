@@ -57,7 +57,7 @@ import android.view.WindowManagerGlobal;
 
 import com.android.internal.config.sysui.SystemUiDeviceConfigFlags;
 import com.android.internal.policy.GestureNavigationSettingsObserver;
-import com.android.internal.util.pixeldust.LineageButtons;
+import com.android.internal.util.custom.LineageButtons;
 import com.android.systemui.Dependency;
 import com.android.systemui.R;
 import com.android.systemui.broadcast.BroadcastDispatcher;
