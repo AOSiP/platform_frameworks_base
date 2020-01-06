@@ -110,6 +110,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private boolean mQsDisabled;
     private boolean isShowDragHandle;
     private boolean isAlwaysShowSettings;
+    private boolean isHideBattIcon;
 
     private QSCarrierGroup mCarrierGroup;
     protected QuickQSPanel mHeaderQsPanel;
@@ -150,6 +151,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.STATUS_BAR_BATTERY_STYLE), false,
+                    this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System
+                    .getUriFor(Settings.System.QS_HIDE_BATTERY), false,
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.SHOW_QS_CLOCK), false,
@@ -425,6 +429,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         }
         mBatteryMeterView.updatePercentView();
         mBatteryMeterView.updateVisibility();
+        mBatteryMeterView.setVisibility(isHideBattIcon ? View.GONE : View.VISIBLE);
     }
 
     private void updateSBBatteryStyle() {
@@ -653,6 +658,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
                 UserHandle.USER_CURRENT) == 1;
         isAlwaysShowSettings = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.QS_ALWAYS_SHOW_SETTINGS, 0,
+                UserHandle.USER_CURRENT) == 1;
+        isHideBattIcon = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.QS_HIDE_BATTERY, 0,
                 UserHandle.USER_CURRENT) == 1;
         updateQSBatteryMode();
         updateSBBatteryStyle();

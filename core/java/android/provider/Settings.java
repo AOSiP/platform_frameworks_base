@@ -5246,6 +5246,15 @@ public final class Settings {
                 ANY_INTEGER_VALIDATOR;
 
         /**
+         * Whether or not to hide the battery icon and % from QS header
+         * {@hide}
+         */
+        public static final String QS_HIDE_BATTERY = "qs_hide_battery";
+        /** {@hide} */
+        private static final Validator QS_HIDE_BATTERY_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * Display style of the battery information in the quick status bar header
          *    0: Hide the battery percentage (default)
          *    1: Display the battery percentage next to the icon
@@ -5869,6 +5878,7 @@ public final class Settings {
             QS_QUICKBAR_COLUMNS,
             QS_ALWAYS_SHOW_SETTINGS,
             QS_DRAG_HANDLE,
+            QS_HIDE_BATTERY,
             QS_BATTERY_MODE,
             DERP_FOOTER_TEXT_SHOW,
             DERP_FOOTER_TEXT_STRING,
@@ -6297,6 +6307,7 @@ public final class Settings {
             VALIDATORS.put(QS_QUICKBAR_COLUMNS, QS_QUICKBAR_COLUMNS_VALIDATOR);
             VALIDATORS.put(QS_ALWAYS_SHOW_SETTINGS, QS_ALWAYS_SHOW_SETTINGS_VALIDATOR);
             VALIDATORS.put(QS_DRAG_HANDLE, QS_DRAG_HANDLE_VALIDATOR);
+            VALIDATORS.put(QS_HIDE_BATTERY, QS_HIDE_BATTERY_VALIDATOR);
             VALIDATORS.put(QS_BATTERY_MODE, QS_BATTERY_MODE_VALIDATOR);
             VALIDATORS.put(DERP_FOOTER_TEXT_SHOW, DERP_FOOTER_TEXT_SHOW_VALIDATOR);
             VALIDATORS.put(DERP_FOOTER_TEXT_STRING, DERP_FOOTER_TEXT_STRING_VALIDATOR);
