@@ -1381,7 +1381,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         int QSBlurAlpha = Math.round(255.0f * mNotificationPanel.getExpandedFraction());
 
-        if (QSBlurAlpha > 0 && !blurperformed && mState != StatusBarState.KEYGUARD && isQSBlurEnabled()) {
+        if (QSBlurAlpha > 0 && !blurperformed && !mIsKeyguard && isQSBlurEnabled()) {
             Bitmap bittemp = ImageUtilities.blurImage(mContext, ImageUtilities.screenshotSurface(mContext));
             Drawable blurbackground = new BitmapDrawable(mContext.getResources(), bittemp);
             blurperformed = true;
@@ -3551,6 +3551,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     private boolean updateIsKeyguard() {
+        updateBlurVisibility();
         boolean wakeAndUnlocking = mBiometricUnlockController.getMode()
                 == BiometricUnlockController.MODE_WAKE_AND_UNLOCK;
 
