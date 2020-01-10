@@ -4627,12 +4627,6 @@ public final class Settings {
          */
 
         /**
-         * Use doubletap as doze pulse triggers
-         * @hide
-         */
-        public static final String DOZE_TRIGGER_DOUBLETAP = "doze_trigger_doubletap";
-
-        /**
          * Whether to show Brightness Icon On Brightness Slider
          * @hide
          */
