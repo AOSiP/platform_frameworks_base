@@ -24,6 +24,9 @@
   <!-- Vendor platform signature -->
   <java-symbol type="array" name="config_vendorPlatformSignatures" />
 
+  <!-- Device has OnePlus haptic motor -->
+  <java-symbol type="bool" name="config_hasOnePlusHapticMotor" />
+
   <!-- Whether device supports an alt. ambient display -->
   <java-symbol type="bool" name="config_alt_ambient_display"/>
 
