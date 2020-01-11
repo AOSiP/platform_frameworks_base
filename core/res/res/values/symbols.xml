@@ -312,6 +312,7 @@
   <java-symbol type="bool" name="config_syncstorageengine_masterSyncAutomatically" />
   <java-symbol type="bool" name="config_ui_enableFadingMarquee" />
   <java-symbol type="bool" name="config_enableHapticTextHandle" />
+  <java-symbol type="bool" name="config_hasOneplusHapticMotor" />
   <java-symbol type="bool" name="config_use_strict_phone_number_comparation" />
   <java-symbol type="bool" name="config_use_strict_phone_number_comparation_for_russia" />
   <java-symbol type="bool" name="config_use_strict_phone_number_comparation_for_kazakhstan" />

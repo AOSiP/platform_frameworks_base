@@ -173,6 +173,11 @@
          available on some devices. -->
     <bool name="config_enableHapticTextHandle">false</bool>
 
+    <!-- Oneplus uses a proprietary vibrator hal to utilize the new powerful motor since the 
+	 OP7Pro. This HAL expects a different format for the data instead of the usual (ms)
+	 timing(the duration which the vibrator is expected to vibrate for) -->
+    <bool name="config_hasOneplusHapticMotor">false</bool>
+
     <!-- Whether dialogs should close automatically when the user touches outside
          of them.  This should not normally be modified. -->
     <bool name="config_closeDialogWhenTouchOutside">true</bool>
