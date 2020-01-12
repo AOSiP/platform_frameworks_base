@@ -251,6 +251,7 @@ public class AmbientDisplayConfiguration {
                 Settings.System.PULSE_ON_NEW_TRACKS, 1, user) != 0;
     }
 
+    /** {@hide} */
     public boolean deviceHasSoli() {
         return mDeviceHasSoli;
     }
