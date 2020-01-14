@@ -159,6 +159,9 @@
 
   <java-symbol type="integer" name="config_screenBrightnessPulse" />
 
+  <!-- Custom default wallpaper -->
+  <java-symbol type="drawable" name="custom_default_wallpaper" />
+
   <java-symbol type="array" name="config_customPermissionsList" />
 
   <!-- Post reset runnable for all clients -->
