@@ -61,6 +61,9 @@
   <java-symbol type="array" name="config_disabledComponents" />
   <java-symbol type="array" name="config_forceEnabledComponents" />
 
+  <!-- Custom default wallpaper -->
+  <java-symbol type="drawable" name="custom_default_wallpaper" />
+
   <!-- Rotation sensor -->
   <java-symbol type="bool" name="config_useSystemClockforRotationSensor" />
 
