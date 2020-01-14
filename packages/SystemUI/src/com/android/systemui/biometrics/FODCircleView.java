@@ -71,6 +71,8 @@ public class FODCircleView extends ImageView {
     private boolean mIsShowing;
     private boolean mIsCircleShowing;
 
+    private float mCurrentDimAmount = 0.0f;
+
     private Handler mHandler;
 
     private Timer mBurnInProtectionTimer;
@@ -182,6 +184,16 @@ public class FODCircleView extends ImageView {
 
         mUpdateMonitor = KeyguardUpdateMonitor.getInstance(context);
         mUpdateMonitor.registerCallback(mMonitorCallback);
+
+        getViewTreeObserver().addOnGlobalLayoutListener(() -> {
+            float drawingDimAmount = mParams.dimAmount;
+            if (mCurrentDimAmount == 0.0f && drawingDimAmount > 0.0f) {
+                dispatchPress();
+                mCurrentDimAmount = drawingDimAmount;
+            } else if (mCurrentDimAmount > 0.0f && drawingDimAmount == 0.0f) {
+                mCurrentDimAmount = drawingDimAmount;
+            }
+        });
     }
 
     @Override
@@ -275,7 +287,6 @@ public class FODCircleView extends ImageView {
 
         setDim(true);
         updateAlpha();
-        dispatchPress();
 
         mPaintFingerprint.setColor(mColor);
         setImageDrawable(null);
