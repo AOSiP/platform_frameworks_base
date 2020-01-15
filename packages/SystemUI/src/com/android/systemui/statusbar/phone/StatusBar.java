@@ -499,9 +499,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     private boolean mBrightnessChanged;
     private boolean mJustPeeked;
 
-   // status bar notification ticker
-    private int mTickerEnabled;
-    private Ticker mTicker;
+    // status bar notification ticker
+    public int mTickerEnabled;
+    public Ticker mTicker;
     private boolean mTicking;
     private int mTickerAnimationMode;
     private int mTickerTickDuration;
@@ -538,6 +538,12 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             mLinger = BRIGHTNESS_CONTROL_LINGER_THRESHOLD + 1;
         }
     };
+
+    public void resetTrackInfo() {
+        if (mTicker != null) {
+            mTicker.resetShownMediaMetadata();
+        }
+    }
 
     // ensure quick settings is disabled until the current user makes it through the setup wizard
     @VisibleForTesting
@@ -764,6 +770,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         }
 
         mUiModeManager = mContext.getSystemService(UiModeManager.class);
+        mMediaManager.addCallback(this);
         mEntryManager.setStatusBar(this);
         mNotificationAlertingManager.setStatusBar(this);
         mKeyguardViewMediator = getComponent(KeyguardViewMediator.class);
@@ -1233,6 +1240,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                 mHeadsUpManager, mStatusBarWindow, mStackScroller, mDozeScrimController,
                 mScrimController, mActivityLaunchAnimator, mDynamicPrivacyController,
                 mNotificationAlertingManager, rowBinder);
+        mPresenter.addCallback(this);
 
         mNotificationListController =
                 new NotificationListController(
