@@ -63,6 +63,7 @@
                 android:gravity="center_vertical"
                 android:focusable="true"
                 android:textAppearance="@style/TextAppearance.QS.Status"
+                android:textColor="?android:attr/textColorSecondary"
                 android:visibility="gone"/>
          </com.android.keyguard.AlphaOptimizedLinearLayout>
 
