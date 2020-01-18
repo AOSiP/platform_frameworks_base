@@ -41,6 +41,7 @@ LOCAL_REQUIRED_MODULES := \
 	FontLGSmartGothicSourceOverlay \
 	FontNotoSerifSourceOverlay \
 	FontRosemarySourceOverlay \
+    FontSamsungOneSourceOverlay \
 	FontSFProOverlay \
 	FontSonySketchSourceOverlay \
 	FontSurferSourceOverlay \
