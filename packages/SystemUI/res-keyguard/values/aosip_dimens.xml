@@ -17,4 +17,7 @@
 <resources>
     <!-- The minimum bottom margin of the keyguard security container -->
     <dimen name="kg_security_container_min_bottom_margin">0dp</dimen>
+
+    <dimen name="volume_dialog_panel_transparent_padding_left">4dp</dimen>
+
 </resources>
