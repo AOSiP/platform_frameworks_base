@@ -5213,18 +5213,24 @@ public final class Settings {
          * @hide
          */
         public static final String DATA_DISABLED_ICON = "data_disabled_icon";
+        /** @hide */
+        private static final Validator DATA_DISABLED_ICON_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * Three Finger Gesture from Oppo
          * @hide
          */
         public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
+        /** @hide */
+        private static final Validator THREE_FINGER_GESTURE_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * Whether to show the battery info on the lockscreen while charging
          * @hide
          */
         public static final String LOCKSCREEN_BATTERY_INFO = "lockscreen_battery_info";
+        /** @hide */
+        private static final Validator LOCKSCREEN_BATTERY_INFO_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * Display style of the status bar battery information
@@ -5933,6 +5939,9 @@ public final class Settings {
             LOCK_POWER_MENU_DISABLED,
             DOUBLE_TAP_SLEEP_GESTURE,
             DOUBLE_TAP_SLEEP_LOCKSCREEN,
+            SHOW_VOLTE_ICON,
+            VOLTE_ICON_STYLE,
+            SHOW_FOURG,
             STATUS_BAR_CLOCK,
             STATUSBAR_CLOCK_STYLE,
             STATUS_BAR_CLOCK_SECONDS,
@@ -5955,6 +5964,9 @@ public final class Settings {
             STATUS_BAR_CARRIER_FONT_STYLE,
             LOCKSCREEN_MEDIA_METADATA,
             LOCKSCREEN_MEDIA_BLUR,
+            DATA_DISABLED_ICON,
+            THREE_FINGER_GESTURE,
+            LOCKSCREEN_BATTERY_INFO,
             ENABLE_CONDITIONS,
             ENABLE_SUGGESTIONS,
             FORCE_FULLSCREEN_CUTOUT_APPS,
@@ -5986,6 +5998,7 @@ public final class Settings {
             NETWORK_TRAFFIC_VIEW_LOCATION,
             NETWORK_TRAFFIC_TYPE,
             NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD,
+            NETWORK_TRAFFIC_ARROW,
             NETWORK_TRAFFIC_FONT_SIZE,
             AMBIENT_VISUALIZER_ENABLED,
             OMNI_SYSTEM_PROXI_CHECK_ENABLED,
@@ -6387,6 +6400,9 @@ public final class Settings {
             VALIDATORS.put(STATUS_BAR_CARRIER_FONT_STYLE, STATUS_BAR_CARRIER_FONT_STYLE_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_MEDIA_BLUR, LOCKSCREEN_MEDIA_BLUR_VALIDATOR);
+            VALIDATORS.put(DATA_DISABLED_ICON, DATA_DISABLED_ICON_VALIDATOR);
+            VALIDATORS.put(THREE_FINGER_GESTURE, THREE_FINGER_GESTURE_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_BATTERY_INFO, LOCKSCREEN_BATTERY_INFO_VALIDATOR);
             VALIDATORS.put(ENABLE_CONDITIONS, ENABLE_CONDITIONS_VALIDATOR);
             VALIDATORS.put(ENABLE_SUGGESTIONS, ENABLE_SUGGESTIONS_VALIDATOR);
             VALIDATORS.put(FORCE_FULLSCREEN_CUTOUT_APPS, FORCE_FULLSCREEN_CUTOUT_APPS_VALIDATOR);
