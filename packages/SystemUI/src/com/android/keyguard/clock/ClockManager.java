@@ -160,6 +160,7 @@ public final class ClockManager {
         addBuiltinClock(() -> new TypeClockAltController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new TypeClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new SfunyClockController(res, layoutInflater, colorExtractor));
+        addBuiltinClock(() -> new SpectrumClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new DividedLinesClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new FluidClockController(res, layoutInflater, colorExtractor));
 
