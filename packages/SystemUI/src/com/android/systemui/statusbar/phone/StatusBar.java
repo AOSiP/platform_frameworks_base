@@ -748,7 +748,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             if (uri.equals(Settings.Secure.getUriFor(
                     Settings.Secure.FP_SWIPE_TO_DISMISS_NOTIFICATIONS))) {
                 setFpToDismissNotifications();
-            } else if (uri.equals(Settings.Secure.getUriFor(
+            } else if (uri.equals(Settings.System.getUriFor(
                     Settings.System.FORCE_SHOW_NAVBAR))) {
                 updateNavigationBarVisibility();
             } else if (uri.equals(Settings.System.getUriFor(
@@ -786,6 +786,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setScreenBrightnessMode();
             setOldMobileType();
             setHideArrowForBackGesture();
+            updateNavigationBarVisibility();
             updateKeyguardStatusSettings();
             updateQSPanel();
         }
@@ -837,12 +838,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     private void updateNavigationBarVisibility() {
         if (mDisplayId == Display.DEFAULT_DISPLAY && mWindowManagerService != null) {
-            int mDefNavBar;
-            if (mNeedsNavigationBar) {
-                mDefNavBar = 1;
-            } else {
-                mDefNavBar = 0;
-            }
+            int mDefNavBar = mNeedsNavigationBar ? 1 : 0;
             boolean forcedVisibility = Settings.System.getIntForUser(
                     mContext.getContentResolver(), Settings.System.FORCE_SHOW_NAVBAR,
                     mDefNavBar, UserHandle.USER_CURRENT) == 1;
