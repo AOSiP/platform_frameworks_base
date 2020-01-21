@@ -75,9 +75,6 @@
   <!-- Themes -->
   <java-symbol type="color" name="theme_generic_semi_transparent_color" />
 
-  <!-- Whether device has dash charging support -->
-  <java-symbol type="bool" name="config_hasDashCharger" />
-
   <java-symbol type="array" name="config_blockPackagesSensorDrain" />
 
   <!-- Gaming mode -->
