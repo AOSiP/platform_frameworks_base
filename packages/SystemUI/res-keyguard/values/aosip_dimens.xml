@@ -21,6 +21,9 @@
     <dimen name="binary_clock_width">100dp</dimen>
     <dimen name="binary_clock_height">100dp</dimen>
 
+    <!-- Padding added to keyguard status area when Type clock is in use -->
+    <dimen name="keyguard_status_area_typeclock_padding">32dp</dimen>
+
     <!-- Lock date font size parameters -->
     <dimen name="lock_date_font_size_9">9dp</dimen>
     <dimen name="lock_date_font_size_10">10dp</dimen>

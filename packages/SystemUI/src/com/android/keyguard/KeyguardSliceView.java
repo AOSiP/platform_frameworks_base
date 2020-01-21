@@ -190,6 +190,14 @@ public class KeyguardSliceView extends LinearLayout implements View.OnClickListe
         setLayoutTransition(isVisible ? mLayoutTransition : null);
     }
 
+    public void setRowGravity(int gravity) {
+        mRow.setGravity(gravity);
+    }
+
+    public void setRowPadding(int left, int top, int right, int bottom) {
+        mRow.setPadding(left, top, right, bottom);
+    }
+
     private int getLockDateSize() {
         return Settings.System.getInt(mContext.getContentResolver(),
                Settings.System.LOCKDATE_FONT_SIZE, 18);
