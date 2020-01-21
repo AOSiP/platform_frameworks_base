@@ -4728,6 +4728,13 @@ public final class Settings {
         private static final Validator POCKET_JUDGE_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
+        /** @hide */
+        public static final String BACK_GESTURE_BLOCK_IME = "back_gesture_block_ime";
+
+        /** @hide */
+        private static final Validator BACK_GESTURE_BLOCK_IME_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
         /**
          * Wheter to play notification sound and vibration if screen is ON
          * 0 - never
@@ -5003,6 +5010,7 @@ public final class Settings {
             SCREENSHOT_SHUTTER_SOUND,
             DOUBLE_TAP_SLEEP_GESTURE,
             BACK_GESTURE_HEIGHT,
+            BACK_GESTURE_BLOCK_IME,
             LOCKSCREEN_MEDIA_METADATA,
         };
 
@@ -5137,6 +5145,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(QS_PANEL_BG_ALPHA);
             PRIVATE_SETTINGS.add(SCREENSHOT_SHUTTER_SOUND);
             PRIVATE_SETTINGS.add(BACK_GESTURE_HEIGHT);
+            PRIVATE_SETTINGS.add(BACK_GESTURE_BLOCK_IME);
             PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
             PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_STATE);
@@ -5255,6 +5264,7 @@ public final class Settings {
             VALIDATORS.put(DOUBLE_TAP_SLEEP_GESTURE,
                     DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR);
             VALIDATORS.put(BACK_GESTURE_HEIGHT, BACK_GESTURE_HEIGHT_VALIDATOR);
+            VALIDATORS.put(BACK_GESTURE_BLOCK_IME,BACK_GESTURE_BLOCK_IME_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
         }
 
