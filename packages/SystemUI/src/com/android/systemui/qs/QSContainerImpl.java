@@ -81,6 +81,7 @@ public class QSContainerImpl extends FrameLayout {
     private boolean mAnimateBottomOnNextLayout;
 
     private Drawable mQsBackGround;
+    private Drawable mQsHeaderBg;
 
     public QSContainerImpl(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -103,6 +104,7 @@ public class QSContainerImpl extends FrameLayout {
         mBackgroundGradient = findViewById(R.id.quick_settings_gradient_view);
         updateResources();
         mQsBackGround = getContext().getDrawable(R.drawable.qs_background_primary);
+        mQsHeaderBg = getContext().getDrawable(R.drawable.qs_header_background);
         updateSettings();
         mHeader.getHeaderQsPanel().setMediaVisibilityChangedListener((visible) -> {
             if (mHeader.getHeaderQsPanel().isShown()) {
@@ -156,7 +158,16 @@ public class QSContainerImpl extends FrameLayout {
             mBackground.setVisibility(View.VISIBLE);
             mBackgroundGradient.setVisibility(View.VISIBLE);
         }
-    }
+         int mQsHeaderBgAlpha = Settings.System.getIntForUser(getContext().getContentResolver(),
+                 Settings.System.QS_HEADER_BG_ALPHA, 255,
+                 UserHandle.USER_CURRENT);
+         if (mQsHeaderBgAlpha < 255) {
+             mQsHeaderBg.setAlpha(mQsHeaderBgAlpha);
+             mStatusBarBackground.setBackground(mQsHeaderBg);
+         } else {
+             mStatusBarBackground.setVisibility(View.VISIBLE);
+         }
+     }
 
     private class SettingsObserver extends ContentObserver {
          SettingsObserver(Handler handler) {
@@ -166,6 +177,9 @@ public class QSContainerImpl extends FrameLayout {
          void observe() {
              getContext().getContentResolver().registerContentObserver(Settings.System
                              .getUriFor(Settings.System.QS_PANEL_BG_ALPHA), false,
+                     this, UserHandle.USER_ALL);
+             getContext().getContentResolver().registerContentObserver(Settings.System
+                             .getUriFor(Settings.System.QS_HEADER_BG_ALPHA), false,
                      this, UserHandle.USER_ALL);
          }
 
