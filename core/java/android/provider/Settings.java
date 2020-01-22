@@ -5706,6 +5706,15 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
+         * Wheter to show gentle notification header
+         * @hide
+         */
+        public static final String SHOW_GENTLE_HEADER = "show_gentle_header";
+
+        /** @hide */
+        private static final Validator SHOW_GENTLE_HEADER_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * @hide
          */
         public static final String LOCK_SHOW_STATUS_BAR = "lockscreen_show_status_bar";
@@ -5899,6 +5908,7 @@ public final class Settings {
             ALARM_ALERT,
             NOTIFICATION_LIGHT_PULSE,
             NOTIFICATION_SOUND_VIB_SCREEN_ON,
+            SHOW_GENTLE_HEADER,
             SCREENSHOT_SHUTTER_SOUND,
             BUTTON_EXTRA_KEY_MAPPING,
             DEVICE_PROXI_CHECK_ENABLED,
@@ -6439,6 +6449,7 @@ public final class Settings {
             VALIDATORS.put(DOZE_ON_CHARGE, DOZE_ON_CHARGE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_SOUND_VIB_SCREEN_ON,
                     NOTIFICATION_SOUND_VIB_SCREEN_ON_VALIDATOR);
+            VALIDATORS.put(SHOW_GENTLE_HEADER, SHOW_GENTLE_HEADER_VALIDATOR);
             VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
             VALIDATORS.put(PULSE_AMBIENT_LIGHT, PULSE_AMBIENT_LIGHT_VALIDATOR);
             VALIDATORS.put(PULSE_AMBIENT_LIGHT_COLOR, PULSE_AMBIENT_LIGHT_COLOR_VALIDATOR);
