@@ -87,5 +87,6 @@ public class SystemSettings {
         Settings.System.NOTIFICATION_HEADERS,
         Settings.System.LOCKSCREEN_BATTERY_INFO,
         Settings.System.SCREENSHOT_SOUND,
+        Settings.System.QS_HEADER_BG_ALPHA
     };
 }
