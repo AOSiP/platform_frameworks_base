@@ -482,24 +482,20 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             case 0:
                 logo = getContext().getResources().getDrawable(R.drawable.ic_status_bar_kronic_logo);
                 break;
-                // Khloe
-            case 1:
-                logo = getContext().getResources().getDrawable(R.drawable.status_bar_khloe);
-                break;
                 // Kronic
-            case 2:
+            case 1:
                 logo = getContext().getResources().getDrawable(R.drawable.status_bar_kronic);
                 break;
                 // Kronic 3.0
-            case 3:
+            case 2:
                 logo = getContext().getResources().getDrawable(R.drawable.status_bar_kronic3);
                 break;
                 // OwlsNest
-            case 4:
+            case 3:
                 logo = getContext().getResources().getDrawable(R.drawable.status_bar_nest);
                 break;
                 // MDI owl
-            case 5:
+            case 4:
                 logo = getContext().getResources().getDrawable(R.drawable.status_bar_owl);
                 break;
                 // Default Kronic HOME logo, once again
