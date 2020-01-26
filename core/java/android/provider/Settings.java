@@ -4962,6 +4962,17 @@ public final class Settings {
          public static final String NETWORK_TRAFFIC_VIEW_LOCATION = "network_traffic_view_location";
 
         /**
+         * Enable/disable privacy indicators on statusbar
+         * @hide
+         */
+        public static final String STATUSBAR_PRIVACY_INDICATORS = "statusbar_privacy_indicators";
+
+        /**
+         * @hide
+         */
+        private static final Validator STATUSBAR_PRIVACY_INDICATORS_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Three Finger Gesture from Oppo
          * @hide
          */
@@ -5144,6 +5155,7 @@ public final class Settings {
             BACK_GESTURE_BLOCK_IME,
             NAVIGATION_BAR_ARROW_KEYS,
             LOCKSCREEN_MEDIA_METADATA,
+            STATUSBAR_PRIVACY_INDICATORS,
         };
 
         /**
@@ -5292,6 +5304,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ENABLE);
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_TIMEOUT);
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
+            PRIVATE_SETTINGS.add(STATUSBAR_PRIVACY_INDICATORS);
         }
 
         /**
@@ -5408,6 +5421,7 @@ public final class Settings {
                     NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
             VALIDATORS.put(BACK_GESTURE_BLOCK_IME,BACK_GESTURE_BLOCK_IME_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
+            VALIDATORS.put(STATUSBAR_PRIVACY_INDICATORS, STATUSBAR_PRIVACY_INDICATORS_VALIDATOR);
         }
 
         /**
