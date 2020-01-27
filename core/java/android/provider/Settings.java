@@ -4560,18 +4560,22 @@ public final class Settings {
         /** @hide */
         public static final Validator BUTTON_BRIGHTNESS_VALIDATOR = NON_NEGATIVE_INTEGER_VALIDATOR;
 
-        /** Whether to show ambient or lockscreen if AoD is disabled
+        /**
+         * Whether to show ambient or lockscreen if AoD is disabled
          * and we do a wake gesture like lift to wake or double tap
-         *
          * @hide
          */
         public static final String AMBIENT_WAKE_GESTURES = "ambient_wake_gestures";
+        /** @hide */
+        private static final Validator AMBIENT_WAKE_GESTURES_VALIDATOR = BOOLEAN_VALIDATOR;
 
-        /** Whether to pulse ambient on new music tracks
-         *
+        /**
+         * Whether to pulse ambient on new music tracks
          * @hide
          */
         public static final String PULSE_ON_NEW_TRACKS = "pulse_on_new_tracks";
+        /** @hide */
+        private static final Validator PULSE_ON_NEW_TRACKS_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * @hide
@@ -5930,6 +5934,10 @@ public final class Settings {
             DISPLAY_COLOR_MODE,
             ALARM_ALERT,
             NOTIFICATION_LIGHT_PULSE,
+            BUTTON_BACKLIGHT_TIMEOUT,
+            BUTTON_BACKLIGHT_ONLY_WHEN_PRESSED,
+            BUTTON_BRIGHTNESS,
+            AMBIENT_WAKE_GESTURES,
             NOTIFICATION_SOUND_VIB_SCREEN_ON,
             SHOW_GENTLE_HEADER,
             SCREENSHOT_SHUTTER_SOUND,
@@ -6030,8 +6038,9 @@ public final class Settings {
             PULSE_AMBIENT_LIGHT_COLOR,
             PULSE_AMBIENT_AUTO_COLOR,
             PULSE_AMBIENT_LIGHT_DURATION,
-            QS_PANEL_BG_ALPHA,
+            PULSE_ON_NEW_TRACKS,
             PULSE_BRIGHTNESS,
+            QS_PANEL_BG_ALPHA,
             DOZE_BRIGHTNESS,
             FLASH_ON_CALL_WAITING,
             FLASH_ON_CALLWAITING_DELAY,
@@ -6370,6 +6379,8 @@ public final class Settings {
             VALIDATORS.put(SCREENSHOT_SHUTTER_SOUND, SCREENSHOT_SHUTTER_SOUND_VALIDATOR);
             VALIDATORS.put(BUTTON_BACKLIGHT_TIMEOUT, BUTTON_BACKLIGHT_TIMEOUT_VALIDATOR);
             VALIDATORS.put(BUTTON_BRIGHTNESS, BUTTON_BRIGHTNESS_VALIDATOR);
+            VALIDATORS.put(AMBIENT_WAKE_GESTURES, AMBIENT_WAKE_GESTURES_VALIDATOR);
+            VALIDATORS.put(PULSE_ON_NEW_TRACKS, PULSE_ON_NEW_TRACKS_VALIDATOR);
             VALIDATORS.put(BUTTON_BACKLIGHT_ONLY_WHEN_PRESSED, BUTTON_BACKLIGHT_ONLY_WHEN_PRESSED_VALIDATOR);
             VALIDATORS.put(BUTTON_EXTRA_KEY_MAPPING, BUTTON_EXTRA_KEY_MAPPING_VALIDATOR);
             VALIDATORS.put(DEVICE_PROXI_CHECK_ENABLED, DEVICE_PROXI_CHECK_ENABLED_VALIDATOR);
@@ -11053,6 +11064,7 @@ public final class Settings {
             SILENCE_GESTURE,
             THEME_CUSTOMIZATION_OVERLAY_PACKAGES,
             NAVIGATION_MODE,
+            SHOW_BACK_ARROW_GESTURE,
             AWARE_ENABLED,
             SKIP_GESTURE_COUNT,
             SKIP_TOUCH_COUNT,
