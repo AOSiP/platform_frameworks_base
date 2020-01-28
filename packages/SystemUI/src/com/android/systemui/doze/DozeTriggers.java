@@ -425,7 +425,7 @@ public class DozeTriggers implements DozeMachine.Part {
             return;
         }
         Settings.System.putIntForUser(mContext.getContentResolver(),
-                Settings.System.OMNI_PULSE_TRIGGER_REASON, reason,
+                Settings.System.PULSE_TRIGGER_REASON, reason,
                 UserHandle.USER_CURRENT);
         mMachine.requestPulse(reason);
     }
