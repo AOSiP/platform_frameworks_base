@@ -5847,6 +5847,16 @@ public final class Settings {
         private static final Validator OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
+         /**
+         * Whether hide everything on aod when  ambient lights are enabled
+         * @hide
+         */
+
+        public static final String OMNI_AMBIENT_NOTIFICATION_LIGHT_HIDE_AOD = "ambient_notification_light_hide_aod";
+
+        private static final Validator OMNI_AMBIENT_NOTIFICATION_LIGHT_HIDE_AOD_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
         /**
          * Whether to use framework styles and resources on qs panel
          * @hide
@@ -6101,6 +6111,7 @@ public final class Settings {
             OMNI_AMBIENT_NOTIFICATION_LIGHT,
             OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED,
             OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED,
+            OMNI_AMBIENT_NOTIFICATION_LIGHT_HIDE_AOD,
             OMNI_BACK_GESTURE_HEIGHT,
             CHARGING_ANIMATION,
             OMNI_ASPECT_RATIO_APPS_ENABLED,
@@ -6556,6 +6567,7 @@ public final class Settings {
             VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT, OMNI_AMBIENT_NOTIFICATION_LIGHT_VALIDATOR);
             VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED, OMNI_AMBIENT_NOTIFICATION_LIGHT_ACTIVATED_VALIDATOR);
             VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED, OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED_VALIDATOR);
+            VALIDATORS.put(OMNI_AMBIENT_NOTIFICATION_LIGHT_HIDE_AOD, OMNI_AMBIENT_NOTIFICATION_LIGHT_HIDE_AOD_VALIDATOR);
             VALIDATORS.put(OMNI_BACK_GESTURE_HEIGHT, OMNI_BACK_GESTURE_HEIGHT_VALIDATOR);
             VALIDATORS.put(CHARGING_ANIMATION, CHARGING_ANIMATION_VALIDATOR);
             VALIDATORS.put(OMNI_ASPECT_RATIO_APPS_ENABLED,
