@@ -5857,6 +5857,13 @@ public final class Settings {
         private static final Validator QS_PANEL_BG_USE_ACCENT_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+        * helper setting to contain the current pulse reason so we can check
+        * if it has been triggered from a notification or a gesture
+        * @hide
+        */
+       public static final String OMNI_PULSE_TRIGGER_REASON = "pulse_trigger_reason";
+
+        /**
          * QS blur
          * @hide
          */
