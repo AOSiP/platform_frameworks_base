@@ -28,6 +28,7 @@ import android.animation.PropertyValuesHolder;
 import android.annotation.ColorInt;
 import android.annotation.StyleRes;
 import android.app.PendingIntent;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -39,6 +40,7 @@ import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.Button;
@@ -103,6 +105,7 @@ public class KeyguardSliceView extends LinearLayout implements View.OnClickListe
     private int mDisplayId = INVALID_DISPLAY;
     private int mIconSize;
     private int mIconSizeWithHeader;
+
     /**
      * Runnable called whenever the view contents change.
      */
@@ -216,6 +219,10 @@ public class KeyguardSliceView extends LinearLayout implements View.OnClickListe
         }
         mClickActions.clear();
 
+        final ContentResolver resolver = mContext.getContentResolver();
+        String currentClock = Settings.Secure.getString(
+            resolver, Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE);
+        boolean mClockSelection = currentClock == null ? false : currentClock.contains("Type");
         ListContent lc = new ListContent(getContext(), mSlice);
         SliceContent headerContent = lc.getHeader();
         mHasHeader = headerContent != null && !headerContent.getSliceItem().hasHint(HINT_LIST_ITEM);
@@ -246,6 +253,14 @@ public class KeyguardSliceView extends LinearLayout implements View.OnClickListe
         final int subItemsCount = subItems.size();
         final int blendedColor = getTextColor();
         final int startIndex = mHasHeader ? 1 : 0; // First item is header; skip it
+        if (mClockSelection) {
+            mRow.setPaddingRelative((int) mContext.getResources().getDimension(R.dimen.custom_clock_left_padding), 0, 0, 0);
+            mRow.setGravity(Gravity.START);
+        }
+        else {
+            mRow.setPaddingRelative(0, 0, 0, 0);
+            mRow.setGravity(Gravity.CENTER);
+        }
         mRow.setVisibility(subItemsCount > 0 ? VISIBLE : GONE);
         LinearLayout.LayoutParams layoutParams = (LayoutParams) mRow.getLayoutParams();
         layoutParams.topMargin = mHasHeader ? mRowWithHeaderPadding : mRowPadding;
