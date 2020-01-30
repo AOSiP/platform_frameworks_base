@@ -293,7 +293,7 @@ public class KeyguardStatusView extends GridLayout implements
             mClockView.setFormat24Hour(Html.fromHtml("<strong>kk:mm</strong>"));
         } else if (mClockSelection == 5) {
             mClockView.setFormat12Hour(Html.fromHtml("<font color=" + getResources().getColor(R.color.sammy_minutes_accent) + ">h:mm</font>"));
-            mClockView.setFormat24Hour(Html.fromHtml("<font color=" + getResources().getColor(R.color.sammy_minutes_accent) + ">kk:m</font>"));
+            mClockView.setFormat24Hour(Html.fromHtml("<font color=" + getResources().getColor(R.color.sammy_minutes_accent) + ">kk:mm</font>"));
         } else if (mClockSelection == 6) {
             mClockView.setFormat12Hour(Html.fromHtml("<font color=" + getResources().getColor(R.color.sammy_minutes_accent) + ">h</font>:mm"));
             mClockView.setFormat24Hour(Html.fromHtml("<font color=" + getResources().getColor(R.color.sammy_minutes_accent) + ">kk</font>:mm"));
