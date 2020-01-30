@@ -293,15 +293,6 @@ public class aosipUtils {
                 }
             }
         }
-
-        public static void setPartialScreenshot(boolean active) {
-            IStatusBarService service = getStatusBarService();
-            if (service != null) {
-                try {
-                    service.setPartialScreenshot(active);
-                } catch (RemoteException e) {}
-            }
-        }
     }
 
     /**
@@ -327,10 +318,6 @@ public class aosipUtils {
         keyguardIntent.setPackage(SYSTEMUI_PACKAGE_NAME);
         keyguardIntent.putExtra(DISMISS_KEYGUARD_EXTRA_INTENT, launchIntent);
         context.sendBroadcastAsUser(keyguardIntent, user);
-    }
-
-    public static void setPartialScreenshot(boolean active) {
-        FireActions.setPartialScreenshot(active);
     }
 
     public static boolean deviceHasCompass(Context ctx) {
