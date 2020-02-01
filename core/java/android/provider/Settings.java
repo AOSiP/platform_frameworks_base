@@ -4807,6 +4807,16 @@ public final class Settings {
         private static final Validator SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
+        /**
+         * Battery bar color
+         *
+         * @hide
+         */
+        public static final String SYSUI_KEYGUARD_BATTERY_BAR_COLOR = "sysui_keyguard_battery_bar_color";
+        /** @hide */
+        private static final Validator SYSUI_KEYGUARD_BATTERY_BAR_COLOR_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
          /**
          * Show or hide clock
          * 0 - hide
@@ -6012,6 +6022,7 @@ public final class Settings {
             FINGERPRINT_SUCCESS_VIB,
             SYSUI_KEYGUARD_SHOW_BATTERY_BAR,
             SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS,
+            SYSUI_KEYGUARD_BATTERY_BAR_COLOR,
             POWERMENU_SOUNDPANEL,
             POWERMENU_SCREENSHOT,
             POWERMENU_SCREENRECORD,
@@ -6461,6 +6472,7 @@ public final class Settings {
             VALIDATORS.put(FINGERPRINT_SUCCESS_VIB, FINGERPRINT_SUCCESS_VIB_VALIDATOR);
             VALIDATORS.put(SYSUI_KEYGUARD_SHOW_BATTERY_BAR, SYSUI_KEYGUARD_SHOW_BATTERY_BAR_VALIDATOR);
             VALIDATORS.put(SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS, SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS_VALIDATOR);
+            VALIDATORS.put(SYSUI_KEYGUARD_BATTERY_BAR_COLOR, SYSUI_KEYGUARD_BATTERY_BAR_COLOR_VALIDATOR);
             VALIDATORS.put(POWERMENU_SOUNDPANEL, POWERMENU_SOUNDPANEL_VALIDATOR);
             VALIDATORS.put(POWERMENU_SCREENSHOT, POWERMENU_SCREENSHOT_VALIDATOR);
             VALIDATORS.put(POWERMENU_SCREENRECORD, POWERMENU_SCREENRECORD_VALIDATOR);
