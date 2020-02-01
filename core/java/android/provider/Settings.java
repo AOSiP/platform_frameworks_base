@@ -6136,6 +6136,7 @@ public final class Settings {
             STATUS_BAR_SHOW_TICKER,
             STATUS_BAR_TICKER_ANIMATION_MODE,
             STATUS_BAR_TICKER_TICK_DURATION,
+            CLOCK_SHOW_STATUS_AREA,
             QS_RUNNING_SERVICES_TOGGLE,
         };
 

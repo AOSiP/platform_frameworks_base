@@ -94,7 +94,7 @@ public class KeyguardSliceProviderGoogle extends KeyguardSliceProvider implement
         synchronized (this) {
             ListBuilder listBuilder = new ListBuilder(getContext(), mSliceUri, -1);
             SmartSpaceCard currentCard = mSmartSpaceData.getCurrentCard();
-            boolean showStatusArea = Settings.System.getInt(getContext().getContentResolver(), Settings.System.CLOCK_SHOW_STATUS_AREA, 0) == 1;
+            boolean showStatusArea = Settings.System.getInt(getContext().getContentResolver(), Settings.System.CLOCK_SHOW_STATUS_AREA, 1) == 1;
             if (currentCard == null || currentCard.isExpired() || TextUtils.isEmpty(currentCard.getTitle())) {
                 if (needsMediaLocked()) {
                     addMediaLocked(listBuilder);
