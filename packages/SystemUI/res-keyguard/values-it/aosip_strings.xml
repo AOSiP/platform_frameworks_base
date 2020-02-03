@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (C) 2019 The PixelDust Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- [CHAR LIMIT=8] -->
+    <plurals name="type_clock_header">
+        <item quantity="one"><annotation name="color">Sono le</annotation>\n^1\n^2</item>
+        <item quantity="few"><annotation name="color">Sono le</annotation>\n^1\n^2</item>
+        <item quantity="other"><annotation name="color">Sono le</annotation>\n^1\n^2</item>
+    </plurals>
+
+    <!-- [CHAR LIMIT=12] -->
+    <string-array name="type_clock_hours_12">
+        <item>Dodici</item>
+        <item>Una</item>
+        <item>Due</item>
+        <item>Tre</item>
+        <item>Quattro</item>
+        <item>Cinque</item>
+        <item>Sei</item>
+        <item>Sette</item>
+        <item>Otto</item>
+        <item>Nove</item>
+        <item>Dieci</item>
+        <item>Undici</item>
+    </string-array>
+
+    <string-array name="type_clock_hours_24">
+        <item>Ventiquattro</item>
+        <item>Una</item>
+        <item>Due</item>
+        <item>Tre</item>
+        <item>Quattro</item>
+        <item>Cinque</item>
+        <item>Sei</item>
+        <item>Sette</item>
+        <item>Otto</item>
+        <item>Nove</item>
+        <item>Dieci</item>
+        <item>Undici</item>
+        <item>Dodici</item>
+        <item>Tredici</item>
+        <item>Quattordici</item>
+        <item>Quindici</item>
+        <item>Sedici</item>
+        <item>Diciassette</item>
+        <item>Diciotto</item>
+        <item>Diciannove</item>
+        <item>Venti</item>
+        <item>Ventuno</item>
+        <item>Ventitre</item>
+        <item>Ventiquattro</item>
+    </string-array>
+
+    <!-- [CHAR LIMIT=20] -->
+    <string-array name="type_clock_minutes">
+        <item> </item>
+        <item>e uno</item>
+        <item>e due</item>
+        <item>e tre</item>
+        <item>e quattro</item>
+        <item>e cinque</item>
+        <item>e sei</item>
+        <item>e sette</item>
+        <item>e otto</item>
+        <item>e nove</item>
+        <item>e dieci</item>
+        <item>e undici</item>
+        <item>e dodici</item>
+        <item>e tredici</item>
+        <item>e quattordici</item>
+        <item>e quindici</item>
+        <item>e sedici</item>
+        <item>e diciassette</item>
+        <item>e diciotto</item>
+        <item>e diciannove</item>
+        <item>e venti</item>
+        <item>e ventuno</item>
+        <item>e ventidue</item>
+        <item>e ventitre</item>
+        <item>e ventiquattro</item>
+        <item>e venticinque</item>
+        <item>e ventisei</item>
+        <item>e ventisette</item>
+        <item>e ventotto</item>
+        <item>e ventinove</item>
+        <item>e trenta</item>
+        <item>e trentuno</item>
+        <item>e trentadue</item>
+        <item>e trentatre</item>
+        <item>e trentaquattro</item>
+        <item>e trentacinque</item>
+        <item>e trentasei</item>
+        <item>e trentasette<item>
+        <item>e trentotto</item>
+        <item>e trentanove</item>
+        <item>e quaranta</item>
+        <item>e quarantuno</item>
+        <item>e quarantadue</item>
+        <item>e quarantatre</item>
+        <item>e quarantaquattro</item>
+        <item>e quarantecinque</item>
+        <item>e quarantasei</item>
+        <item>e quarantasette</item>
+        <item>e quarantotto</item>
+        <item>e quarantanove</item>
+        <item>e cinquanta</item>
+        <item>e cinquantuno</item>
+        <item>e cinquantadue</item>
+        <item>e cinquantatre</item>
+        <item>e cinquantaquattro</item>
+        <item>e cinquantacinque</item>
+        <item>e cinquantasei</item>
+        <item>e cinquantasette</item>
+        <item>e cinquantotto</item>
+        <item>e cinquantanove</item>
+    </string-array>
+
+    <!-- [CHAR LIMIT=8] -->
+    <string name="clock_title_default" translatable="false">Standard</string>
+    <!-- [CHAR LIMIT=8] -->
+    <string name="clock_title_bubble" translatable="false">Bolla</string>
+    <!-- [CHAR LIMIT=8] -->
+    <string name="clock_title_analog" translatable="false">Analogico</string>
+    <!-- [CHAR LIMIT=8] -->
+    <string name="clock_title_type" translatable="false">Tipografico</string>
+
+</resources>
