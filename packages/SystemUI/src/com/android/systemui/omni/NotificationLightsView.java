@@ -99,6 +99,10 @@ public class NotificationLightsView extends RelativeLayout {
         int duration = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2,
                 UserHandle.USER_CURRENT) * 1000;
+        int repeat = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, 0,
+                UserHandle.USER_CURRENT);
+
         if (Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0,
                 UserHandle.USER_CURRENT) == 1) {
@@ -130,8 +134,10 @@ public class NotificationLightsView extends RelativeLayout {
         mLightAnimator = ValueAnimator.ofFloat(new float[]{0.0f, 2.0f});
         mLightAnimator.setDuration(duration);
         //Infinite animation only on Always On Notifications
-        if (mNotification) {
+        if (mNotification && repeat == 0) {
             mLightAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        } else if (mNotification) {
+            mLightAnimator.setRepeatCount(repeat);
         }
         mLightAnimator.setRepeatMode(ValueAnimator.RESTART);
         mLightAnimator.addUpdateListener(new AnimatorUpdateListener() {
