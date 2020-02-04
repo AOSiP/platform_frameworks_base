@@ -238,6 +238,8 @@ import com.android.systemui.util.InjectionInflationController;
 import com.android.systemui.volume.VolumeComponent;
 
 import com.google.android.systemui.keyguard.KeyguardSliceProviderGoogle;
+import com.google.android.systemui.NotificationLockscreenUserManagerGoogle;
+import com.google.android.systemui.smartspace.SmartSpaceController;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -810,6 +812,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         int disabledFlags2 = result.mDisabledFlags2;
         Dependency.get(InitController.class).addPostInitTask(
                 () -> setUpDisableFlags(disabledFlags1, disabledFlags2));
+        ((NotificationLockscreenUserManagerGoogle) Dependency.get(NotificationLockscreenUserManager.class)).updateAodVisibilitySettings();
     }
 
     // ================================================================================
@@ -2557,6 +2560,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         for (Map.Entry<String, ?> entry : Prefs.getAll(mContext).entrySet()) {
             pw.print("  "); pw.print(entry.getKey()); pw.print("="); pw.println(entry.getValue());
         }
+        SmartSpaceController.get(this.mContext).dump(fd, pw, args);
     }
 
     static void dumpBarTransitions(PrintWriter pw, String var, BarTransitions transitions) {
@@ -2829,6 +2833,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         mLockscreenWallpaper.setCurrentUser(newUserId);
         mScrimController.setCurrentUser(newUserId);
         mWallpaperChangedReceiver.onReceive(mContext, null);
+        SmartSpaceController.get(this.mContext).reloadData();
     }
 
     /**
