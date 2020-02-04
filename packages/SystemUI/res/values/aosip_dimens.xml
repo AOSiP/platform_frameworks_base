@@ -15,6 +15,9 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Smartspace -->
+    <dimen name="smartspace_icon_shadow">1dp</dimen>
+
     <!-- screenrecord -->
     <dimen name="screenrecord_dot_size">48dp</dimen>
 
