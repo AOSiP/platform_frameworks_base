@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2018 The OmniROM Project
  *               2020 The LineageOS Project
+ *               2020 shagbag913
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,27 +20,35 @@ package com.android.systemui.qs.tiles;
 
 import android.content.ComponentName;
 import android.content.Intent;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 
 import com.android.systemui.qs.QSHost;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
-import com.android.systemui.plugins.qs.QSTile.BooleanState;
+import com.android.systemui.plugins.qs.QSTile.State;
 import com.android.systemui.R;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 import javax.inject.Inject;
 
-public class AODTile extends QSTileImpl<BooleanState> {
-    private boolean mAodDisabled;
+public class AODTile extends QSTileImpl<State> {
     private final Icon mIcon = ResourceIcon.get(R.drawable.ic_qs_aod);
 
     @Inject
     public AODTile(QSHost host) {
         super(host);
-        mAodDisabled = Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.DOZE_ALWAYS_ON, 1) == 0;
+    }
+
+    private int getAodState() {
+        int aodState = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                Settings.Secure.DOZE_ALWAYS_ON, 0, UserHandle.USER_CURRENT);
+        if (aodState == 0) {
+            aodState = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                    Settings.Secure.DOZE_ON_CHARGE, 0, UserHandle.USER_CURRENT) == 1 ? 2 : 0;
+        }
+        return aodState;
     }
 
     @Override
@@ -57,10 +66,17 @@ public class AODTile extends QSTileImpl<BooleanState> {
 
     @Override
     public void handleClick() {
-        mAodDisabled = !mAodDisabled;
-        Settings.Secure.putInt(mContext.getContentResolver(),
-                Settings.Secure.DOZE_ALWAYS_ON,
-                mAodDisabled ? 0 : 1);
+        int aodState = getAodState();
+        if (aodState < 2) {
+            aodState++;
+        } else {
+            aodState = 0;
+        }
+        Settings.Secure.putIntForUser(mContext.getContentResolver(),
+                Settings.Secure.DOZE_ALWAYS_ON, aodState == 2 ? 0 : aodState,
+                UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(mContext.getContentResolver(),
+                Settings.Secure.DOZE_ON_CHARGE, aodState == 2 ? 1 : 0, UserHandle.USER_CURRENT);
         refreshState();
     }
 
@@ -71,23 +87,21 @@ public class AODTile extends QSTileImpl<BooleanState> {
 
     @Override
     public CharSequence getTileLabel() {
-        return mContext.getString(R.string.quick_settings_aod_label);
+        switch (getAodState()) {
+            case 1:
+                return mContext.getString(R.string.quick_settings_aod_label);
+            case 2:
+                return mContext.getString(R.string.quick_settings_aod_on_charge_label);
+            default:
+                return mContext.getString(R.string.quick_settings_aod_off_label);
+        }
     }
 
     @Override
-    protected void handleUpdateState(BooleanState state, Object arg) {
-        if (state.slash == null) {
-            state.slash = new SlashState();
-        }
+    protected void handleUpdateState(State state, Object arg) {
         state.icon = mIcon;
-        state.value = mAodDisabled;
-        state.slash.isSlashed = state.value;
-        state.label = mContext.getString(R.string.quick_settings_aod_label);
-        if (mAodDisabled) {
-            state.state = Tile.STATE_INACTIVE;
-        } else {
-            state.state = Tile.STATE_ACTIVE;
-        }
+        state.label = getTileLabel();
+        state.state = getAodState() == 0 ? Tile.STATE_INACTIVE : Tile.STATE_ACTIVE;
     }
 
     @Override
