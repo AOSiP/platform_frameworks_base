@@ -14,6 +14,8 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Whether to send camera status intent -->
+    <bool name="config_sendCameraStatusIntent">false</bool>
 
     <!-- Advanced reboot menu -->
     <string-array translatable="false" name="config_custom_globalActionsList">
