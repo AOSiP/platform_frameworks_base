@@ -17,13 +17,19 @@
 package com.android.systemui.statusbar.phone;
 
 import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManagerNative;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Canvas;;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.os.RemoteException;
 import android.os.SystemClock;
+import android.os.UserHandle;
 import android.os.VibrationEffect;
 import android.util.DisplayMetrics;
 import android.util.MathUtils;
@@ -45,6 +51,8 @@ import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.FloatPropertyCompat;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
+
+import java.util.List;
 
 public class NavigationBarEdgePanel extends View {
 
@@ -167,6 +175,13 @@ public class NavigationBarEdgePanel extends View {
     private float mStartX;
     private float mStartY;
     private float mCurrentAngle;
+
+    private boolean mLongSwipe;
+    private long mStartTime;
+    private long mEndTime;
+
+    private Context mContext;
+
     /**
      * The current translation of the arrow
      */
@@ -246,6 +261,7 @@ public class NavigationBarEdgePanel extends View {
     public NavigationBarEdgePanel(Context context) {
         super(context);
 
+        mContext = context;
         mVibratorHelper = Dependency.get(VibratorHelper.class);
 
         mDensity = context.getResources().getDisplayMetrics().density;
@@ -391,6 +407,7 @@ public class NavigationBarEdgePanel extends View {
                 resetOnDown();
                 mStartX = event.getX();
                 mStartY = event.getY();
+                mStartTime = System.currentTimeMillis();
                 setVisibility(VISIBLE);
                 break;
             }
@@ -401,18 +418,44 @@ public class NavigationBarEdgePanel extends View {
             // Fall through
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL: {
-                if (mTriggerBack) {
-                    triggerBack();
-                } else {
-                    if (mTranslationAnimation.isRunning()) {
-                        mTranslationAnimation.addEndListener(mSetGoneEndListener);
-                    } else {
-                        setVisibility(GONE);
+                mEndTime = System.currentTimeMillis();
+                mLongSwipe = ((mEndTime - mStartTime) >= 400);
+                boolean mHandleBack = !mLongSwipe;
+                if (mLongSwipe) {
+                    List<ActivityManager.RecentTaskInfo> recentTasks = null;
+                    Intent recentTaskIntent = null;
+                    try {
+                        recentTasks = ActivityManagerNative.getDefault().getRecentTasks(10,
+                                ActivityManager.RECENT_WITH_EXCLUDED,
+                                UserHandle.USER_CURRENT).getList();
+                        // Check if there are atleast two apps in recents else
+                        // handle normal back gesture
+                        if (recentTasks.size() > 1) {
+                            recentTaskIntent = recentTasks.get(1).baseIntent;
+                            mContext.startActivity(recentTaskIntent);
+                            setVisibility(GONE);
+                        } else {
+                            mHandleBack = mLongSwipe;
+                        }
+                    } catch (RemoteException e) {
+                        // Ignore
                     }
                 }
-                mVelocityTracker.recycle();
-                mVelocityTracker = null;
-                break;
+
+                if (mHandleBack) {
+                    if (mTriggerBack) {
+                        triggerBack();
+                    } else {
+                        if (mTranslationAnimation.isRunning()) {
+                            mTranslationAnimation.addEndListener(mSetGoneEndListener);
+                        } else {
+                            setVisibility(GONE);
+                        }
+                    }
+                    mVelocityTracker.recycle();
+                    mVelocityTracker = null;
+                    break;
+                }
             }
         }
     }
