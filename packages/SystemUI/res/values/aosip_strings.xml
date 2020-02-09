@@ -184,10 +184,6 @@
     <string name="show_fourg_title">Show 4G instead of LTE</string>
     <string name="show_fourg_summary">Replaces LTE statusbar indicators with 4G</string>
 
-    <!-- VoLTE switch -->
-    <string name="volte_switch_title" translatable="false">VoLTE icon</string>
-    <string name="volte_switch_summary">Display VoLTE icon</string>
-
     <string name="tuner_status_bar_bg_transparency">Transparent status bar background</string>
     <string name="tuner_keyguard_show_lock_icon_title">Show lock status</string>
     <string name="tuner_keyguard_show_lock_icon_summary">Show current lock status icon on top</string>
