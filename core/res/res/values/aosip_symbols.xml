@@ -53,10 +53,6 @@
   <java-symbol type="string" name="reboot_message" />
   <java-symbol type="array" name="config_custom_globalActionsList" />
 
-  <!-- Max visible notification icons -->
-  <java-symbol type="integer" name="config_maxVisibleNotificationIcons" />
-  <java-symbol type="integer" name="config_maxVisibleNotificationIconsWhenDark" />
-
   <!-- Whether to show a custom view for FOD -->
   <java-symbol type="bool" name="config_needCustomFODView" />
 
