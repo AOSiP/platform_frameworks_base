@@ -26,4 +26,8 @@
 
     <!-- Allow devices to use unordinary cutout overlays -->
     <bool name="config_customCutout">false</bool>
+
+    <!-- Max visible notification icons -->
+    <integer name="config_maxVisibleNotificationIcons">@*android:integer/config_maxVisibleNotificationIcons</integer>
+    <integer name="config_maxVisibleNotificationIconsWhenDark">@*android:integer/config_maxVisibleNotificationIconsWhenDark</integer>
 </resources>
