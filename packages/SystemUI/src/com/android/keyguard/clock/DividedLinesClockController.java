@@ -213,6 +213,8 @@ public class DividedLinesClockController implements ClockPlugin {
 
     @Override
     public void onTimeTick() {
+        mView.onTimeChanged();
+        mClock.refreshTime();
     }
 
     @Override
