@@ -41,9 +41,6 @@
   <java-symbol type="bool" name="config_ledCanPulse" />
   <java-symbol type="bool" name="config_deviceHasLED" />
 
-  <!-- Ambiant Pulse Light -->
-  <java-symbol type="integer" name="pulse_ambient_light_color" />
-
   <!-- Ambient notification light color -->
   <java-symbol type="integer" name="config_ambientNotificationDefaultColor" />
 
