@@ -28,6 +28,7 @@ import android.animation.ValueAnimator;
 import android.app.ActivityManager;
 import android.app.Fragment;
 import android.app.StatusBarManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
