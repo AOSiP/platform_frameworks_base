@@ -6196,40 +6196,4 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         msg.setAsynchronous(true);
         mHandler.sendMessageDelayed(msg, ViewConfiguration.getLongPressTimeout());
     }
-
-    // Flashlight
-    private void toggleFlashLight() {
-        performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, true, "Flashlight toggle");
-        aosipUtils.toggleCameraFlash();
-    }
-
-    // Clear notifications
-    private void toggleClearNotifications() {
-        performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, true, "Clear-all notifications");
-        aosipUtils.clearAllNotifications();
-    }
-
-    // Volume panel
-    private void toggleVolumePanel() {
-        performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, true, "Volume panel");
-        aosipUtils.toggleVolumePanel(mContext);
-    }
-
-    // Screen off
-    private void toggleScreenOff() {
-        performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, true, "Screen off");
-        aosipUtils.switchScreenOff(mContext);
-    }
-
-    // Screenshot
-    private void toggleScreenshot() {
-        performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, true, "Screenshot");
-        aosipUtils.takeScreenshot(true);
-    }
-
-    // Notifications
-    private void toggleNotifications() {
-        performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, true, "Notifications");
-        aosipUtils.toggleNotifications();
-    }
 }
