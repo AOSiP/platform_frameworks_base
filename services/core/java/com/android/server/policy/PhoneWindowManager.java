@@ -6226,4 +6226,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, true, "Screenshot");
         aosipUtils.takeScreenshot(true);
     }
+
+    // Notifications
+    private void toggleNotifications() {
+        performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, true, "Notifications");
+        aosipUtils.toggleNotifications();
+    }
 }
