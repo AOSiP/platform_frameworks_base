@@ -28,6 +28,12 @@
         android:entries="@array/nav_bar_layouts"
         android:entryValues="@array/nav_bar_layouts_values" />
 
+    <Preference
+        android:key="navbar_editor"
+        android:title="@string/navbar_editor_title"
+        android:summary="@string/navbar_editor_summary"
+        android:fragment="com.android.systemui.tuner.NavBarEditor" />
+
     <PreferenceCategory
         android:title="@string/tuner_nav_bar_gesture_category" />
     <com.android.systemui.tuner.TunerSwitch
