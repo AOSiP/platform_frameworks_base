@@ -43,7 +43,6 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Display;
-import android.view.OrientationEventListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager.LayoutParams;
@@ -129,8 +128,6 @@ public class TriStateUiControllerImpl implements ConfigurationListener, TriState
     private ViewGroup mDialogView;
     private final H mHandler;
     private UserActivityListener mListener;
-    OrientationEventListener mOrientationListener;
-    private int mOrientationType = 0;
     private boolean mScreenOn = true;
     private int mBackgroundColor = 0;
     private ImageView mTriStateIcon;
@@ -199,12 +196,6 @@ public class TriStateUiControllerImpl implements ConfigurationListener, TriState
         mContext =
                 new ContextThemeWrapper(context, R.style.qs_theme);
         mHandler = new H(this);
-        mOrientationListener = new OrientationEventListener(mContext, 3) {
-            @Override
-            public void onOrientationChanged(int orientation) {
-                checkOrientationType();
-            }
-        };
         mVolumeDialogController = (VolumeDialogController) Dependency.get(VolumeDialogController.class);
         mIntentAction = mContext.getResources().getString(com.android.internal.R.string.config_alertSliderIntent);
         mIntentActionSupported = mIntentAction != null && !mIntentAction.isEmpty();
@@ -219,16 +210,6 @@ public class TriStateUiControllerImpl implements ConfigurationListener, TriState
     @Override
     public void onUiModeChanged() {
         mContext.getTheme().applyStyle(mContext.getThemeResId(), true);
-    }
-
-    private void checkOrientationType() {
-        Display display = DisplayManagerGlobal.getInstance().getRealDisplay(0);
-        if (display != null) {
-            int rotation = display.getRotation();
-            if (rotation != mOrientationType) {
-                mOrientationType = rotation;
-            }
-        }
     }
 
     public void init(int windowType, UserActivityListener listener) {
@@ -271,16 +252,6 @@ public class TriStateUiControllerImpl implements ConfigurationListener, TriState
         mTriStateText = (TextView) mDialog.findViewById(R.id.tri_state_text);
     }
 
-    private void registerOrientationListener(boolean enable) {
-        if (mOrientationListener.canDetectOrientation() && enable) {
-            Log.v(TAG, "Can detect orientation");
-            mOrientationListener.enable();
-            return;
-        }
-        Log.v(TAG, "Cannot detect orientation");
-        mOrientationListener.disable();
-    }
-
     private void updateTriStateLayout() {
         if (mContext != null) {
             int iconId = 0;
@@ -313,7 +284,14 @@ public class TriStateUiControllerImpl implements ConfigurationListener, TriState
                 } else if (triStatePos == TRI_STATE_UI_POSITION_RIGHT) {
                     isTsKeyRight = true;
                 }
-                switch (mOrientationType) {
+
+                Display display = DisplayManagerGlobal.getInstance().getRealDisplay(0);
+                int orientationType = -1;
+                if (display != null) {
+                    orientationType = display.getRotation();
+                }
+
+                switch (orientationType) {
                     case ROTATION_90:
                         if (isTsKeyRight) {
                             gravity = 51;
@@ -477,9 +455,7 @@ public class TriStateUiControllerImpl implements ConfigurationListener, TriState
     private void handleShow() {
         mHandler.removeMessages(MSG_DIALOG_SHOW);
         if (!mDialog.isShowing() && mScreenOn) {
-            registerOrientationListener(true);
-            checkOrientationType();
-            initDialog();
+            updateTriStateLayout();
             mDialog.show();
             if (mListener != null) {
                 mListener.onTriStateUserActivity();
@@ -494,7 +470,6 @@ public class TriStateUiControllerImpl implements ConfigurationListener, TriState
             return;
         }
         if (mDialog.isShowing()) {
-            registerOrientationListener(false);
             mDialog.dismiss();
         }
     }
