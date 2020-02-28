@@ -24,6 +24,7 @@ import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
+import android.os.Vibrator;
 import android.view.IWindowManager;
 import android.view.WindowManagerGlobal;
 
@@ -35,6 +36,30 @@ public class ActionUtils {
 
     public static final String INTENT_SCREENSHOT = "action_handler_screenshot";
     public static final String INTENT_REGION_SCREENSHOT = "action_handler_region_screenshot";
+
+    // Cycle ringer modes
+    public static void toggleRingerModes (Context context) {
+        AudioManager am = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+        Vibrator mVibrator = (Vibrator) context.getSystemService(VIBRATOR_SERVICE);
+
+        switch (am.getRingerMode()) {
+            case AudioManager.RINGER_MODE_NORMAL:
+                if (mVibrator.hasVibrator()) {
+                    am.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
+                }
+                break;
+            case AudioManager.RINGER_MODE_VIBRATE:
+                am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+                NotificationManager notificationManager =
+                        (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
+                notificationManager.setInterruptionFilter(
+                        NotificationManager.INTERRUPTION_FILTER_PRIORITY);
+                break;
+            case AudioManager.RINGER_MODE_SILENT:
+                am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+                break;
+        }
+    }
 
     // Screenshots
     public static void takeScreenshot(boolean full) {
@@ -101,9 +126,14 @@ public class ActionUtils {
         } catch (Exception e) {}
     }
 
-        // Toggle notifications panel
+    // Toggle notifications panel
     public static void toggleNotifications() {
         FireActions.toggleNotifications();
+    }
+
+    // Toggle qs panel
+    public static void toggleQsPanel() {
+        FireActions.toggleQsPanel();
     }
 
     private static final class FireActions {
@@ -145,6 +175,15 @@ public class ActionUtils {
             if (service != null) {
                 try {
                     service.togglePanel();
+                } catch (RemoteException e) {}
+            }
+        }
+
+        public static void toggleQsPanel() {
+            IStatusBarService service = getStatusBarService();
+            if (service != null) {
+                try {
+                    service.expandSettingsPanel(null);
                 } catch (RemoteException e) {}
             }
         }
