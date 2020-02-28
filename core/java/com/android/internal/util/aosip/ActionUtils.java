@@ -16,6 +16,7 @@
 
 package com.android.internal.util.aosip;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -136,6 +137,11 @@ public class ActionUtils {
         FireActions.toggleQsPanel();
     }
 
+    // Clear-all notifications
+    public static void clearAllNotifications() {
+        FireActions.clearAllNotifications();
+    }
+
     private static final class FireActions {
         private static IStatusBarService mStatusBarService = null;
         private static IStatusBarService getStatusBarService() {
@@ -184,6 +190,15 @@ public class ActionUtils {
             if (service != null) {
                 try {
                     service.toggleSettingsPanel();
+                } catch (RemoteException e) {}
+            }
+        }
+
+        public static void clearAllNotifications() {
+            IStatusBarService service = getStatusBarService();
+            if (service != null) {
+                try {
+                    service.onClearAllNotifications(ActivityManager.getCurrentUser());
                 } catch (RemoteException e) {}
             }
         }
