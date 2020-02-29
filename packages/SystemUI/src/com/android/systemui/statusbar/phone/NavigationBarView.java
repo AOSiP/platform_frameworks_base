@@ -813,6 +813,10 @@ public class NavigationBarView extends FrameLayout implements
                 displayId);
     }
 
+    public void setLongSwipeOptions() {
+        mEdgeBackGestureHandler.setLongSwipeOptions();
+    }
+
     /**
      * Updates the {@link WindowManager.LayoutParams.FLAG_SLIPPERY} state dependent on if swipe up
      * is enabled, or the notifications is fully opened without being in an animated state. If

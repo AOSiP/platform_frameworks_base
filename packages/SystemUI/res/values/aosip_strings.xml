@@ -74,6 +74,9 @@
     <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
     <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
 
+    <!-- Long swipe gesture actions -->
+    <string name="app_picker_dialog_title">Select an app</string>
+
     <!-- Screen recorder -->
     <string name="screenrecord_stopdot_label">Show stop dot</string>
 
