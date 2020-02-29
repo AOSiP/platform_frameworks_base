@@ -35,7 +35,7 @@ import com.android.systemui.Dependency;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.UiOffloadThread;
 import com.android.internal.graphics.palette.Palette;
-import com.android.internal.util.crdroid.ColorAnimator;
+import com.android.internal.util.aosip.ColorAnimator;
 
 public class VisualizerView extends View
         implements Palette.PaletteAsyncListener, TunerService.Tunable,
