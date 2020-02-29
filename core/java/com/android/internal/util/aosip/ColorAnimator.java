@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.crdroid;
+package com.android.internal.util.aosip;
 
 import android.animation.ValueAnimator;
 import android.graphics.Color;
