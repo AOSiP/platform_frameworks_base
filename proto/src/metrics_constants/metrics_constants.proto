@@ -7442,5 +7442,7 @@ message MetricsEvent {
     // Panel for Bluetooth
     PANEL_BLUETOOTH = 9004;
 
+    // Panel for Mobile Data
+    PANEL_MOBILE_DATA = 2002;
   }
 }
