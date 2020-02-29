@@ -7438,5 +7438,9 @@ message MetricsEvent {
 
     // OwlsNest
     OWLSNEST = 420;
+
+    // Panel for Bluetooth
+    PANEL_BLUETOOTH = 9004;
+
   }
 }
