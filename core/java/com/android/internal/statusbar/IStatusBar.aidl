@@ -236,4 +236,6 @@ oneway interface IStatusBar
      * AOSiP
      */
     void toggleCameraFlash();
+
+    void killForegroundApp();
 }

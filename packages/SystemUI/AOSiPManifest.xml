@@ -18,6 +18,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.android.systemui">
 
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
+
     <!-- SystemUI Tuner -->
     <application>
         <activity-alias
