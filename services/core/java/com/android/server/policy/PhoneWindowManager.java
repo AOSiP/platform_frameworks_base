@@ -6731,6 +6731,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             case NavbarUtilities.KEY_ACTION_RINGER_MODES:
                 aosipUtils.toggleRingerModes(mContext);
                 break;
+            case NavbarUtilities.KEY_ACTION_KILL_APP:
+                aosipUtils.killForegroundApp();
+                break;
         }
     }
 
@@ -6816,6 +6819,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 break;
             case NavbarUtilities.KEY_ACTION_RINGER_MODES:
                 aosipUtils.toggleRingerModes(mContext);
+                break;
+            case NavbarUtilities.KEY_ACTION_KILL_APP:
+                aosipUtils.killForegroundApp();
                 break;
         }
     }
