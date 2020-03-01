@@ -724,6 +724,9 @@ public class EdgeBackGestureHandler implements DisplayListener {
             case 12: // Ringer modes
                 aosipUtils.toggleRingerModes(mContext);
                 break;
+            case 13: // Kill app
+                aosipUtils.killForegroundApp();
+                break;
             case 14: // Skip song
                 aosipUtils.sendSystemKeyToStatusBar(KeyEvent.KEYCODE_MEDIA_NEXT);
                 break;
