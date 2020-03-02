@@ -40,6 +40,8 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
@@ -197,6 +199,8 @@ public class EdgeBackGestureHandler implements DisplayListener {
     private boolean mBlockNextEvent;
     private boolean mIsExtendedSwipe;
 
+    private final Vibrator mVibrator;
+
     public EdgeBackGestureHandler(Context context, OverviewProxyService overviewProxyService) {
         final Resources res = context.getResources();
         mContext = context;
@@ -225,6 +229,8 @@ public class EdgeBackGestureHandler implements DisplayListener {
         mAssistManager = Dependency.get(AssistManager.class);
         mHandler = new Handler();
         setLongSwipeOptions();
+
+        mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     public void updateCurrentUserResources(Resources res) {
@@ -622,6 +628,7 @@ public class EdgeBackGestureHandler implements DisplayListener {
             mBlockNextEvent = true;
             mEdgePanel.resetOnDown();
             triggerAction(mIsOnLeftEdge);
+            mVibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE));
         }
     }
 
