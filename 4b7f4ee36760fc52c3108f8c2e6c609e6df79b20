@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e93e74a5_9505ebf1",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/StatusBarWindowView.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000075
+      },
+      "writtenOn": "2020-03-08T03:21:12Z",
+      "side": 1,
+      "message": "using tabs instead of spaces\n🤮",
+      "revId": "4b7f4ee36760fc52c3108f8c2e6c609e6df79b20",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
