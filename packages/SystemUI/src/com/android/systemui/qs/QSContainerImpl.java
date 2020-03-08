@@ -22,9 +22,8 @@ import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.database.ContentObserver;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.graphics.Point;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -32,17 +31,13 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.android.systemui.Dependency;
 import com.android.systemui.R;
 import com.android.systemui.qs.customize.QSCustomizer;
-import com.android.systemui.tuner.TunerService;
-import com.android.systemui.tuner.TunerService.Tunable;
 
 /**
  * Wrapper view with background which contains {@link QSPanel} and {@link BaseStatusBarHeader}
  */
-public class QSContainerImpl extends FrameLayout implements
-        Tunable {
+public class QSContainerImpl extends FrameLayout {
 
     private final Point mSizePoint = new Point();
 
@@ -62,9 +57,6 @@ public class QSContainerImpl extends FrameLayout implements
     private boolean mQsDisabled;
 
     private Drawable mQsBackGround;
-
-    private boolean mStatusBarBgTransparent;
-    private static final String QS_STATUS_BAR_BG_TRANSPARENCY =  "qs_status_bar_bg_transparency";
 
     public QSContainerImpl(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -93,20 +85,6 @@ public class QSContainerImpl extends FrameLayout implements
     }
 
     @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        final TunerService tunerService = Dependency.get(TunerService.class);
-        tunerService.addTunable(this, QS_STATUS_BAR_BG_TRANSPARENCY);
-    }
-
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        final TunerService tunerService = Dependency.get(TunerService.class);
-        tunerService.removeTunable(this);
-    }
-
-    @Override
     protected void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         setBackgroundGradientVisibility(newConfig);
@@ -121,7 +99,7 @@ public class QSContainerImpl extends FrameLayout implements
 
         void observe() {
             getContext().getContentResolver().registerContentObserver(Settings.System
-                    .getUriFor(Settings.System.QS_PANEL_BG_ALPHA), false,
+                            .getUriFor(Settings.System.QS_PANEL_BG_ALPHA), false,
                     this, UserHandle.USER_ALL);
         }
 
@@ -217,12 +195,6 @@ public class QSContainerImpl extends FrameLayout implements
                 com.android.internal.R.dimen.quick_qs_offset_height);
 
         mQSPanel.setLayoutParams(layoutParams);
-
-        if (mStatusBarBgTransparent) {
-            mStatusBarBackground.setBackgroundColor(Color.TRANSPARENT);
-        } else {
-            mStatusBarBackground.setBackgroundColor(Color.BLACK);
-        }
     }
 
     /**
@@ -287,13 +259,5 @@ public class QSContainerImpl extends FrameLayout implements
             getDisplay().getRealSize(mSizePoint);
         }
         return mSizePoint.y;
-    }
-
-    @Override
-    public void onTuningChanged(String key, String newValue) {
-        if (QS_STATUS_BAR_BG_TRANSPARENCY.equals(key)) {
-            mStatusBarBgTransparent = newValue != null && Integer.parseInt(newValue) == 1;
-            updateResources();
-        }
     }
 }
