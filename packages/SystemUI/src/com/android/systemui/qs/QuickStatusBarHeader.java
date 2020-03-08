@@ -592,8 +592,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     public void onDetachedFromWindow() {
         setListening(false);
         mStatusBarIconController.removeIconGroup(mIconManager);
-        final TunerService tunerService = Dependency.get(TunerService.class);
-        tunerService.removeTunable(this);
         super.onDetachedFromWindow();
     }
 
