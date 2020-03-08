@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5ae3e49_349693a8",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/PhoneStatusBarPolicy.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-03-08T05:50:45Z",
+      "side": 1,
+      "message": "space after ), and why \u003d\u003d true, just the variable will be enough",
+      "revId": "38a0b1fb3de0f178b6cb6a1dcd32ab754e54a060",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
