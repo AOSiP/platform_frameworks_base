@@ -1109,20 +1109,27 @@ public class StatusBar extends SystemUI implements DemoMode,
     }
 
     public void updateBlurVisibility() {
+        float QSBlurAlpha = mNotificationPanel.getExpandedFraction();
+        boolean enoughBlurData = QSBlurAlpha > 0;
 
-        int QSBlurAlpha = Math.round(255.0f * mNotificationPanel.getExpandedFraction());
-
-        if (QSBlurAlpha > 0 && !blurperformed && !mIsKeyguard) {
-            Bitmap bittemp = ImageUtilities.blurImage(mContext, ImageUtilities.screenshotSurface(mContext));
-            Drawable blurbackground = new BitmapDrawable(mContext.getResources(), bittemp);
+        if (enoughBlurData && !blurperformed && !mIsKeyguard) {
+            drawBlurView();
             blurperformed = true;
-            mQSBlurView.setBackgroundDrawable(blurbackground);
-        } else if (QSBlurAlpha == 0 || mState == StatusBarState.KEYGUARD) {
+            mQSBlurView.setVisibility(View.VISIBLE);
+        } else if (!enoughBlurData || mState == StatusBarState.KEYGUARD) {
             blurperformed = false;
-            mQSBlurView.setBackgroundColor(Color.TRANSPARENT);
+            mQSBlurView.setVisibility(View.GONE);
         }
         mQSBlurView.setAlpha(QSBlurAlpha);
-        mQSBlurView.getBackground().setAlpha(QSBlurAlpha);
+    }
+
+    private void drawBlurView() {
+        Bitmap surfaceBitmap = ImageUtilities.screenshotSurface(mContext);
+        if (surfaceBitmap == null) {
+            mQSBlurView.setImageDrawable(null);
+        } else {
+            mQSBlurView.setImageBitmap(ImageUtilities.blurImage(mContext, surfaceBitmap));
+        }
     }
 
     protected QS createDefaultQSFragment() {
@@ -3137,6 +3144,18 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         mViewHierarchyManager.updateRowStates();
         mScreenPinningRequest.onConfigurationChanged();
+
+        if (blurperformed) {
+            mNotificationPanel.setPanelAlpha(0, false);
+            mHandler.postDelayed(new Runnable() {
+                public void run() {
+                    drawBlurView();
+                    mNotificationPanel.setPanelAlphaFast(255, true);
+                }
+            }, Math.max(390, Math.round(455f * Settings.Global.getFloat(
+                    mContext.getContentResolver(),
+                    Settings.Global.TRANSITION_ANIMATION_SCALE, 1.0f))));
+        }
     }
 
     @Override
