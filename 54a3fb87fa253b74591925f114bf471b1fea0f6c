@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a6195e5_e7d92746",
+        "filename": "packages/SystemUI/src/com/android/systemui/qs/tiles/AODTile.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000075
+      },
+      "writtenOn": "2020-03-15T09:20:31Z",
+      "side": 1,
+      "message": "no tabs \u003e.\u003c",
+      "revId": "54a3fb87fa253b74591925f114bf471b1fea0f6c",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
