@@ -74,6 +74,11 @@ public class AODTile extends QSTileImpl<BooleanState> {
         return mContext.getString(R.string.quick_settings_aod_label);
     }
 
+    private boolean isAodEnabled() {
+        return Settings.Secure.getIntForUser(mContext.getContentResolver(),
+                    Settings.Secure.DOZE_ALWAYS_ON, 0, UserHandle.USER_CURRENT) == 1;
+    }
+
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
         if (state.slash == null) {
@@ -83,7 +88,7 @@ public class AODTile extends QSTileImpl<BooleanState> {
         state.value = mAodDisabled;
         state.slash.isSlashed = state.value;
         state.label = mContext.getString(R.string.quick_settings_aod_label);
-        if (mAodDisabled) {
+        if (mAodDisabled || !isAodEnabled()) {
             state.state = Tile.STATE_INACTIVE;
         } else {
             state.state = Tile.STATE_ACTIVE;
