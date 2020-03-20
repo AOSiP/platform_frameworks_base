@@ -802,7 +802,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     mMovingDisplayToTopKeyTriggered = false;
                     break;
                 case MSG_TOGGLE_TORCH:
-                    toggleFlashLight();
+                    aosipUtils.toggleCameraFlash();
                     break;
                 case MSG_DISPATCH_VOLKEY_SKIP_TRACK: {
                     sendSkipTrackEventToStatusBar(msg.arg1);
@@ -811,11 +811,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 }
             }
         }
-    }
-
-    private void toggleFlashLight() {
-        performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, true, "Flashlight toggle");
-        aosipUtils.toggleCameraFlash();
     }
 
     private UEventObserver mHDMIObserver = new UEventObserver() {
@@ -1320,7 +1315,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         switch (behavior) {
             case MULTI_PRESS_POWER_NOTHING:
                 if ((mTorchActionMode == 1) && (!isScreenOn() || isDozeMode())) {
-                    toggleFlashLight();
+                    aosipUtils.toggleCameraFlash();
                 }
                 break;
             case MULTI_PRESS_POWER_THEATER_MODE:
