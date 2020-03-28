@@ -37,4 +37,7 @@
     <!-- Max visible notification icons -->
     <integer name="config_maxVisibleNotificationIcons">@*android:integer/config_maxVisibleNotificationIcons</integer>
     <integer name="config_maxVisibleNotificationIconsWhenDark">@*android:integer/config_maxVisibleNotificationIconsWhenDark</integer>
+
+    <!-- Enable face auth only when swiping security view -->
+    <bool name="config_faceAuthOnlyOnSecurityView">false</bool>
 </resources>
