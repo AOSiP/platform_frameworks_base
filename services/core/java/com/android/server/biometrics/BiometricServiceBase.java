@@ -655,9 +655,10 @@ public abstract class BiometricServiceBase extends SystemService
         mPowerManager = mContext.getSystemService(PowerManager.class);
         mUserManager = UserManager.get(mContext);
         mMetricsLogger = new MetricsLogger();
-        mNotifyClient = mContext.getResources().getBoolean(
+        boolean modalityFingerprint = statsModality() == BiometricsProtoEnums.MODALITY_FINGERPRINT;
+        mNotifyClient = modalityFingerprint && mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_notifyClientOnFingerprintCancelSuccess);
-        mCleanupUnusedFingerprints = mContext.getResources().getBoolean(
+        mCleanupUnusedFingerprints = modalityFingerprint && mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_cleanupUnusedFingerprints);
     }
 
