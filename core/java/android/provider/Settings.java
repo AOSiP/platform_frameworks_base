@@ -5117,6 +5117,12 @@ public final class Settings {
         private static final Validator ASPECT_RATIO_APPS_ENABLED_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * Screenrecord: audio source
+         * @hide
+         */
+        public static final String SCREENRECORD_AUDIO_SOURCE = "screenrecord_audio_source";
+
+        /**
          * Whether to show charging animation
          * @hide
          */
