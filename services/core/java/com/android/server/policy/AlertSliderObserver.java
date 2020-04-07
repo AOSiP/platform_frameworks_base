@@ -106,13 +106,13 @@ public class AlertSliderObserver extends UEventObserver {
             final boolean inverted = isOrderInverted();
             switch (mState) {
                 case 1:
-                    mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+                    mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_SILENT);
                     break;
                 case 2:
                     mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
                     break;
                 case 3:
-                    mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_SILENT);
+                    mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
                     break;
             }
             if (mWakeLock.isHeld()) {
