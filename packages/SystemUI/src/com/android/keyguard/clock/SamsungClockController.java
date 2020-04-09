@@ -184,4 +184,9 @@ public class SamsungClockController implements ClockPlugin {
     public boolean shouldShowStatusArea() {
         return true;
     }
+
+    @Override
+    public boolean shouldShowInBigContainer() {
+        return true;
+    }
 }
