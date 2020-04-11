@@ -46,7 +46,6 @@ import com.android.systemui.qs.tiles.ImmersiveTile;
 import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LocaleTile;
 import com.android.systemui.qs.tiles.LocationTile;
-import com.android.systemui.qs.tiles.LteTile;
 import com.android.systemui.qs.tiles.MonoToggleTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
@@ -95,7 +94,6 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<CaffeineTile> mCaffeineTileProvider;
     private final Provider<AdbOverNetworkTile> mAdbOverNetworkProvider;
     private final Provider<SoundSearchTile> mSoundSearchTileProvider;
-    private final Provider<LteTile> mLteTileProvider;
     private final Provider<SoundTile> mSoundTileProvider;
     private final Provider<ScreenshotTile> mScreenshotTileProvider;
     private final Provider<LocaleTile> mLocaleTileProvider;
@@ -130,7 +128,6 @@ public class QSFactoryImpl implements QSFactory {
             Provider<CaffeineTile> caffeineTileProvider,
             Provider<AdbOverNetworkTile> adbOverNetworkProvider,
             Provider<SoundSearchTile> soundSearchTIleProvider,
-            Provider<LteTile> lteTileProvider,
             Provider<SoundTile> soundTileProvider,
             Provider<ScreenshotTile> screenshotTileProvider,
             Provider<LocaleTile> localeTileProvider,
@@ -162,7 +159,6 @@ public class QSFactoryImpl implements QSFactory {
         mCaffeineTileProvider = caffeineTileProvider;
         mAdbOverNetworkProvider = adbOverNetworkProvider;
         mSoundSearchTileProvider = soundSearchTIleProvider;
-        mLteTileProvider = lteTileProvider;
         mSoundTileProvider = soundTileProvider;
         mScreenshotTileProvider = screenshotTileProvider;
         mLocaleTileProvider = localeTileProvider;
@@ -236,8 +232,6 @@ public class QSFactoryImpl implements QSFactory {
                 return new HeadsUpTile(mHost);
             case "sync":
                 return new SyncTile(mHost);
-            case "lte":
-                return mLteTileProvider.get();
             case "sound":
                 return mSoundTileProvider.get();
             case "screenshot":

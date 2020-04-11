@@ -175,11 +175,6 @@
     <string name="smartspace_now">Now</string>
     <string name="smartspace_pill_text_format">%1$s: %2$s</string>
 
-    <!-- LTE QS Tile -->
-    <string name="qs_lte_label">LTE</string>
-    <string name="lte_on">LTE ON </string>
-    <string name="lte_off">LTE OFF</string>
-
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Sound</string>
     <string name="quick_settings_sound_ring">Ring</string>
