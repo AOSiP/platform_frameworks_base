@@ -48,6 +48,7 @@ import com.android.systemui.qs.QSHost;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 import com.android.systemui.statusbar.policy.BluetoothController;
 import com.android.systemui.statusbar.policy.KeyguardMonitor;
+import com.android.systemui.tuner.TunerService;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -58,6 +59,7 @@ import javax.inject.Inject;
 /** Quick settings tile: Bluetooth **/
 public class BluetoothTile extends QSTileImpl<BooleanState> {
     private static final Intent BLUETOOTH_SETTINGS = new Intent(Settings.Panel.ACTION_BLUETOOTH);
+    private static final Intent BLUETOOTH_SETTINGS_FULL = new Intent(Settings.ACTION_BLUETOOTH_SETTINGS);
 
     private final BluetoothController mController;
     private final BluetoothDetailAdapter mDetailAdapter;
@@ -130,6 +132,10 @@ public class BluetoothTile extends QSTileImpl<BooleanState> {
 
     @Override
     public Intent getLongClickIntent() {
+        if (Dependency.get(TunerService.class).getValue(
+                com.android.systemui.qs.QSPanel.QS_LONG_PRESS_ACTION, 0) == 1) {
+            return BLUETOOTH_SETTINGS_FULL;
+        }
         return BLUETOOTH_SETTINGS;
     }
 
@@ -137,7 +143,7 @@ public class BluetoothTile extends QSTileImpl<BooleanState> {
     protected void handleSecondaryClick() {
         if (!mController.canConfigBluetooth()) {
             mActivityStarter.postStartActivityDismissingKeyguard(
-                    new Intent(Settings.ACTION_BLUETOOTH_SETTINGS), 0);
+                    BLUETOOTH_SETTINGS_FULL, 0);
             return;
         }
         if (mKeyguard.isSecure() && mKeyguard.isShowing()) {
@@ -380,7 +386,7 @@ public class BluetoothTile extends QSTileImpl<BooleanState> {
 
         @Override
         public Intent getSettingsIntent() {
-            return new Intent(Settings.ACTION_BLUETOOTH_SETTINGS);
+            return BLUETOOTH_SETTINGS_FULL;
         }
 
         @Override
