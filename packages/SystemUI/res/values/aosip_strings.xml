@@ -223,7 +223,7 @@
 
     <string name="tuner_keyguard_show_lock_icon_title">Show lock status</string>
     <string name="tuner_keyguard_show_lock_icon_summary">Show current lock status icon on top</string>
-    <string name="tuner_long_press_secondary">Show details on long press</string>
+    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
 
     <!-- VoLTE switch -->
     <string name="volte_switch_title" translatable="false">VoLTE icon</string>
