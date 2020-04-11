@@ -174,6 +174,7 @@ import com.android.systemui.plugins.statusbar.NotificationSwipeActionHelper.Snoo
 import com.android.systemui.plugins.statusbar.StatusBarStateController;
 import com.android.systemui.qs.QSFragment;
 import com.android.systemui.qs.QSPanel;
+import com.android.systemui.qs.QuickStatusBarHeader;
 import com.android.systemui.recents.Recents;
 import com.android.systemui.recents.ScreenPinningRequest;
 import com.android.systemui.shared.system.ActivityManagerWrapper;
@@ -425,6 +426,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             Dependency.get(RemoteInputQuickSettingsDisabler.class);
 
     private View mReportRejectedTouch;
+    private View mQSBarHeader;
 
     private boolean mExpandedVisible;
 
@@ -1217,6 +1219,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             fragmentHostManager.addTagListener(QS.TAG, (tag, f) -> {
                 QS qs = (QS) f;
                 if (qs instanceof QSFragment) {
+                    mQSBarHeader = ((QSFragment) qs).getHeader();
                     mQSPanel = ((QSFragment) qs).getQsPanel();
                     mQSPanel.setBrightnessMirror(mBrightnessMirrorController);
                 }
@@ -1961,6 +1964,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SHOW_MEDIA_HEADS_UP),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_SHOW_BATTERY_PERCENT),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -1989,6 +1995,8 @@ public class StatusBar extends SystemUI implements DemoMode,
                 setGestureNavOptions();
             } else if (uri.equals(Settings.System.getUriFor(Settings.System.SHOW_MEDIA_HEADS_UP))) {
                 setMediaHeadsup();
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.QS_SHOW_BATTERY_PERCENT))) {
+                setQsBatteryPercentMode();
             }
         }
 
@@ -2000,6 +2008,13 @@ public class StatusBar extends SystemUI implements DemoMode,
             setStatusBarWindowViewOptions();
             setGestureNavOptions();
             setMediaHeadsup();
+            setQsBatteryPercentMode();
+        }
+    }
+
+    private void setQsBatteryPercentMode() {
+        if (mQSBarHeader != null) {
+            ((QuickStatusBarHeader) mQSBarHeader).setBatteryPercentMode();
         }
     }
 
