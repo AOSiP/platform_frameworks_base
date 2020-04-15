@@ -30,9 +30,12 @@
   <!-- Whether device supports an alt. ambient display -->
   <java-symbol type="bool" name="config_alt_ambient_display"/>
 
-  <!-- Light / Regular style fonts -->
+  <!-- Fonts -->
   <java-symbol type="string" name="config_lightFontFamily" />
   <java-symbol type="string" name="config_regularFontFamily" />
+  <java-symbol type="string" name="config_headlineFontFamilyMedium" />
+  <java-symbol type="string" name="config_bodyFontFamily" />
+  <java-symbol type="string" name="config_bodyFontFamilyMedium" />
 
   <!-- App error dialog -->
   <java-symbol type="id" name="aerr_copy" />
