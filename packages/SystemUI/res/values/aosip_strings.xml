@@ -33,6 +33,9 @@
     <string name="status_bar_data_saver">Data saver</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Roaming</string>
+    <string name="status_bar_camera">Camera</string>
+    <string name="status_bar_location">Location</string>
+    <string name="status_bar_microphone">Microphone</string>
 
     <!-- Caffeine tile -->
     <string name="quick_settings_caffeine_label">Caffeine</string>
