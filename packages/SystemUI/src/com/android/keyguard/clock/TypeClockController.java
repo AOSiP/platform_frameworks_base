@@ -21,6 +21,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint.Style;
+import android.graphics.Typeface;
 import android.util.MathUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,8 @@ import com.android.systemui.colorextraction.SysuiColorExtractor;
 import com.android.systemui.plugins.ClockPlugin;
 
 import java.util.TimeZone;
+import static com.android.systemui.statusbar.phone
+        .KeyguardClockPositionAlgorithm.CLOCK_USE_DEFAULT_Y;
 
 /**
  * Plugin for a custom Typographic clock face that displays the time in words.
