@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015-2019 AOSiP
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Розширені</string>
+    <string name="global_action_restart_recovery">Recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">Перезапустити SystemUI</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
+    <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Заборона сну</string>
+    <string name="accessibility_quick_settings_caffeine_off">Заборона сну вимкнена</string>
+    <string name="accessibility_quick_settings_caffeine_on">Заборона сну увімкнена</string>
+    <!-- ADB over network tile -->
+    <string name="quick_settings_network_adb_enabled_label">Enabled</string>
+    <string name="quick_settings_network_adb_disabled_label">Disabled</string>
+    <string name="quick_settings_network_adb_label">ADB over network</string>
+    <string name="quick_settings_network_adb_toast">USB debugging is not enabled</string>
+    <!-- Sound Search tile -->
+    <string name="quick_settings_sound_search">Sound search</string>
+    <string name="quick_settings_sound_search_no_app">Sorry, but this doesn\'t work if you don\'t have a Sound search app.</string>
+    <string name="statusbar_items_title">Statusbar icon</string>
+    <string name="lockscreen_default">Default</string>
+    <string name="lockscreen_hidden">None</string>
+    <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Swipe from icon to launch</string>
+    <!-- Name of the nfc status bar icon. -->
+    <string name="status_bar_nfc">NFC</string>
+    <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
+    <string name="accessibility_status_bar_nfc">Nfc</string>
+    <string name="status_bar_data_saver">Data saver</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_roaming">Роумінг</string>
+    <!-- Navigation bar dpad -->
+    <string name="accessibility_dpad_left">Cursor left</string>
+    <string name="accessibility_dpad_right">Cursor right</string>
+    <!-- Immersive tile -->
+    <string name="quick_settings_immersive_tile">Повноекранний режим</string>
+    <string name="quick_settings_immersive_tile_statusbar">Приховати рядок стану</string>
+    <string name="quick_settings_immersive_tile_navbar">Приховати панель навігації</string>
+    <string name="quick_settings_immersive_tile_full">Повний повноекранний режим</string>
+    <!-- Mono/Stereo tile -->
+    <string name="quick_settings_monotoggle_tile">Audio mode</string>
+    <string name="quick_settings_monotoggle_tile_mono">Mono audio</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Stereo audio</string>
+    <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Спливаючі сповіщення</string>
+    <string name="accessibility_quick_settings_heads_up_off">Спливаючі сповіщення вимк.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Спливаючі сповіщення увімк.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Спливаючі сповіщення вимкнено.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Спливаючі сповіщення увімкнено.</string>
+    <!-- Sync QS Tile -->
+    <string name="quick_settings_sync_label">Синхронізація</string>
+    <string name="accessibility_quick_settings_sync_off">Синхронізація вимкнена</string>
+    <string name="accessibility_quick_settings_sync_on">Синхронізація увімкнена</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Синхронізація вимкнена</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Синхронізація увімкнута</string>
+    <!-- Long swipe gesture actions -->
+    <string name="app_picker_dialog_title">Select an app</string>
+    <string name="recents_app_killed">App killed</string>
+    <string name="nope_cant_kill">Launcher cannot be killed</string>
+    <!-- Screenshot toast -->
+    <string name="delete_screenshot_toast">Знімок екрану видалено</string>
+    <!-- Screen recorder -->
+    <string name="screenrecord_dialog_title">Start recording?</string>
+    <string name="screenrecord_dialog_summary">While recording, Android system can capture any sensitive information that\'s visible on your screen or played on your device. This includes passwords, payment info, photos, messages, and audio.</string>
+    <string name="screenrecord_dialog_start">Start</string>
+    <string name="screenrecord_dialog_cancel">Cancel</string>
+    <string name="screenrecord_audio_title">Record audio</string>
+    <string name="screenrecord_audio_summary">Record audio while recording</string>
+    <string name="screenrecord_taps_title">Show touches on screen</string>
+    <string name="screenrecord_taps_summary">Show visual feedback while recording</string>
+    <string name="screenrecord_stopdot_title">Show stop dot</string>
+    <string name="screenrecord_stopdot_summary">Show a red dot to stop recording with a single tap. Longpress it to move it to the opposite side.</string>
+    <string name="screenrecord_low_quality_title">Low quality</string>
+    <string name="screenrecord_low_quality_summary">Record in a lower quality to save space on your device</string>
+    <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
+    <string name="global_action_screenshot_cust">Screenshot</string>
+    <string name="global_action_screenrecord">Screenrecord</string>
+    <!-- QS Config -->
+    <string name="qs_menu_item_columns">Columns</string>
+    <string name="qs_menu_item_columns_landscape">Columns landscape</string>
+    <string name="qs_menu_item_columns_three">3</string>
+    <string name="qs_menu_item_columns_four">4</string>
+    <string name="qs_menu_item_columns_five">5</string>
+    <string name="qs_menu_item_columns_six">6</string>
+    <string name="qs_menu_item_columns_seven">7</string>
+    <string name="qs_menu_item_columns_eight">8</string>
+    <string name="qs_menu_item_columns_nine">9</string>
+    <string name="qs_menu_item_reset">Скинути</string>
+    <string name="qs_menu_item_titles">Show labels</string>
+    <!-- Label for area where tiles can be added to the qs panel -->
+    <string name="drag_or_tap_to_add_tiles">Hold &amp; drag or tap to add tiles</string>
+    <!-- Label for header of customize QS -->
+    <string name="drag_or_tap_to_rearrange_tiles">Hold &amp; drag to rearrange or tap to remove</string>
+    <!-- Location Tile -->
+    <string name="accessibility_quick_settings_location_battery_saving">Визначення місцезнаходження: режим економії енергії.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Визначення місцезнаходження: тільки датчики.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Визначення місцезнаходження: режим високої точності.</string>
+    <string name="quick_settings_location_battery_saving_label">Режим економії енергії</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Економія\nбатареї</string>
+    <string name="quick_settings_location_gps_only_label">Тільки GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Тільки GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Висока точність</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Висока\nточність</string>
+    <string name="quick_settings_location_detail_title">Локація</string>
+    <string name="quick_settings_location_detail_menu_title">Виберіть режим:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Висока точність</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Режим економії енергії</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Лише GPS</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Використовувати GPS, Wi‑Fi, Bluetooth і мобільні мережі, щоб визначати місцеположення</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Використовувати Wi‑Fi, Bluetooth і мобільні мережі, щоб визначати місцеположення</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Використовувати GPS для визначення місцезнаходження</string>
+    <!-- navbar editor -->
+    <string name="preview">Попередній перегляд</string>
+    <string name="keycode">Код клавіші</string>
+    <string name="no_home_title">Клавіша \"Додому\" не знайдена</string>
+    <string name="no_home_message">Клавіша \"Додому\" необхідна для керування пристроєм. Будь ласка, налаштуйте її перед збереженням.</string>
+    <string name="clipboard_description">За допомогою цієї кнопки можна копіювати дані в буфер обміну і отримувати їх з нього.</string>
+    <string name="keycode_description">За допомогою цієї кнопки можна додавати клавіші клавіатури на панель навігації. Якщо натиснути кнопку, вона імітує вибрану клавішу клавіатури. Потрібно вибрати клавішу та зображення для кнопки.</string>
+    <string name="start">Початок</string>
+    <string name="center">У центрі</string>
+    <string name="end">Кінець</string>
+    <string name="space">Роздільник</string>
+    <string name="menu_ime">Меню / Перемикання розкладки</string>
+    <string name="select_button">Виберіть, яку кнопку додати</string>
+    <string name="add_button">Додати кнопку</string>
+    <string name="save">Зберегти</string>
+    <string name="reset">Скинути</string>
+    <string name="select_keycode">Виберіть клавішу клавіатури</string>
+    <string name="left">Ліворуч</string>
+    <string name="right">Праворуч</string>
+    <string name="navbar_editor_title">Редактор</string>
+    <string name="navbar_editor_summary">Налаштувати рядок навігації</string>
+    <!-- Smartspace -->
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
+    <string name="smartspace_now">Now</string>
+    <string name="smartspace_pill_text_format">%1$s: %2$s</string>
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Звук</string>
+    <string name="quick_settings_sound_ring">Дзвінок</string>
+    <string name="quick_settings_sound_vibrate">Вібрація</string>
+    <string name="quick_settings_sound_dnd">Не турбувати</string>
+    <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Знімок екрану</string>
+    <string name="quick_settings_full_screenshot_label">Full</string>
+    <string name="quick_settings_region_screenshot_label">Partial</string>
+    <!-- Language toggle tile -->
+    <string name="quick_settings_locale_label">Language</string>
+    <string name="quick_settings_locale_more_locales_toast">Please configure multiple languages to enable toggle functionality</string>
+    <!-- CPUInfo tile -->
+    <string name="quick_settings_cpuinfo_label">CPU Info</string>
+    <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Compass</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Initializing\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Compass off</string>
+    <string name="accessibility_quick_settings_compass_on">Compass on</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Compass turned off</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Compass turned on</string>
+    <string name="quick_settings_compass_N">N</string>
+    <string name="quick_settings_compass_NE">NE</string>
+    <string name="quick_settings_compass_E">E</string>
+    <string name="quick_settings_compass_SE">SE</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">SW</string>
+    <string name="quick_settings_compass_W">W</string>
+    <string name="quick_settings_compass_NW">NW</string>
+    <!-- DataSwitch Tile -->
+    <string name="qs_data_switch_label">Switch data card</string>
+    <string name="qs_data_switch_toast_0">Currently no SIM card is inserted</string>
+    <string name="qs_data_switch_toast_1">Currently only one SIM card is inserted</string>
+    <string name="qs_data_switch_changed_1">Switch data card to SIM 1.</string>
+    <string name="qs_data_switch_changed_2">Switch data card to SIM 2.</string>
+    <!-- 4G LTE switch -->
+    <string name="show_fourg_title">Показувати 4G, замість LTE</string>
+    <string name="show_fourg_summary">Replaces LTE statusbar indicators with 4G</string>
+    <string name="tuner_keyguard_show_lock_icon_title">Show lock status</string>
+    <string name="tuner_keyguard_show_lock_icon_summary">Show current lock status icon on top</string>
+    <!-- VoLTE switch -->
+    <string name="volte_switch_summary">Display VoLTE icon</string>
+</resources>

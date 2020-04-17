@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015-2019 AOSiP
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Zaawansowany</string>
+    <string name="global_action_restart_recovery">Tryb recovery</string>
+    <string name="global_action_restart_bootloader">Bootloader</string>
+    <string name="global_action_restart_ui">Interfejs</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
+    <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Kofeina</string>
+    <string name="accessibility_quick_settings_caffeine_off">Kofeina wył</string>
+    <string name="accessibility_quick_settings_caffeine_on">Kofeina wł</string>
+    <!-- ADB over network tile -->
+    <string name="quick_settings_network_adb_enabled_label">Włączone</string>
+    <string name="quick_settings_network_adb_disabled_label">Wyłączone</string>
+    <string name="quick_settings_network_adb_label">ADB przez sieć</string>
+    <string name="quick_settings_network_adb_toast">Debugowanie USB jest wyłączone</string>
+    <!-- Sound Search tile -->
+    <string name="quick_settings_sound_search">Wyszukiwanie dźwięku</string>
+    <string name="quick_settings_sound_search_no_app">Przepraszamy, ale to nie zadziała, jeśli nie masz aplikacji do wyszukiwania głosem.</string>
+    <string name="statusbar_items_title">Ikona paska stanu</string>
+    <string name="lockscreen_default">Domyślne</string>
+    <string name="lockscreen_hidden">Brak</string>
+    <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Przesuń palcem od ikony aby uruchomić</string>
+    <!-- Name of the nfc status bar icon. -->
+    <string name="status_bar_nfc">NFC</string>
+    <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
+    <string name="accessibility_status_bar_nfc">Nfc</string>
+    <string name="status_bar_data_saver">Oszczędzanie danych</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_roaming">Roaming</string>
+    <!-- Navigation bar dpad -->
+    <string name="accessibility_dpad_left">Kursor lewy</string>
+    <string name="accessibility_dpad_right">Kursor prawy</string>
+    <!-- Immersive tile -->
+    <string name="quick_settings_immersive_tile">Rozszerzony Pulpit</string>
+    <string name="quick_settings_immersive_tile_statusbar">Schowaj pasek statusu</string>
+    <string name="quick_settings_immersive_tile_navbar">Schowaj pasek nawigacyjny</string>
+    <string name="quick_settings_immersive_tile_full">Tryb pełnoekranowy</string>
+    <!-- Mono/Stereo tile -->
+    <string name="quick_settings_monotoggle_tile">Tryb Audio</string>
+    <string name="quick_settings_monotoggle_tile_mono">Dźwięk mono</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Dźwięk stereo</string>
+    <!-- Heads Up QS Tile -->
+    <string name="quick_settings_heads_up_label">Wyskakujące powiadomienia</string>
+    <string name="accessibility_quick_settings_heads_up_off">Wyskakujące powiadomienia wył.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Wyskakujące powiadomienia wł.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Wyskakujące powiadomienia wyłączone.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Wyskakujące powiadomienia włączone.</string>
+    <!-- Sync QS Tile -->
+    <string name="quick_settings_sync_label">Synchronizacja</string>
+    <string name="accessibility_quick_settings_sync_off">Synchronizacja wyłączona</string>
+    <string name="accessibility_quick_settings_sync_on">Synchronizacja włączona</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronizacja została wyłączona</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronizacja została włączona</string>
+    <!-- Long swipe gesture actions -->
+    <string name="app_picker_dialog_title">Wybierz aplikację</string>
+    <string name="recents_app_killed">Aplikacja została zamknięta</string>
+    <string name="nope_cant_kill">Ekran główny nie może zostać zamknięty</string>
+    <!-- Screenshot toast -->
+    <string name="delete_screenshot_toast">Zrzut ekranu usunięty</string>
+    <!-- Screen recorder -->
+    <string name="screenrecord_dialog_title">Rozpocząć nagrywanie?</string>
+    <string name="screenrecord_dialog_summary">Podczas nagrywania, system android może przechwytywać wrażliwe informacje, które są widoczne na ekranie lub odtwarzane na twoim urządzeniu. Zawiera również hasła, informacje o płatnościach, zdjęciach, wiadomościach i audio.</string>
+    <string name="screenrecord_dialog_start">Start</string>
+    <string name="screenrecord_dialog_cancel">Anuluj</string>
+    <string name="screenrecord_audio_title">Nagrywanie dźwięku</string>
+    <string name="screenrecord_audio_summary">Rejestruj dźwięk podczas nagrywania</string>
+    <string name="screenrecord_taps_title">Pokaż dotknięcia na ekranie</string>
+    <string name="screenrecord_taps_summary">Pokaż dotknięcia podczas nagrywania</string>
+    <string name="screenrecord_stopdot_title">Pokaż kropkę do zatrzymania</string>
+    <string name="screenrecord_stopdot_summary">Pokaż czerwoną kropkę, aby zatrzymać nagrywanie pojedynczym dotknięciem. Przytrzymaj, aby przesunąć na przeciwną stronę.</string>
+    <string name="screenrecord_low_quality_title">Niska jakość</string>
+    <string name="screenrecord_low_quality_summary">Nagrywaj w niższej jakości aby zaoszczędzić miejsce na twoim urządzeniu </string>
+    <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
+    <string name="global_action_screenshot_cust">Zrzut ekranu</string>
+    <string name="global_action_screenrecord">Nagrywanie ekranu</string>
+    <!-- QS Config -->
+    <string name="qs_menu_item_columns">Kolumny</string>
+    <string name="qs_menu_item_columns_landscape">Kolumny (poziomo)</string>
+    <string name="qs_menu_item_columns_three">3</string>
+    <string name="qs_menu_item_columns_four">4</string>
+    <string name="qs_menu_item_columns_five">5</string>
+    <string name="qs_menu_item_columns_six">6</string>
+    <string name="qs_menu_item_columns_seven">7</string>
+    <string name="qs_menu_item_columns_eight">8</string>
+    <string name="qs_menu_item_columns_nine">9</string>
+    <string name="qs_menu_item_reset">Przywróć domyślne</string>
+    <string name="qs_menu_item_titles">Pokaż etykiety</string>
+    <!-- Label for area where tiles can be added to the qs panel -->
+    <string name="drag_or_tap_to_add_tiles">Przytrzymaj &amp; przesuń lub dotknij aby dodać kafelki</string>
+    <!-- Label for header of customize QS -->
+    <string name="drag_or_tap_to_rearrange_tiles">Przytrzymaj &amp; przesuń aby przestawić lub dotknij any usunąć</string>
+    <!-- Location Tile -->
+    <string name="accessibility_quick_settings_location_battery_saving">Usługa lokalizacji: tryb oszczędzania baterii.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Usługa lokalizacji: tylko czujniki.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Usługa lokalizacji: wysoka dokładność.</string>
+    <string name="quick_settings_location_battery_saving_label">Oszczędzanie baterii</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Oszczędzanie\nbaterii</string>
+    <string name="quick_settings_location_gps_only_label">Tylko GPS</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Tylko GPS</string>
+    <string name="quick_settings_location_high_accuracy_label">Wysoka dokładność</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Wysoka\ndokładność</string>
+    <string name="quick_settings_location_detail_title">Lokalizacja</string>
+    <string name="quick_settings_location_detail_menu_title">Wybierz tryb:</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Wysoka dokładność</string>
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Oszczędzanie baterii</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Tylko urządzenie</string>
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Używaj GPS, Wi\u2011Fi, Bluetooth oraz sieci komórkowej, aby ustalić lokalizację </string>
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Używaj GPS, Wi\u2011Fi, Bluetooth oraz sieci komórkowej, aby ustalić lokalizację</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Ustalaj lokalizację przez GPS</string>
+    <!-- navbar editor -->
+    <string name="preview">Podgląd</string>
+    <string name="keycode">Klawisz</string>
+    <string name="no_home_title">Nie znaleziono przycisku ekranu głównego</string>
+    <string name="no_home_message">Przycisk ekranu głównego jest potrzebny aby być w stanie nawigować tym urządzeniem. Proszę dodać przycisk ekranu głównego przed zapisem.</string>
+    <string name="clipboard_description">Schowek umożliwia przeciągnięcie elementów bezpośrednio do schowka. Elementy tam umieszczone mogą być też przeciągnięte poza schowek, gdy jest on widoczny.</string>
+    <string name="keycode_description">Na pasku nawigacji możesz umieszczać przyciski, które po naciśnięciu emulują funkcje klawiszy klawiatury. Najpierw musisz wybrać, jaki klawisz ma być przypisany do danego przycisku, a następnie wybrać dla niego grafikę.</string>
+    <string name="start">Start</string>
+    <string name="center">Środek</string>
+    <string name="end">Koniec</string>
+    <string name="space">Spacja</string>
+    <string name="menu_ime">Menu / Przełącznik klawiatury</string>
+    <string name="select_button">Wybierz przycisk do dodania</string>
+    <string name="add_button">Dodaj przycisk</string>
+    <string name="save">Zapisz</string>
+    <string name="reset">Resetuj</string>
+    <string name="select_keycode">Wybierz przycisk klawiatury</string>
+    <string name="left">Lewo</string>
+    <string name="right">Prawo</string>
+    <string name="navbar_editor_title">Edytor</string>
+    <string name="navbar_editor_summary">Skonfiguruj pasek nawigacji</string>
+    <!-- Smartspace -->
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
+    <string name="smartspace_now">Teraz</string>
+    <string name="smartspace_pill_text_format">%1$s: %2$s</string>
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Dźwięk</string>
+    <string name="quick_settings_sound_ring">Dzwonek</string>
+    <string name="quick_settings_sound_vibrate">Wibracje</string>
+    <string name="quick_settings_sound_dnd">Nie przeszkadzać</string>
+    <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Zrzut ekranu</string>
+    <string name="quick_settings_full_screenshot_label">Pełny</string>
+    <string name="quick_settings_region_screenshot_label">Częściowy</string>
+    <!-- Language toggle tile -->
+    <string name="quick_settings_locale_label">Język</string>
+    <string name="quick_settings_locale_more_locales_toast">Proszę skonfigurować wiele języków, aby włączyć funkcję przełączania</string>
+    <!-- CPUInfo tile -->
+    <string name="quick_settings_cpuinfo_label">Informacje o CPU</string>
+    <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Kompas</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Inicjowanie\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Kompas wył</string>
+    <string name="accessibility_quick_settings_compass_on">Kompas wł</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Kompas wyłączony</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompas włączony</string>
+    <string name="quick_settings_compass_N">Płn.</string>
+    <string name="quick_settings_compass_NE">Płn-Wsch.</string>
+    <string name="quick_settings_compass_E">Wsch.</string>
+    <string name="quick_settings_compass_SE">Pd.-Wsch.</string>
+    <string name="quick_settings_compass_S">Pd.</string>
+    <string name="quick_settings_compass_SW">Pd.-Zach.</string>
+    <string name="quick_settings_compass_W">Zach.</string>
+    <string name="quick_settings_compass_NW">Pn.-Zach.</string>
+    <!-- DataSwitch Tile -->
+    <string name="qs_data_switch_label">Przełącz kartę SIM</string>
+    <string name="qs_data_switch_toast_0">Obecnie brak włożonej karty SIM</string>
+    <string name="qs_data_switch_toast_1">Obecnie tylko jedna karta SIM została włożona</string>
+    <string name="qs_data_switch_changed_1">Zmień kartę danych na SIM 1</string>
+    <string name="qs_data_switch_changed_2">Zmień kartę danych na SIM 2</string>
+    <!-- 4G LTE switch -->
+    <string name="show_fourg_title">Pokaż 4G zamiast LTE</string>
+    <string name="show_fourg_summary">Zamienia wskażnik LTE na 4G</string>
+    <string name="tuner_keyguard_show_lock_icon_title">Pokaż ikonę blokady</string>
+    <string name="tuner_keyguard_show_lock_icon_summary">Pokaż obecny stan blokady ekranu na górze ekranu</string>
+    <!-- VoLTE switch -->
+    <string name="volte_switch_summary">Wyświetl ikonę VoLTE</string>
+</resources>
