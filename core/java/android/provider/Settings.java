@@ -5546,6 +5546,14 @@ public final class Settings {
         /** @hide */
         public static final Validator QS_BLUR_ENABLED_VALIDATOR = BOOLEAN_VALIDATOR;
 
+      /**
+         * Controls whether to show R style notification headers
+         * @hide
+         */
+        public static final String NOTIFICATION_HEADERS = "notification_headers";
+
+        private static final Validator NOTIFICATION_HEADERS_VALIDATOR = BOOLEAN_VALIDATOR;
+
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
@@ -5633,7 +5641,8 @@ public final class Settings {
             LOCKSCREEN_MEDIA_METADATA,
             NAVIGATION_BAR_ARROW_KEYS,
             NAVIGATION_HANDLE_WIDTH,
-            NOTIFICATION_LIGHT_PULSE,
+	    NOTIFICATION_HEADERS,
+ 	    NOTIFICATION_LIGHT_PULSE,
             NOTIFICATION_PULSE,
             NOTIFICATION_PULSE_ACCENT,
             NOTIFICATION_PULSE_COLOR,
@@ -5969,6 +5978,7 @@ public final class Settings {
             VALIDATORS.put(NAVIGATION_BAR_ARROW_KEYS,
                     NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
             VALIDATORS.put(NAVIGATION_HANDLE_WIDTH, NAVIGATION_HANDLE_WIDTH_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_HEADERS, NOTIFICATION_HEADERS_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_PULSE, NOTIFICATION_PULSE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_PULSE_ACCENT, NOTIFICATION_PULSE_ACCENT_VALIDATOR);
