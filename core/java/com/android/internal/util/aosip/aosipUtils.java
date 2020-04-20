@@ -443,6 +443,18 @@ public class aosipUtils {
         }
     }
 
+    // Check if gesture navbar is enabled
+    public static boolean isGestureNavbar() {
+        return aosipUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural")
+                || aosipUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_extra_wide_back")
+                || aosipUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_extra_wide_back_nopill")
+                || aosipUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_narrow_back")
+                || aosipUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_narrow_back_nopill")
+                || aosipUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_nopill")
+                || aosipUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_wide_back")
+                || aosipUtils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_wide_back_nopill");
+    }
+
     public static boolean isOlderPixelDevice() {
         String deviceName = android.os.Build.DEVICE;
             return ("crosshatch".equals(deviceName) || "blueline".equals(deviceName)
