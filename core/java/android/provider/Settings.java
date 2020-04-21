@@ -4840,8 +4840,8 @@ public final class Settings {
          */
         public static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
 
-        /** Whether to skip music track with volume rocker 
-        /**
+        /** Whether to skip music track with volume rocker
+         *
          * @hide
          */
         public static final String VOLUME_BUTTON_MUSIC_CONTROL = "volume_button_music_control";
@@ -4942,7 +4942,6 @@ public final class Settings {
          * @hide
          */
          public static final String NETWORK_TRAFFIC_FONT_SIZE = "network_traffic_font_size";
-
 
         /**
          * Whether to show the battery info on the lockscreen while charging
@@ -5097,6 +5096,14 @@ public final class Settings {
          * @hide
          */
         public static final String QS_EDIT_TOGGLE = "qs_edit_toggle";
+
+        /**
+         * Whether to show Fahrenheit or Celsius with battery info on the
+         * lockscreen while charging
+         *
+         * @hide
+         */
+        public static final String LOCKSCREEN_BATTERY_INFO_TEMP_UNIT = "lockscreen_charge_temp_unit";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
