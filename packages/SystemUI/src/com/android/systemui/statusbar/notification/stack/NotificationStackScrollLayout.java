@@ -677,9 +677,8 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
                 updateFooter();
             } else if (key.equals(
                     Settings.Secure.LOCK_SCREEN_TRANSPARENT_NOTIFICATIONS_ENABLED)) {
-                boolean mShouldBeTransparent = "1".equals(newValue);
-                mShouldDrawNotificationBackground = !mShouldBeTransparent;
-                setWillNotDraw(!mShouldDrawNotificationBackground);
+                mShouldDrawNotificationBackground = !"1".equals(newValue);
+                setWillNotDraw(!mShouldDrawNotificationBackground && onKeyguard());
             }
         }, HIGH_PRIORITY, Settings.Secure.NOTIFICATION_DISMISS_RTL,
                 Settings.Secure.LOCK_SCREEN_TRANSPARENT_NOTIFICATIONS_ENABLED);
@@ -720,9 +719,6 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
             requestChildrenUpdate();
             return null;
         });
-
-        boolean willDraw = mShouldDrawNotificationBackground || DEBUG;
-        setWillNotDraw(!willDraw);
     }
 
     private void initializeForegroundServiceSection(
@@ -898,7 +894,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
 
     @ShadeViewRefactor(RefactorComponent.DECORATOR)
     protected void onDraw(Canvas canvas) {
-        if (mShouldDrawNotificationBackground
+        if ((mShouldDrawNotificationBackground || !onKeyguard())
                 && (mSections[0].getCurrentBounds().top
                 < mSections[mSections.length - 1].getCurrentBounds().bottom
                 || mAmbientState.isDozing())) {
@@ -1072,7 +1068,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
     @ShadeViewRefactor(RefactorComponent.SHADE_VIEW)
     private void updateBackgroundDimming() {
         // No need to update the background color if it's not being drawn.
-        if (!mShouldDrawNotificationBackground) {
+        if (!mShouldDrawNotificationBackground && onKeyguard()) {
             return;
         }
 
@@ -2626,7 +2622,7 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
     @ShadeViewRefactor(RefactorComponent.SHADE_VIEW)
     private void updateBackground() {
         // No need to update the background color if it's not being drawn.
-        if (!mShouldDrawNotificationBackground) {
+        if (!mShouldDrawNotificationBackground && onKeyguard()) {
             return;
         }
 
@@ -5561,6 +5557,8 @@ public class NotificationStackScrollLayout extends ViewGroup implements ScrollAd
 
         mEntryManager.updateNotifications("StatusBar state changed");
         updateVisibility();
+
+        setWillNotDraw(!mShouldDrawNotificationBackground && onKeyguard);
     }
 
     @ShadeViewRefactor(RefactorComponent.SHADE_VIEW)
