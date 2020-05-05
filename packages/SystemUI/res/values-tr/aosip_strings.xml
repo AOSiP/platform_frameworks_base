@@ -166,32 +166,33 @@
     <!-- CPUInfo tile -->
     <string name="quick_settings_cpuinfo_label">CPU Info</string>
     <!-- Compass QS Tile -->
-    <string name="quick_settings_compass_label">Compass</string>
-    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
-    <string name="quick_settings_compass_init">Initializing\u2026</string>
-    <string name="accessibility_quick_settings_compass_off">Compass off</string>
-    <string name="accessibility_quick_settings_compass_on">Compass on</string>
-    <string name="accessibility_quick_settings_compass_changed_off">Compass turned off</string>
-    <string name="accessibility_quick_settings_compass_changed_on">Compass turned on</string>
-    <string name="quick_settings_compass_N">N</string>
-    <string name="quick_settings_compass_NE">NE</string>
-    <string name="quick_settings_compass_E">E</string>
-    <string name="quick_settings_compass_SE">SE</string>
-    <string name="quick_settings_compass_S">S</string>
-    <string name="quick_settings_compass_SW">SW</string>
-    <string name="quick_settings_compass_W">W</string>
-    <string name="quick_settings_compass_NW">NW</string>
+    <string name="quick_settings_compass_label">Pusula</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0<xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Başlatılıyor\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Pusula kapalı</string>
+    <string name="accessibility_quick_settings_compass_on">Pusula açık</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Pusula kapatıldı</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Pusula açıldı</string>
+    <string name="quick_settings_compass_N">K</string>
+    <string name="quick_settings_compass_NE">KD</string>
+    <string name="quick_settings_compass_E">D</string>
+    <string name="quick_settings_compass_SE">GD</string>
+    <string name="quick_settings_compass_S">G</string>
+    <string name="quick_settings_compass_SW">GB</string>
+    <string name="quick_settings_compass_W">B</string>
+    <string name="quick_settings_compass_NW">KB</string>
     <!-- DataSwitch Tile -->
-    <string name="qs_data_switch_label">Switch data card</string>
-    <string name="qs_data_switch_toast_0">Currently no SIM card is inserted</string>
-    <string name="qs_data_switch_toast_1">Currently only one SIM card is inserted</string>
-    <string name="qs_data_switch_changed_1">Switch data card to SIM 1.</string>
-    <string name="qs_data_switch_changed_2">Switch data card to SIM 2.</string>
+    <string name="qs_data_switch_label">Mobil veri SIM\'ini değiştir</string>
+    <string name="qs_data_switch_toast_0">Şu anda SIM kart takılı değil</string>
+    <string name="qs_data_switch_toast_1">Şu anda yalnızca bir SIM kart takılı</string>
+    <string name="qs_data_switch_changed_1">SIM 1 veri kartına geç.</string>
+    <string name="qs_data_switch_changed_2">SIM 2 veri kartına geç.</string>
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">LTE yerine 4G göster</string>
-    <string name="show_fourg_summary">Replaces LTE statusbar indicators with 4G</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Show lock status</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Show current lock status icon on top</string>
+    <string name="show_fourg_summary">Durum çubuğundaki LTE göstergesini 4G ile değiştirir</string>
+    <string name="tuner_keyguard_show_lock_icon_title">Kilit durumunu göster</string>
+    <string name="tuner_keyguard_show_lock_icon_summary">Geçerli kilit durumu simgesini kilit ekranında göster</string>
+    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
     <!-- VoLTE switch -->
-    <string name="volte_switch_summary">Display VoLTE icon</string>
+    <string name="volte_switch_summary">VoLTE simgesini görüntüle</string>
 </resources>

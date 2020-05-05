@@ -192,6 +192,7 @@
     <string name="show_fourg_summary">显示 4G 网络指示图标而非 LTE 图标</string>
     <string name="tuner_keyguard_show_lock_icon_title">显示锁定状态</string>
     <string name="tuner_keyguard_show_lock_icon_summary">在上方显示当前的锁定状态</string>
+    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">显示 VoLTE 图标</string>
 </resources>

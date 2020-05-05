@@ -178,20 +178,21 @@
     <string name="quick_settings_compass_E">E</string>
     <string name="quick_settings_compass_SE">SE</string>
     <string name="quick_settings_compass_S">S</string>
-    <string name="quick_settings_compass_SW">SW</string>
-    <string name="quick_settings_compass_W">W</string>
-    <string name="quick_settings_compass_NW">NW</string>
+    <string name="quick_settings_compass_SW">SO</string>
+    <string name="quick_settings_compass_W">O</string>
+    <string name="quick_settings_compass_NW">NO</string>
     <!-- DataSwitch Tile -->
-    <string name="qs_data_switch_label">Switch data card</string>
-    <string name="qs_data_switch_toast_0">Currently no SIM card is inserted</string>
-    <string name="qs_data_switch_toast_1">Currently only one SIM card is inserted</string>
-    <string name="qs_data_switch_changed_1">Switch data card to SIM 1.</string>
-    <string name="qs_data_switch_changed_2">Switch data card to SIM 2.</string>
+    <string name="qs_data_switch_label">Changer les données de carte SIM</string>
+    <string name="qs_data_switch_toast_0">Aucune carte SIM n\'est présente</string>
+    <string name="qs_data_switch_toast_1">Une seule carte SIM est présente</string>
+    <string name="qs_data_switch_changed_1">Basculer les données sur la carte SIM 1</string>
+    <string name="qs_data_switch_changed_2">Basculer les données sur la carte SIM 2</string>
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Afficher 4G au lieu de LTE</string>
-    <string name="show_fourg_summary">Replaces LTE statusbar indicators with 4G</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Show lock status</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Show current lock status icon on top</string>
+    <string name="show_fourg_summary">Remplace l\'indicateur LTE de la barre d\'état par 4G</string>
+    <string name="tuner_keyguard_show_lock_icon_title">Afficher l\'état du verrou</string>
+    <string name="tuner_keyguard_show_lock_icon_summary">Afficher l\'icône d\'état de verrouillage </string>
+    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
     <!-- VoLTE switch -->
-    <string name="volte_switch_summary">Display VoLTE icon</string>
+    <string name="volte_switch_summary">Afficher l\'icône VoLTE</string>
 </resources>
