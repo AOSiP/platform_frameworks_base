@@ -192,6 +192,7 @@
     <string name="show_fourg_summary">電波アイコンを LTE から 4G に置き換える</string>
     <string name="tuner_keyguard_show_lock_icon_title">ロック状況を表示</string>
     <string name="tuner_keyguard_show_lock_icon_summary">現在のロックステータスアイコンを上部に表示する</string>
+    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">VoLTE アイコンを表示する</string>
 </resources>

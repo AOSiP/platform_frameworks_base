@@ -192,6 +192,7 @@
     <string name="show_fourg_summary">Sostituisci l\'indicatore LTE con quello 4G nella barra di stato</string>
     <string name="tuner_keyguard_show_lock_icon_title">Mostra stato di blocco</string>
     <string name="tuner_keyguard_show_lock_icon_summary">Mostra l\'icona dello stato di blocco in alto</string>
+    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">Mostra icona VoLTE</string>
 </resources>
