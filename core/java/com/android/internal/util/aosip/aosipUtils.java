@@ -442,4 +442,16 @@ public class aosipUtils {
             return hasNavigationBar == 1;
         }
     }
+
+    public static boolean isOlderPixelDevice() {
+        String deviceName = android.os.Build.DEVICE;
+            return ("crosshatch".equals(deviceName) || "blueline".equals(deviceName)
+                    || "taimen".equals(deviceName) || "walleye".equals(deviceName)
+                    || "bonito".equals(deviceName) || "sargo".equals(deviceName));
+    }
+
+    public static boolean isNewerPixelDevice() {
+        String deviceName = android.os.Build.DEVICE;
+            return ("coral".equals(deviceName) || "flame".equals(deviceName));
+    }
 }
