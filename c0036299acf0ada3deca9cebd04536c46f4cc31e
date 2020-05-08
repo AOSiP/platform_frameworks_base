@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f20d72e8_881a4317",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/phone/EdgeBackGestureHandler.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-05-08T04:22:39Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "c0036299acf0ada3deca9cebd04536c46f4cc31e",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
