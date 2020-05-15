@@ -95,22 +95,10 @@ public class KeyguardStateMonitor extends IKeyguardStateCallback.Stub {
         mIsShowing = showing;
 
         mCallback.onShowingChanged();
-        int retry = 2;
-        while (retry > 0) {
-            try {
-                mKeystoreService.onKeyguardVisibilityChanged(showing, mCurrentUserId);
-                break;
-            } catch (RemoteException e) {
-                if (retry == 2) {
-                    Slog.w(TAG, "Error informing keystore of screen lock. Keystore may have died"
-                            + " -> refreshing service token.");
-                    mKeystoreService = IKeystoreService.Stub.asInterface(ServiceManager
-                            .getService("android.security.keystore"));
-                } else {
-                    Slog.e(TAG, "Error informing keystore of screen lock", e);
-                }
-                --retry;
-            }
+        try {
+            mKeystoreService.onKeyguardVisibilityChanged(showing, mCurrentUserId);
+        } catch (RemoteException e) {
+            Slog.e(TAG, "Error informing keystore of screen lock", e);
         }
     }
 
