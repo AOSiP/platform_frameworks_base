@@ -960,16 +960,15 @@ public class AndroidKeyStoreSpi extends KeyStoreSpi {
         final String[] certAliases = mKeyStore.list(Credentials.USER_CERTIFICATE, mUid);
         if (certAliases != null) {
             for (String alias : certAliases) {
-                final byte[] certBytes = mKeyStore.get(alias, mUid);
+                final byte[] certBytes = mKeyStore.get(Credentials.USER_CERTIFICATE + alias, mUid);
                 if (certBytes == null) {
                     continue;
                 }
 
-                String trimmed_alias = alias.substring(Credentials.USER_CERTIFICATE.length());
-                nonCaEntries.add(trimmed_alias);
+                nonCaEntries.add(alias);
 
                 if (Arrays.equals(certBytes, targetCertBytes)) {
-                    return trimmed_alias;
+                    return alias;
                 }
             }
         }
@@ -981,18 +980,17 @@ public class AndroidKeyStoreSpi extends KeyStoreSpi {
         final String[] caAliases = mKeyStore.list(Credentials.CA_CERTIFICATE, mUid);
         if (certAliases != null) {
             for (String alias : caAliases) {
-                String trimmed_alias = alias.substring(Credentials.CA_CERTIFICATE.length());
-                if (nonCaEntries.contains(trimmed_alias)) {
+                if (nonCaEntries.contains(alias)) {
                     continue;
                 }
 
-                final byte[] certBytes = mKeyStore.get(alias, mUid);
+                final byte[] certBytes = mKeyStore.get(Credentials.CA_CERTIFICATE + alias, mUid);
                 if (certBytes == null) {
                     continue;
                 }
 
                 if (Arrays.equals(certBytes, targetCertBytes)) {
-                    return trimmed_alias;
+                    return alias;
                 }
             }
         }
