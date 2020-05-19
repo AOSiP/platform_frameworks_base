@@ -192,7 +192,7 @@
     <string name="show_fourg_summary">Заменить индикатор LTE на 4G в строке состояния</string>
     <string name="tuner_keyguard_show_lock_icon_title">Показать статус блокировки</string>
     <string name="tuner_keyguard_show_lock_icon_summary">Показать значок блокировки сверху</string>
-    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
+    <string name="tuner_qs_long_press_action">Не показывать панели при длительном нажатии</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">Показывать значок VoLTE</string>
 </resources>
