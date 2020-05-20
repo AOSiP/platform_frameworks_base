@@ -543,9 +543,7 @@ public class KeyguardIndicationController implements StateListener,
                     : R.string.keyguard_plugged_in_wireless;
         }
 
-        String percentage = NumberFormat.getPercentInstance()
-                .format(mBatteryLevel / 100f);
-        String batteryInfo = percentage + " - ";
+        String batteryInfo = "";
         boolean showbatteryInfo = Settings.System.getIntForUser(mContext.getContentResolver(),
             Settings.System.LOCKSCREEN_BATTERY_INFO, 0, UserHandle.USER_CURRENT) == 1;
 
@@ -553,7 +551,7 @@ public class KeyguardIndicationController implements StateListener,
             if (mChargingCurrent > 0) {
                 batteryInfo = batteryInfo + (mChargingCurrent < 5 ?
                           (mChargingCurrent * 1000) : (mChargingCurrent < 4000 ?
-                          mChargingCurrent : (mChargingCurrent / 1000))) + "mA" ;
+                          mChargingCurrent : (mChargingCurrent / 1000))) + "mA";
             }
             if (mChargingVoltage > 0) {
                 batteryInfo = (batteryInfo == "" ? "" : batteryInfo + " · ") +
@@ -568,6 +566,8 @@ public class KeyguardIndicationController implements StateListener,
             }
         }
 
+        String percentage = NumberFormat.getPercentInstance()
+                .format(mBatteryLevel / 100f);
         if (hasChargingTime) {
             // We now have battery percentage in these strings and it's expected that all
             // locales will also have it in the future. For now, we still have to support the old
@@ -575,18 +575,22 @@ public class KeyguardIndicationController implements StateListener,
             String chargingTimeFormatted = Formatter.formatShortElapsedTimeRoundingUpToMinutes(
                     mContext, chargingTimeRemaining);
             try {
-                return mContext.getResources().getString(chargingId, chargingTimeFormatted,
-                        batteryInfo);
+                String chargingText = mContext.getResources().getString(chargingId, chargingTimeFormatted,
+                        percentage);
+                return chargingText + batteryInfo;
 
             } catch (IllegalFormatConversionException e) {
-                return mContext.getResources().getString(chargingId, chargingTimeFormatted);
+                String chargingText =  mContext.getResources().getString(chargingId, chargingTimeFormatted);
+                return chargingText + batteryInfo;
             }
         } else {
             // Same as above
             try {
-                return mContext.getResources().getString(chargingId, batteryInfo);
+                String chargingText =  mContext.getResources().getString(chargingId, percentage);
+                return chargingText + batteryInfo;
             } catch (IllegalFormatConversionException e) {
-                return mContext.getResources().getString(chargingId);
+                String chargingText =  mContext.getResources().getString(chargingId);
+                return chargingText + batteryInfo;
             }
         }
     }
