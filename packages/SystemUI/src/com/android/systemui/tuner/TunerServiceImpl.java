@@ -40,6 +40,7 @@ import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.ArraySet;
 
+import com.android.internal.util.ArrayUtils;
 import com.android.systemui.DemoMode;
 import com.android.systemui.qs.QSTileHost;
 import com.android.systemui.R;
@@ -66,6 +67,13 @@ import javax.inject.Singleton;
 public class TunerServiceImpl extends TunerService {
 
     private static final String TUNER_VERSION = "sysui_tuner_version";
+
+    // Things that use the tunable infrastructure but are now real user settings and
+    // shouldn't be reset with tuner settings.
+    private static final String[] RESET_BLACKLIST = new String[] {
+            QSTileHost.TILES_SETTING,
+            Settings.Secure.DOZE_ALWAYS_ON
+    };
 
     private static final int CURRENT_TUNER_VERSION = 5;
 
@@ -266,6 +274,9 @@ public class TunerServiceImpl extends TunerService {
 
     private void reloadAll() {
         for (String key : mTunableLookup.keySet()) {
+            if (ArrayUtils.contains(RESET_BLACKLIST, key)) {
+                continue;
+            }
             String value = getValue(key);
             for (Tunable tunable : mTunableLookup.get(key)) {
                 if (tunable != null) {
