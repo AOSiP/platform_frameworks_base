@@ -77,6 +77,25 @@ public class ThemeOverlayController extends SystemUI {
         mBgHandler = bgHandler;
     }
 
+    static final String OVERLAY_BLACK_THEME =
+            "com.android.theme.color.primary.black";
+
+    private OverlayManager mOverlayManager;
+
+    private void applyBlackTheme(boolean state) {
+        UserHandle userId = UserHandle.of(ActivityManager.getCurrentUser());
+        try {
+            mOverlayManager.setEnabled(OVERLAY_BLACK_THEME, state, userId);
+            if (DEBUG) {
+                Log.d(TAG, "applyBlackTheme: overlayPackage="
+                        + OVERLAY_BLACK_THEME + " userId=" + userId);
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to " + (state ? "enable" : "disable")
+                    + " overlay " + OVERLAY_BLACK_THEME + " for user " + userId);
+        }
+    }
+
     @Override
     public void start() {
         if (DEBUG) Log.d(TAG, "Start");
@@ -111,6 +130,20 @@ public class ThemeOverlayController extends SystemUI {
                     }
                 },
                 UserHandle.USER_ALL);
+        mContext.getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(Settings.System.ENABLE_DARKER_THEME),
+                false,
+                new ContentObserver(mBgHandler) {
+
+                    @Override
+                    public void onChange(boolean selfChange, Collection<Uri> uris, int flags,
+                            int userId) {
+                        if (DEBUG) Log.d(TAG, "Overlay changed for user: " + userId);
+                        applyBlackTheme(Settings.System.getInt(mContext.getContentResolver(), "enable_darker_theme", 0) == 1);
+                    }
+                },
+                UserHandle.USER_ALL);
+        mOverlayManager = mContext.getSystemService(OverlayManager.class);
     }
 
     private void updateThemeOverlays() {
