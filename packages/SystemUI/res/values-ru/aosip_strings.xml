@@ -64,6 +64,9 @@
     <string name="accessibility_quick_settings_heads_up_on">Всплывающие уведомления включены.</string>
     <string name="accessibility_quick_settings_heads_up_changed_off">Всплывающие уведомления выключены.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Всплывающие уведомления включены.</string>
+    <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
     <!-- Sync QS Tile -->
     <string name="quick_settings_sync_label">Синхронизация</string>
     <string name="accessibility_quick_settings_sync_off">Синхронизация выключена</string>

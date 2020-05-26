@@ -64,6 +64,9 @@
     <string name="accessibility_quick_settings_heads_up_on">開啟浮動通知</string>
     <string name="accessibility_quick_settings_heads_up_changed_off">浮動通知已關閉</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">浮動通知已開啟</string>
+    <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
     <!-- Sync QS Tile -->
     <string name="quick_settings_sync_label">Sync</string>
     <string name="accessibility_quick_settings_sync_off">Sync off</string>

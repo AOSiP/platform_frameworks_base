@@ -64,6 +64,9 @@
     <string name="accessibility_quick_settings_heads_up_on">Bildirim pencereleri açık.</string>
     <string name="accessibility_quick_settings_heads_up_changed_off">Bildirim pencereleri kapatıldı.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Bildirim pencereleri açıldı.</string>
+    <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
     <!-- Sync QS Tile -->
     <string name="quick_settings_sync_label">Eşitleme</string>
     <string name="accessibility_quick_settings_sync_off">Eşitleme kapalı</string>

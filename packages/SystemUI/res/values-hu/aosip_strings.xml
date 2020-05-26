@@ -64,6 +64,9 @@
     <string name="accessibility_quick_settings_heads_up_on">Lebegő értesítések be.</string>
     <string name="accessibility_quick_settings_heads_up_changed_off">Lebegő értesítések kikapcsolva.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Lebegő értesítések bekapcsolva.</string>
+    <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
     <!-- Sync QS Tile -->
     <string name="quick_settings_sync_label">Szinkronizáció</string>
     <string name="accessibility_quick_settings_sync_off">Szinkronizálás ki</string>
@@ -105,9 +108,9 @@
     <string name="qs_menu_item_reset">Visszaállítás</string>
     <string name="qs_menu_item_titles">Feliratok megjelenítése</string>
     <!-- Label for area where tiles can be added to the qs panel -->
-    <string name="drag_or_tap_to_add_tiles">Hold &amp; drag or tap to add tiles</string>
+    <string name="drag_or_tap_to_add_tiles">Tartsa &amp; húzza vagy koppintson a csempék hozzáadásához</string>
     <!-- Label for header of customize QS -->
-    <string name="drag_or_tap_to_rearrange_tiles">Hold &amp; drag to rearrange or tap to remove</string>
+    <string name="drag_or_tap_to_rearrange_tiles">Tartsa &amp; húzza a csempék átrendezéséhez vagy eltávolításához</string>
     <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Helymeghatározás: energiatakarékos mód.</string>
     <string name="accessibility_quick_settings_location_gps_only">Helymeghatározás: csak GPS.</string>
@@ -190,9 +193,9 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">4G megjelenítése LTE helyett</string>
     <string name="show_fourg_summary">Lecseréli az LTE hálozatkijelző ikonját 4G-re</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Show lock status</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Show current lock status icon on top</string>
-    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
+    <string name="tuner_keyguard_show_lock_icon_title">Lezárás állapotának megjelenítése</string>
+    <string name="tuner_keyguard_show_lock_icon_summary">Jelenítse meg a zárolás aktuális állapotának ikonját a zárképernyő tetején</string>
+    <string name="tuner_qs_long_press_action">Nyomva tartásnál ne jelenjenek meg a panelek</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">Megjeleníti a VoLTE ikont</string>
 </resources>
