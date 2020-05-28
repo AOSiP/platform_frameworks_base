@@ -44,6 +44,9 @@
      <!-- Pocket Lock -->
      <bool name="config_pocketModeSupported">true</bool>
 
+     <!-- Defines custom OEM sensor for pocket detection. -->
+     <string name="config_pocketJudgeVendorSensorName"></string>
+
     <!-- The list of components which should be automatically disabled for a specific device.
          Note: this MUST not be used to randomly disable components, ask for approval first! -->
     <string-array name="config_deviceDisabledComponents" translatable="false">
