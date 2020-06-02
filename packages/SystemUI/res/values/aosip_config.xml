@@ -30,10 +30,6 @@
     <!-- Allow devices to use unordinary cutout overlays -->
     <bool name="config_customCutout">false</bool>
 
-    <!-- Whether the binned brightness sensor reports a value of 0 on proximity
-         near events -->
-    <bool name="doze_brightness_sensor_reports_proximity" translatable="false">true</bool>
-
     <!-- Max visible notification icons -->
     <integer name="config_maxVisibleNotificationIcons">@*android:integer/config_maxVisibleNotificationIcons</integer>
     <integer name="config_maxVisibleNotificationIconsWhenDark">@*android:integer/config_maxVisibleNotificationIconsWhenDark</integer>
