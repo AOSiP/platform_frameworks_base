@@ -65,8 +65,8 @@
     <string name="accessibility_quick_settings_heads_up_changed_off">Heads Up をオフにしました</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Heads Up を ON にしました</string>
     <!-- Heads up snooze toast -->
-    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - 通知の表示は1分間一時停止します</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - 通知の表示は<xliff:g id="number">%d</xliff:g>分間停止します</string>
     <!-- Sync QS Tile -->
     <string name="quick_settings_sync_label">同期</string>
     <string name="accessibility_quick_settings_sync_off">同期 OFF</string>

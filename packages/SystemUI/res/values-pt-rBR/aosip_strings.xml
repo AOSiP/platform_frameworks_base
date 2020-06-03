@@ -65,8 +65,8 @@
     <string name="accessibility_quick_settings_heads_up_changed_off">Notificações pop-up foram desativadas.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Notificações pop-up foram ativadas.</string>
     <!-- Heads up snooze toast -->
-    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s </xliff:g> • As notificações flutuantes foram silenciadas por 1 minuto.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> • As notificações estão silenciadas por <xliff:g id="number">%d</xliff:g> minutos.</string>
     <!-- Sync QS Tile -->
     <string name="quick_settings_sync_label">Sincronizar</string>
     <string name="accessibility_quick_settings_sync_off">Sincronização desativada</string>
