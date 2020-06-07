@@ -55,4 +55,7 @@
   <java-symbol type="bool" name="config_needCustomFODView" />
 
   <java-symbol type="bool" name="config_has_Soli" />
+
+  <!-- FOD icon dimming -->
+  <java-symbol type="bool" name="config_targetUsesInKernelDimming" />
 </resources>
