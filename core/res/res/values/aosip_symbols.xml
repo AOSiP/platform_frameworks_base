@@ -63,4 +63,7 @@
 
   <!-- Whether device has dash charging support -->
   <java-symbol type="bool" name="config_hasDashCharger" />
+
+  <!-- FOD icon dimming -->
+  <java-symbol type="bool" name="config_targetUsesInKernelDimming" />
 </resources>
