@@ -42,4 +42,7 @@
 
   <!-- In-display Fingerprint -->
   <java-symbol type="bool" name="config_needCustomFODView" />
+
+   <!-- FOD icon dimming -->
+   <java-symbol type="bool" name="config_targetUsesInKernelDimming" />
 </resources>
