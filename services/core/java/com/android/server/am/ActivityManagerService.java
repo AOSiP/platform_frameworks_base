@@ -231,6 +231,8 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Rect;
+import android.hardware.SensorManager;
+import android.hardware.SystemSensorManager;
 import android.hardware.display.DisplayManagerInternal;
 import android.location.LocationManager;
 import android.media.audiofx.AudioEffect;
@@ -1671,6 +1673,8 @@ public class ActivityManagerService extends IActivityManager.Stub
     private static String sTheRealBuildSerial = Build.UNKNOWN;
 
     private ParcelFileDescriptor[] mLifeMonitorFds;
+
+    private SystemSensorManager mSystemSensorManager;
 
     static final HostingRecord sNullHostingRecord = new HostingRecord(null);
 
@@ -7923,6 +7927,8 @@ public class ActivityManagerService extends IActivityManager.Stub
         RescueParty.onSettingsProviderPublished(mContext);
 
         //mUsageStatsService.monitorPackages();
+
+        mSystemSensorManager = new SystemSensorManager(mContext, mHandler.getLooper());
     }
 
     void startPersistentApps(int matchFlags) {
@@ -16200,6 +16206,9 @@ public class ActivityManagerService extends IActivityManager.Stub
                                         mServices.forceStopPackageLocked(ssp, userId);
                                         mAtmInternal.onPackageUninstalled(ssp);
                                         mBatteryStatsService.notePackageUninstalled(ssp);
+                                        if (mSystemSensorManager != null) {
+                                            mSystemSensorManager.notePackageUninstalled(ssp);
+                                        }
                                     }
                                 } else {
                                     if (killProcess) {
