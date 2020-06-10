@@ -5574,6 +5574,14 @@ public final class Settings {
         public static final String NAVIGATION_BAR_IME_SPACE = "navigation_bar_ime_space";
 
         /**
+         * Whether or not to hide the battery icon and % from QS header
+         * {@hide}
+	 * 0 - Near QS Signal Group
+	 * 1 - On Qs Header
+         */
+        public static final String QS_BATTERY_LOCATION = "qs_battery_location";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
