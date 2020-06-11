@@ -4965,6 +4965,12 @@ public final class Settings {
         private static final Validator STATUSBAR_PRIVACY_INDICATORS_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * Holds current enabled volume panel implementation
+         * @hide
+         */
+        public static final String SYSTEMUI_PLUGIN_VOLUME = "systemui_plugin_volume";
+
+        /**
          * Three Finger Gesture from Oppo
          * @hide
          */
@@ -5845,6 +5851,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUS_BAR_BRIGHTNESS_CONTROL);
             PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
             PRIVATE_SETTINGS.add(STATUSBAR_PRIVACY_INDICATORS);
+            PRIVATE_SETTINGS.add(SYSTEMUI_PLUGIN_VOLUME);
             PRIVATE_SETTINGS.add(THREE_FINGER_GESTURE);
             PRIVATE_SETTINGS.add(USE_OLD_MOBILETYPE);
             PRIVATE_SETTINGS.add(VIBRATE_ON_CALLWAITING);
