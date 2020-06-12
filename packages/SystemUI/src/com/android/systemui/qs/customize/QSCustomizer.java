@@ -480,6 +480,7 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         boolean isPortrait = res.getConfiguration().orientation
                 == Configuration.ORIENTATION_PORTRAIT;
         int defaultColumns = Math.max(1, mContext.getResources().getInteger(R.integer.quick_settings_num_columns));
+        int defaultRows = Math.max(1, mContext.getResources().getInteger(R.integer.quick_settings_max_rows));
         int columns = Settings.System.getIntForUser(
                 mContext.getContentResolver(), Settings.System.QS_LAYOUT_COLUMNS, defaultColumns,
                 UserHandle.USER_CURRENT);
@@ -487,10 +488,10 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
                 mContext.getContentResolver(), Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, defaultColumns,
                 UserHandle.USER_CURRENT);
         int rows = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS, 3,
+                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS, defaultRows,
                 UserHandle.USER_CURRENT);
         int rowsLandscape = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, 2,
+                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, defaultRows,
                 UserHandle.USER_CURRENT);
         boolean showTitles = Settings.System.getIntForUser(
                 mContext.getContentResolver(), Settings.System.QS_TILE_TITLE_VISIBILITY, 1,
@@ -499,11 +500,10 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         mTileAdapter.setRowsCount(isPortrait ? rows : rowsLandscape);
         mTileAdapter.setHideLabel(!showTitles);
         mLayout.setSpanCount(isPortrait ? columns : columnsLandscape);
-        updateColumnsMenu(defaultColumns);
-        updateRowsMenu();
+        updateColumnsMenu(defaultColumns, defaultRows);
     }
 
-    private void updateColumnsMenu(int defaultColumns) {
+    private void updateColumnsMenu(int defaultColumns, int defaultRows) {
         int columns = Settings.System.getIntForUser(
                 mContext.getContentResolver(), Settings.System.QS_LAYOUT_COLUMNS, defaultColumns,
                 UserHandle.USER_CURRENT);
@@ -535,25 +535,21 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         menuItemSeven.setChecked(columnsLandscape == 7);
         menuItemEight = mToolbar.getMenu().findItem(R.id.menu_item_columns_landscape_eight);
         menuItemEight.setChecked(columnsLandscape == 8);
-    }
 
-    private void updateRowsMenu() {
-        /* TODO add a value a vendor can change to increase max rows on big ass
-              screens  */
         int rows = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS, 3,
+                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS, defaultRows,
                 UserHandle.USER_CURRENT);
         MenuItem menuItemOne = mToolbar.getMenu().findItem(R.id.menu_item_rows_one);
         menuItemOne.setChecked(rows == 1);
         MenuItem menuItemTwo = mToolbar.getMenu().findItem(R.id.menu_item_rows_two);
         menuItemTwo.setChecked(rows == 2);
-        MenuItem menuItemThree = mToolbar.getMenu().findItem(R.id.menu_item_rows_three);
+        menuItemThree = mToolbar.getMenu().findItem(R.id.menu_item_rows_three);
         menuItemThree.setChecked(rows == 3);
-        MenuItem menuItemFour = mToolbar.getMenu().findItem(R.id.menu_item_rows_four);
+        menuItemFour = mToolbar.getMenu().findItem(R.id.menu_item_rows_four);
         menuItemFour.setChecked(rows == 4);
 
         int rowsLandscape = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, 2,
+                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, defaultRows,
                 UserHandle.USER_CURRENT);
         menuItemOne = mToolbar.getMenu().findItem(R.id.menu_item_rows_landscape_one);
         menuItemOne.setChecked(rowsLandscape == 1);

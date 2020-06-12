@@ -35,6 +35,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
     protected final ArrayList<TileRecord> mRecords = new ArrayList<>();
     private int mCellMarginTop;
     private boolean mListening;
+    private boolean mLayoutChanged = false;
     protected int mMaxAllowedRows = 4;
 
     public TileLayout(Context context) {
@@ -95,7 +96,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
         mSidePadding = res.getDimensionPixelOffset(R.dimen.qs_tile_layout_margin_side);
         mMaxAllowedRows = Math.max(1, getResources().getInteger(R.integer.quick_settings_max_rows));
         updateSettings();
-        return false;
+        return mLayoutChanged;
     }
 
     @Override
@@ -155,12 +156,12 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
         int rowsSet;
         if (res.getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             rowsSet = Settings.System.getIntForUser(resolver,
-                    Settings.System.QS_LAYOUT_ROWS, 3,
+                    Settings.System.QS_LAYOUT_ROWS, 4,
                     UserHandle.USER_CURRENT);
         }
         else {
             rowsSet = Settings.System.getIntForUser(resolver,
-                    Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, 3,
+                    Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, 4,
                     UserHandle.USER_CURRENT);
         }
         if (mRows > rowsSet)
@@ -222,6 +223,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
     public void updateSettings() {
         final Resources res = mContext.getResources();
         int defaultColumns = Math.max(1, res.getInteger(R.integer.quick_settings_num_columns));
+        int defaultRows = Math.max(1, res.getInteger(R.integer.quick_settings_max_rows));
         boolean isPortrait = res.getConfiguration().orientation
                 == Configuration.ORIENTATION_PORTRAIT;
         int columns = Settings.System.getIntForUser(
@@ -231,10 +233,10 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
                 mContext.getContentResolver(), Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, defaultColumns,
                 UserHandle.USER_CURRENT);
         int rows = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS, defaultColumns,
+                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS, defaultRows,
                 UserHandle.USER_CURRENT);
         int rowsLandscape = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, defaultColumns,
+                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, defaultRows,
                 UserHandle.USER_CURRENT);
         boolean showTitles = Settings.System.getIntForUser(
                 mContext.getContentResolver(), Settings.System.QS_TILE_TITLE_VISIBILITY, 1,
@@ -246,11 +248,13 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
         }
         if (mColumns != (isPortrait ? columns : columnsLandscape) || mShowTitles != showTitles) {
             mColumns = isPortrait ? columns : columnsLandscape;
+            mLayoutChanged = true;
             mShowTitles = showTitles;
             requestLayout();
         }
         if (mRows != (isPortrait ? rows : rowsLandscape) || mShowTitles != showTitles) {
             mRows = isPortrait ? rows : rowsLandscape;
+            mLayoutChanged = true;
             mShowTitles = showTitles;
             requestLayout();
         }
