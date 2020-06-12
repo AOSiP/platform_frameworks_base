@@ -305,20 +305,6 @@ public class QuickQSPanel extends QSPanel {
         @Override
         protected int getColumnStart(int column) {
             return getPaddingStart() + column *  (mCellWidth + mCellMarginHorizontal);
-	}
-
-        @Override
-        public void updateSettings() {
-        }
-
-        @Override
-        public int getNumColumns() {
-            return getNumQuickTiles(mContext);
-        }
-
-        @Override
-        public boolean isShowTitles() {
-            return false;
         }
     }
 }

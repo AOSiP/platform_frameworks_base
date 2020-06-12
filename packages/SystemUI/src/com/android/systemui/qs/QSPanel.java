@@ -37,7 +37,6 @@ import android.os.Vibrator;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -209,8 +208,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                 findViewById(R.id.brightness_icon),
                 findViewById(R.id.brightness_slider));
         mDumpController = dumpController;
-
-        updateSettings();
     }
 
     protected void addDivider() {
@@ -309,7 +306,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         }
         if (QS_LONG_PRESS_ACTION.equals(key)) {
             mDualTargetSecondary = newValue != null && Integer.parseInt(newValue) == 1;
-            updateSettings();
         }
     }
 
@@ -634,7 +630,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
 
         if (mTileLayout != null) {
             mTileLayout.addTile(r);
-            configureTile(r.tile, r.tileView);
         }
 
         return r;
@@ -843,45 +838,12 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         int getOffsetTop(TileRecord tile);
 
         boolean updateResources();
-        void updateSettings();
-        int getNumColumns();
-        boolean isShowTitles();
 
         void setListening(boolean listening);
 
         default void setExpansion(float expansion) {}
 
         int getNumVisibleTiles();
-    }
-
-    private void configureTile(QSTile t, QSTileView v) {
-        if (mTileLayout != null) {
-            v.setHideLabel(!mTileLayout.isShowTitles());
-            // mod long press to do secondary click
-            if (t.isDualTarget()) {
-                if (mDualTargetSecondary && !mTileLayout.isShowTitles()) {
-                    v.setOnLongClickListener(view -> {
-                        t.secondaryClick();
-                        return true;
-                    });
-                } else {
-                    v.setOnLongClickListener(view -> {
-                        t.longClick();
-                        return true;
-                    });
-                }
-            }
-        }
-    }
-
-    public void updateSettings() {
-        if (mTileLayout != null) {
-            mTileLayout.updateSettings();
-
-            for (TileRecord r : mRecords) {
-                configureTile(r.tile, r.tileView);
-            }
-        }
     }
 
     public boolean isBrightnessViewBottom() {
