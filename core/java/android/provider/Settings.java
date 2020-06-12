@@ -4696,17 +4696,6 @@ public final class Settings {
          */
         public static final String STATUS_BAR_LOGO_STYLE = "status_bar_logo_style";
 
-        /**
-         * @hide
-         */
-        public static final String QS_LAYOUT_COLUMNS = "qs_layout_columns";
-
-        /**
-         * Number of qs columns on landscape orientation
-         * @hide
-         */
-        public static final String QS_LAYOUT_COLUMNS_LANDSCAPE = "qs_layout_columns_landscape";
-
         /** Whether to skip music track with volume rocker 
         /**
          * @hide
