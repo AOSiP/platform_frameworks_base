@@ -4700,18 +4700,12 @@ public final class Settings {
          * @hide
          */
         public static final String QS_LAYOUT_COLUMNS = "qs_layout_columns";
-         /** @hide */
-        private static final Validator QS_LAYOUT_COLUMNS_VALIDATOR =
-                ANY_INTEGER_VALIDATOR;
 
         /**
          * Number of qs columns on landscape orientation
          * @hide
          */
         public static final String QS_LAYOUT_COLUMNS_LANDSCAPE = "qs_layout_columns_landscape";
-        /** @hide */
-        private static final Validator QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR =
-                ANY_INTEGER_VALIDATOR;
 
         /**
          * Whether to display qs tile titles in the qs panel
@@ -4812,22 +4806,11 @@ public final class Settings {
         public static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
 
         /**
-        * Number of qs rows on landscape orientation
-        * @hide
-        */
-        public static final String QS_LAYOUT_ROWS_LANDSCAPE = "qs_layout_rows_landscape";
-        /** @hide */
-        private static final Validator QS_LAYOUT_ROWS_LANDSCAPE_VALIDATOR =
-                ANY_INTEGER_VALIDATOR;
-
-        /**
-        * Number of qs rows on portrait orientation
-        * @hide
-        */
-        public static final String QS_LAYOUT_ROWS = "qs_layout_rows";
-        /** @hide */
-        private static final Validator QS_LAYOUT_ROWS_VALIDATOR =
-                ANY_INTEGER_VALIDATOR;
+         * IMPORTANT: If you add a new public settings you also have to add it to
+         * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
+         * it to PRIVATE_SETTINGS below. Also add a validator that can validate
+         * the setting value. See an example above.
+         */
 
         /**
          * Use doubletap as doze pulse triggers
@@ -5267,10 +5250,6 @@ public final class Settings {
             NOTIFICATION_SOUND,
             ACCELEROMETER_ROTATION,
             QS_SHOW_BATTERY_PERCENT,
-            QS_LAYOUT_COLUMNS,
-            QS_LAYOUT_COLUMNS_LANDSCAPE,
-            QS_LAYOUT_ROWS,
-            QS_LAYOUT_ROWS_LANDSCAPE,
             NOTIFICATION_VIBRATION_INTENSITY,
             RING_VIBRATION_INTENSITY,
             HAPTIC_FEEDBACK_INTENSITY,
@@ -5418,10 +5397,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(GESTURE_PILL_TOGGLE);
             PRIVATE_SETTINGS.add(EGG_MODE);
             PRIVATE_SETTINGS.add(QS_SHOW_BATTERY_PERCENT);
-            PRIVATE_SETTINGS.add(QS_LAYOUT_COLUMNS);
-            PRIVATE_SETTINGS.add(QS_LAYOUT_COLUMNS_LANDSCAPE);
-            PRIVATE_SETTINGS.add(QS_LAYOUT_ROWS);
-            PRIVATE_SETTINGS.add(QS_LAYOUT_ROWS_LANDSCAPE);
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
             PRIVATE_SETTINGS.add(HEADS_UP_NOTIFICATION_SNOOZE);
             PRIVATE_SETTINGS.add(NOTIFICATION_PULSE);
@@ -5561,10 +5536,6 @@ public final class Settings {
             VALIDATORS.put(SHOW_VOLTE_ICON, SHOW_VOLTE_ICON_VALIDATOR);
             VALIDATORS.put(VOLTE_ICON_STYLE, VOLTE_ICON_STYLE_VALIDATOR);
             VALIDATORS.put(QS_SHOW_BATTERY_PERCENT, QS_SHOW_BATTERY_PERCENT_VALIDATOR);
-            VALIDATORS.put(QS_LAYOUT_COLUMNS, QS_LAYOUT_COLUMNS_VALIDATOR);
-            VALIDATORS.put(QS_LAYOUT_COLUMNS_LANDSCAPE, QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR);
-            VALIDATORS.put(QS_LAYOUT_ROWS, QS_LAYOUT_ROWS_VALIDATOR);
-            VALIDATORS.put(QS_LAYOUT_ROWS_LANDSCAPE, QS_LAYOUT_ROWS_LANDSCAPE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
             VALIDATORS.put(SCREENSHOT_SHUTTER_SOUND,
                     SCREENSHOT_SHUTTER_SOUND_VALIDATOR);
