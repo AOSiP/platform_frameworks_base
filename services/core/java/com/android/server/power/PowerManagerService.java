@@ -399,7 +399,7 @@ public final class PowerManagerService extends SystemService
     private boolean mDreamsEnabledOnBatteryConfig;
 
     // Minimum battery level to allow dreaming when powered.
-    // Use -1 to disabledisable this safety feature.
+    // Use -1 to disable this safety feature.
     private int mDreamsBatteryLevelMinimumWhenPoweredConfig;
 
     // Minimum battery level to allow dreaming when not powered.
@@ -596,19 +596,13 @@ public final class PowerManagerService extends SystemService
         }
     }
 
-    // button brightness suppport enablement
+    // Button brightness suppport
     private boolean mButtonBrightnessSupport = false;
     private int mCurrentButtonBrightness = 0;
-    // value to use in manual mode
-    // if -1 screen brightness will be used
     private int mCustomButtonBrightness = -1;
-    // always use screen brightness also for buttons
     private boolean mButtonUseScreenBrightness = true;
-    // overrule and disable brightness for buttons
     private boolean mButtonBacklightEnable = true;
-    // button on touch
     private boolean mButtonBacklightOnTouchOnly;
-    // timeout for button backlight automatic turning off
     private int mButtonTimeout;
     private boolean mButtonTimeoutEnabled;
     private int mEvent;
@@ -1004,9 +998,9 @@ public final class PowerManagerService extends SystemService
             resolver.registerContentObserver(
                     Settings.System.getUriFor(Settings.System.BUTTON_BACKLIGHT_ENABLE),
                     false, mSettingsObserver, UserHandle.USER_ALL);
-            /*resolver.registerContentObserver(
-                    Settings.Secure.getUriFor(Settings.Secure.HARDWARE_KEYS_DISABLE),
-                    false, mSettingsObserver, UserHandle.USER_ALL);*/
+            resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.FORCE_SHOW_NAVBAR),
+                    false, mSettingsObserver, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.BUTTON_BACKLIGHT_TIMEOUT),
                     false, mSettingsObserver, UserHandle.USER_ALL);
@@ -1479,7 +1473,7 @@ public final class PowerManagerService extends SystemService
 
         Trace.traceBegin(Trace.TRACE_TAG_POWER, "userActivity");
         try {
-			mEvent = event;
+		mEvent = event;
             if (eventTime > mLastInteractivePowerHintTime) {
                 powerHintInternal(PowerHint.INTERACTION, 0);
                 mLastInteractivePowerHintTime = eventTime;
@@ -5232,13 +5226,10 @@ public final class PowerManagerService extends SystemService
             mButtonBacklightEnable = Settings.System.getIntForUser(
                     mContext.getContentResolver(), Settings.System.BUTTON_BACKLIGHT_ENABLE,
                     1, UserHandle.USER_CURRENT) != 0;
-
-            /*boolean hardwareKeysDisable = Settings.Secure.getIntForUser(
-                    mContext.getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE,
+            boolean navbarEnabled = Settings.System.getIntForUser(
+                    mContext.getContentResolver(), Settings.System.FORCE_SHOW_NAVBAR,
                     0, UserHandle.USER_CURRENT) != 0;
-
-            mButtonBacklightEnable = mButtonBacklightEnable && !hardwareKeysDisable;*/
-
+            mButtonBacklightEnable = mButtonBacklightEnable && !navbarEnabled;
             mButtonBacklightOnTouchOnly = Settings.System.getIntForUser(
                     mContext.getContentResolver(), Settings.System.BUTTON_BACKLIGHT_ON_TOUCH_ONLY,
                     0, UserHandle.USER_CURRENT) != 0;
