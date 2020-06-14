@@ -40,6 +40,7 @@ import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 
 import com.android.internal.R;
 
@@ -237,5 +238,11 @@ public class AOSiPUtils {
                 throws RemoteException {
             return mService.getOverlayInfosForTarget(target, userId);
         }
+    }
+
+    public static int getThemeAccentColor (final Context context) {
+        final TypedValue value = new TypedValue ();
+        context.getTheme ().resolveAttribute (android.R.attr.colorAccent, value, true);
+        return value.data;
     }
 }
