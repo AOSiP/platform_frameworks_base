@@ -17,7 +17,7 @@
 <resources>
 
     <!-- Padding added to keyguard status area when Type clock is in use -->
-    <dimen name="custom_clock_left_padding">50dp</dimen>
+    <dimen name="custom_clock_left_padding">32dp</dimen>
     <dimen name="clock_oronos_outline_size">4dp</dimen>
     <dimen name="binary_clock_dot_size">8dp</dimen>
     <dimen name="binary_clock_stroke_width">2dp</dimen>
