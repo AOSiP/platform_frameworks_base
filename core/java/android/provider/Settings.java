@@ -5532,6 +5532,14 @@ public final class Settings {
         public static final Validator STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * Blur behind QS.
+         * @hide
+         */
+        public static final String QS_BLUR_ENABLED = "qs_blur_enabled";
+        /** @hide */
+        public static final Validator QS_BLUR_ENABLED_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -5624,6 +5632,7 @@ public final class Settings {
             NOTIFICATION_PULSE_COLOR_AUTOMATIC,
             NOTIFICATION_SOUND_VIB_SCREEN_ON,
             PULSE_ON_NEW_TRACKS,
+            QS_BLUR_ENABLED
             QS_COLUMNS_LANDSCAPE,
             QS_COLUMNS_PORTRAIT,
             QS_ROWS_LANDSCAPE,
@@ -5812,6 +5821,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(NOTIFICATION_PULSE_COLOR_AUTOMATIC);
             PRIVATE_SETTINGS.add(NOTIFICATION_SOUND_VIB_SCREEN_ON);
             PRIVATE_SETTINGS.add(PULSE_ON_NEW_TRACKS);
+            PRIVATE_SETTINGS.add(QS_BLUR_ENABLED);
             PRIVATE_SETTINGS.add(QS_COLUMNS_LANDSCAPE);
             PRIVATE_SETTINGS.add(QS_COLUMNS_PORTRAIT);
             PRIVATE_SETTINGS.add(QS_ROWS_LANDSCAPE);
@@ -5957,6 +5967,7 @@ public final class Settings {
                     NOTIFICATION_PULSE_COLOR_AUTOMATIC_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_SOUND_VIB_SCREEN_ON, NOTIFICATION_SOUND_VIB_SCREEN_ON_VALIDATOR);
             VALIDATORS.put(PULSE_ON_NEW_TRACKS, PULSE_ON_NEW_TRACKS_VALIDATOR);
+            VALIDATORS.put(QS_BLUR_ENABLED, QS_BLUR_ENABLED_VALIDATOR);
             VALIDATORS.put(QS_COLUMNS_LANDSCAPE, QS_COLUMNS_LANDSCAPE_VALIDATOR);
             VALIDATORS.put(QS_COLUMNS_PORTRAIT, QS_COLUMNS_PORTRAIT_VALIDATOR);
             VALIDATORS.put(QS_ROWS_LANDSCAPE, QS_ROWS_LANDSCAPE_VALIDATOR);
