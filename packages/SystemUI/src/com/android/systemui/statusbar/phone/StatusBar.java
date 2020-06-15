@@ -2111,9 +2111,8 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             } else if (uri.equals(Settings.System.getUriFor(Settings.System.QS_ROWS_PORTRAIT)) ||
                     uri.equals(Settings.System.getUriFor(Settings.System.QS_ROWS_LANDSCAPE)) ||
                     uri.equals(Settings.System.getUriFor(Settings.System.QS_COLUMNS_PORTRAIT)) ||
-                    uri.equals(Settings.System.getUriFor(Settings.System.QS_COLUMNS_LANDSCAPE))) {
-                setQsRowsColumns();
-            } else if (uri.equals(Settings.System.getUriFor(Settings.System.QS_TILE_TITLE_VISIBILITY))) {
+                    uri.equals(Settings.System.getUriFor(Settings.System.QS_COLUMNS_LANDSCAPE)) ||
+                    uri.equals(Settings.System.getUriFor(Settings.System.QS_TILE_TITLE_VISIBILITY))) {
                 updateQsPanelResources();
             } else if (uri.equals(Settings.System.getUriFor(Settings.System.FORCE_SHOW_NAVBAR))) {
                 updateNavigationBar(getRegisterStatusBarResult(), false);
@@ -2132,15 +2131,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             setGestureNavOptions();
             setMediaHeadsup();
             setQsBatteryPercentMode();
-            setQsRowsColumns();
             setQsBlur();
-        }
-    }
-
-    private void setQsRowsColumns() {
-        if (mQSPanel != null) {
-            mQSPanel.updateResources();
-            updateQsPanelResources();
         }
     }
 
