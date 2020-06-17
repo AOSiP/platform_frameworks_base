@@ -24,6 +24,7 @@
     <string name="quick_settings_aod_label">Always On Display</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">カフェイン</string>
+    <string name="quick_settings_caffeine_label_off">Off</string>
     <string name="accessibility_quick_settings_caffeine_off">カフェイン OFF</string>
     <string name="accessibility_quick_settings_caffeine_on">カフェイン ON</string>
     <!-- ADB over network tile -->
@@ -39,6 +40,9 @@
     <string name="lockscreen_hidden">なし</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
     <string name="custom_hint">アイコンをスワイプして起動</string>
+    <!-- Reboot/Recovery QS tile -->
+    <string name="quick_settings_reboot_label">再起動</string>
+    <string name="quick_settings_reboot_recovery_label">リカバリー</string>
     <!-- Name of the nfc status bar icon. -->
     <string name="status_bar_nfc">NFC</string>
     <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
@@ -46,6 +50,10 @@
     <string name="status_bar_data_saver">データセーバー</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">ローミング</string>
+    <!-- Music tile -->
+    <string name="quick_settings_music_label">音楽</string>
+    <string name="quick_settings_music_play">再生</string>
+    <string name="quick_settings_music_pause">一時停止</string>
     <!-- Navigation bar dpad -->
     <string name="accessibility_dpad_left">カーソルを左へ</string>
     <string name="accessibility_dpad_right">カーソルを右へ</string>
@@ -73,6 +81,13 @@
     <string name="accessibility_quick_settings_sync_on">同期 ON</string>
     <string name="accessibility_quick_settings_sync_changed_off">同期を OFF にしました</string>
     <string name="accessibility_quick_settings_sync_changed_on">同期を ON にしました</string>
+    <!-- Screen pinning -->
+    <string name="screen_pinning_description_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
+    <string name="screen_pinning_description_recents_invisible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
+    <string name="screen_pinning_description_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
+    <string name="screen_pinning_description_recents_invisible_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
+    <string name="screen_pinning_toast_custom">To unpin this screen, touch &amp; hold Back button</string>
+    <string name="screen_pinning_toast_recents_invisible_custom">To unpin this screen, touch &amp; hold Back button</string>
     <!-- Long swipe gesture actions -->
     <string name="app_picker_dialog_title">アプリを選択</string>
     <string name="recents_app_killed">アプリを終了しました</string>
@@ -95,18 +110,6 @@
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">スクリーンショット</string>
     <string name="global_action_screenrecord">画面録画</string>
-    <!-- QS Config -->
-    <string name="qs_menu_item_columns">列数</string>
-    <string name="qs_menu_item_columns_landscape">列数 (横向き)</string>
-    <string name="qs_menu_item_columns_three">3</string>
-    <string name="qs_menu_item_columns_four">4</string>
-    <string name="qs_menu_item_columns_five">5</string>
-    <string name="qs_menu_item_columns_six">6</string>
-    <string name="qs_menu_item_columns_seven">7</string>
-    <string name="qs_menu_item_columns_eight">8</string>
-    <string name="qs_menu_item_columns_nine">9</string>
-    <string name="qs_menu_item_reset">リセット</string>
-    <string name="qs_menu_item_titles">ラベルを表示</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">長押しして移動するかタップしてタイルを追加する</string>
     <!-- Label for header of customize QS -->
@@ -163,6 +166,8 @@
     <string name="quick_settings_screenshot_label">スクリーン\nショット</string>
     <string name="quick_settings_full_screenshot_label">全画面</string>
     <string name="quick_settings_region_screenshot_label">範囲指定</string>
+    <!--Screenrecord Tile-->
+    <string name="screenrecorder_title_tile">画面録画</string>
     <!-- Language toggle tile -->
     <string name="quick_settings_locale_label">言語</string>
     <string name="quick_settings_locale_more_locales_toast">切り替え機能を有効にするために複数の言語を設定して下さい</string>
@@ -198,4 +203,11 @@
     <string name="tuner_qs_long_press_action">長押しでパネルを非表示</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">VoLTE アイコンを表示する</string>
+    <!-- VPN QS tile -->
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">接続先...</string>
+    <string name="vpn_credentials_hint"><xliff:g id="name">%s</xliff:g> への接続の認証情報を入力して下さい</string>
+    <string name="vpn_credentials_username">ユーザー名</string>
+    <string name="vpn_credentials_password">パスワード</string>
+    <string name="vpn_credentials_dialog_connect">接続</string>
 </resources>
