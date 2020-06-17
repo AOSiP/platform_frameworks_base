@@ -4822,7 +4822,7 @@ public final class Settings {
         public static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
         /** @hide */
         private static final Validator LOCKSCREEN_ALBUM_ART_FILTER_VALIDATOR =
-              new SettingsValidators.InclusiveIntegerRangeValidator(0, 4);
+              new SettingsValidators.InclusiveIntegerRangeValidator(0, 5);
 
         /**
          * Use doubletap as doze pulse triggers
