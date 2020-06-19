@@ -4761,7 +4761,7 @@ public final class Settings {
         public static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
         /** @hide */
         private static final Validator LOCKSCREEN_MEDIA_BLUR_VALIDATOR =
-              new SettingsValidators.InclusiveIntegerRangeValidator(1, 2500);
+              new SettingsValidators.InclusiveIntegerRangeValidator(0, 2500);
 
         /**
          * Whether to show the battery info on the lockscreen while charging
