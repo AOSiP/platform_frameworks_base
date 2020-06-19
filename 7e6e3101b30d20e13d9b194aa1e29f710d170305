@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "843af936_07c6b180",
+        "filename": "packages/SystemUI/src/com/android/systemui/statusbar/notification/stack/NotificationStackScrollLayout.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-06-19T01:20:08Z",
+      "side": 1,
+      "message": "im ok with this but can you make the first 1 a 0 so it isnt enabled by default",
+      "revId": "7e6e3101b30d20e13d9b194aa1e29f710d170305",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
