@@ -96,8 +96,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="start|center_vertical"
-                    android:paddingStart="3dp"
-                    android:paddingEnd="3dp"
+                    android:paddingStart="@dimen/status_bar_left_clock_starting_padding"
+                    android:paddingEnd="@dimen/status_bar_left_clock_end_padding"
                     android:textAppearance="@style/TextAppearance.StatusBar.Clock"
                     android:visibility="gone"
                     android:singleLine="true"/>
@@ -111,8 +111,7 @@
                     android:singleLine="true"
                     android:paddingStart="@dimen/status_bar_left_clock_starting_padding"
                     android:paddingEnd="@dimen/status_bar_left_clock_end_padding"
-                    android:gravity="center_vertical|start"
-                />
+                    android:gravity="center_vertical|start" />
 
                 <com.android.systemui.statusbar.AlphaOptimizedFrameLayout
                     android:id="@+id/notification_icon_area"
