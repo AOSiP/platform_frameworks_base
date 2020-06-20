@@ -33,7 +33,7 @@
     <dimen name="qs_tile_height_wo_label">64dp</dimen>
 
     <!-- Padding after battery level text in status bar, QS, and Keyguard -->
-    <dimen name="battery_level_padding_end">2dp</dimen>
+    <dimen name="battery_level_padding_end">2.5dp</dimen>
 
     <!-- Sets a custom extra padding for the QS icons and statusbar date -->
     <dimen name="qs_items_padding">0dp</dimen>
