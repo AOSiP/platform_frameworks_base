@@ -104,9 +104,6 @@
         to communicate pocket state to the pocket judge kernel driver. -->
     <string name="config_pocketBridgeSysfsInpocket"></string>
 
-    <!-- Whether to use scaled brightness (set -1 to disable) -->
-    <integer name="config_useScaleBrightness">-1</integer>
-
     <!-- Whether notify fingerprint client of successful cancelled authentication -->
     <bool name="config_notifyClientOnFingerprintCancelSuccess">false</bool>
 
