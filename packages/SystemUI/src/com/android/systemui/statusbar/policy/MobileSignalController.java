@@ -117,6 +117,7 @@ public class MobileSignalController extends SignalController<
 
     // VoWiFi Icon
     private boolean mVoWiFiIcon;
+    private boolean mVoWiFiIconShowing = false;
 
     // TODO: Reduce number of vars passed in, if we have the NetworkController, probably don't
     // need listener lists anymore.
@@ -425,7 +426,7 @@ public class MobileSignalController extends SignalController<
     private int getVolteResId() {
         int resId = 0;
 
-        if (mCurrentState.imsRegistered && mVoLTEicon) {
+        if (mCurrentState.imsRegistered && mVoLTEicon && !mVoWiFiIconShowing) {
             switch(mVoLTEstyle) {
                 // VoLTE
                 case 1:
@@ -549,14 +550,18 @@ public class MobileSignalController extends SignalController<
                 && mCurrentState.activityOut;
         showDataIcon &= mCurrentState.isDefault || dataDisabled;
         int typeIcon = (showDataIcon || mConfig.alwaysShowDataRatIcon) ? icons.mDataType : 0;
-        int volteIcon = isVolteSwitchOn() ? getVolteResId() : 0;
         MobileIconGroup vowifiIconGroup = getVowifiIconGroup();
         if (mConfig.showVowifiIcon && mVoWiFiIcon && vowifiIconGroup != null) {
             typeIcon = vowifiIconGroup.mDataType;
             statusIcon = new IconState(true,
                     mCurrentState.enabled && !mCurrentState.airplaneMode ? statusIcon.icon : 0,
                     statusIcon.contentDescription);
+            mVoWiFiIconShowing = true;
+        } else {
+            mVoWiFiIconShowing = false;
         }
+        int volteIcon = isVolteSwitchOn() ? getVolteResId() : 0;
+
         callback.setMobileDataIndicators(statusIcon, qsIcon, typeIcon, qsTypeIcon,
                 activityIn, activityOut, volteIcon, dataContentDescription, dataContentDescriptionHtml,
                 description, icons.mIsWide, mSubscriptionInfo.getSubscriptionId(),
