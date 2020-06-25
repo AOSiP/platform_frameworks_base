@@ -4783,6 +4783,12 @@ public final class Settings {
          */
         public static final String ENABLE_DARKER_THEME = "enable_darker_theme";
 
+	/**
+         * Holds current enabled volume panel implementation
+         * @hide
+         */
+        public static final String SYSTEMUI_PLUGIN_VOLUME = "systemui_plugin_volume";
+
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
@@ -4909,6 +4915,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(EGG_MODE);
             PRIVATE_SETTINGS.add(SHOW_BATTERY_PERCENT);
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
+            PRIVATE_SETTINGS.add(SYSTEMUI_PLUGIN_VOLUME);
         }
 
         /**
