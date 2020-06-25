@@ -99,14 +99,17 @@
     <string name="screenrecord_dialog_summary">Durante la grabación, el sistema Android puede capturar cualquier información sensible que sea visible en tu pantalla o reproducida en tu dispositivo. Esto incluye contraseñas, información de pago, fotos, mensajes y audio.</string>
     <string name="screenrecord_dialog_start">Inicio  </string>
     <string name="screenrecord_dialog_cancel">Cancelar</string>
-    <string name="screenrecord_audio_title">Grabar audio</string>
-    <string name="screenrecord_audio_summary">Grabar audio mientras se graba</string>
+    <string name="screenrecord_audio_title">Audio source</string>
+    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
+    <string name="screenrecord_audio_recording_internal">Internal</string>
+    <string name="screenrecord_audio_recording_microphone">Microphone</string>
+    <string name="screenrecord_audio_recording_off">Disabled</string>
     <string name="screenrecord_taps_title">Mostrar toques en pantalla</string>
     <string name="screenrecord_taps_summary">Mostrar retroalimentación visual durante la grabación</string>
     <string name="screenrecord_stopdot_title">Mostrar icono para detener</string>
     <string name="screenrecord_stopdot_summary">Mostrar un punto rojo para dejar de grabar con un solo toque. Mantenga pulsado para moverlo al lado opuesto.</string>
-    <string name="screenrecord_low_quality_title">Calidad baja</string>
-    <string name="screenrecord_low_quality_summary">Grabar en una menor calidad para ahorrar espacio en tu dispositivo</string>
+    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
+    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Captura de pantalla</string>
     <string name="global_action_screenrecord">Grabación de pantalla</string>
@@ -210,4 +213,6 @@
     <string name="vpn_credentials_username">Username</string>
     <string name="vpn_credentials_password">Contraseña</string>
     <string name="vpn_credentials_dialog_connect">Conectar</string>
+    <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Alerting notifications</string>
 </resources>

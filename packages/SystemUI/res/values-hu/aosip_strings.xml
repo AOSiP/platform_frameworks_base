@@ -99,14 +99,17 @@
     <string name="screenrecord_dialog_summary">Felvétel közben az Android rendszer bármilyen érzékeny információt rögzíthet, amely a képernyőn látható vagy az eszközön lejátszódik. Ide tartoznak a jelszavak, a fizetési információk, a fényképek, az üzenetek és a hang.</string>
     <string name="screenrecord_dialog_start">Elindítás</string>
     <string name="screenrecord_dialog_cancel">Mégse</string>
-    <string name="screenrecord_audio_title">Hang rögzítése</string>
-    <string name="screenrecord_audio_summary">Hang rögzítése a felvétel közben</string>
+    <string name="screenrecord_audio_title">Audio source</string>
+    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
+    <string name="screenrecord_audio_recording_internal">Internal</string>
+    <string name="screenrecord_audio_recording_microphone">Microphone</string>
+    <string name="screenrecord_audio_recording_off">Disabled</string>
     <string name="screenrecord_taps_title">Érintések megjelenítése a képernyőn</string>
     <string name="screenrecord_taps_summary">Vizuális visszajelzés megjelenítése felvétel közben</string>
     <string name="screenrecord_stopdot_title">Leállítógomb megjelenítése</string>
     <string name="screenrecord_stopdot_summary">Mutasson egy piros pontot a felvétel leállításához egyetlen érintéssel. Hosszan nyomja meg, hogy az ellenkező oldalra húzza.</string>
-    <string name="screenrecord_low_quality_title">Alacsony minőség</string>
-    <string name="screenrecord_low_quality_summary">Rögzítsen alacsonyabb minőségű képet a hely megtakarítási érdekében</string>
+    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
+    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Képernyőmentés</string>
     <string name="global_action_screenrecord">Képernyőfelvétel</string>
@@ -210,4 +213,6 @@
     <string name="vpn_credentials_username">Username</string>
     <string name="vpn_credentials_password">Password</string>
     <string name="vpn_credentials_dialog_connect">Connect</string>
+    <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Alerting notifications</string>
 </resources>

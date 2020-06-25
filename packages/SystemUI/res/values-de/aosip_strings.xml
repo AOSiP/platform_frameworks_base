@@ -99,14 +99,17 @@
     <string name="screenrecord_dialog_summary">Während der Aufnahme kann das Android-System alle sensiblen Informationen erfassen, die auf Ihrem Bildschirm sichtbar oder auf Ihrem Gerät abgespielt werden. Dazu gehören Passwörter, Zahlungsinformationen, Fotos, Nachrichten und Audio.</string>
     <string name="screenrecord_dialog_start">Start</string>
     <string name="screenrecord_dialog_cancel">Abbrechen</string>
-    <string name="screenrecord_audio_title">Audio aufzeichnen</string>
-    <string name="screenrecord_audio_summary">Audio während der Aufnahme aufnehmen</string>
+    <string name="screenrecord_audio_title">Audio source</string>
+    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
+    <string name="screenrecord_audio_recording_internal">Internal</string>
+    <string name="screenrecord_audio_recording_microphone">Microphone</string>
+    <string name="screenrecord_audio_recording_off">Disabled</string>
     <string name="screenrecord_taps_title">Berührungen auf dem Bildschirm anzeigen</string>
     <string name="screenrecord_taps_summary">Visuelles Feedback während der Aufnahme anzeigen</string>
     <string name="screenrecord_stopdot_title">Zeige Stop-Punkt</string>
     <string name="screenrecord_stopdot_summary">Einen roten Punkt anzeigen, um die Aufnahme mit einem einzigen Tippen zu beenden. Lange gedrückt halten, um ihn auf die andere Seite zu verschieben.</string>
-    <string name="screenrecord_low_quality_title">Niedrige Qualität</string>
-    <string name="screenrecord_low_quality_summary">In geringerer Qualität aufnehmen, um Platz auf dem Gerät zu sparen</string>
+    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
+    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Bildschirmfoto</string>
     <string name="global_action_screenrecord">Bildschirmaufnahme</string>
@@ -210,4 +213,6 @@
     <string name="vpn_credentials_username">Username</string>
     <string name="vpn_credentials_password">Password</string>
     <string name="vpn_credentials_dialog_connect">Connect</string>
+    <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Alerting notifications</string>
 </resources>

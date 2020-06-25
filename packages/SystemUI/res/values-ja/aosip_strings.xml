@@ -99,14 +99,17 @@
     <string name="screenrecord_dialog_summary">記録中に Android システムは画面に表示されたり端末で再生される機密情報を取得できます。これには、パスワード、支払い情報、写真、メッセージ、音声が含まれます。</string>
     <string name="screenrecord_dialog_start">開始</string>
     <string name="screenrecord_dialog_cancel">中止</string>
-    <string name="screenrecord_audio_title">音声の録音</string>
-    <string name="screenrecord_audio_summary">音声も録音する</string>
+    <string name="screenrecord_audio_title">Audio source</string>
+    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
+    <string name="screenrecord_audio_recording_internal">Internal</string>
+    <string name="screenrecord_audio_recording_microphone">Microphone</string>
+    <string name="screenrecord_audio_recording_off">Disabled</string>
     <string name="screenrecord_taps_title">タップされた位置の表示</string>
     <string name="screenrecord_taps_summary">録画中視覚フィードバック表示する</string>
     <string name="screenrecord_stopdot_title">停止ドットを表示</string>
     <string name="screenrecord_stopdot_summary">1回タップで録画を停止する赤い点を表示します。長押しして反対側に移動します。</string>
-    <string name="screenrecord_low_quality_title">低品質</string>
-    <string name="screenrecord_low_quality_summary">端末の記憶容量を確保するため低品質で録画する</string>
+    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
+    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">スクリーンショット</string>
     <string name="global_action_screenrecord">画面録画</string>
@@ -210,4 +213,6 @@
     <string name="vpn_credentials_username">ユーザー名</string>
     <string name="vpn_credentials_password">パスワード</string>
     <string name="vpn_credentials_dialog_connect">接続</string>
+    <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Alerting notifications</string>
 </resources>

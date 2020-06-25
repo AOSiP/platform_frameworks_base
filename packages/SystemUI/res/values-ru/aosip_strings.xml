@@ -24,7 +24,7 @@
     <string name="quick_settings_aod_label">Активный дисплей</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Запрет сна</string>
-    <string name="quick_settings_caffeine_label_off">Off</string>
+    <string name="quick_settings_caffeine_label_off">Выкл</string>
     <string name="accessibility_quick_settings_caffeine_off">Запрет сна включен</string>
     <string name="accessibility_quick_settings_caffeine_on">Запрет сна выключен</string>
     <!-- ADB over network tile -->
@@ -82,12 +82,12 @@
     <string name="accessibility_quick_settings_sync_changed_off">Синхронизация отключена</string>
     <string name="accessibility_quick_settings_sync_changed_on">Синхронизация включена</string>
     <!-- Screen pinning -->
-    <string name="screen_pinning_description_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_recents_invisible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_recents_invisible_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_toast_custom">To unpin this screen, touch &amp; hold Back button</string>
-    <string name="screen_pinning_toast_recents_invisible_custom">To unpin this screen, touch &amp; hold Back button</string>
+    <string name="screen_pinning_description_custom">Приложение останется активным, пока вы не отмените блокировку долгим нажатием кнопки «Назад».</string>
+    <string name="screen_pinning_description_recents_invisible_custom">Приложение останется активным, пока вы не отмените блокировку долгим нажатием кнопки «Назад».</string>
+    <string name="screen_pinning_description_accessible_custom">Приложение останется активным, пока вы не отмените блокировку долгим нажатием кнопки «Назад».</string>
+    <string name="screen_pinning_description_recents_invisible_accessible_custom">Приложение останется активным, пока вы не отмените блокировку долгим нажатием кнопки «Назад».</string>
+    <string name="screen_pinning_toast_custom">Чтобы открепить экран, нажмите и удерживайте кнопку «Назад»</string>
+    <string name="screen_pinning_toast_recents_invisible_custom">Чтобы открепить экран, нажмите и удерживайте кнопку «Назад»</string>
     <!-- Long swipe gesture actions -->
     <string name="app_picker_dialog_title">Выберите приложение</string>
     <string name="recents_app_killed">Приложение закрыто</string>
@@ -99,14 +99,17 @@
     <string name="screenrecord_dialog_summary">При запис, Android может записать любую видимую информацию с вашего экрана. Это включает пароли, данные карт, фото, сообщения и аудио.</string>
     <string name="screenrecord_dialog_start">Запуск</string>
     <string name="screenrecord_dialog_cancel">Отмена</string>
-    <string name="screenrecord_audio_title">Запись звука</string>
-    <string name="screenrecord_audio_summary">Запись экрана со звуком</string>
+    <string name="screenrecord_audio_title">Audio source</string>
+    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
+    <string name="screenrecord_audio_recording_internal">Internal</string>
+    <string name="screenrecord_audio_recording_microphone">Microphone</string>
+    <string name="screenrecord_audio_recording_off">Disabled</string>
     <string name="screenrecord_taps_title">Показывать касания на экране</string>
     <string name="screenrecord_taps_summary">Показывать нажатия на экран при записи</string>
     <string name="screenrecord_stopdot_title">Показать кнопку остановки</string>
     <string name="screenrecord_stopdot_summary">Показывать красную кнопку остановки для остановки записи одним нажатием. Длительное нажатие переместит кнопку в противоположную сторону.</string>
-    <string name="screenrecord_low_quality_title">Низкое качество</string>
-    <string name="screenrecord_low_quality_summary">Записывать в низком качестве для экономии свободного пространства на Вашем устройстве</string>
+    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
+    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Снимок экрана</string>
     <string name="global_action_screenrecord">Запись экрана</string>
@@ -210,4 +213,6 @@
     <string name="vpn_credentials_username">Имя пользователя</string>
     <string name="vpn_credentials_password">Пароль</string>
     <string name="vpn_credentials_dialog_connect">Подключится</string>
+    <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Alerting notifications</string>
 </resources>

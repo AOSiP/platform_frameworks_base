@@ -24,7 +24,7 @@
     <string name="quick_settings_aod_label">Schermo sempre attivo</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Caffeina</string>
-    <string name="quick_settings_caffeine_label_off">Off</string>
+    <string name="quick_settings_caffeine_label_off">Spenta</string>
     <string name="accessibility_quick_settings_caffeine_off">Caffeina disattivata</string>
     <string name="accessibility_quick_settings_caffeine_on">Caffeina attivata</string>
     <!-- ADB over network tile -->
@@ -99,14 +99,17 @@
     <string name="screenrecord_dialog_summary">Durante la registrazione, il sistema Android può registrare tutte le informazioni sensibili mostrate o riprodotte sul tuo dispositivo, questo include password, informazioni di pagamento, foto, messaggio e audio</string>
     <string name="screenrecord_dialog_start">Avvia</string>
     <string name="screenrecord_dialog_cancel">Cancella</string>
-    <string name="screenrecord_audio_title">Registra audio</string>
-    <string name="screenrecord_audio_summary">Registra l\'audio mentre registri</string>
+    <string name="screenrecord_audio_title">Audio source</string>
+    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
+    <string name="screenrecord_audio_recording_internal">Internal</string>
+    <string name="screenrecord_audio_recording_microphone">Microphone</string>
+    <string name="screenrecord_audio_recording_off">Disabled</string>
     <string name="screenrecord_taps_title">Mostra i tocchi </string>
     <string name="screenrecord_taps_summary">Mostra indicatore di registrazione</string>
     <string name="screenrecord_stopdot_title">Mostra il pulsante stop</string>
     <string name="screenrecord_stopdot_summary">Mostra un pulsante rosso per interrompere la registrazione con un singolo tocco. Premilo a lungo per spostarlo nella parte opposta.</string>
-    <string name="screenrecord_low_quality_title">Bassa qualità</string>
-    <string name="screenrecord_low_quality_summary">Registra in una qualità più bassa per risparmiare spazio sul dispositivo</string>
+    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
+    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Screenshot</string>
     <string name="global_action_screenrecord">Registra schermo</string>
@@ -210,4 +213,6 @@
     <string name="vpn_credentials_username">Nome utente</string>
     <string name="vpn_credentials_password">Password</string>
     <string name="vpn_credentials_dialog_connect">Connettiti</string>
+    <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Alerting notifications</string>
 </resources>
