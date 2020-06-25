@@ -17,55 +17,55 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Advanced reboot -->
     <string name="global_action_restart_advanced">Розширені</string>
-    <string name="global_action_restart_recovery">Recovery</string>
-    <string name="global_action_restart_bootloader">Bootloader</string>
-    <string name="global_action_restart_ui">Перезапустити SystemUI</string>
+    <string name="global_action_restart_recovery">Режим відновлення</string>
+    <string name="global_action_restart_bootloader">Режим завантажувача</string>
+    <string name="global_action_restart_ui">Інтерфейс системи</string>
     <!-- AOD QS tile -->
     <string name="quick_settings_aod_label">AOD</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Заборона сну</string>
-    <string name="quick_settings_caffeine_label_off">Off</string>
+    <string name="quick_settings_caffeine_label_off">Вимкнено</string>
     <string name="accessibility_quick_settings_caffeine_off">Заборона сну вимкнена</string>
     <string name="accessibility_quick_settings_caffeine_on">Заборона сну увімкнена</string>
     <!-- ADB over network tile -->
-    <string name="quick_settings_network_adb_enabled_label">Enabled</string>
-    <string name="quick_settings_network_adb_disabled_label">Disabled</string>
-    <string name="quick_settings_network_adb_label">ADB over network</string>
-    <string name="quick_settings_network_adb_toast">USB debugging is not enabled</string>
+    <string name="quick_settings_network_adb_enabled_label">Ввімкнено</string>
+    <string name="quick_settings_network_adb_disabled_label">Вимкнений</string>
+    <string name="quick_settings_network_adb_label">Налагодження ADB по мережі</string>
+    <string name="quick_settings_network_adb_toast">Налагодження USB не увімкнуто</string>
     <!-- Sound Search tile -->
-    <string name="quick_settings_sound_search">Sound search</string>
-    <string name="quick_settings_sound_search_no_app">Sorry, but this doesn\'t work if you don\'t have a Sound search app.</string>
-    <string name="statusbar_items_title">Statusbar icon</string>
-    <string name="lockscreen_default">Default</string>
-    <string name="lockscreen_hidden">None</string>
+    <string name="quick_settings_sound_search">Голосовий пошук</string>
+    <string name="quick_settings_sound_search_no_app">Вибачте, але ця функція недоступна, якщо немає програми для голосового пошуку.</string>
+    <string name="statusbar_items_title">Значок в рядку стану</string>
+    <string name="lockscreen_default">За замовчуванням</string>
+    <string name="lockscreen_hidden">Нічого</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-    <string name="custom_hint">Swipe from icon to launch</string>
+    <string name="custom_hint">Проведіть від іконки для запуску</string>
     <!-- Reboot/Recovery QS tile -->
-    <string name="quick_settings_reboot_label">Reboot</string>
-    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    <string name="quick_settings_reboot_label">Перезавантажити</string>
+    <string name="quick_settings_reboot_recovery_label">Режим відновлення</string>
     <!-- Name of the nfc status bar icon. -->
     <string name="status_bar_nfc">NFC</string>
     <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
     <string name="accessibility_status_bar_nfc">Nfc</string>
-    <string name="status_bar_data_saver">Data saver</string>
+    <string name="status_bar_data_saver">Економія трафіку</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Роумінг</string>
     <!-- Music tile -->
-    <string name="quick_settings_music_label">Music</string>
-    <string name="quick_settings_music_play">Play</string>
-    <string name="quick_settings_music_pause">Pause</string>
+    <string name="quick_settings_music_label">Музика</string>
+    <string name="quick_settings_music_play">Відтворити</string>
+    <string name="quick_settings_music_pause">Пауза</string>
     <!-- Navigation bar dpad -->
-    <string name="accessibility_dpad_left">Cursor left</string>
-    <string name="accessibility_dpad_right">Cursor right</string>
+    <string name="accessibility_dpad_left">Курсор ліворуч</string>
+    <string name="accessibility_dpad_right">Курсор праворуч</string>
     <!-- Immersive tile -->
     <string name="quick_settings_immersive_tile">Повноекранний режим</string>
     <string name="quick_settings_immersive_tile_statusbar">Приховати рядок стану</string>
     <string name="quick_settings_immersive_tile_navbar">Приховати панель навігації</string>
-    <string name="quick_settings_immersive_tile_full">Повний повноекранний режим</string>
+    <string name="quick_settings_immersive_tile_full">Повноекранний режим</string>
     <!-- Mono/Stereo tile -->
-    <string name="quick_settings_monotoggle_tile">Audio mode</string>
-    <string name="quick_settings_monotoggle_tile_mono">Mono audio</string>
-    <string name="quick_settings_monotoggle_tile_stereo">Stereo audio</string>
+    <string name="quick_settings_monotoggle_tile">Аудіорежим</string>
+    <string name="quick_settings_monotoggle_tile_mono">Монозвук</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Стереозвук</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">Спливаючі сповіщення</string>
     <string name="accessibility_quick_settings_heads_up_off">Спливаючі сповіщення вимк.</string>
@@ -73,8 +73,8 @@
     <string name="accessibility_quick_settings_heads_up_changed_off">Спливаючі сповіщення вимкнено.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Спливаючі сповіщення увімкнено.</string>
     <!-- Heads up snooze toast -->
-    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Спливаючі сповіщення вимкнено на 1 хвилину.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Спливаючі сповіщення вимкнено на <xliff:g id="number">%d</xliff:g> хвилин.</string>
     <!-- Sync QS Tile -->
     <string name="quick_settings_sync_label">Синхронізація</string>
     <string name="accessibility_quick_settings_sync_off">Синхронізація вимкнена</string>
@@ -82,38 +82,41 @@
     <string name="accessibility_quick_settings_sync_changed_off">Синхронізація вимкнена</string>
     <string name="accessibility_quick_settings_sync_changed_on">Синхронізація увімкнута</string>
     <!-- Screen pinning -->
-    <string name="screen_pinning_description_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_recents_invisible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_recents_invisible_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_toast_custom">To unpin this screen, touch &amp; hold Back button</string>
-    <string name="screen_pinning_toast_recents_invisible_custom">To unpin this screen, touch &amp; hold Back button</string>
+    <string name="screen_pinning_description_custom">Ви постійно бачитимете цей екран, доки не відкріпите його. Щоб відкріпити екран, натисніть &amp; і утримуйте кнопку \"Назад\".</string>
+    <string name="screen_pinning_description_recents_invisible_custom">Ви постійно бачитимете екран, доки не відкріпите його. Щоб відкріпити екран, натисніть і утримуйте кнопку \"Назад\".</string>
+    <string name="screen_pinning_description_accessible_custom">Ви постійно бачитимете екран, доки не відкріпите його. Щоб відкріпити екран, натисніть і утримуйте кнопку \"Назад\".</string>
+    <string name="screen_pinning_description_recents_invisible_accessible_custom">Ви постійно бачитимете цей екран, доки не відкріпите його. Щоб відкріпити екран, натисніть &amp; і утримуйте кнопку \"Назад\".</string>
+    <string name="screen_pinning_toast_custom">Щоб відкріпити цей екран, натисніть &amp; утримуйте кнопку \"Назад\"</string>
+    <string name="screen_pinning_toast_recents_invisible_custom">Щоб відкріпити цей екран, натисніть &amp; і утримуйте кнопку \"Назад\"</string>
     <!-- Long swipe gesture actions -->
-    <string name="app_picker_dialog_title">Select an app</string>
-    <string name="recents_app_killed">App killed</string>
-    <string name="nope_cant_kill">Launcher cannot be killed</string>
+    <string name="app_picker_dialog_title">Оберіть додаток</string>
+    <string name="recents_app_killed">Програму закрито</string>
+    <string name="nope_cant_kill">Лаунчер не може бути завершений</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Знімок екрану видалено</string>
     <!-- Screen recorder -->
-    <string name="screenrecord_dialog_title">Start recording?</string>
-    <string name="screenrecord_dialog_summary">While recording, Android system can capture any sensitive information that\'s visible on your screen or played on your device. This includes passwords, payment info, photos, messages, and audio.</string>
-    <string name="screenrecord_dialog_start">Start</string>
-    <string name="screenrecord_dialog_cancel">Cancel</string>
-    <string name="screenrecord_audio_title">Record audio</string>
-    <string name="screenrecord_audio_summary">Record audio while recording</string>
-    <string name="screenrecord_taps_title">Show touches on screen</string>
-    <string name="screenrecord_taps_summary">Show visual feedback while recording</string>
-    <string name="screenrecord_stopdot_title">Show stop dot</string>
-    <string name="screenrecord_stopdot_summary">Show a red dot to stop recording with a single tap. Longpress it to move it to the opposite side.</string>
-    <string name="screenrecord_low_quality_title">Low quality</string>
-    <string name="screenrecord_low_quality_summary">Record in a lower quality to save space on your device</string>
+    <string name="screenrecord_dialog_title">Почати запис?</string>
+    <string name="screenrecord_dialog_summary">Під час запису система Android може захоплювати будь-яку приватну інформацію, що відображається на вашому екрані або відтворюється на вашому пристрої. Включаючи паролі, платіжну інформацію, фотографії, повідомлення та аудіо.</string>
+    <string name="screenrecord_dialog_start">Старт</string>
+    <string name="screenrecord_dialog_cancel">Скасувати</string>
+    <string name="screenrecord_audio_title">Audio source</string>
+    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
+    <string name="screenrecord_audio_recording_internal">Internal</string>
+    <string name="screenrecord_audio_recording_microphone">Microphone</string>
+    <string name="screenrecord_audio_recording_off">Disabled</string>
+    <string name="screenrecord_taps_title">Показувати дотики на екрані</string>
+    <string name="screenrecord_taps_summary">Показувати візуальний відгук під час запису</string>
+    <string name="screenrecord_stopdot_title">Показувати кнопку зупинки запису</string>
+    <string name="screenrecord_stopdot_summary">Показувати червону кнопку, щоб зупинити запис одним дотиком. Утримуйте її, щоб перемістити на протилежну сторону.</string>
+    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
+    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
-    <string name="global_action_screenshot_cust">Screenshot</string>
-    <string name="global_action_screenrecord">Screenrecord</string>
+    <string name="global_action_screenshot_cust">Знімок екрану</string>
+    <string name="global_action_screenrecord">Запис екрану</string>
     <!-- Label for area where tiles can be added to the qs panel -->
-    <string name="drag_or_tap_to_add_tiles">Hold &amp; drag or tap to add tiles</string>
+    <string name="drag_or_tap_to_add_tiles">Утримуйту&amp; перетягніть або торкніться, щоб додати плитки</string>
     <!-- Label for header of customize QS -->
-    <string name="drag_or_tap_to_rearrange_tiles">Hold &amp; drag to rearrange or tap to remove</string>
+    <string name="drag_or_tap_to_rearrange_tiles">Утримуйте &amp; перетягніть для перестановки або торкніться, щоб видалити</string>
     <!-- Location Tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Визначення місцезнаходження: режим економії енергії.</string>
     <string name="accessibility_quick_settings_location_gps_only">Визначення місцезнаходження: тільки датчики.</string>
@@ -128,7 +131,7 @@
     <string name="quick_settings_location_detail_menu_title">Виберіть режим:</string>
     <string name="quick_settings_location_detail_mode_high_accuracy_title">Висока точність</string>
     <string name="quick_settings_location_detail_mode_battery_saving_title">Режим економії енергії</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Лише GPS</string>
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Лише пристрій</string>
     <string name="quick_settings_location_detail_mode_high_accuracy_description">Використовувати GPS, Wi‑Fi, Bluetooth і мобільні мережі, щоб визначати місцеположення</string>
     <string name="quick_settings_location_detail_mode_battery_saving_description">Використовувати Wi‑Fi, Bluetooth і мобільні мережі, щоб визначати місцеположення</string>
     <string name="quick_settings_location_detail_mode_sensors_only_description">Використовувати GPS для визначення місцезнаходження</string>
@@ -155,8 +158,8 @@
     <string name="navbar_editor_summary">Налаштувати рядок навігації</string>
     <!-- Smartspace -->
     <string name="smartspace_hours_mins">%1$s %2$s</string>
-    <string name="smartspace_now">Now</string>
-    <string name="smartspace_pill_text_format">%1$s: %2$s</string>
+    <string name="smartspace_now">Зараз</string>
+    <string name="smartspace_pill_text_format">%2$s</string>
     <!-- Sound QS Tile -->
     <string name="quick_settings_sound_label">Звук</string>
     <string name="quick_settings_sound_ring">Дзвінок</string>
@@ -164,23 +167,23 @@
     <string name="quick_settings_sound_dnd">Не турбувати</string>
     <!-- Screenshot QS tile -->
     <string name="quick_settings_screenshot_label">Знімок екрану</string>
-    <string name="quick_settings_full_screenshot_label">Full</string>
-    <string name="quick_settings_region_screenshot_label">Partial</string>
+    <string name="quick_settings_full_screenshot_label">Повний</string>
+    <string name="quick_settings_region_screenshot_label">Частково</string>
     <!--Screenrecord Tile-->
-    <string name="screenrecorder_title_tile">Screenrecord</string>
+    <string name="screenrecorder_title_tile">Запис з екрану</string>
     <!-- Language toggle tile -->
-    <string name="quick_settings_locale_label">Language</string>
-    <string name="quick_settings_locale_more_locales_toast">Please configure multiple languages to enable toggle functionality</string>
+    <string name="quick_settings_locale_label">Мова</string>
+    <string name="quick_settings_locale_more_locales_toast">Будь ласка, налаштуйте декілька мов для конфігурації</string>
     <!-- CPUInfo tile -->
-    <string name="quick_settings_cpuinfo_label">CPU Info</string>
+    <string name="quick_settings_cpuinfo_label">Інформація про ЦП</string>
     <!-- Compass QS Tile -->
-    <string name="quick_settings_compass_label">Compass</string>
-    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
-    <string name="quick_settings_compass_init">Initializing\u2026</string>
-    <string name="accessibility_quick_settings_compass_off">Compass off</string>
-    <string name="accessibility_quick_settings_compass_on">Compass on</string>
-    <string name="accessibility_quick_settings_compass_changed_off">Compass turned off</string>
-    <string name="accessibility_quick_settings_compass_changed_on">Compass turned on</string>
+    <string name="quick_settings_compass_label">Компас</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0<xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Ініціалізація\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Компас вимк.</string>
+    <string name="accessibility_quick_settings_compass_on">Компас увімк.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Компас вимкнено</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Компас увімкнено</string>
     <string name="quick_settings_compass_N">N</string>
     <string name="quick_settings_compass_NE">NE</string>
     <string name="quick_settings_compass_E">E</string>
@@ -190,24 +193,26 @@
     <string name="quick_settings_compass_W">W</string>
     <string name="quick_settings_compass_NW">NW</string>
     <!-- DataSwitch Tile -->
-    <string name="qs_data_switch_label">Switch data card</string>
-    <string name="qs_data_switch_toast_0">Currently no SIM card is inserted</string>
-    <string name="qs_data_switch_toast_1">Currently only one SIM card is inserted</string>
-    <string name="qs_data_switch_changed_1">Switch data card to SIM 1.</string>
-    <string name="qs_data_switch_changed_2">Switch data card to SIM 2.</string>
+    <string name="qs_data_switch_label">Змінити картку для передачі даних</string>
+    <string name="qs_data_switch_toast_0">Наразі не вставлено жодної SIM-картки</string>
+    <string name="qs_data_switch_toast_1">Наразі вставлено лише одну SIM-картку</string>
+    <string name="qs_data_switch_changed_1">Включіть передачу даних картки SIM 1</string>
+    <string name="qs_data_switch_changed_2">Включіть передачу даних картки SIM 2</string>
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Показувати 4G, замість LTE</string>
-    <string name="show_fourg_summary">Replaces LTE statusbar indicators with 4G</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Show lock status</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Show current lock status icon on top</string>
-    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
+    <string name="show_fourg_summary">Замінити LTE в рядку стану на 4G</string>
+    <string name="tuner_keyguard_show_lock_icon_title">Статус блокування програм</string>
+    <string name="tuner_keyguard_show_lock_icon_summary">Показати піктограму блокування зверху</string>
+    <string name="tuner_qs_long_press_action">Не показуйте панелі при тривалому натисканні</string>
     <!-- VoLTE switch -->
-    <string name="volte_switch_summary">Display VoLTE icon</string>
+    <string name="volte_switch_summary">Відображати значок VoLTE</string>
     <!-- VPN QS tile -->
     <string name="quick_settings_vpn_label">VPN</string>
-    <string name="quick_settings_vpn_connect_dialog_title">Connect to\u2026</string>
-    <string name="vpn_credentials_hint">Please enter your credentials for connecting to <xliff:g id="name">%s</xliff:g></string>
-    <string name="vpn_credentials_username">Username</string>
-    <string name="vpn_credentials_password">Password</string>
-    <string name="vpn_credentials_dialog_connect">Connect</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Підключ. до\u2026</string>
+    <string name="vpn_credentials_hint">Будь ласка, введіть ваші дані для підключення до <xliff:g id="name">%s</xliff:g></string>
+    <string name="vpn_credentials_username">Ім\'я користувача</string>
+    <string name="vpn_credentials_password">Пароль</string>
+    <string name="vpn_credentials_dialog_connect">Підключитись</string>
+    <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Alerting notifications</string>
 </resources>

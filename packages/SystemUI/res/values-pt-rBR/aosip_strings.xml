@@ -24,7 +24,7 @@
     <string name="quick_settings_aod_label">AOD</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Cafeína</string>
-    <string name="quick_settings_caffeine_label_off">Off</string>
+    <string name="quick_settings_caffeine_label_off">Desligado</string>
     <string name="accessibility_quick_settings_caffeine_off">Cafeína desligada</string>
     <string name="accessibility_quick_settings_caffeine_on">Cafeína ativada</string>
     <!-- ADB over network tile -->
@@ -82,12 +82,12 @@
     <string name="accessibility_quick_settings_sync_changed_off">A sincronização foi desativada</string>
     <string name="accessibility_quick_settings_sync_changed_on">A sincronização foi ativada</string>
     <!-- Screen pinning -->
-    <string name="screen_pinning_description_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_recents_invisible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_recents_invisible_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_toast_custom">To unpin this screen, touch &amp; hold Back button</string>
-    <string name="screen_pinning_toast_recents_invisible_custom">To unpin this screen, touch &amp; hold Back button</string>
+    <string name="screen_pinning_description_custom">Isto mantém a tela em visualização até ser desafixada. Toque &amp; segure o botão Voltar para desafixar.</string>
+    <string name="screen_pinning_description_recents_invisible_custom">Isto mantém a tela em visualização até ser desafixada. Toque &amp; segure o botão Voltar para desafixar.</string>
+    <string name="screen_pinning_description_accessible_custom">Isto mantém a tela em visualização até ser desafixada. Toque &amp; segure o botão Voltar para desafixar.</string>
+    <string name="screen_pinning_description_recents_invisible_accessible_custom">Isto mantém a tela em visualização até ser desafixada. Toque &amp; segure o botão Voltar para desafixar.</string>
+    <string name="screen_pinning_toast_custom">Para desafixar esta tela, toque &amp; segure o botão Voltar</string>
+    <string name="screen_pinning_toast_recents_invisible_custom">Para desafixar esta tela, toque &amp; segure o botão Voltar</string>
     <!-- Long swipe gesture actions -->
     <string name="app_picker_dialog_title">Selecionar um aplicativo</string>
     <string name="recents_app_killed">Aplicativo encerrado</string>
@@ -99,14 +99,17 @@
     <string name="screenrecord_dialog_summary">Durante a gravação, o Android pode capturar informações sensíveis que são visíveis na sua tela ou reproduzidas em seu dispositivo. Isso inclui senhas, dados de pagamento, fotos, imagens e áudio.</string>
     <string name="screenrecord_dialog_start">Iniciar</string>
     <string name="screenrecord_dialog_cancel">Cancelar</string>
-    <string name="screenrecord_audio_title">Gravar áudio</string>
-    <string name="screenrecord_audio_summary">Gravar áudio enquanto estiver gravando</string>
+    <string name="screenrecord_audio_title">Audio source</string>
+    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
+    <string name="screenrecord_audio_recording_internal">Internal</string>
+    <string name="screenrecord_audio_recording_microphone">Microphone</string>
+    <string name="screenrecord_audio_recording_off">Disabled</string>
     <string name="screenrecord_taps_title">Mostrar toques na tela</string>
     <string name="screenrecord_taps_summary">Mostrar feedback visual durante a gravação</string>
     <string name="screenrecord_stopdot_title">Mostrar ponto de parar gravação</string>
     <string name="screenrecord_stopdot_summary">Mostrar um ponto vermelho para parar de gravar com um único toque. Toque e segure para movê-lo para o lado oposto.</string>
-    <string name="screenrecord_low_quality_title">Baixa qualidade</string>
-    <string name="screenrecord_low_quality_summary">Gravar em baixa qualidade para economizar espaço no seu dispositivo</string>
+    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
+    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Captura de tela</string>
     <string name="global_action_screenrecord">Gravador de tela</string>
@@ -210,4 +213,6 @@
     <string name="vpn_credentials_username">Nome do usuário</string>
     <string name="vpn_credentials_password">Senha</string>
     <string name="vpn_credentials_dialog_connect">Conectar</string>
+    <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Alerting notifications</string>
 </resources>
