@@ -596,6 +596,8 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
 
     private VisualizerView mVisualizerView;
 
+    private VolumePluginManager mVolumePluginManager;
+
     private final BroadcastReceiver mWallpaperChangedReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -830,6 +832,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         mFalsingManager = Dependency.get(FalsingManager.class);
         mWallpaperSupported =
                 mContext.getSystemService(WallpaperManager.class).isWallpaperSupported();
+	mVolumePluginManager = new VolumePluginManager(mContext, mHandler);
 
         // Connect in to the status bar manager service
         mCommandQueue = getComponent(CommandQueue.class);
