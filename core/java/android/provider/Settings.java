@@ -5463,6 +5463,12 @@ public final class Settings {
         public static final String KEY_HOME_LONG_PRESS_CUSTOM_APP = "key_home_long_press_custom_app";
 
         /**
+         * @hide
+         */
+        public static final String DOZE_BRIGHTNESS_FORCE = "doze_brightness_force";
+
+        private static final Validator DOZE_BRIGHTNESS_FORCE_VALIDATOR = BOOLEAN_VALIDATOR;
+        /**
          * Launch custom activity when home key is long-pressed.
          * @hide
          */
@@ -5837,6 +5843,7 @@ public final class Settings {
             LOCKSCREEN_BATTERY_INFO,
             LOCKSCREEN_MEDIA_BLUR,
             LOCKSCREEN_MEDIA_METADATA,
+            DOZE_BRIGHTNESS_FORCE,
             NAVIGATION_BAR_ARROW_KEYS,
             NAVIGATION_HANDLE_WIDTH,
             NOTIFICATION_HEADERS,
@@ -6017,6 +6024,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(LOCKSCREEN_MEDIA_BLUR);
             PRIVATE_SETTINGS.add(HEADS_UP_NOTIFICATION_SNOOZE);
             PRIVATE_SETTINGS.add(HEADS_UP_TIMEOUT);
+            PRIVATE_SETTINGS.add(DOZE_BRIGHTNESS_FORCE);
             PRIVATE_SETTINGS.add(KEY_HOME_LONG_PRESS_ACTION);
             PRIVATE_SETTINGS.add(KEY_HOME_DOUBLE_TAP_ACTION);
             PRIVATE_SETTINGS.add(KEY_MENU_LONG_PRESS_ACTION);
@@ -6183,6 +6191,7 @@ public final class Settings {
             VALIDATORS.put(LOCKSCREEN_BATTERY_INFO, LOCKSCREEN_BATTERY_INFO_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_MEDIA_BLUR, LOCKSCREEN_MEDIA_BLUR_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
+            VALIDATORS.put(DOZE_BRIGHTNESS_FORCE, DOZE_BRIGHTNESS_FORCE_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_ARROW_KEYS,
                     NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
             VALIDATORS.put(NAVIGATION_HANDLE_WIDTH, NAVIGATION_HANDLE_WIDTH_VALIDATOR);
