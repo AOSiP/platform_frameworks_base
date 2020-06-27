@@ -197,6 +197,24 @@ public class DozeScreenBrightness extends BroadcastReceiver implements DozeMachi
         mDozeHost.setAodDimmingScrim(0f);
     }
 
+    private void setBrightnessToValue(int value) {
+        boolean forceCustomBrightness = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.DOZE_BRIGHTNESS_FORCE, 0, UserHandle.USER_CURRENT) == 1;
+        mDozeService.setDozeScreenBrightness(forceCustomBrightness ? value : clampToUserSetting(value));
+    }
+
+    private int getDozeBrightnessValue() {
+        return Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.DOZE_BRIGHTNESS, mDefaultDozeBrightness,
+                UserHandle.USER_CURRENT);
+    }
+
+    private int getPuleBrightnessValue() {
+        return Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.PULSE_BRIGHTNESS, mDefaultPulseBrightness,
+                UserHandle.USER_CURRENT);
+    }
+
     private int clampToUserSetting(int brightness) {
         int userSetting = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.SCREEN_BRIGHTNESS, Integer.MAX_VALUE,
