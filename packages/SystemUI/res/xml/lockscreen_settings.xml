@@ -18,7 +18,6 @@
     xmlns:sysui="http://schemas.android.com/apk/res-auto"
     android:title="@string/other">
 
-
     <Preference
         android:key="sysui_keyguard_left"
         android:title="@string/lockscreen_shortcut_left"
@@ -39,9 +38,4 @@
         android:title="@string/lockscreen_unlock_right"
         sysui:defValue="true" />
 
-    <com.android.systemui.tuner.TunerSwitch
-        android:key="sysui_keyguard_show_lock_icon"
-        android:title="@string/tuner_keyguard_show_lock_icon_title"
-        android:summary="@string/tuner_keyguard_show_lock_icon_summary"
-        sysui:defValue="true" />
 </PreferenceScreen>
