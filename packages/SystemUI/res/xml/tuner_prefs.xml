@@ -48,11 +48,6 @@
 
     </PreferenceScreen>
 
-    <com.android.systemui.tuner.TunerSwitch
-        android:key="qs_long_press_action"
-        android:title="@string/tuner_qs_long_press_action"
-        sysui:defValue="false" />
-
     <Preference
         android:key="nav_bar"
         android:title="@string/nav_bar"
