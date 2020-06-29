@@ -49,8 +49,8 @@ public class AODTile extends QSTileImpl<BooleanState> {
     }
 
     @Override
-    public BooleanState newTileState() {
-        BooleanState state = new BooleanState();
+    public State newTileState() {
+        State state = new State();
         state.handlesLongClick = false;
         return state;
     }
@@ -66,8 +66,7 @@ public class AODTile extends QSTileImpl<BooleanState> {
 
     @Override
     public Intent getLongClickIntent() {
-        return new Intent().setComponent(new ComponentName(
-            "com.android.settings", "com.android.settings.Settings$LockscreenDisplayActivity"));
+        return null;
     }
 
     @Override
