@@ -49,14 +49,11 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.NonNull;
 import android.annotation.Nullable;
-import android.app.Activity;
-import android.app.ActivityManagerNative;
 import android.app.ActivityManager;
 import android.app.ActivityOptions;
 import android.app.ActivityTaskManager;
 import android.app.AlarmManager;
 import android.app.AppOpsManager;
-import android.app.IActivityManager;
 import android.app.IWallpaperManager;
 import android.app.KeyguardManager;
 import android.app.Notification;
@@ -77,7 +74,6 @@ import android.content.IntentFilter;
 import android.content.pm.IPackageManager;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
@@ -263,6 +259,7 @@ import com.android.systemui.statusbar.policy.NetworkController;
 import com.android.systemui.statusbar.policy.OnHeadsUpChangedListener;
 import com.android.systemui.statusbar.policy.PulseController;
 import com.android.systemui.statusbar.policy.RemoteInputQuickSettingsDisabler;
+import com.android.systemui.statusbar.policy.TaskHelper;
 import com.android.systemui.statusbar.policy.UserInfoController;
 import com.android.systemui.statusbar.policy.UserInfoControllerImpl;
 import com.android.systemui.statusbar.policy.UserSwitcherController;
@@ -279,7 +276,6 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -725,18 +721,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     private ActivityIntentHelper mActivityIntentHelper;
     private ShadeController mShadeController;
 
-    private int mRunningTaskId;
-    private IntentFilter mDefaultHomeIntentFilter;
-    private static final String[] DEFAULT_HOME_CHANGE_ACTIONS = new String[] {
-            PackageManagerWrapper.ACTION_PREFERRED_ACTIVITY_CHANGED,
-            Intent.ACTION_BOOT_COMPLETED,
-            Intent.ACTION_PACKAGE_ADDED,
-            Intent.ACTION_PACKAGE_CHANGED,
-            Intent.ACTION_PACKAGE_REMOVED
-    };
-    @Nullable private ComponentName mDefaultHome;
-    private boolean mIsLauncherShowing;
-    private ComponentName mTaskComponentName = null;
+    protected TaskHelper mTaskHelper;
 
     private boolean mShowNavBar;
 
@@ -926,17 +911,6 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         Dependency.get(InitController.class).addPostInitTask(
                 () -> setUpDisableFlags(disabledFlags1, disabledFlags2));
         ((NotificationLockscreenUserManagerGoogle) Dependency.get(NotificationLockscreenUserManager.class)).updateAodVisibilitySettings();
-
-        mDefaultHomeIntentFilter = new IntentFilter();
-        for (String action : DEFAULT_HOME_CHANGE_ACTIONS) {
-            mDefaultHomeIntentFilter.addAction(action);
-        }
-        ActivityManager.RunningTaskInfo runningTaskInfo =
-                ActivityManagerWrapper.getInstance().getRunningTask();
-        mRunningTaskId = runningTaskInfo == null ? 0 : runningTaskInfo.taskId;
-        mDefaultHome = getCurrentDefaultHome();
-        mContext.registerReceiver(mDefaultHomeBroadcastReceiver, mDefaultHomeIntentFilter);
-        ActivityManagerWrapper.getInstance().registerTaskStackListener(mTaskStackChangeListener);
 
         // this will initialize Pulse and begin listening for media events
         mMediaManager.addCallback(Dependency.get(PulseController.class));
@@ -1324,6 +1298,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
         mNavigationBarController = Dependency.get(NavigationBarController.class);
         mUserSwitcherController = Dependency.get(UserSwitcherController.class);
         mVibratorHelper = Dependency.get(VibratorHelper.class);
+        mTaskHelper = Dependency.get(TaskHelper.class);
     }
 
     protected void setUpQuickSettingsTilePanel() {
@@ -1564,59 +1539,6 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             }
         }
         return true;
-    }
-
-    private final BroadcastReceiver mDefaultHomeBroadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            mDefaultHome = getCurrentDefaultHome();
-        }
-    };
-
-    private final TaskStackChangeListener mTaskStackChangeListener =
-            new TaskStackChangeListener() {
-                @Override
-                public void onTaskMovedToFront(ActivityManager.RunningTaskInfo taskInfo) {
-                    handleTaskStackTopChanged(taskInfo.taskId, taskInfo.topActivity);
-                }
-
-                @Override
-                public void onTaskCreated(int taskId, ComponentName componentName) {
-                    handleTaskStackTopChanged(taskId, componentName);
-                }
-            };
-
-    private void handleTaskStackTopChanged(int taskId, @Nullable ComponentName taskComponentName) {
-        if (mRunningTaskId == taskId || taskComponentName == null) {
-            return;
-        }
-        mRunningTaskId = taskId;
-        mIsLauncherShowing = taskComponentName.equals(mDefaultHome);
-        mTaskComponentName = taskComponentName;
-        if (mMediaManager != null) {
-            mMediaManager.setRunningPackage(mTaskComponentName.getPackageName());
-        }
-    }
-
-    @Nullable
-    private ComponentName getCurrentDefaultHome() {
-        List<ResolveInfo> homeActivities = new ArrayList<>();
-        ComponentName defaultHome = PackageManagerWrapper.getInstance().getHomeActivities(homeActivities);
-        if (defaultHome != null) {
-            return defaultHome;
-        }
-
-        int topPriority = Integer.MIN_VALUE;
-        ComponentName topComponent = null;
-        for (ResolveInfo resolveInfo : homeActivities) {
-            if (resolveInfo.priority > topPriority) {
-                topComponent = resolveInfo.activityInfo.getComponentName();
-                topPriority = resolveInfo.priority;
-            } else if (resolveInfo.priority == topPriority) {
-                topComponent = null;
-            }
-        }
-        return topComponent;
     }
 
     /**
@@ -2399,35 +2321,6 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
     public void showPinningEscapeToast() {
         if (getNavigationBarView() != null) {
             getNavigationBarView().showPinningEscapeToast();
-        }
-    }
-
-    @Override
-    public void killForegroundApp() {
-        boolean killed = false;
-        if (!mIsLauncherShowing && mTaskComponentName != null &&
-                mContext.checkCallingOrSelfPermission(android.Manifest.permission.FORCE_STOP_PACKAGES)
-                == PackageManager.PERMISSION_GRANTED) {
-            IActivityManager iam = ActivityManagerNative.getDefault();
-            try {
-                iam.forceStopPackage(mTaskComponentName.getPackageName(), UserHandle.USER_CURRENT); // kill app
-                iam.removeTask(mRunningTaskId); // remove app from recents
-                killed = true;
-            } catch (RemoteException e) {
-                killed = false;
-            }
-            if (killed) {
-                Toast appKilled = Toast.makeText(mContext, R.string.recents_app_killed,
-                        Toast.LENGTH_SHORT);
-                appKilled.show();
-            } else {
-                // maybe show a toast?
-            }
-        }
-        if (mIsLauncherShowing) {
-            Toast nope = Toast.makeText(mContext, R.string.nope_cant_kill,
-                    Toast.LENGTH_SHORT);
-            nope.show();
         }
     }
 
