@@ -4583,6 +4583,14 @@ public final class Settings {
         public static final Validator SHOW_VOLTE_ICON_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * Whether to show VoWIFI icon or not
+         * @hide
+         */
+        public static final String SHOW_VOWIFI_ICON = "show_vowifi_icon";
+        /** @hide */
+        public static final Validator SHOW_VOWIFI_ICON_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Setting to determine whether or not to show the battery percentage in the qs status bar header.
          *    0 - Show remaining time
          *    1 - Show percentage
@@ -5872,6 +5880,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(SHOW_FOURG);
             PRIVATE_SETTINGS.add(SHOW_MEDIA_HEADS_UP);
             PRIVATE_SETTINGS.add(SHOW_VOLTE_ICON);
+            PRIVATE_SETTINGS.add(SHOW_VOWIFI_ICON);
             PRIVATE_SETTINGS.add(STATUS_BAR_BRIGHTNESS_CONTROL);
             PRIVATE_SETTINGS.add(STATUS_BAR_LOGO);
             PRIVATE_SETTINGS.add(STATUSBAR_PRIVACY_INDICATORS);
@@ -6022,6 +6031,7 @@ public final class Settings {
             VALIDATORS.put(SHOW_FOURG, SHOW_FOURG_VALIDATOR);
             VALIDATORS.put(SHOW_MEDIA_HEADS_UP, SHOW_MEDIA_HEADS_UP_VALIDATOR);
             VALIDATORS.put(SHOW_VOLTE_ICON, SHOW_VOLTE_ICON_VALIDATOR);
+            VALIDATORS.put(SHOW_VOWIFI_ICON, SHOW_VOWIFI_ICON_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_LOGO, STATUS_BAR_LOGO_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_BRIGHTNESS_CONTROL, STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR);
             VALIDATORS.put(STATUSBAR_PRIVACY_INDICATORS, STATUSBAR_PRIVACY_INDICATORS_VALIDATOR);
