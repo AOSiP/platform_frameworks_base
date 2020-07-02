@@ -137,7 +137,7 @@
     <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
         <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Screenshot</string>
-    <string name="global_action_screenrecord">Screenrecord</string>
+    <string name="global_action_screenrecord">Screen Record</string>
 
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Hold &amp; drag or tap to add tiles</string>
