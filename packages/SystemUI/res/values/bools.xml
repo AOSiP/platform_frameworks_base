@@ -18,6 +18,4 @@
 <resources>
     <!-- Whether to show the user switcher in quick settings when only a single user is present. -->
     <bool name="qs_show_user_switcher_for_single_user">false</bool>
-    <!-- Whether to show vowifi icon in status bar -->
-    <bool name="config_display_vowifi">true</bool>
 </resources>
