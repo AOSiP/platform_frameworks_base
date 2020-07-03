@@ -263,4 +263,9 @@ public class OronosClockController implements ClockPlugin {
     public boolean shouldShowStatusArea() {
         return false;
     }
+
+    @Override
+    public boolean shouldShowInBigContainer() {
+        return true;
+    }
 }
