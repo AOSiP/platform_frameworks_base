@@ -296,17 +296,16 @@ public class BrightnessController implements ToggleSlider.Listener {
         mVrManager = IVrManager.Stub.asInterface(ServiceManager.getService(
                 Context.VR_SERVICE));
 
-        if (mAutomaticAvailable) {
-            mIcon.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Settings.System.putIntForUser(mContext.getContentResolver(),
-                        Settings.System.SCREEN_BRIGHTNESS_MODE, mAutomatic ?
-                        Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL :
-                        Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC,
-                        UserHandle.USER_CURRENT);
-                }
-            });
+        if (mIcon != null) {
+            if (mAutomaticAvailable) {
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int newMode = mAutomatic ? Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL : Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
+                        setMode(newMode);
+                    }
+                });
+            }
         }
     }
 
@@ -363,7 +362,7 @@ public class BrightnessController implements ToggleSlider.Listener {
     @Override
     public void onChanged(ToggleSlider toggleSlider, boolean tracking, boolean automatic,
             int value, boolean stopTracking) {
-        updateIcon(mAutomatic);
+        //updateIcon(mAutomatic);
         if (mExternalChange) return;
 
         if (mSliderAnimator != null) {
