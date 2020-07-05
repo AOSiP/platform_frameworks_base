@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e26adf73_dace4af2",
+        "filename": "packages/SystemUI/res/layout/screen_record_dialog.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000365
+      },
+      "writtenOn": "2020-07-05T13:17:48Z",
+      "side": 1,
+      "message": "This also needs to be set to 12dp to be equal with the rest. But try first, I see you left summaries as is - so it may be needed for that longer one",
+      "revId": "c536929cd9a0dea157c5691c2e4bcbbbba4bbb8f",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b203528_8188600e",
+        "filename": "packages/SystemUI/res/layout/screen_record_dialog.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000365
+      },
+      "writtenOn": "2020-07-05T13:17:48Z",
+      "side": 1,
+      "message": "May also need to set this to 130. It\u0027s clashing with the spinner in smaller screens",
+      "revId": "c536929cd9a0dea157c5691c2e4bcbbbba4bbb8f",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
