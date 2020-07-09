@@ -89,7 +89,7 @@
     <string name="screen_pinning_toast_custom">Щоб відкріпити цей екран, натисніть &amp; утримуйте кнопку \"Назад\"</string>
     <string name="screen_pinning_toast_recents_invisible_custom">Щоб відкріпити цей екран, натисніть &amp; і утримуйте кнопку \"Назад\"</string>
     <!-- Long swipe gesture actions -->
-    <string name="app_picker_dialog_title">Оберіть додаток</string>
+    <string name="app_picker_dialog_title">Оберіть застосунок</string>
     <string name="recents_app_killed">Програму закрито</string>
     <string name="nope_cant_kill">Лаунчер не може бути завершений</string>
     <!-- Screenshot toast -->
@@ -99,17 +99,17 @@
     <string name="screenrecord_dialog_summary">Під час запису система Android може захоплювати будь-яку приватну інформацію, що відображається на вашому екрані або відтворюється на вашому пристрої. Включаючи паролі, платіжну інформацію, фотографії, повідомлення та аудіо.</string>
     <string name="screenrecord_dialog_start">Старт</string>
     <string name="screenrecord_dialog_cancel">Скасувати</string>
-    <string name="screenrecord_audio_title">Audio source</string>
-    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
-    <string name="screenrecord_audio_recording_internal">Internal</string>
-    <string name="screenrecord_audio_recording_microphone">Microphone</string>
-    <string name="screenrecord_audio_recording_off">Disabled</string>
+    <string name="screenrecord_audio_title">Джерело аудіо</string>
+    <string name="screenrecord_audio_summary">Дозволяє включити чи вимкнути аудіо вхід</string>
+    <string name="screenrecord_audio_recording_internal">Внутрішній</string>
+    <string name="screenrecord_audio_recording_microphone">Мікрофон</string>
+    <string name="screenrecord_audio_recording_off">Вимкнено</string>
     <string name="screenrecord_taps_title">Показувати дотики на екрані</string>
     <string name="screenrecord_taps_summary">Показувати візуальний відгук під час запису</string>
     <string name="screenrecord_stopdot_title">Показувати кнопку зупинки запису</string>
     <string name="screenrecord_stopdot_summary">Показувати червону кнопку, щоб зупинити запис одним дотиком. Утримуйте її, щоб перемістити на протилежну сторону.</string>
-    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
-    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
+    <string name="screenrecord_video_bitrate_title">Бітрейт відео</string>
+    <string name="screenrecord_video_bitrate_summary">Вищий бітрейт робить якість вищою, але це також збільшує розмір файлу</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Знімок екрану</string>
     <string name="global_action_screenrecord">Запис екрану</string>
@@ -214,5 +214,5 @@
     <string name="vpn_credentials_password">Пароль</string>
     <string name="vpn_credentials_dialog_connect">Підключитись</string>
     <!-- Alerting notification header label -->
-    <string name="notification_section_header_alerting">Alerting notifications</string>
+    <string name="notification_section_header_alerting">Споживачі сповіщення</string>
 </resources>

@@ -23,5 +23,5 @@
     <string name="url_copy_success">URL skopirovane</string>
     <string name="url_copy_failed">Vyskytla sa chyba pri nahrávaní obrázku</string>
     <!-- Pocket Lock -->
-    <string name="pocket_lock_message_long_press">Long press power button to interact</string>
+    <string name="pocket_lock_message_long_press">Pre interakciu podržte tlačidlo napájania</string>
 </resources>
