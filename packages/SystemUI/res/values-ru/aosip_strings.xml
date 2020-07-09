@@ -99,17 +99,17 @@
     <string name="screenrecord_dialog_summary">При запис, Android может записать любую видимую информацию с вашего экрана. Это включает пароли, данные карт, фото, сообщения и аудио.</string>
     <string name="screenrecord_dialog_start">Запуск</string>
     <string name="screenrecord_dialog_cancel">Отмена</string>
-    <string name="screenrecord_audio_title">Audio source</string>
-    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
-    <string name="screenrecord_audio_recording_internal">Internal</string>
-    <string name="screenrecord_audio_recording_microphone">Microphone</string>
-    <string name="screenrecord_audio_recording_off">Disabled</string>
+    <string name="screenrecord_audio_title">Источник звука</string>
+    <string name="screenrecord_audio_summary">Разрешает выбор источника звука или выключает его.</string>
+    <string name="screenrecord_audio_recording_internal">Встроенный</string>
+    <string name="screenrecord_audio_recording_microphone">Микрофон</string>
+    <string name="screenrecord_audio_recording_off">Выключено</string>
     <string name="screenrecord_taps_title">Показывать касания на экране</string>
     <string name="screenrecord_taps_summary">Показывать нажатия на экран при записи</string>
     <string name="screenrecord_stopdot_title">Показать кнопку остановки</string>
     <string name="screenrecord_stopdot_summary">Показывать красную кнопку остановки для остановки записи одним нажатием. Длительное нажатие переместит кнопку в противоположную сторону.</string>
-    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
-    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
+    <string name="screenrecord_video_bitrate_title">Битрейт видео</string>
+    <string name="screenrecord_video_bitrate_summary">Задать битрейт, чтобы получить лучшее качество видео за счёт увеличения размера файла</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Снимок экрана</string>
     <string name="global_action_screenrecord">Запись экрана</string>
@@ -214,5 +214,5 @@
     <string name="vpn_credentials_password">Пароль</string>
     <string name="vpn_credentials_dialog_connect">Подключится</string>
     <!-- Alerting notification header label -->
-    <string name="notification_section_header_alerting">Alerting notifications</string>
+    <string name="notification_section_header_alerting">Предупреждающие уведомления</string>
 </resources>

@@ -99,17 +99,17 @@
     <string name="screenrecord_dialog_summary">在录制过程中，安卓系统可以捕获在您的屏幕上可见或在您的设备上播放的任何敏感信息。 这包括密码、付款信息、照片、消息和音频。</string>
     <string name="screenrecord_dialog_start">开始</string>
     <string name="screenrecord_dialog_cancel">取消</string>
-    <string name="screenrecord_audio_title">Audio source</string>
-    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
-    <string name="screenrecord_audio_recording_internal">Internal</string>
-    <string name="screenrecord_audio_recording_microphone">Microphone</string>
-    <string name="screenrecord_audio_recording_off">Disabled</string>
+    <string name="screenrecord_audio_title">音频源</string>
+    <string name="screenrecord_audio_summary">选择或停用音频输入设备</string>
+    <string name="screenrecord_audio_recording_internal">内置</string>
+    <string name="screenrecord_audio_recording_microphone">麦克风</string>
+    <string name="screenrecord_audio_recording_off">停用</string>
     <string name="screenrecord_taps_title">显示触摸效果</string>
     <string name="screenrecord_taps_summary">录制时显示视觉反馈</string>
     <string name="screenrecord_stopdot_title">显示停止圆点</string>
     <string name="screenrecord_stopdot_summary">显示一个可以单击以停止录制的红点。长按可以将其移动到另一边。</string>
-    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
-    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
+    <string name="screenrecord_video_bitrate_title">视频比特率</string>
+    <string name="screenrecord_video_bitrate_summary">设置视频比特率，以更大的文件体积换取更好的视频质量</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">截图</string>
     <string name="global_action_screenrecord">录屏</string>
@@ -214,5 +214,5 @@
     <string name="vpn_credentials_password">密码</string>
     <string name="vpn_credentials_dialog_connect">连接</string>
     <!-- Alerting notification header label -->
-    <string name="notification_section_header_alerting">Alerting notifications</string>
+    <string name="notification_section_header_alerting">警报通知</string>
 </resources>

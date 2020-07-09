@@ -24,48 +24,48 @@
     <string name="quick_settings_aod_label">AOD</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Kofeín</string>
-    <string name="quick_settings_caffeine_label_off">Off</string>
+    <string name="quick_settings_caffeine_label_off">Vypnuté</string>
     <string name="accessibility_quick_settings_caffeine_off">Kofeín vyp.</string>
     <string name="accessibility_quick_settings_caffeine_on">Kofeín zap.</string>
     <!-- ADB over network tile -->
-    <string name="quick_settings_network_adb_enabled_label">Enabled</string>
-    <string name="quick_settings_network_adb_disabled_label">Disabled</string>
-    <string name="quick_settings_network_adb_label">ADB over network</string>
-    <string name="quick_settings_network_adb_toast">USB debugging is not enabled</string>
+    <string name="quick_settings_network_adb_enabled_label">Povolené</string>
+    <string name="quick_settings_network_adb_disabled_label">Zakázané</string>
+    <string name="quick_settings_network_adb_label">ADB cez sieť</string>
+    <string name="quick_settings_network_adb_toast">Ladenie USB nie je povolené</string>
     <!-- Sound Search tile -->
-    <string name="quick_settings_sound_search">Sound search</string>
-    <string name="quick_settings_sound_search_no_app">Sorry, but this doesn\'t work if you don\'t have a Sound search app.</string>
-    <string name="statusbar_items_title">Statusbar icon</string>
-    <string name="lockscreen_default">Default</string>
-    <string name="lockscreen_hidden">None</string>
+    <string name="quick_settings_sound_search">Zvukové vyhľadávanie</string>
+    <string name="quick_settings_sound_search_no_app">Prepáčte, nefunguje to, ak nemáte aplikáciu Zvukové vyhľadávanie.</string>
+    <string name="statusbar_items_title">Ikony stavového riadku</string>
+    <string name="lockscreen_default">Predvolené</string>
+    <string name="lockscreen_hidden">Žiadne</string>
     <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
-    <string name="custom_hint">Swipe from icon to launch</string>
+    <string name="custom_hint">Spustiť potiahnutím od ikony</string>
     <!-- Reboot/Recovery QS tile -->
-    <string name="quick_settings_reboot_label">Reboot</string>
-    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+    <string name="quick_settings_reboot_label">Reštartovať</string>
+    <string name="quick_settings_reboot_recovery_label">Obnovenie</string>
     <!-- Name of the nfc status bar icon. -->
     <string name="status_bar_nfc">NFC</string>
     <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
     <string name="accessibility_status_bar_nfc">Nfc</string>
-    <string name="status_bar_data_saver">Data saver</string>
+    <string name="status_bar_data_saver">Šetrič dát</string>
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_roaming">Roaming</string>
     <!-- Music tile -->
-    <string name="quick_settings_music_label">Music</string>
-    <string name="quick_settings_music_play">Play</string>
-    <string name="quick_settings_music_pause">Pause</string>
+    <string name="quick_settings_music_label">Hudba</string>
+    <string name="quick_settings_music_play">Prehrať</string>
+    <string name="quick_settings_music_pause">Pozastaviť</string>
     <!-- Navigation bar dpad -->
-    <string name="accessibility_dpad_left">Cursor left</string>
-    <string name="accessibility_dpad_right">Cursor right</string>
+    <string name="accessibility_dpad_left">Kurzor vľavo</string>
+    <string name="accessibility_dpad_right">Kurzor vpravo</string>
     <!-- Immersive tile -->
-    <string name="quick_settings_immersive_tile">Immersive mode</string>
-    <string name="quick_settings_immersive_tile_statusbar">Immersive statusbar</string>
-    <string name="quick_settings_immersive_tile_navbar">Immersive navbar</string>
-    <string name="quick_settings_immersive_tile_full">Immersive full</string>
+    <string name="quick_settings_immersive_tile">Pohlcujúci režim</string>
+    <string name="quick_settings_immersive_tile_statusbar">Pohlcujúci stavový riadok</string>
+    <string name="quick_settings_immersive_tile_navbar">Pohlcujúci navigačný panel</string>
+    <string name="quick_settings_immersive_tile_full">Všetko pohlcujúce</string>
     <!-- Mono/Stereo tile -->
-    <string name="quick_settings_monotoggle_tile">Audio mode</string>
-    <string name="quick_settings_monotoggle_tile_mono">Mono audio</string>
-    <string name="quick_settings_monotoggle_tile_stereo">Stereo audio</string>
+    <string name="quick_settings_monotoggle_tile">Zvukový režim</string>
+    <string name="quick_settings_monotoggle_tile_mono">Mono zvuk</string>
+    <string name="quick_settings_monotoggle_tile_stereo">Stereo zvuk</string>
     <!-- Heads Up QS Tile -->
     <string name="quick_settings_heads_up_label">Plávajúce upozornenia</string>
     <string name="accessibility_quick_settings_heads_up_off">Plávajúce upozornenia vyp.</string>
@@ -73,46 +73,46 @@
     <string name="accessibility_quick_settings_heads_up_changed_off">Plávajúce upozornenia boli vypnuté.</string>
     <string name="accessibility_quick_settings_heads_up_changed_on">Plávajúce upozornenia boli zapnuté.</string>
     <!-- Heads up snooze toast -->
-    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Peeking notification are snoozing for 1 minute.</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Peeking notifications are snoozing for <xliff:g id="number">%d</xliff:g> minutes.</string>
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Plávajúce upozornenia sú odložené na 1 minútu.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s </xliff:g> • Plávajúce upozornenia sú odložené na <xliff:g id="number">%d </xliff:g> minút.</string>
     <!-- Sync QS Tile -->
-    <string name="quick_settings_sync_label">Sync</string>
-    <string name="accessibility_quick_settings_sync_off">Sync off</string>
-    <string name="accessibility_quick_settings_sync_on">Sync on</string>
-    <string name="accessibility_quick_settings_sync_changed_off">Sync turned off</string>
-    <string name="accessibility_quick_settings_sync_changed_on">Sync turned on</string>
+    <string name="quick_settings_sync_label">Synchronizácia</string>
+    <string name="accessibility_quick_settings_sync_off">Synch. vypnutá</string>
+    <string name="accessibility_quick_settings_sync_on">Synch. zapnutá</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Synchronizácia vypnutá</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Synchronizácia zapnutá</string>
     <!-- Screen pinning -->
-    <string name="screen_pinning_description_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_recents_invisible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_recents_invisible_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_toast_custom">To unpin this screen, touch &amp; hold Back button</string>
-    <string name="screen_pinning_toast_recents_invisible_custom">To unpin this screen, touch &amp; hold Back button</string>
+    <string name="screen_pinning_description_custom">Obsah bude pripnutý v zobrazení, až kým ho neuvoľníte. Uvoľníte ho stlačením a podržaním tlačidla Späť.</string>
+    <string name="screen_pinning_description_recents_invisible_custom">Obsah bude pripnutý v zobrazení, až kým ho neuvoľníte. Uvoľníte ho stlačením a podržaním tlačidla Späť.</string>
+    <string name="screen_pinning_description_accessible_custom">Obsah bude pripnutý v zobrazení, až kým ho neuvoľníte. Uvoľníte ho stlačením a podržaním tlačidla Späť.</string>
+    <string name="screen_pinning_description_recents_invisible_accessible_custom">Obsah bude pripnutý v zobrazení, až kým ho neuvoľníte. Uvoľníte ho stlačením a podržaním tlačidla Späť.</string>
+    <string name="screen_pinning_toast_custom">Pre uvoľnenie tejto obrazovky stlačte a podržte tlačidlo Späť</string>
+    <string name="screen_pinning_toast_recents_invisible_custom">Pre uvoľnenie tejto obrazovky stlačte a podržte tlačidlo Späť</string>
     <!-- Long swipe gesture actions -->
-    <string name="app_picker_dialog_title">Select an app</string>
-    <string name="recents_app_killed">App killed</string>
-    <string name="nope_cant_kill">Launcher cannot be killed</string>
+    <string name="app_picker_dialog_title">Vybrať aplikáciu</string>
+    <string name="recents_app_killed">Aplik. deaktivovaná</string>
+    <string name="nope_cant_kill">Launcher nemôže byť deaktivovaný</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Snímka obrazovky bola odstránená</string>
     <!-- Screen recorder -->
-    <string name="screenrecord_dialog_title">Start recording?</string>
-    <string name="screenrecord_dialog_summary">While recording, Android system can capture any sensitive information that\'s visible on your screen or played on your device. This includes passwords, payment info, photos, messages, and audio.</string>
-    <string name="screenrecord_dialog_start">Start</string>
-    <string name="screenrecord_dialog_cancel">Cancel</string>
-    <string name="screenrecord_audio_title">Audio source</string>
-    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
-    <string name="screenrecord_audio_recording_internal">Internal</string>
-    <string name="screenrecord_audio_recording_microphone">Microphone</string>
-    <string name="screenrecord_audio_recording_off">Disabled</string>
-    <string name="screenrecord_taps_title">Show touches on screen</string>
-    <string name="screenrecord_taps_summary">Show visual feedback while recording</string>
-    <string name="screenrecord_stopdot_title">Show stop dot</string>
-    <string name="screenrecord_stopdot_summary">Show a red dot to stop recording with a single tap. Longpress it to move it to the opposite side.</string>
-    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
-    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
+    <string name="screenrecord_dialog_title">Spustiť nahrávanie?</string>
+    <string name="screenrecord_dialog_summary">Android systém môže počas nahrávania zaznamenať akékoľvek citlivé informácie viditeľné na vašej obrazovke. Toto zahŕňa heslá, platobné údaje, fotky, správy a audio.</string>
+    <string name="screenrecord_dialog_start">Spustiť</string>
+    <string name="screenrecord_dialog_cancel">Zrušiť</string>
+    <string name="screenrecord_audio_title">Zdroj zvuku</string>
+    <string name="screenrecord_audio_summary">Povoľuje vybrať si audio vstup alebo vypnúť ho</string>
+    <string name="screenrecord_audio_recording_internal">Interné</string>
+    <string name="screenrecord_audio_recording_microphone">Mikrofón</string>
+    <string name="screenrecord_audio_recording_off">Vypnuté</string>
+    <string name="screenrecord_taps_title">Zobraziť dotyky na obrazovke</string>
+    <string name="screenrecord_taps_summary">Zobraziť vizuálnu spätnú väzbu počas nahrávania</string>
+    <string name="screenrecord_stopdot_title">Zobraziť bodku zastavenia</string>
+    <string name="screenrecord_stopdot_summary">Zobraziť červenú bodku pre zastavenie nahrávania jedným klepnutím. Podržte ju pre presunutie na opačnú stranu. </string>
+    <string name="screenrecord_video_bitrate_title">Bitrate videa</string>
+    <string name="screenrecord_video_bitrate_summary">Nastaviť bitrate videa pre vyššiu kvalitu videa za cenu väčšieho súboru.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
-    <string name="global_action_screenshot_cust">Screenshot</string>
-    <string name="global_action_screenrecord">Screenrecord</string>
+    <string name="global_action_screenshot_cust">Snímka obrazovky</string>
+    <string name="global_action_screenrecord">Záznam obrazovky</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Hold &amp; drag or tap to add tiles</string>
     <!-- Label for header of customize QS -->

@@ -99,17 +99,17 @@
     <string name="screenrecord_dialog_summary">Během nahrávání může systém Android zachytit jakékoli citlivé informace, které jsou viditelné nebo přehrávané na obrazovce vašeho zařízení. To zahrnuje hesla, informace o platbách, fotografie, zprávy a zvuk.</string>
     <string name="screenrecord_dialog_start">Spustit</string>
     <string name="screenrecord_dialog_cancel">Zrušit</string>
-    <string name="screenrecord_audio_title">Audio source</string>
-    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
-    <string name="screenrecord_audio_recording_internal">Internal</string>
-    <string name="screenrecord_audio_recording_microphone">Microphone</string>
-    <string name="screenrecord_audio_recording_off">Disabled</string>
+    <string name="screenrecord_audio_title">Zdroj zvuku</string>
+    <string name="screenrecord_audio_summary">Umožňuje vybrat zvukový vstup nebo jej vypnout.</string>
+    <string name="screenrecord_audio_recording_internal">Ze zařízení</string>
+    <string name="screenrecord_audio_recording_microphone">Mikrofon</string>
+    <string name="screenrecord_audio_recording_off">Vypnuto</string>
     <string name="screenrecord_taps_title">Zobrazit doteky na obrazovce</string>
     <string name="screenrecord_taps_summary">Během nahrávání zobrazit vizuální zpětnou vazbu</string>
     <string name="screenrecord_stopdot_title">Zobrazit puntík pro zastavení</string>
     <string name="screenrecord_stopdot_summary">Zobrazit červený puntík pro zastavení nahrávání jediným klepnutím. Dlouhým stiskem ji přesunete na opačnou stranu.</string>
-    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
-    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
+    <string name="screenrecord_video_bitrate_title">Bitrate videa</string>
+    <string name="screenrecord_video_bitrate_summary">Nastavte bitrate videa pro lepší kvalitu videa za cenu větší velikosti souboru.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Snímek obrazovky</string>
     <string name="global_action_screenrecord">Videozáznam obrazovky</string>
@@ -214,5 +214,5 @@
     <string name="vpn_credentials_password">Heslo</string>
     <string name="vpn_credentials_dialog_connect">Připojit</string>
     <!-- Alerting notification header label -->
-    <string name="notification_section_header_alerting">Alerting notifications</string>
+    <string name="notification_section_header_alerting">Výstrahy a oznámení</string>
 </resources>

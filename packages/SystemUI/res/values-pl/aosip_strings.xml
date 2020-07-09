@@ -99,17 +99,17 @@
     <string name="screenrecord_dialog_summary">Podczas nagrywania, system android może przechwytywać wrażliwe informacje, które są widoczne na ekranie lub odtwarzane na twoim urządzeniu. Zawiera również hasła, informacje o płatnościach, zdjęciach, wiadomościach i audio.</string>
     <string name="screenrecord_dialog_start">Start</string>
     <string name="screenrecord_dialog_cancel">Anuluj</string>
-    <string name="screenrecord_audio_title">Audio source</string>
-    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
-    <string name="screenrecord_audio_recording_internal">Internal</string>
-    <string name="screenrecord_audio_recording_microphone">Microphone</string>
-    <string name="screenrecord_audio_recording_off">Disabled</string>
+    <string name="screenrecord_audio_title">Źródło dźwięku</string>
+    <string name="screenrecord_audio_summary">Pozwala wybrać wejście audio lub je wyłączyć.</string>
+    <string name="screenrecord_audio_recording_internal">Wewnętrzny</string>
+    <string name="screenrecord_audio_recording_microphone">Mikrofon</string>
+    <string name="screenrecord_audio_recording_off">Wyłączony</string>
     <string name="screenrecord_taps_title">Pokaż dotknięcia na ekranie</string>
     <string name="screenrecord_taps_summary">Pokaż dotknięcia podczas nagrywania</string>
     <string name="screenrecord_stopdot_title">Pokaż kropkę do zatrzymania</string>
     <string name="screenrecord_stopdot_summary">Pokaż czerwoną kropkę, aby zatrzymać nagrywanie pojedynczym dotknięciem. Przytrzymaj, aby przesunąć na przeciwną stronę.</string>
-    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
-    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
+    <string name="screenrecord_video_bitrate_title">Bitrate wideo</string>
+    <string name="screenrecord_video_bitrate_summary">Ustaw bitrate wideo, aby uzyskać lepszą jakość wideo kosztem większego rozmiaru pliku.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Zrzut ekranu</string>
     <string name="global_action_screenrecord">Nagrywanie ekranu</string>
@@ -214,5 +214,5 @@
     <string name="vpn_credentials_password">Password</string>
     <string name="vpn_credentials_dialog_connect">Połącz</string>
     <!-- Alerting notification header label -->
-    <string name="notification_section_header_alerting">Alerting notifications</string>
+    <string name="notification_section_header_alerting">Powiadomienia z dźwiękiem</string>
 </resources>

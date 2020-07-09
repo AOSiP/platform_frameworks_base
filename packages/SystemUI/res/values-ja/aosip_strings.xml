@@ -24,7 +24,7 @@
     <string name="quick_settings_aod_label">Always On Display</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">カフェイン</string>
-    <string name="quick_settings_caffeine_label_off">Off</string>
+    <string name="quick_settings_caffeine_label_off">OFF</string>
     <string name="accessibility_quick_settings_caffeine_off">カフェイン OFF</string>
     <string name="accessibility_quick_settings_caffeine_on">カフェイン ON</string>
     <!-- ADB over network tile -->
@@ -82,12 +82,12 @@
     <string name="accessibility_quick_settings_sync_changed_off">同期を OFF にしました</string>
     <string name="accessibility_quick_settings_sync_changed_on">同期を ON にしました</string>
     <!-- Screen pinning -->
-    <string name="screen_pinning_description_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_recents_invisible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_description_recents_invisible_accessible_custom">This keeps it in view until you unpin. Touch &amp; hold Back to unpin.</string>
-    <string name="screen_pinning_toast_custom">To unpin this screen, touch &amp; hold Back button</string>
-    <string name="screen_pinning_toast_recents_invisible_custom">To unpin this screen, touch &amp; hold Back button</string>
+    <string name="screen_pinning_description_custom">固定を解除するまで表示されます。戻るを押し続けると解除されます。</string>
+    <string name="screen_pinning_description_recents_invisible_custom">固定を解除するまで表示されます。戻るを押し続けると解除されます。</string>
+    <string name="screen_pinning_description_accessible_custom">固定を解除するまで表示されます。戻るを押し続けると解除されます。</string>
+    <string name="screen_pinning_description_recents_invisible_accessible_custom">固定を解除するまで表示されます。戻るを押し続けると解除されます。</string>
+    <string name="screen_pinning_toast_custom">画面の固定を解除するには戻るボタンを長押しします</string>
+    <string name="screen_pinning_toast_recents_invisible_custom">画面の固定を解除するには戻るボタンを長押しします</string>
     <!-- Long swipe gesture actions -->
     <string name="app_picker_dialog_title">アプリを選択</string>
     <string name="recents_app_killed">アプリを終了しました</string>
@@ -99,17 +99,17 @@
     <string name="screenrecord_dialog_summary">記録中に Android システムは画面に表示されたり端末で再生される機密情報を取得できます。これには、パスワード、支払い情報、写真、メッセージ、音声が含まれます。</string>
     <string name="screenrecord_dialog_start">開始</string>
     <string name="screenrecord_dialog_cancel">中止</string>
-    <string name="screenrecord_audio_title">Audio source</string>
-    <string name="screenrecord_audio_summary">Allows to pick the audio input or disable it.</string>
-    <string name="screenrecord_audio_recording_internal">Internal</string>
-    <string name="screenrecord_audio_recording_microphone">Microphone</string>
-    <string name="screenrecord_audio_recording_off">Disabled</string>
+    <string name="screenrecord_audio_title">音声ソース</string>
+    <string name="screenrecord_audio_summary">音声入力の有効化と無効化を選択する</string>
+    <string name="screenrecord_audio_recording_internal">内部</string>
+    <string name="screenrecord_audio_recording_microphone">マイク</string>
+    <string name="screenrecord_audio_recording_off">無効</string>
     <string name="screenrecord_taps_title">タップされた位置の表示</string>
     <string name="screenrecord_taps_summary">録画中視覚フィードバック表示する</string>
     <string name="screenrecord_stopdot_title">停止ドットを表示</string>
     <string name="screenrecord_stopdot_summary">1回タップで録画を停止する赤い点を表示します。長押しして反対側に移動します。</string>
-    <string name="screenrecord_video_bitrate_title">Video Bitrate</string>
-    <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
+    <string name="screenrecord_video_bitrate_title">映像ビットレート</string>
+    <string name="screenrecord_video_bitrate_summary">ファイルサイズの増加と引き換えに高品質動画を記録するために映像ビットレートを上げる</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">スクリーンショット</string>
     <string name="global_action_screenrecord">画面録画</string>
@@ -214,5 +214,5 @@
     <string name="vpn_credentials_password">パスワード</string>
     <string name="vpn_credentials_dialog_connect">接続</string>
     <!-- Alerting notification header label -->
-    <string name="notification_section_header_alerting">Alerting notifications</string>
+    <string name="notification_section_header_alerting">通知のアラート</string>
 </resources>
