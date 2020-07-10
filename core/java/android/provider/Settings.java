@@ -3175,6 +3175,14 @@ public final class Settings {
         /** @hide */
         public static final Validator FOD_ANIM_VALIDATOR =
                 new InclusiveIntegerRangeValidator(0, 15);
+        /**
+          * Swipe to screenshot
+          * @hide
+          */
+         public static final String FOD_GESTURE = "fod_gesture";
+ 
+         /** @hide */
+         public static final Validator FOD_GESTURE_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * END_BUTTON_BEHAVIOR value for "go home".
@@ -6063,6 +6071,7 @@ public final class Settings {
             VALIDATORS.put(VOLTE_ICON_STYLE, VOLTE_ICON_STYLE_VALIDATOR);
             VALIDATORS.put(VOLUME_BUTTON_MUSIC_CONTROL, VOLUME_BUTTON_MUSIC_CONTROL_VALIDATOR);
 	    VALIDATORS.put(FOD_RECOGNIZING_ANIMATION, FOD_ANIM_VALIDATOR);
+            VALIDATORS.put(FOD_GESTURE, FOD_GESTURE_VALIDATOR);
         }
 
         /**
