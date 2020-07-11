@@ -2887,6 +2887,13 @@ public final class Settings {
                 throws SettingNotFoundException {
             return getLongForUser(cr, name, cr.getUserId());
         }
+        /**
+          * Screen off fingerprint
+          * @hide
+          */
+         public static final String FOD_GESTURE = "fod_gesture"; 
+         /** @hide */
+         public static final Validator FOD_GESTURE_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /** @hide */
         public static long getLongForUser(ContentResolver cr, String name, int userHandle)
@@ -6146,6 +6153,7 @@ public final class Settings {
             VALIDATORS.put(AOD_NOTIFICATION_PULSE_TIMEOUT, AOD_NOTIFICATION_PULSE_TIMEOUT_VALIDATOR);
             VALIDATORS.put(ASPECT_RATIO_APPS_ENABLED, ASPECT_RATIO_APPS_ENABLED_VALIDATOR);
             VALIDATORS.put(ASPECT_RATIO_APPS_LIST, ASPECT_RATIO_APPS_LIST_VALIDATOR);
+            VALIDATORS.put(FOD_GESTURE, FOD_GESTURE_VALIDATOR);
             VALIDATORS.put(BACK_GESTURE_HEIGHT, BACK_GESTURE_HEIGHT_VALIDATOR);
             VALIDATORS.put(CHARGING_ANIMATION, CHARGING_ANIMATION_VALIDATOR);
             VALIDATORS.put(DOUBLE_TAP_SLEEP_GESTURE,
