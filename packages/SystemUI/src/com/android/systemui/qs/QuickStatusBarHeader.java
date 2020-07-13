@@ -282,13 +282,13 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mBatteryRemainingIcon = findViewById(R.id.batteryRemainingIcon);
         mBatteryRemainingIcon.setIsQsHeader(true);
         mBatteryRemainingIcon.setPercentShowMode(getBatteryPercentMode());
-        // Tint for the battery icons are handled in setupHost()
-        mBatteryRemainingIconQsH = findViewById(R.id.batteryRemainingIconQsH);
-        mBatteryRemainingIconQsH.updateColors(fillColorWhite, fillColorWhite, fillColorWhite);
+        mBatteryRemainingIcon.setOnClickListener(this);
         // Don't need to worry about tuner settings for this icon
+        mBatteryRemainingIconQsH = findViewById(R.id.batteryRemainingIconQsH);
         mBatteryRemainingIconQsH.setIsQsHeader(true);
         mBatteryRemainingIconQsH.setPercentShowMode(getBatteryPercentMode());
         mBatteryRemainingIconQsH.setOnClickListener(this);
+
         mRingerModeTextView.setSelected(true);
         mNextAlarmTextView.setSelected(true);
 
@@ -642,6 +642,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             builder.appendPath(Long.toString(System.currentTimeMillis()));
             Intent todayIntent = new Intent(Intent.ACTION_VIEW, builder.build());
             mActivityStarter.postStartActivityDismissingKeyguard(todayIntent, 0);
+        } else if (v == mBatteryRemainingIcon) {
+            mActivityStarter.postStartActivityDismissingKeyguard(new Intent(
+                Intent.ACTION_POWER_USAGE_SUMMARY), 0);
         } else if (v == mBatteryRemainingIconQsH) {
             mActivityStarter.postStartActivityDismissingKeyguard(new Intent(
                 Intent.ACTION_POWER_USAGE_SUMMARY), 0);
@@ -686,6 +689,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         float intensity = getColorIntensity(colorForeground);
         int fillColor = mDualToneHandler.getSingleColor(intensity);
         mBatteryRemainingIcon.onDarkChanged(tintArea, intensity, fillColor);
+        mBatteryRemainingIconQsH.onDarkChanged(tintArea, intensity, fillColor);
     }
 
     public void setCallback(Callback qsPanelCallback) {
@@ -729,8 +733,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     }
 
     private void updateSettings() {
-        Resources resources = mContext.getResources();
-        isBattIconQsH = Settings.System.getIntForUser(getContext().getContentResolver(),
+        isBattIconQsH = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.QS_BATTERY_LOCATION, 1,
                 UserHandle.USER_CURRENT);
 
@@ -745,8 +748,10 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             mBatteryRemainingIcon.setVisibility(View.VISIBLE);
             mBatteryRemainingIconQsH.setVisibility(View.GONE);
         }
+        mBatteryRemainingIcon.updateBatteryStyle();
         mBatteryRemainingIcon.updatePercentView();
         mBatteryRemainingIcon.updateVisibility();
+        mBatteryRemainingIconQsH.updateBatteryStyle();
         mBatteryRemainingIconQsH.updatePercentView();
         mBatteryRemainingIconQsH.updateVisibility();
     }
