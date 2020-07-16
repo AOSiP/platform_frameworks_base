@@ -878,11 +878,8 @@ public class ProcessCpuTracker {
 
     private void getName(Stats st, String cmdlineFile) {
         String newName = st.name;
-        if (st.name == null
-                || st.name.equals("app_process")
-                || st.name.equals("<pre-initialized>")
-                || st.name.equals("usap32")
-                || st.name.equals("usap64")) {
+        if (st.name == null || st.name.equals("app_process")
+                || st.name.equals("<pre-initialized>")) {
             String cmdName = ProcStatsUtil.readTerminatedProcFile(cmdlineFile, (byte) '\0');
             if (cmdName != null && cmdName.length() > 1) {
                 newName = cmdName;

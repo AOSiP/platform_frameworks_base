@@ -130,9 +130,6 @@ public final class Zygote {
     /** Number of bytes sent to the Zygote over USAP pipes or the pool event FD */
     public static final int USAP_MANAGEMENT_MESSAGE_BYTES = 8;
 
-    /** Make the new process have top application priority. */
-    public static final String START_AS_TOP_APP_ARG = "--is-top-app";
-
     /**
      * An extraArg passed when a zygote process is forking a child-zygote, specifying a name
      * in the abstract socket namespace. This socket name is what the new child zygote
@@ -174,11 +171,6 @@ public final class Zygote {
      * @hide for internal use only
      */
     public static final int SOCKET_BUFFER_SIZE = 256;
-
-    /**
-     * @hide for internal use only
-     */
-    private static final int PRIORITY_MAX = -20;
 
     /** a prototype instance for a future List.toArray() */
     protected static final int[][] INT_ARRAY_2D = new int[0][0];
@@ -235,7 +227,6 @@ public final class Zygote {
      * new zygote process.
      * @param instructionSet null-ok the instruction set to use.
      * @param appDataDir null-ok the data directory of the app.
-     * @param isTopApp true if the process is for top (high priority) application.
      *
      * @return 0 if this is the child, pid of the child
      * if this is the parent, or -1 on error.
@@ -243,12 +234,13 @@ public final class Zygote {
     public static int forkAndSpecialize(int uid, int gid, int[] gids, int runtimeFlags,
             int[][] rlimits, int mountExternal, String seInfo, String niceName, int[] fdsToClose,
             int[] fdsToIgnore, boolean startChildZygote, String instructionSet, String appDataDir,
-            int targetSdkVersion, boolean isTopApp) {
+            int targetSdkVersion) {
         ZygoteHooks.preFork();
-
+        // Resets nice priority for zygote process.
+        resetNicePriority();
         int pid = nativeForkAndSpecialize(
                 uid, gid, gids, runtimeFlags, rlimits, mountExternal, seInfo, niceName, fdsToClose,
-                fdsToIgnore, startChildZygote, instructionSet, appDataDir, isTopApp);
+                fdsToIgnore, startChildZygote, instructionSet, appDataDir);
         // Enable tracing as soon as possible for the child process.
         if (pid == 0) {
             Zygote.disableExecuteOnly(targetSdkVersion);
@@ -257,10 +249,6 @@ public final class Zygote {
             // Note that this event ends at the end of handleChildProc,
             Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, "PostFork");
         }
-
-        // Set the Java Language thread priority to the default value for new apps.
-        Thread.currentThread().setPriority(Thread.NORM_PRIORITY);
-
         ZygoteHooks.postForkCommon();
         return pid;
     }
@@ -268,7 +256,7 @@ public final class Zygote {
     private static native int nativeForkAndSpecialize(int uid, int gid, int[] gids,
             int runtimeFlags, int[][] rlimits, int mountExternal, String seInfo, String niceName,
             int[] fdsToClose, int[] fdsToIgnore, boolean startChildZygote, String instructionSet,
-            String appDataDir, boolean isTopApp);
+            String appDataDir);
 
     /**
      * Specialize an unspecialized app process.  The current VM must have been started
@@ -290,22 +278,18 @@ public final class Zygote {
      * new zygote process.
      * @param instructionSet null-ok  The instruction set to use.
      * @param appDataDir null-ok  The data directory of the app.
-     * @param isTopApp  True if the process is for top (high priority) application.
      */
     public static void specializeAppProcess(int uid, int gid, int[] gids, int runtimeFlags,
             int[][] rlimits, int mountExternal, String seInfo, String niceName,
-            boolean startChildZygote, String instructionSet, String appDataDir, boolean isTopApp) {
+            boolean startChildZygote, String instructionSet, String appDataDir) {
         nativeSpecializeAppProcess(uid, gid, gids, runtimeFlags, rlimits, mountExternal, seInfo,
-                niceName, startChildZygote, instructionSet, appDataDir, isTopApp);
+                niceName, startChildZygote, instructionSet, appDataDir);
 
         // Enable tracing as soon as possible for the child process.
         Trace.setTracingEnabled(true, runtimeFlags);
 
         // Note that this event ends at the end of handleChildProc.
         Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, "PostFork");
-
-        // Set the Java Language thread priority to the default value for new apps.
-        Thread.currentThread().setPriority(Thread.NORM_PRIORITY);
 
         /*
          * This is called here (instead of after the fork but before the specialize) to maintain
@@ -318,7 +302,7 @@ public final class Zygote {
 
     private static native void nativeSpecializeAppProcess(int uid, int gid, int[] gids,
             int runtimeFlags, int[][] rlimits, int mountExternal, String seInfo, String niceName,
-            boolean startChildZygote, String instructionSet, String appDataDir, boolean isTopApp);
+            boolean startChildZygote, String instructionSet, String appDataDir);
 
     /**
      * Called to do any initialization before starting an application.
@@ -351,19 +335,15 @@ public final class Zygote {
     public static int forkSystemServer(int uid, int gid, int[] gids, int runtimeFlags,
             int[][] rlimits, long permittedCapabilities, long effectiveCapabilities) {
         ZygoteHooks.preFork();
-
+        // Resets nice priority for zygote process.
+        resetNicePriority();
         int pid = nativeForkSystemServer(
                 uid, gid, gids, runtimeFlags, rlimits,
                 permittedCapabilities, effectiveCapabilities);
-
         // Enable tracing as soon as we enter the system_server.
         if (pid == 0) {
             Trace.setTracingEnabled(true, runtimeFlags);
         }
-
-        // Set the Java Language thread priority to the default value for new apps.
-        Thread.currentThread().setPriority(Thread.NORM_PRIORITY);
-
         ZygoteHooks.postForkCommon();
         return pid;
     }
@@ -481,16 +461,13 @@ public final class Zygote {
     /**
      * Fork a new unspecialized app process from the zygote
      *
-     * @param usapPoolSocket  The server socket the USAP will call accept on
      * @param sessionSocketRawFDs  Anonymous session sockets that are currently open
-     * @param isPriorityFork  Value controlling the process priority level until accept is called
      * @return In the Zygote process this function will always return null; in unspecialized app
      *         processes this function will return a Runnable object representing the new
      *         application that is passed up from usapMain.
      */
     static Runnable forkUsap(LocalServerSocket usapPoolSocket,
-                             int[] sessionSocketRawFDs,
-                             boolean isPriorityFork) {
+            int[] sessionSocketRawFDs) {
         FileDescriptor[] pipeFDs = null;
 
         try {
@@ -500,8 +477,7 @@ public final class Zygote {
         }
 
         int pid =
-                nativeForkUsap(pipeFDs[0].getInt$(), pipeFDs[1].getInt$(),
-                               sessionSocketRawFDs, isPriorityFork);
+                nativeForkUsap(pipeFDs[0].getInt$(), pipeFDs[1].getInt$(), sessionSocketRawFDs);
 
         if (pid == 0) {
             IoUtils.closeQuietly(pipeFDs[0]);
@@ -515,9 +491,8 @@ public final class Zygote {
     }
 
     private static native int nativeForkUsap(int readPipeFD,
-                                             int writePipeFD,
-                                             int[] sessionSocketRawFDs,
-                                             boolean isPriorityFork);
+            int writePipeFD,
+            int[] sessionSocketRawFDs);
 
     /**
      * This function is used by unspecialized app processes to wait for specialization requests from
@@ -536,11 +511,6 @@ public final class Zygote {
         DataOutputStream usapOutputStream = null;
         Credentials peerCredentials = null;
         ZygoteArguments args = null;
-
-        // Change the priority to max before calling accept so we can respond to new specialization
-        // requests as quickly as possible.  This will be reverted to the default priority in the
-        // native specialization code.
-        boostUsapPriority();
 
         while (true) {
             try {
@@ -646,10 +616,11 @@ public final class Zygote {
             specializeAppProcess(args.mUid, args.mGid, args.mGids,
                     args.mRuntimeFlags, rlimits, args.mMountExternal,
                     args.mSeInfo, args.mNiceName, args.mStartChildZygote,
-                    args.mInstructionSet, args.mAppDataDir, args.mIsTopApp);
+                    args.mInstructionSet, args.mAppDataDir);
 
             disableExecuteOnly(args.mTargetSdkVersion);
 
+            // End of the postFork event.
             Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);
 
             return ZygoteInit.zygoteInit(args.mTargetSdkVersion,
@@ -672,12 +643,6 @@ public final class Zygote {
     }
 
     private static native void nativeUnblockSigTerm();
-
-    private static void boostUsapPriority() {
-        nativeBoostUsapPriority();
-    }
-
-    private static native void nativeBoostUsapPriority();
 
     static void setAppProcessName(ZygoteArguments args, String loggingTag) {
         if (args.mNiceName != null) {
@@ -926,6 +891,15 @@ public final class Zygote {
     private static void callPostForkChildHooks(int runtimeFlags, boolean isSystemServer,
             boolean isZygote, String instructionSet) {
         ZygoteHooks.postForkChild(runtimeFlags, isSystemServer, isZygote, instructionSet);
+    }
+
+    /**
+     * Resets the calling thread priority to the default value (Thread.NORM_PRIORITY
+     * or nice value 0). This updates both the priority value in java.lang.Thread and
+     * the nice value (setpriority).
+     */
+    static void resetNicePriority() {
+        Thread.currentThread().setPriority(Thread.NORM_PRIORITY);
     }
 
     /**
