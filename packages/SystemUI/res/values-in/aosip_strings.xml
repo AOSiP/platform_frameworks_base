@@ -20,8 +20,15 @@
     <string name="global_action_restart_recovery">Recovery</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">SystemUI</string>
-    <!-- AOD QS tile -->
+    <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
+    <string name="quick_settings_aod_off_label">AOD off</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
+    <string name="quick_settings_hwkeys_label">HW Keys</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Caffeine</string>
     <string name="quick_settings_caffeine_label_off">Off</string>
@@ -94,6 +101,8 @@
     <string name="nope_cant_kill">Launcher cannot be killed</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Screenshot deleted</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">Start recording?</string>
     <string name="screenrecord_dialog_summary">While recording, Android system can capture any sensitive information that\'s visible on your screen or played on your device. This includes passwords, payment info, photos, messages, and audio.</string>
@@ -112,29 +121,11 @@
     <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Screenshot</string>
-    <string name="global_action_screenrecord">Screenrecord</string>
+    <string name="global_action_screenrecord">Screen Record</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Hold &amp; drag or tap to add tiles</string>
     <!-- Label for header of customize QS -->
     <string name="drag_or_tap_to_rearrange_tiles">Hold &amp; drag to rearrange or tap to remove</string>
-    <!-- Location Tile -->
-    <string name="accessibility_quick_settings_location_battery_saving">Pelaporan Lokasi: mode hemat baterai.</string>
-    <string name="accessibility_quick_settings_location_gps_only">Pelaporan lokasi: mode dengan hanya sensor.</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Pelaporan lokasi: mode akurasi tinggi.</string>
-    <string name="quick_settings_location_battery_saving_label">Battery saving</string>
-    <string name="quick_settings_location_battery_saving_label_twoline">Battery\nsaving</string>
-    <string name="quick_settings_location_gps_only_label">GPS saja</string>
-    <string name="quick_settings_location_gps_only_label_twoline">GPS saja</string>
-    <string name="quick_settings_location_high_accuracy_label">Akurasi tinggi</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">High\naccuracy</string>
-    <string name="quick_settings_location_detail_title">Location</string>
-    <string name="quick_settings_location_detail_menu_title">Select mode:</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">High accuracy</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_title">Battery saving</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Device only</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">Use GPS, Wi\u2011Fi, Bluetooth, or cellular networks to determine location </string>
-    <string name="quick_settings_location_detail_mode_battery_saving_description">Use Wi\u2011Fi, Bluetooth, or cellular networks to determine location</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_description">Use GPS to determine your location</string>
     <!-- navbar editor -->
     <string name="preview">Pratinjau</string>
     <string name="keycode">Kata kunci</string>
@@ -201,9 +192,6 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Show 4G instead of LTE</string>
     <string name="show_fourg_summary">Replaces LTE statusbar indicators with 4G</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Show lock status</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Show current lock status icon on top</string>
-    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">Display VoLTE icon</string>
     <!-- VPN QS tile -->

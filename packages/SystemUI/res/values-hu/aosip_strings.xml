@@ -20,8 +20,15 @@
     <string name="global_action_restart_recovery">Recovery</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">Rendszer UI</string>
-    <!-- AOD QS tile -->
+    <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">Mindig bekapcsolt kijelző (AOD)</string>
+    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
+    <string name="quick_settings_aod_off_label">AOD off</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
+    <string name="quick_settings_hwkeys_label">HW Keys</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Caffeine</string>
     <string name="quick_settings_caffeine_label_off">Off</string>
@@ -94,6 +101,8 @@
     <string name="nope_cant_kill">Launcher-t nem lehet kilőni</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">A képernyőmentés törölve</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">Elindítja a felvételt?</string>
     <string name="screenrecord_dialog_summary">Felvétel közben az Android rendszer bármilyen érzékeny információt rögzíthet, amely a képernyőn látható vagy az eszközön lejátszódik. Ide tartoznak a jelszavak, a fizetési információk, a fényképek, az üzenetek és a hang.</string>
@@ -112,29 +121,11 @@
     <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Képernyőmentés</string>
-    <string name="global_action_screenrecord">Képernyőfelvétel</string>
+    <string name="global_action_screenrecord">Screen Record</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Tartsa &amp; húzza vagy koppintson a csempék hozzáadásához</string>
     <!-- Label for header of customize QS -->
     <string name="drag_or_tap_to_rearrange_tiles">Tartsa &amp; húzza a csempék átrendezéséhez vagy eltávolításához</string>
-    <!-- Location Tile -->
-    <string name="accessibility_quick_settings_location_battery_saving">Helymeghatározás: energiatakarékos mód.</string>
-    <string name="accessibility_quick_settings_location_gps_only">Helymeghatározás: csak GPS.</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Helymeghatározás: nagy pontosságú.</string>
-    <string name="quick_settings_location_battery_saving_label">Energiatakarékos</string>
-    <string name="quick_settings_location_battery_saving_label_twoline">Energia\ntakarékos</string>
-    <string name="quick_settings_location_gps_only_label">Csak GPS</string>
-    <string name="quick_settings_location_gps_only_label_twoline">Csak GPS</string>
-    <string name="quick_settings_location_high_accuracy_label">Nagy pontosság</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">Nagy\npontosság</string>
-    <string name="quick_settings_location_detail_title">Hely</string>
-    <string name="quick_settings_location_detail_menu_title">Válasszon módot:</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">Nagy pontosság</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_title">Energiatakarékos</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Csak GPS</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">GPS, Wi\u2011Fi, Bluetooth és mobilhálózatok használata a tartózkodási hely megállapításához </string>
-    <string name="quick_settings_location_detail_mode_battery_saving_description">Wi\u2011Fi, Bluetooth és mobilhálózatok használata a tartózkodási hely megállapításához</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_description">GPS használata a tartózkodási hely meghatározásához</string>
     <!-- navbar editor -->
     <string name="preview">Előnézet</string>
     <string name="keycode">Billentyűkód</string>
@@ -201,9 +192,6 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">4G megjelenítése LTE helyett</string>
     <string name="show_fourg_summary">Lecseréli az LTE hálozatkijelző ikonját 4G-re</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Lezárás állapotának megjelenítése</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Jelenítse meg a zárolás aktuális állapotának ikonját a zárképernyő tetején</string>
-    <string name="tuner_qs_long_press_action">Nyomva tartásnál ne jelenjenek meg a panelek</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">Megjeleníti a VoLTE ikont</string>
     <!-- VPN QS tile -->

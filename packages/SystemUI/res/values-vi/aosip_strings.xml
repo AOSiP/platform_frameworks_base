@@ -20,8 +20,15 @@
     <string name="global_action_restart_recovery">Recovery</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">Giao diện người dùng</string>
-    <!-- AOD QS tile -->
+    <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">Màn hình luôn bật</string>
+    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
+    <string name="quick_settings_aod_off_label">AOD off</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
+    <string name="quick_settings_hwkeys_label">HW Keys</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Caffeine</string>
     <string name="quick_settings_caffeine_label_off">Off</string>
@@ -94,6 +101,8 @@
     <string name="nope_cant_kill">Trình khởi chạy không thể dừng</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Đã xoá ảnh chụp màn hình</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">Bắt đầu ghi?</string>
     <string name="screenrecord_dialog_summary">Trong khi ghi, hệ thống Android có thể giấu bất kỳ thông tin nhạy cảm nào có thể nhìn thấy trên màn hình hoặc phát trên thiết bị. Bao gồm mật khẩu, thông tin thanh toán, hình ảnh, tin nhắn và âm thanh.</string>
@@ -112,29 +121,11 @@
     <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Chụp ảnh màn hình</string>
-    <string name="global_action_screenrecord">Quay màn hình</string>
+    <string name="global_action_screenrecord">Screen Record</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Giữ &amp; kéo hoặc chạm để thêm</string>
     <!-- Label for header of customize QS -->
     <string name="drag_or_tap_to_rearrange_tiles">Giữ &amp; kéo để sắp xếp lại hoặc nhấn để loại bỏ</string>
-    <!-- Location Tile -->
-    <string name="accessibility_quick_settings_location_battery_saving">Vị trí: tiết kiệm pin.</string>
-    <string name="accessibility_quick_settings_location_gps_only">Vị trí: chỉ cảm biến.</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Vị trí: chính xác cao.</string>
-    <string name="quick_settings_location_battery_saving_label">Tiết kiệm pin</string>
-    <string name="quick_settings_location_battery_saving_label_twoline">Tiết kiệm\npin</string>
-    <string name="quick_settings_location_gps_only_label">Chỉ GPS</string>
-    <string name="quick_settings_location_gps_only_label_twoline">Chỉ GPS</string>
-    <string name="quick_settings_location_high_accuracy_label">Chính xác cao</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">Chính xác\ncao</string>
-    <string name="quick_settings_location_detail_title">Vị trí</string>
-    <string name="quick_settings_location_detail_menu_title">Chọn chế độ:</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">Chính xác cao</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_title">Tiết kiệm pin</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Chỉ thiết bị</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">Sử dụng Vị trí, Wi\u2011Fi, Bluetooth hoặc Mạng di động để xác định vị trí </string>
-    <string name="quick_settings_location_detail_mode_battery_saving_description">Sử dụng Wi\u2011Fi, Bluetooth hoặc Mạng di động để xác định vị trí</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_description">Sử dụng Vị trí để định vị bạn</string>
     <!-- navbar editor -->
     <string name="preview">Xem trước</string>
     <string name="keycode">Mã phím</string>
@@ -201,9 +192,6 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Hiển thị 4G thay cho LTE</string>
     <string name="show_fourg_summary">Thay thế biểu tượng LTE bằng 4G</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Hiển thị trạng thái khóa</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Hiển thị biểu tượng trạng thái khóa hiện tại trên đầu</string>
-    <string name="tuner_qs_long_press_action">Dont show panels on long press</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">Hiển thị biểu tượng VoLTE</string>
     <!-- VPN QS tile -->

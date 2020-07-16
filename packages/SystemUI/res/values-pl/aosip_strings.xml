@@ -20,8 +20,15 @@
     <string name="global_action_restart_recovery">Tryb recovery</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">Interfejs</string>
-    <!-- AOD QS tile -->
+    <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
+    <string name="quick_settings_aod_off_label">AOD off</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
+    <string name="quick_settings_hwkeys_label">HW Keys</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Kofeina</string>
     <string name="quick_settings_caffeine_label_off">Wyłączone</string>
@@ -94,6 +101,8 @@
     <string name="nope_cant_kill">Ekran główny nie może zostać zamknięty</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Zrzut ekranu usunięty</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">Rozpocząć nagrywanie?</string>
     <string name="screenrecord_dialog_summary">Podczas nagrywania, system android może przechwytywać wrażliwe informacje, które są widoczne na ekranie lub odtwarzane na twoim urządzeniu. Zawiera również hasła, informacje o płatnościach, zdjęciach, wiadomościach i audio.</string>
@@ -112,29 +121,11 @@
     <string name="screenrecord_video_bitrate_summary">Ustaw bitrate wideo, aby uzyskać lepszą jakość wideo kosztem większego rozmiaru pliku.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Zrzut ekranu</string>
-    <string name="global_action_screenrecord">Nagrywanie ekranu</string>
+    <string name="global_action_screenrecord">Screen Record</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Przytrzymaj &amp; przesuń lub dotknij aby dodać kafelki</string>
     <!-- Label for header of customize QS -->
     <string name="drag_or_tap_to_rearrange_tiles">Przytrzymaj &amp; przesuń aby przestawić lub dotknij any usunąć</string>
-    <!-- Location Tile -->
-    <string name="accessibility_quick_settings_location_battery_saving">Usługa lokalizacji: tryb oszczędzania baterii.</string>
-    <string name="accessibility_quick_settings_location_gps_only">Usługa lokalizacji: tylko czujniki.</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Usługa lokalizacji: wysoka dokładność.</string>
-    <string name="quick_settings_location_battery_saving_label">Oszczędzanie baterii</string>
-    <string name="quick_settings_location_battery_saving_label_twoline">Oszczędzanie\nbaterii</string>
-    <string name="quick_settings_location_gps_only_label">Tylko GPS</string>
-    <string name="quick_settings_location_gps_only_label_twoline">Tylko GPS</string>
-    <string name="quick_settings_location_high_accuracy_label">Wysoka dokładność</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">Wysoka\ndokładność</string>
-    <string name="quick_settings_location_detail_title">Lokalizacja</string>
-    <string name="quick_settings_location_detail_menu_title">Wybierz tryb:</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">Wysoka dokładność</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_title">Oszczędzanie baterii</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Tylko urządzenie</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">Używaj GPS, Wi\u2011Fi, Bluetooth oraz sieci komórkowej, aby ustalić lokalizację </string>
-    <string name="quick_settings_location_detail_mode_battery_saving_description">Używaj GPS, Wi\u2011Fi, Bluetooth oraz sieci komórkowej, aby ustalić lokalizację</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_description">Ustalaj lokalizację przez GPS</string>
     <!-- navbar editor -->
     <string name="preview">Podgląd</string>
     <string name="keycode">Klawisz</string>
@@ -201,9 +192,6 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Pokaż 4G zamiast LTE</string>
     <string name="show_fourg_summary">Zamienia wskażnik LTE na 4G</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Pokaż ikonę blokady</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Pokaż obecny stan blokady ekranu na górze ekranu</string>
-    <string name="tuner_qs_long_press_action">Nie pokazuj po długim naciśnięciu</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">Wyświetl ikonę VoLTE</string>
     <!-- VPN QS tile -->

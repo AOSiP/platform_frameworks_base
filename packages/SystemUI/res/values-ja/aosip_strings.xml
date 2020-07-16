@@ -20,8 +20,15 @@
     <string name="global_action_restart_recovery">リカバリー</string>
     <string name="global_action_restart_bootloader">ブートローダー</string>
     <string name="global_action_restart_ui">システム UI</string>
-    <!-- AOD QS tile -->
+    <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">Always On Display</string>
+    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
+    <string name="quick_settings_aod_off_label">AOD off</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
+    <string name="quick_settings_hwkeys_label">HW Keys</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">カフェイン</string>
     <string name="quick_settings_caffeine_label_off">OFF</string>
@@ -94,6 +101,8 @@
     <string name="nope_cant_kill">ランチャーを終了できません</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">スクリーンショットを削除しました</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">録画を開始しますか?</string>
     <string name="screenrecord_dialog_summary">記録中に Android システムは画面に表示されたり端末で再生される機密情報を取得できます。これには、パスワード、支払い情報、写真、メッセージ、音声が含まれます。</string>
@@ -112,29 +121,11 @@
     <string name="screenrecord_video_bitrate_summary">ファイルサイズの増加と引き換えに高品質動画を記録するために映像ビットレートを上げる</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">スクリーンショット</string>
-    <string name="global_action_screenrecord">画面録画</string>
+    <string name="global_action_screenrecord">Screen Record</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">長押しして移動するかタップしてタイルを追加する</string>
     <!-- Label for header of customize QS -->
     <string name="drag_or_tap_to_rearrange_tiles">長押しして移動することで並び替えてタップして削除する</string>
-    <!-- Location Tile -->
-    <string name="accessibility_quick_settings_location_battery_saving">位置情報レポート: バッテリー節約モード</string>
-    <string name="accessibility_quick_settings_location_gps_only">位置情報レポート: 端末のみモード</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">位置情報レポート: 高精度モード</string>
-    <string name="quick_settings_location_battery_saving_label">バッテリー節約</string>
-    <string name="quick_settings_location_battery_saving_label_twoline">バッテリー\n節約</string>
-    <string name="quick_settings_location_gps_only_label">GPS のみ</string>
-    <string name="quick_settings_location_gps_only_label_twoline">GPS のみ</string>
-    <string name="quick_settings_location_high_accuracy_label">高精度</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">高精度</string>
-    <string name="quick_settings_location_detail_title">位置情報</string>
-    <string name="quick_settings_location_detail_menu_title">選択モード:</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">高精度</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_title">バッテリー節約</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_title">端末のみ</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">GPS・Wi‑Fi・Bluetooth・モバイルネットワークで現在地を特定する</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_description">Wi‑Fi・Bluetooth・モバイルネットワークで現在地を特定する</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_description">GPS で現在地を特定する</string>
     <!-- navbar editor -->
     <string name="preview">プレビュー</string>
     <string name="keycode">キーコード</string>
@@ -201,9 +192,6 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">LTE の代わりに 4G を表示</string>
     <string name="show_fourg_summary">電波アイコンを LTE から 4G に置き換える</string>
-    <string name="tuner_keyguard_show_lock_icon_title">ロック状況を表示</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">現在のロックステータスアイコンを上部に表示する</string>
-    <string name="tuner_qs_long_press_action">長押しでパネルを非表示</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">VoLTE アイコンを表示する</string>
     <!-- VPN QS tile -->

@@ -20,8 +20,15 @@
     <string name="global_action_restart_recovery">Kurtarma</string>
     <string name="global_action_restart_bootloader">Ön yükleyici</string>
     <string name="global_action_restart_ui">Arayüz</string>
-    <!-- AOD QS tile -->
+    <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
+    <string name="quick_settings_aod_off_label">AOD off</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
+    <string name="quick_settings_hwkeys_label">HW Keys</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Kafein</string>
     <string name="quick_settings_caffeine_label_off">Kapalı</string>
@@ -94,6 +101,8 @@
     <string name="nope_cant_kill">Başlatıcı sonlandırılamaz</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Ekran görüntüsü silindi</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">Kayda başlansın mı?</string>
     <string name="screenrecord_dialog_summary">Kayıt sırasında Android sistemi, ekranınızda görünen veya cihazınızda oynatılan tüm hassas bilgileri yakalayabilir.  Buna şifreler, ödeme bilgileri, fotoğraflar, mesajlar ve ses dahildir.</string>
@@ -112,29 +121,11 @@
     <string name="screenrecord_video_bitrate_summary">Set the video bitrate for better video quality, at the cost of a bigger file.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Ekran görüntüsü</string>
-    <string name="global_action_screenrecord">Ekran kaydı</string>
+    <string name="global_action_screenrecord">Screen Record</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Kare eklemek için basılı tutun ve sürükleyin veya dokunun</string>
     <!-- Label for header of customize QS -->
     <string name="drag_or_tap_to_rearrange_tiles">Yeniden düzenlemek için basılı tutun ve kaydırın veya kaldırmak için dokunun</string>
-    <!-- Location Tile -->
-    <string name="accessibility_quick_settings_location_battery_saving">Konum bildirimi: pil tasarruf modu.</string>
-    <string name="accessibility_quick_settings_location_gps_only">Konum bildirimi: sadece sensörler modu.</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Konum bildirmi: yüksek doğruluk modu.</string>
-    <string name="quick_settings_location_battery_saving_label">Pil tasarrufu</string>
-    <string name="quick_settings_location_battery_saving_label_twoline">Pil\ntasarrufu</string>
-    <string name="quick_settings_location_gps_only_label">Sadece GPS</string>
-    <string name="quick_settings_location_gps_only_label_twoline">Sadece GPS</string>
-    <string name="quick_settings_location_high_accuracy_label">Yüksek doğruluk</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">Yüksek\ndoğruluk</string>
-    <string name="quick_settings_location_detail_title">Konum</string>
-    <string name="quick_settings_location_detail_menu_title">Mod seç:</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">Yüksek doğruluk</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_title">Pil tasarrufu</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Sadece cihaz</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">Konumu belirlemek için GPS, Wi\u2011Fi, Bluetooth veya hücresel ağlar kullanın </string>
-    <string name="quick_settings_location_detail_mode_battery_saving_description">Konumu belirlemek için Wi\u2011Fi, Bluetooth veya hücresel ağlar kullanının</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_description">Konumunuzu belirlemek için GPS kullanın</string>
     <!-- navbar editor -->
     <string name="preview">Ön izleme</string>
     <string name="keycode">Tuş kodu</string>
@@ -201,9 +192,6 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">LTE yerine 4G göster</string>
     <string name="show_fourg_summary">Durum çubuğundaki LTE göstergesini 4G ile değiştirir</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Kilit durumunu göster</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Geçerli kilit durumu simgesini kilit ekranında göster</string>
-    <string name="tuner_qs_long_press_action">Uzunca basıldığında panelleri gösterme</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">VoLTE simgesini görüntüle</string>
     <!-- VPN QS tile -->

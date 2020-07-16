@@ -20,8 +20,15 @@
     <string name="global_action_restart_recovery">Recovery</string>
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">SystemUI</string>
-    <!-- AOD QS tile -->
+    <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
+    <string name="quick_settings_aod_off_label">AOD off</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
+    <string name="quick_settings_hwkeys_label">HW Keys</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Caffeine</string>
     <string name="quick_settings_caffeine_label_off">Vyp.</string>
@@ -94,6 +101,8 @@
     <string name="nope_cant_kill">Spouštěč nelze ukončit</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Snímek obrazovky smazán</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">Spustit nahrávání?</string>
     <string name="screenrecord_dialog_summary">Během nahrávání může systém Android zachytit jakékoli citlivé informace, které jsou viditelné nebo přehrávané na obrazovce vašeho zařízení. To zahrnuje hesla, informace o platbách, fotografie, zprávy a zvuk.</string>
@@ -112,29 +121,11 @@
     <string name="screenrecord_video_bitrate_summary">Nastavte bitrate videa pro lepší kvalitu videa za cenu větší velikosti souboru.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Snímek obrazovky</string>
-    <string name="global_action_screenrecord">Videozáznam obrazovky</string>
+    <string name="global_action_screenrecord">Screen Record</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Přidržením &amp; přetažením nebo klepnutím přidat dlaždice</string>
     <!-- Label for header of customize QS -->
     <string name="drag_or_tap_to_rearrange_tiles">Přidržením &amp; přetažením přemístit nebo klepnutím odstranit dlaždice</string>
-    <!-- Location Tile -->
-    <string name="accessibility_quick_settings_location_battery_saving">Hlášení polohy: úspora baterie.</string>
-    <string name="accessibility_quick_settings_location_gps_only">Hlášení polohy: pouze GPS.</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Hlášení polohy: vysoká přesnost.</string>
-    <string name="quick_settings_location_battery_saving_label">Úspora baterie</string>
-    <string name="quick_settings_location_battery_saving_label_twoline">Úspora\nbaterie</string>
-    <string name="quick_settings_location_gps_only_label">Pouze GPS</string>
-    <string name="quick_settings_location_gps_only_label_twoline">Pouze GPS</string>
-    <string name="quick_settings_location_high_accuracy_label">Vysoká přesnost</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">Vysoká\npřesnost</string>
-    <string name="quick_settings_location_detail_title">Poloha</string>
-    <string name="quick_settings_location_detail_menu_title">Zvolte režim:</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">Vysoká přesnost</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_title">Úspora baterie</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Pouze GPS</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">K určování polohy používat GPS, Wi\u2011Fi, Bluetooth nebo mobilní sítě </string>
-    <string name="quick_settings_location_detail_mode_battery_saving_description">K určování polohy používat Wi\u2011Fi, Bluetooth nebo mobilní sítě</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_description">K určování polohy používat GPS</string>
     <!-- navbar editor -->
     <string name="preview">Náhled</string>
     <string name="keycode">Klávesa</string>
@@ -201,9 +192,6 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Zobrazit 4G místo LTE</string>
     <string name="show_fourg_summary">Nahradí indikátor LTE ve stavovém řádku ukazatelem 4G</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Zobrazit stav zámku</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Nahoře zobrazit aktuální ikonu stavu zámku</string>
-    <string name="tuner_qs_long_press_action">Nezobrazovat panely při dlouhém stisku</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">Zobrazit ikonu VoLTE</string>
     <!-- VPN QS tile -->

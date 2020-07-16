@@ -20,8 +20,15 @@
     <string name="global_action_restart_recovery">Режим відновлення</string>
     <string name="global_action_restart_bootloader">Режим завантажувача</string>
     <string name="global_action_restart_ui">Інтерфейс системи</string>
-    <!-- AOD QS tile -->
+    <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
+    <string name="quick_settings_aod_off_label">AOD off</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
+    <string name="quick_settings_hwkeys_label">HW Keys</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Заборона сну</string>
     <string name="quick_settings_caffeine_label_off">Вимкнено</string>
@@ -94,6 +101,8 @@
     <string name="nope_cant_kill">Лаунчер не може бути завершений</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Знімок екрану видалено</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">Почати запис?</string>
     <string name="screenrecord_dialog_summary">Під час запису система Android може захоплювати будь-яку приватну інформацію, що відображається на вашому екрані або відтворюється на вашому пристрої. Включаючи паролі, платіжну інформацію, фотографії, повідомлення та аудіо.</string>
@@ -112,29 +121,11 @@
     <string name="screenrecord_video_bitrate_summary">Вищий бітрейт робить якість вищою, але це також збільшує розмір файлу</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Знімок екрану</string>
-    <string name="global_action_screenrecord">Запис екрану</string>
+    <string name="global_action_screenrecord">Screen Record</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Утримуйту&amp; перетягніть або торкніться, щоб додати плитки</string>
     <!-- Label for header of customize QS -->
     <string name="drag_or_tap_to_rearrange_tiles">Утримуйте &amp; перетягніть для перестановки або торкніться, щоб видалити</string>
-    <!-- Location Tile -->
-    <string name="accessibility_quick_settings_location_battery_saving">Визначення місцезнаходження: режим економії енергії.</string>
-    <string name="accessibility_quick_settings_location_gps_only">Визначення місцезнаходження: тільки датчики.</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Визначення місцезнаходження: режим високої точності.</string>
-    <string name="quick_settings_location_battery_saving_label">Режим економії енергії</string>
-    <string name="quick_settings_location_battery_saving_label_twoline">Економія\nбатареї</string>
-    <string name="quick_settings_location_gps_only_label">Тільки GPS</string>
-    <string name="quick_settings_location_gps_only_label_twoline">Тільки GPS</string>
-    <string name="quick_settings_location_high_accuracy_label">Висока точність</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">Висока\nточність</string>
-    <string name="quick_settings_location_detail_title">Локація</string>
-    <string name="quick_settings_location_detail_menu_title">Виберіть режим:</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">Висока точність</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_title">Режим економії енергії</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Лише пристрій</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">Використовувати GPS, Wi‑Fi, Bluetooth і мобільні мережі, щоб визначати місцеположення</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_description">Використовувати Wi‑Fi, Bluetooth і мобільні мережі, щоб визначати місцеположення</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_description">Використовувати GPS для визначення місцезнаходження</string>
     <!-- navbar editor -->
     <string name="preview">Попередній перегляд</string>
     <string name="keycode">Код клавіші</string>
@@ -201,9 +192,6 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Показувати 4G, замість LTE</string>
     <string name="show_fourg_summary">Замінити LTE в рядку стану на 4G</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Статус блокування програм</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Показати піктограму блокування зверху</string>
-    <string name="tuner_qs_long_press_action">Не показуйте панелі при тривалому натисканні</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">Відображати значок VoLTE</string>
     <!-- VPN QS tile -->

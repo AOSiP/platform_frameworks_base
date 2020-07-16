@@ -20,8 +20,15 @@
     <string name="global_action_restart_recovery">Режим восстановления</string>
     <string name="global_action_restart_bootloader">Загрузчик</string>
     <string name="global_action_restart_ui">Интерфейс системы</string>
-    <!-- AOD QS tile -->
+    <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">Активный дисплей</string>
+    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
+    <string name="quick_settings_aod_off_label">AOD off</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
+    <string name="quick_settings_hwkeys_label">HW Keys</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Запрет сна</string>
     <string name="quick_settings_caffeine_label_off">Выкл</string>
@@ -94,6 +101,8 @@
     <string name="nope_cant_kill">Лончер не может быть завершён</string>
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Скриншот удален</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">Начать запись?</string>
     <string name="screenrecord_dialog_summary">При запис, Android может записать любую видимую информацию с вашего экрана. Это включает пароли, данные карт, фото, сообщения и аудио.</string>
@@ -112,29 +121,11 @@
     <string name="screenrecord_video_bitrate_summary">Задать битрейт, чтобы получить лучшее качество видео за счёт увеличения размера файла</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Снимок экрана</string>
-    <string name="global_action_screenrecord">Запись экрана</string>
+    <string name="global_action_screenrecord">Screen Record</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Удерживайте &amp; перетащите или нажмите, чтобы добавить плитки</string>
     <!-- Label for header of customize QS -->
     <string name="drag_or_tap_to_rearrange_tiles">Удерживайте &amp; перетащите для изменения или нажмите, чтобы удалить</string>
-    <!-- Location Tile -->
-    <string name="accessibility_quick_settings_location_battery_saving">Определение местоположения: режим энергосбережения.</string>
-    <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: только GPS.</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Определение местоположения: по всем источникам.</string>
-    <string name="quick_settings_location_battery_saving_label">Энергосбережение</string>
-    <string name="quick_settings_location_battery_saving_label_twoline">Экономия батареи</string>
-    <string name="quick_settings_location_gps_only_label">Только GPS</string>
-    <string name="quick_settings_location_gps_only_label_twoline">Только GPS</string>
-    <string name="quick_settings_location_high_accuracy_label">По всем источникам</string>
-    <string name="quick_settings_location_high_accuracy_label_twoline">Высокая точность</string>
-    <string name="quick_settings_location_detail_title">Местоположение</string>
-    <string name="quick_settings_location_detail_menu_title">Выберите режим:</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_title">По всем источникам</string>
-    <string name="quick_settings_location_detail_mode_battery_saving_title">По координатам сети</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_title">Только по спутникам</string>
-    <string name="quick_settings_location_detail_mode_high_accuracy_description">Использовать GPS, Wi‑Fi, Bluetooth и мобильные сети для определения местоположения </string>
-    <string name="quick_settings_location_detail_mode_battery_saving_description">Использовать Wi‑Fi, Bluetooth и мобильные сети для определения местоположения</string>
-    <string name="quick_settings_location_detail_mode_sensors_only_description">Использовать GPS для определения местоположения</string>
     <!-- navbar editor -->
     <string name="preview">Предварительный просмотр</string>
     <string name="keycode">Код клавиши</string>
@@ -201,9 +192,6 @@
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Показывать 4G вместо LTE</string>
     <string name="show_fourg_summary">Заменить индикатор LTE на 4G в строке состояния</string>
-    <string name="tuner_keyguard_show_lock_icon_title">Показать статус блокировки</string>
-    <string name="tuner_keyguard_show_lock_icon_summary">Показать значок блокировки сверху</string>
-    <string name="tuner_qs_long_press_action">Не показывать панели при длительном нажатии</string>
     <!-- VoLTE switch -->
     <string name="volte_switch_summary">Показывать значок VoLTE</string>
     <!-- VPN QS tile -->
