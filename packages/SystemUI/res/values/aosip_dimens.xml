@@ -41,8 +41,8 @@
     <dimen name="ticker_text_top_padding">2dp</dimen>
     <dimen name="ticker_text_end_padding">10dp</dimen>
 
-    <!-- Padding after battery level text in status bar, QS, and Keyguard -->
-    <dimen name="battery_level_padding_end">2dp</dimen>
+    <!-- Padding between battery level and text in status bar, QS, and Keyguard -->
+    <dimen name="battery_level_percent_start">5dp</dimen>
 
     <!-- Sets a custom extra padding for the QS icons and statusbar date -->
     <dimen name="qs_items_padding">0dp</dimen>
@@ -64,5 +64,11 @@
 
     <!-- Width of the battery icon in the status bar when set to circle style. -->
     <dimen name="status_bar_battery_icon_circle_width">13.5dp</dimen>
+
+    <!-- Starting padding for custom status bar elements -->
+    <dimen name="status_bar_start_padding">2dp</dimen>
+
+    <!-- Ending padding for custom status bar elements -->
+    <dimen name="status_bar_end_padding">1dp</dimen>
 
 </resources>
