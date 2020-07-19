@@ -85,7 +85,7 @@
                     android:layout_height="@dimen/status_bar_icon_size"
                     android:src="@drawable/ic_status_bar_kronic_logo"
                     android:scaleType="centerInside"
-                    android:paddingEnd="@dimen/status_bar_left_clock_end_padding"
+                    android:paddingEnd="@dimen/status_bar_end_padding"
                     android:layout_gravity="center_vertical"
                     android:gravity="center_vertical"
                     android:visibility="gone" />
@@ -96,8 +96,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="start|center_vertical"
-                    android:paddingStart="@dimen/status_bar_left_clock_starting_padding"
-                    android:paddingEnd="@dimen/status_bar_left_clock_end_padding"
+                    android:paddingStart="@dimen/status_bar_start_padding"
+                    android:paddingEnd="@dimen/status_bar_end_padding"
                     android:textAppearance="@style/TextAppearance.StatusBar.Clock"
                     android:visibility="gone"
                     android:singleLine="true"/>
@@ -109,8 +109,8 @@
                     android:layout_height="match_parent"
                     android:textAppearance="@style/TextAppearance.StatusBar.Clock"
                     android:singleLine="true"
-                    android:paddingStart="@dimen/status_bar_left_clock_starting_padding"
-                    android:paddingEnd="@dimen/status_bar_left_clock_end_padding"
+                    android:paddingStart="@dimen/status_bar_start_padding"
+                    android:paddingEnd="@dimen/status_bar_end_padding"
                     android:gravity="center_vertical|start" />
 
                 <com.android.systemui.statusbar.AlphaOptimizedFrameLayout

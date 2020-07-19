@@ -42,8 +42,8 @@
         android:layout_height="match_parent"
         android:minWidth="48dp"
         android:gravity="center_vertical|start"
-        android:paddingStart="@dimen/status_bar_left_clock_starting_padding"
-        android:paddingEnd="@dimen/status_bar_left_clock_end_padding"
+        android:paddingStart="@dimen/status_bar_start_padding"
+        android:paddingEnd="@dimen/status_bar_end_padding"
         android:singleLine="true"
         android:textAppearance="@style/TextAppearance.StatusBar.Clock"
         systemui:showDark="false" />
@@ -67,23 +67,23 @@
 
         <com.android.systemui.statusbar.policy.NetworkTraffic
             android:id="@+id/networkTraffic"
-            android:paddingEnd="@dimen/status_bar_left_clock_end_padding"
+            android:paddingEnd="@dimen/status_bar_end_padding"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
             android:singleLine="false"
             android:lineSpacingMultiplier="1.2"
-            systemui:showDark="false"/>
+            systemui:showDark="false" />
 
         <com.android.systemui.BatteryMeterView
-           android:id="@+id/batteryRemainingIconQsH"
-           android:layout_height="match_parent"
-           android:layout_width="wrap_content"
-           android:layout_gravity="center_vertical|end"
-           systemui:textAppearance="@style/TextAppearance.QS.Battery"
-           android:paddingStart="@dimen/status_bar_left_clock_starting_padding"
-           android:paddingEnd="@dimen/status_bar_left_clock_end_padding" />
+            android:id="@+id/batteryRemainingIconQsH"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.StatusBar.Clock"
+            android:paddingStart="@dimen/status_bar_start_padding"
+            systemui:showDark="false" />
 
     </LinearLayout>
 </LinearLayout>
