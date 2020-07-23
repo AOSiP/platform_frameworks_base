@@ -489,6 +489,8 @@ public class TriStateUiControllerImpl implements TriStateUiController,
     private void handleShow() {
         mHandler.removeMessages(MSG_DIALOG_SHOW);
         if (!mShowing) {
+            if (mDialog.isShowing())
+                mDialog.dismiss();
             updateTriStateLayout();
             mShowing = true;
             mDialog.show();
