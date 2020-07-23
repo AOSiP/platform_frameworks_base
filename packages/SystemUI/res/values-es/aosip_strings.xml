@@ -22,13 +22,13 @@
     <string name="global_action_restart_ui">Interfaz de sistema</string>
     <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">Pantalla siempre encendida</string>
-    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
-    <string name="quick_settings_aod_off_label">AOD off</string>
-    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <string name="quick_settings_aod_on_charge_label">AOD en carga</string>
+    <string name="quick_settings_aod_off_label">AOD apagado</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD apagado\nAhorro de Batería</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW Keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Botones fisicos encendidos</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Botones fisicos apagados</string>
+    <string name="quick_settings_hwkeys_label">Botones físicos</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Cafeína</string>
     <string name="quick_settings_caffeine_label_off">Apagado</string>
@@ -102,7 +102,7 @@
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Captura de pantalla borrada</string>
     <!-- USB tethering QS tile -->
-    <string name="quick_settings_usb_tether_label">USB tethering</string>
+    <string name="quick_settings_usb_tether_label">Anclaje USB</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">Iniciar grabación?</string>
     <string name="screenrecord_dialog_summary">Durante la grabación, el sistema Android puede capturar cualquier información sensible que sea visible en tu pantalla o reproducida en tu dispositivo. Esto incluye contraseñas, información de pago, fotos, mensajes y audio.</string>
@@ -121,7 +121,7 @@
     <string name="screenrecord_video_bitrate_summary">Ajusta el bitrate de vídeo para una mejor calidad de vídeo, pero generando un archivo de mayor tamaño.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Captura de pantalla</string>
-    <string name="global_action_screenrecord">Screen Record</string>
+    <string name="global_action_screenrecord">Grabar pantalla</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Mantén pulsado y arrastra para añadir botones</string>
     <!-- Label for header of customize QS -->

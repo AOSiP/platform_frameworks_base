@@ -22,13 +22,13 @@
     <string name="global_action_restart_ui">系统界面</string>
     <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">息屏显示</string>
-    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
-    <string name="quick_settings_aod_off_label">AOD off</string>
-    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <string name="quick_settings_aod_on_charge_label">充电时息屏显示</string>
+    <string name="quick_settings_aod_off_label">关闭息屏显示</string>
+    <string name="quick_settings_aod_off_powersave_label">息屏显示 关闭\n省电模式</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW Keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">实体按键开启</string>
+    <string name="accessibility_quick_settings_hwkeys_off">实体按键关闭</string>
+    <string name="quick_settings_hwkeys_label">实体按键</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">保持亮屏</string>
     <string name="quick_settings_caffeine_label_off">关闭</string>
@@ -102,7 +102,7 @@
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">屏幕截图已删除</string>
     <!-- USB tethering QS tile -->
-    <string name="quick_settings_usb_tether_label">USB tethering</string>
+    <string name="quick_settings_usb_tether_label">USB 网络共享</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">开始录制？</string>
     <string name="screenrecord_dialog_summary">在录制过程中，安卓系统可以捕获在您的屏幕上可见或在您的设备上播放的任何敏感信息。 这包括密码、付款信息、照片、消息和音频。</string>
@@ -121,7 +121,7 @@
     <string name="screenrecord_video_bitrate_summary">设置视频比特率，以更大的文件体积换取更好的视频质量</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">截图</string>
-    <string name="global_action_screenrecord">Screen Record</string>
+    <string name="global_action_screenrecord">屏幕录制</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">按住 &amp; 拖动或点击添加磁贴</string>
     <!-- Label for header of customize QS -->

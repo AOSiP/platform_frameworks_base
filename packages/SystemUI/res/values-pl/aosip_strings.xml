@@ -22,13 +22,13 @@
     <string name="global_action_restart_ui">Interfejs</string>
     <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">AOD</string>
-    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
-    <string name="quick_settings_aod_off_label">AOD off</string>
-    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <string name="quick_settings_aod_on_charge_label">AOD przy ładowaniu</string>
+    <string name="quick_settings_aod_off_label">AOD wył.</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD wyłączony\nOszczędzanie baterii</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW Keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Klawisze sprzętowe włączone</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Klawisze sprzętowe wyłączone</string>
+    <string name="quick_settings_hwkeys_label">Klawisze sprzętowe</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Kofeina</string>
     <string name="quick_settings_caffeine_label_off">Wyłączone</string>
@@ -121,7 +121,7 @@
     <string name="screenrecord_video_bitrate_summary">Ustaw bitrate wideo, aby uzyskać lepszą jakość wideo kosztem większego rozmiaru pliku.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Zrzut ekranu</string>
-    <string name="global_action_screenrecord">Screen Record</string>
+    <string name="global_action_screenrecord">Nagrywanie Ekranu</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Przytrzymaj &amp; przesuń lub dotknij aby dodać kafelki</string>
     <!-- Label for header of customize QS -->

@@ -22,13 +22,13 @@
     <string name="global_action_restart_ui">Интерфейс системы</string>
     <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">Активный дисплей</string>
-    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
-    <string name="quick_settings_aod_off_label">AOD off</string>
-    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <string name="quick_settings_aod_on_charge_label">AOD при зарядке</string>
+    <string name="quick_settings_aod_off_label">AOD выключен</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD выключен\nЭкономия энергии</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW Keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">Аппаратные кнопки включены</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Аппаратные кнопки выключены</string>
+    <string name="quick_settings_hwkeys_label">Аппаратные кнопки</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Запрет сна</string>
     <string name="quick_settings_caffeine_label_off">Выкл</string>
@@ -102,7 +102,7 @@
     <!-- Screenshot toast -->
     <string name="delete_screenshot_toast">Скриншот удален</string>
     <!-- USB tethering QS tile -->
-    <string name="quick_settings_usb_tether_label">USB tethering</string>
+    <string name="quick_settings_usb_tether_label">USB-модем</string>
     <!-- Screen recorder -->
     <string name="screenrecord_dialog_title">Начать запись?</string>
     <string name="screenrecord_dialog_summary">При запис, Android может записать любую видимую информацию с вашего экрана. Это включает пароли, данные карт, фото, сообщения и аудио.</string>
@@ -121,7 +121,7 @@
     <string name="screenrecord_video_bitrate_summary">Задать битрейт, чтобы получить лучшее качество видео за счёт увеличения размера файла</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Снимок экрана</string>
-    <string name="global_action_screenrecord">Screen Record</string>
+    <string name="global_action_screenrecord">Запись экрана</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Удерживайте &amp; перетащите или нажмите, чтобы добавить плитки</string>
     <!-- Label for header of customize QS -->

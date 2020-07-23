@@ -22,13 +22,13 @@
     <string name="global_action_restart_ui">SystemUI</string>
     <!-- AOD QS tile states -->
     <string name="quick_settings_aod_label">AOD</string>
-    <string name="quick_settings_aod_on_charge_label">AOD on charge</string>
-    <string name="quick_settings_aod_off_label">AOD off</string>
-    <string name="quick_settings_aod_off_powersave_label">AOD off\nBattery saver</string>
+    <string name="quick_settings_aod_on_charge_label">AOD při nabíjení</string>
+    <string name="quick_settings_aod_off_label">AOD vyp.</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD vyp.\nSpořič baterie</string>
     <!-- HW Keys Tile -->
-    <string name="accessibility_quick_settings_hwkeys_on">HW keys on</string>
-    <string name="accessibility_quick_settings_hwkeys_off">HW keys off</string>
-    <string name="quick_settings_hwkeys_label">HW Keys</string>
+    <string name="accessibility_quick_settings_hwkeys_on">HW tlačítka zapnuta</string>
+    <string name="accessibility_quick_settings_hwkeys_off">HW tlačítka vypnuta</string>
+    <string name="quick_settings_hwkeys_label">HW tlačítka</string>
     <!-- Caffeine QS tile -->
     <string name="quick_settings_caffeine_label">Caffeine</string>
     <string name="quick_settings_caffeine_label_off">Vyp.</string>
@@ -121,7 +121,7 @@
     <string name="screenrecord_video_bitrate_summary">Nastavte bitrate videa pro lepší kvalitu videa za cenu větší velikosti souboru.</string>
     <!-- Power menu item for taking a screenshot [CHAR LIMIT=20]-->
     <string name="global_action_screenshot_cust">Snímek obrazovky</string>
-    <string name="global_action_screenrecord">Screen Record</string>
+    <string name="global_action_screenrecord">Videozáznam obrazovky</string>
     <!-- Label for area where tiles can be added to the qs panel -->
     <string name="drag_or_tap_to_add_tiles">Přidržením &amp; přetažením nebo klepnutím přidat dlaždice</string>
     <!-- Label for header of customize QS -->
