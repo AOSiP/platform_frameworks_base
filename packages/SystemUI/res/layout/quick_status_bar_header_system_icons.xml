@@ -77,7 +77,7 @@
             systemui:showDark="false" />
 
         <com.android.systemui.BatteryMeterView
-            android:id="@+id/batteryRemainingIconQsH"
+            android:id="@+id/batteryRemainingIcon"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:layout_gravity="center_vertical|end"

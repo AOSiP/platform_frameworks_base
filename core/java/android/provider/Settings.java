@@ -5734,14 +5734,6 @@ public final class Settings {
         public static final String NAVIGATION_BAR_IME_SPACE = "navigation_bar_ime_space";
 
         /**
-         * Whether or not to hide the battery icon and % from QS header
-         * {@hide}
-	 * 0 - Near QS Signal Group
-	 * 1 - On Qs Header
-         */
-        public static final String QS_BATTERY_LOCATION = "qs_battery_location";
-
-        /**
          * Whether user can swap the order of the Alert Slider.
          * * Whether user can invert the order of the Alert Slider.
          * 0: Default
@@ -5774,6 +5766,7 @@ public final class Settings {
          *
          * @hide
          */
+        
         @UnsupportedAppUsage
         public static final String[] SETTINGS_TO_BACKUP = {
             STAY_ON_WHILE_PLUGGED_IN,   // moved to global
