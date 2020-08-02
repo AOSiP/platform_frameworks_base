@@ -10616,6 +10616,14 @@ public final class Settings {
         public static final String NAVBAR_PULSE_ENABLED = "navbar_pulse_enabled";
 
         /**
+         * Pulse ambient music visualizer
+         * @hide
+         */
+        public static final String AMBIENT_PULSE_ENABLED = "ambient_pulse_enabled";
+        private static final Validator AMBIENT_PULSE_ENABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * Pulse lockscreen music visualizer
          * @hide
          */
@@ -10852,6 +10860,7 @@ public final class Settings {
             ADVANCED_REBOOT_IN_POWER_MENU,
             SCREENSHOT_IN_POWER_MENU,
             SCREENRECORD_IN_POWER_MENU,
+            AMBIENT_PULSE_ENABLED,
         };
 
         /**
@@ -11067,6 +11076,7 @@ public final class Settings {
             VALIDATORS.put(ADVANCED_REBOOT_IN_POWER_MENU, ADVANCED_REBOOT_IN_POWER_MENU_VALIDATOR);
             VALIDATORS.put(SCREENSHOT_IN_POWER_MENU, SCREENSHOT_IN_POWER_MENU_VALIDATOR);
             VALIDATORS.put(SCREENRECORD_IN_POWER_MENU, SCREENRECORD_IN_POWER_MENU_VALIDATOR);
+            VALIDATORS.put(AMBIENT_PULSE_ENABLED, AMBIENT_PULSE_ENABLED_VALIDATOR);
         }
 
         /**
