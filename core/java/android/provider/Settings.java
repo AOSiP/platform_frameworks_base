@@ -2589,8 +2589,6 @@ public final class Settings {
             MOVED_TO_SECURE.add(Secure.ADVANCED_REBOOT_IN_POWER_MENU);
             MOVED_TO_SECURE.add(Secure.SCREENSHOT_IN_POWER_MENU);
             MOVED_TO_SECURE.add(Secure.SCREENRECORD_IN_POWER_MENU);
-            MOVED_TO_SECURE.add(Secure.AMBIENT_VISUALIZER_ENABLED);
-            MOVED_TO_SECURE.add(Secure.LOCKSCREEN_VISUALIZER_ENABLED);
         }
 
         @UnsupportedAppUsage
@@ -10641,61 +10639,6 @@ public final class Settings {
                 "qstile_requires_unlocking";
 
         /**
-         * Whether to show the keyguard visualizer.
-         * Boolean setting. 0 = off, 1 = on.
-         * @hide
-         */
-        public static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer";
-        /** @hide */
-        private static final Validator LOCKSCREEN_VISUALIZER_ENABLED_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
-        /**
-         * Ambient Display Visualizer
-         * @hide
-         */
-        public static final String AMBIENT_VISUALIZER_ENABLED = "ambient_visualizer";
-        /** @hide */
-        private static final Validator AMBIENT_VISUALIZER_ENABLED_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
-        /**
-         * Lockscreen lavalamp psychedelic colors
-         * @hide
-         */
-        public static final String LOCKSCREEN_LAVALAMP_ENABLED = "lockscreen_lavalamp_enabled";
-
-        /**
-         * Lockscreen lavalamp animation speed
-         * @hide
-         */
-        public static final String LOCKSCREEN_LAVALAMP_SPEED = "lockscreen_lavalamp_speed";
-
-        /**
-         * Whether to use automatic color for visualizer
-         * @hide
-         */
-        public static final String LOCKSCREEN_VISUALIZER_AUTOCOLOR = "lockscreen_visualizer_autocolor";
-
-        /**
-         * Number of bars shown in visualizer
-         * @hide
-         */
-        public static final String LOCKSCREEN_SOLID_UNITS_COUNT = "lockscreen_solid_units_count";
-
-        /**
-         * Visualizer sanity level
-         * @hide
-         */
-        public static final String LOCKSCREEN_SOLID_FUDGE_FACTOR = "lockscreen_solid_fudge_factor";
-
-        /**
-         * Visualizer opacity
-         * @hide
-         */
-        public static final String LOCKSCREEN_SOLID_UNITS_OPACITY = "lockscreen_solid_units_opacity";
-
-        /**
          * Controls whether tap gesture is enabled.
          * @hide
          */
@@ -10901,8 +10844,6 @@ public final class Settings {
             ADVANCED_REBOOT_IN_POWER_MENU,
             SCREENSHOT_IN_POWER_MENU,
             SCREENRECORD_IN_POWER_MENU,
-            AMBIENT_VISUALIZER_ENABLED,
-            LOCKSCREEN_VISUALIZER_ENABLED,
         };
 
         /**
@@ -11118,8 +11059,6 @@ public final class Settings {
             VALIDATORS.put(ADVANCED_REBOOT_IN_POWER_MENU, ADVANCED_REBOOT_IN_POWER_MENU_VALIDATOR);
             VALIDATORS.put(SCREENSHOT_IN_POWER_MENU, SCREENSHOT_IN_POWER_MENU_VALIDATOR);
             VALIDATORS.put(SCREENRECORD_IN_POWER_MENU, SCREENRECORD_IN_POWER_MENU_VALIDATOR);
-            VALIDATORS.put(AMBIENT_VISUALIZER_ENABLED, AMBIENT_VISUALIZER_ENABLED_VALIDATOR);
-            VALIDATORS.put(LOCKSCREEN_VISUALIZER_ENABLED, LOCKSCREEN_VISUALIZER_ENABLED_VALIDATOR);
         }
 
         /**
