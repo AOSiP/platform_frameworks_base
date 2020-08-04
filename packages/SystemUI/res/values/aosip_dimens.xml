@@ -26,6 +26,9 @@
     <!-- Width of the battery icon in the status bar when set to circle style. -->
     <dimen name="status_bar_battery_icon_circle_width">13.5dp</dimen>
 
+    <!-- Bottom margin size when fingerprint in display is active -->
+    <dimen name="keyguard_security_fod_view_margin">128dp</dimen>
+
     <!-- NavBar Pixel Animation -->
     <dimen name="halo_inner_radius">10.0dip</dimen>
     <dimen name="halo_thickness">1.0dip</dimen>
