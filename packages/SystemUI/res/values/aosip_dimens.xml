@@ -71,4 +71,16 @@
     <!-- Ending padding for custom status bar elements -->
     <dimen name="status_bar_end_padding">1dp</dimen>
 
+    <!-- Collapsed statusbar padding -->
+    <dimen name="qs_corner_content_padding">8dp</dimen>
+
+    <!-- The width of the partial screenshot border resize handles -->
+    <dimen name="global_screenshot_selector_border_width">4dp</dimen>
+
+    <!-- The width of the partial screenshot corner resize handles -->
+    <dimen name="global_screenshot_selector_corner_width">8dp</dimen>
+
+    <!-- The size of the area around a resize handle used for touch detection -->
+    <dimen name="global_screenshot_selector_touch_width">30dp</dimen>
+
 </resources>
