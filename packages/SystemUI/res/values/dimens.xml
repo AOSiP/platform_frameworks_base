@@ -282,15 +282,6 @@
     <!-- The padding on the global screenshot background image -->
     <dimen name="global_screenshot_bg_padding">20dp</dimen>
 
-    <!-- The width of the partial screenshot border resize handles -->
-    <dimen name="global_screenshot_selector_border_width">4dp</dimen>
-
-    <!-- The width of the partial screenshot corner resize handles -->
-    <dimen name="global_screenshot_selector_corner_width">8dp</dimen>
-
-    <!-- The size of the area around a resize handle used for touch detection -->
-    <dimen name="global_screenshot_selector_touch_width">30dp</dimen>
-
     <!-- The width of the view containing navigation buttons -->
     <dimen name="navigation_key_width">70dp</dimen>
 
@@ -338,7 +329,7 @@
     <dimen name="qs_header_system_icons_area_height">48dp</dimen>
 
     <!-- How far the quick-quick settings panel extends below the status bar -->
-    <dimen name="qs_quick_header_panel_height">140dp</dimen>
+    <dimen name="qs_quick_header_panel_height">136dp</dimen>
 
     <!-- The height of the container that holds the system icons in the quick settings header in the
          car setting. -->
@@ -975,7 +966,6 @@
     <dimen name="edge_margin">8dp</dimen>
 
     <dimen name="rounded_corner_content_padding">0dp</dimen>
-    <dimen name="qs_corner_content_padding">12dp</dimen>
     <dimen name="nav_content_padding">0dp</dimen>
     <dimen name="nav_quick_scrub_track_edge_padding">24dp</dimen>
     <dimen name="nav_quick_scrub_track_thickness">10dp</dimen>
