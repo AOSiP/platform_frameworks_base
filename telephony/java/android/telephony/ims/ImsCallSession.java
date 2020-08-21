@@ -458,16 +458,6 @@ public class ImsCallSession {
         public void callQualityChanged(CallQuality callQuality) {
             // no-op
         }
-
-        /**
-         * While in call, there has been a change in the call session
-         * property.
-         * @param property - an integer containing masks for different properties
-         * {e.g. @see Connection#PROPERTY_RTT_AUDIO_SPEECH}
-         */
-        public void callSessionPropertyChanged(int property) {
-            // no-op
-        }
     }
 
     private final IImsCallSession miSession;
@@ -1440,19 +1430,6 @@ public class ImsCallSession {
         public void callQualityChanged(CallQuality callQuality) {
             if (mListener != null) {
                 mListener.callQualityChanged(callQuality);
-            }
-        }
-
-        /**
-         * While in call, there has been a change in the call session
-         * property.
-         * @param property - an integer containing masks for different properties
-         * {e.g. @see Connection#PROPERTY_RTT_AUDIO_SPEECH}
-         */
-        @Override
-        public void callSessionPropertyChanged(int property) {
-            if (mListener != null) {
-                mListener.callSessionPropertyChanged(property);
             }
         }
     }
