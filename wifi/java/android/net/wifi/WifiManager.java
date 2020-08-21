@@ -2327,7 +2327,6 @@ public class WifiManager {
      * in order to get valid results.
      */
     public List<ScanResult> getScanResults() {
-        android.util.SeempLog.record(55);
         try {
             return mService.getScanResults(mContext.getOpPackageName());
         } catch (RemoteException e) {
