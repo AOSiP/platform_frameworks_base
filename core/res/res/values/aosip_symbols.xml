@@ -111,6 +111,9 @@
   <java-symbol type="bool" name="config_button_brightness_support" />
   <java-symbol type="integer" name="config_button_brightness_default" />
 
+  <java-symbol type="integer" name="config_sms_authorization_timeout_ms" />
+  <java-symbol type="bool" name="config_sms_authorization_enabled" />
+
   <!-- True if the notification's should dynamically tint the app icon and text -->
   <java-symbol type="bool" name="config_allowNotificationIconTextTinting" />
   <!-- True if the notification's dynamic app icon and text tint should be optimised for dark
