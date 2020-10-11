@@ -4806,15 +4806,10 @@ public final class Settings {
         public static final String OMNI_QS_LAYOUT_COLUMNS = "qs_layout_columns";
 
         /**
-         * Whether to display qs tile titles in the qs panel
+         * Number of maximum qs rows to show
          * @hide
          */
-        public static final String OMNI_QS_TILE_TITLE_VISIBILITY = "qs_tile_title_visibility";
-
-        /**
-         * @hide
-         */
-        public static final String OMNI_QS_LAYOUT_ROWS = "qs_layout_rows";
+        public static final String QS_LAYOUT_ROWS = "qs_layout_rows";
 
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
@@ -4944,8 +4939,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
             PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE);
             PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_COLUMNS);
-            PRIVATE_SETTINGS.add(OMNI_QS_TILE_TITLE_VISIBILITY);
-            PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_ROWS);
+            PRIVATE_SETTINGS.add(QS_LAYOUT_ROWS);
         }
 
         /**

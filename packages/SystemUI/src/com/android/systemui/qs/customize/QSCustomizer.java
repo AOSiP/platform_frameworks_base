@@ -101,6 +101,7 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
     private int mDefaultColumns;
     private Menu mColumnsSubMenu;
     private Menu mColumnsLandscapeSubMenu;
+    private Menu mRowsSubMenu;
 
     @Inject
     public QSCustomizer(Context context, AttributeSet attrs,
@@ -136,6 +137,11 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
             mColumnsLandscapeSubMenu = menuItemLand.getSubMenu();
         }
         updateColumnsMenu();
+        MenuItem menuItemRows = mToolbar.getMenu().findItem(R.id.menu_item_rows);
+        if (menuItemRows != null) {
+            mRowsSubMenu = menuItemRows.getSubMenu();
+        }
+        updateRowsMenu();
         int accentColor = Utils.getColorAccentDefaultColor(context);
         mToolbar.setTitleTextColor(accentColor);
         mToolbar.getNavigationIcon().setTint(accentColor);
@@ -265,6 +271,9 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
             if (mColumnsLandscapeSubMenu != null) {
                 mColumnsLandscapeSubMenu.close();
             }
+            if (mRowsSubMenu != null) {
+                mRowsSubMenu.close();
+            }
             mToolbar.dismissPopupMenus();
             mClipper.cancelAnimator();
             // Make sure we're not opening (because we're closing). Nobody can think we are
@@ -321,6 +330,12 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         } else if (id == R.id.menu_item_columns_eight) {
             Settings.System.putIntForUser(mContext.getContentResolver(),
                     Settings.System.OMNI_QS_LAYOUT_COLUMNS, 8, UserHandle.USER_CURRENT);
+        } else if (id ==  R.id.menu_item_rows_two) {
+            Settings.System.putIntForUser(mContext.getContentResolver(),
+                    Settings.System.QS_LAYOUT_ROWS, 2, UserHandle.USER_CURRENT);
+        } else if (id ==  R.id.menu_item_rows_three) {
+            Settings.System.putIntForUser(mContext.getContentResolver(),
+                    Settings.System.QS_LAYOUT_ROWS, 3, UserHandle.USER_CURRENT);
         } else if (id == R.id.menu_item_columns_landscape_four) {
             Settings.System.putIntForUser(mContext.getContentResolver(),
                     Settings.System.OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE, 4, UserHandle.USER_CURRENT);
@@ -348,6 +363,9 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
                 UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(mContext.getContentResolver(),
                 Settings.System.OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE, mDefaultColumns,
+                UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(mContext.getContentResolver(),
+                Settings.System.QS_LAYOUT_ROWS, 3,
                 UserHandle.USER_CURRENT);
         updateSettings();
     }
@@ -454,11 +472,16 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         int columnsLandscape = Settings.System.getIntForUser(
                 mContext.getContentResolver(), Settings.System.OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE, mDefaultColumns,
                 UserHandle.USER_CURRENT);
+        int rows = Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS, 3,
+                UserHandle.USER_CURRENT);
         mTileAdapter.setColumnCount(isPortrait ? columns : columnsLandscape);
         mLayout.setSpanCount(isPortrait ? columns : columnsLandscape);
         updateColumnsMenu();
+        updateRowsMenu();
     }
-     private void updateColumnsMenu() {
+
+    private void updateColumnsMenu() {
         int columns = Settings.System.getIntForUser(
                 mContext.getContentResolver(), Settings.System.OMNI_QS_LAYOUT_COLUMNS, mDefaultColumns,
                 UserHandle.USER_CURRENT);
@@ -481,5 +504,15 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         menuItemSeven.setChecked(columnsLandscape == 7);
         MenuItem menuItemEight = mToolbar.getMenu().findItem(R.id.menu_item_columns_landscape_eight);
         menuItemEight.setChecked(columnsLandscape == 8);
+    }
+
+    private void updateRowsMenu() {
+        int rows = Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.QS_LAYOUT_ROWS, mDefaultColumns,
+                UserHandle.USER_CURRENT);
+        MenuItem menuItemTwo = mToolbar.getMenu().findItem(R.id.menu_item_rows_two);
+        menuItemTwo.setChecked(rows == 2);
+        MenuItem menuItemThree = mToolbar.getMenu().findItem(R.id.menu_item_rows_three);
+        menuItemThree.setChecked(rows == 3);
     }
 }
