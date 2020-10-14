@@ -1017,7 +1017,8 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             messageView.setTextColor(textColor);
             messageView.setSelected(true); // necessary for marquee to work
             ImageView icon = v.findViewById(R.id.icon);
-            icon.getDrawable().setTint(textColor);
+            icon.getDrawable().setTint(v.getResources().getColor(
+                    com.android.systemui.R.color.global_actions_emergency_background));
             return v;
         }
 
