@@ -75,7 +75,6 @@ public class NetworkTraffic extends TextView {
     private long totalRxBytes;
     private long totalTxBytes;
     private long lastUpdateTime;
-    private int txtSize;
     private String mTxtFont;
     private int txtImgPadding;
     private int mTrafficType;
@@ -208,13 +207,13 @@ public class NetworkTraffic extends TextView {
             long speedTxKB = (long)(txData / (timeDelta / 1000f)) / KB;
             long speedRxKB = (long)(rxData / (timeDelta / 1000f)) / KB;
             if (mTrafficType == UP) {
-            return !getConnectAvailable() || speedTxKB < mAutoHideThreshold;
+                return !getConnectAvailable() || speedTxKB < mAutoHideThreshold;
             } else if (mTrafficType == DOWN) {
-            return !getConnectAvailable() || speedRxKB < mAutoHideThreshold;
+                return !getConnectAvailable() || speedRxKB < mAutoHideThreshold;
             } else {
-            return !getConnectAvailable() ||
-                    (speedRxKB < mAutoHideThreshold &&
-                    speedTxKB < mAutoHideThreshold);
+                return !getConnectAvailable() ||
+                        (speedRxKB < mAutoHideThreshold &&
+                        speedTxKB < mAutoHideThreshold);
             }
         }
     };
@@ -247,9 +246,6 @@ public class NetworkTraffic extends TextView {
                     this, UserHandle.USER_ALL);
         }
 
-        /*
-         *  @hide
-         */
         @Override
         public void onChange(boolean selfChange) {
             setMode();
@@ -360,7 +356,7 @@ public class NetworkTraffic extends TextView {
                 Settings.System.NETWORK_TRAFFIC_TYPE, 0,
                 UserHandle.USER_CURRENT);
         mAutoHideThreshold = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 0,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1,
                 UserHandle.USER_CURRENT);
         mShowArrow = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_ARROW, 1,
@@ -422,18 +418,16 @@ public class NetworkTraffic extends TextView {
     }
 
     private void updateTextSize() {
-        int txtSize;
-
-        mNetTrafSize = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 42);
-
-        if (mTrafficType == BOTH) {
-            txtSize = getResources().getDimensionPixelSize(R.dimen.net_traffic_multi_text_size);
+        int size;
+        if (mTrafficType != BOTH) {
+            size = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 21,
+                    UserHandle.USER_CURRENT);
         } else {
-            txtSize = mNetTrafSize;
+            size = getResources().getDimensionPixelSize(R.dimen.net_traffic_multi_text_size);
         }
         setTypeface(Typeface.create(mTxtFont, Typeface.NORMAL));
-        setTextSize(TypedValue.COMPLEX_UNIT_PX, (float)txtSize);
+        setTextSize(TypedValue.COMPLEX_UNIT_PX, (float)size);
     }
 
     private void updateVisibility() {
@@ -462,7 +456,6 @@ public class NetworkTraffic extends TextView {
         txtImgPadding = resources.getDimensionPixelSize(R.dimen.net_traffic_txt_img_padding);
         setCompoundDrawablePadding(txtImgPadding);
         setTypeface(Typeface.create(mTxtFont, Typeface.NORMAL));
-	    updateTextSize();
+        updateTextSize();
     }
 }
-
