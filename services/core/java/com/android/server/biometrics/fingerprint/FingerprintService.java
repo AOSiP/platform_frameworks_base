@@ -66,6 +66,7 @@ import com.android.internal.annotations.GuardedBy;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.util.DumpUtils;
 import com.android.internal.widget.LockPatternUtils;
+import com.android.internal.util.aosip.fod.FodUtils;
 import com.android.server.SystemServerInitThreadPool;
 import com.android.server.biometrics.AuthenticationClient;
 import com.android.server.biometrics.BiometricServiceBase;
@@ -891,7 +892,7 @@ public class FingerprintService extends BiometricServiceBase {
         context.registerReceiver(mLockoutReceiver, new IntentFilter(getLockoutResetIntent()),
                 getLockoutBroadcastPermission(), null /* handler */);
         mLockPatternUtils = new LockPatternUtils(context);
-        mHasFod = context.getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView);
+        mHasFod = FodUtils.hasFodSupport(context);
     }
 
     @Override
