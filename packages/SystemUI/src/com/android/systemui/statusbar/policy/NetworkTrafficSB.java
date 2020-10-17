@@ -435,12 +435,13 @@ public class NetworkTrafficSB extends TextView implements StatusIconDisplayable 
         int size;
         if (mTrafficType != BOTH) {
             size = Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 21,
+                    Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 10,
                     UserHandle.USER_CURRENT);
+            setTextSize(TypedValue.COMPLEX_UNIT_DIP, (float)size);
         } else {
             size = getResources().getDimensionPixelSize(R.dimen.net_traffic_multi_text_size);
+            setTextSize(TypedValue.COMPLEX_UNIT_PX, (float)size);
         }
-        setTextSize(TypedValue.COMPLEX_UNIT_PX, (float)size);
         setTypeface(Typeface.create(mTxtFont, Typeface.NORMAL));
     }
 
