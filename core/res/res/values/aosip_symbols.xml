@@ -88,9 +88,6 @@
   <java-symbol type="string" name="gaming_mode_enabled_toast" />
   <java-symbol type="string" name="gaming_mode_disabled_toast" />
 
-  <!-- Ambiant Pulse Light -->
-  <java-symbol type="integer" name="config_AmbiantPulseLightColor" />
-
   <!-- Ambient notification light color -->
   <java-symbol type="integer" name="config_ambientNotificationDefaultColor" />
 
