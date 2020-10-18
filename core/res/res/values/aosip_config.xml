@@ -14,6 +14,14 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Power Menu -->
+    <string-array translatable="false" name="custom_config_globalActionsList">
+        <item>emergency</item>
+        <item>lockdown</item>
+        <item>power</item>
+        <item>restart</item>
+        <item>screenshot</item> <!--2 buttons nav-->
+    </string-array>
 
     <!-- Name of a font family to use as light font. For theming purpose. -->
     <string name="config_lightFontFamily" translatable="false">sans-serif-light</string>
