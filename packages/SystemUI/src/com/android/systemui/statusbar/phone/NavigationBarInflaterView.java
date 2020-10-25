@@ -188,7 +188,6 @@ public class NavigationBarInflaterView extends FrameLayout
 
     @Override
     public void onTuningChanged(String key, String newValue) {
-<<<<<<< HEAD
         switch (key) {
             case NAVBAR_LAYOUT_VIEWS:
                 if (newValue != null)
