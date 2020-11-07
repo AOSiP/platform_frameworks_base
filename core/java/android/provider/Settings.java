@@ -3155,6 +3155,12 @@ public final class Settings {
             MOVED_TO_GLOBAL.add(Settings.Global.CERT_PIN_UPDATE_METADATA_URL);
         }
 
+        /**
+          * Screen off fod
+          * @hide
+          */
+         public static final String FOD_GESTURE = "fod_gesture";
+
         /** @hide */
         public static void getMovedToGlobalSettings(Set<String> outKeySet) {
             outKeySet.addAll(MOVED_TO_GLOBAL);
