@@ -33,4 +33,6 @@
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
     </string-array>
 
+    <bool name="config_has_Soli">false</bool>
+
 </resources>
