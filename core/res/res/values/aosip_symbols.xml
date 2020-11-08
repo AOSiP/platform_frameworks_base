@@ -48,4 +48,6 @@
 
   <!-- In-display Fingerprint -->
   <java-symbol type="bool" name="config_needCustomFODView" />
+
+  <java-symbol type="bool" name="config_has_Soli" />
 </resources>
