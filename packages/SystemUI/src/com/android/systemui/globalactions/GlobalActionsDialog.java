@@ -61,6 +61,7 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
@@ -95,6 +96,7 @@ import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.IWindowManager;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -2718,6 +2720,19 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             ViewGroup contentParent = (ViewGroup) content.getParent();
             contentParent.setClipChildren(false);
             contentParent.setClipToPadding(false);
+        }
+
+        @Override
+        public boolean dispatchTouchEvent(MotionEvent event) {
+            // Close all views when touched outside container
+            Rect viewRect = new Rect();
+            mGlobalActionsLayout.getGlobalVisibleRect(viewRect);
+            if (!viewRect.contains((int) event.getRawX(), (int) event.getRawY())) {
+                completeDismiss();
+                return true;
+            }
+
+            return super.dispatchTouchEvent(event);
         }
 
         @Override
