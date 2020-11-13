@@ -43,4 +43,8 @@
     <string name="task_helper_app_killed">%1$s hart beendet</string>
     <string name="empty_app_killed">App</string>
 
+    <!-- Partial screenshot -->
+    <string name="global_screenshot_selector_capture_description">Capture partial screenshot</string>
+    <string name="global_screenshot_selector_cancel_description">Cancel partial screenshot</string>
+
 </resources>
