@@ -14,7 +14,7 @@
 ** See the License for the specific language governing permissions and
 ** limitations under the License.
 -->
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:systemui="http://schemas.android.com/apk/res-auto"
     android:id="@+id/quick_status_bar_system_icons"
@@ -39,6 +39,13 @@
         android:textAppearance="@style/TextAppearance.StatusBar.Clock"
         systemui:showDark="false" />
 
+    <android.widget.Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal" />
+
     <com.android.systemui.statusbar.policy.NetworkTraffic
         android:id="@+id/networkTraffic"
         android:paddingEnd="@dimen/status_bar_left_clock_end_padding"
@@ -47,7 +54,8 @@
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:singleLine="false"
+        android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
         android:lineSpacingMultiplier="1.2"
         systemui:showDark="false"/>
 
-</FrameLayout>
+</LinearLayout>
