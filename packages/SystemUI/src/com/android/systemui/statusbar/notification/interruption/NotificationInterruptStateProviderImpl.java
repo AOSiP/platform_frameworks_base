@@ -19,6 +19,7 @@ package com.android.systemui.statusbar.notification.interruption;
 import static com.android.systemui.statusbar.StatusBarState.SHADE;
 
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.ContentResolver;
 import android.database.ContentObserver;
 import android.hardware.display.AmbientDisplayConfiguration;
@@ -27,8 +28,10 @@ import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.provider.Telephony.Sms;
 import android.service.dreams.IDreamManager;
 import android.service.notification.StatusBarNotification;
+import android.telecom.TelecomManager;
 import android.util.Log;
 
 import com.android.internal.annotations.VisibleForTesting;
@@ -67,12 +70,16 @@ public class NotificationInterruptStateProviderImpl implements NotificationInter
     private final BatteryController mBatteryController;
     private final ContentObserver mHeadsUpObserver;
     private HeadsUpManager mHeadsUpManager;
+    private boolean mLessBoringHeadsUp;
+    private TelecomManager mTm;
+    private Context mContext;
 
     @VisibleForTesting
     protected boolean mUseHeadsUp = false;
 
     @Inject
     public NotificationInterruptStateProviderImpl(
+            Context context,
             ContentResolver contentResolver,
             PowerManager powerManager,
             IDreamManager dreamManager,
@@ -89,6 +96,8 @@ public class NotificationInterruptStateProviderImpl implements NotificationInter
         mAmbientDisplayConfiguration = ambientDisplayConfiguration;
         mNotificationFilter = notificationFilter;
         mStatusBarStateController = statusBarStateController;
+        mContext = context;
+        mTm = (TelecomManager) context.getSystemService(Context.TELECOM_SERVICE);
         mHeadsUpManager = headsUpManager;
         mHeadsUpObserver = new ContentObserver(mainHandler) {
             @Override
@@ -107,6 +116,9 @@ public class NotificationInterruptStateProviderImpl implements NotificationInter
                         mHeadsUpManager.releaseAllImmediately();
                     }
                 }
+                mLessBoringHeadsUp = Settings.System.getIntForUser(mContentResolver,
+                        Settings.System.LESS_BORING_HEADS_UP, 0,
+                        UserHandle.USER_CURRENT) == 1;
             }
         };
 
@@ -117,6 +129,10 @@ public class NotificationInterruptStateProviderImpl implements NotificationInter
                     mHeadsUpObserver);
             mContentResolver.registerContentObserver(
                     Settings.Global.getUriFor(SETTING_HEADS_UP_TICKER), true,
+                    mHeadsUpObserver);
+            mContentResolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.LESS_BORING_HEADS_UP),
+                    true,
                     mHeadsUpObserver);
         }
         mHeadsUpObserver.onChange(true); // set up
@@ -198,6 +214,10 @@ public class NotificationInterruptStateProviderImpl implements NotificationInter
             return false;
         }
 
+        if (shouldSkipHeadsUp(sbn)) {
+            return false;
+        }
+
         if (isSnoozedPackage(sbn)) {
             if (DEBUG_HEADS_UP) {
                 Log.d(TAG, "No alerting: snoozed package: " + sbn.getKey());
@@ -246,13 +266,34 @@ public class NotificationInterruptStateProviderImpl implements NotificationInter
         for (int i = 0; i < mSuppressors.size(); i++) {
             if (mSuppressors.get(i).suppressAwakeHeadsUp(entry)) {
                 if (DEBUG_HEADS_UP) {
-                    Log.d(TAG, "No heads up: aborted by suppressor: "
+                     Log.d(TAG, "No heads up: aborted by suppressor: "
                             + mSuppressors.get(i).getName() + " sbnKey=" + sbn.getKey());
                 }
                 return false;
             }
         }
         return true;
+    }
+
+    private void setUseLessBoringHeadsUp(boolean lessBoring) {
+        mLessBoringHeadsUp = lessBoring;
+    }
+
+    public boolean shouldSkipHeadsUp(StatusBarNotification sbn) {
+        boolean isImportantHeadsUp = false;
+        String notificationPackageName = sbn.getPackageName();
+        isImportantHeadsUp = notificationPackageName.equals(getDefaultDialerPackage(mTm))
+                || notificationPackageName.equals(getDefaultSmsPackage(mContext));
+        return !mStatusBarStateController.isDozing() && mLessBoringHeadsUp && !isImportantHeadsUp;
+    }
+
+    private static String getDefaultSmsPackage(Context ctx) {
+        return Sms.getDefaultSmsPackage(ctx);
+        // for reference, there's also a new RoleManager api with getDefaultSmsPackage(context, userid) 
+    }
+
+    private static String getDefaultDialerPackage(TelecomManager tm) {
+        return tm != null ? tm.getDefaultDialerPackage() : "";
     }
 
     /**
