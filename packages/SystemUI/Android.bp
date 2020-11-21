@@ -71,6 +71,7 @@ android_library {
         "dagger2-2.19",
         "jsr330",
         "vendor.lineage.biometrics.fingerprint.inscreen-V1.0-java",
+        "VendorSupport-Libs",
     ],
     manifest: "AndroidManifest.xml",
     additional_manifests: ["AOSiPManifest.xml"],
