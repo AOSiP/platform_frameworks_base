@@ -18,6 +18,10 @@
     <!-- AOD QS tile -->
     <string name="quick_settings_aod_label">AOD</string>
 
+    <!-- App picker manifest entry -->
+    <string name="app_picker_dialog_title">Select an app</string>
+    <string name="app_picker_activity_select_title">Select activity</string>
+
     <!-- Tuner items -->
     <string name="status_bar_data_saver">Data saver</string>
     <string name="status_bar_vpn">VPN</string>
