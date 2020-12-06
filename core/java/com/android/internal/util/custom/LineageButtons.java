@@ -33,6 +33,8 @@ import android.provider.Settings;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 
+import com.android.internal.util.aosip.ActionUtils;
+
 import java.util.List;
 
 public final class LineageButtons {
