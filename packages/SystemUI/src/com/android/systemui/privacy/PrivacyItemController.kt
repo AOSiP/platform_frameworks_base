@@ -81,7 +81,7 @@ class PrivacyItemController @Inject constructor(
 
     fun isAllIndicatorsEnabled(): Boolean {
         return deviceConfigProxy.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
-                ALL_INDICATORS, false)
+                ALL_INDICATORS, true)
     }
 
     private fun isMicCameraEnabled(): Boolean {
@@ -118,7 +118,7 @@ class PrivacyItemController @Inject constructor(
 
                     // Running on the ui executor so can iterate on callbacks
                     if (properties.keyset.contains(ALL_INDICATORS)) {
-                        allIndicatorsAvailable = properties.getBoolean(ALL_INDICATORS, false)
+                        allIndicatorsAvailable = properties.getBoolean(ALL_INDICATORS, true)
                         callbacks.forEach { it.get()?.onFlagAllChanged(allIndicatorsAvailable) }
                     }
 
