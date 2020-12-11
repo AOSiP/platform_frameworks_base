@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "224d8f95_fc4833fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000439
+      },
+      "writtenOn": "2020-12-11T22:43:25Z",
+      "side": 1,
+      "message": "I updated that from eleven redfin sources, is more up-to-date and reliable.",
+      "revId": "22ce2ff200c70bdf09508f9631626b95b1ec7868",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
