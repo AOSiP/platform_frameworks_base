@@ -31,6 +31,8 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.media.AudioManager;
 import android.os.Handler;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.provider.AlarmClock;
 import android.provider.Settings;
 import android.service.notification.ZenModeConfig;
@@ -91,8 +93,8 @@ import javax.inject.Named;
  * battery) and also contains the {@link QuickQSPanel} along with some of the panel's inner
  * contents.
  */
-public class QuickStatusBarHeader extends RelativeLayout implements
-        View.OnClickListener, NextAlarmController.NextAlarmChangeCallback,
+public class QuickStatusBarHeader extends RelativeLayout implements View.OnClickListener,
+        View.OnLongClickListener, NextAlarmController.NextAlarmChangeCallback,
         ZenModeController.Callback, LifecycleOwner, TunerService.Tunable {
     private static final String TAG = "QuickStatusBarHeader";
     private static final boolean DEBUG = false;
@@ -108,6 +110,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private final ZenModeController mZenController;
     private final StatusBarIconController mStatusBarIconController;
     private final ActivityStarter mActivityStarter;
+    private final Vibrator mVibrator;
 
     private QSPanel mQsPanel;
 
@@ -174,6 +177,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
                 new ContextThemeWrapper(context, R.style.QSHeaderTheme));
         mCommandQueue = commandQueue;
         mRingerModeTracker = ringerModeTracker;
+        mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     @Override
@@ -220,6 +224,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 
         mClockView = findViewById(R.id.clock);
         mClockView.setOnClickListener(this);
+        mClockView.setOnLongClickListener(this);
         mDateView = findViewById(R.id.date);
 
         // Tint for the battery icons are handled in setupHost()
@@ -541,6 +546,22 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             mActivityStarter.postStartActivityDismissingKeyguard(new Intent(
                     Settings.ACTION_SOUND_SETTINGS), 0);
         }
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        if (v == mClockView) {
+            startDateTimeSettingsActivity();
+        }
+        return false;
+    }
+
+    private void startDateTimeSettingsActivity() {
+        Intent nIntent = new Intent(Intent.ACTION_MAIN);
+        nIntent.setClassName("com.android.settings",
+            "com.android.settings.Settings$DateTimeSettingsActivity");
+        mActivityStarter.startActivity(nIntent, true /* dismissShade */);
+        mVibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE));
     }
 
     @Override
