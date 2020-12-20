@@ -48,4 +48,7 @@
     <!-- Ambient music -->
     <dimen name="keyguard_security_fod_view_margin">140dp</dimen>
 
+    <!-- Margin on the left side of the heads up notification -->
+    <dimen name="heads_up_status_bar_padding_start">0dp</dimen>
+
 </resources>
