@@ -18,7 +18,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.android.systemui">
 
+    <!-- Force stop apps -->
     <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
+    <!-- Screenshot feature -->
+    <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
 
     <!-- SystemUI Tuner -->
     <application>
