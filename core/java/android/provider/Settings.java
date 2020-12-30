@@ -9512,6 +9512,13 @@ public final class Settings {
                 "theme_customization_overlay_packages";
 
         /**
+         * Whether the Touch Sensitivity option is enabled.
+         *
+         * @hide
+         */
+        public static final String TOUCH_SENSITIVITY_ENABLED = "touch_sensitivity_enabled";
+
+        /**
          * Navigation bar mode.
          *  0 = 3 button
          *  1 = 2 button
