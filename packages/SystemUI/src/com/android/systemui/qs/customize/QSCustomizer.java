@@ -159,7 +159,7 @@ public class QSCustomizer extends LinearLayout implements OnMenuItemClickListene
         int columns;
         if (mContext.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             columns = Math.max(1, Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.QS_COLUMNS_PORTRAIT, 4,
+                    Settings.System.QS_COLUMNS_PORTRAIT, 3,
                     UserHandle.USER_CURRENT));
         } else {
             columns = Math.max(1, Settings.System.getIntForUser(mContext.getContentResolver(),
