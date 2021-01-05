@@ -16,6 +16,23 @@
       "message": "works fine on 7t\n+1 is for entire chain",
       "revId": "4c12fa9acf5f9c21209daa9305f87ce45f049a48",
       "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a81531d3_d58feace",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000310
+      },
+      "writtenOn": "2021-01-05T17:58:54Z",
+      "side": 1,
+      "message": "Tested on 7tpro5G and 8t",
+      "revId": "4c12fa9acf5f9c21209daa9305f87ce45f049a48",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
     }
   ]
 }
