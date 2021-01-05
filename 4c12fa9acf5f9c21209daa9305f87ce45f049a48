@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b215f6b7_8be8238b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000314
+      },
+      "writtenOn": "2021-01-05T08:55:44Z",
+      "side": 1,
+      "message": "works fine on 7t\n+1 is for entire chain",
+      "revId": "4c12fa9acf5f9c21209daa9305f87ce45f049a48",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
