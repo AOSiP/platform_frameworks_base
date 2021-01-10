@@ -85,6 +85,7 @@ public class QSFactoryImpl implements QSFactory {
 
     // Additions
     private final Provider<AODTile> mAODTileProvider;
+    private final Provider<ThemeTile> mThemeTileProvider;
 
     private final Lazy<QSHost> mQsHostLazy;
 
@@ -111,7 +112,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<UiModeNightTile> uiModeNightTileProvider,
             Provider<ScreenRecordTile> screenRecordTileProvider,
             Provider<AODTile> aodTileProvider,
-            Provider<CaffeineTile> caffeineTileProvider) {
+            Provider<CaffeineTile> caffeineTileProvider,
+            Provider<ThemeTile> themeTileProvider) {
         mQsHostLazy = qsHostLazy;
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
@@ -137,6 +139,7 @@ public class QSFactoryImpl implements QSFactory {
 
         //Additions
         mAODTileProvider = aodTileProvider;
+        mThemeTileProvider = themeTileProvider;
     }
 
     public QSTile createTile(String tileSpec) {
@@ -193,8 +196,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mAODTileProvider.get();
             case "caffeine":
                 return mCaffeineTileProvider.get();
-//            case "theme":
-//                return new ThemeTile(mHost);
+            case "theme":
+                return mThemeTileProvider.get();
         }
 
         // Custom tiles
