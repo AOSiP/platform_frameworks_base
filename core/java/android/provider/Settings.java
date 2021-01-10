@@ -4794,12 +4794,6 @@ public final class Settings {
         public static final String MULTI_AUDIO_FOCUS_ENABLED = "multi_audio_focus_enabled";
 
         /**
-         * Whether to enable our custom black theme
-         * @hide
-         */
-        public static final String ENABLE_DARKER_THEME = "enable_darker_theme";
-
-        /**
          * Controls whether to show notification headers
          * @hide
          */
@@ -4859,13 +4853,6 @@ public final class Settings {
          * @hide
          */
         public static final String AMBIENT_WAKE_GESTURES = "ambient_wake_gestures";
-
-        /**
-         * IMPORTANT: If you add a new public settings you also have to add it to
-         * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
-         * it to PRIVATE_SETTINGS below. Also add a validator that can validate
-         * the setting value. See an example above.
-         */
 
         /**
          * Shows custom date before clock time
@@ -5120,6 +5107,13 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_BATTERY_INFO_TEMP_UNIT = "lockscreen_charge_temp_unit";
+
+        /**
+         * IMPORTANT: If you add a new public settings you also have to add it to
+         * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
+         * it to PRIVATE_SETTINGS below. Also add a validator that can validate
+         * the setting value. See an example above.
+         */
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
