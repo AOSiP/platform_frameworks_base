@@ -20,12 +20,19 @@ public class ThemesUtils {
 
     public static final String[] ACCENTS = {
             // AOSP colors
-            "com.android.theme.color.space", // Space
-            "com.android.theme.color.purple", // Purple
-            "com.android.theme.color.orchid", // Orchid
-            "com.android.theme.color.ocean", // Ocean
-            "com.android.theme.color.green", // Green
+            "com.android.theme.color.amethyst", // Amethyst
+            "com.android.theme.color.aquamarine", // Aquamarine
+            "com.android.theme.color.carbon", // Carbon
             "com.android.theme.color.cinnamon", // Cinnamon
+            "com.android.theme.color.green", // Green
+            "com.android.theme.color.ocean", // Ocean
+            "com.android.theme.color.orchid", // Orchid
+            "com.android.theme.color.palette", // Palette
+            "com.android.theme.color.purple", // Purple
+            "com.android.theme.color.sand", // Sand
+            "com.android.theme.color.space", // Space
+            "com.android.theme.color.tangerine", // Tangerine
+
             // Custom colors
             "com.android.theme.color.amber", // Amber
             "com.android.theme.color.blue", // Blue
@@ -83,7 +90,6 @@ public class ThemesUtils {
             "com.android.theme.font.samsungone",
             "com.android.theme.font.firasans",
     };
-
 
     public static final String[] NAVBAR_STYLES = {
             "com.android.theme.navbar.asus",
