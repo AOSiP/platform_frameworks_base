@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a72b2dc_c6aa1e4f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000314
+      },
+      "writtenOn": "2021-01-10T13:08:52Z",
+      "side": 1,
+      "message": "tested on hotdogb is fine, for _warp_ charging just overlay the string since the node and stuff remains same anyways ",
+      "revId": "4a1d56a3555987097843108c16110dd7b537fafe",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
