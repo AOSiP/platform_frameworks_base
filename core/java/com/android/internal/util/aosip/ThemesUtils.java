@@ -39,6 +39,7 @@ public class ThemesUtils {
             "com.android.theme.color.lightblue", // Light Blue
             "com.android.theme.color.lightgreen", // Light Green
             "com.android.theme.color.lime", // Lime
+            "com.android.theme.color.ohsoorange", // Oh, So Orange
             "com.android.theme.color.orange", // Orange
             "com.android.theme.color.pink", // Pink
             "com.android.theme.color.red", // Red
