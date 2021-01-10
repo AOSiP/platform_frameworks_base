@@ -66,6 +66,9 @@ public class ThemesUtils {
             "com.android.theme.icon_pack.filled.android",
             "com.android.theme.icon_pack.rounded.android",
             "com.android.theme.icon_pack.circular.android",
+            "com.android.theme.icon_pack.kai.android",
+            "com.android.theme.icon_pack.sam.android",
+            "com.android.theme.icon_pack.victor.android",
     };
 
     public static final String[] FONTS = {
