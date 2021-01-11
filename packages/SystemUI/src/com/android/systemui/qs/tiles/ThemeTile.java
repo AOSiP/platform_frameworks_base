@@ -59,51 +59,65 @@ public class ThemeTile extends QSTileImpl<BooleanState> {
     static {
         sThemeItems.add(new ThemeTileItem(0, R.color.quick_settings_theme_tile_default,
                 R.string.quick_settings_theme_tile_color_default));
-        sThemeItems.add(new ThemeTileItem(1, R.color.quick_settings_theme_tile_space,
+        sThemeItems.add(new ThemeTileItem(1, R.color.quick_settings_theme_tile_amethyst,
+                R.string.quick_settings_theme_tile_color_amethyst, "com.android.theme.color.amethyst"));
+        sThemeItems.add(new ThemeTileItem(2, R.color.quick_settings_theme_tile_aquamarine,
+                R.string.quick_settings_theme_tile_color_aquamarine, "com.android.theme.color.aquamarine"));
+        sThemeItems.add(new ThemeTileItem(3, R.color.quick_settings_theme_tile_carbon,
+                R.string.quick_settings_theme_tile_color_carbon, "com.android.theme.color.carbon"));
+        sThemeItems.add(new ThemeTileItem(4, R.color.quick_settings_theme_tile_palette,
+                R.string.quick_settings_theme_tile_color_palette, "com.android.theme.color.palette"));
+        sThemeItems.add(new ThemeTileItem(5, R.color.quick_settings_theme_tile_sand,
+                R.string.quick_settings_theme_tile_color_sand, "com.android.theme.color.sand"));
+        sThemeItems.add(new ThemeTileItem(6, R.color.quick_settings_theme_tile_tangerine,
+                R.string.quick_settings_theme_tile_color_tangerine, "com.android.theme.color.tangerine"));
+        sThemeItems.add(new ThemeTileItem(7, R.color.quick_settings_theme_tile_space,
                 R.string.quick_settings_theme_tile_color_space, "com.android.theme.color.space"));
-        sThemeItems.add(new ThemeTileItem(2, R.color.quick_settings_theme_tile_purple,
+        sThemeItems.add(new ThemeTileItem(8, R.color.quick_settings_theme_tile_purple,
                 R.string.quick_settings_theme_tile_color_purple, "com.android.theme.color.purple"));
-        sThemeItems.add(new ThemeTileItem(3, R.color.quick_settings_theme_tile_orchid,
+        sThemeItems.add(new ThemeTileItem(9, R.color.quick_settings_theme_tile_orchid,
                 R.string.quick_settings_theme_tile_color_orchid, "com.android.theme.color.orchid"));
-        sThemeItems.add(new ThemeTileItem(4, R.color.quick_settings_theme_tile_ocean,
+        sThemeItems.add(new ThemeTileItem(10, R.color.quick_settings_theme_tile_ocean,
                 R.string.quick_settings_theme_tile_color_ocean, "com.android.theme.color.ocean"));
-        sThemeItems.add(new ThemeTileItem(5, R.color.quick_settings_theme_tile_green,
+        sThemeItems.add(new ThemeTileItem(11, R.color.quick_settings_theme_tile_green,
                 R.string.quick_settings_theme_tile_color_green, "com.android.theme.color.green"));
-        sThemeItems.add(new ThemeTileItem(6, R.color.quick_settings_theme_tile_cinnamon,
+        sThemeItems.add(new ThemeTileItem(12, R.color.quick_settings_theme_tile_cinnamon,
                 R.string.quick_settings_theme_tile_color_cinnamon, "com.android.theme.color.cinnamon"));
-        sThemeItems.add(new ThemeTileItem(7, R.color.quick_settings_theme_tile_amber,
+        sThemeItems.add(new ThemeTileItem(13, R.color.quick_settings_theme_tile_amber,
                 R.string.quick_settings_theme_tile_color_amber, "com.android.theme.color.amber"));
-        sThemeItems.add(new ThemeTileItem(8, R.color.quick_settings_theme_tile_blue,
+        sThemeItems.add(new ThemeTileItem(14, R.color.quick_settings_theme_tile_blue,
                 R.string.quick_settings_theme_tile_color_blue, "com.android.theme.color.blue"));
-        sThemeItems.add(new ThemeTileItem(9, R.color.quick_settings_theme_tile_bluegrey,
+        sThemeItems.add(new ThemeTileItem(15, R.color.quick_settings_theme_tile_bluegrey,
                 R.string.quick_settings_theme_tile_color_bluegrey, "com.android.theme.color.bluegrey"));
-        sThemeItems.add(new ThemeTileItem(10, R.color.quick_settings_theme_tile_brown,
+        sThemeItems.add(new ThemeTileItem(16, R.color.quick_settings_theme_tile_brown,
                 R.string.quick_settings_theme_tile_color_brown, "com.android.theme.color.brown"));
-        sThemeItems.add(new ThemeTileItem(11, R.color.quick_settings_theme_tile_cyan,
+        sThemeItems.add(new ThemeTileItem(17, R.color.quick_settings_theme_tile_cyan,
                 R.string.quick_settings_theme_tile_color_cyan, "com.android.theme.color.cyan"));
-        sThemeItems.add(new ThemeTileItem(12, R.color.quick_settings_theme_tile_deeporange,
+        sThemeItems.add(new ThemeTileItem(18, R.color.quick_settings_theme_tile_deeporange,
                 R.string.quick_settings_theme_tile_color_deeporange, "com.android.theme.color.deeporange"));
-        sThemeItems.add(new ThemeTileItem(13, R.color.quick_settings_theme_tile_deeppurple,
+        sThemeItems.add(new ThemeTileItem(19, R.color.quick_settings_theme_tile_deeppurple,
                 R.string.quick_settings_theme_tile_color_deeppurple, "com.android.theme.color.deeppurple"));
-        sThemeItems.add(new ThemeTileItem(14, R.color.quick_settings_theme_tile_grey,
+        sThemeItems.add(new ThemeTileItem(20, R.color.quick_settings_theme_tile_grey,
                 R.string.quick_settings_theme_tile_color_grey, "com.android.theme.color.grey"));
-        sThemeItems.add(new ThemeTileItem(15, R.color.quick_settings_theme_tile_indigo,
+        sThemeItems.add(new ThemeTileItem(21, R.color.quick_settings_theme_tile_indigo,
                 R.string.quick_settings_theme_tile_color_indigo, "com.android.theme.color.indigo"));
-        sThemeItems.add(new ThemeTileItem(16, R.color.quick_settings_theme_tile_lightblue,
+        sThemeItems.add(new ThemeTileItem(22, R.color.quick_settings_theme_tile_lightblue,
                 R.string.quick_settings_theme_tile_color_lightblue, "com.android.theme.color.lightblue"));
-        sThemeItems.add(new ThemeTileItem(17, R.color.quick_settings_theme_tile_lightgreen,
+        sThemeItems.add(new ThemeTileItem(23, R.color.quick_settings_theme_tile_lightgreen,
                 R.string.quick_settings_theme_tile_color_lightgreen, "com.android.theme.color.lightgreen"));
-        sThemeItems.add(new ThemeTileItem(18, R.color.quick_settings_theme_tile_lime,
+        sThemeItems.add(new ThemeTileItem(24, R.color.quick_settings_theme_tile_lime,
                 R.string.quick_settings_theme_tile_color_lime, "com.android.theme.color.lime"));
-        sThemeItems.add(new ThemeTileItem(19, R.color.quick_settings_theme_tile_orange,
+        sThemeItems.add(new ThemeTileItem(25, R.color.quick_settings_theme_tile_ohsoorange,
+                R.string.quick_settings_theme_tile_color_ohsoorange, "com.android.theme.color.ohsoorange"));
+        sThemeItems.add(new ThemeTileItem(26, R.color.quick_settings_theme_tile_orange,
                 R.string.quick_settings_theme_tile_color_orange, "com.android.theme.color.orange"));
-        sThemeItems.add(new ThemeTileItem(20, R.color.quick_settings_theme_tile_pink,
+        sThemeItems.add(new ThemeTileItem(27, R.color.quick_settings_theme_tile_pink,
                 R.string.quick_settings_theme_tile_color_pink, "com.android.theme.color.pink"));
-        sThemeItems.add(new ThemeTileItem(21, R.color.quick_settings_theme_tile_red,
+        sThemeItems.add(new ThemeTileItem(28, R.color.quick_settings_theme_tile_red,
                 R.string.quick_settings_theme_tile_color_red, "com.android.theme.color.red"));
-        sThemeItems.add(new ThemeTileItem(22, R.color.quick_settings_theme_tile_teal,
+        sThemeItems.add(new ThemeTileItem(29, R.color.quick_settings_theme_tile_teal,
                 R.string.quick_settings_theme_tile_color_teal, "com.android.theme.color.teal"));
-        sThemeItems.add(new ThemeTileItem(23, R.color.quick_settings_theme_tile_yellow,
+        sThemeItems.add(new ThemeTileItem(30, R.color.quick_settings_theme_tile_yellow,
                 R.string.quick_settings_theme_tile_color_yellow, "com.android.theme.color.yellow"));
     }
 
