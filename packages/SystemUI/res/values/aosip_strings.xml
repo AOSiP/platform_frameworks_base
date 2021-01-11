@@ -58,6 +58,12 @@
     <string name="system_theme_style_dark">Google dark</string>
     <string name="system_theme_style_pitchblack">Pitch black</string>
     <string name="system_theme_style_solarizeddark">Solarized dark</string>
+    <string name="system_theme_style_charcoalblack">Charcoal black</string>
+    <string name="system_theme_style_clear">Clear</string>
+    <string name="system_theme_style_ethereal">Ethereal</string>
+    <string name="system_theme_style_flame">Flame</string>
+    <string name="system_theme_style_nature">Nature</string>
+    <string name="system_theme_style_ocean">Ocean</string>
     <string name="quick_settings_theme_tile_title">Accent</string>
     <string name="quick_settings_theme_tile_accent_detail_title">Select color</string>
     <string name="quick_settings_theme_tile_style_detail_title">Select style</string>
