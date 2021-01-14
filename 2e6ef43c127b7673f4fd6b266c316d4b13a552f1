@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e75f8e5_21ae4b2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000297
+      },
+      "writtenOn": "2021-01-14T19:48:05Z",
+      "side": 1,
+      "message": "You only need one or the other (framework or native) of the fixes, adding both is redundant. I\u0027d recommend the framework one for ROMs in most cases as it\u0027s less intrusive.",
+      "revId": "2e6ef43c127b7673f4fd6b266c316d4b13a552f1",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
