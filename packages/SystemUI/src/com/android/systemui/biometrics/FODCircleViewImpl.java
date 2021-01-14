@@ -34,15 +34,18 @@ public class FODCircleViewImpl extends SystemUI implements CommandQueue.Callback
 
     private FODCircleView mFodCircleView;
     private final CommandQueue mCommandQueue;
+    private final boolean mIsEnabled;
 
     @Inject
     public FODCircleViewImpl(Context context, CommandQueue commandQueue) {
         super(context);
         mCommandQueue = commandQueue;
+        mIsEnabled = context.getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView);
     }
 
     @Override
     public void start() {
+        if (!mIsEnabled) return;
         PackageManager packageManager = mContext.getPackageManager();
         if (!packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
             return;
