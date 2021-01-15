@@ -80,6 +80,7 @@ public class QSContainerImpl extends FrameLayout implements
     private View mQSPanelContainer;
 
     private View mBackground;
+    private View mBackgroundGradient;
     private View mStatusBarBackground;
 
     private int mSideMargins;
@@ -113,6 +114,7 @@ public class QSContainerImpl extends FrameLayout implements
         mDragHandle = findViewById(R.id.qs_drag_handle_view);
         mBackground = findViewById(R.id.quick_settings_background);
         mStatusBarBackground = findViewById(R.id.quick_settings_status_bar_background);
+        mBackgroundGradient = findViewById(R.id.quick_settings_gradient_view);
         mBackgroundImage = findViewById(R.id.qs_header_image_view);
         mBackgroundImage.setClipToOutline(true);
         updateResources();
@@ -193,6 +195,7 @@ public class QSContainerImpl extends FrameLayout implements
     private void updateAlpha() {
         mBackground.getBackground().setAlpha(mQsBackgroundAlpha);
         mStatusBarBackground.getBackground().setAlpha(mQsBackgroundAlpha);
+        mBackgroundGradient.getBackground().setAlpha(mQsBackgroundAlpha);
     }
 
     @Override
@@ -261,6 +264,7 @@ public class QSContainerImpl extends FrameLayout implements
         if (disabled == mQsDisabled) return;
         mQsDisabled = disabled;
         mBackground.setVisibility(mQsDisabled ? View.GONE : View.VISIBLE);
+        updateStatusbarVisibility();
     }
 
     private void updateResources() {
@@ -348,7 +352,8 @@ public class QSContainerImpl extends FrameLayout implements
     private void updatePaddingsAndMargins() {
         for (int i = 0; i < getChildCount(); i++) {
             View view = getChildAt(i);
-            if (view == mStatusBarBackground || view == mQSCustomizer) {
+            if (view == mStatusBarBackground || view == mBackgroundGradient
+                    || view == mQSCustomizer) {
                 // Some views are always full width
                 continue;
             }
@@ -446,9 +451,11 @@ public class QSContainerImpl extends FrameLayout implements
     }
 
     private void updateStatusbarVisibility() {
+        boolean hideGradient = mLandscape || mHeaderImageEnabled;
         boolean hideStatusbar = mLandscape && !mHeaderImageEnabled;
 
-        mStatusBarBackground.setBackgroundColor(Color.TRANSPARENT);
+        mBackgroundGradient.setVisibility(hideGradient ? View.INVISIBLE : View.VISIBLE);
+        mStatusBarBackground.setBackgroundColor(hideGradient ? Color.TRANSPARENT : Color.BLACK);
         mStatusBarBackground.setVisibility(hideStatusbar ? View.INVISIBLE : View.VISIBLE);
 
         updateAlpha();
