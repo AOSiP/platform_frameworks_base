@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7639e47_c0d8382a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000314
+      },
+      "writtenOn": "2021-02-18T03:34:52Z",
+      "side": 1,
+      "message": "not really a fan of this, but qti vibrator/oneplus lmvibrator don\u0027t have the same feel as Q ones :(",
+      "revId": "b240c6e32aac1ba473b37904ec4938a5b4abc5d9",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
