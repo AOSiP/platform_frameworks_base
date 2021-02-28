@@ -128,5 +128,6 @@ public class ThemesUtils {
             "com.android.theme.navbar.oneplus",
             "com.android.theme.navbar.oneui",
             "com.android.theme.navbar.tecno",
+            "com.android.theme.navbar.kronic",
     };
 }
