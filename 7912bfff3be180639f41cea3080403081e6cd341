@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7efa2657_a77e7dad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000416
+      },
+      "writtenOn": "2021-02-28T05:20:56Z",
+      "side": 1,
+      "message": "I don\u0027t see the need for this since node for dash and warp is the same, you can simply overlay the string to warp if you want to",
+      "revId": "7912bfff3be180639f41cea3080403081e6cd341",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
