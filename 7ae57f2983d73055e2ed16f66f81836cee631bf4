@@ -16,6 +16,23 @@
       "message": "Still not sure why this is a thing",
       "revId": "7ae57f2983d73055e2ed16f66f81836cee631bf4",
       "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10589d02_a04f0148",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000374
+      },
+      "writtenOn": "2021-03-06T19:45:00Z",
+      "side": 1,
+      "message": "I just added it in case it might be needed by someone. This can be closed, as I have no personal attachment to it 😬",
+      "revId": "7ae57f2983d73055e2ed16f66f81836cee631bf4",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
     }
   ]
 }
