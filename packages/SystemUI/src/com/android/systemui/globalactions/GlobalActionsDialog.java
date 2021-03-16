@@ -19,7 +19,6 @@ import static android.view.WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM;
 import static android.view.WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS;
 import static android.view.WindowManager.ScreenshotSource.SCREENSHOT_GLOBAL_ACTIONS;
 import static android.view.WindowManager.TAKE_SCREENSHOT_FULLSCREEN;
-import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_2BUTTON;
 
 import static com.android.internal.widget.LockPatternUtils.StrongAuthTracker.SOME_AUTH_REQUIRED_AFTER_USER_REQUEST;
 import static com.android.internal.widget.LockPatternUtils.StrongAuthTracker.STRONG_AUTH_NOT_REQUIRED;
@@ -55,6 +54,9 @@ import android.database.ContentObserver;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.Rect;
+import android.hardware.camera2.CameraManager;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraAccessException;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.os.Binder;
@@ -191,6 +193,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
     private static final String GLOBAL_ACTION_KEY_LOGOUT = "logout";
     static final String GLOBAL_ACTION_KEY_EMERGENCY = "emergency";
     static final String GLOBAL_ACTION_KEY_SCREENSHOT = "screenshot";
+    private static final String GLOBAL_ACTIONS_USERS_CHOICE = "users_choice";
 
     private static final int RESTART_RECOVERY_BUTTON = 1;
     private static final int RESTART_BOOTLOADER_BUTTON = 2;
@@ -246,6 +249,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
     private boolean mIsWaitingForEcmExit = false;
     private boolean mHasTelephony;
     private boolean mHasVibrator;
+    private boolean mFlashlightEnabled = false;
     private final boolean mShowSilentToggle;
     private final EmergencyAffordanceManager mEmergencyAffordanceManager;
     private final ScreenshotHelper mScreenshotHelper;
@@ -711,6 +715,15 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                 }
             } else if (GLOBAL_ACTION_KEY_SCREENSHOT.equals(actionKey)) {
                 addIfShouldShowAction(tempActions, new ScreenshotAction());
+            // Fourth button: User can choose one of the following
+            } else if (GLOBAL_ACTIONS_USERS_CHOICE.equals(actionKey)) {
+                if (screenshotUserEnabled(mContext)) {
+                    addIfShouldShowAction(tempActions, new ScreenshotAction());
+                } else if (screenrecordUserEnabled(mContext)) {
+                    addIfShouldShowAction(tempActions, getScreenrecordAction());
+                } else if (flashlightUserEnabled(mContext)) {
+                    addIfShouldShowAction(tempActions, getFlashlightToggleAction());
+                }
             } else if (GLOBAL_ACTION_KEY_LOGOUT.equals(actionKey)) {
                 if (mDevicePolicyManager.isLogoutEnabled()
                         && currentUser.get() != null
@@ -840,6 +853,24 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
         boolean advancedRebootEnabled = Settings.System.getIntForUser(context.getContentResolver(),
                 Settings.System.ADVANCED_REBOOT, 0, UserHandle.USER_CURRENT) == 1;
         return advancedRebootEnabled;
+    }
+
+    private boolean screenshotUserEnabled(Context context) {
+        boolean screenshotUserEnabled = Settings.System.getIntForUser(context.getContentResolver(),
+                Settings.System.GLOBAL_ACTIONS_USERS_CHOICE, 0, UserHandle.USER_CURRENT) == 1;
+        return screenshotUserEnabled;
+    }
+
+    private boolean screenrecordUserEnabled(Context context) {
+        boolean screenrecordUserEnabled = Settings.System.getIntForUser(context.getContentResolver(),
+                Settings.System.GLOBAL_ACTIONS_USERS_CHOICE, 0, UserHandle.USER_CURRENT) == 2;
+        return screenrecordUserEnabled;
+    }
+
+    private boolean flashlightUserEnabled(Context context) {
+        boolean flashlightUserEnabled = Settings.System.getIntForUser(context.getContentResolver(),
+                Settings.System.GLOBAL_ACTIONS_USERS_CHOICE, 0, UserHandle.USER_CURRENT) == 3;
+        return flashlightUserEnabled;
     }
 
     @VisibleForTesting
@@ -1075,10 +1106,9 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
 
     @VisibleForTesting
     class ScreenshotAction extends SinglePressAction implements LongPressAction {
-        final String KEY_SYSTEM_NAV_2BUTTONS = "system_nav_2buttons";
-
         public ScreenshotAction() {
-            super(R.drawable.ic_screenshot, R.string.global_action_screenshot);
+            super(com.android.systemui.R.drawable.ic_lock_screenshot,
+                    R.string.global_action_screenshot);
         }
 
         @Override
@@ -1109,26 +1139,9 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
         }
 
         @Override
-        public boolean shouldShow() {
-          // Include screenshot in power menu for legacy nav because it is not accessible
-          // through Recents in that mode
-            return is2ButtonNavigationEnabled();
-        }
-
-        boolean is2ButtonNavigationEnabled() {
-            return NAV_BAR_MODE_2BUTTON == mContext.getResources().getInteger(
-                    com.android.internal.R.integer.config_navBarInteractionMode);
-        }
-
-
-        @Override
         public boolean onLongPress() {
-            if (FeatureFlagUtils.isEnabled(mContext, FeatureFlagUtils.SCREENRECORD_LONG_PRESS)) {
-                mUiEventLogger.log(GlobalActionsEvent.GA_SCREENSHOT_LONG_PRESS);
-                mScreenRecordHelper.launchRecordPrompt();
-            } else {
-                onPress();
-            }
+            mScreenshotHelper.takeScreenshot(2, true, true,
+                    SCREENSHOT_GLOBAL_ACTIONS, mHandler, null);
             return true;
         }
     }
@@ -1289,6 +1302,57 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                 Intent intent = new Intent(Intent.ACTION_VOICE_ASSIST);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 mContext.startActivity(intent);
+            }
+
+            @Override
+            public boolean showDuringKeyguard() {
+                return true;
+            }
+
+            @Override
+            public boolean showBeforeProvisioning() {
+                return true;
+            }
+        };
+    }
+
+    private Action getFlashlightToggleAction() {
+        return new SinglePressAction(com.android.systemui.R.drawable.ic_lock_flashlight,
+                com.android.systemui.R.string.global_action_flashlight) {
+
+            public void onPress() {
+                try {
+                    CameraManager cameraManager = (CameraManager)
+                            mContext.getSystemService(Context.CAMERA_SERVICE);
+                    for (final String cameraId : cameraManager.getCameraIdList()) {
+                        CameraCharacteristics characteristics =
+                            cameraManager.getCameraCharacteristics(cameraId);
+                        int orient = characteristics.get(CameraCharacteristics.LENS_FACING);
+                        if (orient == CameraCharacteristics.LENS_FACING_BACK) {
+                            cameraManager.setTorchMode(cameraId, !mFlashlightEnabled);
+                            mFlashlightEnabled = !mFlashlightEnabled;
+                        }
+                    }
+                } catch (CameraAccessException e) {
+                }
+            }
+
+            public boolean showDuringKeyguard() {
+                return true;
+            }
+
+            public boolean showBeforeProvisioning() {
+                return false;
+            }
+        };
+    }
+
+    private Action getScreenrecordAction() {
+        return new SinglePressAction(com.android.systemui.R.drawable.ic_lock_screenrecord,
+                com.android.systemui.R.string.global_action_screenrecord) {
+            @Override
+            public void onPress() {
+                mScreenRecordHelper.launchRecordPrompt();
             }
 
             @Override
