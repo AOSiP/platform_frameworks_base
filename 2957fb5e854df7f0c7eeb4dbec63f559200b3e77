@@ -16,6 +16,23 @@
       "message": "Opacity stuff has been recently worked in my friend",
       "revId": "2957fb5e854df7f0c7eeb4dbec63f559200b3e77",
       "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e0e1f54_853a0060",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000232
+      },
+      "writtenOn": "2021-03-19T21:09:42Z",
+      "side": 1,
+      "message": "See here: https://review.aosip.dev/c/AOSIP/platform_frameworks_base/+/17433\n",
+      "revId": "2957fb5e854df7f0c7eeb4dbec63f559200b3e77",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
     }
   ]
 }
