@@ -16,6 +16,23 @@
       "message": "We\u0027re going to be adding custom headers at some point. Maybe hold off on this and the opacity commit then?",
       "revId": "f3b7e8d91ebc1e0f8bfabaaf5bc911486f66ff9b",
       "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fffb9c9_72dbcb9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000232
+      },
+      "writtenOn": "2021-03-19T21:12:34Z",
+      "side": 1,
+      "message": "We can abandon this for now - we have plans to revisit down the road",
+      "revId": "f3b7e8d91ebc1e0f8bfabaaf5bc911486f66ff9b",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
     }
   ]
 }
