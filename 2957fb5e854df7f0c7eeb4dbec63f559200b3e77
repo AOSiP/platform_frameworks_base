@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59dfedcf_24e6f0b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000232
+      },
+      "writtenOn": "2021-03-19T21:08:35Z",
+      "side": 1,
+      "message": "Opacity stuff has been recently worked in my friend",
+      "revId": "2957fb5e854df7f0c7eeb4dbec63f559200b3e77",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
