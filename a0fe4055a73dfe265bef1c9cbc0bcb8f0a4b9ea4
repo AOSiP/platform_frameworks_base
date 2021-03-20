@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "594c8324_a9604d5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000232
+      },
+      "writtenOn": "2021-03-20T20:47:43Z",
+      "side": 1,
+      "message": "Can\u0027t disable",
+      "revId": "a0fe4055a73dfe265bef1c9cbc0bcb8f0a4b9ea4",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
