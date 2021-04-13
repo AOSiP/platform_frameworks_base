@@ -158,7 +158,7 @@ public class AmbientDisplayConfiguration {
      */
     @TestApi
     public boolean alwaysOnEnabled(int user) {
-        return alwaysOnEnabledSetting(user) || alwaysOnChargingEnabled(user) || alwaysOnAmbientLightEnabled(user);
+        return alwaysOnEnabledSetting(user) || alwaysOnChargingEnabled(user);
     }
 
     /**
@@ -261,16 +261,6 @@ public class AmbientDisplayConfiguration {
         if (dozeOnChargeEnabled) {
             final boolean dozeOnChargeEnabledNow = boolSettingSystem(Settings.System.DOZE_ON_CHARGE_NOW, user, 0);
             return dozeOnChargeEnabledNow && alwaysOnAvailable() && !accessibilityInversionEnabled(user);
-        }
-        return false;
-    }
-
-    /** {@hide} */
-    public boolean alwaysOnAmbientLightEnabled(int user) {
-        final boolean ambientLightsEnabled = boolSettingSystem(Settings.System.AOD_NOTIFICATION_PULSE, user, 0);
-        if (ambientLightsEnabled) {
-            boolean ambientLightsActivated = boolSettingSystem(Settings.System.AOD_NOTIFICATION_PULSE_ACTIVATED, user, 0);
-            return ambientLightsActivated && !accessibilityInversionEnabled(user) && alwaysOnAvailable() && alwaysOnEnabledSetting(user);
         }
         return false;
     }

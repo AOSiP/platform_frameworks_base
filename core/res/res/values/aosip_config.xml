@@ -115,7 +115,4 @@
         <item>com.facebook.katana.LoginActivity</item>
     </string-array>
 
-    <!-- Default value for Ambiant Pulse light color -->
-    <integer name="config_ambientNotificationDefaultColor">0xFF3980FF</integer>
-
 </resources>
