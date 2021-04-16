@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "109f8f5f_71944298",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000314
+      },
+      "writtenOn": "2021-04-16T02:51:09Z",
+      "side": 1,
+      "message": "I get dash(warp) charging on LS without the overlay in tree",
+      "revId": "aca78c9462a831590e8ff16aabc7956b43d62fc8",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
