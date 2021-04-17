@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "417dcb15_99fedbbf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000463
+      },
+      "writtenOn": "2021-04-17T01:28:11Z",
+      "side": 1,
+      "message": "this improved fod and allows fod and screen to turn on at the same time, making it more seamless and without any delay, on OP8T",
+      "revId": "4496c1d4c2f420ef9ba5c9d792aa81356b057cb6",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
