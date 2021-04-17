@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27a5a9bb_d37bb595",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000463
+      },
+      "writtenOn": "2021-04-17T01:28:43Z",
+      "side": 1,
+      "message": "this aided in improving auto brightness on my op8t",
+      "revId": "0ea0eb5082942a3be553a5c912d7b190c42ffebd",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
