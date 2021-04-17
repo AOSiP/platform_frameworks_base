@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17eca6ec_c4779c29",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000314
+      },
+      "writtenOn": "2021-04-17T05:56:47Z",
+      "side": 1,
+      "message": "Fixes the smallest size in traffic being larger than the 85% font size I use",
+      "revId": "c016e35ec3364f58bce18a9f20ddb34059f758be",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
