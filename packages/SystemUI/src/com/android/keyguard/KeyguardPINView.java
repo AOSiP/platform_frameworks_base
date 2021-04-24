@@ -56,6 +56,7 @@ public class KeyguardPINView extends KeyguardPinBasedInputView {
     private View mDivider;
     private int mDisappearYTranslation;
     private View[][] mViews;
+    private boolean mScramblePin;
     private final KeyguardUpdateMonitor mKeyguardUpdateMonitor;
 
     private final int userId = KeyguardUpdateMonitor.getCurrentUser();
@@ -153,10 +154,10 @@ public class KeyguardPINView extends KeyguardPinBasedInputView {
         }
         setButtonVisibility(getOkButton(), !quickUnlock);
 
-        boolean scramblePin = (Settings.System.getInt(getContext().getContentResolver(),
+        mScramblePin = (Settings.System.getInt(getContext().getContentResolver(),
                 Settings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, 0) == 1);
 
-        if (scramblePin) {
+        if (mScramblePin) {
             Collections.shuffle(sNumbers);
             // get all children who are NumPadKeys
             LinearLayout container = (LinearLayout) findViewById(R.id.container);
@@ -236,6 +237,14 @@ public class KeyguardPINView extends KeyguardPinBasedInputView {
         mRow2.setClipToPadding(enable);
         mRow3.setClipToPadding(enable);
         setClipChildren(enable);
+    }
+
+    @Override
+    protected int getNumberIndex(int number) {
+        if (mScramblePin) {
+            return (sNumbers.indexOf(number) + 1) % sNumbers.size();
+        }
+        return super.getNumberIndex(number);
     }
 
     @Override
