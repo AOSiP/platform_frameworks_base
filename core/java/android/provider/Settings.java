@@ -4617,6 +4617,12 @@ public final class Settings {
 
         /** @hide */
         public static final Validator SHOW_FOURG_VALIDATOR = BOOLEAN_VALIDATOR;
+        
+        /**
+         * Whether to wake the screen with the home key, the value is boolean.
+         * @hide
+         */
+        public static final String HOME_WAKE_SCREEN = "home_wake_screen";
 
         /**
          * Volume rocker wake
